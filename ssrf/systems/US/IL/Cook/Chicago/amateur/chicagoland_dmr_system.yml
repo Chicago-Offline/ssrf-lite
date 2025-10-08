@@ -1,0 +1,231 @@
+"ssrf_lite":
+  version: "0.3.2"
+  sources:
+    - name: "ChicagoLand Control Center - Repeaters"
+      url: "https://chicagoland-cc.net/?page_id=49"
+      accessed: "2025-09-19"
+    - name: "ChicagoLand Control Center - Talk Group Matrix"
+      url: "https://chicagoland-cc.net/?page_id=51"
+      accessed: "2025-09-19"
+
+organizations:
+  - id: org_chicagoland
+    name: "ChicagoLand Control Center"
+
+locations:
+  # Approximate repeater site coordinates based on public listings in this repo
+  - id: loc_chi_loop_n9kd
+    name: "Chicago - Loop (approx)"
+    lat: 41.8853
+    lon: -87.6229
+  - id: loc_chi_westloop_k9vo
+    name: "Chicago - Near West/Loop (approx)"
+    lat: 41.8925
+    lon: -87.6354
+  - id: loc_chi_uptown_w9bmk
+    name: "Chicago - Uptown/Lakeview (approx)"
+    lat: 41.9650
+    lon: -87.6536
+
+stations:
+  - id: stn_n9kd
+    call_sign: "N9KD"
+    organization_id: org_chicagoland
+    location_id: loc_chi_loop_n9kd
+    service: "amateur"
+  - id: stn_k9vo
+    call_sign: "K9VO"
+    organization_id: org_chicagoland
+    location_id: loc_chi_westloop_k9vo
+    service: "amateur"
+  - id: stn_w9bmk
+    call_sign: "W9BMK"
+    organization_id: org_chicagoland
+    location_id: loc_chi_uptown_w9bmk
+    service: "amateur"
+
+antennas:
+  - id: ant_n9kd
+    station_id: stn_n9kd
+    name: "Site Antenna (unknown)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_k9vo
+    station_id: stn_k9vo
+    name: "Site Antenna (unknown)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_w9bmk
+    station_id: stn_w9bmk
+    name: "Site Antenna (unknown)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+
+# RF chains are shaped for end-user codeplug: rx = repeater downlink (what you hear), tx = uplink (what you send)
+rf_chains:
+  - id: chain_n9kd_444_dmr
+    station_id: stn_n9kd
+    antenna_id: ant_n9kd
+    tx:
+      freq_mhz: 449.000
+      emission: "7K60FXE" # DMR
+    rx:
+      freq_mhz: 444.000
+    mode:
+      type: "DMR"
+      color_code: 0
+      timeslots: [1, 2]
+  - id: chain_k9vo_443_dmr
+    station_id: stn_k9vo
+    antenna_id: ant_k9vo
+    tx:
+      freq_mhz: 448.925
+      emission: "7K60FXE" # DMR
+    rx:
+      freq_mhz: 443.925
+    mode:
+      type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+  - id: chain_w9bmk_444_dmr
+    station_id: stn_w9bmk
+    antenna_id: ant_w9bmk
+    tx:
+      freq_mhz: 449.125
+      emission: "7K60FXE" # DMR
+    rx:
+      freq_mhz: 444.125
+    mode:
+      type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+
+# Common ChicagoLand talkgroups (subset) with default timeslot guidance
+contacts:
+  - id: tg_9
+    name: "Site Local"
+    kind: "Group"
+    number: 9
+    default_timeslot: 1
+  - id: tg_3181
+    name: "Local 1"
+    kind: "Group"
+    number: 3181
+    default_timeslot: 1
+  - id: tg_3166
+    name: "Local 2"
+    kind: "Group"
+    number: 3166
+    default_timeslot: 2
+  - id: tg_3117
+    name: "Illinois"
+    kind: "Group"
+    number: 3117
+    default_timeslot: 1
+  - id: tg_3169
+    name: "MidWest Regional"
+    kind: "Group"
+    number: 3169
+    default_timeslot: 2
+  - id: tg_3167
+    name: "AllStar"
+    kind: "Group"
+    number: 3167
+    default_timeslot: 1
+  - id: tg_3100
+    name: "Bridge"
+    kind: "Group"
+    number: 3100
+    default_timeslot: 2
+  - id: tg_310
+    name: "TAC 310"
+    kind: "Group"
+    number: 310
+    default_timeslot: 2
+  - id: tg_1
+    name: "WorldWide"
+    kind: "Group"
+    number: 1
+    default_timeslot: 2
+  - id: tg_3
+    name: "North America"
+    kind: "Group"
+    number: 3
+    default_timeslot: 2
+  - id: tg_8888
+    name: "CHI-Net 1"
+    kind: "Group"
+    number: 8888
+    default_timeslot: 1
+  - id: tg_81
+    name: "Tri-State"
+    kind: "Group"
+    number: 81
+    default_timeslot: 2
+  - id: tg_9998
+    name: "Parrot"
+    kind: "Group"
+    number: 9998
+    default_timeslot: 2
+  - id: tg_9999
+    name: "Audio Test"
+    kind: "Group"
+    number: 9999
+    default_timeslot: 2
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "Amateur Radio"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires US amateur license."
+
+assignments:
+  - id: asgn_n9kd_cl
+    rf_chain_id: chain_n9kd_444_dmr
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "N9KD CL"
+      rx_only: false
+      preferred_contacts:
+        [tg_9, tg_3181, tg_3166, tg_3117, tg_3169, tg_310, tg_9998]
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      ChicagoLand C-Bridge member; hybrid BrandMeister noted in local listings.
+      Color Code 0. Program Local 1 (TS1), Local 2 (TS2), IL 3117 (TS1), Midwest 3169 (TS2).
+      Source: ChicagoLand Control Center pages (see sources block).
+
+  - id: asgn_k9vo_cl
+    rf_chain_id: chain_k9vo_443_dmr
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "K9VO CL"
+      rx_only: false
+      preferred_contacts:
+        [tg_9, tg_3181, tg_3166, tg_3117, tg_3169, tg_310, tg_9998]
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      ChicagoLand C-Bridge; Color Code 1.
+      Typical TGs: Site Local 9 (TS1), Local 1 (TS1), Local 2 (TS2), IL (TS1), MW (TS2), Parrot (TS2).
+      Source: ChicagoLand Control Center pages (see sources block).
+
+  - id: asgn_w9bmk_cl
+    rf_chain_id: chain_w9bmk_444_dmr
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "W9BMK CL"
+      rx_only: false
+      preferred_contacts:
+        [tg_9, tg_3181, tg_3166, tg_3117, tg_3169, tg_310, tg_9998]
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      ChicagoLand C-Bridge; Color Code 1. Uptown/Lakeview area site.
+      Typical TGs: Local 1 (TS1), Local 2 (TS2), IL 3117 (TS1), Midwest 3169 (TS2), Parrot (TS2).
+      Source: ChicagoLand Control Center pages (see sources block).

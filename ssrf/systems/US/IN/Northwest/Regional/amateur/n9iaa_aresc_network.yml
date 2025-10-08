@@ -1,0 +1,233 @@
+ssrf_lite:
+  version: "0.3.2"
+  sources:
+    - name: "Amateur Radio Emergency Services Company - System Information"
+      url: "https://www.aresc.club/system-information"
+      accessed: "2025-10-04"
+
+organizations:
+  - id: org_aresc
+    name: "Amateur Radio Emergency Services Company (ARESC)"
+
+locations:
+  - id: loc_crown_point_site
+    name: "Crown Point, IN (approx network hub)"
+    lat: 41.4170
+    lon: -87.3653
+  - id: loc_valparaiso_site
+    name: "Valparaiso, IN (ARESC)"
+    lat: 41.4731
+    lon: -87.0611
+  - id: loc_la_porte_site
+    name: "La Porte, IN (ARESC)"
+    lat: 41.6106
+    lon: -86.7228
+
+stations:
+  - id: stn_n9iaa_146
+    call_sign: "N9IAA"
+    organization_id: org_aresc
+    location_id: loc_crown_point_site
+    service: "amateur"
+  - id: stn_n9iaa_dmr_valpo
+    call_sign: "N9IAA"
+    organization_id: org_aresc
+    location_id: loc_valparaiso_site
+    service: "amateur"
+  - id: stn_n9iaa_dmr_crown_point
+    call_sign: "N9IAA"
+    organization_id: org_aresc
+    location_id: loc_crown_point_site
+    service: "amateur"
+  - id: stn_n9iaa_dmr_la_porte
+    call_sign: "N9IAA"
+    organization_id: org_aresc
+    location_id: loc_la_porte_site
+    service: "amateur"
+
+antennas:
+  - id: ant_n9iaa_146
+    station_id: stn_n9iaa_146
+    name: "ARESC VHF Network Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_n9iaa_dmr_valpo
+    station_id: stn_n9iaa_dmr_valpo
+    name: "Valparaiso DMR Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_n9iaa_dmr_crown_point
+    station_id: stn_n9iaa_dmr_crown_point
+    name: "Crown Point DMR Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_n9iaa_dmr_la_porte
+    station_id: stn_n9iaa_dmr_la_porte
+    name: "La Porte DMR Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+
+rf_chains:
+  - id: chain_n9iaa_146_fm
+    station_id: stn_n9iaa_146
+    antenna_id: ant_n9iaa_146
+    tx:
+      freq_mhz: 146.085 # user transmit (600 kHz low)
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.685
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 173.8
+      ctcss_rx_hz: 173.8
+      notes: "Voted multi-site network covering Indiana District 1."
+
+  - id: chain_n9iaa_dmr_valpo
+    station_id: stn_n9iaa_dmr_valpo
+    antenna_id: ant_n9iaa_dmr_valpo
+    tx:
+      freq_mhz: 446.350
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 441.350
+    mode:
+      type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+      notes: "Tier II DMR. Listed as Valparaiso site."
+
+  - id: chain_n9iaa_dmr_crown_point
+    station_id: stn_n9iaa_dmr_crown_point
+    antenna_id: ant_n9iaa_dmr_crown_point
+    tx:
+      freq_mhz: 449.350
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 444.350
+    mode:
+      type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+      notes: "Tier II DMR. Crown Point listing."
+
+  - id: chain_n9iaa_dmr_la_porte
+    station_id: stn_n9iaa_dmr_la_porte
+    antenna_id: ant_n9iaa_dmr_la_porte
+    tx:
+      freq_mhz: 449.350
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 444.350
+    mode:
+      type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+      notes: "Tier II DMR. La Porte listing shares same pair."
+
+contacts:
+  - id: tg_8
+    name: "ARESC Linked"
+    kind: "Group"
+    number: 8
+    default_timeslot: 1
+    notes: "11 repeaters in IN/IL/WI per site listing; full-time."
+  - id: tg_3118
+    name: "Indiana Statewide"
+    kind: "Group"
+    number: 3118
+    default_timeslot: 2
+  - id: tg_1
+    name: "Worldwide"
+    kind: "Group"
+    number: 1
+    default_timeslot: 2
+    notes: "PTT on demand."
+  - id: tg_3
+    name: "Worldwide English"
+    kind: "Group"
+    number: 3
+    default_timeslot: 2
+    notes: "PTT on demand."
+  - id: tg_9
+    name: "Local"
+    kind: "Group"
+    number: 9
+    default_timeslot: 2
+    notes: "Linked to DMR+ reflector per site notes."
+  - id: tg_5000
+    name: "DMR+ Status"
+    kind: "Group"
+    number: 5000
+    default_timeslot: 2
+    notes: "Local repeater status check (1 second PTT)."
+  - id: tg_4000
+    name: "DMR+ Disconnect"
+    kind: "Group"
+    number: 4000
+    default_timeslot: 2
+    notes: "Local repeater disconnect."
+
+authorizations:
+  - id: auth_fcc_amateur
+    authority: "FCC"
+    service: "Amateur Radio"
+    class: "Technician or higher"
+    identifier: null
+    notes: "Transmit requires US amateur license."
+
+assignments:
+  - id: asgn_n9iaa_146_fm
+    rf_chain_id: chain_n9iaa_146_fm
+    usage: "repeater"
+    zones: ["Ham-Repeaters", "Emergency"]
+    codeplug:
+      name: "N9IAA VHF"
+      rx_only: false
+    authorization_id: auth_fcc_amateur
+    comment: |
+      Wide-area VHF analog network (voted receivers). Output 146.685 MHz, input 146.085 MHz, PL 173.8 Hz.
+      Designed for handheld coverage across NWS Indiana District 1 (Lake, Porter, La Porte, Newton, Jasper, Benton).
+      Sites linked via microwave with battery backup.
+
+  - id: asgn_n9iaa_valpo_dmr
+    rf_chain_id: chain_n9iaa_dmr_valpo
+    usage: "repeater"
+    zones: ["Ham-DMR"]
+    codeplug:
+      name: "N9IAA Val DMR"
+      rx_only: false
+      preferred_contacts: [tg_8, tg_3118, tg_1, tg_3, tg_9, tg_5000, tg_4000]
+    authorization_id: auth_fcc_amateur
+    comment: |
+      441.350 MHz output (+5 MHz offset), Color Code 1. Time Slot 1 TG8 (full-time), TS2 TG3118 (full-time),
+      TS2 PTT: TG1 Worldwide, TG3 Worldwide English, TG9 DMR+ Talk, TG5000 status, TG4000 disconnect. Disable ARS per site guidance.
+
+  - id: asgn_n9iaa_crownpoint_dmr
+    rf_chain_id: chain_n9iaa_dmr_crown_point
+    usage: "repeater"
+    zones: ["Ham-DMR"]
+    codeplug:
+      name: "N9IAA CP DMR"
+      rx_only: false
+      preferred_contacts: [tg_8, tg_3118, tg_1, tg_3, tg_9, tg_5000, tg_4000]
+    authorization_id: auth_fcc_amateur
+    comment: |
+      444.350 MHz output (+5 MHz offset), Color Code 1. Same talkgroup lineup as Valparaiso site; typically networked.
+
+  - id: asgn_n9iaa_laporte_dmr
+    rf_chain_id: chain_n9iaa_dmr_la_porte
+    usage: "repeater"
+    zones: ["Ham-DMR"]
+    codeplug:
+      name: "N9IAA LP DMR"
+      rx_only: false
+      preferred_contacts: [tg_8, tg_3118, tg_1, tg_3, tg_9, tg_5000, tg_4000]
+    authorization_id: auth_fcc_amateur
+    comment: |
+      444.350 MHz output (+5 MHz offset), Color Code 1. Shares linked network behavior with other N9IAA sites.
+      Talkgroup 4xxx reflectors available via manual entry (PTT).

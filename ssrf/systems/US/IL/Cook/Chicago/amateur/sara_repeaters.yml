@@ -1,0 +1,133 @@
+ssrf_lite:
+  version: "0.3.2"
+  sources:
+    - name: "SARA – Repeaters"
+      url: "https://sararepeater.com/repeaters.php"
+      accessed: "2025-09-19"
+
+organizations:
+  - id: org_sara
+    name: "SARA – Society for the Advancement of Radio Amateurs"
+
+locations:
+  - id: loc_chicago_lincoln_park
+    name: "Chicago – Lincoln Park (approx)"
+    lat: 41.9256
+    lon: -87.6493
+
+stations:
+  - id: stn_ka9hhh_2m
+    call_sign: "KA9HHH"
+    organization_id: org_sara
+    location_id: loc_chicago_lincoln_park
+    service: "amateur"
+  - id: stn_ka9hhh_440
+    call_sign: "KA9HHH"
+    organization_id: org_sara
+    location_id: loc_chicago_lincoln_park
+    service: "amateur"
+  - id: stn_na9pl_uhf
+    call_sign: "NA9PL"
+    organization_id: org_sara
+    location_id: loc_chicago_lincoln_park
+    service: "amateur"
+
+antennas:
+  - id: ant_sara_vhf
+    station_id: stn_ka9hhh_2m
+    name: "4-bay Folded Dipole"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sara_uhf
+    station_id: stn_ka9hhh_440
+    name: "8-bay Folded Dipole"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sara_uhf_na9pl
+    station_id: stn_na9pl_uhf
+    name: "8-bay Folded Dipole"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+
+rf_chains:
+  - id: chain_ka9hhh_2m_fm
+    station_id: stn_ka9hhh_2m
+    antenna_id: ant_sara_vhf
+    tx:
+      freq_mhz: 146.280
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.880
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 107.2
+      ctcss_rx_hz: 107.2
+  - id: chain_ka9hhh_440_fm
+    station_id: stn_ka9hhh_440
+    antenna_id: ant_sara_uhf
+    tx:
+      freq_mhz: 449.375
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 444.375
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 114.8
+      ctcss_rx_hz: 114.8
+  - id: chain_na9pl_440_c4fm
+    station_id: stn_na9pl_uhf
+    antenna_id: ant_sara_uhf_na9pl
+    tx:
+      freq_mhz: 445.250
+      emission: "8K50F7W"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 440.250
+    mode:
+      type: "C4FM"
+      ctcss_tx_hz: 114.8
+      ctcss_rx_hz: 114.8
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "Amateur Radio"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires US amateur license."
+
+assignments:
+  - id: asgn_ka9hhh_2m_fm
+    rf_chain_id: chain_ka9hhh_2m_fm
+    usage: "repeater"
+    zones: ["Ham-Repeaters", "Emergency"]
+    codeplug:
+      name: "KA9HHH VHF"
+      rx_only: false
+    authorization_id: auth_fcc_amateur_t
+    comment: "+0.6 MHz, CTCSS 107.2 Hz. Lincoln Park site."
+
+  - id: asgn_ka9hhh_440_fm
+    rf_chain_id: chain_ka9hhh_440_fm
+    usage: "repeater"
+    zones: ["Ham-Repeaters", "Emergency"]
+    codeplug:
+      name: "KA9HHH UHF"
+      rx_only: false
+    authorization_id: auth_fcc_amateur_t
+    comment: "+5 MHz, CTCSS 114.8 Hz. Lincoln Park site."
+
+  - id: asgn_na9pl_440_c4fm
+    rf_chain_id: chain_na9pl_440_c4fm
+    usage: "repeater"
+    zones: ["Ham-Digital"]
+    codeplug:
+      name: "NA9PL UHF C4FM"
+      rx_only: false
+    authorization_id: auth_fcc_amateur_t
+    comment: "+5 MHz, CTCSS 114.8 Hz. Fusion/Wires-X. Lincoln Park site."

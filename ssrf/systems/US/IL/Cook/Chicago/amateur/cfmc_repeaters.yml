@@ -1,0 +1,284 @@
+ssrf_lite:
+  version: "0.3.2"
+  sources:
+    - name: "Chicago FM Club — CFMC Repeaters"
+      url: "https://chicagofmclub.org/club-resources/cfmc-repeaters/"
+      accessed: "2025-09-19"
+
+organizations:
+  - id: org_cfmc
+    name: "Chicago FM Club (CFMC)"
+
+locations:
+  # Approximate site descriptors; no precise coordinates provided on source page
+  - id: loc_chicago_near_north
+    name: "Chicago - Near North Lakefront (approx)"
+    lat: 41.9300 # approx Near North lakefront
+    lon: -87.6400 # approx
+  - id: loc_worth_il
+    name: "Worth, IL (approx)"
+    lat: 41.6890 # approx Worth, IL
+    lon: -87.7970 # approx
+  - id: loc_parkridge_dempster_294
+    name: "Park Ridge - near Dempster & I-294 (approx)"
+    lat: 42.0410 # approx Dempster & I-294
+    lon: -87.8610 # approx
+
+stations:
+  - id: stn_cfmc_2m
+    call_sign: "WA9ORC"
+    organization_id: org_cfmc
+    location_id: loc_chicago_near_north
+    service: "amateur"
+  - id: stn_cfmc_440
+    call_sign: "WA9ORC"
+    organization_id: org_cfmc
+    location_id: loc_chicago_near_north
+    service: "amateur"
+  - id: stn_cfmc_220_north
+    call_sign: "WA9ORC"
+    organization_id: org_cfmc
+    location_id: loc_chicago_near_north
+    service: "amateur"
+  - id: stn_cfmc_220_south
+    call_sign: "WA9ORC"
+    organization_id: org_cfmc
+    location_id: loc_worth_il
+    service: "amateur"
+  - id: stn_cfmc_dstar_440
+    call_sign: "WA9ORC"
+    organization_id: org_cfmc
+    location_id: loc_parkridge_dempster_294
+    service: "amateur"
+  - id: stn_cfmc_fusion_2m
+    call_sign: "WA9ORC"
+    organization_id: org_cfmc
+    location_id: loc_parkridge_dempster_294
+    service: "amateur"
+
+antennas:
+  - id: ant_cfmc_2m
+    station_id: stn_cfmc_2m
+    name: "2m Vertical"
+    gain_dbi: null
+    height_agl_m: 152.4 # ~500 ft AGL
+    height_amsl_m: null
+  - id: ant_cfmc_440
+    station_id: stn_cfmc_440
+    name: "440 MHz Vertical"
+    gain_dbi: null
+    height_agl_m: 152.4
+    height_amsl_m: null
+  - id: ant_cfmc_220_north
+    station_id: stn_cfmc_220_north
+    name: "220 MHz North Vertical"
+    gain_dbi: null
+    height_agl_m: 152.4
+    height_amsl_m: null
+  - id: ant_cfmc_220_south
+    station_id: stn_cfmc_220_south
+    name: "220 MHz South Vertical"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_cfmc_dstar
+    station_id: stn_cfmc_dstar_440
+    name: "D-STAR UHF Antenna"
+    gain_dbi: null
+    height_agl_m: 54.9 # ~180 ft AGL
+    height_amsl_m: null
+  - id: ant_cfmc_fusion
+    station_id: stn_cfmc_fusion_2m
+    name: "System Fusion VHF Antenna"
+    gain_dbi: null
+    height_agl_m: 54.9
+    height_amsl_m: null
+
+rf_chains:
+  # 440 MHz analog FM (dual-mode site; analog prioritized). EchoLink & AllStar available.
+  - id: chain_cfmc_440_fm
+    station_id: stn_cfmc_440
+    antenna_id: ant_cfmc_440
+    tx:
+      freq_mhz: 443.750
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 448.750
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 114.8
+      ctcss_rx_hz: 114.8
+
+  # 2m analog FM with EchoLink & AllStar
+  - id: chain_cfmc_2m_fm
+    station_id: stn_cfmc_2m
+    antenna_id: ant_cfmc_2m
+    tx:
+      freq_mhz: 146.760
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.160
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 107.2
+      ctcss_rx_hz: 107.2
+
+  # 220 MHz North analog FM (~15 W)
+  - id: chain_cfmc_220_north_fm
+    station_id: stn_cfmc_220_north
+    antenna_id: ant_cfmc_220_north
+    tx:
+      freq_mhz: 224.100
+      power_w: 15
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 222.500
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 110.9
+      ctcss_rx_hz: 110.9
+
+  # 220 MHz South analog FM (~15 W) - Worth, IL
+  - id: chain_cfmc_220_south_fm
+    station_id: stn_cfmc_220_south
+    antenna_id: ant_cfmc_220_south
+    tx:
+      freq_mhz: 224.180
+      power_w: 15
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 222.580
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 110.9
+      ctcss_rx_hz: 110.9
+
+  # D-STAR UHF DV — Park Ridge near Dempster & 294, ~180 ft AGL
+  - id: chain_cfmc_dstar_440
+    station_id: stn_cfmc_dstar_440
+    antenna_id: ant_cfmc_dstar
+    tx:
+      freq_mhz: 441.90625
+      emission: "6K00F7E"
+    rx:
+      freq_mhz: 446.90625
+    mode:
+      type: "D-STAR"
+      notes: "Linked to Reflector 1C; single-site ICOM."
+
+  # System Fusion VHF (-600 kHz). DCS 072 for analog side; WIRES-X accessible.
+  - id: chain_cfmc_fusion_2m_fm
+    station_id: stn_cfmc_fusion_2m
+    antenna_id: ant_cfmc_fusion
+    tx:
+      freq_mhz: 145.350
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 144.750
+    mode:
+      type: "FM"
+      dcs_tx_code: "072"
+      dcs_rx_code: "072"
+  - id: chain_cfmc_fusion_2m_c4fm
+    station_id: stn_cfmc_fusion_2m
+    antenna_id: ant_cfmc_fusion
+    tx:
+      freq_mhz: 145.350
+      emission: "8K50F7W"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 144.750
+    mode:
+      type: "C4FM"
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "Amateur Radio"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires US amateur license."
+
+assignments:
+  - id: asgn_cfmc_440
+    rf_chain_id: chain_cfmc_440_fm
+    usage: "repeater"
+    zones: ["Ham-Repeaters", "Emergency"]
+    codeplug:
+      name: "CFMC 440 FM"
+      rx_only: false
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      443.750 +5 MHz, CTCSS 114.8 Hz. EchoLink 62478 (WA9ORC-R), AllStar 555492.
+      Dual-mode site; analog prioritized. For P25 users: carrier squelch (no PL).
+
+  - id: asgn_cfmc_2m
+    rf_chain_id: chain_cfmc_2m_fm
+    usage: "repeater"
+    zones: ["Ham-Repeaters", "Emergency"]
+    codeplug:
+      name: "CFMC 2m FM"
+      rx_only: false
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      146.760 -0.6 MHz, CTCSS 107.2 Hz. EchoLink 448319 (KD9YDD-R), AllStar 555491.
+
+  - id: asgn_cfmc_220_north
+    rf_chain_id: chain_cfmc_220_north_fm
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "CFMC 220 North"
+      rx_only: false
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      224.100 -1.6 MHz, CTCSS 110.9 Hz. ~15 W. Near North Lakefront site (~500 ft AGL).
+
+  - id: asgn_cfmc_220_south
+    rf_chain_id: chain_cfmc_220_south_fm
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "CFMC 220 S"
+      rx_only: false
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      224.180 -1.6 MHz, CTCSS 110.9 Hz. ~15 W. Located in Worth, IL.
+
+  - id: asgn_cfmc_dstar_440
+    rf_chain_id: chain_cfmc_dstar_440
+    usage: "repeater"
+    zones: ["Ham-Digital"]
+    codeplug:
+      name: "CFMC D-STAR 440"
+      rx_only: false
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      D-STAR DV on 441.90625 (-) to 446.90625 input. Linked to Reflector 1C. Park Ridge site (~180 ft AGL).
+
+  - id: asgn_cfmc_fusion_2m_fm
+    rf_chain_id: chain_cfmc_fusion_2m_fm
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "CFMC 2m FM"
+      rx_only: false
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      145.350 -0.6 MHz. DCS 072 (analog side). Park Ridge site (~180 ft AGL). WIRES-X accessible.
+
+  - id: asgn_cfmc_fusion_2m_c4fm
+    rf_chain_id: chain_cfmc_fusion_2m_c4fm
+    usage: "repeater"
+    zones: ["Ham-Digital"]
+    codeplug:
+      name: "CFMC 2m C4FM"
+      rx_only: false
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      System Fusion digital on 145.350 (-0.6). Park Ridge site (~180 ft AGL). WIRES-X accessible.

@@ -1,0 +1,68 @@
+ssrf_lite:
+  version: "0.3.2"
+  sources:
+    - name: "KC8BRS Repeater Detail (Artsci Publishing)"
+      url: "http://www.artscipub.com/repeaters/detail.asp?rid=18929&ln=KC8BRS_repeater_information_on_147.180_in_Niles,_Michigan"
+      accessed: "2025-10-04"
+
+organizations:
+  - id: org_four_flags_arc
+    name: "Four Flags Amateur Radio Club"
+
+locations:
+  - id: loc_niles_four_flags
+    name: "Niles, MI - Four Flags ARC Site (approx)"
+    lat: 41.8300
+    lon: -86.2400
+
+stations:
+  - id: stn_kc8brs_vhf
+    call_sign: "KC8BRS"
+    organization_id: org_four_flags_arc
+    location_id: loc_niles_four_flags
+    service: "amateur"
+
+antennas:
+  - id: ant_kc8brs_vhf
+    station_id: stn_kc8brs_vhf
+    name: "KC8BRS 2m Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+
+rf_chains:
+  - id: chain_kc8brs_vhf_fm
+    station_id: stn_kc8brs_vhf
+    antenna_id: ant_kc8brs_vhf
+    tx:
+      freq_mhz: 147.780
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.180
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 94.8
+      ctcss_rx_hz: 94.8
+      notes: "Standard +0.600 MHz offset."
+
+authorizations:
+  - id: auth_fcc_amateur
+    authority: "FCC"
+    service: "Amateur Radio"
+    class: "Technician or higher"
+    identifier: null
+    notes: "Transmit requires US amateur license."
+
+assignments:
+  - id: asgn_kc8brs_vhf_fm
+    rf_chain_id: chain_kc8brs_vhf_fm
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "KC8BRS 147.180"
+      rx_only: false
+    authorization_id: auth_fcc_amateur
+    comment: |
+      Four Flags ARC repeater in Niles, MI. Output 147.180 MHz (+0.600 MHz input) with 94.8 Hz PL.
+      Listed as no autopatch; site latitude/longitude from Artsci listing. Club info: http://www.qsl.net/kc8brs/.

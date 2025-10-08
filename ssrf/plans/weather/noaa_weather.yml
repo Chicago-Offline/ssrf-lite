@@ -1,0 +1,142 @@
+# SSRF-Lite: NOAA Weather Radio (WX1–WX7)
+# Notes: RX-only, FM (wide). Kept as a separate zone for quick access.
+# Sources: NOAA Weather Radio channel plan.
+
+organizations:
+  - id: org_noaa
+    name: "NOAA Weather Radio"
+
+locations:
+  - id: loc_chi
+    name: "Chicago Metro"
+    lat: 41.8781
+    lon: -87.6298
+
+stations:
+  - id: stn_noaa
+    call_sign: null
+    organization_id: org_noaa
+    location_id: loc_chi
+    service: "weather"
+
+antennas:
+  - id: ant_noaa
+    station_id: stn_noaa
+    name: "Portable"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+
+rf_chains:
+  # WX1–WX7. Use 16K0F3E to hint wide FM in bandwidth mapping.
+  - {
+      id: chain_wx1,
+      station_id: stn_noaa,
+      antenna_id: ant_noaa,
+      rx: { freq_mhz: 162.550 },
+      tx: { emission: "16K0F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_wx2,
+      station_id: stn_noaa,
+      antenna_id: ant_noaa,
+      rx: { freq_mhz: 162.400 },
+      tx: { emission: "16K0F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_wx3,
+      station_id: stn_noaa,
+      antenna_id: ant_noaa,
+      rx: { freq_mhz: 162.475 },
+      tx: { emission: "16K0F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_wx4,
+      station_id: stn_noaa,
+      antenna_id: ant_noaa,
+      rx: { freq_mhz: 162.425 },
+      tx: { emission: "16K0F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_wx5,
+      station_id: stn_noaa,
+      antenna_id: ant_noaa,
+      rx: { freq_mhz: 162.450 },
+      tx: { emission: "16K0F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_wx6,
+      station_id: stn_noaa,
+      antenna_id: ant_noaa,
+      rx: { freq_mhz: 162.500 },
+      tx: { emission: "16K0F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_wx7,
+      station_id: stn_noaa,
+      antenna_id: ant_noaa,
+      rx: { freq_mhz: 162.525 },
+      tx: { emission: "16K0F3E" },
+      mode: { type: "FM" },
+    }
+
+assignments:
+  - {
+      id: asg_wx1,
+      rf_chain_id: chain_wx1,
+      usage: "simplex",
+      zones: ["NOAA Weather"],
+      codeplug: { name: "WX1", rx_only: true, all_skip: true },
+    }
+  - {
+      id: asg_wx2,
+      rf_chain_id: chain_wx2,
+      usage: "simplex",
+      zones: ["NOAA Weather"],
+      codeplug: { name: "WX2", rx_only: true, all_skip: true },
+    }
+  - {
+      id: asg_wx3,
+      rf_chain_id: chain_wx3,
+      usage: "simplex",
+      zones: ["NOAA Weather"],
+      codeplug: { name: "WX3", rx_only: true, all_skip: true },
+    }
+  - {
+      id: asg_wx4,
+      rf_chain_id: chain_wx4,
+      usage: "simplex",
+      zones: ["NOAA Weather"],
+      codeplug: { name: "WX4", rx_only: true, all_skip: true },
+    }
+  - {
+      id: asg_wx5,
+      rf_chain_id: chain_wx5,
+      usage: "simplex",
+      zones: ["NOAA Weather"],
+      codeplug: { name: "WX5", rx_only: true, all_skip: true },
+    }
+  - {
+      id: asg_wx6,
+      rf_chain_id: chain_wx6,
+      usage: "simplex",
+      zones: ["NOAA Weather"],
+      codeplug: { name: "WX6", rx_only: true, all_skip: true },
+    }
+  - {
+      id: asg_wx7,
+      rf_chain_id: chain_wx7,
+      usage: "simplex",
+      zones: ["NOAA Weather"],
+      codeplug: { name: "WX7", rx_only: true, all_skip: true },
+    }
+
+comments:
+  - text: |
+      NOAA Weather Radio broadcast channels. Wide-FM. RX-only for OpenGD77 scanning.

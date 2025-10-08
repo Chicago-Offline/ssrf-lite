@@ -1,0 +1,251 @@
+# SSRF-Lite: US Ham DMR Simplex
+# Two commonly used UHF DMR simplex presets. Include a basic TG99 contact for TX use.
+
+contacts:
+  - {
+      id: ct_dmr_simplex,
+      name: "DMR Simplex",
+      number: 99,
+      kind: "Group",
+      default_timeslot: 1,
+    }
+
+organizations:
+  - id: org_ham_dmr_smpx
+    name: "US Ham DMR Simplex"
+
+locations:
+  - id: loc_chi
+    name: "Chicago (approx)"
+    lat: 41.8781
+    lon: -87.6298
+
+stations:
+  - id: stn_ham_dmr
+    call_sign: null
+    organization_id: org_ham_dmr_smpx
+    location_id: loc_chi
+    service: "amateur"
+
+antennas:
+  - id: ant_portable
+    station_id: stn_ham_dmr
+    name: "Portable"
+
+rf_chains:
+  - {
+      id: chain_dmr_smpx_446500,
+      station_id: stn_ham_dmr,
+      antenna_id: ant_portable,
+      rx: { freq_mhz: 446.500 },
+      tx: { emission: "7K60FXE" },
+      mode: { type: "DMR", color_code: 1 },
+    }
+  - {
+      id: chain_dmr_smpx_446075,
+      station_id: stn_ham_dmr,
+      antenna_id: ant_portable,
+      rx: { freq_mhz: 446.075 },
+      tx: { emission: "7K60FXE" },
+      mode: { type: "DMR", color_code: 1 },
+    }
+  - {
+      id: chain_dmr_hs_4304125,
+      station_id: stn_ham_dmr,
+      antenna_id: ant_portable,
+      rx: { freq_mhz: 430.4125 },
+      tx: { emission: "7K60FXE" },
+      mode: { type: "DMR", color_code: 1 },
+    }
+  - {
+      id: chain_dmr_hs_4304250,
+      station_id: stn_ham_dmr,
+      antenna_id: ant_portable,
+      rx: { freq_mhz: 430.4250 },
+      tx: { emission: "7K60FXE" },
+      mode: { type: "DMR", color_code: 1 },
+    }
+  - {
+      id: chain_dmr_hs_4394125,
+      station_id: stn_ham_dmr,
+      antenna_id: ant_portable,
+      rx: { freq_mhz: 439.4125 },
+      tx: { emission: "7K60FXE" },
+      mode: { type: "DMR", color_code: 1 },
+    }
+  - {
+      id: chain_dmr_hs_4394250,
+      station_id: stn_ham_dmr,
+      antenna_id: ant_portable,
+      rx: { freq_mhz: 439.4250 },
+      tx: { emission: "7K60FXE" },
+      mode: { type: "DMR", color_code: 1 },
+    }
+  - {
+      id: chain_dmr_hs_duplex_4394375,
+      station_id: stn_ham_dmr,
+      antenna_id: ant_portable,
+      rx: { freq_mhz: 439.4375 },
+      tx: { freq_mhz: 430.4375, emission: "7K60FXE" },
+      mode: { type: "DMR", color_code: 1, timeslots: [1, 2] },
+    }
+  - {
+      id: chain_dmr_hs_duplex_4394500,
+      station_id: stn_ham_dmr,
+      antenna_id: ant_portable,
+      rx: { freq_mhz: 439.4500 },
+      tx: { freq_mhz: 430.4500, emission: "7K60FXE" },
+      mode: { type: "DMR", color_code: 1, timeslots: [1, 2] },
+    }
+  - {
+      id: chain_dmr_hs_duplex_4394625,
+      station_id: stn_ham_dmr,
+      antenna_id: ant_portable,
+      rx: { freq_mhz: 439.4625 },
+      tx: { freq_mhz: 430.4625, emission: "7K60FXE" },
+      mode: { type: "DMR", color_code: 1, timeslots: [1, 2] },
+    }
+  - {
+      id: chain_dmr_hs_duplex_4394750,
+      station_id: stn_ham_dmr,
+      antenna_id: ant_portable,
+      rx: { freq_mhz: 439.4750 },
+      tx: { freq_mhz: 430.4750, emission: "7K60FXE" },
+      mode: { type: "DMR", color_code: 1, timeslots: [1, 2] },
+    }
+  - {
+      id: chain_dmr_hs_duplex_4304375,
+      station_id: stn_ham_dmr,
+      antenna_id: ant_portable,
+      rx: { freq_mhz: 430.4375 },
+      tx: { freq_mhz: 439.4375, emission: "7K60FXE" },
+      mode: { type: "DMR", color_code: 1, timeslots: [1, 2] },
+    }
+  - {
+      id: chain_dmr_hs_duplex_4304500,
+      station_id: stn_ham_dmr,
+      antenna_id: ant_portable,
+      rx: { freq_mhz: 430.4500 },
+      tx: { freq_mhz: 439.4500, emission: "7K60FXE" },
+      mode: { type: "DMR", color_code: 1, timeslots: [1, 2] },
+    }
+  - {
+      id: chain_dmr_hs_duplex_4304625,
+      station_id: stn_ham_dmr,
+      antenna_id: ant_portable,
+      rx: { freq_mhz: 430.4625 },
+      tx: { freq_mhz: 439.4625, emission: "7K60FXE" },
+      mode: { type: "DMR", color_code: 1, timeslots: [1, 2] },
+    }
+  - {
+      id: chain_dmr_hs_duplex_4304750,
+      station_id: stn_ham_dmr,
+      antenna_id: ant_portable,
+      rx: { freq_mhz: 430.4750 },
+      tx: { freq_mhz: 439.4750, emission: "7K60FXE" },
+      mode: { type: "DMR", color_code: 1, timeslots: [1, 2] },
+    }
+
+assignments:
+  - {
+      id: asg_dmr_smpx_446500,
+      rf_chain_id: chain_dmr_smpx_446500,
+      usage: "simplex",
+      zones: ["Ham DMR Simplex"],
+      codeplug: { name: "DMR Smpx A", preferred_contacts: ["ct_dmr_simplex"] },
+    }
+  - {
+      id: asg_dmr_smpx_446075,
+      rf_chain_id: chain_dmr_smpx_446075,
+      usage: "simplex",
+      zones: ["Ham DMR Simplex"],
+      codeplug: { name: "DMR Smpx B", preferred_contacts: ["ct_dmr_simplex"] },
+    }
+  - {
+      id: asg_dmr_hs_4304125,
+      rf_chain_id: chain_dmr_hs_4304125,
+      usage: "simplex",
+      zones: ["Ham DMR Simplex"],
+      codeplug: { name: "HS 4304125", preferred_contacts: ["ct_dmr_simplex"] },
+    }
+  - {
+      id: asg_dmr_hs_4304250,
+      rf_chain_id: chain_dmr_hs_4304250,
+      usage: "simplex",
+      zones: ["Ham DMR Simplex"],
+      codeplug: { name: "HS 4304250", preferred_contacts: ["ct_dmr_simplex"] },
+    }
+  - {
+      id: asg_dmr_hs_4394125,
+      rf_chain_id: chain_dmr_hs_4394125,
+      usage: "simplex",
+      zones: ["Ham DMR Simplex"],
+      codeplug: { name: "HS 4394125", preferred_contacts: ["ct_dmr_simplex"] },
+    }
+  - {
+      id: asg_dmr_hs_4394250,
+      rf_chain_id: chain_dmr_hs_4394250,
+      usage: "simplex",
+      zones: ["Ham DMR Simplex"],
+      codeplug: { name: "HS 4394250", preferred_contacts: ["ct_dmr_simplex"] },
+    }
+  - {
+      id: asg_dmr_hs_duplex_4394375,
+      rf_chain_id: chain_dmr_hs_duplex_4394375,
+      usage: "repeater",
+      zones: ["Ham DMR Simplex"],
+      codeplug: { name: "HS 4394375", preferred_contacts: ["ct_dmr_simplex"] },
+    }
+  - {
+      id: asg_dmr_hs_duplex_4394500,
+      rf_chain_id: chain_dmr_hs_duplex_4394500,
+      usage: "repeater",
+      zones: ["Ham DMR Simplex"],
+      codeplug: { name: "HS 4394500", preferred_contacts: ["ct_dmr_simplex"] },
+    }
+  - {
+      id: asg_dmr_hs_duplex_4394625,
+      rf_chain_id: chain_dmr_hs_duplex_4394625,
+      usage: "repeater",
+      zones: ["Ham DMR Simplex"],
+      codeplug: { name: "HS 4394625", preferred_contacts: ["ct_dmr_simplex"] },
+    }
+  - {
+      id: asg_dmr_hs_duplex_4394750,
+      rf_chain_id: chain_dmr_hs_duplex_4394750,
+      usage: "repeater",
+      zones: ["Ham DMR Simplex"],
+      codeplug: { name: "HS 4394750", preferred_contacts: ["ct_dmr_simplex"] },
+    }
+  - {
+      id: asg_dmr_hs_duplex_4304375,
+      rf_chain_id: chain_dmr_hs_duplex_4304375,
+      usage: "repeater",
+      zones: ["Ham DMR Simplex"],
+      codeplug: { name: "HS 4304375", preferred_contacts: ["ct_dmr_simplex"] },
+    }
+  - {
+      id: asg_dmr_hs_duplex_4304500,
+      rf_chain_id: chain_dmr_hs_duplex_4304500,
+      usage: "repeater",
+      zones: ["Ham DMR Simplex"],
+      codeplug: { name: "HS 4304500", preferred_contacts: ["ct_dmr_simplex"] },
+    }
+  - {
+      id: asg_dmr_hs_duplex_4304625,
+      rf_chain_id: chain_dmr_hs_duplex_4304625,
+      usage: "repeater",
+      zones: ["Ham DMR Simplex"],
+      codeplug: { name: "HS 4304625", preferred_contacts: ["ct_dmr_simplex"] },
+    }
+  - {
+      id: asg_dmr_hs_duplex_4304750,
+      rf_chain_id: chain_dmr_hs_duplex_4304750,
+      usage: "repeater",
+      zones: ["Ham DMR Simplex"],
+      codeplug: { name: "HS 4304750", preferred_contacts: ["ct_dmr_simplex"] },
+    }
+
+comments:
+  - text: |
+      Common DMR simplex presets plus WWARA hotspot simplex and duplex channels. TS1, CC1, TG99 (Group).
