@@ -4,247 +4,65 @@
 # Channels: IFERN, IREACH, ISPERN (VLAW31), Point-to-Point, HEAR, VCALL/VTAC, UCALL/UTAC.
 
 organizations:
-  - id: org_il_interop
-    name: "Illinois Statewide Interop"
+- id: org_il_interop
+  name: "Illinois Statewide Interop"
 
 locations:
-  - id: loc_il
-    name: "Illinois (statewide)"
-    lat: 40.6331
-    lon: -89.3985
+- id: loc_il
+  name: "Illinois (statewide)"
+  lat: 40.6331
+  lon: -89.3985
 
 stations:
-  - id: stn_il
-    call_sign: null
-    organization_id: org_il_interop
-    location_id: loc_il
-    service: "public_safety"
+- id: stn_il
+  call_sign:
+  organization_id: org_il_interop
+  location_id: loc_il
+  service: "public_safety"
 
 antennas:
-  - id: ant_il
-    station_id: stn_il
-    name: "Portable"
-    gain_dbi: null
-    height_agl_m: null
-    height_amsl_m: null
+- id: ant_il
+  station_id: stn_il
+  name: "Portable"
+  gain_dbi:
+  height_agl_m:
+  height_amsl_m:
 
 rf_chains:
   # VHF interop
-  - {
-      id: chain_ifern,
-      station_id: stn_il,
-      antenna_id: ant_il,
-      rx: { freq_mhz: 154.265 },
-      tx: { emission: "16K0F3E" },
-      mode: { type: "FM" },
-    }
-  - {
-      id: chain_ireach,
-      station_id: stn_il,
-      antenna_id: ant_il,
-      rx: { freq_mhz: 155.055 },
-      tx: { emission: "16K0F3E" },
-      mode: { type: "FM" },
-    }
-  - {
-      id: chain_ispern,
-      station_id: stn_il,
-      antenna_id: ant_il,
-      rx: { freq_mhz: 155.475 },
-      tx: { emission: "16K0F3E" },
-      mode: { type: "FM" },
-    } # VLAW31
-  - {
-      id: chain_ptp,
-      station_id: stn_il,
-      antenna_id: ant_il,
-      rx: { freq_mhz: 155.370 },
-      tx: { emission: "16K0F3E" },
-      mode: { type: "FM" },
-    } # Point-to-Point
-  - {
-      id: chain_hear,
-      station_id: stn_il,
-      antenna_id: ant_il,
-      rx: { freq_mhz: 155.340 },
-      tx: { emission: "16K0F3E" },
-      mode: { type: "FM" },
-    }
-  - {
-      id: chain_vcall10,
-      station_id: stn_il,
-      antenna_id: ant_il,
-      rx: { freq_mhz: 155.7525 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM" },
-    }
-  - {
-      id: chain_vtac11,
-      station_id: stn_il,
-      antenna_id: ant_il,
-      rx: { freq_mhz: 151.1375 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM" },
-    }
-  - {
-      id: chain_vtac12,
-      station_id: stn_il,
-      antenna_id: ant_il,
-      rx: { freq_mhz: 154.4525 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM" },
-    }
-  - {
-      id: chain_vtac13,
-      station_id: stn_il,
-      antenna_id: ant_il,
-      rx: { freq_mhz: 158.7375 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM" },
-    }
-  - {
-      id: chain_vtac14,
-      station_id: stn_il,
-      antenna_id: ant_il,
-      rx: { freq_mhz: 159.4725 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM" },
-    }
+- {id: chain_ifern, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 154.265}, tx: {emission: "16K0F3E"}, mode: {type: "FM"}}
+- {id: chain_ireach, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 155.055}, tx: {emission: "16K0F3E"}, mode: {type: "FM"}}
+- {id: chain_ispern, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 155.475}, tx: {emission: "16K0F3E"}, mode: {type: "FM"}} # VLAW31
+- {id: chain_ptp, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 155.370}, tx: {emission: "16K0F3E"}, mode: {type: "FM"}} # Point-to-Point
+- {id: chain_hear, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 155.340}, tx: {emission: "16K0F3E"}, mode: {type: "FM"}}
+- {id: chain_vcall10, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 155.7525}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
+- {id: chain_vtac11, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 151.1375}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
+- {id: chain_vtac12, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 154.4525}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
+- {id: chain_vtac13, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 158.7375}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
+- {id: chain_vtac14, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 159.4725}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
 
   # UHF interop (UCALL/UTAC)
-  - {
-      id: chain_ucall40,
-      station_id: stn_il,
-      antenna_id: ant_il,
-      rx: { freq_mhz: 453.2125 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM" },
-    }
-  - {
-      id: chain_utac41,
-      station_id: stn_il,
-      antenna_id: ant_il,
-      rx: { freq_mhz: 453.4625 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM" },
-    }
-  - {
-      id: chain_utac42,
-      station_id: stn_il,
-      antenna_id: ant_il,
-      rx: { freq_mhz: 453.7125 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM" },
-    }
-  - {
-      id: chain_utac43,
-      station_id: stn_il,
-      antenna_id: ant_il,
-      rx: { freq_mhz: 453.8625 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM" },
-    }
+- {id: chain_ucall40, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 453.2125}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
+- {id: chain_utac41, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 453.4625}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
+- {id: chain_utac42, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 453.7125}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
+- {id: chain_utac43, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 453.8625}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
 
 assignments:
-  - {
-      id: asg_ifern,
-      rf_chain_id: chain_ifern,
-      usage: "simplex",
-      zones: ["IL Interop"],
-      codeplug: { name: "IFERN", rx_only: true },
-    }
-  - {
-      id: asg_ireach,
-      rf_chain_id: chain_ireach,
-      usage: "simplex",
-      zones: ["IL Interop"],
-      codeplug: { name: "IREACH", rx_only: true },
-    }
-  - {
-      id: asg_ispern,
-      rf_chain_id: chain_ispern,
-      usage: "simplex",
-      zones: ["IL Interop"],
-      codeplug: { name: "ISPERN", rx_only: true },
-    }
-  - {
-      id: asg_ptp,
-      rf_chain_id: chain_ptp,
-      usage: "simplex",
-      zones: ["IL Interop"],
-      codeplug: { name: "Point-to-Point", rx_only: true },
-    }
-  - {
-      id: asg_hear,
-      rf_chain_id: chain_hear,
-      usage: "simplex",
-      zones: ["IL Interop"],
-      codeplug: { name: "HEAR", rx_only: true },
-    }
-  - {
-      id: asg_vcall10,
-      rf_chain_id: chain_vcall10,
-      usage: "simplex",
-      zones: ["IL Interop"],
-      codeplug: { name: "VCALL10", rx_only: true },
-    }
-  - {
-      id: asg_vtac11,
-      rf_chain_id: chain_vtac11,
-      usage: "simplex",
-      zones: ["IL Interop"],
-      codeplug: { name: "VTAC11", rx_only: true },
-    }
-  - {
-      id: asg_vtac12,
-      rf_chain_id: chain_vtac12,
-      usage: "simplex",
-      zones: ["IL Interop"],
-      codeplug: { name: "VTAC12", rx_only: true },
-    }
-  - {
-      id: asg_vtac13,
-      rf_chain_id: chain_vtac13,
-      usage: "simplex",
-      zones: ["IL Interop"],
-      codeplug: { name: "VTAC13", rx_only: true },
-    }
-  - {
-      id: asg_vtac14,
-      rf_chain_id: chain_vtac14,
-      usage: "simplex",
-      zones: ["IL Interop"],
-      codeplug: { name: "VTAC14", rx_only: true },
-    }
-  - {
-      id: asg_ucall40,
-      rf_chain_id: chain_ucall40,
-      usage: "simplex",
-      zones: ["IL Interop"],
-      codeplug: { name: "UCALL40", rx_only: true },
-    }
-  - {
-      id: asg_utac41,
-      rf_chain_id: chain_utac41,
-      usage: "simplex",
-      zones: ["IL Interop"],
-      codeplug: { name: "UTAC41", rx_only: true },
-    }
-  - {
-      id: asg_utac42,
-      rf_chain_id: chain_utac42,
-      usage: "simplex",
-      zones: ["IL Interop"],
-      codeplug: { name: "UTAC42", rx_only: true },
-    }
-  - {
-      id: asg_utac43,
-      rf_chain_id: chain_utac43,
-      usage: "simplex",
-      zones: ["IL Interop"],
-      codeplug: { name: "UTAC43", rx_only: true },
-    }
+- {id: asg_ifern, rf_chain_id: chain_ifern, usage: "simplex", zones: ["IL Interop"], codeplug: {name: "IFERN", rx_only: true, all_skip: true}}
+- {id: asg_ireach, rf_chain_id: chain_ireach, usage: "simplex", zones: ["IL Interop"], codeplug: {name: "IREACH", rx_only: true, all_skip: true}}
+- {id: asg_ispern, rf_chain_id: chain_ispern, usage: "simplex", zones: ["IL Interop"], codeplug: {name: "ISPERN", rx_only: true, all_skip: true}}
+- {id: asg_ptp, rf_chain_id: chain_ptp, usage: "simplex", zones: ["IL Interop"], codeplug: {name: "Point-to-Point", rx_only: true, all_skip: true}}
+- {id: asg_hear, rf_chain_id: chain_hear, usage: "simplex", zones: ["IL Interop"], codeplug: {name: "HEAR", rx_only: true, all_skip: true}}
+- {id: asg_vcall10, rf_chain_id: chain_vcall10, usage: "simplex", zones: ["IL Interop"], codeplug: {name: "VCALL10", rx_only: true, all_skip: true}}
+- {id: asg_vtac11, rf_chain_id: chain_vtac11, usage: "simplex", zones: ["IL Interop"], codeplug: {name: "VTAC11", rx_only: true, all_skip: true}}
+- {id: asg_vtac12, rf_chain_id: chain_vtac12, usage: "simplex", zones: ["IL Interop"], codeplug: {name: "VTAC12", rx_only: true, all_skip: true}}
+- {id: asg_vtac13, rf_chain_id: chain_vtac13, usage: "simplex", zones: ["IL Interop"], codeplug: {name: "VTAC13", rx_only: true, all_skip: true}}
+- {id: asg_vtac14, rf_chain_id: chain_vtac14, usage: "simplex", zones: ["IL Interop"], codeplug: {name: "VTAC14", rx_only: true, all_skip: true}}
+- {id: asg_ucall40, rf_chain_id: chain_ucall40, usage: "simplex", zones: ["IL Interop"], codeplug: {name: "UCALL40", rx_only: true, all_skip: true}}
+- {id: asg_utac41, rf_chain_id: chain_utac41, usage: "simplex", zones: ["IL Interop"], codeplug: {name: "UTAC41", rx_only: true, all_skip: true}}
+- {id: asg_utac42, rf_chain_id: chain_utac42, usage: "simplex", zones: ["IL Interop"], codeplug: {name: "UTAC42", rx_only: true, all_skip: true}}
+- {id: asg_utac43, rf_chain_id: chain_utac43, usage: "simplex", zones: ["IL Interop"], codeplug: {name: "UTAC43", rx_only: true, all_skip: true}}
 
 comments:
-  - text: |
-      Common Illinois interop channels (analogue). RX-only. 700/800MHz interop talkgroups not included.
+- text: |
+    Common Illinois interop channels (analogue). RX-only. 700/800MHz interop talkgroups not included.

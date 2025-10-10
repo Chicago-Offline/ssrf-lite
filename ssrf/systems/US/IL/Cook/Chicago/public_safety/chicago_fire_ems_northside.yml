@@ -3,313 +3,313 @@
 # Notes: Many primary ops are on OEMC 800MHz P25; below includes analogue backups and TAC/OPS you can monitor.
 
 organizations:
-  - id: org_cfd
-    name: "Chicago Fire Department"
-  - id: org_northside_fire
-    name: "Northside Fire/EMS"
+- id: org_cfd
+  name: "Chicago Fire Department"
+- id: org_northside_fire
+  name: "Northside Fire/EMS"
 
 locations:
-  - id: loc_chi
-    name: "Chicago (approx)"
-    lat: 41.8781
-    lon: -87.6298
+- id: loc_chi
+  name: "Chicago (approx)"
+  lat: 41.8781
+  lon: -87.6298
 
 stations:
-  - id: stn_cfd
-    call_sign: null
-    organization_id: org_cfd
-    location_id: loc_chi
-    service: "fire-ems"
-  - id: stn_northside
-    call_sign: null
-    organization_id: org_northside_fire
-    location_id: loc_chi
-    service: "fire-ems"
+- id: stn_cfd
+  call_sign:
+  organization_id: org_cfd
+  location_id: loc_chi
+  service: "fire-ems"
+- id: stn_northside
+  call_sign:
+  organization_id: org_northside_fire
+  location_id: loc_chi
+  service: "fire-ems"
 
 antennas:
-  - id: ant_cfd
-    station_id: stn_cfd
-    name: "CFD Antenna (unknown)"
-  - id: ant_north
-    station_id: stn_northside
-    name: "Northside Antenna (unknown)"
+- id: ant_cfd
+  station_id: stn_cfd
+  name: "CFD Antenna (unknown)"
+- id: ant_north
+  station_id: stn_northside
+  name: "Northside Antenna (unknown)"
 
 rf_chains:
   # Chicago Fire/EMS analogue/tac
-  - id: chain_cfd_fg_a
-    station_id: stn_cfd
-    antenna_id: ant_cfd
-    rx:
-      freq_mhz: 458.025
-    tx:
-      emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 203.5 }
+- id: chain_cfd_fg_a
+  station_id: stn_cfd
+  antenna_id: ant_cfd
+  rx:
+    freq_mhz: 458.025
+  tx:
+    emission: "11K2F3E"
+  mode: {type: "FM", ctcss_rx_hz: 203.5}
 
-  - id: chain_cfd_cmd_a
-    station_id: stn_cfd
-    antenna_id: ant_cfd
-    rx:
-      freq_mhz: 458.125
-    tx:
-      emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 218.1 }
+- id: chain_cfd_cmd_a
+  station_id: stn_cfd
+  antenna_id: ant_cfd
+  rx:
+    freq_mhz: 458.125
+  tx:
+    emission: "11K2F3E"
+  mode: {type: "FM", ctcss_rx_hz: 218.1}
 
-  - id: chain_cfd_lakefront
-    station_id: stn_cfd
-    antenna_id: ant_cfd
-    rx:
-      freq_mhz: 458.075
-    tx:
-      emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 210.7 }
+- id: chain_cfd_lakefront
+  station_id: stn_cfd
+  antenna_id: ant_cfd
+  rx:
+    freq_mhz: 458.075
+  tx:
+    emission: "11K2F3E"
+  mode: {type: "FM", ctcss_rx_hz: 210.7}
 
-  - id: chain_cfd_tac_a
-    station_id: stn_cfd
-    antenna_id: ant_cfd
-    rx:
-      freq_mhz: 470.1625
-    tx:
-      emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 97.4 }
+- id: chain_cfd_tac_a
+  station_id: stn_cfd
+  antenna_id: ant_cfd
+  rx:
+    freq_mhz: 470.1625
+  tx:
+    emission: "11K2F3E"
+  mode: {type: "FM", ctcss_rx_hz: 97.4}
 
-  - id: chain_cfd_ops8_a
-    station_id: stn_cfd
-    antenna_id: ant_cfd
-    rx:
-      freq_mhz: 476.2875
-    tx:
-      emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 69.3 }
+- id: chain_cfd_ops8_a
+  station_id: stn_cfd
+  antenna_id: ant_cfd
+  rx:
+    freq_mhz: 476.2875
+  tx:
+    emission: "11K2F3E"
+  mode: {type: "FM", ctcss_rx_hz: 69.3}
 
-  - id: chain_cfd_ops9_a
-    station_id: stn_cfd
-    antenna_id: ant_cfd
-    rx:
-      freq_mhz: 479.2875
-    tx:
-      emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 74.4 }
+- id: chain_cfd_ops9_a
+  station_id: stn_cfd
+  antenna_id: ant_cfd
+  rx:
+    freq_mhz: 479.2875
+  tx:
+    emission: "11K2F3E"
+  mode: {type: "FM", ctcss_rx_hz: 74.4}
 
-  - id: chain_cfd_ops10_a
-    station_id: stn_cfd
-    antenna_id: ant_cfd
-    rx:
-      freq_mhz: 477.6625
-    tx:
-      emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 79.7 }
+- id: chain_cfd_ops10_a
+  station_id: stn_cfd
+  antenna_id: ant_cfd
+  rx:
+    freq_mhz: 477.6625
+  tx:
+    emission: "11K2F3E"
+  mode: {type: "FM", ctcss_rx_hz: 79.7}
 
-  - id: chain_cfd_cta_fire
-    station_id: stn_cfd
-    antenna_id: ant_cfd
-    rx:
-      freq_mhz: 460.0625
-    tx:
-      emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 203.5 }
+- id: chain_cfd_cta_fire
+  station_id: stn_cfd
+  antenna_id: ant_cfd
+  rx:
+    freq_mhz: 460.0625
+  tx:
+    emission: "11K2F3E"
+  mode: {type: "FM", ctcss_rx_hz: 203.5}
 
-  - id: chain_cfd_specevt1_a
-    station_id: stn_cfd
-    antenna_id: ant_cfd
-    rx:
-      freq_mhz: 478.500
-    tx:
-      emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 103.5 }
+- id: chain_cfd_specevt1_a
+  station_id: stn_cfd
+  antenna_id: ant_cfd
+  rx:
+    freq_mhz: 478.500
+  tx:
+    emission: "11K2F3E"
+  mode: {type: "FM", ctcss_rx_hz: 103.5}
 
-  - id: chain_cfd_admin_a
-    station_id: stn_cfd
-    antenna_id: ant_cfd
-    rx:
-      freq_mhz: 458.175
-    tx:
-      emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 225.7 }
+- id: chain_cfd_admin_a
+  station_id: stn_cfd
+  antenna_id: ant_cfd
+  rx:
+    freq_mhz: 458.175
+  tx:
+    emission: "11K2F3E"
+  mode: {type: "FM", ctcss_rx_hz: 225.7}
 
   # Northside fire/EMS conventional (backups/dispatch)
-  - id: chain_red_south_bu
-    station_id: stn_northside
-    antenna_id: ant_north
-    rx:
-      freq_mhz: 154.355
-    tx:
-      emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 127.3 }
+- id: chain_red_south_bu
+  station_id: stn_northside
+  antenna_id: ant_north
+  rx:
+    freq_mhz: 154.355
+  tx:
+    emission: "11K2F3E"
+  mode: {type: "FM", ctcss_rx_hz: 127.3}
 
-  - id: chain_red_north_bu
-    station_id: stn_northside
-    antenna_id: ant_north
-    rx:
-      freq_mhz: 154.445
-    tx:
-      emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 127.3 }
+- id: chain_red_north_bu
+  station_id: stn_northside
+  antenna_id: ant_north
+  rx:
+    freq_mhz: 154.445
+  tx:
+    emission: "11K2F3E"
+  mode: {type: "FM", ctcss_rx_hz: 127.3}
 
-  - id: chain_red_fire_north
-    station_id: stn_northside
-    antenna_id: ant_north
-    rx:
-      freq_mhz: 159.660
-    tx:
-      emission: "11K2F3E"
-    mode: { type: "FM" }
+- id: chain_red_fire_north
+  station_id: stn_northside
+  antenna_id: ant_north
+  rx:
+    freq_mhz: 159.660
+  tx:
+    emission: "11K2F3E"
+  mode: {type: "FM"}
 
-  - id: chain_red_fire_south
-    station_id: stn_northside
-    antenna_id: ant_north
-    rx:
-      freq_mhz: 156.135
-    tx:
-      emission: "11K2F3E"
-    mode: { type: "FM" }
+- id: chain_red_fire_south
+  station_id: stn_northside
+  antenna_id: ant_north
+  rx:
+    freq_mhz: 156.135
+  tx:
+    emission: "11K2F3E"
+  mode: {type: "FM"}
 
-  - id: chain_skookie_fire_disp
-    station_id: stn_northside
-    antenna_id: ant_north
-    rx:
-      freq_mhz: 159.195
-    tx:
-      emission: "11K2F3E"
-    mode: { type: "FM", dcs_rx_code: 205 }
+- id: chain_skookie_fire_disp
+  station_id: stn_northside
+  antenna_id: ant_north
+  rx:
+    freq_mhz: 159.195
+  tx:
+    emission: "11K2F3E"
+  mode: {type: "FM", dcs_rx_code: 205}
 
-  - id: chain_north_shore_admin
-    station_id: stn_northside
-    antenna_id: ant_north
-    rx:
-      freq_mhz: 151.010
-    tx:
-      emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 127.3 }
+- id: chain_north_shore_admin
+  station_id: stn_northside
+  antenna_id: ant_north
+  rx:
+    freq_mhz: 151.010
+  tx:
+    emission: "11K2F3E"
+  mode: {type: "FM", ctcss_rx_hz: 127.3}
 
-  - id: chain_evanston_fire
-    station_id: stn_northside
-    antenna_id: ant_north
-    rx:
-      freq_mhz: 155.6925
-    tx:
-      emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 123.0 }
+- id: chain_evanston_fire
+  station_id: stn_northside
+  antenna_id: ant_north
+  rx:
+    freq_mhz: 155.6925
+  tx:
+    emission: "11K2F3E"
+  mode: {type: "FM", ctcss_rx_hz: 123.0}
 
-  - id: chain_desplaines_fire
-    station_id: stn_northside
-    antenna_id: ant_north
-    rx:
-      freq_mhz: 155.4375
-    tx:
-      emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 225.7 }
+- id: chain_desplaines_fire
+  station_id: stn_northside
+  antenna_id: ant_north
+  rx:
+    freq_mhz: 155.4375
+  tx:
+    emission: "11K2F3E"
+  mode: {type: "FM", ctcss_rx_hz: 225.7}
 
 assignments:
   # Fire/EMS Zone (merged Chicago + Northside)
-  - id: asg_cfd_fg_a
-    rf_chain_id: chain_cfd_fg_a
-    usage: "simplex"
-    zones: ["Fire/EMS"]
-    codeplug: { name: "CFD FG A", rx_only: true }
+- id: asg_cfd_fg_a
+  rf_chain_id: chain_cfd_fg_a
+  usage: "simplex"
+  zones: ["Fire/EMS"]
+  codeplug: {name: "CFD FG A", rx_only: true, all_skip: true}
 
-  - id: asg_cfd_cmd_a
-    rf_chain_id: chain_cfd_cmd_a
-    usage: "simplex"
-    zones: ["Fire/EMS"]
-    codeplug: { name: "CFD Command A", rx_only: true }
+- id: asg_cfd_cmd_a
+  rf_chain_id: chain_cfd_cmd_a
+  usage: "simplex"
+  zones: ["Fire/EMS"]
+  codeplug: {name: "CFD Command A", rx_only: true, all_skip: true}
 
-  - id: asg_cfd_lakefront
-    rf_chain_id: chain_cfd_lakefront
-    usage: "simplex"
-    zones: ["Fire/EMS"]
-    codeplug: { name: "CFD Lakefront", rx_only: true }
+- id: asg_cfd_lakefront
+  rf_chain_id: chain_cfd_lakefront
+  usage: "simplex"
+  zones: ["Fire/EMS"]
+  codeplug: {name: "CFD Lakefront", rx_only: true, all_skip: true}
 
-  - id: asg_cfd_tac_a
-    rf_chain_id: chain_cfd_tac_a
-    usage: "simplex"
-    zones: ["Fire/EMS"]
-    codeplug: { name: "CFD Tac A", rx_only: true }
+- id: asg_cfd_tac_a
+  rf_chain_id: chain_cfd_tac_a
+  usage: "simplex"
+  zones: ["Fire/EMS"]
+  codeplug: {name: "CFD Tac A", rx_only: true, all_skip: true}
 
-  - id: asg_cfd_ops8_a
-    rf_chain_id: chain_cfd_ops8_a
-    usage: "simplex"
-    zones: ["Fire/EMS"]
-    codeplug: { name: "CFD Ops 8 A", rx_only: true }
+- id: asg_cfd_ops8_a
+  rf_chain_id: chain_cfd_ops8_a
+  usage: "simplex"
+  zones: ["Fire/EMS"]
+  codeplug: {name: "CFD Ops 8 A", rx_only: true, all_skip: true}
 
-  - id: asg_cfd_ops9_a
-    rf_chain_id: chain_cfd_ops9_a
-    usage: "simplex"
-    zones: ["Fire/EMS"]
-    codeplug: { name: "CFD Ops 9 A", rx_only: true }
+- id: asg_cfd_ops9_a
+  rf_chain_id: chain_cfd_ops9_a
+  usage: "simplex"
+  zones: ["Fire/EMS"]
+  codeplug: {name: "CFD Ops 9 A", rx_only: true, all_skip: true}
 
-  - id: asg_cfd_ops10_a
-    rf_chain_id: chain_cfd_ops10_a
-    usage: "simplex"
-    zones: ["Fire/EMS"]
-    codeplug: { name: "CFD Ops 10 A", rx_only: true }
+- id: asg_cfd_ops10_a
+  rf_chain_id: chain_cfd_ops10_a
+  usage: "simplex"
+  zones: ["Fire/EMS"]
+  codeplug: {name: "CFD Ops 10 A", rx_only: true, all_skip: true}
 
-  - id: asg_cfd_cta_fire
-    rf_chain_id: chain_cfd_cta_fire
-    usage: "simplex"
-    zones: ["Fire/EMS"]
-    codeplug: { name: "CTA Fire", rx_only: true }
+- id: asg_cfd_cta_fire
+  rf_chain_id: chain_cfd_cta_fire
+  usage: "simplex"
+  zones: ["Fire/EMS"]
+  codeplug: {name: "CTA Fire", rx_only: true, all_skip: true}
 
-  - id: asg_cfd_specevt1_a
-    rf_chain_id: chain_cfd_specevt1_a
-    usage: "simplex"
-    zones: ["Fire/EMS"]
-    codeplug: { name: "CFD SpecEvt1", rx_only: true }
+- id: asg_cfd_specevt1_a
+  rf_chain_id: chain_cfd_specevt1_a
+  usage: "simplex"
+  zones: ["Fire/EMS"]
+  codeplug: {name: "CFD SpecEvt1", rx_only: true, all_skip: true}
 
-  - id: asg_cfd_admin_a
-    rf_chain_id: chain_cfd_admin_a
-    usage: "simplex"
-    zones: ["Fire/EMS"]
-    codeplug: { name: "CFD Admin A", rx_only: true }
+- id: asg_cfd_admin_a
+  rf_chain_id: chain_cfd_admin_a
+  usage: "simplex"
+  zones: ["Fire/EMS"]
+  codeplug: {name: "CFD Admin A", rx_only: true, all_skip: true}
 
   # Northside Fire/EMS (merged into Fire/EMS zone name)
-  - id: asg_red_south_bu
-    rf_chain_id: chain_red_south_bu
-    usage: "repeater"
-    zones: ["Fire/EMS"]
-    codeplug: { name: "RED South BK", rx_only: true }
+- id: asg_red_south_bu
+  rf_chain_id: chain_red_south_bu
+  usage: "repeater"
+  zones: ["Fire/EMS"]
+  codeplug: {name: "RED South BK", rx_only: true, all_skip: true}
 
-  - id: asg_red_north_bu
-    rf_chain_id: chain_red_north_bu
-    usage: "repeater"
-    zones: ["Fire/EMS"]
-    codeplug: { name: "RED North BK", rx_only: true }
+- id: asg_red_north_bu
+  rf_chain_id: chain_red_north_bu
+  usage: "repeater"
+  zones: ["Fire/EMS"]
+  codeplug: {name: "RED North BK", rx_only: true, all_skip: true}
 
-  - id: asg_red_fire_north
-    rf_chain_id: chain_red_fire_north
-    usage: "repeater"
-    zones: ["Fire/EMS"]
-    codeplug: { name: "RED Fire North", rx_only: true }
+- id: asg_red_fire_north
+  rf_chain_id: chain_red_fire_north
+  usage: "repeater"
+  zones: ["Fire/EMS"]
+  codeplug: {name: "RED Fire North", rx_only: true, all_skip: true}
 
-  - id: asg_red_fire_south
-    rf_chain_id: chain_red_fire_south
-    usage: "repeater"
-    zones: ["Fire/EMS"]
-    codeplug: { name: "RED Fire South", rx_only: true }
+- id: asg_red_fire_south
+  rf_chain_id: chain_red_fire_south
+  usage: "repeater"
+  zones: ["Fire/EMS"]
+  codeplug: {name: "RED Fire South", rx_only: true, all_skip: true}
 
-  - id: asg_skookie_fire_disp
-    rf_chain_id: chain_skookie_fire_disp
-    usage: "repeater"
-    zones: ["Fire/EMS"]
-    codeplug: { name: "Skokie Disp", rx_only: true }
+- id: asg_skookie_fire_disp
+  rf_chain_id: chain_skookie_fire_disp
+  usage: "repeater"
+  zones: ["Fire/EMS"]
+  codeplug: {name: "Skokie Disp", rx_only: true, all_skip: true}
 
-  - id: asg_north_shore_admin
-    rf_chain_id: chain_north_shore_admin
-    usage: "simplex"
-    zones: ["Fire/EMS"]
-    codeplug: { name: "NShore Admin", rx_only: true }
+- id: asg_north_shore_admin
+  rf_chain_id: chain_north_shore_admin
+  usage: "simplex"
+  zones: ["Fire/EMS"]
+  codeplug: {name: "NShore Admin", rx_only: true, all_skip: true}
 
-  - id: asg_evanston_fire
-    rf_chain_id: chain_evanston_fire
-    usage: "repeater"
-    zones: ["Fire/EMS"]
-    codeplug: { name: "Evanston Disp", rx_only: true }
+- id: asg_evanston_fire
+  rf_chain_id: chain_evanston_fire
+  usage: "repeater"
+  zones: ["Fire/EMS"]
+  codeplug: {name: "Evanston Disp", rx_only: true, all_skip: true}
 
-  - id: asg_desplaines_fire
-    rf_chain_id: chain_desplaines_fire
-    usage: "repeater"
-    zones: ["Fire/EMS"]
-    codeplug: { name: "DesPlns Disp", rx_only: true }
+- id: asg_desplaines_fire
+  rf_chain_id: chain_desplaines_fire
+  usage: "repeater"
+  zones: ["Fire/EMS"]
+  codeplug: {name: "DesPlns Disp", rx_only: true, all_skip: true}
 
 comments:
-  - text: |
-      Primary CFD operations are on the OEMC 800 MHz P25 system; those talkgroups are omitted. This file includes analogue backups and tac/ops channels and a curated set of nearby northside fire channels suitable for OpenGD77 RX-only monitoring.
+- text: |
+    Primary CFD operations are on the OEMC 800 MHz P25 system; those talkgroups are omitted. This file includes analogue backups and tac/ops channels and a curated set of nearby northside fire channels suitable for OpenGD77 RX-only monitoring.

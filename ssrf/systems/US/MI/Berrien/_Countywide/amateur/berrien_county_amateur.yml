@@ -1,0 +1,197 @@
+# SSRF-Lite: Berrien County (MI) Amateur / Skywarn Systems
+# Source: Attachment "barrien amateur - Sheet1.csv" (2025-10-10)
+# Notes: Countywide Skywarn-linked VHF/UHF repeaters plus regional D-STAR access.
+
+ssrf_lite:
+  version: "0.4.0"
+  sources:
+    - name: "barrien amateur - Sheet1.csv"
+      url: null
+      accessed: "2025-10-10"
+
+organizations:
+  - id: org_berrien_skywarn
+    name: "Berrien County Skywarn"
+  - id: org_w8mai
+    name: "W8MAI Repeater Group"
+
+locations:
+  - id: loc_st_joseph
+    name: "St. Joseph / Benton Harbor"
+    lat: 42.0919
+    lon: -86.4822
+  - id: loc_benton_harbor
+    name: "Benton Harbor (Downtown)"
+    lat: 42.1167
+    lon: -86.4542
+
+stations:
+  - id: stn_skywarn_primary
+    call_sign:
+    organization_id: org_berrien_skywarn
+    location_id: loc_st_joseph
+    service: "amateur"
+  - id: stn_skywarn_secondary
+    call_sign:
+    organization_id: org_berrien_skywarn
+    location_id: loc_st_joseph
+    service: "amateur"
+  - id: stn_w8mai_dstar
+    call_sign: "W8MAI"
+    organization_id: org_w8mai
+    location_id: loc_benton_harbor
+    service: "amateur"
+
+antennas:
+  - id: ant_skywarn_primary
+    station_id: stn_skywarn_primary
+    name: "Skywarn Primary Antenna"
+  - id: ant_skywarn_secondary
+    station_id: stn_skywarn_secondary
+    name: "Skywarn Secondary Antenna"
+  - id: ant_w8mai_b
+    station_id: stn_w8mai_dstar
+    name: "W8MAI UHF D-STAR"
+
+rf_chains:
+  # VHF Skywarn analog repeaters
+  - id: chain_skywarn_primary_146_820
+    station_id: stn_skywarn_primary
+    antenna_id: ant_skywarn_primary
+    tx:
+      freq_mhz: 146.220
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.820
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 88.5
+      ctcss_rx_hz: 88.5
+      notes: "County Skywarn Primary"
+
+  - id: chain_skywarn_secondary_146_720
+    station_id: stn_skywarn_secondary
+    antenna_id: ant_skywarn_secondary
+    tx:
+      freq_mhz: 146.120
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.720
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 131.8
+      ctcss_rx_hz: 131.8
+      notes: "County Skywarn Secondary"
+
+  - id: chain_skywarn_intercounty_145_430
+    station_id: stn_skywarn_secondary
+    antenna_id: ant_skywarn_secondary
+    tx:
+      freq_mhz: 144.830
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 145.430
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 131.8
+      ctcss_rx_hz: 131.8
+      notes: "Intercounty (IMO) Skywarn monitor"
+
+    # Linked UHF repeater
+  - id: chain_skywarn_link_442_775
+    station_id: stn_skywarn_primary
+    antenna_id: ant_skywarn_primary
+    tx:
+      freq_mhz: 447.775
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 442.775
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 88.5
+      ctcss_rx_hz: 88.5
+      notes: "Cross-linked to 146.820 primary"
+
+    # D-STAR module (70 cm)
+  - id: chain_w8mai_dstar_b
+    station_id: stn_w8mai_dstar
+    antenna_id: ant_w8mai_b
+    tx:
+      freq_mhz: 447.275
+      emission: "6K00F7W"
+      bandwidth_khz: 6.25
+    rx:
+      freq_mhz: 442.275
+    mode:
+      type: "D-STAR"
+      notes: "Module B (70 cm)"
+
+authorizations:
+  - id: auth_fcc_amateur
+    authority: "FCC"
+    service: "Amateur Radio"
+    class: "Technician or higher"
+    identifier: null
+    notes: "US amateur license required for transmit."
+
+assignments:
+  # Skywarn / analog
+  - id: asg_skywarn_primary
+    rf_chain_id: chain_skywarn_primary_146_820
+    usage: "repeater"
+    zones: ["Berrien Amateur", "Skywarn"]
+    codeplug:
+      name: "Skywarn Primary 146.820"
+      rx_only: false
+    authorization_id: auth_fcc_amateur
+    comment: "Primary Skywarn repeater; PL 88.5 Hz."
+
+  - id: asg_skywarn_secondary
+    rf_chain_id: chain_skywarn_secondary_146_720
+    usage: "repeater"
+    zones: ["Berrien Amateur", "Skywarn"]
+    codeplug:
+      name: "Skywarn Secondary 146.720"
+      rx_only: false
+    authorization_id: auth_fcc_amateur
+    comment: "Secondary repeater, PL 131.8 Hz."
+
+  - id: asg_skywarn_intercounty
+    rf_chain_id: chain_skywarn_intercounty_145_430
+    usage: "repeater"
+    zones: ["Berrien Amateur", "Skywarn"]
+    codeplug:
+      name: "IMO Skywarn 145.430"
+      rx_only: true
+    authorization_id: auth_fcc_amateur
+    comment: "Intercounty Skywarn (monitor only)."
+
+  - id: asg_skywarn_link
+    rf_chain_id: chain_skywarn_link_442_775
+    usage: "repeater"
+    zones: ["Berrien Amateur", "Skywarn"]
+    codeplug:
+      name: "Skywarn UHF Link 442.775"
+      rx_only: false
+    authorization_id: auth_fcc_amateur
+    comment: "UHF link cross-connected to 146.820 system."
+
+    # Digital voice
+  - id: asg_w8mai_dstar_b
+    rf_chain_id: chain_w8mai_dstar_b
+    usage: "repeater"
+    zones: ["Berrien Amateur", "Digital Voice"]
+    codeplug:
+      name: "W8MAI D-STAR B"
+      rx_only: false
+    authorization_id: auth_fcc_amateur
+    comment: "General-use D-STAR module on 442.275/447.275 MHz."
+
+comments:
+  - text: |
+      Data derived from the provided Berrien County amateur CSV (Skywarn focus). Locations approximate St. Joseph/Benton Harbor sites
+      used for county Skywarn operations. The UHF link shares PL and audio with the 146.820 primary repeater.

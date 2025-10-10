@@ -253,7 +253,7 @@ assignments:
   - id: asgn_cfmc_dstar_440
     rf_chain_id: chain_cfmc_dstar_440
     usage: "repeater"
-    zones: ["Ham-Digital"]
+    zones: ["DMR Repeater"]
     codeplug:
       name: "CFMC D-STAR 440"
       rx_only: false
@@ -275,7 +275,7 @@ assignments:
   - id: asgn_cfmc_fusion_2m_c4fm
     rf_chain_id: chain_cfmc_fusion_2m_c4fm
     usage: "repeater"
-    zones: ["Ham-Digital"]
+    zones: ["DMR Repeater"]
     codeplug:
       name: "CFMC 2m C4FM"
       rx_only: false

@@ -2,141 +2,99 @@
 # CTA and other transport/logistics ops that remain on conventional UHF; RX-only.
 
 organizations:
-  - id: org_transit
-    name: "Transit & Transport"
+- id: org_transit
+  name: "Transit & Transport"
 
 locations:
-  - id: loc_chi
-    name: "Chicago Metro"
-    lat: 41.8781
-    lon: -87.6298
+- id: loc_chi
+  name: "Chicago Metro"
+  lat: 41.8781
+  lon: -87.6298
 
 stations:
-  - id: stn_transit
-    call_sign: null
-    organization_id: org_transit
-    location_id: loc_chi
-    service: "transit"
+- id: stn_transit
+  call_sign:
+  organization_id: org_transit
+  location_id: loc_chi
+  service: "transit"
 
 antennas:
-  - id: ant_t
-    station_id: stn_transit
-    name: "Portable"
+- id: ant_t
+  station_id: stn_transit
+  name: "Portable"
 
 rf_chains:
   # CTA conventional holdovers (varies; many CTA ops are trunked—these are legacy/site/simplex commonly heard)
-  - {
-      id: ch_cta_ops1,
-      station_id: stn_transit,
-      antenna_id: ant_t,
-      rx: { freq_mhz: 461.575 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM" },
-    }
-  - {
-      id: ch_cta_ops2,
-      station_id: stn_transit,
-      antenna_id: ant_t,
-      rx: { freq_mhz: 461.825 },
-      tx: { emission: "7K60FXE" },
-      mode: { type: "DMR", color_code: 6, timeslots: [1] },
-    }
-  - {
-      id: ch_cta_yard,
-      station_id: stn_transit,
-      antenna_id: ant_t,
-      rx: { freq_mhz: 462.100 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM" },
-    }
+- {id: ch_cta_ops1, station_id: stn_transit, antenna_id: ant_t, rx: {freq_mhz: 461.575}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
+- {id: ch_cta_ops2, station_id: stn_transit, antenna_id: ant_t, rx: {freq_mhz: 461.825}, tx: {emission: "7K60FXE"}, mode: {type: "DMR", color_code: 6, timeslots: [1]}}
+- {id: ch_cta_yard, station_id: stn_transit, antenna_id: ant_t, rx: {freq_mhz: 462.100}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
 
   # Airport support/logistics (non-ARFF public-safety; facilities/ops/ramp—conventional)
-  - {
-      id: ch_ord_ops_dmr,
-      station_id: stn_transit,
-      antenna_id: ant_t,
-      rx: { freq_mhz: 464.575 },
-      tx: { emission: "7K60FXE" },
-      mode: { type: "DMR", color_code: 1, timeslots: [1] },
-    }
-  - {
-      id: ch_midway_ops,
-      station_id: stn_transit,
-      antenna_id: ant_t,
-      rx: { freq_mhz: 462.225 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM" },
-    }
+- {id: ch_ord_ops_dmr, station_id: stn_transit, antenna_id: ant_t, rx: {freq_mhz: 464.575}, tx: {emission: "7K60FXE"}, mode: {type: "DMR", color_code: 1, timeslots: [1]}}
+- {id: ch_midway_ops, station_id: stn_transit, antenna_id: ant_t, rx: {freq_mhz: 462.225}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
 
   # Logistics/transport companies heard citywide
-  - {
-      id: ch_delivery_u1,
-      station_id: stn_transit,
-      antenna_id: ant_t,
-      rx: { freq_mhz: 464.550 },
-      tx: { emission: "7K60FXE" },
-      mode: { type: "DMR" },
-    }
-  - {
-      id: ch_delivery_fm1,
-      station_id: stn_transit,
-      antenna_id: ant_t,
-      rx: { freq_mhz: 464.450 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM" },
-    }
+- {id: ch_delivery_u1, station_id: stn_transit, antenna_id: ant_t, rx: {freq_mhz: 464.550}, tx: {emission: "7K60FXE"}, mode: {type: "DMR"}}
+- {id: ch_delivery_fm1, station_id: stn_transit, antenna_id: ant_t, rx: {freq_mhz: 464.450}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
 
 assignments:
-  - id: asg_cta1
-    rf_chain_id: ch_cta_ops1
-    usage: "simplex"
-    zones: ["Transit & Transport"]
-    codeplug:
-      name: "CTA Ops A"
-      rx_only: true
-  - id: asg_cta2
-    rf_chain_id: ch_cta_ops2
-    usage: "simplex"
-    zones: ["Transit & Transport"]
-    codeplug:
-      name: "CTA Ops B"
-      rx_only: true
-  - id: asg_cta_yard
-    rf_chain_id: ch_cta_yard
-    usage: "simplex"
-    zones: ["Transit & Transport"]
-    codeplug:
-      name: "CTA Yard"
-      rx_only: true
-  - id: asg_ord_ops
-    rf_chain_id: ch_ord_ops_dmr
-    usage: "simplex"
-    zones: ["Transit & Transport"]
-    codeplug:
-      name: "ORD Ops"
-      rx_only: true
-  - id: asg_midway_ops
-    rf_chain_id: ch_midway_ops
-    usage: "simplex"
-    zones: ["Transit & Transport"]
-    codeplug:
-      name: "MDW Ops"
-      rx_only: true
-  - id: asg_deliv_u1
-    rf_chain_id: ch_delivery_u1
-    usage: "repeater"
-    zones: ["Transit & Transport"]
-    codeplug:
-      name: "Delivery DMR"
-      rx_only: true
-  - id: asg_deliv_fm1
-    rf_chain_id: ch_delivery_fm1
-    usage: "simplex"
-    zones: ["Transit & Transport"]
-    codeplug:
-      name: "Delivery FM"
-      rx_only: true
+- id: asg_cta1
+  rf_chain_id: ch_cta_ops1
+  usage: "simplex"
+  zones: ["Transit & Transport"]
+  codeplug:
+    name: "CTA Ops A"
+    rx_only: true
+    all_skip: true
+- id: asg_cta2
+  rf_chain_id: ch_cta_ops2
+  usage: "simplex"
+  zones: ["Transit & Transport"]
+  codeplug:
+    name: "CTA Ops B"
+    rx_only: true
+    all_skip: true
+- id: asg_cta_yard
+  rf_chain_id: ch_cta_yard
+  usage: "simplex"
+  zones: ["Transit & Transport"]
+  codeplug:
+    name: "CTA Yard"
+    rx_only: true
+    all_skip: true
+- id: asg_ord_ops
+  rf_chain_id: ch_ord_ops_dmr
+  usage: "simplex"
+  zones: ["Transit & Transport"]
+  codeplug:
+    name: "ORD Ops"
+    rx_only: true
+    all_skip: true
+- id: asg_midway_ops
+  rf_chain_id: ch_midway_ops
+  usage: "simplex"
+  zones: ["Transit & Transport"]
+  codeplug:
+    name: "MDW Ops"
+    rx_only: true
+    all_skip: true
+- id: asg_deliv_u1
+  rf_chain_id: ch_delivery_u1
+  usage: "repeater"
+  zones: ["Transit & Transport"]
+  codeplug:
+    name: "Delivery DMR"
+    rx_only: true
+    all_skip: true
+- id: asg_deliv_fm1
+  rf_chain_id: ch_delivery_fm1
+  usage: "simplex"
+  zones: ["Transit & Transport"]
+  codeplug:
+    name: "Delivery FM"
+    rx_only: true
 
+    all_skip: true
 comments:
-  - text: |
-      Many CTA and airport operations are trunked; these conventional channels are commonly heard for local/site ops. RX-only.
+- text: |
+    Many CTA and airport operations are trunked; these conventional channels are commonly heard for local/site ops. RX-only.

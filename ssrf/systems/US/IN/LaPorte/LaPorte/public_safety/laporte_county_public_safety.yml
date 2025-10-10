@@ -1,0 +1,361 @@
+# SSRF-Lite: La Porte County (IN) Public Safety
+# Source: Attachment "laporte_county - Sheet1.csv" (RadioReference export)
+# Notes: Conventional VHF/UHF channels for county sheriff, EMS, fire, EMA, and Westville PD. Programmed receive-only; statewide P25 talkgroups are omitted.
+
+organizations:
+  - id: org_laporte_sheriff
+    name: "La Porte County Sheriff"
+  - id: org_laporte_ems
+    name: "La Porte County EMS"
+  - id: org_laporte_ema
+    name: "La Porte County Emergency Management"
+  - id: org_laporte_fire
+    name: "La Porte County Fire"
+  - id: org_westville_pd
+    name: "Westville Police Department"
+
+locations:
+  - id: loc_laporte_county
+    name: "La Porte County (approx)"
+    lat: 41.6105983
+    lon: -86.7225227
+
+stations:
+  - id: stn_laporte_sheriff
+    call_sign: "KSA487"
+    organization_id: org_laporte_sheriff
+    location_id: loc_laporte_county
+    service: "public-safety"
+  - id: stn_laporte_ems
+    call_sign: "KSO422"
+    organization_id: org_laporte_ems
+    location_id: loc_laporte_county
+    service: "fire-ems"
+  - id: stn_laporte_ema
+    call_sign: "WPUU802"
+    organization_id: org_laporte_ema
+    location_id: loc_laporte_county
+    service: "public-safety"
+  - id: stn_laporte_fire
+    call_sign: "WQQY208"
+    organization_id: org_laporte_fire
+    location_id: loc_laporte_county
+    service: "fire-ems"
+  - id: stn_westville_pd
+    call_sign: "WQKC612"
+    organization_id: org_westville_pd
+    location_id: loc_laporte_county
+    service: "public-safety"
+
+antennas:
+  - id: ant_laporte_sheriff
+    station_id: stn_laporte_sheriff
+    name: "Sheriff Dispatch Antenna"
+  - id: ant_laporte_ems
+    station_id: stn_laporte_ems
+    name: "County EMS Antenna"
+  - id: ant_laporte_ema
+    station_id: stn_laporte_ema
+    name: "EMA/Warning Siren Antenna"
+  - id: ant_laporte_fire
+    station_id: stn_laporte_fire
+    name: "County Fire Network"
+  - id: ant_westville_pd
+    station_id: stn_westville_pd
+    name: "Westville PD Antenna"
+
+rf_chains:
+  # Sheriff / County Ops
+  - id: chain_laporte_sheriff_dispatch
+    station_id: stn_laporte_sheriff
+    antenna_id: ant_laporte_sheriff
+    rx:
+      freq_mhz: 155.010
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      dcs_rx_code: 244
+
+  - id: chain_laporte_sheriff_car
+    station_id: stn_laporte_sheriff
+    antenna_id: ant_laporte_sheriff
+    rx:
+      freq_mhz: 156.210
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+
+  - id: chain_laporte_sheriff_swat
+    station_id: stn_laporte_sheriff
+    antenna_id: ant_laporte_sheriff
+    rx:
+      freq_mhz: 153.8525
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+
+  - id: chain_laporte_jail
+    station_id: stn_laporte_sheriff
+    antenna_id: ant_laporte_sheriff
+    rx:
+      freq_mhz: 154.8675
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      dcs_rx_code: 132
+
+    # EMS / EMA / Municipal
+  - id: chain_laporte_ems_dispatch
+    station_id: stn_laporte_ems
+    antenna_id: ant_laporte_ems
+    rx:
+      freq_mhz: 155.220
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      dcs_rx_code: "051"
+
+  - id: chain_laporte_ema_ops
+    station_id: stn_laporte_ema
+    antenna_id: ant_laporte_ema
+    rx:
+      freq_mhz: 151.400
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+
+  - id: chain_westville_pd
+    station_id: stn_westville_pd
+    antenna_id: ant_westville_pd
+    rx:
+      freq_mhz: 154.0625
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+
+    # County Fire Network
+  - id: chain_laporte_fire_dispatch
+    station_id: stn_laporte_fire
+    antenna_id: ant_laporte_fire
+    rx:
+      freq_mhz: 154.160
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 141.3
+
+  - id: chain_laporte_fire_tertiary
+    station_id: stn_laporte_fire
+    antenna_id: ant_laporte_fire
+    rx:
+      freq_mhz: 153.355
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 141.3
+
+  - id: chain_laporte_fireground14
+    station_id: stn_laporte_fire
+    antenna_id: ant_laporte_fire
+    rx:
+      freq_mhz: 156.240
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      dcs_rx_code: "051"
+
+  - id: chain_laporte_fireground5
+    station_id: stn_laporte_fire
+    antenna_id: ant_laporte_fire
+    rx:
+      freq_mhz: 151.055
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      dcs_rx_code: 712
+
+  - id: chain_laporte_fireground6
+    station_id: stn_laporte_fire
+    antenna_id: ant_laporte_fire
+    rx:
+      freq_mhz: 154.240
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      dcs_rx_code: "051"
+
+  - id: chain_laporte_fireground7
+    station_id: stn_laporte_fire
+    antenna_id: ant_laporte_fire
+    rx:
+      freq_mhz: 154.355
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 210.7
+
+  - id: chain_laporte_fire_mutual_aid
+    station_id: stn_laporte_fire
+    antenna_id: ant_laporte_fire
+    rx:
+      freq_mhz: 154.280
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+
+assignments:
+  # Sheriff / Corrections
+  - id: asg_laporte_sheriff_dispatch
+    rf_chain_id: chain_laporte_sheriff_dispatch
+    usage: "repeater"
+    zones: ["LaPorte Sheriff"]
+    codeplug:
+      name: "Sheriff Dispatch"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_laporte_sheriff_car
+    rf_chain_id: chain_laporte_sheriff_car
+    usage: "repeater"
+    zones: ["LaPorte Sheriff"]
+    codeplug:
+      name: "Sheriff Car-Car"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_laporte_sheriff_swat
+    rf_chain_id: chain_laporte_sheriff_swat
+    usage: "simplex"
+    zones: ["LaPorte Sheriff"]
+    codeplug:
+      name: "Sheriff SWAT"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_laporte_jail
+    rf_chain_id: chain_laporte_jail
+    usage: "repeater"
+    zones: ["LaPorte Sheriff"]
+    codeplug:
+      name: "County Jail"
+      rx_only: true
+      all_skip: true
+
+    # EMS / EMA / Municipal
+  - id: asg_laporte_ems_dispatch
+    rf_chain_id: chain_laporte_ems_dispatch
+    usage: "repeater"
+    zones: ["LaPorte EMS"]
+    codeplug:
+      name: "EMS Dispatch"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_laporte_ema_ops
+    rf_chain_id: chain_laporte_ema_ops
+    usage: "repeater"
+    zones: ["LaPorte EMA"]
+    codeplug:
+      name: "EMA Ops / Siren"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_westville_pd
+    rf_chain_id: chain_westville_pd
+    usage: "repeater"
+    zones: ["Westville PD"]
+    codeplug:
+      name: "Westville B2C"
+      rx_only: true
+      all_skip: true
+
+    # County Fire Network
+  - id: asg_laporte_fire_dispatch
+    rf_chain_id: chain_laporte_fire_dispatch
+    usage: "repeater"
+    zones: ["LaPorte Fire"]
+    codeplug:
+      name: "Fire Dispatch"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_laporte_fire_secondary
+    rf_chain_id: chain_laporte_fire_dispatch
+    usage: "repeater"
+    zones: ["LaPorte Fire"]
+    codeplug:
+      name: "Fire Secondary"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_laporte_fire_tertiary
+    rf_chain_id: chain_laporte_fire_tertiary
+    usage: "repeater"
+    zones: ["LaPorte Fire"]
+    codeplug:
+      name: "Fire Tertiary"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_laporte_fireground14
+    rf_chain_id: chain_laporte_fireground14
+    usage: "repeater"
+    zones: ["LaPorte Fire"]
+    codeplug:
+      name: "Fireground 1-4"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_laporte_fireground5
+    rf_chain_id: chain_laporte_fireground5
+    usage: "repeater"
+    zones: ["LaPorte Fire"]
+    codeplug:
+      name: "Fireground 5"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_laporte_fireground6
+    rf_chain_id: chain_laporte_fireground6
+    usage: "simplex"
+    zones: ["LaPorte Fire"]
+    codeplug:
+      name: "Fireground 6"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_laporte_fireground7
+    rf_chain_id: chain_laporte_fireground7
+    usage: "simplex"
+    zones: ["LaPorte Fire"]
+    codeplug:
+      name: "Fireground 7"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_laporte_mutual_aid
+    rf_chain_id: chain_laporte_fire_mutual_aid
+    usage: "repeater"
+    zones: ["LaPorte Fire"]
+    codeplug:
+      name: "Fire Mutual Aid"
+      rx_only: true
+      all_skip: true
+
+comments:
+  - text: |
+      Frequencies replicated from the provided La Porte County public-safety CSV. Channels are modeled for receive-only monitoring of legacy VHF/UHF resources; statewide P25 trunked talkgroups are not included. Fireground 1-4 share a common output with differing uplink tones on input.

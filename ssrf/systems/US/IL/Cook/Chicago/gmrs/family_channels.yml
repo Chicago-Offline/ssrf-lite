@@ -437,7 +437,7 @@ assignments:
   - id: asgn_family_f13_uhf_call
     rf_chain_id: chain_family_f13_uhf_call
     usage: "simplex"
-    zones: ["Family Ops", "Ham-Portable"]
+    zones: ["Family Ops", "Ham UHF"]
     codeplug:
       name: "F13 UHF Call"
       rx_only: false

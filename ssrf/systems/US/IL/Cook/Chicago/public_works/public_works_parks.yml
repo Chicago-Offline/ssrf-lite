@@ -3,297 +3,76 @@
 # RX-only monitoring. Frequencies and modes can vary by district and may change.
 
 organizations:
-  - id: org_muni
-    name: "Public Works & Parks"
+- id: org_muni
+  name: "Public Works & Parks"
 
 locations:
-  - id: loc_city
-    name: "City of Chicago"
-    lat: 41.8781
-    lon: -87.6298
+- id: loc_city
+  name: "City of Chicago"
+  lat: 41.8781
+  lon: -87.6298
 
 stations:
-  - id: stn_muni
-    call_sign: null
-    organization_id: org_muni
-    location_id: loc_city
-    service: "public_works"
+- id: stn_muni
+  call_sign:
+  organization_id: org_muni
+  location_id: loc_city
+  service: "public_works"
 
 antennas:
-  - id: ant_m
-    station_id: stn_muni
-    name: "Portable"
+- id: ant_m
+  station_id: stn_muni
+  name: "Portable"
 
 rf_chains:
   # Chicago Streets & Sanitation (example district channels; FM conventional)
-  - {
-      id: ch_dss_north_1,
-      station_id: stn_muni,
-      antenna_id: ant_m,
-      rx: { freq_mhz: 460.1375 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM" },
-    }
-  - {
-      id: ch_dss_north_2,
-      station_id: stn_muni,
-      antenna_id: ant_m,
-      rx: { freq_mhz: 460.1875 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM" },
-    }
-  - {
-      id: ch_dss_south_1,
-      station_id: stn_muni,
-      antenna_id: ant_m,
-      rx: { freq_mhz: 460.2625 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM" },
-    }
-  - {
-      id: ch_dss_snow_ops,
-      station_id: stn_muni,
-      antenna_id: ant_m,
-      rx: { freq_mhz: 453.900 },
-      tx: { emission: "7K60FXE" },
-      mode: { type: "DMR", color_code: 11, timeslots: [1, 2] },
-    }
+- {id: ch_dss_north_1, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 460.1375}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
+- {id: ch_dss_north_2, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 460.1875}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
+- {id: ch_dss_south_1, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 460.2625}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
+- {id: ch_dss_snow_ops, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 453.900}, tx: {emission: "7K60FXE"}, mode: {type: "DMR", color_code: 11, timeslots: [1, 2]}}
 
   # Chicago Park District Ops/Security (mix of FM/DMR conventional by site)
-  - {
-      id: ch_cpdistrict_ops1,
-      station_id: stn_muni,
-      antenna_id: ant_m,
-      rx: { freq_mhz: 462.7125 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM" },
-    }
-  - {
-      id: ch_cpdistrict_ops2,
-      station_id: stn_muni,
-      antenna_id: ant_m,
-      rx: { freq_mhz: 463.2625 },
-      tx: { emission: "7K60FXE" },
-      mode: { type: "DMR" },
-    }
+- {id: ch_cpdistrict_ops1, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 462.7125}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
+- {id: ch_cpdistrict_ops2, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 463.2625}, tx: {emission: "7K60FXE"}, mode: {type: "DMR"}}
 
   # Forest Preserves of Cook County (FPDCC) – maintenance/security
-  - {
-      id: ch_fpdcc_ops1,
-      station_id: stn_muni,
-      antenna_id: ant_m,
-      rx: { freq_mhz: 453.175 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM" },
-    }
-  - {
-      id: ch_fpdcc_ops2,
-      station_id: stn_muni,
-      antenna_id: ant_m,
-      rx: { freq_mhz: 453.050 },
-      tx: { emission: "7K60FXE" },
-      mode: { type: "DMR" },
-    }
+- {id: ch_fpdcc_ops1, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 453.175}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
+- {id: ch_fpdcc_ops2, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 453.050}, tx: {emission: "7K60FXE"}, mode: {type: "DMR"}}
 
   # Chicago Department of Transportation (CDOT) & Streets/Sanitation
   # Source: RadioReference Cook County -> Chicago Department of Transportation
   # All RX-only monitoring. PL tones set where listed; conventional FM.
-  - {
-      id: ch_cdot_streets_n12,
-      station_id: stn_muni,
-      antenna_id: ant_m,
-      rx: { freq_mhz: 453.650 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM", ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2 },
-    }
-  - {
-      id: ch_cdot_forestry_animal,
-      station_id: stn_muni,
-      antenna_id: ant_m,
-      rx: { freq_mhz: 453.725 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM", ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2 },
-    }
-  - {
-      id: ch_cdot_towing_parking,
-      station_id: stn_muni,
-      antenna_id: ant_m,
-      rx: { freq_mhz: 453.775 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM", ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2 },
-    }
-  - {
-      id: ch_cdot_revenue_boot,
-      station_id: stn_muni,
-      antenna_id: ant_m,
-      rx: { freq_mhz: 453.825 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM", ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2 },
-    }
-  - {
-      id: ch_cdot_electricity_boe,
-      station_id: stn_muni,
-      antenna_id: ant_m,
-      rx: { freq_mhz: 453.975 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM", ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2 },
-    }
-  - {
-      id: ch_cdot_sewers_transport,
-      station_id: stn_muni,
-      antenna_id: ant_m,
-      rx: { freq_mhz: 453.675 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM", ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2 },
-    }
-  - {
-      id: ch_cdot_loop_ob3,
-      station_id: stn_muni,
-      antenna_id: ant_m,
-      rx: { freq_mhz: 453.100 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM", ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2 },
-    }
-  - {
-      id: ch_cdot_streets_s45,
-      station_id: stn_muni,
-      antenna_id: ant_m,
-      rx: { freq_mhz: 453.550 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM", ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2 },
-    }
-  - {
-      id: ch_cdot_paging,
-      station_id: stn_muni,
-      antenna_id: ant_m,
-      rx: { freq_mhz: 453.500 },
-      tx: { emission: "11K2F3E" },
-      mode: { type: "FM" },
-    }
+- {id: ch_cdot_streets_n12, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 453.650}, tx: {emission: "11K2F3E"}, mode: {type: "FM", ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2}}
+- {id: ch_cdot_forestry_animal, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 453.725}, tx: {emission: "11K2F3E"}, mode: {type: "FM", ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2}}
+- {id: ch_cdot_towing_parking, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 453.775}, tx: {emission: "11K2F3E"}, mode: {type: "FM", ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2}}
+- {id: ch_cdot_revenue_boot, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 453.825}, tx: {emission: "11K2F3E"}, mode: {type: "FM", ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2}}
+- {id: ch_cdot_electricity_boe, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 453.975}, tx: {emission: "11K2F3E"}, mode: {type: "FM", ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2}}
+- {id: ch_cdot_sewers_transport, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 453.675}, tx: {emission: "11K2F3E"}, mode: {type: "FM", ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2}}
+- {id: ch_cdot_loop_ob3, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 453.100}, tx: {emission: "11K2F3E"}, mode: {type: "FM", ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2}}
+- {id: ch_cdot_streets_s45, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 453.550}, tx: {emission: "11K2F3E"}, mode: {type: "FM", ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2}}
+- {id: ch_cdot_paging, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 453.500}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
 
 assignments:
-  - {
-      id: asg_dss_n1,
-      rf_chain_id: ch_dss_north_1,
-      usage: "simplex",
-      zones: ["Public Works & Parks"],
-      codeplug: { name: "DSS North A", rx_only: true },
-    }
-  - {
-      id: asg_dss_n2,
-      rf_chain_id: ch_dss_north_2,
-      usage: "simplex",
-      zones: ["Public Works & Parks"],
-      codeplug: { name: "DSS North B", rx_only: true },
-    }
-  - {
-      id: asg_dss_s1,
-      rf_chain_id: ch_dss_south_1,
-      usage: "simplex",
-      zones: ["Public Works & Parks"],
-      codeplug: { name: "DSS South", rx_only: true },
-    }
-  - {
-      id: asg_dss_snow,
-      rf_chain_id: ch_dss_snow_ops,
-      usage: "simplex",
-      zones: ["Public Works & Parks"],
-      codeplug: { name: "DSS SnowOps", rx_only: true },
-    }
-  - {
-      id: asg_cpd1,
-      rf_chain_id: ch_cpdistrict_ops1,
-      usage: "simplex",
-      zones: ["Public Works & Parks"],
-      codeplug: { name: "ParkDist FM", rx_only: true },
-    }
-  - {
-      id: asg_cpd2,
-      rf_chain_id: ch_cpdistrict_ops2,
-      usage: "repeater",
-      zones: ["Public Works & Parks"],
-      codeplug: { name: "ParkDist DMR", rx_only: true },
-    }
-  - {
-      id: asg_fpd1,
-      rf_chain_id: ch_fpdcc_ops1,
-      usage: "simplex",
-      zones: ["Public Works & Parks"],
-      codeplug: { name: "FPDCC FM", rx_only: true },
-    }
-  - {
-      id: asg_fpd2,
-      rf_chain_id: ch_fpdcc_ops2,
-      usage: "repeater",
-      zones: ["Public Works & Parks"],
-      codeplug: { name: "FPDCC DMR", rx_only: true },
-    }
+- {id: asg_dss_n1, rf_chain_id: ch_dss_north_1, usage: "simplex", zones: ["Public Works & Parks"], codeplug: {name: "DSS North A", rx_only: true, all_skip: true}}
+- {id: asg_dss_n2, rf_chain_id: ch_dss_north_2, usage: "simplex", zones: ["Public Works & Parks"], codeplug: {name: "DSS North B", rx_only: true, all_skip: true}}
+- {id: asg_dss_s1, rf_chain_id: ch_dss_south_1, usage: "simplex", zones: ["Public Works & Parks"], codeplug: {name: "DSS South", rx_only: true, all_skip: true}}
+- {id: asg_dss_snow, rf_chain_id: ch_dss_snow_ops, usage: "simplex", zones: ["Public Works & Parks"], codeplug: {name: "DSS SnowOps", rx_only: true, all_skip: true}}
+- {id: asg_cpd1, rf_chain_id: ch_cpdistrict_ops1, usage: "simplex", zones: ["Public Works & Parks"], codeplug: {name: "ParkDist FM", rx_only: true, all_skip: true}}
+- {id: asg_cpd2, rf_chain_id: ch_cpdistrict_ops2, usage: "repeater", zones: ["Public Works & Parks"], codeplug: {name: "ParkDist DMR", rx_only: true, all_skip: true}}
+- {id: asg_fpd1, rf_chain_id: ch_fpdcc_ops1, usage: "simplex", zones: ["Public Works & Parks"], codeplug: {name: "FPDCC FM", rx_only: true, all_skip: true}}
+- {id: asg_fpd2, rf_chain_id: ch_fpdcc_ops2, usage: "repeater", zones: ["Public Works & Parks"], codeplug: {name: "FPDCC DMR", rx_only: true, all_skip: true}}
 
   # CDOT assignments (RX-only)
-  - {
-      id: asg_cdot_streets_n12,
-      rf_chain_id: ch_cdot_streets_n12,
-      usage: "repeater",
-      zones: ["Public Works & Parks"],
-      codeplug: { name: "CDOT Str N12", rx_only: true },
-    }
-  - {
-      id: asg_cdot_forestry_animal,
-      rf_chain_id: ch_cdot_forestry_animal,
-      usage: "repeater",
-      zones: ["Public Works & Parks"],
-      codeplug: { name: "CDOT ForAn", rx_only: true },
-    }
-  - {
-      id: asg_cdot_towing_parking,
-      rf_chain_id: ch_cdot_towing_parking,
-      usage: "repeater",
-      zones: ["Public Works & Parks"],
-      codeplug: { name: "CDOT TowPark", rx_only: true },
-    }
-  - {
-      id: asg_cdot_revenue_boot,
-      rf_chain_id: ch_cdot_revenue_boot,
-      usage: "repeater",
-      zones: ["Public Works & Parks"],
-      codeplug: { name: "CDOT Boot", rx_only: true },
-    }
-  - {
-      id: asg_cdot_electricity_boe,
-      rf_chain_id: ch_cdot_electricity_boe,
-      usage: "repeater",
-      zones: ["Public Works & Parks"],
-      codeplug: { name: "CDOT Electric", rx_only: true },
-    }
-  - {
-      id: asg_cdot_sewers_transport,
-      rf_chain_id: ch_cdot_sewers_transport,
-      usage: "repeater",
-      zones: ["Public Works & Parks"],
-      codeplug: { name: "CDOT SewrTr", rx_only: true },
-    }
-  - {
-      id: asg_cdot_loop_ob3,
-      rf_chain_id: ch_cdot_loop_ob3,
-      usage: "repeater",
-      zones: ["Public Works & Parks"],
-      codeplug: { name: "CDOT LoopOB3", rx_only: true },
-    }
-  - {
-      id: asg_cdot_streets_s45,
-      rf_chain_id: ch_cdot_streets_s45,
-      usage: "repeater",
-      zones: ["Public Works & Parks"],
-      codeplug: { name: "CDOT Str S45", rx_only: true },
-    }
-  - {
-      id: asg_cdot_paging,
-      rf_chain_id: ch_cdot_paging,
-      usage: "receive-only",
-      zones: ["Public Works & Parks"],
-      codeplug: { name: "CDOT Paging", rx_only: true },
-    }
+- {id: asg_cdot_streets_n12, rf_chain_id: ch_cdot_streets_n12, usage: "repeater", zones: ["Public Works & Parks"], codeplug: {name: "CDOT Str N12", rx_only: true, all_skip: true}}
+- {id: asg_cdot_forestry_animal, rf_chain_id: ch_cdot_forestry_animal, usage: "repeater", zones: ["Public Works & Parks"], codeplug: {name: "CDOT ForAn", rx_only: true, all_skip: true}}
+- {id: asg_cdot_towing_parking, rf_chain_id: ch_cdot_towing_parking, usage: "repeater", zones: ["Public Works & Parks"], codeplug: {name: "CDOT TowPark", rx_only: true, all_skip: true}}
+- {id: asg_cdot_revenue_boot, rf_chain_id: ch_cdot_revenue_boot, usage: "repeater", zones: ["Public Works & Parks"], codeplug: {name: "CDOT Boot", rx_only: true, all_skip: true}}
+- {id: asg_cdot_electricity_boe, rf_chain_id: ch_cdot_electricity_boe, usage: "repeater", zones: ["Public Works & Parks"], codeplug: {name: "CDOT Electric", rx_only: true, all_skip: true}}
+- {id: asg_cdot_sewers_transport, rf_chain_id: ch_cdot_sewers_transport, usage: "repeater", zones: ["Public Works & Parks"], codeplug: {name: "CDOT SewrTr", rx_only: true, all_skip: true}}
+- {id: asg_cdot_loop_ob3, rf_chain_id: ch_cdot_loop_ob3, usage: "repeater", zones: ["Public Works & Parks"], codeplug: {name: "CDOT LoopOB3", rx_only: true, all_skip: true}}
+- {id: asg_cdot_streets_s45, rf_chain_id: ch_cdot_streets_s45, usage: "repeater", zones: ["Public Works & Parks"], codeplug: {name: "CDOT Str S45", rx_only: true, all_skip: true}}
+- {id: asg_cdot_paging, rf_chain_id: ch_cdot_paging, usage: "receive-only", zones: ["Public Works & Parks"], codeplug: {name: "CDOT Paging", rx_only: true, all_skip: true}}
 
 comments:
-  - text: |
-      Frequencies are representative/common allocations for municipal ops. Many ops have moved to trunked systems; these are legacy/conventional or site ops often still heard. RX-only.
+- text: |
+    Frequencies are representative/common allocations for municipal ops. Many ops have moved to trunked systems; these are legacy/conventional or site ops often still heard. RX-only.

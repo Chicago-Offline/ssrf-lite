@@ -1,0 +1,854 @@
+"ssrf_lite":
+  version: "0.4.0"
+  sources:
+    - name: "Tri-State DMR - Repeaters"
+      url: "http://tristatedmr.org/repeaters.html"
+      accessed: "2025-10-08"
+    - name: "Tri-State DMR - Talkgroups"
+      url: "http://tristatedmr.org/talkgroups.html"
+      accessed: "2025-10-08"
+
+organizations:
+  - id: org_tristatedmr
+    name: "Tri-State DMR"
+
+locations:
+  - id: loc_tristate_bolingbrook_il
+    name: "Bolingbrook, IL"
+    lat: 41.7003302
+    lon: -88.0717708
+  - id: loc_tristate_carlsville_wi
+    name: "Carlsville, WI"
+    lat: 44.9516611
+    lon: -87.3367689
+  - id: loc_tristate_chicago_il
+    name: "Chicago, IL"
+    lat: 41.8755616
+    lon: -87.6244212
+  - id: loc_tristate_crystal_lake_il
+    name: "Crystal Lake, IL"
+    lat: 42.2411344
+    lon: -88.3161965
+  - id: loc_tristate_crown_point_in
+    name: "Crown Point, IN"
+    lat: 41.4169806
+    lon: -87.3653136
+  - id: loc_tristate_elburn_il
+    name: "Elburn, IL"
+    lat: 41.8922499
+    lon: -88.4723014
+  - id: loc_tristate_green_bay_wi
+    name: "Green Bay, WI"
+    lat: 44.5126379
+    lon: -88.0125794
+  - id: loc_tristate_inverness_il
+    name: "Inverness, IL"
+    lat: 42.1180815
+    lon: -88.0961865
+  - id: loc_tristate_la_porte_in
+    name: "La Porte, IN"
+    lat: 41.6105983
+    lon: -86.7225227
+  - id: loc_tristate_milwaukee_wi
+    name: "Milwaukee, WI"
+    lat: 43.0386475
+    lon: -87.9090751
+  - id: loc_tristate_morris_il
+    name: "Morris, IL"
+    lat: 41.3574135
+    lon: -88.4215234
+  - id: loc_tristate_new_berlin_wi
+    name: "New Berlin, WI"
+    lat: 42.9762181
+    lon: -88.1084968
+  - id: loc_tristate_rockford_il
+    name: "Rockford, IL"
+    lat: 42.2713945
+    lon: -89.093966
+  - id: loc_tristate_schaumburg_il
+    name: "Schaumburg, IL"
+    lat: 42.0333608
+    lon: -88.083406
+  - id: loc_tristate_traverse_city_mi
+    name: "Traverse City, MI"
+    lat: 44.7606481
+    lon: -85.6165976
+  - id: loc_tristate_valparaiso_in
+    name: "Valparaiso, IN"
+    lat: 41.4672552
+    lon: -87.0604487
+
+stations:
+  - id: stn_k9bar_bolingbrook
+    call_sign: "K9BAR"
+    organization_id: org_tristatedmr
+    location_id: loc_tristate_bolingbrook_il
+    service: "amateur"
+  - id: stn_n9pay_carlsville
+    call_sign: "N9PAY"
+    organization_id: org_tristatedmr
+    location_id: loc_tristate_carlsville_wi
+    service: "amateur"
+  - id: stn_aa9vi_chicago
+    call_sign: "AA9VI"
+    organization_id: org_tristatedmr
+    location_id: loc_tristate_chicago_il
+    service: "amateur"
+  - id: stn_k9vi_crystal_lake
+    call_sign: "K9VI"
+    organization_id: org_tristatedmr
+    location_id: loc_tristate_crystal_lake_il
+    service: "amateur"
+  - id: stn_n9iaa_crown_point
+    call_sign: "N9IAA"
+    organization_id: org_tristatedmr
+    location_id: loc_tristate_crown_point_in
+    service: "amateur"
+  - id: stn_k9nro_elburn
+    call_sign: "K9NRO"
+    organization_id: org_tristatedmr
+    location_id: loc_tristate_elburn_il
+    service: "amateur"
+  - id: stn_n9pay_green_bay
+    call_sign: "N9PAY"
+    organization_id: org_tristatedmr
+    location_id: loc_tristate_green_bay_wi
+    service: "amateur"
+  - id: stn_k9ord_inverness
+    call_sign: "K9ORD"
+    organization_id: org_tristatedmr
+    location_id: loc_tristate_inverness_il
+    service: "amateur"
+  - id: stn_n9iaa_la_porte
+    call_sign: "N9IAA"
+    organization_id: org_tristatedmr
+    location_id: loc_tristate_la_porte_in
+    service: "amateur"
+  - id: stn_n9pay_milwaukee
+    call_sign: "N9PAY"
+    organization_id: org_tristatedmr
+    location_id: loc_tristate_milwaukee_wi
+    service: "amateur"
+  - id: stn_kc9kko_morris
+    call_sign: "KC9KKO"
+    organization_id: org_tristatedmr
+    location_id: loc_tristate_morris_il
+    service: "amateur"
+  - id: stn_n9pay_new_berlin
+    call_sign: "N9PAY"
+    organization_id: org_tristatedmr
+    location_id: loc_tristate_new_berlin_wi
+    service: "amateur"
+  - id: stn_ww9p_rockford
+    call_sign: "WW9P"
+    organization_id: org_tristatedmr
+    location_id: loc_tristate_rockford_il
+    service: "amateur"
+  - id: stn_k9mot_schaumburg
+    call_sign: "K9MOT"
+    organization_id: org_tristatedmr
+    location_id: loc_tristate_schaumburg_il
+    service: "amateur"
+  - id: stn_n8ouz_traverse_city
+    call_sign: "N8OUZ"
+    organization_id: org_tristatedmr
+    location_id: loc_tristate_traverse_city_mi
+    service: "amateur"
+  - id: stn_n9iaa_valparaiso
+    call_sign: "N9IAA"
+    organization_id: org_tristatedmr
+    location_id: loc_tristate_valparaiso_in
+    service: "amateur"
+
+antennas:
+  - id: ant_k9bar_bolingbrook
+    station_id: stn_k9bar_bolingbrook
+    name: "Site Antenna (unknown)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_n9pay_carlsville
+    station_id: stn_n9pay_carlsville
+    name: "Site Antenna (unknown)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_aa9vi_chicago
+    station_id: stn_aa9vi_chicago
+    name: "Site Antenna (unknown)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_k9vi_crystal_lake
+    station_id: stn_k9vi_crystal_lake
+    name: "Site Antenna (unknown)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_n9iaa_crown_point
+    station_id: stn_n9iaa_crown_point
+    name: "Site Antenna (unknown)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_k9nro_elburn
+    station_id: stn_k9nro_elburn
+    name: "Site Antenna (unknown)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_n9pay_green_bay
+    station_id: stn_n9pay_green_bay
+    name: "Site Antenna (unknown)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_k9ord_inverness
+    station_id: stn_k9ord_inverness
+    name: "Site Antenna (unknown)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_n9iaa_la_porte
+    station_id: stn_n9iaa_la_porte
+    name: "Site Antenna (unknown)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_n9pay_milwaukee
+    station_id: stn_n9pay_milwaukee
+    name: "Site Antenna (unknown)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kc9kko_morris
+    station_id: stn_kc9kko_morris
+    name: "Site Antenna (unknown)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_n9pay_new_berlin
+    station_id: stn_n9pay_new_berlin
+    name: "Site Antenna (unknown)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_ww9p_rockford
+    station_id: stn_ww9p_rockford
+    name: "Site Antenna (unknown)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_k9mot_schaumburg
+    station_id: stn_k9mot_schaumburg
+    name: "Site Antenna (unknown)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_n8ouz_traverse_city
+    station_id: stn_n8ouz_traverse_city
+    name: "Site Antenna (unknown)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_n9iaa_valparaiso
+    station_id: stn_n9iaa_valparaiso
+    name: "Site Antenna (unknown)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+
+rf_chains:
+  - id: chain_k9bar_bolingbrook_dmr
+    station_id: stn_k9bar_bolingbrook
+    antenna_id: ant_k9bar_bolingbrook
+    tx:
+      freq_mhz: 448.7
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 443.7
+    mode:
+      type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+  - id: chain_n9pay_carlsville_dmr
+    station_id: stn_n9pay_carlsville
+    antenna_id: ant_n9pay_carlsville
+    tx:
+      freq_mhz: 448.49375
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 443.49375
+    mode:
+      type: "DMR"
+      color_code: 6
+      timeslots: [1, 2]
+  - id: chain_aa9vi_chicago_dmr
+    station_id: stn_aa9vi_chicago
+    antenna_id: ant_aa9vi_chicago
+    tx:
+      freq_mhz: 446.21875
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 441.21875
+    mode:
+      type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+  - id: chain_k9vi_crystal_lake_dmr
+    station_id: stn_k9vi_crystal_lake
+    antenna_id: ant_k9vi_crystal_lake
+    tx:
+      freq_mhz: 449.80625
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 444.80625
+    mode:
+      type: "DMR"
+      color_code: 4
+      timeslots: [1, 2]
+  - id: chain_n9iaa_crown_point_dmr
+    station_id: stn_n9iaa_crown_point
+    antenna_id: ant_n9iaa_crown_point
+    tx:
+      freq_mhz: 449.35
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 444.35
+    mode:
+      type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+  - id: chain_k9nro_elburn_dmr
+    station_id: stn_k9nro_elburn
+    antenna_id: ant_k9nro_elburn
+    tx:
+      freq_mhz: 447.425
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 442.425
+    mode:
+      type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+  - id: chain_n9pay_green_bay_dmr
+    station_id: stn_n9pay_green_bay
+    antenna_id: ant_n9pay_green_bay
+    tx:
+      freq_mhz: 448.50625
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 443.50625
+    mode:
+      type: "DMR"
+      color_code: 6
+      timeslots: [1, 2]
+  - id: chain_k9ord_inverness_dmr
+    station_id: stn_k9ord_inverness
+    antenna_id: ant_k9ord_inverness
+    tx:
+      freq_mhz: 446.05
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 441.05
+    mode:
+      type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+  - id: chain_n9iaa_la_porte_dmr
+    station_id: stn_n9iaa_la_porte
+    antenna_id: ant_n9iaa_la_porte
+    tx:
+      freq_mhz: 449.675
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 444.675
+    mode:
+      type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+  - id: chain_n9pay_milwaukee_dmr
+    station_id: stn_n9pay_milwaukee
+    antenna_id: ant_n9pay_milwaukee
+    tx:
+      freq_mhz: 449.53125
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 444.53125
+    mode:
+      type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+  - id: chain_kc9kko_morris_dmr
+    station_id: stn_kc9kko_morris
+    antenna_id: ant_kc9kko_morris
+    tx:
+      freq_mhz: 447.0
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 442.0
+    mode:
+      type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+  - id: chain_n9pay_new_berlin_dmr
+    station_id: stn_n9pay_new_berlin
+    antenna_id: ant_n9pay_new_berlin
+    tx:
+      freq_mhz: 446.4375
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 441.4375
+    mode:
+      type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+  - id: chain_ww9p_rockford_dmr
+    station_id: stn_ww9p_rockford
+    antenna_id: ant_ww9p_rockford
+    tx:
+      freq_mhz: 448.325
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 443.325
+    mode:
+      type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+  - id: chain_k9mot_schaumburg_dmr
+    station_id: stn_k9mot_schaumburg
+    antenna_id: ant_k9mot_schaumburg
+    tx:
+      freq_mhz: 449.79375
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 444.79375
+    mode:
+      type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+  - id: chain_n8ouz_traverse_city_dmr
+    station_id: stn_n8ouz_traverse_city
+    antenna_id: ant_n8ouz_traverse_city
+    tx:
+      freq_mhz: 447.2875
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 442.2875
+    mode:
+      type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+  - id: chain_n9iaa_valparaiso_dmr
+    station_id: stn_n9iaa_valparaiso
+    antenna_id: ant_n9iaa_valparaiso
+    tx:
+      freq_mhz: 446.575
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 441.575
+    mode:
+      type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+
+contacts:
+  - id: tg_8_tristate
+    name: "Tri-State"
+    kind: "Group"
+    number: 8
+    default_timeslot: 1
+    notes: "Primary wide-area talkgroup for Tri-State DMR."
+  - id: tg_1_worldwide
+    name: "Worldwide"
+    kind: "Group"
+    number: 1
+    default_timeslot: 2
+    notes: "PTT on demand."
+  - id: tg_3_north_america
+    name: "North America"
+    kind: "Group"
+    number: 3
+    default_timeslot: 2
+    notes: "PTT on demand."
+  - id: tg_13_worldwide_english
+    name: "Worldwide English"
+    kind: "Group"
+    number: 13
+    default_timeslot: 2
+    notes: "PTT on demand."
+  - id: tg_3169_midwest
+    name: "Midwest Regional"
+    kind: "Group"
+    number: 3169
+    default_timeslot: 2
+    notes: "Always available (24/7)."
+  - id: tg_9_talk
+    name: "Talk"
+    kind: "Group"
+    number: 9
+    default_timeslot: 2
+    notes: "Linked DMR+ reflector path; default reflectors 4636 (IL), 4607 (IN), 4637 (MI), 4606 (WI)."
+  - id: tg_5000_status
+    name: "Status"
+    kind: "Group"
+    number: 5000
+    default_timeslot: 2
+    notes: "One-second PTT for repeater status."
+  - id: tg_4000_disconnect
+    name: "Disconnect"
+    kind: "Group"
+    number: 4000
+    default_timeslot: 2
+    notes: "One-second PTT to clear reflector/link."
+  - id: tg_4xxx_reflectors
+    name: "Reflector Dial (4xxx)"
+    kind: "Group"
+    default_timeslot: 2
+    notes: "Dial desired 4xxx reflector ID for temporary links; times out after inactivity."
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "Amateur Radio"
+    class: "Technician or higher"
+    identifier: null
+    notes: "Tri-State DMR repeaters require US amateur license for transmit."
+
+assignments:
+  - id: asgn_k9bar_bolingbrook
+    rf_chain_id: chain_k9bar_bolingbrook_dmr
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "K9BAR TriState"
+      rx_only: false
+      preferred_contacts:
+        [
+          tg_8_tristate,
+          tg_3169_midwest,
+          tg_9_talk,
+          tg_1_worldwide,
+          tg_3_north_america,
+          tg_13_worldwide_english,
+          tg_5000_status,
+          tg_4000_disconnect,
+        ]
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      Status "All OK" per Tri-State DMR listings (accessed 2025-10-08). Color Code 1, DMR Tier II.
+  - id: asgn_n9pay_carlsville
+    rf_chain_id: chain_n9pay_carlsville_dmr
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "N9PAY Carlsville"
+      rx_only: false
+      preferred_contacts:
+        [
+          tg_8_tristate,
+          tg_3169_midwest,
+          tg_9_talk,
+          tg_1_worldwide,
+          tg_3_north_america,
+          tg_13_worldwide_english,
+          tg_5000_status,
+          tg_4000_disconnect,
+        ]
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      Door County coverage site; status "All OK". Color Code 6 as published by Tri-State DMR.
+  - id: asgn_aa9vi_chicago
+    rf_chain_id: chain_aa9vi_chicago_dmr
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "AA9VI TriState"
+      rx_only: false
+      preferred_contacts:
+        [
+          tg_8_tristate,
+          tg_3169_midwest,
+          tg_9_talk,
+          tg_1_worldwide,
+          tg_3_north_america,
+          tg_13_worldwide_english,
+          tg_5000_status,
+          tg_4000_disconnect,
+        ]
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      Chicago loop site. Status "RF OK, No Net" per Tri-State DMR. Color Code 1.
+  - id: asgn_k9vi_crystal_lake
+    rf_chain_id: chain_k9vi_crystal_lake_dmr
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "K9VI TriState"
+      rx_only: false
+      preferred_contacts:
+        [
+          tg_8_tristate,
+          tg_3169_midwest,
+          tg_9_talk,
+          tg_1_worldwide,
+          tg_3_north_america,
+          tg_13_worldwide_english,
+          tg_5000_status,
+          tg_4000_disconnect,
+        ]
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      Crystal Lake coverage; status "All OK". Color Code 4.
+  - id: asgn_n9iaa_crown_point
+    rf_chain_id: chain_n9iaa_crown_point_dmr
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "N9IAA Crown Point"
+      rx_only: false
+      preferred_contacts:
+        [
+          tg_8_tristate,
+          tg_3169_midwest,
+          tg_9_talk,
+          tg_1_worldwide,
+          tg_3_north_america,
+          tg_13_worldwide_english,
+          tg_5000_status,
+          tg_4000_disconnect,
+        ]
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      Northwest Indiana site. Status "RF OK, No Net". Color Code 1.
+  - id: asgn_k9nro_elburn
+    rf_chain_id: chain_k9nro_elburn_dmr
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "K9NRO TriState"
+      rx_only: false
+      preferred_contacts:
+        [
+          tg_8_tristate,
+          tg_3169_midwest,
+          tg_9_talk,
+          tg_1_worldwide,
+          tg_3_north_america,
+          tg_13_worldwide_english,
+          tg_5000_status,
+          tg_4000_disconnect,
+        ]
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      Fox Valley coverage; status "All OK". Color Code 1 per Tri-State DMR.
+  - id: asgn_n9pay_green_bay
+    rf_chain_id: chain_n9pay_green_bay_dmr
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "N9PAY Green Bay"
+      rx_only: false
+      preferred_contacts:
+        [
+          tg_8_tristate,
+          tg_3169_midwest,
+          tg_9_talk,
+          tg_1_worldwide,
+          tg_3_north_america,
+          tg_13_worldwide_english,
+          tg_5000_status,
+          tg_4000_disconnect,
+        ]
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      Green Bay metro coverage; status "All OK". Color Code 6.
+  - id: asgn_k9ord_inverness
+    rf_chain_id: chain_k9ord_inverness_dmr
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "K9ORD TriState"
+      rx_only: false
+      preferred_contacts:
+        [
+          tg_8_tristate,
+          tg_3169_midwest,
+          tg_9_talk,
+          tg_1_worldwide,
+          tg_3_north_america,
+          tg_13_worldwide_english,
+          tg_5000_status,
+          tg_4000_disconnect,
+        ]
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      Inverness/Palatine area coverage; status "All OK". Color Code 1.
+  - id: asgn_n9iaa_la_porte
+    rf_chain_id: chain_n9iaa_la_porte_dmr
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "N9IAA La Porte"
+      rx_only: false
+      preferred_contacts:
+        [
+          tg_8_tristate,
+          tg_3169_midwest,
+          tg_9_talk,
+          tg_1_worldwide,
+          tg_3_north_america,
+          tg_13_worldwide_english,
+          tg_5000_status,
+          tg_4000_disconnect,
+        ]
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      La Porte, Indiana site; status "RF OK, No Net". Color Code 1.
+  - id: asgn_n9pay_milwaukee
+    rf_chain_id: chain_n9pay_milwaukee_dmr
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "N9PAY Milwaukee"
+      rx_only: false
+      preferred_contacts:
+        [
+          tg_8_tristate,
+          tg_3169_midwest,
+          tg_9_talk,
+          tg_1_worldwide,
+          tg_3_north_america,
+          tg_13_worldwide_english,
+          tg_5000_status,
+          tg_4000_disconnect,
+        ]
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      Milwaukee metro coverage; status "All OK". Color Code 1.
+  - id: asgn_kc9kko_morris
+    rf_chain_id: chain_kc9kko_morris_dmr
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "KC9KKO TriState"
+      rx_only: false
+      preferred_contacts:
+        [
+          tg_8_tristate,
+          tg_3169_midwest,
+          tg_9_talk,
+          tg_1_worldwide,
+          tg_3_north_america,
+          tg_13_worldwide_english,
+          tg_5000_status,
+          tg_4000_disconnect,
+        ]
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      Grundy County / I-80 coverage; status "All OK". Color Code 1.
+  - id: asgn_n9pay_new_berlin
+    rf_chain_id: chain_n9pay_new_berlin_dmr
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "N9PAY New Berlin"
+      rx_only: false
+      preferred_contacts:
+        [
+          tg_8_tristate,
+          tg_3169_midwest,
+          tg_9_talk,
+          tg_1_worldwide,
+          tg_3_north_america,
+          tg_13_worldwide_english,
+          tg_5000_status,
+          tg_4000_disconnect,
+        ]
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      Waukesha County coverage; status "All OK". Color Code 1.
+  - id: asgn_ww9p_rockford
+    rf_chain_id: chain_ww9p_rockford_dmr
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "WW9P TriState"
+      rx_only: false
+      preferred_contacts:
+        [
+          tg_8_tristate,
+          tg_3169_midwest,
+          tg_9_talk,
+          tg_1_worldwide,
+          tg_3_north_america,
+          tg_13_worldwide_english,
+          tg_5000_status,
+          tg_4000_disconnect,
+        ]
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      Rockford coverage; status "All OK". Color Code 1.
+  - id: asgn_k9mot_schaumburg
+    rf_chain_id: chain_k9mot_schaumburg_dmr
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "K9MOT TriState"
+      rx_only: false
+      preferred_contacts:
+        [
+          tg_8_tristate,
+          tg_3169_midwest,
+          tg_9_talk,
+          tg_1_worldwide,
+          tg_3_north_america,
+          tg_13_worldwide_english,
+          tg_5000_status,
+          tg_4000_disconnect,
+        ]
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      Schaumburg / Northwest Suburbs site; status "All OK". Color Code 1.
+  - id: asgn_n8ouz_traverse_city
+    rf_chain_id: chain_n8ouz_traverse_city_dmr
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "N8OUZ TriState"
+      rx_only: false
+      preferred_contacts:
+        [
+          tg_8_tristate,
+          tg_3169_midwest,
+          tg_9_talk,
+          tg_1_worldwide,
+          tg_3_north_america,
+          tg_13_worldwide_english,
+          tg_5000_status,
+          tg_4000_disconnect,
+        ]
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      Northern Michigan extension; status "All OK". Color Code 1.
+  - id: asgn_n9iaa_valparaiso
+    rf_chain_id: chain_n9iaa_valparaiso_dmr
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "N9IAA Valparaiso"
+      rx_only: false
+      preferred_contacts:
+        [
+          tg_8_tristate,
+          tg_3169_midwest,
+          tg_9_talk,
+          tg_1_worldwide,
+          tg_3_north_america,
+          tg_13_worldwide_english,
+          tg_5000_status,
+          tg_4000_disconnect,
+        ]
+    authorization_id: auth_fcc_amateur_t
+    comment: |
+      Porter County site; status "RF OK, No Net". Color Code 1.

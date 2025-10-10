@@ -1,0 +1,323 @@
+# SSRF-Lite: Berrien County (MI) Public Safety
+# Source: Attachment "barrien_county.csv" (RadioReference extract)
+# Notes: Conventional VHF/UHF channels for county fire, EMS, sheriff, EMA, and parks. Programmed receive-only.
+
+organizations:
+  - id: org_berrien_sheriff
+    name: "Berrien County Sheriff"
+  - id: org_berrien_fire
+    name: "Berrien County Fire/EMS"
+  - id: org_berrien_ema
+    name: "Berrien County Emergency Management"
+  - id: org_berrien_parks
+    name: "Berrien County Parks & Recreation"
+
+locations:
+  - id: loc_berrien_co
+    name: "Berrien County (approx)"
+    lat: 41.9838614
+    lon: -86.3985714
+
+stations:
+  - id: stn_berrien_sheriff
+    call_sign: "WQYX942"
+    organization_id: org_berrien_sheriff
+    location_id: loc_berrien_co
+    service: "public-safety"
+  - id: stn_berrien_fire
+    call_sign: "WQNL329"
+    organization_id: org_berrien_fire
+    location_id: loc_berrien_co
+    service: "fire-ems"
+  - id: stn_berrien_ema
+    call_sign: "WPPX293"
+    organization_id: org_berrien_ema
+    location_id: loc_berrien_co
+    service: "public-safety"
+  - id: stn_berrien_parks
+    call_sign:
+    organization_id: org_berrien_parks
+    location_id: loc_berrien_co
+    service: "public-safety"
+
+antennas:
+  - id: ant_berrien_sheriff
+    station_id: stn_berrien_sheriff
+    name: "Sheriff Dispatch Antenna"
+  - id: ant_berrien_fire
+    station_id: stn_berrien_fire
+    name: "County Fire Antenna"
+  - id: ant_berrien_ema
+    station_id: stn_berrien_ema
+    name: "EMA / EOC Antenna"
+  - id: ant_berrien_parks
+    station_id: stn_berrien_parks
+    name: "Parks Beach Operations"
+
+rf_chains:
+  # Sheriff / Corrections
+  - id: chain_berrien_jail
+    station_id: stn_berrien_sheriff
+    antenna_id: ant_berrien_sheriff
+    rx:
+      freq_mhz: 859.9625
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 167.9
+
+    # EMA / Fire Dispatch & Alerting
+  - id: chain_berrien_ema_sirens
+    station_id: stn_berrien_ema
+    antenna_id: ant_berrien_ema
+    rx:
+      freq_mhz: 155.925
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+
+  - id: chain_berrien_eoc
+    station_id: stn_berrien_ema
+    antenna_id: ant_berrien_ema
+    rx:
+      freq_mhz: 453.900
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+
+  - id: chain_berrien_media_page
+    station_id: stn_berrien_fire
+    antenna_id: ant_berrien_fire
+    rx:
+      freq_mhz: 154.250
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 136.5
+
+  - id: chain_berrien_fire1
+    station_id: stn_berrien_fire
+    antenna_id: ant_berrien_fire
+    rx:
+      freq_mhz: 156.105
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 123.0
+
+  - id: chain_berrien_fire2
+    station_id: stn_berrien_fire
+    antenna_id: ant_berrien_fire
+    rx:
+      freq_mhz: 151.295
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 100.0
+
+  - id: chain_berrien_fire3
+    station_id: stn_berrien_fire
+    antenna_id: ant_berrien_fire
+    rx:
+      freq_mhz: 151.370
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 85.4
+
+  - id: chain_berrien_fg1
+    station_id: stn_berrien_fire
+    antenna_id: ant_berrien_fire
+    rx:
+      freq_mhz: 155.175
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 136.5
+
+  - id: chain_berrien_fg2
+    station_id: stn_berrien_fire
+    antenna_id: ant_berrien_fire
+    rx:
+      freq_mhz: 151.205
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 136.5
+
+  - id: chain_berrien_fg3
+    station_id: stn_berrien_fire
+    antenna_id: ant_berrien_fire
+    rx:
+      freq_mhz: 151.235
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 136.5
+
+  - id: chain_berrien_fg4
+    station_id: stn_berrien_fire
+    antenna_id: ant_berrien_fire
+    rx:
+      freq_mhz: 159.315
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 136.5
+
+  - id: chain_berrien_fg5
+    station_id: stn_berrien_fire
+    antenna_id: ant_berrien_fire
+    rx:
+      freq_mhz: 159.405
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 136.5
+
+  - id: chain_berrien_silver_beach
+    station_id: stn_berrien_parks
+    antenna_id: ant_berrien_parks
+    rx:
+      freq_mhz: 151.370
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 103.5
+
+assignments:
+  # Sheriff / Corrections
+  - id: asg_berrien_jail
+    rf_chain_id: chain_berrien_jail
+    usage: "repeater"
+    zones: ["Berrien Sheriff"]
+    codeplug:
+      name: "County Jail"
+      rx_only: true
+      all_skip: true
+
+    # EMA / Fire Dispatch & Alerting
+  - id: asg_berrien_sirens
+    rf_chain_id: chain_berrien_ema_sirens
+    usage: "repeater"
+    zones: ["Berrien EMA"]
+    codeplug:
+      name: "EMA Sirens"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_berrien_eoc
+    rf_chain_id: chain_berrien_eoc
+    usage: "repeater"
+    zones: ["Berrien EMA"]
+    codeplug:
+      name: "EOC"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_berrien_media_page
+    rf_chain_id: chain_berrien_media_page
+    usage: "repeater"
+    zones: ["Berrien Fire"]
+    codeplug:
+      name: "Media Alert Page"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_berrien_fire1
+    rf_chain_id: chain_berrien_fire1
+    usage: "repeater"
+    zones: ["Berrien Fire"]
+    codeplug:
+      name: "Fire Dispatch 1"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_berrien_fire2
+    rf_chain_id: chain_berrien_fire2
+    usage: "repeater"
+    zones: ["Berrien Fire"]
+    codeplug:
+      name: "Fire Dispatch 2"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_berrien_fire3
+    rf_chain_id: chain_berrien_fire3
+    usage: "repeater"
+    zones: ["Berrien Fire"]
+    codeplug:
+      name: "Fire Dispatch 3"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_berrien_fg1
+    rf_chain_id: chain_berrien_fg1
+    usage: "repeater"
+    zones: ["Berrien Fire"]
+    codeplug:
+      name: "Fireground 1"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_berrien_fg2
+    rf_chain_id: chain_berrien_fg2
+    usage: "simplex"
+    zones: ["Berrien Fire"]
+    codeplug:
+      name: "Fireground 2"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_berrien_fg3
+    rf_chain_id: chain_berrien_fg3
+    usage: "simplex"
+    zones: ["Berrien Fire"]
+    codeplug:
+      name: "Fireground 3"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_berrien_fg4
+    rf_chain_id: chain_berrien_fg4
+    usage: "simplex"
+    zones: ["Berrien Fire"]
+    codeplug:
+      name: "Fireground 4"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_berrien_fg5
+    rf_chain_id: chain_berrien_fg5
+    usage: "simplex"
+    zones: ["Berrien Fire"]
+    codeplug:
+      name: "Fireground 5"
+      rx_only: true
+      all_skip: true
+
+  - id: asg_berrien_silver_beach
+    rf_chain_id: chain_berrien_silver_beach
+    usage: "simplex"
+    zones: ["Berrien Parks"]
+    codeplug:
+      name: "Silver Beach Ops"
+      rx_only: true
+      all_skip: true
+
+comments:
+  - text: |
+      Channels reflect the Berrien County, MI conventional public-safety listings from the provided CSV export. Primary operations on the county MPSCS P25 system are excluded; this file focuses on analogue VHF/UHF resources useful for receive-only monitoring or legacy interop.

@@ -2,823 +2,864 @@
 # Sources: IDPH Region XI EMS resource plans, RadioReference (Chicago EMS conventional backup channels), last verified 2025-04-21
 
 organizations:
-  - id: org_cfd_ems
-    name: "Chicago Fire Department – EMS"
-  - id: org_idph_regxi
-    name: "IDPH Region XI EMS"
+- id: org_cfd_ems
+  name: "Chicago Fire Department – EMS"
+- id: org_idph_regxi
+  name: "IDPH Region XI EMS"
 
 locations:
-  - id: loc_chicago_regionxi
-    name: "Chicago (Region XI EMS)"
-    lat: 41.8781
-    lon: -87.6298
+- id: loc_chicago_regionxi
+  name: "Chicago (Region XI EMS)"
+  lat: 41.8781
+  lon: -87.6298
 
 stations:
-  - id: stn_cfd_ems
-    call_sign: null
-    organization_id: org_cfd_ems
-    location_id: loc_chicago_regionxi
-    service: "ems"
-  - id: stn_cmed_xi
-    call_sign: null
-    organization_id: org_idph_regxi
-    location_id: loc_chicago_regionxi
-    service: "ems"
+- id: stn_cfd_ems
+  call_sign:
+  organization_id: org_cfd_ems
+  location_id: loc_chicago_regionxi
+  service: "ems"
+- id: stn_cmed_xi
+  call_sign:
+  organization_id: org_idph_regxi
+  location_id: loc_chicago_regionxi
+  service: "ems"
 
 antennas:
-  - id: ant_cfd_ems
-    station_id: stn_cfd_ems
-    name: "CFD EMS Citywide"
-  - id: ant_cmed_xi
-    station_id: stn_cmed_xi
-    name: "Region XI CMED UHF"
+- id: ant_cfd_ems
+  station_id: stn_cfd_ems
+  name: "CFD EMS Citywide"
+- id: ant_cmed_xi
+  station_id: stn_cmed_xi
+  name: "Region XI CMED UHF"
 
 rf_chains:
   # Chicago EMS command / coordination (analogue backups)
-  - id: chain_cfd_ems_command
-    station_id: stn_cfd_ems
-    antenna_id: ant_cfd_ems
-    rx:
-      freq_mhz: 460.600
-    tx:
-      emission: "11K2F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 203.5
+- id: chain_cfd_ems_command
+  station_id: stn_cfd_ems
+  antenna_id: ant_cfd_ems
+  rx:
+    freq_mhz: 460.600
+  tx:
+    emission: "11K2F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 203.5
 
-  - id: chain_cfd_ems_citywide
-    station_id: stn_cfd_ems
-    antenna_id: ant_cfd_ems
-    rx:
-      freq_mhz: 460.625
-    tx:
-      emission: "11K2F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 203.5
+- id: chain_cfd_ems_citywide
+  station_id: stn_cfd_ems
+  antenna_id: ant_cfd_ems
+  rx:
+    freq_mhz: 460.625
+  tx:
+    emission: "11K2F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 203.5
 
-  - id: chain_cfd_ems_admin
-    station_id: stn_cfd_ems
-    antenna_id: ant_cfd_ems
-    rx:
-      freq_mhz: 460.650
-    tx:
-      emission: "11K2F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 203.5
+- id: chain_cfd_ems_admin
+  station_id: stn_cfd_ems
+  antenna_id: ant_cfd_ems
+  rx:
+    freq_mhz: 460.650
+  tx:
+    emission: "11K2F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 203.5
 
   # Statewide EMS VHF (car-to-hospital common)
-  - id: chain_il_statewide_ems
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 155.340
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
+- id: chain_il_statewide_ems
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 155.340
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
 
-  - id: chain_merci400
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 155.400
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
+- id: chain_merci400
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 155.400
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
 
   # Region XI hospital MED channels (base transmit by sector PL)
   # North Sector (156.7 PL)
-  - id: chain_med1_north
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.000
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 156.7
+- id: chain_med1_north
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.000
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 156.7
 
-  - id: chain_med2_north
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.025
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 156.7
+- id: chain_med2_north
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.025
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 156.7
 
-  - id: chain_med3_north
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.050
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 156.7
+- id: chain_med3_north
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.050
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 156.7
 
-  - id: chain_med4_north
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.075
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 156.7
+- id: chain_med4_north
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.075
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 156.7
 
-  - id: chain_med5_north
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.100
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 156.7
+- id: chain_med5_north
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.100
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 156.7
 
-  - id: chain_med6_north
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.125
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 156.7
+- id: chain_med6_north
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.125
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 156.7
 
-  - id: chain_med7_north
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.150
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 156.7
+- id: chain_med7_north
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.150
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 156.7
 
-  - id: chain_med8_north
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.175
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 156.7
+- id: chain_med8_north
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.175
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 156.7
 
-  - id: chain_med9_north
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.950
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 156.7
+- id: chain_med9_north
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 462.950
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 156.7
 
-  - id: chain_med10_north
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.975
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 156.7
+- id: chain_med10_north
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 462.975
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 156.7
 
-  - id: chain_med11_north
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.7375
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 156.7
+- id: chain_med11_north
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 462.7375
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 156.7
 
-  - id: chain_med12_north
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.7625
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 156.7
+- id: chain_med12_north
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 462.7625
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 156.7
 
   # Central Sector (146.2 PL)
-  - id: chain_med1_central
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.000
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 146.2
+- id: chain_med1_central
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.000
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 146.2
 
-  - id: chain_med2_central
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.025
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 146.2
+- id: chain_med2_central
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.025
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 146.2
 
-  - id: chain_med3_central
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.050
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 146.2
+- id: chain_med3_central
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.050
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 146.2
 
-  - id: chain_med4_central
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.075
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 146.2
+- id: chain_med4_central
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.075
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 146.2
 
-  - id: chain_med5_central
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.100
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 146.2
+- id: chain_med5_central
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.100
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 146.2
 
-  - id: chain_med6_central
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.125
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 146.2
+- id: chain_med6_central
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.125
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 146.2
 
-  - id: chain_med7_central
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.150
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 146.2
+- id: chain_med7_central
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.150
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 146.2
 
-  - id: chain_med8_central
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.175
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 146.2
+- id: chain_med8_central
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.175
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 146.2
 
-  - id: chain_med9_central
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.950
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 146.2
+- id: chain_med9_central
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 462.950
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 146.2
 
-  - id: chain_med10_central
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.975
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 146.2
+- id: chain_med10_central
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 462.975
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 146.2
 
-  - id: chain_med11_central
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.7375
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 146.2
+- id: chain_med11_central
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 462.7375
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 146.2
 
-  - id: chain_med12_central
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.7625
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 146.2
+- id: chain_med12_central
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 462.7625
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 146.2
 
   # South Sector (173.8 PL)
-  - id: chain_med1_south
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.000
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 173.8
+- id: chain_med1_south
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.000
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 173.8
 
-  - id: chain_med2_south
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.025
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 173.8
+- id: chain_med2_south
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.025
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 173.8
 
-  - id: chain_med3_south
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.050
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 173.8
+- id: chain_med3_south
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.050
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 173.8
 
-  - id: chain_med4_south
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.075
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 173.8
+- id: chain_med4_south
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.075
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 173.8
 
-  - id: chain_med5_south
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.100
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 173.8
+- id: chain_med5_south
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.100
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 173.8
 
-  - id: chain_med6_south
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.125
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 173.8
+- id: chain_med6_south
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.125
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 173.8
 
-  - id: chain_med7_south
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.150
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 173.8
+- id: chain_med7_south
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.150
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 173.8
 
-  - id: chain_med8_south
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.175
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 173.8
+- id: chain_med8_south
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 463.175
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 173.8
 
-  - id: chain_med9_south
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.950
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 173.8
+- id: chain_med9_south
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 462.950
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 173.8
 
-  - id: chain_med10_south
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.975
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 173.8
+- id: chain_med10_south
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 462.975
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 173.8
 
-  - id: chain_med11_south
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.7375
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 173.8
+- id: chain_med11_south
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 462.7375
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 173.8
 
-  - id: chain_med12_south
-    station_id: stn_cmed_xi
-    antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.7625
-    tx:
-      emission: "11K0F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 173.8
+- id: chain_med12_south
+  station_id: stn_cmed_xi
+  antenna_id: ant_cmed_xi
+  rx:
+    freq_mhz: 462.7625
+  tx:
+    emission: "11K0F3E"
+  mode:
+    type: "FM"
+    ctcss_rx_hz: 173.8
 
 assignments:
-  - id: asg_cfd_ems_command
-    rf_chain_id: chain_cfd_ems_command
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "CFD EMS Cmd"
-      rx_only: true
+- id: asg_cfd_ems_command
+  rf_chain_id: chain_cfd_ems_command
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "CFD EMS Cmd"
+    rx_only: true
 
-  - id: asg_cfd_ems_citywide
-    rf_chain_id: chain_cfd_ems_citywide
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "CFD EMS City"
-      rx_only: true
+    all_skip: true
+- id: asg_cfd_ems_citywide
+  rf_chain_id: chain_cfd_ems_citywide
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "CFD EMS City"
+    rx_only: true
 
-  - id: asg_cfd_ems_admin
-    rf_chain_id: chain_cfd_ems_admin
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "CFD EMS Admin"
-      rx_only: true
+    all_skip: true
+- id: asg_cfd_ems_admin
+  rf_chain_id: chain_cfd_ems_admin
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "CFD EMS Admin"
+    rx_only: true
 
-  - id: asg_il_statewide_ems
-    rf_chain_id: chain_il_statewide_ems
-    usage: "simplex"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MERCI 340"
-      rx_only: true
+    all_skip: true
+- id: asg_il_statewide_ems
+  rf_chain_id: chain_il_statewide_ems
+  usage: "simplex"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MERCI 340"
+    rx_only: true
 
-  - id: asg_merci400
-    rf_chain_id: chain_merci400
-    usage: "simplex"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MERCI 400"
-      rx_only: true
+    all_skip: true
+- id: asg_merci400
+  rf_chain_id: chain_merci400
+  usage: "simplex"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MERCI 400"
+    rx_only: true
 
   # MED channels by sector
-  - id: asg_med1_north
-    rf_chain_id: chain_med1_north
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED1 North"
-      rx_only: true
+    all_skip: true
+- id: asg_med1_north
+  rf_chain_id: chain_med1_north
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED1 North"
+    rx_only: true
 
-  - id: asg_med2_north
-    rf_chain_id: chain_med2_north
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED2 North"
-      rx_only: true
+    all_skip: true
+- id: asg_med2_north
+  rf_chain_id: chain_med2_north
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED2 North"
+    rx_only: true
 
-  - id: asg_med3_north
-    rf_chain_id: chain_med3_north
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED3 North"
-      rx_only: true
+    all_skip: true
+- id: asg_med3_north
+  rf_chain_id: chain_med3_north
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED3 North"
+    rx_only: true
 
-  - id: asg_med4_north
-    rf_chain_id: chain_med4_north
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED4 North"
-      rx_only: true
+    all_skip: true
+- id: asg_med4_north
+  rf_chain_id: chain_med4_north
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED4 North"
+    rx_only: true
 
-  - id: asg_med5_north
-    rf_chain_id: chain_med5_north
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED5 North"
-      rx_only: true
+    all_skip: true
+- id: asg_med5_north
+  rf_chain_id: chain_med5_north
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED5 North"
+    rx_only: true
 
-  - id: asg_med6_north
-    rf_chain_id: chain_med6_north
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED6 North"
-      rx_only: true
+    all_skip: true
+- id: asg_med6_north
+  rf_chain_id: chain_med6_north
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED6 North"
+    rx_only: true
 
-  - id: asg_med7_north
-    rf_chain_id: chain_med7_north
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED7 North"
-      rx_only: true
+    all_skip: true
+- id: asg_med7_north
+  rf_chain_id: chain_med7_north
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED7 North"
+    rx_only: true
 
-  - id: asg_med8_north
-    rf_chain_id: chain_med8_north
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED8 North"
-      rx_only: true
+    all_skip: true
+- id: asg_med8_north
+  rf_chain_id: chain_med8_north
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED8 North"
+    rx_only: true
 
-  - id: asg_med9_north
-    rf_chain_id: chain_med9_north
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED9 North"
-      rx_only: true
+    all_skip: true
+- id: asg_med9_north
+  rf_chain_id: chain_med9_north
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED9 North"
+    rx_only: true
 
-  - id: asg_med10_north
-    rf_chain_id: chain_med10_north
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED10 North"
-      rx_only: true
+    all_skip: true
+- id: asg_med10_north
+  rf_chain_id: chain_med10_north
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED10 North"
+    rx_only: true
 
-  - id: asg_med11_north
-    rf_chain_id: chain_med11_north
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED11 North"
-      rx_only: true
+    all_skip: true
+- id: asg_med11_north
+  rf_chain_id: chain_med11_north
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED11 North"
+    rx_only: true
 
-  - id: asg_med12_north
-    rf_chain_id: chain_med12_north
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED12 North"
-      rx_only: true
+    all_skip: true
+- id: asg_med12_north
+  rf_chain_id: chain_med12_north
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED12 North"
+    rx_only: true
 
-  - id: asg_med1_central
-    rf_chain_id: chain_med1_central
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED1 Central"
-      rx_only: true
+    all_skip: true
+- id: asg_med1_central
+  rf_chain_id: chain_med1_central
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED1 Central"
+    rx_only: true
 
-  - id: asg_med2_central
-    rf_chain_id: chain_med2_central
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED2 Central"
-      rx_only: true
+    all_skip: true
+- id: asg_med2_central
+  rf_chain_id: chain_med2_central
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED2 Central"
+    rx_only: true
 
-  - id: asg_med3_central
-    rf_chain_id: chain_med3_central
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED3 Central"
-      rx_only: true
+    all_skip: true
+- id: asg_med3_central
+  rf_chain_id: chain_med3_central
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED3 Central"
+    rx_only: true
 
-  - id: asg_med4_central
-    rf_chain_id: chain_med4_central
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED4 Central"
-      rx_only: true
+    all_skip: true
+- id: asg_med4_central
+  rf_chain_id: chain_med4_central
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED4 Central"
+    rx_only: true
 
-  - id: asg_med5_central
-    rf_chain_id: chain_med5_central
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED5 Central"
-      rx_only: true
+    all_skip: true
+- id: asg_med5_central
+  rf_chain_id: chain_med5_central
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED5 Central"
+    rx_only: true
 
-  - id: asg_med6_central
-    rf_chain_id: chain_med6_central
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED6 Central"
-      rx_only: true
+    all_skip: true
+- id: asg_med6_central
+  rf_chain_id: chain_med6_central
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED6 Central"
+    rx_only: true
 
-  - id: asg_med7_central
-    rf_chain_id: chain_med7_central
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED7 Central"
-      rx_only: true
+    all_skip: true
+- id: asg_med7_central
+  rf_chain_id: chain_med7_central
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED7 Central"
+    rx_only: true
 
-  - id: asg_med8_central
-    rf_chain_id: chain_med8_central
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED8 Central"
-      rx_only: true
+    all_skip: true
+- id: asg_med8_central
+  rf_chain_id: chain_med8_central
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED8 Central"
+    rx_only: true
 
-  - id: asg_med9_central
-    rf_chain_id: chain_med9_central
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED9 Central"
-      rx_only: true
+    all_skip: true
+- id: asg_med9_central
+  rf_chain_id: chain_med9_central
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED9 Central"
+    rx_only: true
 
-  - id: asg_med10_central
-    rf_chain_id: chain_med10_central
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED10 Central"
-      rx_only: true
+    all_skip: true
+- id: asg_med10_central
+  rf_chain_id: chain_med10_central
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED10 Central"
+    rx_only: true
 
-  - id: asg_med11_central
-    rf_chain_id: chain_med11_central
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED11 Central"
-      rx_only: true
+    all_skip: true
+- id: asg_med11_central
+  rf_chain_id: chain_med11_central
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED11 Central"
+    rx_only: true
 
-  - id: asg_med12_central
-    rf_chain_id: chain_med12_central
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED12 Central"
-      rx_only: true
+    all_skip: true
+- id: asg_med12_central
+  rf_chain_id: chain_med12_central
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED12 Central"
+    rx_only: true
 
-  - id: asg_med1_south
-    rf_chain_id: chain_med1_south
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED1 South"
-      rx_only: true
+    all_skip: true
+- id: asg_med1_south
+  rf_chain_id: chain_med1_south
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED1 South"
+    rx_only: true
 
-  - id: asg_med2_south
-    rf_chain_id: chain_med2_south
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED2 South"
-      rx_only: true
+    all_skip: true
+- id: asg_med2_south
+  rf_chain_id: chain_med2_south
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED2 South"
+    rx_only: true
 
-  - id: asg_med3_south
-    rf_chain_id: chain_med3_south
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED3 South"
-      rx_only: true
+    all_skip: true
+- id: asg_med3_south
+  rf_chain_id: chain_med3_south
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED3 South"
+    rx_only: true
 
-  - id: asg_med4_south
-    rf_chain_id: chain_med4_south
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED4 South"
-      rx_only: true
+    all_skip: true
+- id: asg_med4_south
+  rf_chain_id: chain_med4_south
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED4 South"
+    rx_only: true
 
-  - id: asg_med5_south
-    rf_chain_id: chain_med5_south
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED5 South"
-      rx_only: true
+    all_skip: true
+- id: asg_med5_south
+  rf_chain_id: chain_med5_south
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED5 South"
+    rx_only: true
 
-  - id: asg_med6_south
-    rf_chain_id: chain_med6_south
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED6 South"
-      rx_only: true
+    all_skip: true
+- id: asg_med6_south
+  rf_chain_id: chain_med6_south
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED6 South"
+    rx_only: true
 
-  - id: asg_med7_south
-    rf_chain_id: chain_med7_south
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED7 South"
-      rx_only: true
+    all_skip: true
+- id: asg_med7_south
+  rf_chain_id: chain_med7_south
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED7 South"
+    rx_only: true
 
-  - id: asg_med8_south
-    rf_chain_id: chain_med8_south
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED8 South"
-      rx_only: true
+    all_skip: true
+- id: asg_med8_south
+  rf_chain_id: chain_med8_south
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED8 South"
+    rx_only: true
 
-  - id: asg_med9_south
-    rf_chain_id: chain_med9_south
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED9 South"
-      rx_only: true
+    all_skip: true
+- id: asg_med9_south
+  rf_chain_id: chain_med9_south
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED9 South"
+    rx_only: true
 
-  - id: asg_med10_south
-    rf_chain_id: chain_med10_south
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED10 South"
-      rx_only: true
+    all_skip: true
+- id: asg_med10_south
+  rf_chain_id: chain_med10_south
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED10 South"
+    rx_only: true
 
-  - id: asg_med11_south
-    rf_chain_id: chain_med11_south
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED11 South"
-      rx_only: true
+    all_skip: true
+- id: asg_med11_south
+  rf_chain_id: chain_med11_south
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED11 South"
+    rx_only: true
 
-  - id: asg_med12_south
-    rf_chain_id: chain_med12_south
-    usage: "repeater"
-    zones: ["Chicago EMS"]
-    codeplug:
-      name: "MED12 South"
-      rx_only: true
+    all_skip: true
+- id: asg_med12_south
+  rf_chain_id: chain_med12_south
+  usage: "repeater"
+  zones: ["Chicago EMS"]
+  codeplug:
+    name: "MED12 South"
+    rx_only: true
 
+    all_skip: true
 comments:
-  - text: |
-      Chicago/Region XI EMS conventional resources focusing on hospital MED channels by sector PL (North 156.7, Central 146.2, South 173.8), MERCI mutual-aid channels, and CFD analogue backups. Primary CFD EMS operations remain on the OEMC 800 MHz P25 system.
+- text: |
+    Chicago/Region XI EMS conventional resources focusing on hospital MED channels by sector PL (North 156.7, Central 146.2, South 173.8), MERCI mutual-aid channels, and CFD analogue backups. Primary CFD EMS operations remain on the OEMC 800 MHz P25 system.

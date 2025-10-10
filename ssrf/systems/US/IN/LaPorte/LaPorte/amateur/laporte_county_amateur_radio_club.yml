@@ -1,9 +1,12 @@
 ssrf_lite:
-  version: "0.3.2"
+  version: "0.4.0"
   sources:
     - name: "La Porte County ARC - Repeaters"
       url: "https://lpcarc.org/repeaters.html"
       accessed: "2025-10-04"
+    - name: "Radio Reference"
+      url: https://www.radioreference.com/db/browse/ctid/738/ham
+      accessed: "2025-10-10"
 
 organizations:
   - id: org_lpcarc
@@ -18,6 +21,14 @@ locations:
     name: "La Porte - Northwest Health Hospital"
     lat: 41.6106
     lon: -86.7265
+  - id: loc_laporte_vti
+    name: "La Porte - VTI Campus (approx)"
+    lat: 41.6110
+    lon: -86.7210
+  - id: loc_laporte_county
+    name: "La Porte County (countywide ops)"
+    lat: 41.6106
+    lon: -86.7225
 
 stations:
   - id: stn_k9jsi_vhf
@@ -34,6 +45,11 @@ stations:
     call_sign: "W9LY"
     organization_id: org_lpcarc
     location_id: loc_laporte_schultz_tower
+    service: "amateur"
+  - id: stn_w9sal_uhf
+    call_sign: "W9SAL"
+    organization_id: org_lpcarc
+    location_id: loc_laporte_vti
     service: "amateur"
 
 antennas:
@@ -55,6 +71,12 @@ antennas:
     gain_dbi: 8.2 # Hustler 6 dBd ≈ 8.2 dBi
     height_agl_m: 61.0
     height_amsl_m: 335.3
+  - id: ant_w9sal_uhf
+    station_id: stn_w9sal_uhf
+    name: "W9SAL UHF Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
 
 rf_chains:
   - id: chain_k9jsi_vhf_fm
@@ -128,6 +150,20 @@ rf_chains:
       type: "C4FM"
       notes: "Yaesu DR-1X; normally linked to WIRES-X room 21421"
 
+  - id: chain_w9sal_uhf_fm
+    station_id: stn_w9sal_uhf
+    antenna_id: ant_w9sal_uhf
+    tx:
+      freq_mhz: 449.950
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 444.950
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 131.8
+      ctcss_rx_hz: 131.8
+
 authorizations:
   - id: auth_fcc_amateur
     authority: "FCC"
@@ -165,7 +201,7 @@ assignments:
   - id: asgn_w9ly_vhf_c4fm
     rf_chain_id: chain_w9ly_vhf_c4fm
     usage: "repeater"
-    zones: ["Ham-Digital"]
+    zones: ["DMR Repeater"]
     codeplug:
       name: "W9LY VHF C4FM"
       rx_only: false
@@ -187,7 +223,7 @@ assignments:
   - id: asgn_w9ly_uhf_c4fm
     rf_chain_id: chain_w9ly_uhf_c4fm
     usage: "repeater"
-    zones: ["Ham-Digital"]
+    zones: ["Ham-Repeaters", "Fusion Digital"]
     codeplug:
       name: "W9LY UHF C4FM"
       rx_only: false
@@ -195,3 +231,15 @@ assignments:
     comment: |
       Yaesu System Fusion digital voice; normally linked to WIRES-X room 21421.
       Same Schultz Road site and antenna as FM chain.
+
+  - id: asgn_w9sal_uhf_fm
+    rf_chain_id: chain_w9sal_uhf_fm
+    usage: "repeater"
+    zones: ["Ham-Repeaters"]
+    codeplug:
+      name: "W9SAL UHF"
+      rx_only: false
+    authorization_id: auth_fcc_amateur
+    comment: |
+      444.950 +5.000 MHz, PL 131.8 Hz. Operated by Valparaiso Technical Institute engineers in La Porte.
+      Serves countywide coverage and links into regional nets as needed.

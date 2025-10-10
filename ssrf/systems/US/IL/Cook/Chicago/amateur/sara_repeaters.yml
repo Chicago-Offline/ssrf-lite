@@ -125,7 +125,7 @@ assignments:
   - id: asgn_na9pl_440_c4fm
     rf_chain_id: chain_na9pl_440_c4fm
     usage: "repeater"
-    zones: ["Ham-Digital"]
+    zones: ["DMR Repeater"]
     codeplug:
       name: "NA9PL UHF C4FM"
       rx_only: false
