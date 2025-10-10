@@ -73,7 +73,7 @@ assignments:
     zones: [Ham VHF]
     codeplug:
       name: APRS 144390
-      rx_only: true
+      rx_only: false
     comment: "National APRS/Packet frequency (144.390 MHz); receive monitoring by default."
 
   - id: us_ham_vhf_call
