@@ -1,0 +1,433 @@
+ssrf_lite:
+  version: "0.3.2"
+  sources:
+    - name: "Wikipedia - General Mobile Radio Service"
+      url: "https://en.wikipedia.org/wiki/General_Mobile_Radio_Service"
+      accessed: "2025-09-19"
+
+organizations:
+  - id: org_fcc
+    name: "Federal Communications Commission (FCC)"
+
+authorizations:
+  - id: auth_fcc_gmrs
+    authority: "FCC"
+    service: "GMRS"
+    class: "License required"
+    identifier:
+    notes: |
+      GMRS simplex permitted on 462 MHz interstitial (Ch 1-7) and main 462 MHz (Ch 15-22). 
+      467 MHz interstitial (Ch 8-14) are FRS-only simplex; GMRS licensees should not transmit on these frequencies 
+      except as repeater inputs where authorized. Marked as Rx-only here for GMRS use.
+
+channel_plans:
+  - id: chplan_us_gmrs
+    name: "US GMRS"
+    channels:
+      # 462 MHz interstitial (12.5 kHz) - GMRS simplex permitted
+      - name: "GMRS 01"
+        freq_mhz: 462.5625
+        emission: "11K2F3E"
+      - name: "GMRS 02"
+        freq_mhz: 462.5875
+        emission: "11K2F3E"
+      - name: "GMRS 03"
+        freq_mhz: 462.6125
+        emission: "11K2F3E"
+      - name: "GMRS 04"
+        freq_mhz: 462.6375
+        emission: "11K2F3E"
+      - name: "GMRS 05"
+        freq_mhz: 462.6625
+        emission: "11K2F3E"
+      - name: "GMRS 06"
+        freq_mhz: 462.6875
+        emission: "11K2F3E"
+      - name: "GMRS 07"
+        freq_mhz: 462.7125
+        emission:
+          "11K2F3E"
+
+          # 467 MHz interstitial (12.5 kHz) - FRS-only simplex; GMRS Rx-only
+      - name: "GMRS 08"
+        freq_mhz: 467.5625
+        emission: "11K2F3E"
+      - name: "GMRS 09"
+        freq_mhz: 467.5875
+        emission: "11K2F3E"
+      - name: "GMRS 10"
+        freq_mhz: 467.6125
+        emission: "11K2F3E"
+      - name: "GMRS 11"
+        freq_mhz: 467.6375
+        emission: "11K2F3E"
+      - name: "GMRS 12"
+        freq_mhz: 467.6625
+        emission: "11K2F3E"
+      - name: "GMRS 13"
+        freq_mhz: 467.6875
+        emission: "11K2F3E"
+      - name: "GMRS 14"
+        freq_mhz: 467.7125
+        emission:
+          "11K2F3E"
+
+          # 462 MHz main (20 kHz) - GMRS simplex permitted; commonly also repeater outputs (+5 MHz inputs on 467)
+      - name: "GMRS 15"
+        freq_mhz: 462.5500
+        emission: "20K0F3E"
+      - name: "GMRS 16"
+        freq_mhz: 462.5750
+        emission: "20K0F3E"
+      - name: "GMRS 17"
+        freq_mhz: 462.6000
+        emission: "20K0F3E"
+      - name: "GMRS 18"
+        freq_mhz: 462.6250
+        emission: "20K0F3E"
+      - name: "GMRS 19"
+        freq_mhz: 462.6500
+        emission: "20K0F3E"
+      - name: "GMRS 20"
+        freq_mhz: 462.6750
+        emission: "20K0F3E"
+      - name: "GMRS 21"
+        freq_mhz: 462.7000
+        emission: "20K0F3E"
+      - name: "GMRS 22"
+        freq_mhz: 462.7250
+        emission: "20K0F3E"
+
+assignments:
+  # Create one assignment per channel; 8-14 flagged Rx-only to reflect FRS-only simplex
+  # Interstitial 1-7 (462 MHz) - GMRS simplex OK
+  - id: asgn_gmrs_01
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 01"
+    usage: "simplex"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 01"
+      rx_only: false
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+  - id: asgn_gmrs_02
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 02"
+    usage: "simplex"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 02"
+      rx_only: false
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+  - id: asgn_gmrs_03
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 03"
+    usage: "simplex"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 03"
+      rx_only: false
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+  - id: asgn_gmrs_04
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 04"
+    usage: "simplex"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 04"
+      rx_only: false
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+  - id: asgn_gmrs_05
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 05"
+    usage: "simplex"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 05"
+      rx_only: false
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+  - id: asgn_gmrs_06
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 06"
+    usage: "simplex"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 06"
+      rx_only: false
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+  - id: asgn_gmrs_07
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 07"
+    usage: "simplex"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 07"
+      rx_only: false
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+
+    # Interstitial 8-14 (467 MHz) - Rx-only in GMRS context
+  - id: asgn_gmrs_08
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 08"
+    usage: "receive-only"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 08 (RX)"
+      rx_only: true
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+  - id: asgn_gmrs_09
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 09"
+    usage: "receive-only"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 09 (RX)"
+      rx_only: true
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+  - id: asgn_gmrs_10
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 10"
+    usage: "receive-only"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 10 (RX)"
+      rx_only: true
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+  - id: asgn_gmrs_11
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 11"
+    usage: "receive-only"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 11 (RX)"
+      rx_only: true
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+  - id: asgn_gmrs_12
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 12"
+    usage: "receive-only"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 12 (RX)"
+      rx_only: true
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+  - id: asgn_gmrs_13
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 13"
+    usage: "receive-only"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 13 (RX)"
+      rx_only: true
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+  - id: asgn_gmrs_14
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 14"
+    usage: "receive-only"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 14 (RX)"
+      rx_only: true
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+
+    # Main 15-22 (462 MHz, 20 kHz) - GMRS simplex OK
+  - id: asgn_gmrs_15
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 15"
+    usage: "simplex"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 15"
+      rx_only: false
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+  - id: asgn_gmrs_16
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 16"
+    usage: "simplex"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 16"
+      rx_only: false
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+  - id: asgn_gmrs_17
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 17"
+    usage: "simplex"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 17"
+      rx_only: false
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+  - id: asgn_gmrs_18
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 18"
+    usage: "simplex"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 18"
+      rx_only: false
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+  - id: asgn_gmrs_19
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 19"
+    usage: "simplex"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 19"
+      rx_only: false
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+  - id: asgn_gmrs_20
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 20"
+    usage: "simplex"
+    zones: ["GMRS", "Emergency"]
+    codeplug:
+      name: "GMRS 20"
+      rx_only: false
+    authorization_id: auth_fcc_gmrs
+  - id: asgn_gmrs_21
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 21"
+    usage: "simplex"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 21"
+      rx_only: false
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+  - id: asgn_gmrs_22
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 22"
+    usage: "simplex"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 22"
+      rx_only: false
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+
+    # Generic repeater usage on 462 MHz main channels (inputs are +5.000 MHz on 467 MHz)
+    # Note: No site-specific systems included; set local PL/DCS as needed when programming.
+  - id: asgn_gmrs_rpt_15
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 15"
+    usage: "repeater"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 15 RPT"
+      rx_only: false
+      duplex: "+"
+      tx_offset_mhz: 5.000
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+    comment: "Repeater output 462.5500 MHz, input 467.5500 MHz (+5.000). Set local tone as required."
+  - id: asgn_gmrs_rpt_16
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 16"
+    usage: "repeater"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 16 RPT"
+      rx_only: false
+      duplex: "+"
+      tx_offset_mhz: 5.000
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+    comment: "Repeater output 462.5750 MHz, input 467.5750 MHz (+5.000). Set local tone as required."
+  - id: asgn_gmrs_rpt_17
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 17"
+    usage: "repeater"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 17 RPT"
+      rx_only: false
+      duplex: "+"
+      tx_offset_mhz: 5.000
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+    comment: "Repeater output 462.6000 MHz, input 467.6000 MHz (+5.000). Set local tone as required."
+  - id: asgn_gmrs_rpt_18
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 18"
+    usage: "repeater"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 18 RPT"
+      rx_only: false
+      duplex: "+"
+      tx_offset_mhz: 5.000
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+    comment: "Repeater output 462.6250 MHz, input 467.6250 MHz (+5.000). Set local tone as required."
+  - id: asgn_gmrs_rpt_19
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 19"
+    usage: "repeater"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 19 RPT"
+      rx_only: false
+      duplex: "+"
+      tx_offset_mhz: 5.000
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+    comment: "Repeater output 462.6500 MHz, input 467.6500 MHz (+5.000). Set local tone as required."
+  - id: asgn_gmrs_rpt_20
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 20"
+    usage: "repeater"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 20 RPT"
+      rx_only: false
+      duplex: "+"
+      tx_offset_mhz: 5.000
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+    comment: "Repeater output 462.6750 MHz, input 467.6750 MHz (+5.000). Set local tone as required."
+  - id: asgn_gmrs_rpt_21
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 21"
+    usage: "repeater"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 21 RPT"
+      rx_only: false
+      duplex: "+"
+      tx_offset_mhz: 5.000
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+    comment: "Repeater output 462.7000 MHz, input 467.7000 MHz (+5.000). Set local tone as required."
+  - id: asgn_gmrs_rpt_22
+    channel_plan_id: chplan_us_gmrs
+    channel_name: "GMRS 22"
+    usage: "repeater"
+    zones: ["GMRS"]
+    codeplug:
+      name: "GMRS 22 RPT"
+      rx_only: false
+      duplex: "+"
+      tx_offset_mhz: 5.000
+      all_skip: true
+    authorization_id: auth_fcc_gmrs
+    comment: "Repeater output 462.7250 MHz, input 467.7250 MHz (+5.000). Set local tone as required."

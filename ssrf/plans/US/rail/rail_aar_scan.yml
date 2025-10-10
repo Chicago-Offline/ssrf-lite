@@ -1,0 +1,425 @@
+# SSRF-Lite: Railroads – AAR VHF scan set (Chicago area friendly)
+# RX-only. Analog FM.
+# Notes: This is a concise subset of widely used AAR channels for road/dispatcher in the Chicago area.
+
+organizations:
+  - id: org_rail
+    name: "Railroads (AAR)"
+
+locations:
+  - id: loc_chi_rail
+    name: "Chicago Rail Hub"
+    lat: 41.8781
+    lon: -87.6298
+
+stations:
+  - id: stn_rail
+    call_sign:
+    organization_id: org_rail
+    location_id: loc_chi_rail
+    service: "railroad"
+
+antennas:
+  - id: ant_rail
+    station_id: stn_rail
+    name: "Portable"
+    gain_dbi:
+    height_agl_m:
+    height_amsl_m:
+
+rf_chains:
+  # AAR channel numbers omitted; just frequencies in MHz.
+  - {
+      id: chain_aar_160230,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 160.230 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_aar_160320,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 160.320 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_aar_160470,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 160.470 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_aar_160530,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 160.530 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_aar_160560,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 160.560 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_aar_160590,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 160.590 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_aar_160620,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 160.620 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_aar_160650,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 160.650 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_aar_160695,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 160.695 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_aar_160770,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 160.770 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_aar_160800,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 160.800 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_aar_160845,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 160.845 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_aar_161100,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 161.100 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_aar_161160,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 161.160 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+
+    # Additional common Chicago-area AAR channels
+  - {
+      id: chain_aar_160335,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 160.335 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_aar_160485,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 160.485 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_aar_160680,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 160.680 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_aar_160710,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 160.710 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_aar_160815,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 160.815 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_aar_160860,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 160.860 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_aar_160875,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 160.875 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_aar_161115,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 161.115 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_aar_161190,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 161.190 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: chain_aar_161205,
+      station_id: stn_rail,
+      antenna_id: ant_rail,
+      rx: { freq_mhz: 161.205 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+
+assignments:
+  - id: asg_aar_160230
+    rf_chain_id: chain_aar_160230
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 160230"
+      rx_only: true
+      all_skip: true
+  - id: asg_aar_160320
+    rf_chain_id: chain_aar_160320
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 160320"
+      rx_only: true
+      all_skip: true
+  - id: asg_aar_160470
+    rf_chain_id: chain_aar_160470
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 160470"
+      rx_only: true
+      all_skip: true
+  - id: asg_aar_160530
+    rf_chain_id: chain_aar_160530
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 160530"
+      rx_only: true
+      all_skip: true
+  - id: asg_aar_160560
+    rf_chain_id: chain_aar_160560
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 160560"
+      rx_only: true
+      all_skip: true
+  - id: asg_aar_160590
+    rf_chain_id: chain_aar_160590
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 160590"
+      rx_only: true
+      all_skip: true
+  - id: asg_aar_160620
+    rf_chain_id: chain_aar_160620
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 160620"
+      rx_only: true
+      all_skip: true
+  - id: asg_aar_160650
+    rf_chain_id: chain_aar_160650
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 160650"
+      rx_only: true
+      all_skip: true
+  - id: asg_aar_160695
+    rf_chain_id: chain_aar_160695
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 160695"
+      rx_only: true
+      all_skip: true
+  - id: asg_aar_160770
+    rf_chain_id: chain_aar_160770
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 160770"
+      rx_only: true
+      all_skip: true
+  - id: asg_aar_160800
+    rf_chain_id: chain_aar_160800
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 160800"
+      all_skip: true
+      rx_only: true
+  - id: asg_aar_160845
+    rf_chain_id: chain_aar_160845
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 160845"
+      rx_only: true
+      all_skip: true
+  - id: asg_aar_161100
+    rf_chain_id: chain_aar_161100
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 161100"
+      rx_only: true
+      all_skip: true
+  - id: asg_aar_161160
+    rf_chain_id: chain_aar_161160
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 161160"
+      rx_only: true
+
+      # Assignments for additional channels
+      all_skip: true
+  - id: asg_aar_160335
+    rf_chain_id: chain_aar_160335
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 160335"
+      rx_only: true
+      all_skip: true
+  - id: asg_aar_160485
+    rf_chain_id: chain_aar_160485
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 160485"
+      rx_only: true
+      all_skip: true
+  - id: asg_aar_160680
+    rf_chain_id: chain_aar_160680
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 160680"
+      rx_only: true
+      all_skip: true
+  - id: asg_aar_160710
+    rf_chain_id: chain_aar_160710
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 160710"
+      rx_only: true
+      all_skip: true
+  - id: asg_aar_160815
+    rf_chain_id: chain_aar_160815
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 160815"
+      rx_only: true
+      all_skip: true
+  - id: asg_aar_160860
+    rf_chain_id: chain_aar_160860
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 160860"
+      rx_only: true
+      all_skip: true
+  - id: asg_aar_160875
+    rf_chain_id: chain_aar_160875
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 160875"
+      rx_only: true
+      all_skip: true
+  - id: asg_aar_161115
+    rf_chain_id: chain_aar_161115
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 161115"
+      rx_only: true
+      all_skip: true
+  - id: asg_aar_161190
+    rf_chain_id: chain_aar_161190
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 161190"
+      rx_only: true
+      all_skip: true
+  - id: asg_aar_161205
+    rf_chain_id: chain_aar_161205
+    usage: "simplex"
+    zones: ["Rail – AAR"]
+    codeplug:
+      name: "AAR 161205"
+      rx_only: true
+
+      all_skip: true
+comments:
+  - text: |
+      Curated AAR scan list suitable for Metra/UP/BNSF/CN/CP activity around Chicago. Add/remove as desired.
