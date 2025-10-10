@@ -5,6 +5,9 @@ channel_plans:
     name: US Ham VHF Simplex
     channels:
       # Emission set to 16K0F3E (wide FM ~25 kHz)
+      - name: 144.390 APRS
+        freq_mhz: 144.390
+        emission: 11K2F2D
       - name: 146.400
         freq_mhz: 146.400
         emission: 16K0F3E
@@ -64,6 +67,15 @@ channel_plans:
         emission: 16K0F3E
 
 assignments:
+  - id: us_ham_vhf_aprs
+    channel_plan_id: us_ham_vhf_simplex_plan
+    channel_name: 144.390 APRS
+    zones: [Ham VHF]
+    codeplug:
+      name: APRS 144390
+      rx_only: true
+    comment: "National APRS/Packet frequency (144.390 MHz); receive monitoring by default."
+
   - id: us_ham_vhf_call
     channel_plan_id: us_ham_vhf_simplex_plan
     channel_name: 146.520 Call
