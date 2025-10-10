@@ -412,7 +412,7 @@ assignments:
   - id: asgn_ns9rc_simplex_446_025
     rf_chain_id: chain_ns9rc_simplex_446_025
     usage: "simplex"
-    zones: ["UHF Simplex"]
+    zones: ["Ham UHF"]
     codeplug:
       name: "NS9RC UHF025"
       rx_only: false
@@ -420,7 +420,7 @@ assignments:
   - id: asgn_ns9rc_simplex_147_405
     rf_chain_id: chain_ns9rc_simplex_147_405
     usage: "simplex"
-    zones: ["VHF Simplex"]
+    zones: ["Ham VHF"]
     codeplug:
       name: "NS9RC VHF405"
       rx_only: false
@@ -428,7 +428,7 @@ assignments:
   - id: asgn_ns9rc_simplex_146_460
     rf_chain_id: chain_ns9rc_simplex_146_460
     usage: "simplex"
-    zones: ["VHF Simplex"]
+    zones: ["Ham VHF"]
     codeplug:
       name: "NS9RC VHF460"
       rx_only: false

@@ -2,211 +2,211 @@
 # Source: RadioReference Cook County, IL – Interop sections
 
 organizations:
-- id: org_cook_interop
-  name: "Cook County Interoperability"
+  - id: org_cook_interop
+    name: "Cook County Interoperability"
 
 locations:
-- id: loc_cook_interop
-  name: "Cook County Interop (approx)"
-  lat: 41.8781
-  lon: -87.6298
+  - id: loc_cook_interop
+    name: "Cook County Interop (approx)"
+    lat: 41.8781
+    lon: -87.6298
 
 stations:
-- id: stn_cook_interop
-  call_sign:
-  organization_id: org_cook_interop
-  location_id: loc_cook_interop
-  service: "interop"
+  - id: stn_cook_interop
+    call_sign:
+    organization_id: org_cook_interop
+    location_id: loc_cook_interop
+    service: "interop"
 
 antennas:
-- id: ant_cook_interop
-  station_id: stn_cook_interop
-  name: "Interop Antenna (unknown)"
-  gain_dbi:
-  height_agl_m:
-  height_amsl_m:
+  - id: ant_cook_interop
+    station_id: stn_cook_interop
+    name: "Interop Antenna (unknown)"
+    gain_dbi:
+    height_agl_m:
+    height_amsl_m:
 
 rf_chains:
   # VHF Interop
-- id: chain_interop_v1
-  station_id: stn_cook_interop
-  antenna_id: ant_cook_interop
-  rx:
-    freq_mhz: 154.995
-  tx:
-    emission: "11K2F3E"
-  mode:
-    type: "FM"
-    ctcss_rx_hz: 107.2
+  - id: chain_interop_v1
+    station_id: stn_cook_interop
+    antenna_id: ant_cook_interop
+    rx:
+      freq_mhz: 154.995
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 107.2
 
-- id: chain_interop_v2
-  station_id: stn_cook_interop
-  antenna_id: ant_cook_interop
-  rx:
-    freq_mhz: 155.640
-  tx:
-    emission: "11K2F3E"
-  mode:
-    type: "FM"
-    ctcss_rx_hz: 107.2
+  - id: chain_interop_v2
+    station_id: stn_cook_interop
+    antenna_id: ant_cook_interop
+    rx:
+      freq_mhz: 155.640
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 107.2
 
-- id: chain_interop_v3
-  station_id: stn_cook_interop
-  antenna_id: ant_cook_interop
-  rx:
-    freq_mhz: 155.595
-  tx:
-    emission: "11K2F3E"
-  mode:
-    type: "FM"
-    ctcss_rx_hz: 107.2
+  - id: chain_interop_v3
+    station_id: stn_cook_interop
+    antenna_id: ant_cook_interop
+    rx:
+      freq_mhz: 155.595
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 107.2
 
-- id: chain_interop_v4
-  station_id: stn_cook_interop
-  antenna_id: ant_cook_interop
-  rx:
-    freq_mhz: 155.535
-  tx:
-    emission: "11K2F3E"
-  mode:
-    type: "FM"
-    ctcss_rx_hz: 107.2
+  - id: chain_interop_v4
+    station_id: stn_cook_interop
+    antenna_id: ant_cook_interop
+    rx:
+      freq_mhz: 155.535
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 107.2
 
-  # V-Metro channels
-- id: chain_interop_vmetro3
-  station_id: stn_cook_interop
-  antenna_id: ant_cook_interop
-  rx:
-    freq_mhz: 153.770
-  tx:
-    emission: "11K2F3E"
-  mode:
-    type: "FM"
-    ctcss_rx_hz: 156.7
+    # V-Metro channels
+  - id: chain_interop_vmetro3
+    station_id: stn_cook_interop
+    antenna_id: ant_cook_interop
+    rx:
+      freq_mhz: 153.770
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 156.7
 
-- id: chain_interop_vmetro4
-  station_id: stn_cook_interop
-  antenna_id: ant_cook_interop
-  rx:
-    freq_mhz: 154.130
-  tx:
-    emission: "11K2F3E"
-  mode:
-    type: "FM"
-    ctcss_rx_hz: 156.7
+  - id: chain_interop_vmetro4
+    station_id: stn_cook_interop
+    antenna_id: ant_cook_interop
+    rx:
+      freq_mhz: 154.130
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 156.7
 
-- id: chain_interop_vmetro5
-  station_id: stn_cook_interop
-  antenna_id: ant_cook_interop
-  rx:
-    freq_mhz: 154.220
-  tx:
-    emission: "11K2F3E"
-  mode:
-    type: "FM"
-    ctcss_rx_hz: 156.7
+  - id: chain_interop_vmetro5
+    station_id: stn_cook_interop
+    antenna_id: ant_cook_interop
+    rx:
+      freq_mhz: 154.220
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 156.7
 
-  # UHF Interop
-- id: chain_interop_u1
-  station_id: stn_cook_interop
-  antenna_id: ant_cook_interop
-  rx:
-    freq_mhz: 453.950
-  tx:
-    emission: "11K2F3E"
-  mode:
-    type: "FM"
-    ctcss_rx_hz: 141.3
+    # UHF Interop
+  - id: chain_interop_u1
+    station_id: stn_cook_interop
+    antenna_id: ant_cook_interop
+    rx:
+      freq_mhz: 453.950
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 141.3
 
-- id: chain_interop_u2
-  station_id: stn_cook_interop
-  antenna_id: ant_cook_interop
-  rx:
-    freq_mhz: 453.750
-  tx:
-    emission: "11K2F3E"
-  mode:
-    type: "FM"
-    ctcss_rx_hz: 156.7
+  - id: chain_interop_u2
+    station_id: stn_cook_interop
+    antenna_id: ant_cook_interop
+    rx:
+      freq_mhz: 453.750
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 156.7
 
 assignments:
-- id: asg_interop_v1
-  rf_chain_id: chain_interop_v1
-  usage: "repeater"
-  zones: ["Cook Interop"]
-  codeplug:
-    name: "Interop VHF 1"
-    rx_only: true
+  - id: asg_interop_v1
+    rf_chain_id: chain_interop_v1
+    usage: "repeater"
+    zones: ["Public Safety"]
+    codeplug:
+      name: "Interop VHF 1"
+      rx_only: true
 
-    all_skip: true
-- id: asg_interop_v2
-  rf_chain_id: chain_interop_v2
-  usage: "repeater"
-  zones: ["Cook Interop"]
-  codeplug:
-    name: "Interop VHF 2"
-    rx_only: true
+      all_skip: true
+  - id: asg_interop_v2
+    rf_chain_id: chain_interop_v2
+    usage: "repeater"
+    zones: ["Public Safety"]
+    codeplug:
+      name: "Interop VHF 2"
+      rx_only: true
 
-    all_skip: true
-- id: asg_interop_v3
-  rf_chain_id: chain_interop_v3
-  usage: "repeater"
-  zones: ["Cook Interop"]
-  codeplug:
-    name: "Interop VHF 3"
-    rx_only: true
+      all_skip: true
+  - id: asg_interop_v3
+    rf_chain_id: chain_interop_v3
+    usage: "repeater"
+    zones: ["Public Safety"]
+    codeplug:
+      name: "Interop VHF 3"
+      rx_only: true
 
-    all_skip: true
-- id: asg_interop_v4
-  rf_chain_id: chain_interop_v4
-  usage: "repeater"
-  zones: ["Cook Interop"]
-  codeplug:
-    name: "Interop VHF 4"
-    rx_only: true
+      all_skip: true
+  - id: asg_interop_v4
+    rf_chain_id: chain_interop_v4
+    usage: "repeater"
+    zones: ["Public Safety"]
+    codeplug:
+      name: "Interop VHF 4"
+      rx_only: true
 
-    all_skip: true
-- id: asg_interop_vmetro3
-  rf_chain_id: chain_interop_vmetro3
-  usage: "repeater"
-  zones: ["Cook Interop"]
-  codeplug:
-    name: "Interop VMet3"
-    rx_only: true
+      all_skip: true
+  - id: asg_interop_vmetro3
+    rf_chain_id: chain_interop_vmetro3
+    usage: "repeater"
+    zones: ["Public Safety"]
+    codeplug:
+      name: "Interop VMet3"
+      rx_only: true
 
-    all_skip: true
-- id: asg_interop_vmetro4
-  rf_chain_id: chain_interop_vmetro4
-  usage: "repeater"
-  zones: ["Cook Interop"]
-  codeplug:
-    name: "Interop VMet4"
-    rx_only: true
+      all_skip: true
+  - id: asg_interop_vmetro4
+    rf_chain_id: chain_interop_vmetro4
+    usage: "repeater"
+    zones: ["Public Safety"]
+    codeplug:
+      name: "Interop VMet4"
+      rx_only: true
 
-    all_skip: true
-- id: asg_interop_vmetro5
-  rf_chain_id: chain_interop_vmetro5
-  usage: "repeater"
-  zones: ["Cook Interop"]
-  codeplug:
-    name: "Interop VMet5"
-    rx_only: true
+      all_skip: true
+  - id: asg_interop_vmetro5
+    rf_chain_id: chain_interop_vmetro5
+    usage: "repeater"
+    zones: ["Public Safety"]
+    codeplug:
+      name: "Interop VMet5"
+      rx_only: true
 
-    all_skip: true
-- id: asg_interop_u1
-  rf_chain_id: chain_interop_u1
-  usage: "repeater"
-  zones: ["Cook Interop"]
-  codeplug:
-    name: "Interop UHF 1"
-    rx_only: true
+      all_skip: true
+  - id: asg_interop_u1
+    rf_chain_id: chain_interop_u1
+    usage: "repeater"
+    zones: ["Public Safety"]
+    codeplug:
+      name: "Interop UHF 1"
+      rx_only: true
 
-    all_skip: true
-- id: asg_interop_u2
-  rf_chain_id: chain_interop_u2
-  usage: "repeater"
-  zones: ["Cook Interop"]
-  codeplug:
-    name: "Interop UHF 2"
-    rx_only: true
-    all_skip: true
+      all_skip: true
+  - id: asg_interop_u2
+    rf_chain_id: chain_interop_u2
+    usage: "repeater"
+    zones: ["Public Safety"]
+    codeplug:
+      name: "Interop UHF 2"
+      rx_only: true
+      all_skip: true

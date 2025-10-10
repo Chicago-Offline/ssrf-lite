@@ -1,54 +1,54 @@
 # SSRF-Lite: Rosehill Cemetery DMR (Chicago, IL)
 
 organizations:
-- id: org_rosehill
-  name: "Rosehill Cemetery"
+  - id: org_rosehill
+    name: "Rosehill Cemetery"
 
 locations:
-- id: loc_rosehill
-  name: "Rosehill Cemetery, Chicago IL (approx)"
-  lat: 41.9890
-  lon: -87.6890
+  - id: loc_rosehill
+    name: "Rosehill Cemetery, Chicago IL (approx)"
+    lat: 41.9890
+    lon: -87.6890
 
 stations:
-- id: stn_rosehill
-  call_sign:
-  organization_id: org_rosehill
-  location_id: loc_rosehill
-  service: "business"
+  - id: stn_rosehill
+    call_sign:
+    organization_id: org_rosehill
+    location_id: loc_rosehill
+    service: "business"
 
 antennas:
-- id: ant_rosehill
-  station_id: stn_rosehill
-  name: "Site Antenna (unknown)"
-  gain_dbi:
-  height_agl_m:
-  height_amsl_m:
+  - id: ant_rosehill
+    station_id: stn_rosehill
+    name: "Site Antenna (unknown)"
+    gain_dbi:
+    height_agl_m:
+    height_amsl_m:
 
 # Assumed DMR conventional; replace frequencies/color code if you have more accurate data
 rf_chains:
-- id: chain_rosehill_dmr
-  station_id: stn_rosehill
-  antenna_id: ant_rosehill
-  tx:
-    freq_mhz: 468.5125   # standard +5 MHz input for 463.5125 output (assumed)
-    emission: "7K60FXE"   # DMR
-  rx:
-    freq_mhz: 463.5125   # downlink to monitor per RR wiki
-  mode:
-    type: "DMR"
-    color_code: 4
-    timeslots: [1, 2]
+  - id: chain_rosehill_dmr
+    station_id: stn_rosehill
+    antenna_id: ant_rosehill
+    tx:
+      freq_mhz: 468.5125 # standard +5 MHz input for 463.5125 output (assumed)
+      emission: "7K60FXE" # DMR
+    rx:
+      freq_mhz: 463.5125 # downlink to monitor per RR wiki
+    mode:
+      type: "DMR"
+      color_code: 4
+      timeslots: [1, 2]
 
 assignments:
-- id: asgn_rosehill_ops
-  rf_chain_id: chain_rosehill_dmr
-  usage: "repeater"
-  zones: ["Local-Commercial"]
-  codeplug:
-    name: "Rosehill Ops"
-    rx_only: true
-    all_skip: true
-  comment: |
-    Rosehill Cemetery per RR wiki: 463.5125 repeater (DMR/NFM); 466.150/175/200/225/250 portables.
-    Color Code and talkgroups unknown. RX-only until verified/licensed for TX.
+  - id: asgn_rosehill_ops
+    rf_chain_id: chain_rosehill_dmr
+    usage: "repeater"
+    zones: ["Business"]
+    codeplug:
+      name: "Rosehill Ops"
+      rx_only: true
+      all_skip: true
+    comment: |
+      Rosehill Cemetery per RR wiki: 463.5125 repeater (DMR/NFM); 466.150/175/200/225/250 portables.
+      Color Code and talkgroups unknown. RX-only until verified/licensed for TX.

@@ -213,7 +213,7 @@ assignments:
   - id: asg_berrien_sirens
     rf_chain_id: chain_berrien_ema_sirens
     usage: "repeater"
-    zones: ["Berrien EMA"]
+    zones: ["Public Service"]
     codeplug:
       name: "EMA Sirens"
       rx_only: true
@@ -222,7 +222,7 @@ assignments:
   - id: asg_berrien_eoc
     rf_chain_id: chain_berrien_eoc
     usage: "repeater"
-    zones: ["Berrien EMA"]
+    zones: ["Public Service"]
     codeplug:
       name: "EOC"
       rx_only: true

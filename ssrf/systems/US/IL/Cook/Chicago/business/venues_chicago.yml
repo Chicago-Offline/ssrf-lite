@@ -2,169 +2,274 @@
 # Curated venue/building operations/security/house channels. RX-only.
 
 organizations:
-- id: org_venues
-  name: "Venues – Chicago"
+  - id: org_venues
+    name: "Business"
 
 locations:
-- id: loc_chi
-  name: "Chicago core"
-  lat: 41.8781
-  lon: -87.6298
+  - id: loc_chi
+    name: "Chicago core"
+    lat: 41.8781
+    lon: -87.6298
 
 stations:
-- id: stn_venues
-  call_sign:
-  organization_id: org_venues
-  location_id: loc_chi
-  service: "business"
+  - id: stn_venues
+    call_sign:
+    organization_id: org_venues
+    location_id: loc_chi
+    service: "business"
 
 antennas:
-- id: ant_v
-  station_id: stn_venues
-  name: "Portable"
+  - id: ant_v
+    station_id: stn_venues
+    name: "Portable"
 
 rf_chains:
   # Downtown towers/hotels (subset; RX-only)
-- {id: ch_aon_4642125, station_id: stn_venues, antenna_id: ant_v, rx: {freq_mhz: 464.2125}, tx: {emission: "7K60FXE"}, mode: {type: "DMR"}}
-- {id: ch_two_pru_464925, station_id: stn_venues, antenna_id: ant_v, rx: {freq_mhz: 464.925}, tx: {emission: "7K60FXE"}, mode: {type: "DMR"}}
-- {id: ch_bcbs_4616625, station_id: stn_venues, antenna_id: ant_v, rx: {freq_mhz: 461.6625}, tx: {emission: "7K60FXE"}, mode: {type: "DMR"}}
-- {id: ch_333wab_4647125, station_id: stn_venues, antenna_id: ant_v, rx: {freq_mhz: 464.7125}, tx: {emission: "7K60FXE"}, mode: {type: "DMR"}}
-- {id: ch_ama_463400, station_id: stn_venues, antenna_id: ant_v, rx: {freq_mhz: 463.400}, tx: {emission: "7K60FXE"}, mode: {type: "DMR"}}
-- {id: ch_oldpo_463925, station_id: stn_venues, antenna_id: ant_v, rx: {freq_mhz: 463.925}, tx: {emission: "7K60FXE"}, mode: {type: "DMR"}}
-- {id: ch_merch_4635125, station_id: stn_venues, antenna_id: ant_v, rx: {freq_mhz: 463.5125}, tx: {emission: "7K60FXE"}, mode: {type: "DMR"}}
-- {id: ch_two77_464925, station_id: stn_venues, antenna_id: ant_v, rx: {freq_mhz: 464.925}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
-- {id: ch_allegro_463725, station_id: stn_venues, antenna_id: ant_v, rx: {freq_mhz: 463.725}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
+  - {
+      id: ch_aon_4642125,
+      station_id: stn_venues,
+      antenna_id: ant_v,
+      rx: { freq_mhz: 464.2125 },
+      tx: { emission: "7K60FXE" },
+      mode: { type: "DMR" },
+    }
+  - {
+      id: ch_two_pru_464925,
+      station_id: stn_venues,
+      antenna_id: ant_v,
+      rx: { freq_mhz: 464.925 },
+      tx: { emission: "7K60FXE" },
+      mode: { type: "DMR" },
+    }
+  - {
+      id: ch_bcbs_4616625,
+      station_id: stn_venues,
+      antenna_id: ant_v,
+      rx: { freq_mhz: 461.6625 },
+      tx: { emission: "7K60FXE" },
+      mode: { type: "DMR" },
+    }
+  - {
+      id: ch_333wab_4647125,
+      station_id: stn_venues,
+      antenna_id: ant_v,
+      rx: { freq_mhz: 464.7125 },
+      tx: { emission: "7K60FXE" },
+      mode: { type: "DMR" },
+    }
+  - {
+      id: ch_ama_463400,
+      station_id: stn_venues,
+      antenna_id: ant_v,
+      rx: { freq_mhz: 463.400 },
+      tx: { emission: "7K60FXE" },
+      mode: { type: "DMR" },
+    }
+  - {
+      id: ch_oldpo_463925,
+      station_id: stn_venues,
+      antenna_id: ant_v,
+      rx: { freq_mhz: 463.925 },
+      tx: { emission: "7K60FXE" },
+      mode: { type: "DMR" },
+    }
+  - {
+      id: ch_merch_4635125,
+      station_id: stn_venues,
+      antenna_id: ant_v,
+      rx: { freq_mhz: 463.5125 },
+      tx: { emission: "7K60FXE" },
+      mode: { type: "DMR" },
+    }
+  - {
+      id: ch_two77_464925,
+      station_id: stn_venues,
+      antenna_id: ant_v,
+      rx: { freq_mhz: 464.925 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: ch_allegro_463725,
+      station_id: stn_venues,
+      antenna_id: ant_v,
+      rx: { freq_mhz: 463.725 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
 
-  # Sports/attractions (subset; RX-only)
-- {id: ch_wrigley_fm, station_id: stn_venues, antenna_id: ant_v, rx: {freq_mhz: 464.5125}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
-- {id: ch_wrigley_dmr, station_id: stn_venues, antenna_id: ant_v, rx: {freq_mhz: 463.4375}, tx: {emission: "7K60FXE"}, mode: {type: "DMR"}}
-- {id: ch_united_center, station_id: stn_venues, antenna_id: ant_v, rx: {freq_mhz: 464.300}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
-- {id: ch_soldier_field, station_id: stn_venues, antenna_id: ant_v, rx: {freq_mhz: 462.1125}, tx: {emission: "7K60FXE"}, mode: {type: "DMR", color_code: 1, timeslots: [1]}}
-- {id: ch_navy_pier_fm, station_id: stn_venues, antenna_id: ant_v, rx: {freq_mhz: 464.825}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
-- {id: ch_mccormick_fm, station_id: stn_venues, antenna_id: ant_v, rx: {freq_mhz: 464.500}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
+    # Sports/attractions (subset; RX-only)
+  - {
+      id: ch_wrigley_fm,
+      station_id: stn_venues,
+      antenna_id: ant_v,
+      rx: { freq_mhz: 464.5125 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: ch_wrigley_dmr,
+      station_id: stn_venues,
+      antenna_id: ant_v,
+      rx: { freq_mhz: 463.4375 },
+      tx: { emission: "7K60FXE" },
+      mode: { type: "DMR" },
+    }
+  - {
+      id: ch_united_center,
+      station_id: stn_venues,
+      antenna_id: ant_v,
+      rx: { freq_mhz: 464.300 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: ch_soldier_field,
+      station_id: stn_venues,
+      antenna_id: ant_v,
+      rx: { freq_mhz: 462.1125 },
+      tx: { emission: "7K60FXE" },
+      mode: { type: "DMR", color_code: 1, timeslots: [1] },
+    }
+  - {
+      id: ch_navy_pier_fm,
+      station_id: stn_venues,
+      antenna_id: ant_v,
+      rx: { freq_mhz: 464.825 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
+  - {
+      id: ch_mccormick_fm,
+      station_id: stn_venues,
+      antenna_id: ant_v,
+      rx: { freq_mhz: 464.500 },
+      tx: { emission: "11K2F3E" },
+      mode: { type: "FM" },
+    }
 
 assignments:
-- id: asg_aon
-  rf_chain_id: ch_aon_4642125
-  usage: "repeater"
-  zones: ["Venues – Chicago"]
-  codeplug:
-    name: "Aon Tower"
-    rx_only: true
-    all_skip: true
-- id: asg_two_pru
-  rf_chain_id: ch_two_pru_464925
-  usage: "repeater"
-  zones: ["Venues – Chicago"]
-  codeplug:
-    name: "Two Prudential"
-    rx_only: true
-    all_skip: true
-- id: asg_bcbs
-  rf_chain_id: ch_bcbs_4616625
-  usage: "repeater"
-  zones: ["Venues – Chicago"]
-  codeplug:
-    name: "BCBS HQ"
-    rx_only: true
-    all_skip: true
-- id: asg_333wab
-  rf_chain_id: ch_333wab_4647125
-  usage: "repeater"
-  zones: ["Venues – Chicago"]
-  codeplug:
-    name: "333 S Wabash"
-    rx_only: true
-    all_skip: true
-- id: asg_ama
-  rf_chain_id: ch_ama_463400
-  usage: "repeater"
-  zones: ["Venues – Chicago"]
-  codeplug:
-    name: "AMA Plaza"
-    rx_only: true
-    all_skip: true
-- id: asg_oldpo
-  rf_chain_id: ch_oldpo_463925
-  usage: "repeater"
-  zones: ["Venues – Chicago"]
-  codeplug:
-    name: "Old Post Office"
-    rx_only: true
-    all_skip: true
-- id: asg_merch
-  rf_chain_id: ch_merch_4635125
-  usage: "repeater"
-  zones: ["Venues – Chicago"]
-  codeplug:
-    name: "Merch Mart"
-    rx_only: true
-    all_skip: true
-- id: asg_two77
-  rf_chain_id: ch_two77_464925
-  usage: "simplex"
-  zones: ["Venues – Chicago"]
-  codeplug:
-    name: "Two Prud FM"
-    rx_only: true
-    all_skip: true
-- id: asg_allegro
-  rf_chain_id: ch_allegro_463725
-  usage: "simplex"
-  zones: ["Venues – Chicago"]
-  codeplug:
-    name: "Allegro FM"
-    rx_only: true
-    all_skip: true
-- id: asg_wrigley_fm
-  rf_chain_id: ch_wrigley_fm
-  usage: "simplex"
-  zones: ["Venues – Chicago"]
-  codeplug:
-    name: "Wrigley FM"
-    rx_only: true
-    all_skip: true
-- id: asg_wrigley_dmr
-  rf_chain_id: ch_wrigley_dmr
-  usage: "repeater"
-  zones: ["Venues – Chicago"]
-  codeplug:
-    name: "Wrigley DMR"
-    rx_only: true
-    all_skip: true
-- id: asg_united
-  rf_chain_id: ch_united_center
-  usage: "simplex"
-  zones: ["Venues – Chicago"]
-  codeplug:
-    name: "United Center"
-    rx_only: true
-    all_skip: true
-- id: asg_soldier
-  rf_chain_id: ch_soldier_field
-  usage: "simplex"
-  zones: ["Venues – Chicago"]
-  codeplug:
-    name: "Soldier Field"
-    rx_only: true
-    all_skip: true
-- id: asg_navy_pier
-  rf_chain_id: ch_navy_pier_fm
-  usage: "repeater"
-  zones: ["Venues – Chicago"]
-  codeplug:
-    name: "Navy Pier"
-    rx_only: true
-    all_skip: true
-- id: asg_mccormick
-  rf_chain_id: ch_mccormick_fm
-  usage: "repeater"
-  zones: ["Venues – Chicago"]
-  codeplug:
-    name: "McCormick Pl"
-    rx_only: true
+  - id: asg_aon
+    rf_chain_id: ch_aon_4642125
+    usage: "repeater"
+    zones: ["Business"]
+    codeplug:
+      name: "Aon Tower"
+      rx_only: true
+      all_skip: true
+  - id: asg_two_pru
+    rf_chain_id: ch_two_pru_464925
+    usage: "repeater"
+    zones: ["Business"]
+    codeplug:
+      name: "Two Prudential"
+      rx_only: true
+      all_skip: true
+  - id: asg_bcbs
+    rf_chain_id: ch_bcbs_4616625
+    usage: "repeater"
+    zones: ["Business"]
+    codeplug:
+      name: "BCBS HQ"
+      rx_only: true
+      all_skip: true
+  - id: asg_333wab
+    rf_chain_id: ch_333wab_4647125
+    usage: "repeater"
+    zones: ["Business"]
+    codeplug:
+      name: "333 S Wabash"
+      rx_only: true
+      all_skip: true
+  - id: asg_ama
+    rf_chain_id: ch_ama_463400
+    usage: "repeater"
+    zones: ["Business"]
+    codeplug:
+      name: "AMA Plaza"
+      rx_only: true
+      all_skip: true
+  - id: asg_oldpo
+    rf_chain_id: ch_oldpo_463925
+    usage: "repeater"
+    zones: ["Business"]
+    codeplug:
+      name: "Old Post Office"
+      rx_only: true
+      all_skip: true
+  - id: asg_merch
+    rf_chain_id: ch_merch_4635125
+    usage: "repeater"
+    zones: ["Business"]
+    codeplug:
+      name: "Merch Mart"
+      rx_only: true
+      all_skip: true
+  - id: asg_two77
+    rf_chain_id: ch_two77_464925
+    usage: "simplex"
+    zones: ["Business"]
+    codeplug:
+      name: "Two Prud FM"
+      rx_only: true
+      all_skip: true
+  - id: asg_allegro
+    rf_chain_id: ch_allegro_463725
+    usage: "simplex"
+    zones: ["Business"]
+    codeplug:
+      name: "Allegro FM"
+      rx_only: true
+      all_skip: true
+  - id: asg_wrigley_fm
+    rf_chain_id: ch_wrigley_fm
+    usage: "simplex"
+    zones: ["Business"]
+    codeplug:
+      name: "Wrigley FM"
+      rx_only: true
+      all_skip: true
+  - id: asg_wrigley_dmr
+    rf_chain_id: ch_wrigley_dmr
+    usage: "repeater"
+    zones: ["Business"]
+    codeplug:
+      name: "Wrigley DMR"
+      rx_only: true
+      all_skip: true
+  - id: asg_united
+    rf_chain_id: ch_united_center
+    usage: "simplex"
+    zones: ["Business"]
+    codeplug:
+      name: "United Center"
+      rx_only: true
+      all_skip: true
+  - id: asg_soldier
+    rf_chain_id: ch_soldier_field
+    usage: "simplex"
+    zones: ["Business"]
+    codeplug:
+      name: "Soldier Field"
+      rx_only: true
+      all_skip: true
+  - id: asg_navy_pier
+    rf_chain_id: ch_navy_pier_fm
+    usage: "repeater"
+    zones: ["Business"]
+    codeplug:
+      name: "Navy Pier"
+      rx_only: true
+      all_skip: true
+  - id: asg_mccormick
+    rf_chain_id: ch_mccormick_fm
+    usage: "repeater"
+    zones: ["Business"]
+    codeplug:
+      name: "McCormick Pl"
+      rx_only: true
 
-    all_skip: true
+      all_skip: true
 comments:
-- text: |
-    Venue/tower/attraction channels curated for RX-only monitoring and subject to change; verify on-air usage.
+  - text: |
+      Venue/tower/attraction channels curated for RX-only monitoring and subject to change; verify on-air usage.

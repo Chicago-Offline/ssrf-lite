@@ -3,196 +3,197 @@
 # Encrypted P25 dispatch channels are intentionally excluded. Only analogue/FM channels added.
 
 organizations:
-- id: org_chi_cpd
-  name: "Chicago Police Department"
+  - id: org_chi_cpd
+    name: "Chicago Police Department"
 
 locations:
-- id: loc_chicago_oemc
-  name: "Chicago OEMC (approx)"
-  lat: 41.8776
-  lon: -87.6244
+  - id: loc_chicago_oemc
+    name: "Chicago OEMC (approx)"
+    lat: 41.8776
+    lon: -87.6244
 
 stations:
-- id: stn_cpd
-  call_sign:
-  organization_id: org_chi_cpd
-  location_id: loc_chicago_oemc
-  service: "public-safety"
+  - id: stn_cpd
+    call_sign:
+    organization_id: org_chi_cpd
+    location_id: loc_chicago_oemc
+    service: "public-safety"
 
 antennas:
-- id: ant_cpd
-  station_id: stn_cpd
-  name: "OEMC Antenna (unknown)"
-  gain_dbi:
-  height_agl_m:
-  height_amsl_m:
+  - id: ant_cpd
+    station_id: stn_cpd
+    name: "OEMC Antenna (unknown)"
+    gain_dbi:
+    height_agl_m:
+    height_amsl_m:
 
 rf_chains:
   # CPD Citywide channels (FM analog), all RX-only in assignments below
-- id: chain_cpd_cw1
-  station_id: stn_cpd
-  antenna_id: ant_cpd
-  rx:
-    freq_mhz: 460.125
-  tx:
-    emission: "11K2F3E"   # narrow FM ~12.5 kHz
-  mode:
-    type: "FM"
-    ctcss_rx_hz: 173.8
+  - id: chain_cpd_cw1
+    station_id: stn_cpd
+    antenna_id: ant_cpd
+    rx:
+      freq_mhz: 460.125
+    tx:
+      emission: "11K2F3E" # narrow FM ~12.5 kHz
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 173.8
 
-- id: chain_cpd_cw2
-  station_id: stn_cpd
-  antenna_id: ant_cpd
-  rx:
-    freq_mhz: 460.175
-  tx:
-    emission: "11K2F3E"
-  mode:
-    type: "FM"
-    ctcss_rx_hz: 123.0
+  - id: chain_cpd_cw2
+    station_id: stn_cpd
+    antenna_id: ant_cpd
+    rx:
+      freq_mhz: 460.175
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 123.0
 
-- id: chain_cpd_cw3
-  station_id: stn_cpd
-  antenna_id: ant_cpd
-  rx:
-    freq_mhz: 460.275
-  tx:
-    emission: "11K2F3E"
-  mode:
-    type: "FM"
-    ctcss_rx_hz: 141.3
+  - id: chain_cpd_cw3
+    station_id: stn_cpd
+    antenna_id: ant_cpd
+    rx:
+      freq_mhz: 460.275
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 141.3
 
-- id: chain_cpd_cw4
-  station_id: stn_cpd
-  antenna_id: ant_cpd
-  rx:
-    freq_mhz: 460.325
-  tx:
-    emission: "11K2F3E"
-  mode:
-    type: "FM"
-    ctcss_rx_hz: 192.8
+  - id: chain_cpd_cw4
+    station_id: stn_cpd
+    antenna_id: ant_cpd
+    rx:
+      freq_mhz: 460.325
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 192.8
 
-- id: chain_cpd_cw5
-  station_id: stn_cpd
-  antenna_id: ant_cpd
-  rx:
-    freq_mhz: 460.350
-  tx:
-    emission: "11K2F3E"
-  mode:
-    type: "FM"
-    ctcss_rx_hz: 97.4
+  - id: chain_cpd_cw5
+    station_id: stn_cpd
+    antenna_id: ant_cpd
+    rx:
+      freq_mhz: 460.350
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 97.4
 
-- id: chain_cpd_cw6
-  station_id: stn_cpd
-  antenna_id: ant_cpd
-  rx:
-    freq_mhz: 460.250
-  tx:
-    emission: "11K2F3E"
-  mode:
-    type: "FM"
-    ctcss_rx_hz: 162.2
+  - id: chain_cpd_cw6
+    station_id: stn_cpd
+    antenna_id: ant_cpd
+    rx:
+      freq_mhz: 460.250
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 162.2
 
-- id: chain_cpd_cw7
-  station_id: stn_cpd
-  antenna_id: ant_cpd
-  rx:
-    freq_mhz: 460.300
-  tx:
-    emission: "11K2F3E"
-  mode:
-    type: "FM"
-    ctcss_rx_hz: 131.8
+  - id: chain_cpd_cw7
+    station_id: stn_cpd
+    antenna_id: ant_cpd
+    rx:
+      freq_mhz: 460.300
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 131.8
 
-  # VHF Car-to-Car (listed as CSQ)
-- id: chain_cpd_vhf2
-  station_id: stn_cpd
-  antenna_id: ant_cpd
-  rx:
-    freq_mhz: 154.650
-  tx:
-    emission: "11K2F3E"
-  mode:
-    type: "FM"
-      # CSQ receive; no tone
+    # VHF Car-to-Car (listed as CSQ)
+  - id: chain_cpd_vhf2
+    station_id: stn_cpd
+    antenna_id: ant_cpd
+    rx:
+      freq_mhz: 154.650
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type:
+        "FM"
+        # CSQ receive; no tone
 
 assignments:
   # Zone: Chicago PD (RX-only)
-- id: asg_cpd_cw1
-  rf_chain_id: chain_cpd_cw1
-  usage: "repeater"
-  zones: ["Chicago PD"]
-  codeplug:
-    name: "CPD Citywide 1"
-    rx_only: true
-    all_skip: true
+  - id: asg_cpd_cw1
+    rf_chain_id: chain_cpd_cw1
+    usage: "repeater"
+    zones: ["Public Safety"]
+    codeplug:
+      name: "CPD Citywide 1"
+      rx_only: true
+      all_skip: true
 
-- id: asg_cpd_cw2
-  rf_chain_id: chain_cpd_cw2
-  usage: "repeater"
-  zones: ["Chicago PD"]
-  codeplug:
-    name: "CPD Citywide 2"
-    rx_only: true
-    all_skip: true
+  - id: asg_cpd_cw2
+    rf_chain_id: chain_cpd_cw2
+    usage: "repeater"
+    zones: ["Public Safety"]
+    codeplug:
+      name: "CPD Citywide 2"
+      rx_only: true
+      all_skip: true
 
-- id: asg_cpd_cw3
-  rf_chain_id: chain_cpd_cw3
-  usage: "repeater"
-  zones: ["Chicago PD"]
-  codeplug:
-    name: "CPD Citywide 3"
-    rx_only: true
-    all_skip: true
+  - id: asg_cpd_cw3
+    rf_chain_id: chain_cpd_cw3
+    usage: "repeater"
+    zones: ["Public Safety"]
+    codeplug:
+      name: "CPD Citywide 3"
+      rx_only: true
+      all_skip: true
 
-- id: asg_cpd_cw4
-  rf_chain_id: chain_cpd_cw4
-  usage: "repeater"
-  zones: ["Chicago PD"]
-  codeplug:
-    name: "CPD Citywide 4"
-    rx_only: true
-    all_skip: true
+  - id: asg_cpd_cw4
+    rf_chain_id: chain_cpd_cw4
+    usage: "repeater"
+    zones: ["Public Safety"]
+    codeplug:
+      name: "CPD Citywide 4"
+      rx_only: true
+      all_skip: true
 
-- id: asg_cpd_cw5
-  rf_chain_id: chain_cpd_cw5
-  usage: "repeater"
-  zones: ["Chicago PD"]
-  codeplug:
-    name: "CPD Citywide 5"
-    rx_only: true
-    all_skip: true
+  - id: asg_cpd_cw5
+    rf_chain_id: chain_cpd_cw5
+    usage: "repeater"
+    zones: ["Public Safety"]
+    codeplug:
+      name: "CPD Citywide 5"
+      rx_only: true
+      all_skip: true
 
-- id: asg_cpd_cw6
-  rf_chain_id: chain_cpd_cw6
-  usage: "repeater"
-  zones: ["Chicago PD"]
-  codeplug:
-    name: "CPD Citywide 6"
-    rx_only: true
-    all_skip: true
+  - id: asg_cpd_cw6
+    rf_chain_id: chain_cpd_cw6
+    usage: "repeater"
+    zones: ["Public Safety"]
+    codeplug:
+      name: "CPD Citywide 6"
+      rx_only: true
+      all_skip: true
 
-- id: asg_cpd_cw7
-  rf_chain_id: chain_cpd_cw7
-  usage: "repeater"
-  zones: ["Chicago PD"]
-  codeplug:
-    name: "CPD Citywide 7"
-    rx_only: true
-    all_skip: true
+  - id: asg_cpd_cw7
+    rf_chain_id: chain_cpd_cw7
+    usage: "repeater"
+    zones: ["Public Safety"]
+    codeplug:
+      name: "CPD Citywide 7"
+      rx_only: true
+      all_skip: true
 
-- id: asg_cpd_vhf2
-  rf_chain_id: chain_cpd_vhf2
-  usage: "simplex"
-  zones: ["Chicago PD"]
-  codeplug:
-    name: "CPD VHF Car2"
-    rx_only: true
+  - id: asg_cpd_vhf2
+    rf_chain_id: chain_cpd_vhf2
+    usage: "simplex"
+    zones: ["Public Safety"]
+    codeplug:
+      name: "CPD VHF Car2"
+      rx_only: true
 
-    all_skip: true
+      all_skip: true
 comments:
-- text: |
-    CPD dispatch zones on UHF P25 are encrypted (P25E) and intentionally omitted.
-    This file includes analogue Citywide channels and VHF car-to-car for receive-only monitoring on OpenGD77.
+  - text: |
+      CPD dispatch zones on UHF P25 are encrypted (P25E) and intentionally omitted.
+      This file includes analogue Citywide channels and VHF car-to-car for receive-only monitoring on OpenGD77.
