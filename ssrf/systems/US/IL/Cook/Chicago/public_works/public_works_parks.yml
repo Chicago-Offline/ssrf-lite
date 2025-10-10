@@ -17,7 +17,7 @@ stations:
   call_sign:
   organization_id: org_muni
   location_id: loc_city
-  service: "public_works"
+  service: "public_safety_part90"
 
 antennas:
 - id: ant_m

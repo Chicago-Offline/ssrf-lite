@@ -175,7 +175,7 @@ contacts:
 authorizations:
   - id: auth_fcc_amateur
     authority: "FCC"
-    service: "Amateur Radio"
+    service: "amateur"
     class: "Technician or higher"
     identifier: null
     notes: "Transmit requires US amateur license."

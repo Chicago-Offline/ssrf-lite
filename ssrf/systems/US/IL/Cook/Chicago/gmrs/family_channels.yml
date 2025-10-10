@@ -58,13 +58,13 @@ contacts:
 authorizations:
   - id: auth_fcc_gmrs_family
     authority: "FCC"
-    service: "GMRS"
+    service: "gmrs"
     class: "License required"
     identifier: null
     notes: "Family GMRS license held by WRXC682/WSKE439."
   - id: auth_fcc_amateur_family
     authority: "FCC"
-    service: "Amateur Radio"
+    service: "amateur"
     class: "Technician or higher"
     identifier: null
     notes: "KC9MHE amateur privileges for amateur-band channels."

@@ -16,7 +16,7 @@ stations:
     call_sign:
     organization_id: org_venues
     location_id: loc_chi
-    service: "business"
+    service: "business_itinerant_part90"
 
 antennas:
   - id: ant_v

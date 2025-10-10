@@ -19,12 +19,12 @@ stations:
     call_sign:
     organization_id: org_cfd
     location_id: loc_chi
-    service: "fire-ems"
+    service: "public_safety_part90"
   - id: stn_northside
     call_sign:
     organization_id: org_northside_fire
     location_id: loc_chi
-    service: "fire-ems"
+    service: "public_safety_part90"
 
 antennas:
   - id: ant_cfd

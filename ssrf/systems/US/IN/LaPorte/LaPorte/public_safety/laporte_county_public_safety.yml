@@ -25,27 +25,27 @@ stations:
     call_sign: "KSA487"
     organization_id: org_laporte_sheriff
     location_id: loc_laporte_county
-    service: "public-safety"
+    service: "public_safety_part90"
   - id: stn_laporte_ems
     call_sign: "KSO422"
     organization_id: org_laporte_ems
     location_id: loc_laporte_county
-    service: "fire-ems"
+    service: "public_safety_part90"
   - id: stn_laporte_ema
     call_sign: "WPUU802"
     organization_id: org_laporte_ema
     location_id: loc_laporte_county
-    service: "public-safety"
+    service: "public_safety_part90"
   - id: stn_laporte_fire
     call_sign: "WQQY208"
     organization_id: org_laporte_fire
     location_id: loc_laporte_county
-    service: "fire-ems"
+    service: "public_safety_part90"
   - id: stn_westville_pd
     call_sign: "WQKC612"
     organization_id: org_westville_pd
     location_id: loc_laporte_county
-    service: "public-safety"
+    service: "public_safety_part90"
 
 antennas:
   - id: ant_laporte_sheriff

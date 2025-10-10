@@ -23,22 +23,22 @@ stations:
     call_sign: "WQYX942"
     organization_id: org_berrien_sheriff
     location_id: loc_berrien_co
-    service: "public-safety"
+    service: "public_safety_part90"
   - id: stn_berrien_fire
     call_sign: "WQNL329"
     organization_id: org_berrien_fire
     location_id: loc_berrien_co
-    service: "fire-ems"
+    service: "public_safety_part90"
   - id: stn_berrien_ema
     call_sign: "WPPX293"
     organization_id: org_berrien_ema
     location_id: loc_berrien_co
-    service: "public-safety"
+    service: "public_safety_part90"
   - id: stn_berrien_parks
     call_sign:
     organization_id: org_berrien_parks
     location_id: loc_berrien_co
-    service: "public-safety"
+    service: "public_safety_part90"
 
 antennas:
   - id: ant_berrien_sheriff

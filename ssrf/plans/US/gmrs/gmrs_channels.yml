@@ -12,7 +12,7 @@ organizations:
 authorizations:
   - id: auth_fcc_gmrs
     authority: "FCC"
-    service: "GMRS"
+    service: "gmrs"
     class: "License required"
     identifier:
     notes: |

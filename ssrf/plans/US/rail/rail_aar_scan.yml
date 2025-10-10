@@ -17,7 +17,7 @@ stations:
     call_sign:
     organization_id: org_rail
     location_id: loc_chi_rail
-    service: "railroad"
+    service: "railroad_aar"
 
 antennas:
   - id: ant_rail

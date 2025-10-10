@@ -18,7 +18,7 @@ stations:
     call_sign:
     organization_id: org_il_interop
     location_id: loc_il
-    service: "public_safety"
+    service: "public_safety_part90"
 
 antennas:
   - id: ant_il

@@ -179,7 +179,7 @@ contacts:
 authorizations:
   - id: auth_fcc_amateur_t
     authority: "FCC"
-    service: "Amateur Radio"
+    service: "amateur"
     class: "Technician or higher"
     identifier: null
     notes: "TX requires US amateur license."

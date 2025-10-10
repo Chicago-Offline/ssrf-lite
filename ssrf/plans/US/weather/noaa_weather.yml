@@ -17,7 +17,7 @@ stations:
     call_sign: null
     organization_id: org_noaa
     location_id: loc_chi
-    service: "weather"
+    service: "noaa_weather_radio"
 
 antennas:
   - id: ant_noaa

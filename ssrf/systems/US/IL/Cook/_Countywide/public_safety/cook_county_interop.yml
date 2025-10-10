@@ -16,7 +16,7 @@ stations:
     call_sign:
     organization_id: org_cook_interop
     location_id: loc_cook_interop
-    service: "interop"
+    service: "public_safety_part90"
 
 antennas:
   - id: ant_cook_interop

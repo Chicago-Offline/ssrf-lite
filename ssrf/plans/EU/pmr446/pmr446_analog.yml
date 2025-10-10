@@ -12,7 +12,7 @@ organizations:
 authorizations:
   - id: auth_etsi_pmr446
     authority: "CEPT/ERC"
-    service: "PMR446"
+    service: "pmr446"
     class: "Licence-exempt"
     notes: |
       PMR446 handhelds are licence-exempt across most CEPT countries (including the UK) with

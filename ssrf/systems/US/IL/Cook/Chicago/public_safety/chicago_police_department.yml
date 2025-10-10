@@ -17,7 +17,7 @@ stations:
     call_sign:
     organization_id: org_chi_cpd
     location_id: loc_chicago_oemc
-    service: "public-safety"
+    service: "public_safety_part90"
 
 antennas:
   - id: ant_cpd

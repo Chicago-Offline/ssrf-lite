@@ -19,7 +19,7 @@ stations:
     call_sign:
     organization_id: org_us_itinerant
     location_id: loc_us
-    service: "business"
+    service: "business_itinerant_part90"
 
 antennas:
   - id: ant_us

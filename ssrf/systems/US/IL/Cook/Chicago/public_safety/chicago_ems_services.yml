@@ -18,12 +18,12 @@ stations:
     call_sign:
     organization_id: org_cfd_ems
     location_id: loc_chicago_regionxi
-    service: "ems"
+    service: "public_safety_part90"
   - id: stn_cmed_xi
     call_sign:
     organization_id: org_idph_regxi
     location_id: loc_chicago_regionxi
-    service: "ems"
+    service: "public_safety_part90"
 
 antennas:
   - id: ant_cfd_ems

@@ -15,7 +15,7 @@ stations:
     call_sign:
     organization_id: org_rosehill
     location_id: loc_rosehill
-    service: "business"
+    service: "business_itinerant_part90"
 
 antennas:
   - id: ant_rosehill

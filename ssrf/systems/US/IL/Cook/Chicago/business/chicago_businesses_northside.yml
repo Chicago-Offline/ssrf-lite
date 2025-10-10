@@ -17,7 +17,7 @@ stations:
     call_sign:
     organization_id: org_chi_biz_north
     location_id: loc_northside
-    service: "business"
+    service: "business_itinerant_part90"
 
 antennas:
   - id: ant_biz_north

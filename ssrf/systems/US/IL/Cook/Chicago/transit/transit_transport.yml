@@ -16,7 +16,7 @@ stations:
   call_sign:
   organization_id: org_transit
   location_id: loc_chi
-  service: "transit"
+  service: "public_safety_part90"
 
 antennas:
 - id: ant_t

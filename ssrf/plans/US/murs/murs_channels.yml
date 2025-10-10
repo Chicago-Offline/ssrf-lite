@@ -12,7 +12,7 @@ organizations:
 authorizations:
   - id: auth_fcc_murs
     authority: "FCC"
-    service: "MURS"
+    service: "murs"
     class: "Licensed by rule"
     identifier:
     notes: |
