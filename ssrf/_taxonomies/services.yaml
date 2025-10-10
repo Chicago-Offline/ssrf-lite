@@ -1,0 +1,153 @@
+# ssrf/_taxonomies/services.yml
+version: 2025-10-10
+services:
+  - id: amateur
+    label: Amateur Radio
+    regulatory_body: FCC
+    rule_part: "47 CFR Part 97"
+    subpart: null
+    rx_only_by_regulation: false
+    typical_bands: ["HF", "VHF", "UHF", "SHF"]
+    geography: ["US"]
+    description: >
+      Non-commercial radio service for licensed amateurs. Voice/data allowed per sub-band and mode
+      rules. Cross-band and repeater operations per Part 97.
+    usage_notes: >
+      Callsign required; no business comms. Observe band plans and emission limits.
+
+  - id: gmrs
+    label: General Mobile Radio Service (GMRS)
+    regulatory_body: FCC
+    rule_part: "47 CFR Part 95"
+    subpart: "E"
+    rx_only_by_regulation: false
+    typical_bands: ["UHF 462/467 MHz"]
+    geography: ["US"]
+    description: >
+      Licensed personal radio service for individuals and immediate family, supporting simplex and
+      repeater use on 22 channels (shared with FRS for some).  [oai_citation:0‡eCFR](https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-E?utm_source=chatgpt.com)
+    usage_notes: >
+      Individual license required; higher power and repeaters permitted. Observe channel/power limits.
+
+  - id: frs
+    label: Family Radio Service (FRS)
+    regulatory_body: FCC
+    rule_part: "47 CFR Part 95"
+    subpart: "B"
+    rx_only_by_regulation: false
+    typical_bands: ["UHF 462/467 MHz"]
+    geography: ["US"]
+    description: >
+      Unlicensed, low-power handheld service for short-range voice/data on 22 channels with fixed
+      antennas.  [oai_citation:1‡eCFR](https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-B?utm_source=chatgpt.com)
+    usage_notes: >
+      No repeaters; device and power limits apply. Many channels overlap GMRS (listen compatible).
+
+  - id: murs
+    label: Multi-Use Radio Service (MURS)
+    regulatory_body: FCC
+    rule_part: "47 CFR Part 95"
+    subpart: "J"
+    rx_only_by_regulation: false
+    typical_bands: ["VHF 151-154 MHz (5 channels)"]
+    geography: ["US"]
+    description: >
+      Unlicensed short-range voice/data on five VHF channels with strict power/antenna limits.  [oai_citation:2‡eCFR](https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-J?utm_source=chatgpt.com)
+    usage_notes: >
+      No repeaters; some channels shared with legacy business users—mind interference etiquette.
+
+  - id: pmr446
+    label: PMR446 (UHF)
+    regulatory_body: ETSI/CEPT
+    rule_part: "ECC Decision (15)05"
+    subpart: null
+    rx_only_by_regulation: false
+    typical_bands: ["UHF 446.0-446.2 MHz"]
+    geography: ["EU", "UK"]
+    description: >
+      Licence-free personal and business voice service across much of Europe on 16 analogue and 16
+      digital (DMR/FDMA) channels at 0.5 W ERP with fixed antennas.  [oai_citation:0‡ETSI](https://www.etsi.org/deliver/etsi_en/300200_300299/300296/02.01.01_60/en_300296v020101p.pdf)
+    usage_notes: >
+      Observe national deviations (e.g., channel allocations, digital allowances). Repeaters and
+      external antennas are not permitted under standard PMR446 rules.
+
+  - id: noaa_weather_radio
+    label: NOAA Weather Radio
+    regulatory_body: NOAA/NWS (receive-only)
+    rule_part: null
+    subpart: null
+    rx_only_by_regulation: true
+    typical_bands: ["VHF 162.400-162.550 MHz (7 channels)"]
+    geography: ["US"]
+    description: >
+      Continuous all-hazards weather broadcasts from NWS on seven nationwide channels; receive only.  [oai_citation:3‡Weather.gov](https://www.weather.gov/nwr/station_listing?utm_source=chatgpt.com)
+    usage_notes: >
+      Do not transmit. Include in scan lists; consider priority scan for alerts.
+
+  - id: marine
+    label: Maritime Mobile Service (VHF Marine)
+    regulatory_body: FCC/ITU
+    rule_part: "47 CFR Part 80"
+    subpart: null
+    rx_only_by_regulation: conditional
+    typical_bands: ["VHF 156-162 MHz"]
+    geography: ["Global"]
+    description: >
+      Internationally allocated service for safety and operational comms at sea and inland waterways
+      (e.g., Ch. 16, 13). TX typically restricted to vessels/stations with appropriate authority.  [oai_citation:4‡eCFR](https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-80?toc=1&utm_source=chatgpt.com)
+    usage_notes: >
+      For shore-based listeners, treat as RX-only unless properly authorized/licensed.
+
+  - id: aviation
+    label: Aviation (Airband)
+    regulatory_body: FCC/FAA/ICAO
+    rule_part: "47 CFR Part 87"
+    subpart: null
+    rx_only_by_regulation: conditional
+    typical_bands: ["VHF AM 118-137 MHz"]
+    geography: ["Global"]
+    description: >
+      Safety-of-life and operational comms in aviation; AM voice with channelization per ICAO/FAA.  [oai_citation:5‡eCFR](https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-87?utm_source=chatgpt.com)
+    usage_notes: >
+      TX limited to authorized aircraft/ground stations. Treat as RX-only in general-purpose codeplugs.
+
+  - id: railroad_aar
+    label: Railroad (AAR band)
+    regulatory_body: FCC/AAR
+    rule_part: "47 CFR Part 90 (PLMR)"
+    subpart: null
+    rx_only_by_regulation: conditional
+    typical_bands: ["VHF 159-161 MHz (AAR Ch 001-097)"]
+    geography: ["North America"]
+    description: >
+      Standardized railroad channels; widespread simplex use, increasing NXDN digital per AAR spec.  [oai_citation:6‡RadioReference](https://www.radioreference.com/db/aid/7747?utm_source=chatgpt.com)
+    usage_notes: >
+      TX restricted to railroad licensees/contractors. Default to RX-only in public codeplugs.
+
+  - id: public_safety_part90
+    label: Public Safety (Part 90)
+    regulatory_body: FCC
+    rule_part: "47 CFR Part 90"
+    subpart: null
+    rx_only_by_regulation: conditional
+    typical_bands: ["VHF/UHF/700/800 MHz"]
+    geography: ["US"]
+    description: >
+      Police, fire, EMS, and government systems under Part 90 (analog, P25, etc.). TX restricted to
+      licensees; many systems trunked/encrypted.
+    usage_notes: >
+      Treat as RX-only; document trunking/voice modes separately in the system definition.
+
+  - id: business_itinerant_part90
+    label: Business/Industrial Itinerant (Part 90)
+    regulatory_body: FCC
+    rule_part: "47 CFR Part 90"
+    subpart: null
+    rx_only_by_regulation: conditional
+    typical_bands: ["VHF/UHF (dot/star, itinerants)"]
+    geography: ["US"]
+    description: >
+      Private land-mobile channels for business/industrial users (simplex/repeater, tones/DCS). TX
+      requires appropriate licensing under Part 90.
+    usage_notes: >
+      Often audible at venues/hotels; set RX-only unless user holds or operates under a valid license.
