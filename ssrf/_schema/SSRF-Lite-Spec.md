@@ -1,24 +1,43 @@
 # SSRF-Lite YAML Specification  
+
 *A pragmatic spectrum data model for codeplug generation*  
 
-Version: **0.4.0**  
-Last updated: 2025-10-06  
+Version: **0.5.0**  
+Last updated: 2025-10-10  
 
 ---
 
 ## 1. Purpose
+
 SSRF-Lite is a trimmed-down profile of the [Standard Spectrum Resource Format (SSRF)](https://www.ntia.gov/publications/2023/standard-spectrum-resource-format-ssrf) designed for:  
 
-- Representing radio channels, repeaters, and channel plans in **YAML**.  
-- Driving automated codeplug generators ex. OpenGD77, qdmr, OpenRTX, & OEM imports.
+- Representing radio channels, repeaters, and channel plans in **YAML** as reference data.  
 - Remaining close enough to SSRF that future expansion or exchange is straightforward.  
+- Powering downstream tooling (codeplug generators, planners, etc.) **without** embedding per-consumer policy choices inside the reference layer.  
+
+### Layered architecture (Reference ➜ Selection ➜ Policy)
+
+```text
+┌────────────────┐   ┌────────────────────┐   ┌────────────────────┐
+│ SSRF-Lite data │ → │ Profiles (selection│ → │ Policies (opinions │
+│ Reference-only │   │ & scoping)         │   │ & rendering rules) │
+└────────────────┘   └────────────────────┘   └────────────────────┘
+```
+
+- **SSRF-Lite** captures authoritative RF facts: who owns a system, where it lives, how it transmits, what authorizations exist.  
+- **Profiles** choose which SSRF assignments apply to a requested configuration (e.g., "Chicago GMRS" vs. "Emergency-only").  
+- **Policies** express consumer-specific opinions such as transmit enablement, scan skip defaults, zone membership, ordering, and naming conventions.  
+
+Keeping these concerns separated makes SSRF-Lite reusable across radios, services, and policy stacks.  
 
 ---
 
-## 2. Entities
+## 2. Entities (Reference layer)
 
 ### 2.1 Organization
+
 Represents an owning or operating body.  
+
 ```yaml
 organizations:
   - id: org_ns9rc
@@ -26,13 +45,16 @@ organizations:
 ```
 
 Fields:  
+
 - `id` (string, unique)  
 - `name` (string)  
 
 ---
 
 ### 2.2 Location
+
 Geographic site.  
+
 ```yaml
 locations:
   - id: loc_chicago_lsd
@@ -40,7 +62,9 @@ locations:
     lat: 41.9804506
     lon: -87.6546484
 ```
+
 Fields:  
+
 - `id`, `name`  
 - `lat`, `lon` (decimal degrees)  
 
@@ -49,7 +73,9 @@ Fields:
 ---
 
 ### 2.3 Station
+
 Logical station at a location, often tied to an organization.  
+
 ```yaml
 stations:
   - id: stn_ns9rc_440
@@ -60,6 +86,7 @@ stations:
 ```
 
 Fields:  
+
 - `id`, `call_sign`  
 - `organization_id` (ref → Organization)  
 - `location_id` (ref → Location)  
@@ -68,7 +95,9 @@ Fields:
 ---
 
 ### 2.4 Antenna
+
 Basic antenna info with explicit height references.  
+
 ```yaml
 antennas:
   - id: ant_ns9rc_440
@@ -78,7 +107,9 @@ antennas:
     height_agl_m: 156.4       # 513 feet ≈ 156.4 m
     height_amsl_m: null
 ```
+
 Fields:  
+
 - `id`, `station_id`, `name`  
 - `gain_dbi` (optional)  
 - `height_agl_m` (optional, meters AGL)  
@@ -89,7 +120,9 @@ Fields:
 ---
 
 ### 2.5 RF Chain
-Bundled **Transmitter + Receiver + Mode**.  
+
+Bundled **Transmitter + Receiver + Mode**. Reference-only facts (frequencies, emissions, and modulation metadata) live here; codeplug behaviors are defined elsewhere.  
+
 ```yaml
 rf_chains:
   - id: chain_ns9rc_440_fm
@@ -141,7 +174,7 @@ For multi-site DMR systems, capture each repeater as an `rf_chain` and centraliz
 
 ### 2.6 Channel Plan
 
-Reusable collections (NOAA, Marine, GMRS interstitials).  
+Reusable collections (NOAA, Marine, GMRS interstitials). Channel plans remain purely descriptive references—no profile or scan behavior is defined here.  
 
 ```yaml
 channel_plans:
@@ -222,47 +255,45 @@ Fields:
 
 ### 2.9 Assignment
 
-The “workhorse” — links RF chain or channel plan to an operational use (codeplug row).  
+The “workhorse” — links RF chains or channel plans to an operational RF use **without** prescribing how any consumer should render it.  
 
 ```yaml
 assignments:
   - id: asgn_ns9rc_440
     rf_chain_id: chain_ns9rc_440_fm
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "NS9RC 440"
-      rx_only: false
-      all_skip: false  # Optional: if true, sets Channels.csv "All Skip" = Yes
-      preferred_contacts: [tg_9, tg_3181, tg_3166]
+    service: "amateur"
     authorization_id: auth_fcc_amateur_t
-    comment: |
+    notes: |
       Motorola + S-Com 7330 controller, ~80 W ERP.
       Offset pattern antenna at 513 ft (156 m).
       Coverage: Cook & Lake Counties; one of the most active repeaters in Chicago.
-      Mobile access: S to Merrillville IN, N to Kenosha WI, W to Crystal Lake.
 
   - id: asgn_noaa_wx1
     channel_plan_id: chplan_noaa
     channel_name: "WX1"
     usage: "receive-only"
-    zones: ["NOAA"]
-    codeplug:
-      name: "WX1-Chicago"
-      rx_only: true
-      all_skip: true
+    service: "public"
     authorization_id: auth_rx_only_public
+    notes: "NOAA WX channel for Chicago core service area."
 ```
 
-Within `assignments[].codeplug` the following helper flags are recognized:  
+Fields:  
 
-- `rx_only`: mark receive-only channels.  
-- `all_skip`: map to CPS "All Skip" or scan lockouts.  
-- `preferred_contacts`: ordered list of contact IDs (typically DMR talkgroups) a generator should populate for that channel.  
+- `id` (string, unique)  
+- Either `rf_chain_id` (reference to RF chain) **or** `channel_plan_id` + `channel_name` (reference to plan entry)  
+- `usage` (string; repeater, simplex, receive-only, data link, etc.)  
+- `service` (string; supports downstream filtering without dictating policy)  
+- `authorization_id` (optional)  
+- `notes` (optional freeform description)  
+
+> **Deprecated fields:** prior versions allowed `zones`, `codeplug.*`, and `preferred_contacts`. These are now owned by the policy layer. Generators should migrate those concerns to policy definitions (see §3.2).  
 
 ---
 
-## 3. Mapping to SSRF
+## 3. Layer boundaries & SSRF mapping
+
+### 3.1 Reference ➜ SSRF alignment
 
 | SSRF Entity | SSRF-Lite Equivalent | Notes |
 |---|---|---|
@@ -273,9 +304,15 @@ Within `assignments[].codeplug` the following helper flags are recognized:
 | Equipment / Tx / Rx / TxMode / RxMode | `rf_chains[]` | consolidated |
 | ChannelPlan / ChannelFreq | `channel_plans[]` | same |
 | Authorization | `authorizations[]` | same |
-| Assignment | `assignments[]` | same, plus codeplug extras |
+| Assignment | `assignments[]` | same intent, policy fields removed |
 | Contacts (not in SSRF) | `contacts[]` | **added** for DMR convenience |
-| Codeplug / Zones | `assignments[].codeplug`, `zones` | **added** for generator use; `codeplug.all_skip` maps to Channels.csv "All Skip" |
+| Codeplug / Zones | *(policy layer)* | handled via policy documents |
+
+### 3.2 Profiles & Policies interface
+
+- **Profiles** (outside the SSRF-Lite schema) collect assignments by ID/path and expose them to a given build. They answer “*which* RF resources participate?” without mutating those resources.  
+- **Policies** describe how a consumer should render the selected assignments: naming, transmit enablement, zone placement, scan skip defaults, ordering, talkgroup bundling, etc. Policies may reference assignments by ID but **must not** redefine the RF facts contained in SSRF-Lite.  
+- **Generators** merge SSRF reference data + profile selection + policy opinions to produce device-specific outputs.  
 
 ---
 
@@ -286,25 +323,31 @@ This spec now demonstrates:
 - **Analog FM repeater**: NS9RC 440 MHz with ERP, offset, tones, and coverage notes.  
 - **Receive-only channel plan**: NOAA WX frequencies.  
 - **Authorization linkage**: Amateur TX license vs. public RX-only.  
-- **DMR repeater support**: ChicagoLand control center example with color codes, timeslots, and talkgroup guidance.  
-- **Codeplug guidance**: `codeplug` helpers surface skip flags and ordered talkgroup lists (`preferred_contacts`).  
-- **Extensibility**: Ready to add other digital modes.  
+- **DMR repeater support**: ChicagoLand control center example with color codes and timeslot availability.  
+- **Separation of concerns**: RF truths remain in SSRF-Lite; rendering logic moves to policies.  
 
 ---
 
 ## 5. Design Principles
 
 - **Stay SSRF-shaped**: reuse names and relationships where possible.  
-- **Trim fat**: omit coordination, workflows, and technical minutiae not needed for codeplugs.  
-- **Add only what’s practical**: `zones`, `codeplug`, `contacts`.  
+- **Trim fat**: omit coordination, workflows, and technical minutiae not needed for RF description.  
+- **Reference-only**: do not embed codeplug or scan behavior—policies own those choices.  
 - **Interoperable**: keep ITU emission designators, MHz/kHz/Hz units consistent.  
 - **Extensible**: can grow into full SSRF without breaking the schema.  
 
 ---
 
-## 6. DMR & Codeplug Enhancements (v0.4.0)
+## 6. Digital Metadata Enhancements (v0.5.0)
 
-- **RF chains**: Capture `color_code` and `timeslots` to pin repeater color codes and slot availability. See `chicagoland_dmr_system.yml` for a multi-site example.
-- **Talkgroup catalog**: `contacts` entries may include `number`, `default_timeslot`, and descriptive `notes`, providing enough metadata to build CPS contact lists.
-- **Channel programming hints**: `codeplug.preferred_contacts` expresses the talkgroups a generator should populate first, while existing flags (`rx_only`, `all_skip`) continue to drive receive-only or scan skip behavior.
-- **Backwards compatible**: All new fields are optional; analog-focused data remains valid without changes.
+- **RF chains**: continue to capture `color_code` and `timeslots` for DMR repeaters; this data remains reference-worthy.  
+- **Talkgroup catalog**: `contacts` entries may include `number`, `default_timeslot`, and descriptive `notes`, enabling policy layers to build CPS contact lists without re-sourcing IDs.  
+- **Policy migration**: The previous `codeplug.*`, `zones`, and other rendering hints have been promoted to policy documents. Generators should consult policies when deciding transmit enablement, scan skip behavior, zone membership, or talkgroup ordering.  
+
+---
+
+## 7. Migration Notes
+
+- **Legacy fields**: `assignments.zones`, `assignments.codeplug.*`, and `assignments.codeplug.preferred_contacts` are deprecated as of v0.5.0. Repositories may keep them temporarily for backward compatibility but new data should omit them.  
+- **Profiles** should continue to use path-based include/exclude semantics while adding the ability to pull in explicit assignment IDs as needed.  
+- **Policies** may be expressed in YAML/TOML/JSON (format-agnostic) so long as they reference assignments by ID and avoid redefining RF facts.  
