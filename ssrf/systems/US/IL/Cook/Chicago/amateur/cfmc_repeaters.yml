@@ -208,77 +208,34 @@ assignments:
   - id: asgn_cfmc_440
     rf_chain_id: chain_cfmc_440_fm
     usage: "repeater"
-    zones: ["Ham-Repeaters", "Emergency"]
-    codeplug:
-      name: "CFMC 440 FM"
-      rx_only: false
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      443.750 +5 MHz, CTCSS 114.8 Hz. EchoLink 62478 (WA9ORC-R), AllStar 555492.
-      Dual-mode site; analog prioritized. For P25 users: carrier squelch (no PL).
 
   - id: asgn_cfmc_2m
     rf_chain_id: chain_cfmc_2m_fm
     usage: "repeater"
-    zones: ["Ham-Repeaters", "Emergency"]
-    codeplug:
-      name: "CFMC 2m FM"
-      rx_only: false
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      146.760 -0.6 MHz, CTCSS 107.2 Hz. EchoLink 448319 (KD9YDD-R), AllStar 555491.
 
   - id: asgn_cfmc_220_north
     rf_chain_id: chain_cfmc_220_north_fm
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "CFMC 220 North"
-      rx_only: false
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      224.100 -1.6 MHz, CTCSS 110.9 Hz. ~15 W. Near North Lakefront site (~500 ft AGL).
 
   - id: asgn_cfmc_220_south
     rf_chain_id: chain_cfmc_220_south_fm
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "CFMC 220 S"
-      rx_only: false
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      224.180 -1.6 MHz, CTCSS 110.9 Hz. ~15 W. Located in Worth, IL.
 
   - id: asgn_cfmc_dstar_440
     rf_chain_id: chain_cfmc_dstar_440
     usage: "repeater"
-    zones: ["DMR Repeater"]
-    codeplug:
-      name: "CFMC D-STAR 440"
-      rx_only: false
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      D-STAR DV on 441.90625 (-) to 446.90625 input. Linked to Reflector 1C. Park Ridge site (~180 ft AGL).
 
   - id: asgn_cfmc_fusion_2m_fm
     rf_chain_id: chain_cfmc_fusion_2m_fm
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "CFMC 2m FM"
-      rx_only: false
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      145.350 -0.6 MHz. DCS 072 (analog side). Park Ridge site (~180 ft AGL). WIRES-X accessible.
 
   - id: asgn_cfmc_fusion_2m_c4fm
     rf_chain_id: chain_cfmc_fusion_2m_c4fm
     usage: "repeater"
-    zones: ["DMR Repeater"]
-    codeplug:
-      name: "CFMC 2m C4FM"
-      rx_only: false
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      System Fusion digital on 145.350 (-0.6). Park Ridge site (~180 ft AGL). WIRES-X accessible.

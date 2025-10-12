@@ -87,55 +87,27 @@ rf_chains:
     }
 
 assignments:
-  - {
-      id: asg_wx1,
-      rf_chain_id: chain_wx1,
-      usage: "simplex",
-      zones: ["NOAA Weather"],
-      codeplug: { name: "WX1", rx_only: true, all_skip: true },
-    }
-  - {
-      id: asg_wx2,
-      rf_chain_id: chain_wx2,
-      usage: "simplex",
-      zones: ["NOAA Weather"],
-      codeplug: { name: "WX2", rx_only: true, all_skip: true },
-    }
-  - {
-      id: asg_wx3,
-      rf_chain_id: chain_wx3,
-      usage: "simplex",
-      zones: ["NOAA Weather"],
-      codeplug: { name: "WX3", rx_only: true, all_skip: true },
-    }
-  - {
-      id: asg_wx4,
-      rf_chain_id: chain_wx4,
-      usage: "simplex",
-      zones: ["NOAA Weather"],
-      codeplug: { name: "WX4", rx_only: true, all_skip: true },
-    }
-  - {
-      id: asg_wx5,
-      rf_chain_id: chain_wx5,
-      usage: "simplex",
-      zones: ["NOAA Weather"],
-      codeplug: { name: "WX5", rx_only: true, all_skip: true },
-    }
-  - {
-      id: asg_wx6,
-      rf_chain_id: chain_wx6,
-      usage: "simplex",
-      zones: ["NOAA Weather"],
-      codeplug: { name: "WX6", rx_only: true, all_skip: true },
-    }
-  - {
-      id: asg_wx7,
-      rf_chain_id: chain_wx7,
-      usage: "simplex",
-      zones: ["NOAA Weather"],
-      codeplug: { name: "WX7", rx_only: true, all_skip: true },
-    }
+  - id: asg_wx1
+    rf_chain_id: chain_wx1
+    usage: "simplex"
+  - id: asg_wx2
+    rf_chain_id: chain_wx2
+    usage: "simplex"
+  - id: asg_wx3
+    rf_chain_id: chain_wx3
+    usage: "simplex"
+  - id: asg_wx4
+    rf_chain_id: chain_wx4
+    usage: "simplex"
+  - id: asg_wx5
+    rf_chain_id: chain_wx5
+    usage: "simplex"
+  - id: asg_wx6
+    rf_chain_id: chain_wx6
+    usage: "simplex"
+  - id: asg_wx7
+    rf_chain_id: chain_wx7
+    usage: "simplex"
 
 comments:
   - text: |

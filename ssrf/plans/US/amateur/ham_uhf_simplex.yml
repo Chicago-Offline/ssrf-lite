@@ -71,161 +71,81 @@ assignments:
     channel_plan_id: us_ham_uhf_simplex_plan
     channel_name: "446.000 Call"
     usage: "call"
-    zones: [Ham UHF, Emergency]
-    codeplug:
-      name: 70cm Call
-      rx_only: false
 
   # Other simplex frequencies (TX enabled for licensed operation)
   - id: us_ham_uhf_446025
     channel_plan_id: us_ham_uhf_simplex_plan
     channel_name: "446.025"
     usage: "simplex"
-    zones: [Ham UHF]
-    codeplug:
-      name: 70cm 446025
-      rx_only: false
   - id: us_ham_uhf_446050
     channel_plan_id: us_ham_uhf_simplex_plan
     channel_name: "446.050"
     usage: "simplex"
-    zones: [Ham UHF]
-    codeplug:
-      name: 70cm 446050
-      rx_only: false
   - id: us_ham_uhf_446075
     channel_plan_id: us_ham_uhf_simplex_plan
     channel_name: "446.075"
     usage: "simplex"
-    zones: [Ham UHF]
-    codeplug:
-      name: 70cm 446075
-      rx_only: false
   - id: us_ham_uhf_446100
     channel_plan_id: us_ham_uhf_simplex_plan
     channel_name: "446.100"
     usage: "simplex"
-    zones: [Ham UHF]
-    codeplug:
-      name: 70cm 446100
-      rx_only: false
   - id: us_ham_uhf_446125
     channel_plan_id: us_ham_uhf_simplex_plan
     channel_name: "446.125"
     usage: "simplex"
-    zones: [Ham UHF]
-    codeplug:
-      name: 70cm 446125
-      rx_only: false
   - id: us_ham_uhf_446150
     channel_plan_id: us_ham_uhf_simplex_plan
     channel_name: "446.150"
     usage: "simplex"
-    zones: [Ham UHF]
-    codeplug:
-      name: 70cm 446150
-      rx_only: false
   - id: us_ham_uhf_446175
     channel_plan_id: us_ham_uhf_simplex_plan
     channel_name: "446.175"
     usage: "simplex"
-    zones: [Ham UHF]
-    codeplug:
-      name: 70cm 446175
-      rx_only: false
   - id: us_ham_uhf_446200
     channel_plan_id: us_ham_uhf_simplex_plan
     channel_name: "446.200"
     usage: "simplex"
-    zones: [Ham UHF]
-    codeplug:
-      name: 70cm 446200
-      rx_only: false
   - id: us_ham_uhf_446225
     channel_plan_id: us_ham_uhf_simplex_plan
     channel_name: "446.225"
     usage: "simplex"
-    zones: [Ham UHF]
-    codeplug:
-      name: 70cm 446225
-      rx_only: false
   - id: us_ham_uhf_446250
     channel_plan_id: us_ham_uhf_simplex_plan
     channel_name: "446.250"
     usage: "simplex"
-    zones: [Ham UHF]
-    codeplug:
-      name: 70cm 446250
-      rx_only: false
   - id: us_ham_uhf_446275
     channel_plan_id: us_ham_uhf_simplex_plan
     channel_name: "446.275"
     usage: "simplex"
-    zones: [Ham UHF]
-    codeplug:
-      name: 70cm 446275
-      rx_only: false
   - id: us_ham_uhf_446300
     channel_plan_id: us_ham_uhf_simplex_plan
     channel_name: "446.300"
     usage: "simplex"
-    zones: [Ham UHF]
-    codeplug:
-      name: 70cm 446300
-      rx_only: false
   - id: us_ham_uhf_446325
     channel_plan_id: us_ham_uhf_simplex_plan
     channel_name: "446.325"
     usage: "simplex"
-    zones: [Ham UHF]
-    codeplug:
-      name: 70cm 446325
-      rx_only: false
   - id: us_ham_uhf_446350
     channel_plan_id: us_ham_uhf_simplex_plan
     channel_name: "446.350"
     usage: "simplex"
-    zones: [Ham UHF]
-    codeplug:
-      name: 70cm 446350
-      rx_only: false
   - id: us_ham_uhf_446375
     channel_plan_id: us_ham_uhf_simplex_plan
     channel_name: "446.375"
     usage: "simplex"
-    zones: [Ham UHF]
-    codeplug:
-      name: 70cm 446375
-      rx_only: false
   - id: us_ham_uhf_446400
     channel_plan_id: us_ham_uhf_simplex_plan
     channel_name: "446.400"
     usage: "simplex"
-    zones: [Ham UHF]
-    codeplug:
-      name: 70cm 446400
-      rx_only: false
   - id: us_ham_uhf_446425
     channel_plan_id: us_ham_uhf_simplex_plan
     channel_name: "446.425"
     usage: "simplex"
-    zones: [Ham UHF]
-    codeplug:
-      name: 70cm 446425
-      rx_only: false
   - id: us_ham_uhf_446450
     channel_plan_id: us_ham_uhf_simplex_plan
     channel_name: "446.450"
     usage: "simplex"
-    zones: [Ham UHF]
-    codeplug:
-      name: 70cm 446450
-      rx_only: false
   - id: us_ham_uhf_446475
     channel_plan_id: us_ham_uhf_simplex_plan
     channel_name: "446.475"
     usage: "simplex"
-    zones: [Ham UHF]
-    codeplug:
-      name: 70cm 446475
-      rx_only: false

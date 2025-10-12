@@ -203,120 +203,55 @@ assignments:
   - id: asg_berrien_jail
     rf_chain_id: chain_berrien_jail
     usage: "repeater"
-    zones: ["Berrien Sheriff"]
-    codeplug:
-      name: "County Jail"
-      rx_only: true
-      all_skip: true
 
     # EMA / Fire Dispatch & Alerting
   - id: asg_berrien_sirens
     rf_chain_id: chain_berrien_ema_sirens
     usage: "repeater"
-    zones: ["Public Service"]
-    codeplug:
-      name: "EMA Sirens"
-      rx_only: true
-      all_skip: true
 
   - id: asg_berrien_eoc
     rf_chain_id: chain_berrien_eoc
     usage: "repeater"
-    zones: ["Public Service"]
-    codeplug:
-      name: "EOC"
-      rx_only: true
-      all_skip: true
 
   - id: asg_berrien_media_page
     rf_chain_id: chain_berrien_media_page
     usage: "repeater"
-    zones: ["Berrien Fire"]
-    codeplug:
-      name: "Media Alert Page"
-      rx_only: true
-      all_skip: true
 
   - id: asg_berrien_fire1
     rf_chain_id: chain_berrien_fire1
     usage: "repeater"
-    zones: ["Berrien Fire"]
-    codeplug:
-      name: "Fire Dispatch 1"
-      rx_only: true
-      all_skip: true
 
   - id: asg_berrien_fire2
     rf_chain_id: chain_berrien_fire2
     usage: "repeater"
-    zones: ["Berrien Fire"]
-    codeplug:
-      name: "Fire Dispatch 2"
-      rx_only: true
-      all_skip: true
 
   - id: asg_berrien_fire3
     rf_chain_id: chain_berrien_fire3
     usage: "repeater"
-    zones: ["Berrien Fire"]
-    codeplug:
-      name: "Fire Dispatch 3"
-      rx_only: true
-      all_skip: true
 
   - id: asg_berrien_fg1
     rf_chain_id: chain_berrien_fg1
     usage: "repeater"
-    zones: ["Berrien Fire"]
-    codeplug:
-      name: "Fireground 1"
-      rx_only: true
-      all_skip: true
 
   - id: asg_berrien_fg2
     rf_chain_id: chain_berrien_fg2
     usage: "simplex"
-    zones: ["Berrien Fire"]
-    codeplug:
-      name: "Fireground 2"
-      rx_only: true
-      all_skip: true
 
   - id: asg_berrien_fg3
     rf_chain_id: chain_berrien_fg3
     usage: "simplex"
-    zones: ["Berrien Fire"]
-    codeplug:
-      name: "Fireground 3"
-      rx_only: true
-      all_skip: true
 
   - id: asg_berrien_fg4
     rf_chain_id: chain_berrien_fg4
     usage: "simplex"
-    zones: ["Berrien Fire"]
-    codeplug:
-      name: "Fireground 4"
-      rx_only: true
-      all_skip: true
 
   - id: asg_berrien_fg5
     rf_chain_id: chain_berrien_fg5
     usage: "simplex"
-    zones: ["Berrien Fire"]
-    codeplug:
-      name: "Fireground 5"
-      rx_only: true
-      all_skip: true
 
   - id: asg_berrien_silver_beach
     rf_chain_id: chain_berrien_silver_beach
     usage: "simplex"
-    zones: ["Berrien Parks"]
-    codeplug:
-      name: "Silver Beach Ops"
-      rx_only: true
-      all_skip: true
 
 comments:
   - text: |

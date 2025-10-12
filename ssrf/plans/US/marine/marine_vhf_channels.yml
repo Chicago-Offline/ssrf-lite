@@ -130,346 +130,157 @@ assignments:
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 06
     usage: "intership safety"
-    zones: [Marine]
-    codeplug:
-      name: Marine 06
-      rx_only: false
-      all_skip: true
   - id: us_marine_vhf_ch09
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 09
     usage: "calling"
-    zones: [Marine]
-    codeplug:
-      name: Marine 09
-      rx_only: false
-      all_skip: true
   - id: us_marine_vhf_ch13
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 13
     usage: "bridge-to-bridge"
-    zones: [Marine]
-    codeplug:
-      name: Marine 13
-      rx_only: false
-      all_skip: true
   - id: us_marine_vhf_ch16
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 16 Distress
     usage: "distress"
-    zones: [Marine]
-    codeplug:
-      name: Marine 16
-      rx_only: false
+    notes: "International hailing and distress guard channel."
   - id: us_marine_vhf_ch22a
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 22A USCG
     usage: "coast-guard liaison"
-    zones: [Marine]
-    codeplug:
-      name: Marine 22A
-      rx_only: false
-      all_skip: true
   - id: us_marine_vhf_ch68
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 68
     usage: "working"
-    zones: [Marine]
-    codeplug:
-      name: Marine 68
-      rx_only: false
-      all_skip: true
   - id: us_marine_vhf_ch69
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 69
     usage: "working"
-    zones: [Marine]
-    codeplug:
-      name: Marine 69
-      rx_only: false
-      all_skip: true
   - id: us_marine_vhf_ch71
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 71
     usage: "working"
-    zones: [Marine]
-    codeplug:
-      name: Marine 71
-      rx_only: false
-      all_skip: true
   - id: us_marine_vhf_ch72
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 72
     usage: "working"
-    zones: [Marine]
-    codeplug:
-      name: Marine 72
-      rx_only: false
-      all_skip: true
   - id: us_marine_vhf_ch73
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 73
     usage: "working"
-    zones: [Marine]
-    codeplug:
-      name: Marine 73
-      rx_only: false
-      all_skip: true
   - id: us_marine_vhf_ch78a
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 78A
     usage: "working"
-    zones: [Marine]
-    codeplug:
-      name: Marine 78A
-      rx_only: false
 
-      # Additional US simplex channels (RX-only)
-      all_skip: true
+  # Additional US simplex channels (RX-only)
   - id: us_marine_vhf_ch01a
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 01A
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 01A
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch05a
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 05A
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 05A
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch07a
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 07A
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 07A
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch08
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 08
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 08
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch10
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 10
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 10
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch11
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 11
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 11
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch12
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 12
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 12
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch14
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 14
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 14
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch15
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 15
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 15
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch17
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 17
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 17
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch18a
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 18A
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 18A
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch19a
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 19A
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 19A
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch20a
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 20A
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 20A
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch21a
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 21A
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 21A
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch23a
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 23A
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 23A
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch63a
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 63A
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 63A
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch64a
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 64A
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 64A
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch65a
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 65A
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 65A
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch66a
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 66A
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 66A
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch67
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 67
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 67
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch70
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 70 DSC
     usage: "digital selective calling"
-    zones: [Marine]
-    codeplug:
-      name: Marine 70 DSC
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch74
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 74
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 74
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch77
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 77
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 77
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch79a
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 79A
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 79A
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch80a
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 80A
     usage: "receive-only"
-    zones: [Marine]
-    codeplug:
-      name: Marine 80A
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch87b
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 87B AIS1
     usage: "ais data"
-    zones: [Marine]
-    codeplug:
-      name: Marine 87B AIS1
-      rx_only: true
-      all_skip: true
   - id: us_marine_vhf_ch88b
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 88B AIS2
     usage: "ais data"
-    zones: [Marine]
-    codeplug:
-      name: Marine 88B AIS2
-      rx_only: true
-
-      all_skip: true
 comments:
   - text: |
       Curated US marine VHF plan with core working, calling, distress, and AIS channels. Transmit only when licensed/authorized and follow USCG procedures.

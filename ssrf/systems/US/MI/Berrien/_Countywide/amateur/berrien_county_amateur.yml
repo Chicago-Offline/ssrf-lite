@@ -143,53 +143,28 @@ assignments:
   - id: asg_skywarn_primary
     rf_chain_id: chain_skywarn_primary_146_820
     usage: "repeater"
-    zones: ["Berrien Amateur", "Ham-Repeaters"]
-    codeplug:
-      name: "Skywarn Primary 146.820"
-      rx_only: false
     authorization_id: auth_fcc_amateur
-    comment: "Primary Skywarn repeater; PL 88.5 Hz."
 
   - id: asg_skywarn_secondary
     rf_chain_id: chain_skywarn_secondary_146_720
     usage: "repeater"
-    zones: ["Berrien Amateur", "Ham-Repeaters"]
-    codeplug:
-      name: "Skywarn Secondary 146.720"
-      rx_only: false
     authorization_id: auth_fcc_amateur
-    comment: "Secondary repeater, PL 131.8 Hz."
 
   - id: asg_skywarn_intercounty
     rf_chain_id: chain_skywarn_intercounty_145_430
     usage: "repeater"
-    zones: ["Berrien Amateur", "Ham-Repeaters"]
-    codeplug:
-      name: "IMO Skywarn 145.430"
-      rx_only: true
     authorization_id: auth_fcc_amateur
-    comment: "Intercounty Skywarn (monitor only)."
 
   - id: asg_skywarn_link
     rf_chain_id: chain_skywarn_link_442_775
     usage: "repeater"
-    zones: ["Berrien Amateur", "Ham-Repeaters"]
-    codeplug:
-      name: "Skywarn UHF Link 442.775"
-      rx_only: false
     authorization_id: auth_fcc_amateur
-    comment: "UHF link cross-connected to 146.820 system."
 
     # Digital voice
   - id: asg_w8mai_dstar_b
     rf_chain_id: chain_w8mai_dstar_b
     usage: "repeater"
-    zones: ["Berrien Amateur", "Digital Voice"]
-    codeplug:
-      name: "W8MAI D-STAR B"
-      rx_only: false
     authorization_id: auth_fcc_amateur
-    comment: "General-use D-STAR module on 442.275/447.275 MHz."
 
 comments:
   - text: |

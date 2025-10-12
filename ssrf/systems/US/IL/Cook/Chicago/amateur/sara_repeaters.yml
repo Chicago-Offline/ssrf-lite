@@ -105,29 +105,14 @@ assignments:
   - id: asgn_ka9hhh_2m_fm
     rf_chain_id: chain_ka9hhh_2m_fm
     usage: "repeater"
-    zones: ["Ham-Repeaters", "Emergency"]
-    codeplug:
-      name: "KA9HHH VHF"
-      rx_only: false
     authorization_id: auth_fcc_amateur_t
-    comment: "+0.6 MHz, CTCSS 107.2 Hz. Lincoln Park site."
 
   - id: asgn_ka9hhh_440_fm
     rf_chain_id: chain_ka9hhh_440_fm
     usage: "repeater"
-    zones: ["Ham-Repeaters", "Emergency"]
-    codeplug:
-      name: "KA9HHH UHF"
-      rx_only: false
     authorization_id: auth_fcc_amateur_t
-    comment: "+5 MHz, CTCSS 114.8 Hz. Lincoln Park site."
 
   - id: asgn_na9pl_440_c4fm
     rf_chain_id: chain_na9pl_440_c4fm
     usage: "repeater"
-    zones: ["DMR Repeater"]
-    codeplug:
-      name: "NA9PL UHF C4FM"
-      rx_only: false
     authorization_id: auth_fcc_amateur_t
-    comment: "+5 MHz, CTCSS 114.8 Hz. Fusion/Wires-X. Lincoln Park site."

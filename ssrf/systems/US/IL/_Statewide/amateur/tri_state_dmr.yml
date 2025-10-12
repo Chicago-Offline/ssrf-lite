@@ -60,42 +60,12 @@ locations:
   - id: loc_tristate_new_berlin_wi
     name: "New Berlin, WI"
     lat: 42.9762181
-    lon: -88.1084968
-  - id: loc_tristate_rockford_il
-    name: "Rockford, IL"
-    lat: 42.2713945
-    lon: -89.093966
-  - id: loc_tristate_schaumburg_il
-    name: "Schaumburg, IL"
-    lat: 42.0333608
-    lon: -88.083406
-  - id: loc_tristate_traverse_city_mi
-    name: "Traverse City, MI"
-    lat: 44.7606481
-    lon: -85.6165976
-  - id: loc_tristate_valparaiso_in
-    name: "Valparaiso, IN"
     lat: 41.4672552
     lon: -87.0604487
 
 stations:
   - id: stn_k9bar_bolingbrook
     call_sign: "K9BAR"
-    organization_id: org_tristatedmr
-    location_id: loc_tristate_bolingbrook_il
-    service: "amateur"
-  - id: stn_n9pay_carlsville
-    call_sign: "N9PAY"
-    organization_id: org_tristatedmr
-    location_id: loc_tristate_carlsville_wi
-    service: "amateur"
-  - id: stn_aa9vi_chicago
-    call_sign: "AA9VI"
-    organization_id: org_tristatedmr
-    location_id: loc_tristate_chicago_il
-    service: "amateur"
-  - id: stn_k9vi_crystal_lake
-    call_sign: "K9VI"
     organization_id: org_tristatedmr
     location_id: loc_tristate_crystal_lake_il
     service: "amateur"
@@ -519,336 +489,64 @@ assignments:
   - id: asgn_k9bar_bolingbrook
     rf_chain_id: chain_k9bar_bolingbrook_dmr
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "K9BAR TriState"
-      rx_only: false
-      preferred_contacts:
-        [
-          tg_8_tristate,
-          tg_3169_midwest,
-          tg_9_talk,
-          tg_1_worldwide,
-          tg_3_north_america,
-          tg_13_worldwide_english,
-          tg_5000_status,
-          tg_4000_disconnect,
-        ]
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      Status "All OK" per Tri-State DMR listings (accessed 2025-10-08). Color Code 1, DMR Tier II.
   - id: asgn_n9pay_carlsville
     rf_chain_id: chain_n9pay_carlsville_dmr
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "N9PAY Carlsville"
-      rx_only: false
-      preferred_contacts:
-        [
-          tg_8_tristate,
-          tg_3169_midwest,
-          tg_9_talk,
-          tg_1_worldwide,
-          tg_3_north_america,
-          tg_13_worldwide_english,
-          tg_5000_status,
-          tg_4000_disconnect,
-        ]
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      Door County coverage site; status "All OK". Color Code 6 as published by Tri-State DMR.
   - id: asgn_aa9vi_chicago
     rf_chain_id: chain_aa9vi_chicago_dmr
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "AA9VI TriState"
-      rx_only: false
-      preferred_contacts:
-        [
-          tg_8_tristate,
-          tg_3169_midwest,
-          tg_9_talk,
-          tg_1_worldwide,
-          tg_3_north_america,
-          tg_13_worldwide_english,
-          tg_5000_status,
-          tg_4000_disconnect,
-        ]
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      Chicago loop site. Status "RF OK, No Net" per Tri-State DMR. Color Code 1.
   - id: asgn_k9vi_crystal_lake
     rf_chain_id: chain_k9vi_crystal_lake_dmr
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "K9VI TriState"
-      rx_only: false
-      preferred_contacts:
-        [
-          tg_8_tristate,
-          tg_3169_midwest,
-          tg_9_talk,
-          tg_1_worldwide,
-          tg_3_north_america,
-          tg_13_worldwide_english,
-          tg_5000_status,
-          tg_4000_disconnect,
-        ]
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      Crystal Lake coverage; status "All OK". Color Code 4.
   - id: asgn_n9iaa_crown_point
     rf_chain_id: chain_n9iaa_crown_point_dmr
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "N9IAA Crown Point"
-      rx_only: false
-      preferred_contacts:
-        [
-          tg_8_tristate,
-          tg_3169_midwest,
-          tg_9_talk,
-          tg_1_worldwide,
-          tg_3_north_america,
-          tg_13_worldwide_english,
-          tg_5000_status,
-          tg_4000_disconnect,
-        ]
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      Northwest Indiana site. Status "RF OK, No Net". Color Code 1.
   - id: asgn_k9nro_elburn
     rf_chain_id: chain_k9nro_elburn_dmr
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "K9NRO TriState"
-      rx_only: false
-      preferred_contacts:
-        [
-          tg_8_tristate,
-          tg_3169_midwest,
-          tg_9_talk,
-          tg_1_worldwide,
-          tg_3_north_america,
-          tg_13_worldwide_english,
-          tg_5000_status,
-          tg_4000_disconnect,
-        ]
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      Fox Valley coverage; status "All OK". Color Code 1 per Tri-State DMR.
   - id: asgn_n9pay_green_bay
     rf_chain_id: chain_n9pay_green_bay_dmr
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "N9PAY Green Bay"
-      rx_only: false
-      preferred_contacts:
-        [
-          tg_8_tristate,
-          tg_3169_midwest,
-          tg_9_talk,
-          tg_1_worldwide,
-          tg_3_north_america,
-          tg_13_worldwide_english,
-          tg_5000_status,
-          tg_4000_disconnect,
-        ]
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      Green Bay metro coverage; status "All OK". Color Code 6.
   - id: asgn_k9ord_inverness
     rf_chain_id: chain_k9ord_inverness_dmr
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "K9ORD TriState"
-      rx_only: false
-      preferred_contacts:
-        [
-          tg_8_tristate,
-          tg_3169_midwest,
-          tg_9_talk,
-          tg_1_worldwide,
-          tg_3_north_america,
-          tg_13_worldwide_english,
-          tg_5000_status,
-          tg_4000_disconnect,
-        ]
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      Inverness/Palatine area coverage; status "All OK". Color Code 1.
   - id: asgn_n9iaa_la_porte
     rf_chain_id: chain_n9iaa_la_porte_dmr
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "N9IAA La Porte"
-      rx_only: false
-      preferred_contacts:
-        [
-          tg_8_tristate,
-          tg_3169_midwest,
-          tg_9_talk,
-          tg_1_worldwide,
-          tg_3_north_america,
-          tg_13_worldwide_english,
-          tg_5000_status,
-          tg_4000_disconnect,
-        ]
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      La Porte, Indiana site; status "RF OK, No Net". Color Code 1.
   - id: asgn_n9pay_milwaukee
     rf_chain_id: chain_n9pay_milwaukee_dmr
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "N9PAY Milwaukee"
-      rx_only: false
-      preferred_contacts:
-        [
-          tg_8_tristate,
-          tg_3169_midwest,
-          tg_9_talk,
-          tg_1_worldwide,
-          tg_3_north_america,
-          tg_13_worldwide_english,
-          tg_5000_status,
-          tg_4000_disconnect,
-        ]
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      Milwaukee metro coverage; status "All OK". Color Code 1.
   - id: asgn_kc9kko_morris
     rf_chain_id: chain_kc9kko_morris_dmr
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "KC9KKO TriState"
-      rx_only: false
-      preferred_contacts:
-        [
-          tg_8_tristate,
-          tg_3169_midwest,
-          tg_9_talk,
-          tg_1_worldwide,
-          tg_3_north_america,
-          tg_13_worldwide_english,
-          tg_5000_status,
-          tg_4000_disconnect,
-        ]
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      Grundy County / I-80 coverage; status "All OK". Color Code 1.
   - id: asgn_n9pay_new_berlin
     rf_chain_id: chain_n9pay_new_berlin_dmr
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "N9PAY New Berlin"
-      rx_only: false
-      preferred_contacts:
-        [
-          tg_8_tristate,
-          tg_3169_midwest,
-          tg_9_talk,
-          tg_1_worldwide,
-          tg_3_north_america,
-          tg_13_worldwide_english,
-          tg_5000_status,
-          tg_4000_disconnect,
-        ]
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      Waukesha County coverage; status "All OK". Color Code 1.
   - id: asgn_ww9p_rockford
     rf_chain_id: chain_ww9p_rockford_dmr
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "WW9P TriState"
-      rx_only: false
-      preferred_contacts:
-        [
-          tg_8_tristate,
-          tg_3169_midwest,
-          tg_9_talk,
-          tg_1_worldwide,
-          tg_3_north_america,
-          tg_13_worldwide_english,
-          tg_5000_status,
-          tg_4000_disconnect,
-        ]
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      Rockford coverage; status "All OK". Color Code 1.
   - id: asgn_k9mot_schaumburg
     rf_chain_id: chain_k9mot_schaumburg_dmr
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "K9MOT TriState"
-      rx_only: false
-      preferred_contacts:
-        [
-          tg_8_tristate,
-          tg_3169_midwest,
-          tg_9_talk,
-          tg_1_worldwide,
-          tg_3_north_america,
-          tg_13_worldwide_english,
-          tg_5000_status,
-          tg_4000_disconnect,
-        ]
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      Schaumburg / Northwest Suburbs site; status "All OK". Color Code 1.
   - id: asgn_n8ouz_traverse_city
     rf_chain_id: chain_n8ouz_traverse_city_dmr
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "N8OUZ TriState"
-      rx_only: false
-      preferred_contacts:
-        [
-          tg_8_tristate,
-          tg_3169_midwest,
-          tg_9_talk,
-          tg_1_worldwide,
-          tg_3_north_america,
-          tg_13_worldwide_english,
-          tg_5000_status,
-          tg_4000_disconnect,
-        ]
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      Northern Michigan extension; status "All OK". Color Code 1.
   - id: asgn_n9iaa_valparaiso
     rf_chain_id: chain_n9iaa_valparaiso_dmr
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "N9IAA Valparaiso"
-      rx_only: false
-      preferred_contacts:
-        [
-          tg_8_tristate,
-          tg_3169_midwest,
-          tg_9_talk,
-          tg_1_worldwide,
-          tg_3_north_america,
-          tg_13_worldwide_english,
-          tg_5000_status,
-          tg_4000_disconnect,
-        ]
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      Porter County site; status "RF OK, No Net". Color Code 1.

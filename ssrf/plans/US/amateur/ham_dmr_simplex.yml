@@ -151,99 +151,71 @@ assignments:
       id: asg_dmr_smpx_446500,
       rf_chain_id: chain_dmr_smpx_446500,
       usage: "simplex",
-      zones: ["Ham DMR Simplex"],
-      codeplug: { name: "DMR Smpx A", preferred_contacts: ["ct_dmr_simplex"] },
     }
   - {
       id: asg_dmr_smpx_446075,
       rf_chain_id: chain_dmr_smpx_446075,
       usage: "simplex",
-      zones: ["Ham DMR Simplex"],
-      codeplug: { name: "DMR Smpx B", preferred_contacts: ["ct_dmr_simplex"] },
     }
   - {
       id: asg_dmr_hs_4304125,
       rf_chain_id: chain_dmr_hs_4304125,
       usage: "simplex",
-      zones: ["Ham DMR Simplex"],
-      codeplug: { name: "HS 4304125", preferred_contacts: ["ct_dmr_simplex"] },
     }
   - {
       id: asg_dmr_hs_4304250,
       rf_chain_id: chain_dmr_hs_4304250,
       usage: "simplex",
-      zones: ["Ham DMR Simplex"],
-      codeplug: { name: "HS 4304250", preferred_contacts: ["ct_dmr_simplex"] },
     }
   - {
       id: asg_dmr_hs_4394125,
       rf_chain_id: chain_dmr_hs_4394125,
       usage: "simplex",
-      zones: ["Ham DMR Simplex"],
-      codeplug: { name: "HS 4394125", preferred_contacts: ["ct_dmr_simplex"] },
     }
   - {
       id: asg_dmr_hs_4394250,
       rf_chain_id: chain_dmr_hs_4394250,
       usage: "simplex",
-      zones: ["Ham DMR Simplex"],
-      codeplug: { name: "HS 4394250", preferred_contacts: ["ct_dmr_simplex"] },
     }
   - {
       id: asg_dmr_hs_duplex_4394375,
       rf_chain_id: chain_dmr_hs_duplex_4394375,
       usage: "repeater",
-      zones: ["Ham DMR Simplex"],
-      codeplug: { name: "HS 4394375", preferred_contacts: ["ct_dmr_simplex"] },
     }
   - {
       id: asg_dmr_hs_duplex_4394500,
       rf_chain_id: chain_dmr_hs_duplex_4394500,
       usage: "repeater",
-      zones: ["Ham DMR Simplex"],
-      codeplug: { name: "HS 4394500", preferred_contacts: ["ct_dmr_simplex"] },
     }
   - {
       id: asg_dmr_hs_duplex_4394625,
       rf_chain_id: chain_dmr_hs_duplex_4394625,
       usage: "repeater",
-      zones: ["Ham DMR Simplex"],
-      codeplug: { name: "HS 4394625", preferred_contacts: ["ct_dmr_simplex"] },
     }
   - {
       id: asg_dmr_hs_duplex_4394750,
       rf_chain_id: chain_dmr_hs_duplex_4394750,
       usage: "repeater",
-      zones: ["Ham DMR Simplex"],
-      codeplug: { name: "HS 4394750", preferred_contacts: ["ct_dmr_simplex"] },
     }
   - {
       id: asg_dmr_hs_duplex_4304375,
       rf_chain_id: chain_dmr_hs_duplex_4304375,
       usage: "repeater",
-      zones: ["Ham DMR Simplex"],
-      codeplug: { name: "HS 4304375", preferred_contacts: ["ct_dmr_simplex"] },
     }
   - {
       id: asg_dmr_hs_duplex_4304500,
       rf_chain_id: chain_dmr_hs_duplex_4304500,
       usage: "repeater",
-      zones: ["Ham DMR Simplex"],
-      codeplug: { name: "HS 4304500", preferred_contacts: ["ct_dmr_simplex"] },
     }
   - {
       id: asg_dmr_hs_duplex_4304625,
       rf_chain_id: chain_dmr_hs_duplex_4304625,
       usage: "repeater",
-      zones: ["Ham DMR Simplex"],
-      codeplug: { name: "HS 4304625", preferred_contacts: ["ct_dmr_simplex"] },
     }
   - {
       id: asg_dmr_hs_duplex_4304750,
       rf_chain_id: chain_dmr_hs_duplex_4304750,
       usage: "repeater",
-      zones: ["Ham DMR Simplex"],
-      codeplug: { name: "HS 4304750", preferred_contacts: ["ct_dmr_simplex"] },
     }
 
 comments:

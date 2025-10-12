@@ -71,163 +71,83 @@ assignments:
     channel_plan_id: us_ham_vhf_simplex_plan
     channel_name: "144.390 APRS"
     usage: "data"
-    zones: [Ham VHF]
-    codeplug:
-      name: APRS 144390
-      rx_only: false
-    comment: "National APRS/Packet frequency (144.390 MHz); receive monitoring by default."
+    notes: "National APRS/Packet frequency (144.390 MHz); receive monitoring by default."
 
   - id: us_ham_vhf_call
     channel_plan_id: us_ham_vhf_simplex_plan
     channel_name: "146.520 Call"
     usage: "call"
-    zones: [Ham VHF, Emergency]
-    codeplug:
-      name: 2m Call
-      rx_only: false
 
   # Other simplex frequencies (TX enabled for licensed operation)
   - id: us_ham_vhf_146400
     channel_plan_id: us_ham_vhf_simplex_plan
     channel_name: "146.400"
     usage: "simplex"
-    zones: [Ham VHF]
-    codeplug:
-      name: 2m 146400
-      rx_only: false
   - id: us_ham_vhf_146415
     channel_plan_id: us_ham_vhf_simplex_plan
     channel_name: "146.415"
     usage: "simplex"
-    zones: [Ham VHF]
-    codeplug:
-      name: 2m 146415
-      rx_only: false
   - id: us_ham_vhf_146430
     channel_plan_id: us_ham_vhf_simplex_plan
     channel_name: "146.430"
     usage: "simplex"
-    zones: [Ham VHF]
-    codeplug:
-      name: 2m 146430
-      rx_only: false
   - id: us_ham_vhf_146445
     channel_plan_id: us_ham_vhf_simplex_plan
     channel_name: "146.445"
     usage: "simplex"
-    zones: [Ham VHF]
-    codeplug:
-      name: 2m 146445
-      rx_only: false
   - id: us_ham_vhf_146460
     channel_plan_id: us_ham_vhf_simplex_plan
     channel_name: "146.460"
     usage: "simplex"
-    zones: [Ham VHF]
-    codeplug:
-      name: 2m 146460
-      rx_only: false
   - id: us_ham_vhf_146475
     channel_plan_id: us_ham_vhf_simplex_plan
     channel_name: "146.475"
     usage: "simplex"
-    zones: [Ham VHF]
-    codeplug:
-      name: 2m 146475
-      rx_only: false
   - id: us_ham_vhf_146490
     channel_plan_id: us_ham_vhf_simplex_plan
     channel_name: "146.490"
     usage: "simplex"
-    zones: [Ham VHF]
-    codeplug:
-      name: 2m 146490
-      rx_only: false
   - id: us_ham_vhf_146505
     channel_plan_id: us_ham_vhf_simplex_plan
     channel_name: "146.505"
     usage: "simplex"
-    zones: [Ham VHF]
-    codeplug:
-      name: 2m 146505
-      rx_only: false
   - id: us_ham_vhf_146535
     channel_plan_id: us_ham_vhf_simplex_plan
     channel_name: "146.535"
     usage: "simplex"
-    zones: [Ham VHF]
-    codeplug:
-      name: 2m 146535
-      rx_only: false
   - id: us_ham_vhf_146550
     channel_plan_id: us_ham_vhf_simplex_plan
     channel_name: "146.550"
     usage: "simplex"
-    zones: [Ham VHF]
-    codeplug:
-      name: 2m 146550
-      rx_only: false
   - id: us_ham_vhf_146565
     channel_plan_id: us_ham_vhf_simplex_plan
     channel_name: "146.565"
     usage: "simplex"
-    zones: [Ham VHF]
-    codeplug:
-      name: 2m 146565
-      rx_only: false
   - id: us_ham_vhf_146580
     channel_plan_id: us_ham_vhf_simplex_plan
     channel_name: "146.580"
     usage: "simplex"
-    zones: [Ham VHF]
-    codeplug:
-      name: 2m 146580
-      rx_only: false
   - id: us_ham_vhf_147420
     channel_plan_id: us_ham_vhf_simplex_plan
     channel_name: "147.420"
     usage: "simplex"
-    zones: [Ham VHF]
-    codeplug:
-      name: 2m 147420
-      rx_only: false
   - id: us_ham_vhf_147450
     channel_plan_id: us_ham_vhf_simplex_plan
     channel_name: "147.450"
     usage: "simplex"
-    zones: [Ham VHF]
-    codeplug:
-      name: 2m 147450
-      rx_only: false
   - id: us_ham_vhf_147480
     channel_plan_id: us_ham_vhf_simplex_plan
     channel_name: "147.480"
     usage: "simplex"
-    zones: [Ham VHF]
-    codeplug:
-      name: 2m 147480
-      rx_only: false
   - id: us_ham_vhf_147510
     channel_plan_id: us_ham_vhf_simplex_plan
     channel_name: "147.510"
     usage: "simplex"
-    zones: [Ham VHF]
-    codeplug:
-      name: 2m 147510
-      rx_only: false
   - id: us_ham_vhf_147540
     channel_plan_id: us_ham_vhf_simplex_plan
     channel_name: "147.540"
     usage: "simplex"
-    zones: [Ham VHF]
-    codeplug:
-      name: 2m 147540
-      rx_only: false
   - id: us_ham_vhf_147570
     channel_plan_id: us_ham_vhf_simplex_plan
     channel_name: "147.570"
     usage: "simplex"
-    zones: [Ham VHF]
-    codeplug:
-      name: 2m 147570
-      rx_only: false

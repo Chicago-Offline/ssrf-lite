@@ -1,288 +1,243 @@
 ssrf_lite:
   version: "0.3.2"
   sources:
-  - name: "Local GMRS repeaters (user-provided)"
-    url:
-    accessed: "2025-09-22"
+    - name: "Local GMRS repeaters (user-provided)"
+      url:
+      accessed: "2025-09-22"
 
 organizations:
-- id: org_local_gmrs
-  name: "Local GMRS Operators - Chicago/Northside"
+  - id: org_local_gmrs
+    name: "Local GMRS Operators - Chicago/Northside"
 
 locations:
-- id: loc_lincolnwood
-  name: "Lincolnwood, IL"
-- id: loc_evanston
-  name: "Evanston, IL"
-- id: loc_chicago
-  name: "Chicago, IL"
-- id: loc_parkridge
-  name: "Park Ridge, IL"
-- id: loc_northbrook
-  name: "Northbrook, IL"
-- id: loc_forest_view
-  name: "Forest View, IL"
-- id: loc_oak_lawn
-  name: "Oak Lawn, IL"
+  - id: loc_lincolnwood
+    name: "Lincolnwood, IL"
+  - id: loc_evanston
+    name: "Evanston, IL"
+  - id: loc_chicago
+    name: "Chicago, IL"
+  - id: loc_parkridge
+    name: "Park Ridge, IL"
+  - id: loc_northbrook
+    name: "Northbrook, IL"
+  - id: loc_forest_view
+    name: "Forest View, IL"
+  - id: loc_oak_lawn
+    name: "Oak Lawn, IL"
 
 stations:
-- id: stn_gmrs_lincolnwood_575
-  call_sign: "GMRS"
-  organization_id: org_local_gmrs
-  location_id: loc_lincolnwood
-  service: "gmrs"
-- id: stn_gmrs_evanston_725
-  call_sign: "GMRS"
-  organization_id: org_local_gmrs
-  location_id: loc_evanston
-  service: "gmrs"
-- id: stn_gmrs_evanston_700
-  call_sign: "GMRS"
-  organization_id: org_local_gmrs
-  location_id: loc_evanston
-  service: "gmrs"
-- id: stn_gmrs_chicago_600
-  call_sign: "GMRS"
-  organization_id: org_local_gmrs
-  location_id: loc_chicago
-  service: "gmrs"
-- id: stn_gmrs_chicago_575
-  call_sign: "GMRS"
-  organization_id: org_local_gmrs
-  location_id: loc_chicago
-  service: "gmrs"
-- id: stn_gmrs_parkridge_675
-  call_sign: "GMRS"
-  organization_id: org_local_gmrs
-  location_id: loc_parkridge
-  service: "gmrs"
-- id: stn_gmrs_northbrook_650
-  call_sign: "GMRS"
-  organization_id: org_local_gmrs
-  location_id: loc_northbrook
-  service: "gmrs"
-- id: stn_gmrs_forest_view_650
-  call_sign: "GMRS"
-  organization_id: org_local_gmrs
-  location_id: loc_forest_view
-  service: "gmrs"
-- id: stn_gmrs_oak_lawn_625
-  call_sign: "GMRS"
-  organization_id: org_local_gmrs
-  location_id: loc_oak_lawn
-  service: "gmrs"
+  - id: stn_gmrs_lincolnwood_575
+    call_sign: "GMRS"
+    organization_id: org_local_gmrs
+    location_id: loc_lincolnwood
+    service: "gmrs"
+  - id: stn_gmrs_evanston_725
+    call_sign: "GMRS"
+    organization_id: org_local_gmrs
+    location_id: loc_evanston
+    service: "gmrs"
+  - id: stn_gmrs_evanston_700
+    call_sign: "GMRS"
+    organization_id: org_local_gmrs
+    location_id: loc_evanston
+    service: "gmrs"
+  - id: stn_gmrs_chicago_600
+    call_sign: "GMRS"
+    organization_id: org_local_gmrs
+    location_id: loc_chicago
+    service: "gmrs"
+  - id: stn_gmrs_chicago_575
+    call_sign: "GMRS"
+    organization_id: org_local_gmrs
+    location_id: loc_chicago
+    service: "gmrs"
+  - id: stn_gmrs_parkridge_675
+    call_sign: "GMRS"
+    organization_id: org_local_gmrs
+    location_id: loc_parkridge
+    service: "gmrs"
+  - id: stn_gmrs_northbrook_650
+    call_sign: "GMRS"
+    organization_id: org_local_gmrs
+    location_id: loc_northbrook
+    service: "gmrs"
+  - id: stn_gmrs_forest_view_650
+    call_sign: "GMRS"
+    organization_id: org_local_gmrs
+    location_id: loc_forest_view
+    service: "gmrs"
+  - id: stn_gmrs_oak_lawn_625
+    call_sign: "GMRS"
+    organization_id: org_local_gmrs
+    location_id: loc_oak_lawn
+    service: "gmrs"
 
 rf_chains:
   # Repeater modeling: rx = repeater output (462.xxx), tx = input (467.xxx)
-- id: chain_gmrs_lincolnwood_575
-  station_id: stn_gmrs_lincolnwood_575
-  tx:
-    freq_mhz: 467.575
-    emission: "20K0F3E"
-    bandwidth_khz: 25
-  rx:
-    freq_mhz: 462.575
-  mode:
-    type: "FM"
+  - id: chain_gmrs_lincolnwood_575
+    station_id: stn_gmrs_lincolnwood_575
+    tx:
+      freq_mhz: 467.575
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.575
+    mode:
+      type: "FM"
 
-- id: chain_gmrs_evanston_725
-  station_id: stn_gmrs_evanston_725
-  tx:
-    freq_mhz: 467.725
-    emission: "20K0F3E"
-    bandwidth_khz: 25
-  rx:
-    freq_mhz: 462.725
-  mode:
-    type: "FM"
-    ctcss_tx_hz: 100.0
-    ctcss_rx_hz: 100.0
+  - id: chain_gmrs_evanston_725
+    station_id: stn_gmrs_evanston_725
+    tx:
+      freq_mhz: 467.725
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.725
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 100.0
+      ctcss_rx_hz: 100.0
 
-- id: chain_gmrs_evanston_700
-  station_id: stn_gmrs_evanston_700
-  tx:
-    freq_mhz: 467.700
-    emission: "20K0F3E"
-    bandwidth_khz: 25
-  rx:
-    freq_mhz: 462.700
-  mode:
-    type: "FM"
-    ctcss_tx_hz: 107.2
-    ctcss_rx_hz: 107.2
+  - id: chain_gmrs_evanston_700
+    station_id: stn_gmrs_evanston_700
+    tx:
+      freq_mhz: 467.700
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.700
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 107.2
+      ctcss_rx_hz: 107.2
 
-- id: chain_gmrs_chicago_600
-  station_id: stn_gmrs_chicago_600
-  tx:
-    freq_mhz: 467.600
-    emission: "20K0F3E"
-    bandwidth_khz: 25
-  rx:
-    freq_mhz: 462.600
-  mode:
-    type: "FM"
-    ctcss_tx_hz: 192.8
-    ctcss_rx_hz: 192.8
+  - id: chain_gmrs_chicago_600
+    station_id: stn_gmrs_chicago_600
+    tx:
+      freq_mhz: 467.600
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.600
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 192.8
+      ctcss_rx_hz: 192.8
 
-- id: chain_gmrs_chicago_575
-  station_id: stn_gmrs_chicago_575
-  tx:
-    freq_mhz: 467.575
-    emission: "20K0F3E"
-    bandwidth_khz: 25
-  rx:
-    freq_mhz: 462.575
-  mode:
-    type: "FM"
-    ctcss_tx_hz: 141.3
-    ctcss_rx_hz: 141.3
+  - id: chain_gmrs_chicago_575
+    station_id: stn_gmrs_chicago_575
+    tx:
+      freq_mhz: 467.575
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.575
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 141.3
+      ctcss_rx_hz: 141.3
 
-- id: chain_gmrs_parkridge_675
-  station_id: stn_gmrs_parkridge_675
-  tx:
-    freq_mhz: 467.675
-    emission: "20K0F3E"
-    bandwidth_khz: 25
-  rx:
-    freq_mhz: 462.675
-  mode:
-    type: "FM"
-    ctcss_tx_hz: 141.3
-    ctcss_rx_hz: 141.3
+  - id: chain_gmrs_parkridge_675
+    station_id: stn_gmrs_parkridge_675
+    tx:
+      freq_mhz: 467.675
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.675
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 141.3
+      ctcss_rx_hz: 141.3
 
-- id: chain_gmrs_northbrook_650
-  station_id: stn_gmrs_northbrook_650
-  tx:
-    freq_mhz: 467.650
-    emission: "20K0F3E"
-    bandwidth_khz: 25
-  rx:
-    freq_mhz: 462.650
-  mode:
-    type: "FM"
-    ctcss_tx_hz: 107.2
-    ctcss_rx_hz: 107.2
+  - id: chain_gmrs_northbrook_650
+    station_id: stn_gmrs_northbrook_650
+    tx:
+      freq_mhz: 467.650
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.650
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 107.2
+      ctcss_rx_hz: 107.2
 
-- id: chain_gmrs_forest_view_650
-  station_id: stn_gmrs_forest_view_650
-  tx:
-    freq_mhz: 467.650
-    emission: "20K0F3E"
-    bandwidth_khz: 25
-  rx:
-    freq_mhz: 462.650
-  mode:
-    type: "FM"
-    ctcss_tx_hz: 203.5
-    ctcss_rx_hz: 203.5
+  - id: chain_gmrs_forest_view_650
+    station_id: stn_gmrs_forest_view_650
+    tx:
+      freq_mhz: 467.650
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.650
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 203.5
+      ctcss_rx_hz: 203.5
 
-- id: chain_gmrs_oak_lawn_625
-  station_id: stn_gmrs_oak_lawn_625
-  tx:
-    freq_mhz: 467.625
-    emission: "20K0F3E"
-    bandwidth_khz: 25
-  rx:
-    freq_mhz: 462.625
-  mode:
-    type: "FM"
+  - id: chain_gmrs_oak_lawn_625
+    station_id: stn_gmrs_oak_lawn_625
+    tx:
+      freq_mhz: 467.625
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.625
+    mode:
+      type: "FM"
 
 assignments:
-- id: asgn_gmrs_lincolnwood_575
-  rf_chain_id: chain_gmrs_lincolnwood_575
-  usage: "repeater"
-  zones: ["GMRS"]
-  codeplug:
-    name: "Lincolnwood 575"
-    rx_only: false
-    all_skip: true
-  authorization_id: auth_fcc_gmrs
-  comment: "Permission required to use. Output 462.5750 (+5.000 input)."
+  - id: asgn_gmrs_lincolnwood_575
+    rf_chain_id: chain_gmrs_lincolnwood_575
+    usage: "repeater"
+    notes: "Permission required to use. Output 462.5750 (+5.000 input)."
+    authorization_id: auth_fcc_gmrs
 
-- id: asgn_gmrs_evanston_725
-  rf_chain_id: chain_gmrs_evanston_725
-  usage: "repeater"
-  zones: ["GMRS"]
-  codeplug:
-    name: "Evanston 725"
-    rx_only: false
-    all_skip: true
-  authorization_id: auth_fcc_gmrs
-  comment: "Open system. 100.0 Hz PL. Output 462.7250 (+5.000 input)."
+  - id: asgn_gmrs_evanston_725
+    rf_chain_id: chain_gmrs_evanston_725
+    usage: "repeater"
+    notes: "Open system. 100.0 Hz PL. Output 462.7250 (+5.000 input)."
+    authorization_id: auth_fcc_gmrs
 
-- id: asgn_gmrs_evanston_700
-  rf_chain_id: chain_gmrs_evanston_700
-  usage: "repeater"
-  zones: ["GMRS"]
-  codeplug:
-    name: "NSEA Evan700"
-    rx_only: false
-    all_skip: true
-  authorization_id: auth_fcc_gmrs
-  comment: "Permission required. 107.2 Hz PL. Output 462.7000 (+5.000 input)."
+  - id: asgn_gmrs_evanston_700
+    rf_chain_id: chain_gmrs_evanston_700
+    usage: "repeater"
+    notes: "Permission required. 107.2 Hz PL. Output 462.7000 (+5.000 input)."
+    authorization_id: auth_fcc_gmrs
 
-- id: asgn_gmrs_chicago_600
-  rf_chain_id: chain_gmrs_chicago_600
-  usage: "repeater"
-  zones: ["GMRS"]
-  codeplug:
-    name: "PL-600"
-    rx_only: false
-    all_skip: true
-  authorization_id: auth_fcc_gmrs
-  comment: "Open system. 192.8 Hz PL. Output 462.6000 (+5.000 input)."
+  - id: asgn_gmrs_chicago_600
+    rf_chain_id: chain_gmrs_chicago_600
+    usage: "repeater"
+    notes: "Open system. 192.8 Hz PL. Output 462.6000 (+5.000 input)."
+    authorization_id: auth_fcc_gmrs
 
-- id: asgn_gmrs_chicago_575
-  rf_chain_id: chain_gmrs_chicago_575
-  usage: "repeater"
-  zones: ["GMRS"]
-  codeplug:
-    name: "OHare 575"
-    rx_only: false
-    all_skip: true
-  authorization_id: auth_fcc_gmrs
-  comment: "Open system. 141.3 Hz PL. Output 462.5750 (+5.000 input)."
+  - id: asgn_gmrs_chicago_575
+    rf_chain_id: chain_gmrs_chicago_575
+    usage: "repeater"
+    notes: "Open system. 141.3 Hz PL. Output 462.5750 (+5.000 input)."
+    authorization_id: auth_fcc_gmrs
 
-- id: asgn_gmrs_parkridge_675
-  rf_chain_id: chain_gmrs_parkridge_675
-  usage: "repeater"
-  zones: ["GMRS"]
-  codeplug:
-    name: "NSEA Her675"
-    rx_only: false
-    all_skip: true
-  authorization_id: auth_fcc_gmrs
-  comment: "Permission required. 141.3 Hz PL. Output 462.6750 (+5.000 input)."
+  - id: asgn_gmrs_parkridge_675
+    rf_chain_id: chain_gmrs_parkridge_675
+    usage: "repeater"
+    notes: "Permission required. 141.3 Hz PL. Output 462.6750 (+5.000 input)."
+    authorization_id: auth_fcc_gmrs
 
-- id: asgn_gmrs_northbrook_650
-  rf_chain_id: chain_gmrs_northbrook_650
-  usage: "repeater"
-  zones: ["GMRS"]
-  codeplug:
-    name: "NSEA NBrk650"
-    rx_only: false
-    all_skip: true
-  authorization_id: auth_fcc_gmrs
-  comment: "Permission required. 107.2 Hz PL. Output 462.6500 (+5.000 input)."
+  - id: asgn_gmrs_northbrook_650
+    rf_chain_id: chain_gmrs_northbrook_650
+    usage: "repeater"
+    notes: "Permission required. 107.2 Hz PL. Output 462.6500 (+5.000 input)."
+    authorization_id: auth_fcc_gmrs
 
-- id: asgn_gmrs_forest_view_650
-  rf_chain_id: chain_gmrs_forest_view_650
-  usage: "repeater"
-  zones: ["GMRS"]
-  codeplug:
-    name: "PRJ 650"
-    rx_only: false
-    all_skip: true
-  authorization_id: auth_fcc_gmrs
-  comment: "Open system. 203.5 Hz PL. Output 462.6500 (+5.000 input)."
+  - id: asgn_gmrs_forest_view_650
+    rf_chain_id: chain_gmrs_forest_view_650
+    usage: "repeater"
+    notes: "Open system. 203.5 Hz PL. Output 462.6500 (+5.000 input)."
+    authorization_id: auth_fcc_gmrs
 
-- id: asgn_gmrs_oak_lawn_625
-  rf_chain_id: chain_gmrs_oak_lawn_625
-  usage: "repeater"
-  zones: ["GMRS"]
-  codeplug:
-    name: "Oak Lawn"
-    rx_only: false
-    all_skip: true
-  authorization_id: auth_fcc_gmrs
-  comment: "Permission required. Output 462.6250 (+5.000 input)."
+  - id: asgn_gmrs_oak_lawn_625
+    rf_chain_id: chain_gmrs_oak_lawn_625
+    usage: "repeater"
+    notes: "Permission required. Output 462.6250 (+5.000 input)."
+    authorization_id: auth_fcc_gmrs

@@ -77,159 +77,79 @@ assignments:
     channel_plan_id: chplan_pmr446_analog
     channel_name: "PMR 01"
     usage: "simplex"
-    zones: ["PMR446"]
-    codeplug:
-      name: "PMR 01"
-      rx_only: false
-      all_skip: true
     authorization_id: auth_etsi_pmr446
   - id: asgn_pmr446_02
     channel_plan_id: chplan_pmr446_analog
     channel_name: "PMR 02"
     usage: "simplex"
-    zones: ["PMR446"]
-    codeplug:
-      name: "PMR 02"
-      rx_only: false
-      all_skip: true
     authorization_id: auth_etsi_pmr446
   - id: asgn_pmr446_03
     channel_plan_id: chplan_pmr446_analog
     channel_name: "PMR 03"
     usage: "simplex"
-    zones: ["PMR446"]
-    codeplug:
-      name: "PMR 03"
-      rx_only: false
-      all_skip: true
     authorization_id: auth_etsi_pmr446
   - id: asgn_pmr446_04
     channel_plan_id: chplan_pmr446_analog
     channel_name: "PMR 04"
     usage: "simplex"
-    zones: ["PMR446"]
-    codeplug:
-      name: "PMR 04"
-      rx_only: false
-      all_skip: true
     authorization_id: auth_etsi_pmr446
   - id: asgn_pmr446_05
     channel_plan_id: chplan_pmr446_analog
     channel_name: "PMR 05"
     usage: "simplex"
-    zones: ["PMR446"]
-    codeplug:
-      name: "PMR 05"
-      rx_only: false
-      all_skip: true
     authorization_id: auth_etsi_pmr446
   - id: asgn_pmr446_06
     channel_plan_id: chplan_pmr446_analog
     channel_name: "PMR 06"
     usage: "simplex"
-    zones: ["PMR446"]
-    codeplug:
-      name: "PMR 06"
-      rx_only: false
-      all_skip: true
     authorization_id: auth_etsi_pmr446
   - id: asgn_pmr446_07
     channel_plan_id: chplan_pmr446_analog
     channel_name: "PMR 07"
     usage: "simplex"
-    zones: ["PMR446"]
-    codeplug:
-      name: "PMR 07"
-      rx_only: false
-      all_skip: true
     authorization_id: auth_etsi_pmr446
   - id: asgn_pmr446_08
     channel_plan_id: chplan_pmr446_analog
     channel_name: "PMR 08"
     usage: "simplex"
-    zones: ["PMR446"]
-    codeplug:
-      name: "PMR 08"
-      rx_only: false
-      all_skip: true
     authorization_id: auth_etsi_pmr446
   - id: asgn_pmr446_09
     channel_plan_id: chplan_pmr446_analog
     channel_name: "PMR 09"
     usage: "simplex"
-    zones: ["PMR446"]
-    codeplug:
-      name: "PMR 09"
-      rx_only: false
-      all_skip: true
     authorization_id: auth_etsi_pmr446
   - id: asgn_pmr446_10
     channel_plan_id: chplan_pmr446_analog
     channel_name: "PMR 10"
     usage: "simplex"
-    zones: ["PMR446"]
-    codeplug:
-      name: "PMR 10"
-      rx_only: false
-      all_skip: true
     authorization_id: auth_etsi_pmr446
   - id: asgn_pmr446_11
     channel_plan_id: chplan_pmr446_analog
     channel_name: "PMR 11"
     usage: "simplex"
-    zones: ["PMR446"]
-    codeplug:
-      name: "PMR 11"
-      rx_only: false
-      all_skip: true
     authorization_id: auth_etsi_pmr446
   - id: asgn_pmr446_12
     channel_plan_id: chplan_pmr446_analog
     channel_name: "PMR 12"
     usage: "simplex"
-    zones: ["PMR446"]
-    codeplug:
-      name: "PMR 12"
-      rx_only: false
-      all_skip: true
     authorization_id: auth_etsi_pmr446
   - id: asgn_pmr446_13
     channel_plan_id: chplan_pmr446_analog
     channel_name: "PMR 13"
     usage: "simplex"
-    zones: ["PMR446"]
-    codeplug:
-      name: "PMR 13"
-      rx_only: false
-      all_skip: true
     authorization_id: auth_etsi_pmr446
   - id: asgn_pmr446_14
     channel_plan_id: chplan_pmr446_analog
     channel_name: "PMR 14"
     usage: "simplex"
-    zones: ["PMR446"]
-    codeplug:
-      name: "PMR 14"
-      rx_only: false
-      all_skip: true
     authorization_id: auth_etsi_pmr446
   - id: asgn_pmr446_15
     channel_plan_id: chplan_pmr446_analog
     channel_name: "PMR 15"
     usage: "simplex"
-    zones: ["PMR446"]
-    codeplug:
-      name: "PMR 15"
-      rx_only: false
-      all_skip: true
     authorization_id: auth_etsi_pmr446
   - id: asgn_pmr446_16
     channel_plan_id: chplan_pmr446_analog
     channel_name: "PMR 16"
     usage: "simplex"
-    zones: ["PMR446"]
-    codeplug:
-      name: "PMR 16"
-      rx_only: false
-      all_skip: true
     authorization_id: auth_etsi_pmr446

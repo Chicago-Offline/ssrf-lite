@@ -327,189 +327,91 @@ assignments:
   - id: asgn_family_f1_all
     rf_chain_id: chain_family_f1_all
     usage: "simplex"
-    zones: ["Family Ops"]
-    codeplug:
-      name: "F1 All"
-      rx_only: false
-      scan_list: "Family SL"
     authorization_id: auth_fcc_gmrs_family
 
   - id: asgn_family_f2_team_a
     rf_chain_id: chain_family_f2_team_a
     usage: "simplex"
-    zones: ["Family Ops"]
-    codeplug:
-      name: "F2 Team A"
-      rx_only: false
     authorization_id: auth_fcc_gmrs_family
 
   - id: asgn_family_f3_team_b
     rf_chain_id: chain_family_f3_team_b
     usage: "simplex"
-    zones: ["Family Ops"]
-    codeplug:
-      name: "F3 Team B"
-      rx_only: false
-      scan_list: "Family SL"
     authorization_id: auth_fcc_gmrs_family
 
   - id: asgn_family_f4_team_c
     rf_chain_id: chain_family_f4_team_c
     usage: "simplex"
-    zones: ["Family Ops"]
-    codeplug:
-      name: "F4 Team C"
-      rx_only: false
     authorization_id: auth_fcc_gmrs_family
 
   - id: asgn_family_f5_road
     rf_chain_id: chain_family_f5_road
     usage: "simplex"
-    zones: ["Family Ops"]
-    codeplug:
-      name: "F5 Road"
-      rx_only: false
-      scan_list: "Family SL"
     authorization_id: auth_fcc_gmrs_family
 
   - id: asgn_family_f6_rptr
     rf_chain_id: chain_family_f6_rptr
     usage: "repeater"
-    zones: ["Family Ops"]
-    codeplug:
-      name: "F6 RPTR"
-      rx_only: false
-      duplex: "+"
-      tx_offset_mhz: 5.000
-      scan_list: "Family SL"
     authorization_id: auth_fcc_gmrs_family
-    comment: "GMRS repeater pair assumed +5.000 MHz input (467.5500)."
+    notes: "GMRS repeater pair assumed +5.000 MHz input (467.5500)."
 
   - id: asgn_family_f8_evnstn
     rf_chain_id: chain_family_f8_evnstn
     usage: "repeater"
-    zones: ["Family Ops"]
-    codeplug:
-      name: "F8 Evnstn 725"
-      rx_only: false
-      duplex: "+"
-      tx_offset_mhz: 5.025
-      scan_list: "Family SL"
     authorization_id: auth_fcc_gmrs_family
-    comment: "Evanston-area GMRS repeater (output 462.7250 / input 467.7500)."
+    notes: "Evanston-area GMRS repeater (output 462.7250 / input 467.7500)."
 
   - id: asgn_family_f9_prkrdg
     rf_chain_id: chain_family_f9_prkrdg
     usage: "repeater"
-    zones: ["Family Ops"]
-    codeplug:
-      name: "F9 PrkRdg 675"
-      rx_only: false
-      duplex: "+"
-      tx_offset_mhz: 5.000
-      scan_list: "Family SL"
     authorization_id: auth_fcc_gmrs_family
-    comment: "Park Ridge GMRS repeater (output 462.6750 / input 467.6750)."
+    notes: "Park Ridge GMRS repeater (output 462.6750 / input 467.6750)."
 
   - id: asgn_family_f10_evnst
     rf_chain_id: chain_family_f10_evnst
     usage: "simplex"
-    zones: ["Family Ops"]
-    codeplug:
-      name: "F10 Evnst 700"
-      rx_only: false
-      scan_list: "Family SL"
     authorization_id: auth_fcc_gmrs_family
 
   - id: asgn_family_f11_nrthbrk
     rf_chain_id: chain_family_f11_nrthbrk
     usage: "repeater"
-    zones: ["Family Ops"]
-    codeplug:
-      name: "F11 Nrthbrk"
-      rx_only: false
-      duplex: "-"
-      tx_offset_mhz: -2.000
-      scan_list: "Family SL"
     authorization_id: auth_fcc_gmrs_family
-    comment: "Northbrook-area repeater listing; verify coordination (unusual -2.000 MHz input)."
+    notes: "Northbrook-area repeater listing; verify coordination (unusual -2.000 MHz input)."
 
   - id: asgn_family_f13_uhf_call
     rf_chain_id: chain_family_f13_uhf_call
     usage: "simplex"
-    zones: ["Family Ops", "Ham UHF"]
-    codeplug:
-      name: "F13 UHF Call"
-      rx_only: false
-      scan_list: "Family SL"
     authorization_id: auth_fcc_amateur_family
 
   - id: asgn_family_f14_ns9rc
     rf_chain_id: chain_family_f14_ns9rc
     usage: "repeater"
-    zones: ["Family Ops", "Ham-Repeaters"]
-    codeplug:
-      name: "F14 NS9RC UHF"
-      rx_only: false
-      duplex: "+"
-      tx_offset_mhz: 5.000
     authorization_id: auth_fcc_amateur_family
-    comment: "NS9RC 442.725 +5 MHz repeater with 114.8 Hz tone."
+    notes: "NS9RC 442.725 +5 MHz repeater with 114.8 Hz tone."
 
   - id: asgn_family_f15_cmfc
     rf_chain_id: chain_family_f15_cmfc
     usage: "repeater"
-    zones: ["Family Ops", "Ham-Repeaters"]
-    codeplug:
-      name: "F15 CMFC UHF"
-      rx_only: false
-      duplex: "+"
-      tx_offset_mhz: 5.000
-      scan_list: "HamRptrs SL"
     authorization_id: auth_fcc_amateur_family
-    comment: "Chicago FM Club 443.750 +5 MHz repeater (114.8 Hz)."
+    notes: "Chicago FM Club 443.750 +5 MHz repeater (114.8 Hz)."
 
   - id: asgn_family_fd1_all
     rf_chain_id: chain_family_fd1_all
     usage: "digital-simplex"
-    zones: ["Family Ops Digital"]
-    codeplug:
-      name: "FD1 All"
-      rx_only: false
-      scan_list: "Family SL"
-      preferred_contacts: [contact_local99, contact_eric]
     authorization_id: auth_fcc_gmrs_family
 
   - id: asgn_family_fd2_team_a
     rf_chain_id: chain_family_fd2_team_a
     usage: "digital-simplex"
-    zones: ["Family Ops Digital"]
-    codeplug:
-      name: "FD2 Team A"
-      rx_only: false
-      scan_list: "Family SL"
-      preferred_contacts: [contact_local99, contact_eric]
     authorization_id: auth_fcc_gmrs_family
 
   - id: asgn_family_fd3_team_b
     rf_chain_id: chain_family_fd3_team_b
     usage: "digital-simplex"
-    zones: ["Family Ops Digital"]
-    codeplug:
-      name: "FD3 Team B"
-      rx_only: false
-      preferred_contacts: [contact_local99, contact_eric]
-      scan_list: "Family SL"
     authorization_id: auth_fcc_gmrs_family
 
   - id: asgn_family_fd4_team_c
     rf_chain_id: chain_family_fd4_team_c
     usage: "digital-simplex"
-    zones: ["Family Ops Digital"]
-    codeplug:
-      name: "FD4 Team C"
-      rx_only: false
-      scan_list: "Family SL"
-      preferred_contacts: [contact_local99, contact_eric]
     authorization_id: auth_fcc_gmrs_family
-    comment: "Verify DMR color code (sheet shows 0)."
+    notes: "Verify DMR color code (sheet shows 0)."

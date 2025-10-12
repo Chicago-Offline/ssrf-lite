@@ -228,198 +228,77 @@ assignments:
   - id: asg_aar_160230
     rf_chain_id: chain_aar_160230
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 160230"
-      rx_only: true
-      all_skip: true
   - id: asg_aar_160320
     rf_chain_id: chain_aar_160320
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 160320"
-      rx_only: true
-      all_skip: true
   - id: asg_aar_160470
     rf_chain_id: chain_aar_160470
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 160470"
-      rx_only: true
-      all_skip: true
   - id: asg_aar_160530
     rf_chain_id: chain_aar_160530
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 160530"
-      rx_only: true
-      all_skip: true
   - id: asg_aar_160560
     rf_chain_id: chain_aar_160560
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 160560"
-      rx_only: true
-      all_skip: true
   - id: asg_aar_160590
     rf_chain_id: chain_aar_160590
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 160590"
-      rx_only: true
-      all_skip: true
   - id: asg_aar_160620
     rf_chain_id: chain_aar_160620
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 160620"
-      rx_only: true
-      all_skip: true
   - id: asg_aar_160650
     rf_chain_id: chain_aar_160650
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 160650"
-      rx_only: true
-      all_skip: true
   - id: asg_aar_160695
     rf_chain_id: chain_aar_160695
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 160695"
-      rx_only: true
-      all_skip: true
   - id: asg_aar_160770
     rf_chain_id: chain_aar_160770
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 160770"
-      rx_only: true
-      all_skip: true
   - id: asg_aar_160800
     rf_chain_id: chain_aar_160800
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 160800"
-      all_skip: true
-      rx_only: true
   - id: asg_aar_160845
     rf_chain_id: chain_aar_160845
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 160845"
-      rx_only: true
-      all_skip: true
   - id: asg_aar_161100
     rf_chain_id: chain_aar_161100
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 161100"
-      rx_only: true
-      all_skip: true
   - id: asg_aar_161160
     rf_chain_id: chain_aar_161160
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 161160"
-      rx_only: true
 
-      # Assignments for additional channels
-      all_skip: true
+  # Assignments for additional channels
   - id: asg_aar_160335
     rf_chain_id: chain_aar_160335
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 160335"
-      rx_only: true
-      all_skip: true
   - id: asg_aar_160485
     rf_chain_id: chain_aar_160485
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 160485"
-      rx_only: true
-      all_skip: true
   - id: asg_aar_160680
     rf_chain_id: chain_aar_160680
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 160680"
-      rx_only: true
-      all_skip: true
   - id: asg_aar_160710
     rf_chain_id: chain_aar_160710
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 160710"
-      rx_only: true
-      all_skip: true
   - id: asg_aar_160815
     rf_chain_id: chain_aar_160815
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 160815"
-      rx_only: true
-      all_skip: true
   - id: asg_aar_160860
     rf_chain_id: chain_aar_160860
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 160860"
-      rx_only: true
-      all_skip: true
   - id: asg_aar_160875
     rf_chain_id: chain_aar_160875
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 160875"
-      rx_only: true
-      all_skip: true
   - id: asg_aar_161115
     rf_chain_id: chain_aar_161115
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 161115"
-      rx_only: true
-      all_skip: true
   - id: asg_aar_161190
     rf_chain_id: chain_aar_161190
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 161190"
-      rx_only: true
-      all_skip: true
   - id: asg_aar_161205
     rf_chain_id: chain_aar_161205
     usage: "simplex"
-    zones: ["Rail"]
-    codeplug:
-      name: "AAR 161205"
-      rx_only: true
-
-      all_skip: true
 comments:
   - text: |
       Curated AAR scan list suitable for Metra/UP/BNSF/CN/CP activity around Chicago. Add/remove as desired.

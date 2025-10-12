@@ -307,129 +307,63 @@ assignments:
   - id: asgn_ns9rc_2m_fm
     rf_chain_id: chain_ns9rc_2m_fm
     usage: "repeater"
-    zones: ["Ham-Repeaters", "Emergency"]
-    codeplug:
-      name: "NS9RC 2m FM"
-      rx_only: false
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      147.345 +0.6 MHz, CTCSS 107.2 Hz. Yaesu System Fusion DR-2 dual mode; enable tone squelch on non-Yaesu rigs to avoid digital noise.
-      ERP ~50 W, antenna ~250 ft AGL, Northfield. Skywarn (north Cook Co.) priority.
 
   - id: asgn_ns9rc_2m_c4fm
     rf_chain_id: chain_ns9rc_2m_c4fm
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "NS9RC 2m C4FM"
-      rx_only: false
     authorization_id: auth_fcc_amateur_t
-    comment: "System Fusion digital voice on 147.345 +0.6 MHz."
 
   - id: asgn_ns9rc_220
     rf_chain_id: chain_ns9rc_220_fm
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "NS9RC 220"
-      rx_only: false
     authorization_id: auth_fcc_amateur_t
-    comment: "224.320 -1.6 MHz, CTCSS 110.9 Hz. ~60 W ERP from Deerfield water tower (≈180 ft AGL)."
 
   - id: asgn_ns9rc_440
     rf_chain_id: chain_ns9rc_440_fm
     usage: "repeater"
-    zones: ["Ham-Repeaters", "Emergency"]
-    codeplug:
-      name: "NS9RC 440"
-      rx_only: false
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      442.725 +5 MHz, CTCSS 114.8 Hz. Motorola + S-Com 7330; ~80 W ERP; offset pattern antenna at ~513 ft AGL.
-      Coverage: Cook & Lake Counties; strong mobile coverage S to Merrillville IN, N to Kenosha WI, W to Crystal Lake. Site near N end of Lake Shore Dr.
 
   - id: asgn_ns9rc_dstar_440
     rf_chain_id: chain_ns9rc_dstar_440
     usage: "repeater"
-    zones: ["DMR Repeater"]
-    codeplug:
-      name: "NS9RC DSTAR4"
-      rx_only: false
     authorization_id: auth_fcc_amateur_t
-    comment: "D-STAR DV 442.09375/447.09375, linked (Talk Group 51C)."
 
   - id: asgn_ns9rc_dstar_23cm
     rf_chain_id: chain_ns9rc_dstar_23cm
     usage: "repeater"
-    zones: ["DMR Repeater"]
-    codeplug:
-      name: "NS9RC DSTAR23"
-      rx_only: false
     authorization_id: auth_fcc_amateur_t
-    comment: "D-STAR DV 1292.200/1272.200, no PL."
 
   - id: asgn_ns9rc_aprs
     rf_chain_id: chain_ns9rc_aprs
     usage: "data"
-    zones: ["APRS"]
-    codeplug:
-      name: "NS9RC APRS"
-      rx_only: false
     authorization_id: auth_fcc_amateur_t
-    comment: "APRS digipeater (main) - US APRS 144.390 MHz."
 
   - id: asgn_ns9rc_winlink
     rf_chain_id: chain_ns9rc_winlink
     usage: "packet"
-    zones: ["Packet/Winlink"]
-    codeplug:
-      name: "NS9RC Winlink"
-      rx_only: false
     authorization_id: auth_fcc_amateur_t
-    comment: "Open Winlink node on 145.61 MHz; collocated with UHF FM/D-STAR at ~513 ft AGL. Temporarily offline per site notice."
 
   - id: asgn_ns9rc_beacon_10m
     rf_chain_id: chain_ns9rc_beacon_10m
     usage: "receive-only"
-    zones: ["Beacons"]
-    codeplug:
-      name: "NS9RC 10m BCN"
-      rx_only: true
     authorization_id: auth_fcc_amateur_t
-    comment: "10m propagation beacon at Heller Nature Center on 28.297 MHz. ~5 W, vertical."
 
   - id: asgn_ns9rc_beacon_6m
     rf_chain_id: chain_ns9rc_beacon_6m
     usage: "receive-only"
-    zones: ["Beacons"]
-    codeplug:
-      name: "NS9RC 6m BCN"
-      rx_only: true
     authorization_id: auth_fcc_amateur_t
-    comment: "6m beacon 50.072 MHz, ~6 W, halo antenna at ~20 ft. Co-located with 10m beacon."
 
   # Recommended simplex for club events
   - id: asgn_ns9rc_simplex_446_025
     rf_chain_id: chain_ns9rc_simplex_446_025
     usage: "simplex"
-    zones: ["Ham UHF"]
-    codeplug:
-      name: "NS9RC UHF025"
-      rx_only: false
     authorization_id: auth_fcc_amateur_t
   - id: asgn_ns9rc_simplex_147_405
     rf_chain_id: chain_ns9rc_simplex_147_405
     usage: "simplex"
-    zones: ["Ham VHF"]
-    codeplug:
-      name: "NS9RC VHF405"
-      rx_only: false
     authorization_id: auth_fcc_amateur_t
   - id: asgn_ns9rc_simplex_146_460
     rf_chain_id: chain_ns9rc_simplex_146_460
     usage: "simplex"
-    zones: ["Ham VHF"]
-    codeplug:
-      name: "NS9RC VHF460"
-      rx_only: false
     authorization_id: auth_fcc_amateur_t

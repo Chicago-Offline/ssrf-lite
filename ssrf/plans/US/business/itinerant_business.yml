@@ -256,222 +256,86 @@ assignments:
   - id: asg_151505
     rf_chain_id: chain_vhf_151505
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "151505 Itin"
-      rx_only: true
-      all_skip: true
   - id: asg_1515125
     rf_chain_id: chain_vhf_1515125
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "1515125 Itin"
-      rx_only: true
-      all_skip: true
   - id: asg_151625
     rf_chain_id: chain_vhf_151625_red
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "RedDot151625"
-      rx_only: true
-      all_skip: true
   - id: asg_151640
     rf_chain_id: chain_vhf_151640
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "151640 VHF"
-      rx_only: true
-      all_skip: true
   - id: asg_151700
     rf_chain_id: chain_vhf_151700
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "151700 VHF"
-      rx_only: true
-      all_skip: true
   - id: asg_151760
     rf_chain_id: chain_vhf_151760
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "151760 VHF"
-      rx_only: true
-      all_skip: true
   - id: asg_151955
     rf_chain_id: chain_vhf_151955_purple
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "Purple151955"
-      rx_only: true
-      all_skip: true
   - id: asg_1545275
     rf_chain_id: chain_vhf_1545275
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "1545275 VHF"
-      rx_only: true
-      all_skip: true
   - id: asg_158400
     rf_chain_id: chain_vhf_158400
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "158400 VHF"
-      rx_only: true
-      all_skip: true
   - id: asg_1584075
     rf_chain_id: chain_vhf_1584075
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "1584075 VHF"
-      rx_only: true
 
-      # UHF
-      all_skip: true
+  # UHF
   - id: asg_451800
     rf_chain_id: chain_uhf_451800
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "451800 UHF"
-      rx_only: true
-      all_skip: true
   - id: asg_4518125
     rf_chain_id: chain_uhf_4518125
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "4518125 UHF"
-      rx_only: true
-      all_skip: true
   - id: asg_456800
     rf_chain_id: chain_uhf_456800
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "456800 UHF"
-      rx_only: true
-      all_skip: true
   - id: asg_4568125
     rf_chain_id: chain_uhf_4568125
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "4568125 UHF"
-      rx_only: true
-      all_skip: true
   - id: asg_457525
     rf_chain_id: chain_uhf_457525
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "457525 UHF"
-      rx_only: true
-      all_skip: true
   - id: asg_45755
     rf_chain_id: chain_uhf_45755
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "457550 UHF"
-      rx_only: true
-      all_skip: true
   - id: asg_457575
     rf_chain_id: chain_uhf_457575
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "457575 UHF"
-      rx_only: true
-      all_skip: true
   - id: asg_464500
     rf_chain_id: chain_uhf_464500_brown
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "Brown464500"
-      rx_only: true
-      all_skip: true
   - id: asg_464550
     rf_chain_id: chain_uhf_464550_yellow
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "Yellow464550"
-      rx_only: true
-      all_skip: true
   - id: asg_4677625
     rf_chain_id: chain_uhf_4677625_j
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "JDot4677625"
-      rx_only: true
-      all_skip: true
   - id: asg_4678125
     rf_chain_id: chain_uhf_4678125_k
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "KDot4678125"
-      rx_only: true
-      all_skip: true
   - id: asg_46785
     rf_chain_id: chain_uhf_46785_silver
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "Silver467850"
-      rx_only: true
-      all_skip: true
   - id: asg_467875
     rf_chain_id: chain_uhf_467875_gold
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "Gold467875"
-      rx_only: true
-      all_skip: true
   - id: asg_4679
     rf_chain_id: chain_uhf_4679_red
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "Red467900"
-      rx_only: true
-      all_skip: true
   - id: asg_467925
     rf_chain_id: chain_uhf_467925_blue
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "Blue467925"
-      rx_only: true
-      all_skip: true
   - id: asg_469500
     rf_chain_id: chain_uhf_469500
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "469500 UHF"
-      rx_only: true
-      all_skip: true
   - id: asg_469550
     rf_chain_id: chain_uhf_469550
     usage: "simplex"
-    zones: ["Business"]
-    codeplug:
-      name: "469550 UHF"
-      rx_only: true
-
-      all_skip: true
 comments:
   - text: |
       These are widely used nationwide business/itinerant channels. Operating requirements vary by area and license. Programmed here for RX-only monitoring on OpenGD77.

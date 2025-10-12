@@ -58,11 +58,4 @@ assignments:
   - id: asgn_kc8brs_vhf_fm
     rf_chain_id: chain_kc8brs_vhf_fm
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "KC8BRS 147.180"
-      rx_only: false
     authorization_id: auth_fcc_amateur
-    comment: |
-      Four Flags ARC repeater in Niles, MI. Output 147.180 MHz (+0.600 MHz input) with 94.8 Hz PL.
-      Listed as no autopatch; site latitude/longitude from Artsci listing. Club info: http://www.qsl.net/kc8brs/.

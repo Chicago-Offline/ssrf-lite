@@ -133,80 +133,27 @@ assignments:
   - id: asg_interop_v1
     rf_chain_id: chain_interop_v1
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "Interop VHF 1"
-      rx_only: true
-
-      all_skip: true
   - id: asg_interop_v2
     rf_chain_id: chain_interop_v2
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "Interop VHF 2"
-      rx_only: true
-
-      all_skip: true
   - id: asg_interop_v3
     rf_chain_id: chain_interop_v3
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "Interop VHF 3"
-      rx_only: true
-
-      all_skip: true
   - id: asg_interop_v4
     rf_chain_id: chain_interop_v4
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "Interop VHF 4"
-      rx_only: true
-
-      all_skip: true
   - id: asg_interop_vmetro3
     rf_chain_id: chain_interop_vmetro3
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "Interop VMet3"
-      rx_only: true
-
-      all_skip: true
   - id: asg_interop_vmetro4
     rf_chain_id: chain_interop_vmetro4
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "Interop VMet4"
-      rx_only: true
-
-      all_skip: true
   - id: asg_interop_vmetro5
     rf_chain_id: chain_interop_vmetro5
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "Interop VMet5"
-      rx_only: true
-
-      all_skip: true
   - id: asg_interop_u1
     rf_chain_id: chain_interop_u1
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "Interop UHF 1"
-      rx_only: true
-
-      all_skip: true
   - id: asg_interop_u2
     rf_chain_id: chain_interop_u2
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "Interop UHF 2"
-      rx_only: true
-      all_skip: true

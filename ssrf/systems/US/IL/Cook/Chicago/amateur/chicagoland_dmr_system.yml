@@ -188,44 +188,14 @@ assignments:
   - id: asgn_n9kd_cl
     rf_chain_id: chain_n9kd_444_dmr
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "N9KD CL"
-      rx_only: false
-      preferred_contacts:
-        [tg_9, tg_3181, tg_3166, tg_3117, tg_3169, tg_310, tg_9998]
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      ChicagoLand C-Bridge member; hybrid BrandMeister noted in local listings.
-      Color Code 0. Program Local 1 (TS1), Local 2 (TS2), IL 3117 (TS1), Midwest 3169 (TS2).
-      Source: ChicagoLand Control Center pages (see sources block).
 
   - id: asgn_k9vo_cl
     rf_chain_id: chain_k9vo_443_dmr
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "K9VO CL"
-      rx_only: false
-      preferred_contacts:
-        [tg_9, tg_3181, tg_3166, tg_3117, tg_3169, tg_310, tg_9998]
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      ChicagoLand C-Bridge; Color Code 1.
-      Typical TGs: Site Local 9 (TS1), Local 1 (TS1), Local 2 (TS2), IL (TS1), MW (TS2), Parrot (TS2).
-      Source: ChicagoLand Control Center pages (see sources block).
 
   - id: asgn_w9bmk_cl
     rf_chain_id: chain_w9bmk_444_dmr
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "W9BMK CL"
-      rx_only: false
-      preferred_contacts:
-        [tg_9, tg_3181, tg_3166, tg_3117, tg_3169, tg_310, tg_9998]
     authorization_id: auth_fcc_amateur_t
-    comment: |
-      ChicagoLand C-Bridge; Color Code 1. Uptown/Lakeview area site.
-      Typical TGs: Local 1 (TS1), Local 2 (TS2), IL 3117 (TS1), Midwest 3169 (TS2), Parrot (TS2).
-      Source: ChicagoLand Control Center pages (see sources block).

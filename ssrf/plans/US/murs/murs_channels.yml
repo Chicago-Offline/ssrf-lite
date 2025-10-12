@@ -50,49 +50,24 @@ assignments:
     channel_plan_id: chplan_us_murs
     channel_name: "MURS 1"
     usage: "simplex"
-    zones: ["MURS"]
-    codeplug:
-      name: "MURS 1"
-      rx_only: false
-      all_skip: true
     authorization_id: auth_fcc_murs
   - id: asgn_murs_2
     channel_plan_id: chplan_us_murs
     channel_name: "MURS 2"
     usage: "simplex"
-    zones: ["MURS"]
-    codeplug:
-      name: "MURS 2"
-      rx_only: false
-      all_skip: true
     authorization_id: auth_fcc_murs
   - id: asgn_murs_3
     channel_plan_id: chplan_us_murs
     channel_name: "MURS 3"
     usage: "simplex"
-    zones: ["MURS"]
-    codeplug:
-      name: "MURS 3"
-      rx_only: false
-      all_skip: true
     authorization_id: auth_fcc_murs
   - id: asgn_murs_4
     channel_plan_id: chplan_us_murs
     channel_name: "MURS 4 (Blue Dot)"
     usage: "simplex"
-    zones: ["MURS"]
-    codeplug:
-      name: "MURS 4"
-      rx_only: false
-      all_skip: true
     authorization_id: auth_fcc_murs
   - id: asgn_murs_5
     channel_plan_id: chplan_us_murs
     channel_name: "MURS 5 (Green Dot)"
     usage: "simplex"
-    zones: ["MURS"]
-    codeplug:
-      name: "MURS 5"
-      rx_only: false
-      all_skip: true
     authorization_id: auth_fcc_murs
