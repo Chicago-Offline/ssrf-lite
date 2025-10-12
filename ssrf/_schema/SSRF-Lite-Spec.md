@@ -2,8 +2,8 @@
 
 *A pragmatic spectrum data model for codeplug generation*  
 
-Version: **0.5.0**  
-Last updated: 2025-10-10  
+Version: **0.5.3**  
+Last updated: 2025-10-11  
 
 ---
 
@@ -87,7 +87,8 @@ stations:
 
 Fields:  
 
-- `id`, `call_sign`  
+- `id`  
+- `call_sign` (optional string; omit or set `null` if unknown)  
 - `organization_id` (ref → Organization)  
 - `location_id` (ref → Location)  
 - `service` (e.g. `"amateur"`, `"gmrs"`, `"marine"`)  
@@ -154,15 +155,17 @@ rf_chains:
       type: "DMR"
       color_code: 0
       timeslots: [1, 2]
+      notes: "Optional freeform notes about the repeater's digital behavior."
 ```
 
 Fields:  
 
 - `id`, `station_id`, `antenna_id`  
-- `tx`: `freq_mhz`, `power_w?`, `emission`, `bandwidth_khz?`  
+- `tx`: `freq_mhz?`, `power_w?`, `emission`, `bandwidth_khz?`  
 - `rx`: `freq_mhz`, `sensitivity_dbm?`  
 - `mode`:  
   - `type` (`"FM"`, `"DMR"`, etc.)  
+  - `notes?` (optional descriptive string)  
   - Mode-specific fields:
     - `ctcss_tx_hz`, `ctcss_rx_hz` (optional, Hz)
     - `dcs_tx_code`, `dcs_rx_code` (optional, DCS code as string or integer, e.g. "023", "205")

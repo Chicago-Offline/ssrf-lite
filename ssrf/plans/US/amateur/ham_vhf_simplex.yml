@@ -8,68 +8,69 @@ channel_plans:
       - name: 144.390 APRS
         freq_mhz: 144.390
         emission: 11K2F2D
-      - name: 146.400
+      - name: "146.400"
         freq_mhz: 146.400
         emission: 16K0F3E
-      - name: 146.415
+      - name: "146.415"
         freq_mhz: 146.415
         emission: 16K0F3E
-      - name: 146.430
+      - name: "146.430"
         freq_mhz: 146.430
         emission: 16K0F3E
-      - name: 146.445
+      - name: "146.445"
         freq_mhz: 146.445
         emission: 16K0F3E
-      - name: 146.460
+      - name: "146.460"
         freq_mhz: 146.460
         emission: 16K0F3E
-      - name: 146.475
+      - name: "146.475"
         freq_mhz: 146.475
         emission: 16K0F3E
-      - name: 146.490
+      - name: "146.490"
         freq_mhz: 146.490
         emission: 16K0F3E
-      - name: 146.505
+      - name: "146.505"
         freq_mhz: 146.505
         emission: 16K0F3E
       - name: 146.520 Call
         freq_mhz: 146.520
         emission: 16K0F3E
-      - name: 146.535
+      - name: "146.535"
         freq_mhz: 146.535
         emission: 16K0F3E
-      - name: 146.550
+      - name: "146.550"
         freq_mhz: 146.550
         emission: 16K0F3E
-      - name: 146.565
+      - name: "146.565"
         freq_mhz: 146.565
         emission: 16K0F3E
-      - name: 146.580
+      - name: "146.580"
         freq_mhz: 146.580
         emission: 16K0F3E
-      - name: 147.420
+      - name: "147.420"
         freq_mhz: 147.420
         emission: 16K0F3E
-      - name: 147.450
+      - name: "147.450"
         freq_mhz: 147.450
         emission: 16K0F3E
-      - name: 147.480
+      - name: "147.480"
         freq_mhz: 147.480
         emission: 16K0F3E
-      - name: 147.510
+      - name: "147.510"
         freq_mhz: 147.510
         emission: 16K0F3E
-      - name: 147.540
+      - name: "147.540"
         freq_mhz: 147.540
         emission: 16K0F3E
-      - name: 147.570
+      - name: "147.570"
         freq_mhz: 147.570
         emission: 16K0F3E
 
 assignments:
   - id: us_ham_vhf_aprs
     channel_plan_id: us_ham_vhf_simplex_plan
-    channel_name: 144.390 APRS
+    channel_name: "144.390 APRS"
+    usage: "data"
     zones: [Ham VHF]
     codeplug:
       name: APRS 144390
@@ -78,7 +79,8 @@ assignments:
 
   - id: us_ham_vhf_call
     channel_plan_id: us_ham_vhf_simplex_plan
-    channel_name: 146.520 Call
+    channel_name: "146.520 Call"
+    usage: "call"
     zones: [Ham VHF, Emergency]
     codeplug:
       name: 2m Call
@@ -87,126 +89,144 @@ assignments:
   # Other simplex frequencies (TX enabled for licensed operation)
   - id: us_ham_vhf_146400
     channel_plan_id: us_ham_vhf_simplex_plan
-    channel_name: 146.400
+    channel_name: "146.400"
+    usage: "simplex"
     zones: [Ham VHF]
     codeplug:
       name: 2m 146400
       rx_only: false
   - id: us_ham_vhf_146415
     channel_plan_id: us_ham_vhf_simplex_plan
-    channel_name: 146.415
+    channel_name: "146.415"
+    usage: "simplex"
     zones: [Ham VHF]
     codeplug:
       name: 2m 146415
       rx_only: false
   - id: us_ham_vhf_146430
     channel_plan_id: us_ham_vhf_simplex_plan
-    channel_name: 146.430
+    channel_name: "146.430"
+    usage: "simplex"
     zones: [Ham VHF]
     codeplug:
       name: 2m 146430
       rx_only: false
   - id: us_ham_vhf_146445
     channel_plan_id: us_ham_vhf_simplex_plan
-    channel_name: 146.445
+    channel_name: "146.445"
+    usage: "simplex"
     zones: [Ham VHF]
     codeplug:
       name: 2m 146445
       rx_only: false
   - id: us_ham_vhf_146460
     channel_plan_id: us_ham_vhf_simplex_plan
-    channel_name: 146.460
+    channel_name: "146.460"
+    usage: "simplex"
     zones: [Ham VHF]
     codeplug:
       name: 2m 146460
       rx_only: false
   - id: us_ham_vhf_146475
     channel_plan_id: us_ham_vhf_simplex_plan
-    channel_name: 146.475
+    channel_name: "146.475"
+    usage: "simplex"
     zones: [Ham VHF]
     codeplug:
       name: 2m 146475
       rx_only: false
   - id: us_ham_vhf_146490
     channel_plan_id: us_ham_vhf_simplex_plan
-    channel_name: 146.490
+    channel_name: "146.490"
+    usage: "simplex"
     zones: [Ham VHF]
     codeplug:
       name: 2m 146490
       rx_only: false
   - id: us_ham_vhf_146505
     channel_plan_id: us_ham_vhf_simplex_plan
-    channel_name: 146.505
+    channel_name: "146.505"
+    usage: "simplex"
     zones: [Ham VHF]
     codeplug:
       name: 2m 146505
       rx_only: false
   - id: us_ham_vhf_146535
     channel_plan_id: us_ham_vhf_simplex_plan
-    channel_name: 146.535
+    channel_name: "146.535"
+    usage: "simplex"
     zones: [Ham VHF]
     codeplug:
       name: 2m 146535
       rx_only: false
   - id: us_ham_vhf_146550
     channel_plan_id: us_ham_vhf_simplex_plan
-    channel_name: 146.550
+    channel_name: "146.550"
+    usage: "simplex"
     zones: [Ham VHF]
     codeplug:
       name: 2m 146550
       rx_only: false
   - id: us_ham_vhf_146565
     channel_plan_id: us_ham_vhf_simplex_plan
-    channel_name: 146.565
+    channel_name: "146.565"
+    usage: "simplex"
     zones: [Ham VHF]
     codeplug:
       name: 2m 146565
       rx_only: false
   - id: us_ham_vhf_146580
     channel_plan_id: us_ham_vhf_simplex_plan
-    channel_name: 146.580
+    channel_name: "146.580"
+    usage: "simplex"
     zones: [Ham VHF]
     codeplug:
       name: 2m 146580
       rx_only: false
   - id: us_ham_vhf_147420
     channel_plan_id: us_ham_vhf_simplex_plan
-    channel_name: 147.420
+    channel_name: "147.420"
+    usage: "simplex"
     zones: [Ham VHF]
     codeplug:
       name: 2m 147420
       rx_only: false
   - id: us_ham_vhf_147450
     channel_plan_id: us_ham_vhf_simplex_plan
-    channel_name: 147.450
+    channel_name: "147.450"
+    usage: "simplex"
     zones: [Ham VHF]
     codeplug:
       name: 2m 147450
       rx_only: false
   - id: us_ham_vhf_147480
     channel_plan_id: us_ham_vhf_simplex_plan
-    channel_name: 147.480
+    channel_name: "147.480"
+    usage: "simplex"
     zones: [Ham VHF]
     codeplug:
       name: 2m 147480
       rx_only: false
   - id: us_ham_vhf_147510
     channel_plan_id: us_ham_vhf_simplex_plan
-    channel_name: 147.510
+    channel_name: "147.510"
+    usage: "simplex"
     zones: [Ham VHF]
     codeplug:
       name: 2m 147510
       rx_only: false
   - id: us_ham_vhf_147540
     channel_plan_id: us_ham_vhf_simplex_plan
-    channel_name: 147.540
+    channel_name: "147.540"
+    usage: "simplex"
     zones: [Ham VHF]
     codeplug:
       name: 2m 147540
       rx_only: false
   - id: us_ham_vhf_147570
     channel_plan_id: us_ham_vhf_simplex_plan
-    channel_name: 147.570
+    channel_name: "147.570"
+    usage: "simplex"
     zones: [Ham VHF]
     codeplug:
       name: 2m 147570

@@ -38,7 +38,7 @@ rf_chains:
       station_id: stn_ham_dmr,
       antenna_id: ant_portable,
       rx: { freq_mhz: 446.500 },
-      tx: { emission: "7K60FXE" },
+      tx: { freq_mhz: 446.500, emission: "7K60FXE" },
       mode: { type: "DMR", color_code: 1 },
     }
   - {
@@ -46,7 +46,7 @@ rf_chains:
       station_id: stn_ham_dmr,
       antenna_id: ant_portable,
       rx: { freq_mhz: 446.075 },
-      tx: { emission: "7K60FXE" },
+      tx: { freq_mhz: 446.075, emission: "7K60FXE" },
       mode: { type: "DMR", color_code: 1 },
     }
   - {
@@ -54,7 +54,7 @@ rf_chains:
       station_id: stn_ham_dmr,
       antenna_id: ant_portable,
       rx: { freq_mhz: 430.4125 },
-      tx: { emission: "7K60FXE" },
+      tx: { freq_mhz: 430.4125, emission: "7K60FXE" },
       mode: { type: "DMR", color_code: 1 },
     }
   - {
@@ -62,7 +62,7 @@ rf_chains:
       station_id: stn_ham_dmr,
       antenna_id: ant_portable,
       rx: { freq_mhz: 430.4250 },
-      tx: { emission: "7K60FXE" },
+      tx: { freq_mhz: 430.4250, emission: "7K60FXE" },
       mode: { type: "DMR", color_code: 1 },
     }
   - {
@@ -70,7 +70,7 @@ rf_chains:
       station_id: stn_ham_dmr,
       antenna_id: ant_portable,
       rx: { freq_mhz: 439.4125 },
-      tx: { emission: "7K60FXE" },
+      tx: { freq_mhz: 439.4125, emission: "7K60FXE" },
       mode: { type: "DMR", color_code: 1 },
     }
   - {
@@ -78,7 +78,7 @@ rf_chains:
       station_id: stn_ham_dmr,
       antenna_id: ant_portable,
       rx: { freq_mhz: 439.4250 },
-      tx: { emission: "7K60FXE" },
+      tx: { freq_mhz: 439.4250, emission: "7K60FXE" },
       mode: { type: "DMR", color_code: 1 },
     }
   - {
