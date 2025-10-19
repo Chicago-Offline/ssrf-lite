@@ -52,7 +52,6 @@ def _format_policy_failure(found: dict[str, frozenset[str]]) -> str:
 
 
 class SSRFPolicyAuditTest(unittest.TestCase):
-    @unittest.expectedFailure
     def test_assignments_reference_policy_files(self) -> None:
         actual: dict[str, set[str]] = {}
 
