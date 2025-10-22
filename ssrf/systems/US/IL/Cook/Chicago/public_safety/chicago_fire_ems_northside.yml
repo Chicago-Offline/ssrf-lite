@@ -43,7 +43,7 @@ rf_chains:
       freq_mhz: 458.025
     tx:
       emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 203.5 }
+    mode: {type: "FM", ctcss_rx_hz: 203.5}
 
   - id: chain_cfd_cmd_a
     station_id: stn_cfd
@@ -52,7 +52,7 @@ rf_chains:
       freq_mhz: 458.125
     tx:
       emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 218.1 }
+    mode: {type: "FM", ctcss_rx_hz: 218.1}
 
   - id: chain_cfd_lakefront
     station_id: stn_cfd
@@ -61,7 +61,7 @@ rf_chains:
       freq_mhz: 458.075
     tx:
       emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 210.7 }
+    mode: {type: "FM", ctcss_rx_hz: 210.7}
 
   - id: chain_cfd_tac_a
     station_id: stn_cfd
@@ -70,7 +70,7 @@ rf_chains:
       freq_mhz: 470.1625
     tx:
       emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 97.4 }
+    mode: {type: "FM", ctcss_rx_hz: 97.4}
 
   - id: chain_cfd_ops8_a
     station_id: stn_cfd
@@ -79,7 +79,7 @@ rf_chains:
       freq_mhz: 476.2875
     tx:
       emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 69.3 }
+    mode: {type: "FM", ctcss_rx_hz: 69.3}
 
   - id: chain_cfd_ops9_a
     station_id: stn_cfd
@@ -88,7 +88,7 @@ rf_chains:
       freq_mhz: 479.2875
     tx:
       emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 74.4 }
+    mode: {type: "FM", ctcss_rx_hz: 74.4}
 
   - id: chain_cfd_ops10_a
     station_id: stn_cfd
@@ -97,7 +97,7 @@ rf_chains:
       freq_mhz: 477.6625
     tx:
       emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 79.7 }
+    mode: {type: "FM", ctcss_rx_hz: 79.7}
 
   - id: chain_cfd_cta_fire
     station_id: stn_cfd
@@ -106,7 +106,7 @@ rf_chains:
       freq_mhz: 460.0625
     tx:
       emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 203.5 }
+    mode: {type: "FM", ctcss_rx_hz: 203.5}
 
   - id: chain_cfd_specevt1_a
     station_id: stn_cfd
@@ -115,7 +115,7 @@ rf_chains:
       freq_mhz: 478.500
     tx:
       emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 103.5 }
+    mode: {type: "FM", ctcss_rx_hz: 103.5}
 
   - id: chain_cfd_admin_a
     station_id: stn_cfd
@@ -124,7 +124,7 @@ rf_chains:
       freq_mhz: 458.175
     tx:
       emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 225.7 }
+    mode: {type: "FM", ctcss_rx_hz: 225.7}
 
     # Northside fire/EMS conventional (backups/dispatch)
   - id: chain_red_south_bu
@@ -134,7 +134,7 @@ rf_chains:
       freq_mhz: 154.355
     tx:
       emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 127.3 }
+    mode: {type: "FM", ctcss_rx_hz: 127.3}
 
   - id: chain_red_north_bu
     station_id: stn_northside
@@ -143,7 +143,7 @@ rf_chains:
       freq_mhz: 154.445
     tx:
       emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 127.3 }
+    mode: {type: "FM", ctcss_rx_hz: 127.3}
 
   - id: chain_red_fire_north
     station_id: stn_northside
@@ -152,7 +152,7 @@ rf_chains:
       freq_mhz: 159.660
     tx:
       emission: "11K2F3E"
-    mode: { type: "FM" }
+    mode: {type: "FM"}
 
   - id: chain_red_fire_south
     station_id: stn_northside
@@ -161,7 +161,7 @@ rf_chains:
       freq_mhz: 156.135
     tx:
       emission: "11K2F3E"
-    mode: { type: "FM" }
+    mode: {type: "FM"}
 
   - id: chain_skookie_fire_disp
     station_id: stn_northside
@@ -170,7 +170,7 @@ rf_chains:
       freq_mhz: 159.195
     tx:
       emission: "11K2F3E"
-    mode: { type: "FM", dcs_rx_code: 205 }
+    mode: {type: "FM", dcs_rx_code: 205}
 
   - id: chain_north_shore_admin
     station_id: stn_northside
@@ -179,7 +179,7 @@ rf_chains:
       freq_mhz: 151.010
     tx:
       emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 127.3 }
+    mode: {type: "FM", ctcss_rx_hz: 127.3}
 
   - id: chain_evanston_fire
     station_id: stn_northside
@@ -188,7 +188,7 @@ rf_chains:
       freq_mhz: 155.6925
     tx:
       emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 123.0 }
+    mode: {type: "FM", ctcss_rx_hz: 123.0}
 
   - id: chain_desplaines_fire
     station_id: stn_northside
@@ -197,118 +197,82 @@ rf_chains:
       freq_mhz: 155.4375
     tx:
       emission: "11K2F3E"
-    mode: { type: "FM", ctcss_rx_hz: 225.7 }
+    mode: {type: "FM", ctcss_rx_hz: 225.7}
 
 assignments:
   # Fire/EMS Zone (merged Chicago + Northside)
   - id: asg_cfd_fg_a
     rf_chain_id: chain_cfd_fg_a
     usage: "simplex"
-    zones: ["Public Safety"]
-    codeplug: { name: "CFD FG A", rx_only: true, all_skip: true }
 
   - id: asg_cfd_cmd_a
     rf_chain_id: chain_cfd_cmd_a
     usage: "simplex"
-    zones: ["Public Safety"]
-    codeplug: { name: "CFD Command A", rx_only: true, all_skip: true }
 
   - id: asg_cfd_lakefront
     rf_chain_id: chain_cfd_lakefront
     usage: "simplex"
-    zones: ["Public Safety"]
-    codeplug: { name: "CFD Lakefront", rx_only: true, all_skip: true }
 
   - id: asg_cfd_tac_a
     rf_chain_id: chain_cfd_tac_a
     usage: "simplex"
-    zones: ["Public Safety"]
-    codeplug: { name: "CFD Tac A", rx_only: true, all_skip: true }
 
   - id: asg_cfd_ops8_a
     rf_chain_id: chain_cfd_ops8_a
     usage: "simplex"
-    zones: ["Public Safety"]
-    codeplug: { name: "CFD Ops 8 A", rx_only: true, all_skip: true }
 
   - id: asg_cfd_ops9_a
     rf_chain_id: chain_cfd_ops9_a
     usage: "simplex"
-    zones: ["Public Safety"]
-    codeplug: { name: "CFD Ops 9 A", rx_only: true, all_skip: true }
 
   - id: asg_cfd_ops10_a
     rf_chain_id: chain_cfd_ops10_a
     usage: "simplex"
-    zones: ["Public Safety"]
-    codeplug: { name: "CFD Ops 10 A", rx_only: true, all_skip: true }
 
   - id: asg_cfd_cta_fire
     rf_chain_id: chain_cfd_cta_fire
     usage: "simplex"
-    zones: ["Public Safety"]
-    codeplug: { name: "CTA Fire", rx_only: true, all_skip: true }
 
   - id: asg_cfd_specevt1_a
     rf_chain_id: chain_cfd_specevt1_a
     usage: "simplex"
-    zones: ["Public Safety"]
-    codeplug: { name: "CFD SpecEvt1", rx_only: true, all_skip: true }
 
   - id: asg_cfd_admin_a
     rf_chain_id: chain_cfd_admin_a
     usage: "simplex"
-    zones: ["Public Safety"]
-    codeplug: { name: "CFD Admin A", rx_only: true, all_skip: true }
 
     # Northside Fire/EMS (merged into Fire/EMS zone name)
   - id: asg_red_south_bu
     rf_chain_id: chain_red_south_bu
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug: { name: "RED South BK", rx_only: true, all_skip: true }
 
   - id: asg_red_north_bu
     rf_chain_id: chain_red_north_bu
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug: { name: "RED North BK", rx_only: true, all_skip: true }
 
   - id: asg_red_fire_north
     rf_chain_id: chain_red_fire_north
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug: { name: "RED Fire North", rx_only: true, all_skip: true }
 
   - id: asg_red_fire_south
     rf_chain_id: chain_red_fire_south
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug: { name: "RED Fire South", rx_only: true, all_skip: true }
 
   - id: asg_skookie_fire_disp
     rf_chain_id: chain_skookie_fire_disp
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug: { name: "Skokie Disp", rx_only: true, all_skip: true }
 
   - id: asg_north_shore_admin
     rf_chain_id: chain_north_shore_admin
     usage: "simplex"
-    zones: ["Public Safety"]
-    codeplug: { name: "NShore Admin", rx_only: true, all_skip: true }
 
   - id: asg_evanston_fire
     rf_chain_id: chain_evanston_fire
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug: { name: "Evanston Disp", rx_only: true, all_skip: true }
 
   - id: asg_desplaines_fire
     rf_chain_id: chain_desplaines_fire
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug: { name: "DesPlns Disp", rx_only: true, all_skip: true }
 
 comments:
   - text: |

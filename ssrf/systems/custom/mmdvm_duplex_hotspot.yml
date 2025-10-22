@@ -1,0 +1,150 @@
+ssrf_lite:
+  version: "0.5.3"
+  sources:
+    - name: "BrandMeister Talkgroup Directory"
+      url: "https://brandmeister.network/?page=talkgroups"
+      accessed: "2025-10-20"
+    - name: "TGIF Network Talkgroups"
+      url: "https://tgif.network/talkgroups.php"
+      accessed: "2025-10-20"
+
+organizations:
+  - id: org_mmdvm_hotspot
+    name: "Personal MMDVM Duplex Hotspot"
+
+locations:
+  - id: loc_hotspot_home
+    name: "TBD"
+
+stations:
+  - id: stn_mmdvm_hotspot
+    call_sign: null
+    organization_id: org_mmdvm_hotspot
+    location_id: loc_hotspot_home
+    service: "amateur"
+
+rf_chains:
+  - id: chain_hotspot_brandmeister
+    station_id: stn_mmdvm_hotspot
+    tx:
+      freq_mhz: 439.4375
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 430.4375
+    mode:
+      type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+      notes: "Configured for BrandMeister connection. Duplex +9.000 MHz offset."
+  - id: chain_hotspot_tgif
+    station_id: stn_mmdvm_hotspot
+    tx:
+      freq_mhz: 439.4375
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 430.4375
+    mode:
+      type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+      notes: "Configured for TGIF connection. Duplex +9.000 MHz offset."
+
+contacts:
+  - id: tg_hs_bm_91
+    name: "BM Worldwide 91"
+    kind: "Group"
+    number: 91
+    default_timeslot: 1
+    notes: "BrandMeister worldwide calling talkgroup."
+  - id: tg_hs_bm_93
+    name: "BM North America 93"
+    kind: "Group"
+    number: 93
+    default_timeslot: 1
+    notes: "BrandMeister North America regional talkgroup."
+  - id: tg_hs_bm_3100
+    name: "BM USA Nationwide 3100"
+    kind: "Group"
+    number: 3100
+    default_timeslot: 1
+    notes: "BrandMeister USA nationwide calling."
+  - id: tg_hs_bm_3117
+    name: "BM Illinois 3117"
+    kind: "Group"
+    number: 3117
+    default_timeslot: 2
+    notes: "BrandMeister Illinois statewide."
+  - id: tg_hs_bm_310
+    name: "BM TAC 310"
+    kind: "Group"
+    number: 310
+    default_timeslot: 2
+    notes: "BrandMeister TAC 310 (PTT)."
+  - id: tg_hs_bm_9990
+    name: "BM Parrot 9990"
+    kind: "Group"
+    number: 9990
+    default_timeslot: 2
+    notes: "BrandMeister Echo/Parrot test."
+  - id: tg_hs_bm_4000
+    name: "BM Disconnect 4000"
+    kind: "Group"
+    number: 4000
+    default_timeslot: 2
+    notes: "BrandMeister disconnect static routes."
+  - id: tg_hs_bm_5000
+    name: "BM Status 5000"
+    kind: "Group"
+    number: 5000
+    default_timeslot: 2
+    notes: "BrandMeister status query."
+  - id: tg_hs_tgif_31665
+    name: "TGIF Prime 31665"
+    kind: "Group"
+    number: 31665
+    default_timeslot: 1
+    notes: "TGIF Network Prime hub talkgroup."
+  - id: tg_hs_tgif_31672
+    name: "TGIF Midwest 31672"
+    kind: "Group"
+    number: 31672
+    default_timeslot: 1
+    notes: "TGIF Network Midwest regional."
+  - id: tg_hs_tgif_556
+    name: "TGIF 556"
+    kind: "Group"
+    number: 556
+    default_timeslot: 2
+    notes: "TGIF Network calling / admin channel."
+  - id: tg_hs_tgif_9990
+    name: "TGIF Parrot 9990"
+    kind: "Group"
+    number: 9990
+    default_timeslot: 2
+    notes: "TGIF Network echo test."
+  - id: tg_hs_tgif_4000
+    name: "TGIF Disconnect 4000"
+    kind: "Group"
+    number: 4000
+    default_timeslot: 2
+    notes: "TGIF Network disconnect static routes."
+
+authorizations:
+  - id: auth_fcc_amateur_personal
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "Transmit requires current FCC amateur authorization."
+
+assignments:
+  - id: asgn_hotspot_brandmeister
+    rf_chain_id: chain_hotspot_brandmeister
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_personal
+    notes: "Use when hotspot controller is pointed at BrandMeister."
+  - id: asgn_hotspot_tgif
+    rf_chain_id: chain_hotspot_tgif
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_personal
+    notes: "Use when hotspot controller is pointed at TGIF."

@@ -49,27 +49,27 @@ antennas:
   - id: ant_n9iaa_146
     station_id: stn_n9iaa_146
     name: "ARESC VHF Network Antenna"
-    gain_dbi: null
-    height_agl_m: null
-    height_amsl_m: null
+    gain_dbi:
+    height_agl_m:
+    height_amsl_m:
   - id: ant_n9iaa_dmr_valpo
     station_id: stn_n9iaa_dmr_valpo
     name: "Valparaiso DMR Antenna"
-    gain_dbi: null
-    height_agl_m: null
-    height_amsl_m: null
+    gain_dbi:
+    height_agl_m:
+    height_amsl_m:
   - id: ant_n9iaa_dmr_crown_point
     station_id: stn_n9iaa_dmr_crown_point
     name: "Crown Point DMR Antenna"
-    gain_dbi: null
-    height_agl_m: null
-    height_amsl_m: null
+    gain_dbi:
+    height_agl_m:
+    height_amsl_m:
   - id: ant_n9iaa_dmr_la_porte
     station_id: stn_n9iaa_dmr_la_porte
     name: "La Porte DMR Antenna"
-    gain_dbi: null
-    height_agl_m: null
-    height_amsl_m: null
+    gain_dbi:
+    height_agl_m:
+    height_amsl_m:
 
 rf_chains:
   - id: chain_n9iaa_146_fm
@@ -177,57 +177,35 @@ authorizations:
     authority: "FCC"
     service: "amateur"
     class: "Technician or higher"
-    identifier: null
+    identifier:
     notes: "Transmit requires US amateur license."
 
 assignments:
   - id: asgn_n9iaa_146_fm
     rf_chain_id: chain_n9iaa_146_fm
     usage: "repeater"
-    zones: ["Ham-Repeaters", "Emergency"]
-    codeplug:
-      name: "N9IAA VHF"
-      rx_only: false
     authorization_id: auth_fcc_amateur
-    comment: |
+    notes: |
       Wide-area VHF analog network (voted receivers). Output 146.685 MHz, input 146.085 MHz, PL 173.8 Hz.
       Designed for handheld coverage across NWS Indiana District 1 (Lake, Porter, La Porte, Newton, Jasper, Benton).
       Sites linked via microwave with battery backup.
-
   - id: asgn_n9iaa_valpo_dmr
     rf_chain_id: chain_n9iaa_dmr_valpo
     usage: "repeater"
-    zones: ["Ham-DMR"]
-    codeplug:
-      name: "N9IAA Val DMR"
-      rx_only: false
-      preferred_contacts: [tg_8, tg_3118, tg_1, tg_3, tg_9, tg_5000, tg_4000]
     authorization_id: auth_fcc_amateur
-    comment: |
+    notes: |
       441.350 MHz output (+5 MHz offset), Color Code 1. Time Slot 1 TG8 (full-time), TS2 TG3118 (full-time),
       TS2 PTT: TG1 Worldwide, TG3 Worldwide English, TG9 DMR+ Talk, TG5000 status, TG4000 disconnect. Disable ARS per site guidance.
-
   - id: asgn_n9iaa_crownpoint_dmr
     rf_chain_id: chain_n9iaa_dmr_crown_point
     usage: "repeater"
-    zones: ["Ham-DMR"]
-    codeplug:
-      name: "N9IAA CP DMR"
-      rx_only: false
-      preferred_contacts: [tg_8, tg_3118, tg_1, tg_3, tg_9, tg_5000, tg_4000]
     authorization_id: auth_fcc_amateur
-    comment: |
+    notes: |
       444.350 MHz output (+5 MHz offset), Color Code 1. Same talkgroup lineup as Valparaiso site; typically networked.
-
   - id: asgn_n9iaa_laporte_dmr
     rf_chain_id: chain_n9iaa_dmr_la_porte
     usage: "repeater"
-    zones: ["Ham-DMR"]
-    codeplug:
-      name: "N9IAA LP DMR"
-      rx_only: false
-      preferred_contacts: [tg_8, tg_3118, tg_1, tg_3, tg_9, tg_5000, tg_4000]
     authorization_id: auth_fcc_amateur
-    comment: |
+    notes: |
       444.350 MHz output (+5 MHz offset), Color Code 1. Shares linked network behavior with other N9IAA sites.
       Talkgroup 4xxx reflectors available via manual entry (PTT).

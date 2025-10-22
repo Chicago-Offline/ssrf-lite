@@ -16,8 +16,8 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator, model_valida
 from typing import Literal
 
 
-BASE_DIR = Path(__file__).parent
-_SERVICES_PATH = BASE_DIR / "_taxonomies" / "services.yaml"
+BASE_DIR = Path(__file__).resolve().parent
+_SERVICES_PATH = BASE_DIR.parent / "_taxonomies" / "services.yaml"
 
 
 def _load_service_ids() -> Tuple[str, ...]:
@@ -216,6 +216,8 @@ class Mode(BaseModel):
     dcs_rx_code: Optional[Union[str, int]] = None
     color_code: Optional[int] = Field(default=None, ge=0, le=15)
     timeslots: Optional[List[int]] = None
+    nac: Optional[int] = Field(default=None, ge=0, le=4095)
+    nxdn_ran: Optional[int] = Field(default=None, ge=0, le=63)
     notes: Optional[str] = None
 
     @field_validator("type", mode="before")

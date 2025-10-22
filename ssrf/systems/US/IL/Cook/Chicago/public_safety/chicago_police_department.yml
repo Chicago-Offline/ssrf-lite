@@ -115,8 +115,7 @@ rf_chains:
     tx:
       emission: "11K2F3E"
     mode:
-      type:
-        "FM"
+      type: "FM"
         # CSQ receive; no tone
 
 assignments:
@@ -124,75 +123,27 @@ assignments:
   - id: asg_cpd_cw1
     rf_chain_id: chain_cpd_cw1
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "CPD Citywide 1"
-      rx_only: true
-      all_skip: true
-
   - id: asg_cpd_cw2
     rf_chain_id: chain_cpd_cw2
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "CPD Citywide 2"
-      rx_only: true
-      all_skip: true
-
   - id: asg_cpd_cw3
     rf_chain_id: chain_cpd_cw3
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "CPD Citywide 3"
-      rx_only: true
-      all_skip: true
-
   - id: asg_cpd_cw4
     rf_chain_id: chain_cpd_cw4
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "CPD Citywide 4"
-      rx_only: true
-      all_skip: true
-
   - id: asg_cpd_cw5
     rf_chain_id: chain_cpd_cw5
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "CPD Citywide 5"
-      rx_only: true
-      all_skip: true
-
   - id: asg_cpd_cw6
     rf_chain_id: chain_cpd_cw6
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "CPD Citywide 6"
-      rx_only: true
-      all_skip: true
-
   - id: asg_cpd_cw7
     rf_chain_id: chain_cpd_cw7
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "CPD Citywide 7"
-      rx_only: true
-      all_skip: true
-
   - id: asg_cpd_vhf2
     rf_chain_id: chain_cpd_vhf2
     usage: "simplex"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "CPD VHF Car2"
-      rx_only: true
-
-      all_skip: true
 comments:
   - text: |
       CPD dispatch zones on UHF P25 are encrypted (P25E) and intentionally omitted.

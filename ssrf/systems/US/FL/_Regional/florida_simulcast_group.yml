@@ -1,0 +1,475 @@
+"ssrf_lite":
+  version: "0.5.3"
+  sources:
+    - name: "Florida Simulcast Group – Downtown St. Petersburg"
+      url: "https://flscg.org/st-petersburg-dmr/"
+      accessed: "2025-10-20"
+    - name: "Florida Simulcast Group – Downtown Tampa"
+      url: "https://flscg.org/repeaters/"
+      accessed: "2025-10-20"
+
+organizations:
+  - id: org_fsg
+    name: "Florida Simulcast Group, Inc."
+  - id: org_wd4scd
+    name: "WD4SCD Remote Receiver"
+
+locations:
+  - id: loc_fsg_stpete_core
+    name: "Downtown St. Petersburg, FL (approx)"
+    lat: 27.7706
+    lon: -82.6403
+  - id: loc_fsg_tampa_core
+    name: "Downtown Tampa, FL (approx)"
+    lat: 27.9518
+    lon: -82.4572
+  - id: loc_wd4scd_remote
+    name: "WD4SCD Remote RX Site (approx)"
+    lat: 27.8203
+    lon: -82.7125
+
+stations:
+  - id: stn_w9cr_stpete
+    call_sign: "W9CR"
+    organization_id: org_fsg
+    location_id: loc_fsg_stpete_core
+    service: "amateur"
+  - id: stn_kj4shl_stpete
+    call_sign: "KJ4SHL"
+    organization_id: org_fsg
+    location_id: loc_fsg_stpete_core
+    service: "amateur"
+  - id: stn_w9cr_tampa
+    call_sign: "W9CR"
+    organization_id: org_fsg
+    location_id: loc_fsg_tampa_core
+    service: "amateur"
+  - id: stn_ka9rix_tampa
+    call_sign: "KA9RIX"
+    organization_id: org_fsg
+    location_id: loc_fsg_tampa_core
+    service: "amateur"
+  - id: stn_wraf954_tampa
+    call_sign: "WRAF954"
+    organization_id: org_fsg
+    location_id: loc_fsg_tampa_core
+    service: "gmrs"
+  - id: stn_kj4shl_tampa
+    call_sign: "KJ4SHL"
+    organization_id: org_fsg
+    location_id: loc_fsg_tampa_core
+    service: "amateur"
+  - id: stn_wd4scd_remote
+    call_sign: "WD4SCD"
+    organization_id: org_wd4scd
+    location_id: loc_wd4scd_remote
+    service: "amateur"
+
+antennas:
+  - id: ant_w9cr_stpete
+    station_id: stn_w9cr_stpete
+    name: "St. Petersburg Site Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kj4shl_stpete
+    station_id: stn_kj4shl_stpete
+    name: "St. Petersburg Site Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_w9cr_tampa
+    station_id: stn_w9cr_tampa
+    name: "Tampa Site Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_ka9rix_tampa
+    station_id: stn_ka9rix_tampa
+    name: "Tampa Site Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_wraf954_tampa
+    station_id: stn_wraf954_tampa
+    name: "GMRS Site Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kj4shl_tampa
+    station_id: stn_kj4shl_tampa
+    name: "Tampa Site Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_wd4scd_remote
+    station_id: stn_wd4scd_remote
+    name: "Remote RX Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+
+rf_chains:
+  - id: chain_w9cr_stpete_444_fm
+    station_id: stn_w9cr_stpete
+    antenna_id: ant_w9cr_stpete
+    tx:
+      freq_mhz: 449.375
+      emission: "11K2F3E"
+    rx:
+      freq_mhz: 444.375
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 146.2
+      ctcss_rx_hz: 146.2
+      notes: "Analog voice; co-located with mixed-mode P25."
+  - id: chain_w9cr_stpete_444_p25
+    station_id: stn_w9cr_stpete
+    antenna_id: ant_w9cr_stpete
+    tx:
+      freq_mhz: 449.375
+      emission: "8K10F1E"
+    rx:
+      freq_mhz: 444.375
+    mode:
+      type: "P25"
+      nac: 293
+      notes: "P25NX v2 linked core."
+  - id: chain_kj4shl_stpete_dmr
+    station_id: stn_kj4shl_stpete
+    antenna_id: ant_kj4shl_stpete
+    tx:
+      freq_mhz: 449.9625
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 444.9625
+    mode:
+      type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+  - id: chain_kj4shl_stpete_nxdn
+    station_id: stn_kj4shl_stpete
+    antenna_id: ant_kj4shl_stpete
+    tx:
+      freq_mhz: 448.7625
+      emission: "4K00F1E"
+    rx:
+      freq_mhz: 443.7625
+    mode:
+      type: "NXDN"
+      nxdn_ran: 1
+  - id: chain_wd4scd_remote_rx
+    station_id: stn_wd4scd_remote
+    antenna_id: ant_wd4scd_remote
+    tx:
+      freq_mhz: 147.63
+      emission: "11K2F3E"
+    rx:
+      freq_mhz: 147.03
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 100.0
+      ctcss_rx_hz: 100.0
+      notes: "Remote receiver input for WD4SCD system."
+  - id: chain_w9cr_tampa_224_fm
+    station_id: stn_w9cr_tampa
+    antenna_id: ant_w9cr_tampa
+    tx:
+      freq_mhz: 222.68
+      emission: "11K2F3E"
+    rx:
+      freq_mhz: 224.28
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 146.2
+      ctcss_rx_hz: 146.2
+  - id: chain_w9cr_tampa_443_fm
+    station_id: stn_w9cr_tampa
+    antenna_id: ant_w9cr_tampa
+    tx:
+      freq_mhz: 448.525
+      emission: "11K2F3E"
+    rx:
+      freq_mhz: 443.525
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 146.2
+      ctcss_rx_hz: 146.2
+  - id: chain_w9cr_tampa_443_p25
+    station_id: stn_w9cr_tampa
+    antenna_id: ant_w9cr_tampa
+    tx:
+      freq_mhz: 448.525
+      emission: "8K10F1E"
+    rx:
+      freq_mhz: 443.525
+    mode:
+      type: "P25"
+      nac: 293
+  - id: chain_w9cr_tampa_927_fm
+    station_id: stn_w9cr_tampa
+    antenna_id: ant_w9cr_tampa
+    tx:
+      freq_mhz: 902.05
+      emission: "11K2F3E"
+    rx:
+      freq_mhz: 927.05
+    mode:
+      type: "FM"
+      dcs_tx_code: 546
+      dcs_rx_code: 546
+      notes: "HearClear audio chain; alternate input 467.725 MHz with DCS 546."
+  - id: chain_w9cr_tampa_927_p25
+    station_id: stn_w9cr_tampa
+    antenna_id: ant_w9cr_tampa
+    tx:
+      freq_mhz: 902.05
+      emission: "8K10F1E"
+    rx:
+      freq_mhz: 927.05
+    mode:
+      type: "P25"
+      nac: 293
+  - id: chain_ka9rix_tampa_fm
+    station_id: stn_ka9rix_tampa
+    antenna_id: ant_ka9rix_tampa
+    tx:
+      freq_mhz: 448.425
+      emission: "11K2F3E"
+    rx:
+      freq_mhz: 443.425
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 146.2
+      ctcss_rx_hz: 146.2
+  - id: chain_ka9rix_tampa_dstar
+    station_id: stn_ka9rix_tampa
+    antenna_id: ant_ka9rix_tampa
+    tx:
+      freq_mhz: 448.425
+      emission: "6K00F7W"
+    rx:
+      freq_mhz: 443.425
+    mode:
+      type: "DStar"
+      notes: "D-STAR with analog mixed-mode support."
+  - id: chain_wraf954_tampa_fm
+    station_id: stn_wraf954_tampa
+    antenna_id: ant_wraf954_tampa
+    tx:
+      freq_mhz: 467.575
+      emission: "16K0F3E"
+    rx:
+      freq_mhz: 462.575
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 141.3
+      ctcss_rx_hz: 141.3
+      notes: "Primary GMRS input; see notes for alternate input."
+  - id: chain_wraf954_tampa_p25
+    station_id: stn_wraf954_tampa
+    antenna_id: ant_wraf954_tampa
+    tx:
+      freq_mhz: 467.575
+      emission: "8K10F1E"
+    rx:
+      freq_mhz: 462.575
+    mode:
+      type: "P25"
+      nac: 575
+      notes: "Alternate input 467.725 MHz uses DCS 546."
+  - id: chain_kj4shl_tampa_dmr
+    station_id: stn_kj4shl_tampa
+    antenna_id: ant_kj4shl_tampa
+    tx:
+      freq_mhz: 448.1875
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 443.1875
+    mode:
+      type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+
+contacts:
+  - id: tg_fsg_worldwide
+    name: "Worldwide"
+    kind: "Group"
+    number: 1
+    default_timeslot: 1
+    notes: "PTT activated."
+  - id: tg_fsg_north_america
+    name: "North America"
+    kind: "Group"
+    number: 3
+    default_timeslot: 1
+    notes: "PTT activated."
+  - id: tg_fsg_worldwide_english
+    name: "Worldwide English"
+    kind: "Group"
+    number: 13
+    default_timeslot: 1
+    notes: "PTT activated."
+  - id: tg_fsg_tac310
+    name: "TAC-310"
+    kind: "Group"
+    number: 310
+    default_timeslot: 1
+    notes: "PTT activated via BrandMeister."
+  - id: tg_fsg_tac311
+    name: "TAC-311"
+    kind: "Group"
+    number: 311
+    default_timeslot: 1
+    notes: "PTT activated via BrandMeister."
+  - id: tg_fsg_tac312
+    name: "TAC-312"
+    kind: "Group"
+    number: 312
+    default_timeslot: 1
+    notes: "PTT activated via BrandMeister."
+  - id: tg_fsg_bridge_3100
+    name: "Bridge-3100"
+    kind: "Group"
+    number: 3100
+    default_timeslot: 1
+    notes: "PTT activated via BrandMeister."
+  - id: tg_fsg_southeast_regional
+    name: "Southeast Regional"
+    kind: "Group"
+    number: 3172
+    default_timeslot: 1
+    notes: "PTT activated."
+  - id: tg_fsg_florida_simulcast
+    name: "Florida Simulcast Group"
+    kind: "Group"
+    number: 3574
+    default_timeslot: 1
+    notes: "Full-time link on St. Petersburg site."
+  - id: tg_fsg_parrot
+    name: "Parrot"
+    kind: "Group"
+    number: 9998
+    default_timeslot: 1
+    notes: "PTT activated."
+  - id: tg_fsg_first_coast
+    name: "First Coast DMR"
+    kind: "Group"
+    number: 31121
+    default_timeslot: 1
+    notes: "PTT activated via BrandMeister."
+  - id: tg_fsg_southeast_florida
+    name: "Southeast Florida"
+    kind: "Group"
+    number: 31124
+    default_timeslot: 1
+    notes: "PTT activated via BrandMeister."
+  - id: tg_fsg_local_2
+    name: "Local 2"
+    kind: "Group"
+    number: 2
+    default_timeslot: 2
+    notes: "Full-time West Central Florida DMR interlink."
+  - id: tg_fsg_local_repeater
+    name: "Local Repeater"
+    kind: "Group"
+    number: 9
+    default_timeslot: 2
+    notes: "Full-time local coverage."
+  - id: tg_fsg_florida_statewide
+    name: "Florida Statewide"
+    kind: "Group"
+    number: 3112
+    default_timeslot: 2
+    notes: "Full-time BrandMeister statewide."
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "US amateur license required for TX."
+  - id: auth_fcc_gmrs
+    authority: "FCC"
+    service: "gmrs"
+    class: "Individual GMRS"
+    identifier: null
+    notes: "GMRS license required for TX."
+
+assignments:
+  - id: asgn_fsg_stpete_444_fm
+    rf_chain_id: chain_w9cr_stpete_444_fm
+    usage: "repeater"
+    service: "amateur"
+    authorization_id: auth_fcc_amateur_t
+  - id: asgn_fsg_stpete_444_p25
+    rf_chain_id: chain_w9cr_stpete_444_p25
+    usage: "repeater"
+    service: "amateur"
+    authorization_id: auth_fcc_amateur_t
+  - id: asgn_kj4shl_stpete_dmr
+    rf_chain_id: chain_kj4shl_stpete_dmr
+    usage: "repeater"
+    service: "amateur"
+    authorization_id: auth_fcc_amateur_t
+  - id: asgn_kj4shl_stpete_nxdn
+    rf_chain_id: chain_kj4shl_stpete_nxdn
+    usage: "repeater"
+    service: "amateur"
+    authorization_id: auth_fcc_amateur_t
+  - id: asgn_wd4scd_remote_rx
+    rf_chain_id: chain_wd4scd_remote_rx
+    usage: "remote-receiver"
+    service: "amateur"
+    authorization_id: auth_fcc_amateur_t
+  - id: asgn_w9cr_tampa_224_fm
+    rf_chain_id: chain_w9cr_tampa_224_fm
+    usage: "repeater"
+    service: "amateur"
+    authorization_id: auth_fcc_amateur_t
+  - id: asgn_w9cr_tampa_443_fm
+    rf_chain_id: chain_w9cr_tampa_443_fm
+    usage: "repeater"
+    service: "amateur"
+    authorization_id: auth_fcc_amateur_t
+  - id: asgn_w9cr_tampa_443_p25
+    rf_chain_id: chain_w9cr_tampa_443_p25
+    usage: "repeater"
+    service: "amateur"
+    authorization_id: auth_fcc_amateur_t
+  - id: asgn_w9cr_tampa_927_fm
+    rf_chain_id: chain_w9cr_tampa_927_fm
+    usage: "repeater"
+    service: "amateur"
+    authorization_id: auth_fcc_amateur_t
+  - id: asgn_w9cr_tampa_927_p25
+    rf_chain_id: chain_w9cr_tampa_927_p25
+    usage: "repeater"
+    service: "amateur"
+    authorization_id: auth_fcc_amateur_t
+  - id: asgn_ka9rix_tampa_fm
+    rf_chain_id: chain_ka9rix_tampa_fm
+    usage: "repeater"
+    service: "amateur"
+    authorization_id: auth_fcc_amateur_t
+  - id: asgn_ka9rix_tampa_dstar
+    rf_chain_id: chain_ka9rix_tampa_dstar
+    usage: "repeater"
+    service: "amateur"
+    authorization_id: auth_fcc_amateur_t
+  - id: asgn_wraf954_tampa_fm
+    rf_chain_id: chain_wraf954_tampa_fm
+    usage: "repeater"
+    service: "gmrs"
+    authorization_id: auth_fcc_gmrs
+  - id: asgn_wraf954_tampa_p25
+    rf_chain_id: chain_wraf954_tampa_p25
+    usage: "repeater"
+    service: "gmrs"
+    authorization_id: auth_fcc_gmrs
+  - id: asgn_kj4shl_tampa_dmr
+    rf_chain_id: chain_kj4shl_tampa_dmr
+    usage: "repeater"
+    service: "amateur"
+    authorization_id: auth_fcc_amateur_t

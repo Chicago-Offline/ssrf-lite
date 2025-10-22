@@ -493,373 +493,126 @@ assignments:
   - id: asg_cfd_ems_command
     rf_chain_id: chain_cfd_ems_command
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "CFD EMS Cmd"
-      rx_only: true
-
-      all_skip: true
   - id: asg_cfd_ems_citywide
     rf_chain_id: chain_cfd_ems_citywide
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "CFD EMS City"
-      rx_only: true
-
-      all_skip: true
   - id: asg_cfd_ems_admin
     rf_chain_id: chain_cfd_ems_admin
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "CFD EMS Admin"
-      rx_only: true
-
-      all_skip: true
   - id: asg_il_statewide_ems
     rf_chain_id: chain_il_statewide_ems
     usage: "simplex"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MERCI 340"
-      rx_only: true
-
-      all_skip: true
   - id: asg_merci400
     rf_chain_id: chain_merci400
     usage: "simplex"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MERCI 400"
-      rx_only: true
-
-      # MED channels by sector
-      all_skip: true
   - id: asg_med1_north
     rf_chain_id: chain_med1_north
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED1 North"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med2_north
     rf_chain_id: chain_med2_north
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED2 North"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med3_north
     rf_chain_id: chain_med3_north
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED3 North"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med4_north
     rf_chain_id: chain_med4_north
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED4 North"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med5_north
     rf_chain_id: chain_med5_north
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED5 North"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med6_north
     rf_chain_id: chain_med6_north
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED6 North"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med7_north
     rf_chain_id: chain_med7_north
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED7 North"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med8_north
     rf_chain_id: chain_med8_north
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED8 North"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med9_north
     rf_chain_id: chain_med9_north
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED9 North"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med10_north
     rf_chain_id: chain_med10_north
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED10 North"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med11_north
     rf_chain_id: chain_med11_north
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED11 North"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med12_north
     rf_chain_id: chain_med12_north
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED12 North"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med1_central
     rf_chain_id: chain_med1_central
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED1 Central"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med2_central
     rf_chain_id: chain_med2_central
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED2 Central"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med3_central
     rf_chain_id: chain_med3_central
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED3 Central"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med4_central
     rf_chain_id: chain_med4_central
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED4 Central"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med5_central
     rf_chain_id: chain_med5_central
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED5 Central"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med6_central
     rf_chain_id: chain_med6_central
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED6 Central"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med7_central
     rf_chain_id: chain_med7_central
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED7 Central"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med8_central
     rf_chain_id: chain_med8_central
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED8 Central"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med9_central
     rf_chain_id: chain_med9_central
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED9 Central"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med10_central
     rf_chain_id: chain_med10_central
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED10 Central"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med11_central
     rf_chain_id: chain_med11_central
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED11 Central"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med12_central
     rf_chain_id: chain_med12_central
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED12 Central"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med1_south
     rf_chain_id: chain_med1_south
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED1 South"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med2_south
     rf_chain_id: chain_med2_south
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED2 South"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med3_south
     rf_chain_id: chain_med3_south
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED3 South"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med4_south
     rf_chain_id: chain_med4_south
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED4 South"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med5_south
     rf_chain_id: chain_med5_south
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED5 South"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med6_south
     rf_chain_id: chain_med6_south
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED6 South"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med7_south
     rf_chain_id: chain_med7_south
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED7 South"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med8_south
     rf_chain_id: chain_med8_south
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED8 South"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med9_south
     rf_chain_id: chain_med9_south
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED9 South"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med10_south
     rf_chain_id: chain_med10_south
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED10 South"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med11_south
     rf_chain_id: chain_med11_south
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED11 South"
-      rx_only: true
-
-      all_skip: true
   - id: asg_med12_south
     rf_chain_id: chain_med12_south
     usage: "repeater"
-    zones: ["Public Safety"]
-    codeplug:
-      name: "MED12 South"
-      rx_only: true
-
-      all_skip: true
 comments:
   - text: |
       Chicago/Region XI EMS conventional resources focusing on hospital MED channels by sector PL (North 156.7, Central 146.2, South 173.8), MERCI mutual-aid channels, and CFD analogue backups. Primary CFD EMS operations remain on the OEMC 800 MHz P25 system.

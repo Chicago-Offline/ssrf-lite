@@ -1,6 +1,6 @@
-"""Convenience exports for the SSRF-Lite Pydantic models."""
+"""Convenience exports for the SSRF-Lite Pydantic schema models."""
 
-from .models import (  # noqa: F401
+from .pydantic_models import (
     Assignment,
     Antenna,
     Authorization,
@@ -19,7 +19,6 @@ from .models import (  # noqa: F401
     load_ssrf_document,
     validate_data,
 )
-from .models import pydantic_models as pydantic_models  # noqa: F401
 
 __all__ = [
     "Assignment",
@@ -39,5 +38,4 @@ __all__ = [
     "load_multiple",
     "load_ssrf_document",
     "validate_data",
-    "pydantic_models",
 ]

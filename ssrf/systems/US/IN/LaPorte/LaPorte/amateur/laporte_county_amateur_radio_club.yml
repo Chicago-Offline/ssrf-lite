@@ -56,15 +56,15 @@ antennas:
   - id: ant_k9jsi_vhf
     station_id: stn_k9jsi_vhf
     name: "K9JSI VHF Antenna"
-    gain_dbi: null
+    gain_dbi:
     height_agl_m: 61.0 # ~200 ft tower; shared site per club info
     height_amsl_m: 335.3 # 1100 ft ASL cited for Schultz Rd site
   - id: ant_w9ly_vhf
     station_id: stn_w9ly_vhf
     name: "W9LY VHF Antenna"
-    gain_dbi: null
-    height_agl_m: null
-    height_amsl_m: null
+    gain_dbi:
+    height_agl_m:
+    height_amsl_m:
   - id: ant_w9ly_uhf
     station_id: stn_w9ly_uhf
     name: "W9LY UHF Hustler 6 dBd"
@@ -74,9 +74,9 @@ antennas:
   - id: ant_w9sal_uhf
     station_id: stn_w9sal_uhf
     name: "W9SAL UHF Antenna"
-    gain_dbi: null
-    height_agl_m: null
-    height_amsl_m: null
+    gain_dbi:
+    height_agl_m:
+    height_amsl_m:
 
 rf_chains:
   - id: chain_k9jsi_vhf_fm
@@ -169,77 +169,48 @@ authorizations:
     authority: "FCC"
     service: "amateur"
     class: "Technician or higher"
-    identifier: null
+    identifier:
     notes: "Standard US amateur privileges apply."
 
 assignments:
   - id: asgn_k9jsi_vhf_fm
     rf_chain_id: chain_k9jsi_vhf_fm
     usage: "repeater"
-    zones: ["Ham-Repeaters", "Emergency"]
-    codeplug:
-      name: "K9JSI VHF"
-      rx_only: false
     authorization_id: auth_fcc_amateur
-    comment: |
+    notes: |
       Primary La Porte County analog repeater; 146.610 -0.600 MHz, CTCSS 131.8 Hz.
       Supports SKYWARN weather nets and monthly siren checks; Wednesday club net at 1900 CDT.
       Located on Schultz Road tower site shared with W9LY UHF system.
-
   - id: asgn_w9ly_vhf_fm
     rf_chain_id: chain_w9ly_vhf_fm
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "W9LY VHF FM"
-      rx_only: false
     authorization_id: auth_fcc_amateur
-    comment: |
+    notes: |
       Yaesu DR-1X dual-mode repeater on 146.970 -0.600 MHz, 131.8 Hz PL for analog access.
       Located atop Northwest Health (La Porte Hospital); ~50 W into Telewave TPRD-1454 duplexer.
-
   - id: asgn_w9ly_vhf_c4fm
     rf_chain_id: chain_w9ly_vhf_c4fm
     usage: "repeater"
-    zones: ["DMR Repeater"]
-    codeplug:
-      name: "W9LY VHF C4FM"
-      rx_only: false
     authorization_id: auth_fcc_amateur
-    comment: "System Fusion (C4FM) access on 146.970 MHz; same DR-1X platform as FM."
-
+    notes: "System Fusion (C4FM) access on 146.970 MHz; same DR-1X platform as FM."
   - id: asgn_w9ly_uhf_fm
     rf_chain_id: chain_w9ly_uhf_fm
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "W9LY UHF FM"
-      rx_only: false
     authorization_id: auth_fcc_amateur
-    comment: |
+    notes: |
       441.950 +5.000 MHz with 131.8 Hz PL for analog. Hustler 6 dBd antenna ~200 ft AGL.
       Telewave duplexer and ~40 W ERP. Collocated at Schultz Road tower (US 35).
-
   - id: asgn_w9ly_uhf_c4fm
     rf_chain_id: chain_w9ly_uhf_c4fm
     usage: "repeater"
-    zones: ["Ham-Repeaters", "Fusion Digital"]
-    codeplug:
-      name: "W9LY UHF C4FM"
-      rx_only: false
     authorization_id: auth_fcc_amateur
-    comment: |
+    notes: |
       Yaesu System Fusion digital voice; normally linked to WIRES-X room 21421.
       Same Schultz Road site and antenna as FM chain.
-
   - id: asgn_w9sal_uhf_fm
     rf_chain_id: chain_w9sal_uhf_fm
     usage: "repeater"
-    zones: ["Ham-Repeaters"]
-    codeplug:
-      name: "W9SAL UHF"
-      rx_only: false
     authorization_id: auth_fcc_amateur
-    comment: |
+    notes: |
       444.950 +5.000 MHz, PL 131.8 Hz. Operated by Valparaiso Technical Institute engineers in La Porte.
       Serves countywide coverage and links into regional nets as needed.

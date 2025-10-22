@@ -1,0 +1,124 @@
+"ssrf_lite":
+  version: "0.5.3"
+  sources:
+    - name: "Tampa Amateur Radio Club – Repeater Information"
+      url: "https://hamclub.org/wp/?page_id=2756"
+      accessed: "2025-10-20"
+
+organizations:
+  - id: org_tarc
+    name: "Tampa Amateur Radio Club"
+
+locations:
+  - id: loc_tarc_vhf
+    name: "TARC 147.105 Site (approx)"
+    lat: 28.002003
+    lon: -82.428413
+  - id: loc_tarc_uhf1
+    name: "TARC 444.750 Site (approx)"
+    lat: 27.983104
+    lon: -82.490542
+  - id: loc_tarc_uhf2
+    name: "TARC 443.025 Site (approx)"
+    lat: 27.977033
+    lon: -82.502796
+
+stations:
+  - id: stn_tarc_vhf
+    call_sign: null
+    organization_id: org_tarc
+    location_id: loc_tarc_vhf
+    service: "amateur"
+  - id: stn_tarc_uhf1
+    call_sign: null
+    organization_id: org_tarc
+    location_id: loc_tarc_uhf1
+    service: "amateur"
+  - id: stn_tarc_uhf2
+    call_sign: null
+    organization_id: org_tarc
+    location_id: loc_tarc_uhf2
+    service: "amateur"
+
+antennas:
+  - id: ant_tarc_vhf
+    station_id: stn_tarc_vhf
+    name: "TARC VHF Repeater Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_tarc_uhf1
+    station_id: stn_tarc_uhf1
+    name: "TARC 444.750 Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_tarc_uhf2
+    station_id: stn_tarc_uhf2
+    name: "TARC 443.025 Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+
+rf_chains:
+  - id: chain_tarc_vhf_fm
+    station_id: stn_tarc_vhf
+    antenna_id: ant_tarc_vhf
+    tx:
+      freq_mhz: 147.705
+      emission: "11K2F3E"
+    rx:
+      freq_mhz: 147.105
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 146.2
+      ctcss_rx_hz: 146.2
+  - id: chain_tarc_uhf1_fm
+    station_id: stn_tarc_uhf1
+    antenna_id: ant_tarc_uhf1
+    tx:
+      freq_mhz: 449.75
+      emission: "11K2F3E"
+    rx:
+      freq_mhz: 444.75
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 146.2
+      ctcss_rx_hz: 146.2
+  - id: chain_tarc_uhf2_fm
+    station_id: stn_tarc_uhf2
+    antenna_id: ant_tarc_uhf2
+    tx:
+      freq_mhz: 448.025
+      emission: "11K2F3E"
+    rx:
+      freq_mhz: 443.025
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 146.2
+      ctcss_rx_hz: 146.2
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "US amateur license required for TX."
+
+assignments:
+  - id: asgn_tarc_vhf
+    rf_chain_id: chain_tarc_vhf_fm
+    usage: "repeater"
+    service: "amateur"
+    authorization_id: auth_fcc_amateur_t
+  - id: asgn_tarc_uhf1
+    rf_chain_id: chain_tarc_uhf1_fm
+    usage: "repeater"
+    service: "amateur"
+    authorization_id: auth_fcc_amateur_t
+  - id: asgn_tarc_uhf2
+    rf_chain_id: chain_tarc_uhf2_fm
+    usage: "repeater"
+    service: "amateur"
+    authorization_id: auth_fcc_amateur_t

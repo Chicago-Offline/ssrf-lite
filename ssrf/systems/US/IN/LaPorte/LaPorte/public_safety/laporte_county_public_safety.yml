@@ -222,140 +222,48 @@ assignments:
   - id: asg_laporte_sheriff_dispatch
     rf_chain_id: chain_laporte_sheriff_dispatch
     usage: "repeater"
-    zones: ["LaPorte Sheriff"]
-    codeplug:
-      name: "Sheriff Dispatch"
-      rx_only: true
-      all_skip: true
-
   - id: asg_laporte_sheriff_car
     rf_chain_id: chain_laporte_sheriff_car
     usage: "repeater"
-    zones: ["LaPorte Sheriff"]
-    codeplug:
-      name: "Sheriff Car-Car"
-      rx_only: true
-      all_skip: true
-
   - id: asg_laporte_sheriff_swat
     rf_chain_id: chain_laporte_sheriff_swat
     usage: "simplex"
-    zones: ["LaPorte Sheriff"]
-    codeplug:
-      name: "Sheriff SWAT"
-      rx_only: true
-      all_skip: true
-
   - id: asg_laporte_jail
     rf_chain_id: chain_laporte_jail
     usage: "repeater"
-    zones: ["LaPorte Sheriff"]
-    codeplug:
-      name: "County Jail"
-      rx_only: true
-      all_skip: true
-
-    # EMS / EMA / Municipal
   - id: asg_laporte_ems_dispatch
     rf_chain_id: chain_laporte_ems_dispatch
     usage: "repeater"
-    zones: ["LaPorte EMS"]
-    codeplug:
-      name: "EMS Dispatch"
-      rx_only: true
-      all_skip: true
-
   - id: asg_laporte_ema_ops
     rf_chain_id: chain_laporte_ema_ops
     usage: "repeater"
-    zones: ["LaPorte EMA"]
-    codeplug:
-      name: "EMA Ops / Siren"
-      rx_only: true
-      all_skip: true
-
   - id: asg_westville_pd
     rf_chain_id: chain_westville_pd
     usage: "repeater"
-    zones: ["Westville PD"]
-    codeplug:
-      name: "Westville B2C"
-      rx_only: true
-      all_skip: true
-
-    # County Fire Network
   - id: asg_laporte_fire_dispatch
     rf_chain_id: chain_laporte_fire_dispatch
     usage: "repeater"
-    zones: ["LaPorte Fire"]
-    codeplug:
-      name: "Fire Dispatch"
-      rx_only: true
-      all_skip: true
-
   - id: asg_laporte_fire_secondary
     rf_chain_id: chain_laporte_fire_dispatch
     usage: "repeater"
-    zones: ["LaPorte Fire"]
-    codeplug:
-      name: "Fire Secondary"
-      rx_only: true
-      all_skip: true
-
   - id: asg_laporte_fire_tertiary
     rf_chain_id: chain_laporte_fire_tertiary
     usage: "repeater"
-    zones: ["LaPorte Fire"]
-    codeplug:
-      name: "Fire Tertiary"
-      rx_only: true
-      all_skip: true
-
   - id: asg_laporte_fireground14
     rf_chain_id: chain_laporte_fireground14
     usage: "repeater"
-    zones: ["LaPorte Fire"]
-    codeplug:
-      name: "Fireground 1-4"
-      rx_only: true
-      all_skip: true
-
   - id: asg_laporte_fireground5
     rf_chain_id: chain_laporte_fireground5
     usage: "repeater"
-    zones: ["LaPorte Fire"]
-    codeplug:
-      name: "Fireground 5"
-      rx_only: true
-      all_skip: true
-
   - id: asg_laporte_fireground6
     rf_chain_id: chain_laporte_fireground6
     usage: "simplex"
-    zones: ["LaPorte Fire"]
-    codeplug:
-      name: "Fireground 6"
-      rx_only: true
-      all_skip: true
-
   - id: asg_laporte_fireground7
     rf_chain_id: chain_laporte_fireground7
     usage: "simplex"
-    zones: ["LaPorte Fire"]
-    codeplug:
-      name: "Fireground 7"
-      rx_only: true
-      all_skip: true
-
   - id: asg_laporte_mutual_aid
     rf_chain_id: chain_laporte_fire_mutual_aid
     usage: "repeater"
-    zones: ["LaPorte Fire"]
-    codeplug:
-      name: "Fire Mutual Aid"
-      rx_only: true
-      all_skip: true
-
 comments:
   - text: |
       Frequencies replicated from the provided La Porte County public-safety CSV. Channels are modeled for receive-only monitoring of legacy VHF/UHF resources; statewide P25 trunked talkgroups are not included. Fireground 1-4 share a common output with differing uplink tones on input.

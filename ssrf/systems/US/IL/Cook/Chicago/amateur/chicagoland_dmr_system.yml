@@ -1,5 +1,5 @@
 "ssrf_lite":
-  version: "0.3.2"
+  version: "0.5.3"
   sources:
     - name: "ChicagoLand Control Center - Repeaters"
       url: "https://chicagoland-cc.net/?page_id=49"
@@ -14,93 +14,66 @@ organizations:
 
 locations:
   # Approximate repeater site coordinates based on public listings in this repo
-  - id: loc_chi_loop_n9kd
+  - id: loc_chi_loop
     name: "Chicago - Loop (approx)"
-    lat: 41.8853
-    lon: -87.6229
-  - id: loc_chi_westloop_k9vo
-    name: "Chicago - Near West/Loop (approx)"
-    lat: 41.8925
-    lon: -87.6354
-  - id: loc_chi_uptown_w9bmk
-    name: "Chicago - Uptown/Lakeview (approx)"
-    lat: 41.9650
-    lon: -87.6536
+    lat: 41.881
+    lon: -87.629
+  - id: loc_schaumburg
+    name: "Schaumburg (approx)"
+    lat: 42.033
+    lon: -88.083
 
 stations:
-  - id: stn_n9kd
-    call_sign: "N9KD"
+  - id: stn_cl_loop
+    call_sign: "WDBBE"
     organization_id: org_chicagoland
-    location_id: loc_chi_loop_n9kd
+    location_id: loc_chi_loop
     service: "amateur"
-  - id: stn_k9vo
-    call_sign: "K9VO"
+  - id: stn_cl_schaumburg
+    call_sign: "WB9PHK"
     organization_id: org_chicagoland
-    location_id: loc_chi_westloop_k9vo
-    service: "amateur"
-  - id: stn_w9bmk
-    call_sign: "W9BMK"
-    organization_id: org_chicagoland
-    location_id: loc_chi_uptown_w9bmk
+    location_id: loc_schaumburg
     service: "amateur"
 
 antennas:
-  - id: ant_n9kd
-    station_id: stn_n9kd
+  - id: ant_cl_loop
+    station_id: stn_cl_loop
     name: "Site Antenna (unknown)"
     gain_dbi: null
     height_agl_m: null
     height_amsl_m: null
-  - id: ant_k9vo
-    station_id: stn_k9vo
-    name: "Site Antenna (unknown)"
-    gain_dbi: null
-    height_agl_m: null
-    height_amsl_m: null
-  - id: ant_w9bmk
-    station_id: stn_w9bmk
-    name: "Site Antenna (unknown)"
+  - id: ant_cl_schaumburg
+    station_id: stn_cl_schaumburg
+    name: "Site Antennas (unknown)"
     gain_dbi: null
     height_agl_m: null
     height_amsl_m: null
 
 # RF chains are shaped for end-user codeplug: rx = repeater downlink (what you hear), tx = uplink (what you send)
 rf_chains:
-  - id: chain_n9kd_444_dmr
-    station_id: stn_n9kd
-    antenna_id: ant_n9kd
+  - id: chain_cl_loop_70cm_dmr
+    station_id: stn_cl_loop
+    antenna_id: ant_cl_loop
     tx:
-      freq_mhz: 449.000
+      freq_mhz: 447.975
       emission: "7K60FXE" # DMR
     rx:
-      freq_mhz: 444.000
+      freq_mhz: 442.975
+    mode:
+      type: "DMR"
+      color_code: 4
+      timeslots: [1, 2]
+  - id: chain_cl_schaumburg_70cm_dmr
+    station_id: stn_cl_schaumburg
+    antenna_id: ant_cl_schaumburg
+    tx:
+      freq_mhz: 448.06875
+      emission: "7K60FXE" # DMR
+    rx:
+      freq_mhz: 443.06875
     mode:
       type: "DMR"
       color_code: 0
-      timeslots: [1, 2]
-  - id: chain_k9vo_443_dmr
-    station_id: stn_k9vo
-    antenna_id: ant_k9vo
-    tx:
-      freq_mhz: 448.925
-      emission: "7K60FXE" # DMR
-    rx:
-      freq_mhz: 443.925
-    mode:
-      type: "DMR"
-      color_code: 1
-      timeslots: [1, 2]
-  - id: chain_w9bmk_444_dmr
-    station_id: stn_w9bmk
-    antenna_id: ant_w9bmk
-    tx:
-      freq_mhz: 449.125
-      emission: "7K60FXE" # DMR
-    rx:
-      freq_mhz: 444.125
-    mode:
-      type: "DMR"
-      color_code: 1
       timeslots: [1, 2]
 
 # Common ChicagoLand talkgroups (subset) with default timeslot guidance
@@ -185,17 +158,14 @@ authorizations:
     notes: "TX requires US amateur license."
 
 assignments:
-  - id: asgn_n9kd_cl
-    rf_chain_id: chain_n9kd_444_dmr
+  - id: asgn_cl_loop
+    rf_chain_id: chain_cl_loop_70cm_dmr
     usage: "repeater"
+    service: "amateur"
     authorization_id: auth_fcc_amateur_t
 
-  - id: asgn_k9vo_cl
-    rf_chain_id: chain_k9vo_443_dmr
+  - id: asgn_cl_schaumburg
+    rf_chain_id: chain_cl_schaumburg_70cm_dmr
     usage: "repeater"
-    authorization_id: auth_fcc_amateur_t
-
-  - id: asgn_w9bmk_cl
-    rf_chain_id: chain_w9bmk_444_dmr
-    usage: "repeater"
+    service: "amateur"
     authorization_id: auth_fcc_amateur_t

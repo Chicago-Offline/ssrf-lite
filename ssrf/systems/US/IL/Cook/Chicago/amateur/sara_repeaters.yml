@@ -1,5 +1,5 @@
 ssrf_lite:
-  version: "0.3.2"
+  version: "0.5.3"
   sources:
     - name: "SARA – Repeaters"
       url: "https://sararepeater.com/repeaters.php"
@@ -36,21 +36,12 @@ antennas:
   - id: ant_sara_vhf
     station_id: stn_ka9hhh_2m
     name: "4-bay Folded Dipole"
-    gain_dbi: null
-    height_agl_m: null
-    height_amsl_m: null
   - id: ant_sara_uhf
     station_id: stn_ka9hhh_440
     name: "8-bay Folded Dipole"
-    gain_dbi: null
-    height_agl_m: null
-    height_amsl_m: null
   - id: ant_sara_uhf_na9pl
     station_id: stn_na9pl_uhf
     name: "8-bay Folded Dipole"
-    gain_dbi: null
-    height_agl_m: null
-    height_amsl_m: null
 
 rf_chains:
   - id: chain_ka9hhh_2m_fm
@@ -98,21 +89,23 @@ authorizations:
     authority: "FCC"
     service: "amateur"
     class: "Technician or higher"
-    identifier: null
     notes: "TX requires US amateur license."
 
 assignments:
   - id: asgn_ka9hhh_2m_fm
     rf_chain_id: chain_ka9hhh_2m_fm
     usage: "repeater"
+    service: "amateur"
     authorization_id: auth_fcc_amateur_t
 
   - id: asgn_ka9hhh_440_fm
     rf_chain_id: chain_ka9hhh_440_fm
     usage: "repeater"
+    service: "amateur"
     authorization_id: auth_fcc_amateur_t
 
   - id: asgn_na9pl_440_c4fm
     rf_chain_id: chain_na9pl_440_c4fm
     usage: "repeater"
+    service: "amateur"
     authorization_id: auth_fcc_amateur_t
