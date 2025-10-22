@@ -1,0 +1,217 @@
+ssrf_lite:
+  version: "0.5.0"
+  sources:
+    - name: "St. Petersburg / Tampa GMRS repeaters (user supplied)"
+      url:
+      accessed: "2025-10-21"
+
+organizations:
+  - id: org_tampa_bay_gmrs
+    name: "Tampa Bay GMRS Community"
+
+locations:
+  - id: loc_seminole_fl
+    name: "Seminole, FL"
+  - id: loc_clearwater_fl
+    name: "Clearwater, FL"
+  - id: loc_ruskin_fl
+    name: "Ruskin, FL"
+  - id: loc_tampa_fl
+    name: "Tampa, FL"
+  - id: loc_west_bradenton_fl
+    name: "West Bradenton, FL"
+
+stations:
+  - id: stn_gmrs_seminole_725
+    call_sign: "GMRS"
+    organization_id: org_tampa_bay_gmrs
+    location_id: loc_seminole_fl
+    service: "gmrs"
+  - id: stn_gmrs_clearwater_675
+    call_sign: "GMRS"
+    organization_id: org_tampa_bay_gmrs
+    location_id: loc_clearwater_fl
+    service: "gmrs"
+  - id: stn_gmrs_ruskin_700
+    call_sign: "GMRS"
+    organization_id: org_tampa_bay_gmrs
+    location_id: loc_ruskin_fl
+    service: "gmrs"
+  - id: stn_gmrs_tampa_shores_700
+    call_sign: "GMRS"
+    organization_id: org_tampa_bay_gmrs
+    location_id: loc_tampa_fl
+    service: "gmrs"
+  - id: stn_gmrs_tampa_shores_650
+    call_sign: "GMRS"
+    organization_id: org_tampa_bay_gmrs
+    location_id: loc_tampa_fl
+    service: "gmrs"
+  - id: stn_gmrs_west_bradenton_625
+    call_sign: "GMRS"
+    organization_id: org_tampa_bay_gmrs
+    location_id: loc_west_bradenton_fl
+    service: "gmrs"
+  - id: stn_gmrs_tampa_600
+    call_sign: "GMRS"
+    organization_id: org_tampa_bay_gmrs
+    location_id: loc_tampa_fl
+    service: "gmrs"
+
+antennas:
+  - id: ant_gmrs_west_bradenton_625
+    station_id: stn_gmrs_west_bradenton_625
+    name: "Cortez 625 Antenna"
+    height_agl_m: 45.7 # 150 ft AGL
+    height_amsl_m: 48.8 # ~10 ft site elevation + antenna
+  - id: ant_gmrs_tampa_600
+    station_id: stn_gmrs_tampa_600
+    name: "Tampa Bay 600 Antenna"
+    height_agl_m: 122.0 # ~400 ft AGL
+
+rf_chains:
+  - id: chain_gmrs_seminole_725
+    station_id: stn_gmrs_seminole_725
+    tx:
+      freq_mhz: 467.725
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.725
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 141.3
+      ctcss_rx_hz: 141.3
+
+  - id: chain_gmrs_clearwater_675
+    station_id: stn_gmrs_clearwater_675
+    tx:
+      freq_mhz: 467.675
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.675
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 77.0
+
+  - id: chain_gmrs_ruskin_700
+    station_id: stn_gmrs_ruskin_700
+    tx:
+      freq_mhz: 467.700
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.700
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 123.0
+      ctcss_rx_hz: 123.0
+
+  - id: chain_gmrs_tampa_shores_700
+    station_id: stn_gmrs_tampa_shores_700
+    tx:
+      freq_mhz: 467.700
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.700
+    mode:
+      type: "FM"
+      dcs_tx_code: "065"
+      dcs_rx_code: "065"
+
+  - id: chain_gmrs_tampa_shores_650
+    station_id: stn_gmrs_tampa_shores_650
+    tx:
+      freq_mhz: 467.650
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.650
+    mode:
+      type: "FM"
+      dcs_tx_code: "065"
+      dcs_rx_code: "065"
+
+  - id: chain_gmrs_west_bradenton_625
+    station_id: stn_gmrs_west_bradenton_625
+    antenna_id: ant_gmrs_west_bradenton_625
+    tx:
+      freq_mhz: 467.625
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.625
+    mode:
+      type: "FM"
+
+  - id: chain_gmrs_tampa_600
+    station_id: stn_gmrs_tampa_600
+    antenna_id: ant_gmrs_tampa_600
+    tx:
+      freq_mhz: 467.600
+      power_w: 50
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.600
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 131.8
+      ctcss_rx_hz: 131.8
+
+authorizations:
+  - id: auth_fcc_gmrs
+    authority: "FCC"
+    service: "gmrs"
+    class: "GMRS license"
+    notes: "FCC Part 95E GMRS authorization required."
+
+assignments:
+  - id: asg_gmrs_seminole_725
+    rf_chain_id: chain_gmrs_seminole_725
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: "Seminole 725 - ThrashedNet; open system. Last reported update 2 months ago."
+
+  - id: asg_gmrs_clearwater_675
+    rf_chain_id: chain_gmrs_clearwater_675
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: "PINELLAS-675 Clearwater; open system. 77.0 Hz input, carrier output. Updated 7 months ago."
+
+  - id: asg_gmrs_ruskin_700
+    rf_chain_id: chain_gmrs_ruskin_700
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: "RUSKIN700; open system with 123.0 Hz PL. Updated 4 months ago."
+
+  - id: asg_gmrs_tampa_shores_700
+    rf_chain_id: chain_gmrs_tampa_shores_700
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: "Tampa Shores 700 Node 191133; open system, DPL 065. Updated 4 months ago."
+
+  - id: asg_gmrs_tampa_shores_650
+    rf_chain_id: chain_gmrs_tampa_shores_650
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: "Tampa Shores 650 Node 191123; open system, DPL 065. Updated 4 months ago."
+
+  - id: asg_gmrs_west_bradenton_625
+    rf_chain_id: chain_gmrs_west_bradenton_625
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: |
+      Cortez 625 in West Bradenton; 16-bay folded dipole about 150 ft AGL on a 10 ft site.
+      Open system with access granted to any licensed operators who request it; tones remain
+      unlisted. Typical range 10-15 mi HT / 20-25 mi mobile. Updated 2 months ago.
+
+  - id: asg_gmrs_tampa_600
+    rf_chain_id: chain_gmrs_tampa_600
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: |
+      Tampa Bay 600 in Tampa; open system and free for all licensed operators. Runs a 50 W
+      Motorola Quantar with the antenna roughly 400 ft AGL, 131.8 Hz PL. Updated 3 months ago.
