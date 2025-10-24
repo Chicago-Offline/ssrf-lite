@@ -1,24 +1,32 @@
 # SSRF-Lite: US Marine VHF Channels
 
-# This file defines a channel plan for US Marine VHF (156/157/161 MHz)
-# It uses the SSRF-Lite "channel_plans" + "assignments" pattern so the
-# generator can emit channels without rf_chains.
-
+ssrf_lite:
+  version: 0.5.3
+  sources:
+    - name: USCG U.S. VHF Channel Information
+      url: https://www.navcen.uscg.gov/us-vhf-channel-information
+      accessed: '2025-10-21'
+authorizations:
+  - id: auth_us_marine
+    authority: FCC / USCG
+    service: marine
+    class: Ship or coast station authorization
+    notes: Transmit on U.S. marine channels requires FCC Part 80 authorization 
+      and compliance with USCG operating rules.
 channel_plans:
   - id: us_marine_vhf_plan
     name: US Marine VHF
     channels:
-      # Core + expanded US "A" simplex channels; emission set for 25 kHz FM
-      - name: Ch 01A
+      - name: Ch 01A (1001)
         freq_mhz: 156.050
         emission: 16K0F3E
-      - name: Ch 05A
+      - name: Ch 05A (1005)
         freq_mhz: 156.250
         emission: 16K0F3E
       - name: Ch 06
         freq_mhz: 156.300
         emission: 16K0F3E
-      - name: Ch 07A
+      - name: Ch 07A (1007)
         freq_mhz: 156.350
         emission: 16K0F3E
       - name: Ch 08
@@ -51,34 +59,52 @@ channel_plans:
       - name: Ch 17
         freq_mhz: 156.850
         emission: 16K0F3E
-      - name: Ch 18A
+      - name: Ch 18A (1018)
         freq_mhz: 156.900
         emission: 16K0F3E
-      - name: Ch 19A
+      - name: Ch 19A (1019)
         freq_mhz: 156.950
         emission: 16K0F3E
-      - name: Ch 20A
+      - name: Ch 20
         freq_mhz: 157.000
         emission: 16K0F3E
-      - name: Ch 21A
+      - name: Ch 20A (1020)
+        freq_mhz: 157.000
+        emission: 16K0F3E
+      - name: Ch 21A (1021)
         freq_mhz: 157.050
         emission: 16K0F3E
-      - name: Ch 22A USCG
+      - name: Ch 22A (1022)
         freq_mhz: 157.100
         emission: 16K0F3E
-      - name: Ch 23A
+      - name: Ch 23A (1023)
         freq_mhz: 157.150
         emission: 16K0F3E
-      - name: Ch 63A
+      - name: Ch 24
+        freq_mhz: 157.200
+        emission: 16K0F3E
+      - name: Ch 25
+        freq_mhz: 157.250
+        emission: 16K0F3E
+      - name: Ch 26
+        freq_mhz: 157.300
+        emission: 16K0F3E
+      - name: Ch 27
+        freq_mhz: 157.350
+        emission: 16K0F3E
+      - name: Ch 28
+        freq_mhz: 157.400
+        emission: 16K0F3E
+      - name: Ch 63A (1063)
         freq_mhz: 156.175
         emission: 16K0F3E
-      - name: Ch 64A
+      - name: Ch 64A (1064)
         freq_mhz: 156.225
         emission: 16K0F3E
-      - name: Ch 65A
+      - name: Ch 65A (1065)
         freq_mhz: 156.275
         emission: 16K0F3E
-      - name: Ch 66A
+      - name: Ch 66A (1066)
         freq_mhz: 156.325
         emission: 16K0F3E
       - name: Ch 67
@@ -108,179 +134,379 @@ channel_plans:
       - name: Ch 77
         freq_mhz: 156.875
         emission: 16K0F3E
-      - name: Ch 78A
+      - name: Ch 78A (1078)
         freq_mhz: 156.925
         emission: 16K0F3E
-      - name: Ch 79A
+      - name: Ch 79A (1079)
         freq_mhz: 156.975
         emission: 16K0F3E
-      - name: Ch 80A
+      - name: Ch 80A (1080)
         freq_mhz: 157.025
+        emission: 16K0F3E
+      - name: Ch 81A (1081)
+        freq_mhz: 157.075
+        emission: 16K0F3E
+      - name: Ch 82A (1082)
+        freq_mhz: 157.125
+        emission: 16K0F3E
+      - name: Ch 83A (1083)
+        freq_mhz: 157.175
+        emission: 16K0F3E
+      - name: Ch 84
+        freq_mhz: 157.225
+        emission: 16K0F3E
+      - name: Ch 85
+        freq_mhz: 157.275
+        emission: 16K0F3E
+      - name: Ch 86
+        freq_mhz: 157.325
+        emission: 16K0F3E
+      - name: Ch 87
+        freq_mhz: 157.375
+        emission: 16K0F3E
+      - name: Ch 88
+        freq_mhz: 157.425
         emission: 16K0F3E
       - name: Ch 87B AIS1
         freq_mhz: 161.975
-        emission: 16K0F3E
+        emission: 16K0G1D
       - name: Ch 88B AIS2
         freq_mhz: 162.025
-        emission: 16K0F3E
-
+        emission: 16K0G1D
 assignments:
-  # Core channels: allow TX (rx_only: false) for emergency use
+  - id: us_marine_vhf_ch01a
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 01A (1001)
+    usage: port operations & commercial
+    authorization_id: auth_us_marine
+    notes: Port operations and commercial traffic; available only in the New 
+      Orleans / Lower Mississippi area (USCG note a).
+  - id: us_marine_vhf_ch05a
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 05A (1005)
+    usage: port operations & VTS
+    authorization_id: auth_us_marine
+    notes: VTS / port operations channel used in Houston, New Orleans, and 
+      Seattle areas (USCG note a).
   - id: us_marine_vhf_ch06
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 06
-    usage: "intership safety"
-  - id: us_marine_vhf_ch09
-    channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 09
-    usage: "calling"
-  - id: us_marine_vhf_ch13
-    channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 13
-    usage: "bridge-to-bridge"
-  - id: us_marine_vhf_ch16
-    channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 16 Distress
-    usage: "distress"
-    notes: "International hailing and distress guard channel."
-  - id: us_marine_vhf_ch22a
-    channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 22A USCG
-    usage: "coast-guard liaison"
-  - id: us_marine_vhf_ch68
-    channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 68
-    usage: "working"
-  - id: us_marine_vhf_ch69
-    channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 69
-    usage: "working"
-  - id: us_marine_vhf_ch71
-    channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 71
-    usage: "working"
-  - id: us_marine_vhf_ch72
-    channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 72
-    usage: "working"
-  - id: us_marine_vhf_ch73
-    channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 73
-    usage: "working"
-  - id: us_marine_vhf_ch78a
-    channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 78A
-    usage: "working"
-
-  # Additional US simplex channels (RX-only)
-  - id: us_marine_vhf_ch01a
-    channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 01A
-    usage: "receive-only"
-  - id: us_marine_vhf_ch05a
-    channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 05A
-    usage: "receive-only"
+    usage: intership safety
+    authorization_id: auth_us_marine
+    notes: Designated for intership safety communications.
   - id: us_marine_vhf_ch07a
     channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 07A
-    usage: "receive-only"
+    channel_name: Ch 07A (1007)
+    usage: commercial
+    authorization_id: auth_us_marine
+    notes: Commercial traffic; supports VHF Digital Small Message Service 
+      (VDSMS).
   - id: us_marine_vhf_ch08
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 08
-    usage: "receive-only"
+    usage: commercial intership
+    authorization_id: auth_us_marine
+    notes: Commercial intership traffic only; VDSMS capable.
+  - id: us_marine_vhf_ch09
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 09
+    usage: boater calling
+    authorization_id: auth_us_marine
+    notes: Primary boater calling channel for commercial and non-commercial use 
+      (VDSMS capable).
   - id: us_marine_vhf_ch10
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 10
-    usage: "receive-only"
+    usage: commercial
+    authorization_id: auth_us_marine
+    notes: Commercial working channel (VDSMS capable).
   - id: us_marine_vhf_ch11
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 11
-    usage: "receive-only"
+    usage: commercial & VTS
+    authorization_id: auth_us_marine
+    notes: Commercial working channel and VTS in selected areas (VDSMS capable).
   - id: us_marine_vhf_ch12
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 12
-    usage: "receive-only"
+    usage: port operations
+    authorization_id: auth_us_marine
+    notes: Port operations; Vessel Traffic Service (VTS) in selected areas.
+  - id: us_marine_vhf_ch13
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 13
+    usage: bridge-to-bridge
+    authorization_id: auth_us_marine
+    notes: Bridge-to-bridge navigation safety; vessels >20 m must maintain a 
+      listening watch in U.S. waters.
   - id: us_marine_vhf_ch14
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 14
-    usage: "receive-only"
+    usage: port operations
+    authorization_id: auth_us_marine
+    notes: Port operations; Vessel Traffic Service (VTS) in selected areas.
   - id: us_marine_vhf_ch15
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 15
-    usage: "receive-only"
+    usage: environmental monitoring
+    authorization_id: auth_us_marine
+    notes: Environmental receive-only channel (Class C EPIRB).
+  - id: us_marine_vhf_ch16
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 16 Distress
+    usage: distress
+    authorization_id: auth_us_marine
+    notes: International distress, safety, and calling channel. Maintain a 
+      continuous guard as required.
   - id: us_marine_vhf_ch17
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 17
-    usage: "receive-only"
+    usage: state & local control
+    authorization_id: auth_us_marine
+    notes: State and local government maritime control channel.
   - id: us_marine_vhf_ch18a
     channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 18A
-    usage: "receive-only"
+    channel_name: Ch 18A (1018)
+    usage: commercial
+    authorization_id: auth_us_marine
+    notes: Commercial working channel (VDSMS capable).
   - id: us_marine_vhf_ch19a
     channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 19A
-    usage: "receive-only"
+    channel_name: Ch 19A (1019)
+    usage: commercial
+    authorization_id: auth_us_marine
+    notes: Commercial working channel (VDSMS capable).
+  - id: us_marine_vhf_ch20
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 20
+    usage: port operations duplex
+    authorization_id: auth_us_marine
+    notes: Port operations duplex channel. Listed frequency monitors the ship 
+      transmit (157.000 MHz) side.
   - id: us_marine_vhf_ch20a
     channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 20A
-    usage: "receive-only"
+    channel_name: Ch 20A (1020)
+    usage: port operations
+    authorization_id: auth_us_marine
+    notes: Simplex variant of channel 20 for port operations.
   - id: us_marine_vhf_ch21a
     channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 21A
-    usage: "receive-only"
+    channel_name: Ch 21A (1021)
+    usage: us coast guard only
+    authorization_id: auth_us_marine
+    notes: U.S. Coast Guard only.
+  - id: us_marine_vhf_ch22a
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 22A (1022)
+    usage: coast guard liaison
+    authorization_id: auth_us_marine
+    notes: USCG liaison and maritime safety information broadcasts (announced on
+      Ch 16).
   - id: us_marine_vhf_ch23a
     channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 23A
-    usage: "receive-only"
+    channel_name: Ch 23A (1023)
+    usage: us coast guard only
+    authorization_id: auth_us_marine
+    notes: U.S. Coast Guard only.
+  - id: us_marine_vhf_ch24
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 24
+    usage: public correspondence
+    authorization_id: auth_us_marine
+    notes: Marine operator public correspondence channel; VDSMS capable. Cannot 
+      be used after 1 Jan 2030 (USCG note b).
+  - id: us_marine_vhf_ch25
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 25
+    usage: public correspondence
+    authorization_id: auth_us_marine
+    notes: Marine operator public correspondence channel; VDSMS capable. Cannot 
+      be used after 1 Jan 2030 (USCG note b).
+  - id: us_marine_vhf_ch26
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 26
+    usage: public correspondence
+    authorization_id: auth_us_marine
+    notes: Marine operator public correspondence channel; VDSMS capable. Cannot 
+      be used after 1 Jan 2030 (USCG note b).
+  - id: us_marine_vhf_ch27
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 27
+    usage: public correspondence
+    authorization_id: auth_us_marine
+    notes: Marine operator public correspondence channel; duplex variant pending
+      reassignment to channel 1027 per ITU WRC-19.
+  - id: us_marine_vhf_ch28
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 28
+    usage: public correspondence
+    authorization_id: auth_us_marine
+    notes: Marine operator public correspondence channel; duplex variant pending
+      reassignment to channel 1028 per ITU WRC-19.
   - id: us_marine_vhf_ch63a
     channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 63A
-    usage: "receive-only"
+    channel_name: Ch 63A (1063)
+    usage: port operations & commercial
+    authorization_id: auth_us_marine
+    notes: Port operations and commercial traffic; available only in the New 
+      Orleans / Lower Mississippi area.
   - id: us_marine_vhf_ch64a
     channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 64A
-    usage: "receive-only"
+    channel_name: Ch 64A (1064)
+    usage: port operations
+    authorization_id: auth_us_marine
+    notes: Port operations working channel.
   - id: us_marine_vhf_ch65a
     channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 65A
-    usage: "receive-only"
+    channel_name: Ch 65A (1065)
+    usage: port operations
+    authorization_id: auth_us_marine
+    notes: Port operations channel; mandatory in certain VTS areas (USCG note 
+      a).
   - id: us_marine_vhf_ch66a
     channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 66A
-    usage: "receive-only"
+    channel_name: Ch 66A (1066)
+    usage: port operations
+    authorization_id: auth_us_marine
+    notes: Port operations working channel.
   - id: us_marine_vhf_ch67
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 67
-    usage: "receive-only"
+    usage: commercial
+    authorization_id: auth_us_marine
+    notes: Commercial working channel; bridge-to-bridge in Lower Mississippi 
+      River (intership only).
+  - id: us_marine_vhf_ch68
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 68
+    usage: non-commercial working
+    authorization_id: auth_us_marine
+    notes: Non-commercial working channel (VDSMS capable).
+  - id: us_marine_vhf_ch69
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 69
+    usage: non-commercial working
+    authorization_id: auth_us_marine
+    notes: Non-commercial working channel (VDSMS capable).
   - id: us_marine_vhf_ch70
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 70 DSC
-    usage: "digital selective calling"
+    usage: digital selective calling
+    authorization_id: auth_us_marine
+    notes: Digital Selective Calling (voice prohibited).
+  - id: us_marine_vhf_ch71
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 71
+    usage: non-commercial working
+    authorization_id: auth_us_marine
+    notes: Non-commercial working channel (VDSMS capable).
+  - id: us_marine_vhf_ch72
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 72
+    usage: non-commercial intership
+    authorization_id: auth_us_marine
+    notes: Non-commercial intership-only working channel (VDSMS capable).
+  - id: us_marine_vhf_ch73
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 73
+    usage: port operations
+    authorization_id: auth_us_marine
+    notes: Port operations working channel.
   - id: us_marine_vhf_ch74
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 74
-    usage: "receive-only"
+    usage: port operations
+    authorization_id: auth_us_marine
+    notes: Port operations working channel.
   - id: us_marine_vhf_ch77
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 77
-    usage: "receive-only"
+    usage: port operations intership
+    authorization_id: auth_us_marine
+    notes: Port operations, intership only.
+  - id: us_marine_vhf_ch78a
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 78A (1078)
+    usage: non-commercial working
+    authorization_id: auth_us_marine
+    notes: Non-commercial working channel (VDSMS capable).
   - id: us_marine_vhf_ch79a
     channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 79A
-    usage: "receive-only"
+    channel_name: Ch 79A (1079)
+    usage: commercial
+    authorization_id: auth_us_marine
+    notes: Commercial working channel; non-commercial use only in the Great 
+      Lakes (VDSMS capable).
   - id: us_marine_vhf_ch80a
     channel_plan_id: us_marine_vhf_plan
-    channel_name: Ch 80A
-    usage: "receive-only"
+    channel_name: Ch 80A (1080)
+    usage: commercial
+    authorization_id: auth_us_marine
+    notes: Commercial working channel; non-commercial use only in the Great 
+      Lakes (VDSMS capable).
+  - id: us_marine_vhf_ch81a
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 81A (1081)
+    usage: us government environmental
+    authorization_id: auth_us_marine
+    notes: U.S. government channel for environmental protection operations.
+  - id: us_marine_vhf_ch82a
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 82A (1082)
+    usage: us government
+    authorization_id: auth_us_marine
+    notes: U.S. government only.
+  - id: us_marine_vhf_ch83a
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 83A (1083)
+    usage: us coast guard only
+    authorization_id: auth_us_marine
+    notes: U.S. Coast Guard only.
+  - id: us_marine_vhf_ch84
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 84
+    usage: public correspondence
+    authorization_id: auth_us_marine
+    notes: Marine operator public correspondence channel; VDSMS capable. Cannot 
+      be used after 1 Jan 2030 (USCG note b).
+  - id: us_marine_vhf_ch85
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 85
+    usage: public correspondence
+    authorization_id: auth_us_marine
+    notes: Marine operator public correspondence channel; VDSMS capable. Cannot 
+      be used after 1 Jan 2030 (USCG note b).
+  - id: us_marine_vhf_ch86
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 86
+    usage: public correspondence
+    authorization_id: auth_us_marine
+    notes: Marine operator public correspondence channel; VDSMS capable. Cannot 
+      be used after 1 Jan 2030 (USCG note b).
+  - id: us_marine_vhf_ch87
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 87
+    usage: public correspondence
+    authorization_id: auth_us_marine
+    notes: Public correspondence channel (VDSMS capable).
+  - id: us_marine_vhf_ch88
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 88
+    usage: commercial intership
+    authorization_id: auth_us_marine
+    notes: Commercial intership working channel (VDSMS capable).
   - id: us_marine_vhf_ch87b
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 87B AIS1
-    usage: "ais data"
+    usage: ais data
+    authorization_id: auth_us_marine
+    notes: Automatic Identification System (AIS) data link (AIS 1).
   - id: us_marine_vhf_ch88b
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 88B AIS2
-    usage: "ais data"
+    usage: ais data
+    authorization_id: auth_us_marine
+    notes: Automatic Identification System (AIS) data link (AIS 2).
 comments:
-  - text: |
-      Curated US marine VHF plan with core working, calling, distress, and AIS channels. Transmit only when licensed/authorized and follow USCG procedures.
+  - text: Curated US marine VHF plan aligned with USCG U.S. VHF Channel 
+      Information (accessed 2025-10-21). Transmit only when licensed/authorized.
