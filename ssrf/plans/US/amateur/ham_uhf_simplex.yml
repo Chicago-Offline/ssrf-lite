@@ -1,5 +1,8 @@
+# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.5.3.schema.json
 # SSRF-Lite: US Amateur UHF (70cm) Simplex & Calling
 
+$schema: "../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
 channel_plans:
   - id: us_ham_uhf_simplex_plan
     name: US Ham UHF Simplex

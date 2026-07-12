@@ -1,7 +1,10 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
 # SSRF-Lite: Chicago Police Department (analogue monitoring)
 # Source: RadioReference Cook County IL DB – Chicago Police Department section
 # Encrypted P25 dispatch channels are intentionally excluded. Only analogue/FM channels added.
 
+$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
 organizations:
   - id: org_chi_cpd
     name: "Chicago Police Department"

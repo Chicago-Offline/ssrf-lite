@@ -1,6 +1,9 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
 # SSRF-Lite: Transit & Transport (UHF FM/DMR, RX-only)
 # CTA and other transport/logistics ops that remain on conventional UHF; RX-only.
 
+$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
 organizations:
   - id: org_transit
     name: "Transit & Transport"

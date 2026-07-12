@@ -1,7 +1,10 @@
+# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.5.3.schema.json
 # SSRF-Lite: Railroads – AAR VHF scan set (Chicago area friendly)
 # RX-only. Analog FM.
 # Notes: This is a concise subset of widely used AAR channels for road/dispatcher in the Chicago area.
 
+$schema: "../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
 organizations:
   - id: org_rail
     name: "Railroads (AAR)"

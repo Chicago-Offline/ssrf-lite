@@ -1,7 +1,10 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
 # SSRF-Lite: Public Works & Parks (UHF FM/DMR, RX-only)
 # Chicago municipal operations: Streets & Sanitation (DSS), Park District, and Forest Preserves of Cook County.
 # RX-only monitoring. Frequencies and modes can vary by district and may change.
 
+$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
 organizations:
   - id: org_muni
     name: "Public Works & Parks"

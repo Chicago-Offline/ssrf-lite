@@ -1,6 +1,9 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
 # SSRF-Lite: Cook County Interoperability VHF/UHF (Analogue RX-only)
 # Source: RadioReference Cook County, IL – Interop sections
 
+$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
 organizations:
   - id: org_cook_interop
     name: "Cook County Interoperability"

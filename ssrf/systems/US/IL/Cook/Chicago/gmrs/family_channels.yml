@@ -1,7 +1,9 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
 # SSRF-Lite: Family Event Channels (KC9MHE)
 
+$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
 ssrf_lite:
-  version: "0.4.0"
   sources:
     - name: "Family operations channel spreadsheet"
       url: null

@@ -1,5 +1,7 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
 ssrf_lite:
-  version: "0.3.2"
   sources:
     - name: "NS9RC - Repeaters"
       url: "https://ns9rc.org/repeaters/repeater-descriptions"

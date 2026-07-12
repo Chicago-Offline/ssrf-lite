@@ -1,7 +1,10 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
 # SSRF-Lite: Fire/EMS (Chicago + Northside analogue RX-only)
 # Source: RadioReference Cook County IL – Chicago Fire/EMS and Northside suburbs
 # Notes: Many primary ops are on OEMC 800MHz P25; below includes analogue backups and TAC/OPS you can monitor.
 
+$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
 organizations:
   - id: org_cfd
     name: "Chicago Fire Department"

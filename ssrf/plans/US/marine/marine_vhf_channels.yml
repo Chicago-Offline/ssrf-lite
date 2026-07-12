@@ -1,7 +1,9 @@
+# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.5.3.schema.json
 # SSRF-Lite: US Marine VHF Channels
 
+$schema: "../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
 ssrf_lite:
-  version: 0.5.3
   sources:
     - name: USCG U.S. VHF Channel Information
       url: https://www.navcen.uscg.gov/us-vhf-channel-information
