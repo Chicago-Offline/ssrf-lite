@@ -1,6 +1,9 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
 # SSRF-Lite: Chicago EMS Services (RX-only focus)
 # Sources: IDPH Region XI EMS resource plans, RadioReference (Chicago EMS conventional backup channels), last verified 2025-04-21
 
+$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
 organizations:
   - id: org_cfd_ems
     name: "Chicago Fire Department – EMS"

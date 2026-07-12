@@ -1,9 +1,11 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
 # SSRF-Lite: Berrien County (MI) Amateur / Skywarn Systems
 # Source: Attachment "barrien amateur - Sheet1.csv" (2025-10-10)
 # Notes: Countywide Skywarn-linked VHF/UHF repeaters plus regional D-STAR access.
 
+$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
 ssrf_lite:
-  version: "0.4.0"
   sources:
     - name: "barrien amateur - Sheet1.csv"
       url: null

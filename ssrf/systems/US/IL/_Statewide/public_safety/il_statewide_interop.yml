@@ -1,8 +1,11 @@
+# yaml-language-server: $schema=../../../../../_schema/ssrf-lite-0.5.3.schema.json
 # SSRF-Lite: Illinois Statewide Interop (VHF/UHF analogue conventional)
 # RX-only. Includes common mutual aid/interop conventional channels within VHF/UHF bands.
 # Excludes 700/800 MHz (out of OpenGD77 range).
 # Channels: IFERN, IREACH, ISPERN (VLAW31), Point-to-Point, HEAR, VCALL/VTAC, UCALL/UTAC.
 
+$schema: "../../../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
 organizations:
   - id: org_il_interop
     name: "Illinois Statewide Interop"

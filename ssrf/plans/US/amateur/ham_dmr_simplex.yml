@@ -1,6 +1,9 @@
+# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.5.3.schema.json
 # SSRF-Lite: US Ham DMR Simplex
 # Two commonly used UHF DMR simplex presets. Include a basic TG99 contact for TX use.
 
+$schema: "../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
 contacts:
   - {
       id: ct_dmr_simplex,

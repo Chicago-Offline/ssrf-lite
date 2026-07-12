@@ -3,7 +3,7 @@
 *A pragmatic spectrum data model for codeplug generation*  
 
 Version: **0.5.3**  
-Last updated: 2025-10-11  
+Last updated: 2026-07-11  
 
 ---
 
@@ -29,6 +29,36 @@ SSRF-Lite is a trimmed-down profile of the [Standard Spectrum Resource Format (S
 - **Policies** express consumer-specific opinions such as transmit enablement, scan skip defaults, zone membership, ordering, and naming conventions.  
 
 Keeping these concerns separated makes SSRF-Lite reusable across radios, services, and policy stacks.  
+
+---
+
+## 1.1 File headers & validation
+
+Every SSRF-Lite YAML document carries two schema-association headers so that
+editors and CI can validate it **without importing the Python models**:
+
+```yaml
+# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.5.3.schema.json
+$schema: "../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
+```
+
+- The `# yaml-language-server:` modeline enables live validation in editors such
+  as VS Code (Red Hat YAML extension). The relative path is resolved from the
+  file's own location.
+- The top-level `$schema` key lets CI tools (e.g. `check-jsonschema`) discover the
+  schema. Its value is a path relative to the file.
+- `ssrf_lite_version` pins the spec revision the file targets and must match the
+  shipped schema (`0.5.3`).
+
+The versioned JSON Schema lives beside this document at
+[`ssrf-lite-0.5.3.schema.json`](./ssrf-lite-0.5.3.schema.json) and is generated
+from the Pydantic models via `generate_ssrf_schema.py`. Optional, non-normative
+metadata keys (`ssrf_lite.sources`, `comments`) are permitted alongside the
+reference entities.
+
+> Regenerate the schema and re-stamp headers with `make schema stamp-headers`
+> (or `make docs`), and verify freshness in CI with `make validate-schema`.
 
 ---
 

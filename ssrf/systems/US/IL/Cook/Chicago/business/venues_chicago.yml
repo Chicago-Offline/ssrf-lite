@@ -1,5 +1,7 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
 ssrf_lite:
-  version: "0.3.2"
   sources:
     - name: "RadioReference Wiki - Chicago/Cook County (IL) Businesses"
       url: "https://wiki.radioreference.com/index.php/Chicago/Cook_County_(IL)"

@@ -1,7 +1,10 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
 # SSRF-Lite: La Porte County (IN) Public Safety
 # Source: Attachment "laporte_county - Sheet1.csv" (RadioReference export)
 # Notes: Conventional VHF/UHF channels for county sheriff, EMS, fire, EMA, and Westville PD. Programmed receive-only; statewide P25 talkgroups are omitted.
 
+$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
 organizations:
   - id: org_laporte_sheriff
     name: "La Porte County Sheriff"

@@ -1,9 +1,12 @@
+# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.5.3.schema.json
 # SSRF-Lite: US Common Itinerant & Business (FM simplex)
 # Sources:
 # - RadioReference DB Nationwide (Common Business, Itinerant Businesses)
 # - RR Wiki: Common Itinerant and Business (Color Dot/Star)
 # Notes: RX-only, FM simplex. MURS/GMRS/FRS channels excluded (already present elsewhere).
 
+$schema: "../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
 organizations:
   - id: org_us_itinerant
     name: "US Itinerant & Business"

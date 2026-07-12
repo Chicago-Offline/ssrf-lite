@@ -1,7 +1,10 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
 # SSRF-Lite: Berrien County (MI) Public Safety
 # Source: Attachment "barrien_county.csv" (RadioReference extract)
 # Notes: Conventional VHF/UHF channels for county fire, EMS, sheriff, EMA, and parks. Programmed receive-only.
 
+$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
 organizations:
   - id: org_berrien_sheriff
     name: "Berrien County Sheriff"

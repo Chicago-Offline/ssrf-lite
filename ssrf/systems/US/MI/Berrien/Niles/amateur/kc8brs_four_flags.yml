@@ -1,5 +1,7 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
 ssrf_lite:
-  version: "0.3.2"
   sources:
     - name: "KC8BRS Repeater Detail (Artsci Publishing)"
       url: "http://www.artscipub.com/repeaters/detail.asp?rid=18929&ln=KC8BRS_repeater_information_on_147.180_in_Niles,_Michigan"

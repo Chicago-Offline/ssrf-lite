@@ -1,0 +1,918 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/emuehlstein/OpenGD77_SSRFLite_Generator/main/ssrf/_schema/ssrf-lite-0.5.3.schema.json",
+  "title": "SSRF-Lite Reference Document",
+  "description": "Schema for SSRF-Lite YAML reference documents (specification v0.5.3). Generated from the Pydantic models in ssrf/models/pydantic_models.py. See ssrf/_schema/SSRF-Lite-Spec.md for prose documentation.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Path or URI of the JSON Schema used to validate this document."
+    },
+    "ssrf_lite_version": {
+      "type": "string",
+      "const": "0.5.3",
+      "description": "SSRF-Lite specification version this file targets."
+    },
+    "ssrf_lite": {
+      "type": "object",
+      "description": "Optional non-normative provenance/metadata block.",
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "accessed": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "comments": {
+      "type": "array",
+      "description": "Optional non-normative freeform notes about the document.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "organizations": {
+      "items": {
+        "$ref": "#/$defs/Organization"
+      },
+      "title": "Organizations",
+      "type": "array"
+    },
+    "locations": {
+      "items": {
+        "$ref": "#/$defs/Location"
+      },
+      "title": "Locations",
+      "type": "array"
+    },
+    "stations": {
+      "items": {
+        "$ref": "#/$defs/Station"
+      },
+      "title": "Stations",
+      "type": "array"
+    },
+    "antennas": {
+      "items": {
+        "$ref": "#/$defs/Antenna"
+      },
+      "title": "Antennas",
+      "type": "array"
+    },
+    "rf_chains": {
+      "items": {
+        "$ref": "#/$defs/RFChain"
+      },
+      "title": "Rf Chains",
+      "type": "array"
+    },
+    "channel_plans": {
+      "items": {
+        "$ref": "#/$defs/ChannelPlan"
+      },
+      "title": "Channel Plans",
+      "type": "array"
+    },
+    "authorizations": {
+      "items": {
+        "$ref": "#/$defs/Authorization"
+      },
+      "title": "Authorizations",
+      "type": "array"
+    },
+    "contacts": {
+      "items": {
+        "$ref": "#/$defs/Contact"
+      },
+      "title": "Contacts",
+      "type": "array"
+    },
+    "assignments": {
+      "items": {
+        "$ref": "#/$defs/Assignment"
+      },
+      "title": "Assignments",
+      "type": "array"
+    }
+  },
+  "$defs": {
+    "Antenna": {
+      "additionalProperties": false,
+      "description": "Antenna definition with optional gain and height references.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "station_id": {
+          "title": "Station Id",
+          "type": "string"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Name"
+        },
+        "gain_dbi": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gain Dbi"
+        },
+        "height_agl_m": {
+          "anyOf": [
+            {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Height Agl M"
+        },
+        "height_amsl_m": {
+          "anyOf": [
+            {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Height Amsl M"
+        }
+      },
+      "required": [
+        "id",
+        "station_id"
+      ],
+      "title": "Antenna",
+      "type": "object"
+    },
+    "Assignment": {
+      "additionalProperties": false,
+      "description": "Link between RF resources and an operational use.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "rf_chain_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rf Chain Id"
+        },
+        "channel_plan_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Channel Plan Id"
+        },
+        "channel_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Channel Name"
+        },
+        "usage": {
+          "title": "Usage",
+          "type": "string"
+        },
+        "service": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Service"
+        },
+        "authorization_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Authorization Id"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "required": [
+        "id",
+        "usage"
+      ],
+      "title": "Assignment",
+      "type": "object"
+    },
+    "Authorization": {
+      "additionalProperties": false,
+      "description": "License or permission data.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "authority": {
+          "title": "Authority",
+          "type": "string"
+        },
+        "service": {
+          "title": "Service",
+          "type": "string"
+        },
+        "class": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Class"
+        },
+        "identifier": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Identifier"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "required": [
+        "id",
+        "authority",
+        "service"
+      ],
+      "title": "Authorization",
+      "type": "object"
+    },
+    "ChannelPlan": {
+      "additionalProperties": false,
+      "description": "Collection of reusable channels (e.g., NOAA, marine).",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "channels": {
+          "items": {
+            "$ref": "#/$defs/ChannelPlanChannel"
+          },
+          "title": "Channels",
+          "type": "array"
+        },
+        "service": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Service"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "channels"
+      ],
+      "title": "ChannelPlan",
+      "type": "object"
+    },
+    "ChannelPlanChannel": {
+      "additionalProperties": false,
+      "description": "Single entry in a channel plan.",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "freq_mhz": {
+          "exclusiveMinimum": 0,
+          "title": "Freq Mhz",
+          "type": "number"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        },
+        "emission": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Emission"
+        },
+        "bandwidth_khz": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bandwidth Khz"
+        }
+      },
+      "required": [
+        "name",
+        "freq_mhz"
+      ],
+      "title": "ChannelPlanChannel",
+      "type": "object"
+    },
+    "Contact": {
+      "additionalProperties": false,
+      "description": "DMR talkgroup or similar contact directory entry.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "kind": {
+          "description": "Group, Private, or AllCall",
+          "title": "Kind",
+          "type": "string"
+        },
+        "number": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Number"
+        },
+        "default_timeslot": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Default Timeslot"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "kind"
+      ],
+      "title": "Contact",
+      "type": "object"
+    },
+    "Location": {
+      "additionalProperties": false,
+      "description": "Geographic site with optional latitude/longitude.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "lat": {
+          "anyOf": [
+            {
+              "maximum": 90.0,
+              "minimum": -90.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lat"
+        },
+        "lon": {
+          "anyOf": [
+            {
+              "maximum": 180.0,
+              "minimum": -180.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lon"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "title": "Location",
+      "type": "object"
+    },
+    "Mode": {
+      "additionalProperties": false,
+      "description": "Mode definition capturing analogue or digital specifics.",
+      "properties": {
+        "type": {
+          "description": "Modulation or mode (e.g., FM, DMR)",
+          "title": "Type",
+          "type": "string"
+        },
+        "ctcss_tx_hz": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ctcss Tx Hz"
+        },
+        "ctcss_rx_hz": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ctcss Rx Hz"
+        },
+        "dcs_tx_code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Dcs Tx Code"
+        },
+        "dcs_rx_code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Dcs Rx Code"
+        },
+        "color_code": {
+          "anyOf": [
+            {
+              "maximum": 15,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Color Code"
+        },
+        "timeslots": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Timeslots"
+        },
+        "nac": {
+          "anyOf": [
+            {
+              "maximum": 4095,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Nac"
+        },
+        "nxdn_ran": {
+          "anyOf": [
+            {
+              "maximum": 63,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Nxdn Ran"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "title": "Mode",
+      "type": "object"
+    },
+    "Organization": {
+      "additionalProperties": false,
+      "description": "Owning or operating body.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "title": "Organization",
+      "type": "object"
+    },
+    "RFChain": {
+      "additionalProperties": false,
+      "description": "Bundled transmitter + receiver + mode for a station.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "station_id": {
+          "title": "Station Id",
+          "type": "string"
+        },
+        "antenna_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Antenna Id"
+        },
+        "tx": {
+          "$ref": "#/$defs/Transmitter"
+        },
+        "rx": {
+          "$ref": "#/$defs/Receiver"
+        },
+        "mode": {
+          "$ref": "#/$defs/Mode"
+        }
+      },
+      "required": [
+        "id",
+        "station_id",
+        "tx",
+        "rx",
+        "mode"
+      ],
+      "title": "RFChain",
+      "type": "object"
+    },
+    "Receiver": {
+      "additionalProperties": false,
+      "description": "Receiver metadata (frequency and sensitivity).",
+      "properties": {
+        "freq_mhz": {
+          "exclusiveMinimum": 0,
+          "title": "Freq Mhz",
+          "type": "number"
+        },
+        "sensitivity_dbm": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sensitivity Dbm"
+        }
+      },
+      "required": [
+        "freq_mhz"
+      ],
+      "title": "Receiver",
+      "type": "object"
+    },
+    "Station": {
+      "additionalProperties": false,
+      "description": "Logical station, typically tied to an organization and location.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "call_sign": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Call Sign"
+        },
+        "organization_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Organization Id"
+        },
+        "location_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location Id"
+        },
+        "service": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Service"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "title": "Station",
+      "type": "object"
+    },
+    "Transmitter": {
+      "additionalProperties": false,
+      "description": "Transmitter metadata (frequency, power, emission designator).",
+      "properties": {
+        "freq_mhz": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Freq Mhz"
+        },
+        "power_w": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Power W"
+        },
+        "emission": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Emission"
+        },
+        "bandwidth_khz": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bandwidth Khz"
+        }
+      },
+      "title": "Transmitter",
+      "type": "object"
+    }
+  }
+}

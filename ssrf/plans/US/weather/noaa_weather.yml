@@ -1,7 +1,10 @@
+# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.5.3.schema.json
 # SSRF-Lite: NOAA Weather Radio (WX1–WX7)
 # Notes: RX-only, FM (wide). Kept as a separate zone for quick access.
 # Sources: NOAA Weather Radio channel plan.
 
+$schema: "../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
 organizations:
   - id: org_noaa
     name: "NOAA Weather Radio"
