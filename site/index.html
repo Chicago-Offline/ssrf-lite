@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SSRF-Lite Browser</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>📡 SSRF-Lite</h1>
+    <nav>
+      <button class="tab active" data-tab="channels">Channels</button>
+      <button class="tab" data-tab="map">Map</button>
+      <button class="tab" data-tab="files">Files</button>
+    </nav>
+    <a class="repo-link" id="repo-link" href="#" target="_blank" rel="noopener">GitHub ↗</a>
+  </header>
+
+  <section id="filters">
+    <input type="search" id="search" placeholder="Search channels, frequencies, callsigns…" />
+    <select id="filter-service"><option value="">All services</option></select>
+    <select id="filter-mode"><option value="">All modes</option></select>
+    <select id="filter-band"><option value="">All bands</option></select>
+    <select id="filter-file"><option value="">All files</option></select>
+    <span id="result-count"></span>
+  </section>
+
+  <main>
+    <div id="panel-channels" class="panel active">
+      <div class="table-wrap">
+        <table id="channel-table">
+          <thead>
+            <tr>
+              <th data-sort="name">Channel</th>
+              <th data-sort="freq_mhz" class="num">Freq (MHz)</th>
+              <th data-sort="input_mhz" class="num">Input (MHz)</th>
+              <th data-sort="mode">Mode</th>
+              <th>Tone / CC</th>
+              <th data-sort="service">Service</th>
+              <th data-sort="call_sign">Callsign</th>
+              <th data-sort="loc_name">Location</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="panel-map" class="panel">
+      <div id="map"></div>
+    </div>
+
+    <div id="panel-files" class="panel">
+      <div id="file-cards"></div>
+    </div>
+  </main>
+
+  <footer>
+    <span id="generated"></span>
+    <span>Built from <a id="footer-repo" href="#" target="_blank" rel="noopener">SSRF-Lite</a> reference data · Apache 2.0</span>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js"></script>
+</body>
+</html>

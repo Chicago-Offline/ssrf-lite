@@ -21,6 +21,16 @@ documentation pipelines.
 | [ssrf/talkgroups/](ssrf/talkgroups/) | DMR talkgroup references |
 | [ssrf/_taxonomies/](ssrf/_taxonomies/) | Controlled vocabularies (services, ...) |
 | [docs/ssrf/](docs/ssrf/) | Generated documentation for the data library |
+| [site/](site/) | Static web browser for the data library (GitHub Pages) |
+
+## Browse the data
+
+A searchable web frontend (channel table, map of repeater sites, and file index) is
+published via GitHub Pages from [site/](site/). Run it locally with:
+
+```bash
+make serve-site   # builds site/data.json and serves http://localhost:8000
+```
 
 ## Installation
 

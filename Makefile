@@ -1,6 +1,6 @@
 # SSRF-Lite Makefile
 
-.PHONY: help install test docs schema stamp-headers validate-schema clean
+.PHONY: help install test docs schema stamp-headers validate-schema site serve-site clean
 
 help: ## Show this help message
 	@echo "SSRF-Lite - Development Commands"
@@ -17,6 +17,14 @@ test: ## Run tests
 docs: ## Generate SSRF data library documentation
 	@echo "📡 Generating SSRF documentation..."
 	uv run python generate_ssrf_docs.py
+
+site: ## Generate data.json for the GitHub Pages site
+	@echo "🌐 Generating site data..."
+	uv run python generate_ssrf_site.py
+
+serve-site: site ## Build and serve the GitHub Pages site locally
+	@echo "🌐 Serving site at http://localhost:8000 ..."
+	uv run python -m http.server 8000 --directory site
 
 schema: ## Regenerate the versioned SSRF-Lite JSON Schema from the models
 	@echo "🧬 Generating SSRF-Lite JSON Schema..."
