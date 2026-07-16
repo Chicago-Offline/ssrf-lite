@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/emuehlstein/OpenGD77_SSRFLite_Generator/main/ssrf/_schema/ssrf-lite-0.5.3.schema.json",
+  "$id": "https://raw.githubusercontent.com/Chicago-Offline/ssrf-lite/main/ssrf/_schema/ssrf-lite-0.5.3.schema.json",
   "title": "SSRF-Lite Reference Document",
   "description": "Schema for SSRF-Lite YAML reference documents (specification v0.5.3). Generated from the Pydantic models in ssrf/models/pydantic_models.py. See ssrf/_schema/SSRF-Lite-Spec.md for prose documentation.",
   "type": "object",

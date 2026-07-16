@@ -27,7 +27,7 @@ BASE = pathlib.Path(__file__).parent
 SCHEMA_DIR = BASE / "ssrf" / "_schema"
 SCHEMA_PATH = SCHEMA_DIR / f"ssrf-lite-{SPEC_VERSION}.schema.json"
 SCHEMA_ID = (
-    "https://raw.githubusercontent.com/emuehlstein/OpenGD77_SSRFLite_Generator/"
+    "https://raw.githubusercontent.com/Chicago-Offline/ssrf-lite/"
     f"main/ssrf/_schema/ssrf-lite-{SPEC_VERSION}.schema.json"
 )
 
