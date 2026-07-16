@@ -76,6 +76,18 @@ nav { display: flex; gap: 0.25rem; }
 
 #result-count { color: var(--text-dim); font-size: 0.85rem; white-space: nowrap; }
 
+#export-csv {
+  background: var(--bg);
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.4rem 0.7rem;
+  font: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+#export-csv:hover { color: var(--accent); border-color: var(--accent); }
+
 main { flex: 1; min-height: 0; }
 
 .panel { display: none; height: 100%; }

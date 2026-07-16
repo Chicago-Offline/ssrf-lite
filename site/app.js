@@ -74,6 +74,7 @@ function bindEvents() {
   for (const el of ["#search", "#filter-service", "#filter-mode", "#filter-band", "#filter-file"]) {
     $(el).addEventListener("input", applyFilters);
   }
+  $("#export-csv").addEventListener("click", exportCsv);
   for (const th of document.querySelectorAll("th[data-sort]")) {
     th.addEventListener("click", () => {
       const key = th.dataset.sort;
@@ -135,6 +136,40 @@ function applyFilters() {
 
   renderTable();
   if (state.map) renderMarkers();
+}
+
+const CSV_COLUMNS = [
+  ["name", "Channel"],
+  ["freq_mhz", "Freq (MHz)"],
+  ["input_mhz", "Input (MHz)"],
+  ["mode", "Mode"],
+  ["mode_detail", "Tone / CC"],
+  ["service", "Service"],
+  ["usage", "Usage"],
+  ["call_sign", "Callsign"],
+  ["org", "Organization"],
+  ["loc_name", "Location"],
+  ["lat", "Lat"],
+  ["lon", "Lon"],
+  ["notes", "Notes"],
+  ["file", "Source File"],
+];
+
+function exportCsv() {
+  const csvField = (v) => {
+    const s = String(v ?? "");
+    return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+  };
+  const lines = [CSV_COLUMNS.map(([, label]) => csvField(label)).join(",")];
+  for (const c of state.filtered) {
+    lines.push(CSV_COLUMNS.map(([key]) => csvField(c[key])).join(","));
+  }
+  const blob = new Blob([lines.join("\r\n") + "\r\n"], { type: "text/csv;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `ssrf-lite-channels-${state.data.generated}.csv`;
+  a.click();
+  URL.revokeObjectURL(a.href);
 }
 
 function renderTable() {
