@@ -1,5 +1,7 @@
 # SSRF-Lite
 
+**🌐 [Browse the data online](https://chicago-offline.github.io/ssrf-lite/)**
+
 A simplified, YAML-based format for sharing information about RF systems, inspired by the
 [NTIA Standard Spectrum Resource Format (SSRF)](https://www.ntia.gov/publications/2023/standard-spectrum-resource-format-ssrf).
 
