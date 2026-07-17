@@ -26,6 +26,7 @@ jobs:
         run: |
           uv sync
           uv run python generate_ssrf_site.py
+          uv run python generate_ssrf_codeplug.py
 
       - uses: actions/configure-pages@v5
 
