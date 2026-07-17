@@ -32,6 +32,40 @@ published via GitHub Pages from [site/](site/). Run it locally with:
 make serve-site   # builds site/data.json and serves http://localhost:8000
 ```
 
+## Compiled data feed
+
+For downstream consumers (e.g. codeplug generators like NeonPlug), the repo
+publishes a compiled, browser-ready `site/codeplug.json` — a single flat array of
+radio-centric channel records with the relational data already joined. A client
+can simply fetch it and filter by distance; no schema knowledge required.
+
+```bash
+make codeplug   # writes site/codeplug.json
+```
+
+Each record has the shape:
+
+```json
+{
+  "callsign": "W9CR",   // station call sign, or null
+  "rx_mhz": 449.75,      // frequency the radio receives on (repeater output)
+  "tx_mhz": 444.75,      // frequency the radio transmits on (repeater input)
+  "ctcss": 146.2,        // CTCSS tone to encode (Hz), or null
+  "dcs": "023",          // DCS code to encode, or null
+  "color_code": 1,        // DMR color code, or null
+  "timeslots": [1, 2],    // DMR timeslots, or null
+  "lat": 27.983104,       // site latitude, or null
+  "lon": -82.490542,      // site longitude, or null
+  "service": "amateur",  // SSRF service taxonomy id, or null
+  "mode": "FM",          // modulation/mode, or null
+  "name": "tarc uhf1"    // human-readable channel name
+}
+```
+
+Frequencies are radio-centric (`rx_mhz`/`tx_mhz` are what the operator's radio
+listens to and transmits on); for simplex channels the two are equal. CTCSS/DCS
+values are the tones the radio must encode to key the far end.
+
 ## Installation
 
 ```bash

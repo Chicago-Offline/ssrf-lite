@@ -1,6 +1,6 @@
 # SSRF-Lite Makefile
 
-.PHONY: help install test docs schema stamp-headers validate-schema site serve-site clean
+.PHONY: help install test docs schema stamp-headers validate-schema site codeplug serve-site clean
 
 help: ## Show this help message
 	@echo "SSRF-Lite - Development Commands"
@@ -18,9 +18,13 @@ docs: ## Generate SSRF data library documentation
 	@echo "📡 Generating SSRF documentation..."
 	uv run python generate_ssrf_docs.py
 
-site: ## Generate data.json for the GitHub Pages site
+site: codeplug ## Generate data.json for the GitHub Pages site
 	@echo "🌐 Generating site data..."
 	uv run python generate_ssrf_site.py
+
+codeplug: ## Generate the flat, browser-ready codeplug.json (for NeonPlug etc.)
+	@echo "📻 Generating flat codeplug data..."
+	uv run python generate_ssrf_codeplug.py
 
 serve-site: site ## Build and serve the GitHub Pages site locally
 	@echo "🌐 Serving site at http://localhost:8000 ..."
