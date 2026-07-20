@@ -33,6 +33,7 @@ async function init() {
 
   $("#repo-link").href = state.data.repo;
   $("#footer-repo").href = state.data.repo;
+  $("#why-repo-link").href = state.data.repo;
   $("#generated").textContent = `Data generated ${state.data.generated}`;
 
   populateFilters();
@@ -90,6 +91,7 @@ function switchTab(name) {
     btn.classList.toggle("active", btn.dataset.tab === name);
   for (const panel of document.querySelectorAll(".panel"))
     panel.classList.toggle("active", panel.id === `panel-${name}`);
+  $("#filters").hidden = name === "why";
   if (name === "map") initMap();
 }
 

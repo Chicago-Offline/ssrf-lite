@@ -22,6 +22,7 @@ SSRF_ROOT = BASE / "ssrf"
 SITE_DIR = BASE / "site"
 
 REPO_URL = "https://github.com/Chicago-Offline/ssrf-lite"
+SITE_URL = "https://chicago-offline.github.io/ssrf-lite/"
 
 
 def _category(rel: pathlib.Path) -> str:
@@ -242,6 +243,31 @@ def build_payload() -> Dict[str, Any]:
     return payload
 
 
+def write_sitemap(output_dir: pathlib.Path, generated: str) -> None:
+    sitemap = f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>{SITE_URL}</loc>
+    <lastmod>{generated}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+"""
+    output_dir.mkdir(parents=True, exist_ok=True)
+    (output_dir / "sitemap.xml").write_text(sitemap, encoding="utf-8")
+
+
+def write_robots(output_dir: pathlib.Path) -> None:
+    robots = f"""User-agent: *
+Allow: /
+
+Sitemap: {SITE_URL}sitemap.xml
+"""
+    output_dir.mkdir(parents=True, exist_ok=True)
+    (output_dir / "robots.txt").write_text(robots, encoding="utf-8")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -258,6 +284,8 @@ def main() -> int:
         json.dumps(payload, indent=None, separators=(",", ":")) + "\n",
         encoding="utf-8",
     )
+    write_sitemap(args.output.parent, payload["generated"])
+    write_robots(args.output.parent)
 
     n_mapped = len({(c["lat"], c["lon"]) for c in payload["channels"] if c.get("lat")})
     print(

@@ -169,6 +169,67 @@ td.notes { max-width: 320px; color: var(--text-dim); font-size: 0.85rem; }
 .card .src a { color: var(--text-dim); }
 .card .src a:hover { color: var(--accent); }
 
+.why-page {
+  height: 100%;
+  overflow: auto;
+  padding: 2.5rem clamp(1rem, 4vw, 4rem);
+  max-width: 980px;
+}
+
+.why-intro { max-width: 760px; }
+.why-intro .eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+.why-intro h2 {
+  margin: 0 0 0.8rem;
+  color: var(--text);
+  font-size: clamp(1.7rem, 4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+.why-intro p,
+.why-grid p,
+.why-contribute p {
+  color: var(--text-dim);
+  font-size: 1rem;
+  max-width: 70ch;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin: 2rem 0;
+}
+.why-grid article,
+.why-contribute {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+}
+.why-grid h3,
+.why-contribute h3 { margin: 0 0 0.4rem; }
+.why-grid p,
+.why-contribute p { margin: 0; }
+
+.why-contribute { max-width: 760px; }
+.button-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  color: var(--accent);
+  text-decoration: none;
+}
+.button-link:hover { background: var(--accent-dim); }
+
 footer {
   display: flex;
   justify-content: space-between;
@@ -184,6 +245,8 @@ footer a:hover { color: var(--accent); }
 
 @media (max-width: 700px) {
   header { flex-wrap: wrap; gap: 0.5rem; }
+  nav { flex-wrap: wrap; }
   td.notes { display: none; }
   th:nth-child(9) { display: none; }
+  .why-grid { grid-template-columns: 1fr; }
 }

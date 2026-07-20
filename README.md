@@ -34,6 +34,11 @@ published via GitHub Pages from [site/](site/). Run it locally with:
 make serve-site   # builds site/data.json and serves http://localhost:8000
 ```
 
+The site build also emits `site/sitemap.xml` and `site/robots.txt` for search
+engines. After GitHub Pages deploys, submit
+`https://chicago-offline.github.io/ssrf-lite/sitemap.xml` in Google Search Console
+for faster discovery.
+
 ## Compiled data feed
 
 For downstream consumers (e.g. codeplug generators like NeonPlug), the repo

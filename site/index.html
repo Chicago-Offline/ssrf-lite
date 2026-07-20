@@ -3,6 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Browse SSRF-Lite reference data for radio channels, repeaters, channel plans, and RF systems." />
+  <link rel="canonical" href="https://chicago-offline.github.io/ssrf-lite/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SSRF-Lite Browser" />
+  <meta property="og:description" content="Search SSRF-Lite reference data for radio channels, repeaters, channel plans, and RF systems." />
+  <meta property="og:url" content="https://chicago-offline.github.io/ssrf-lite/" />
+  <meta name="twitter:card" content="summary" />
   <title>SSRF-Lite Browser</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
@@ -15,6 +22,7 @@
       <button class="tab active" data-tab="channels">Channels</button>
       <button class="tab" data-tab="map">Map</button>
       <button class="tab" data-tab="files">Files</button>
+      <button class="tab" data-tab="why">Why SSRF-Lite?</button>
     </nav>
     <a class="repo-link" id="repo-link" href="#" target="_blank" rel="noopener">GitHub ↗</a>
   </header>
@@ -57,6 +65,59 @@
 
     <div id="panel-files" class="panel">
       <div id="file-cards"></div>
+    </div>
+
+    <div id="panel-why" class="panel">
+      <section class="why-page">
+        <div class="why-intro">
+          <p class="eyebrow">Open source spectrum reference data</p>
+          <h2>More structure for radio data that people already share.</h2>
+          <p>
+            SSRF-Lite is an open source effort to add more structure, depth, and
+            detail to the kinds of frequency and repeater information commonly
+            found in RadioReference, RepeaterBook, club lists, agency pages, and
+            local notes.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <article>
+            <h3>Readable by people</h3>
+            <p>
+              The source data stays in plain YAML so radio operators can review,
+              correct, and contribute records without needing a proprietary tool.
+            </p>
+          </article>
+          <article>
+            <h3>Useful to software</h3>
+            <p>
+              Records separate organizations, sites, stations, RF chains,
+              channel plans, tones, talkgroups, and authorizations so apps can
+              build maps, codeplugs, documentation, and search views from the
+              same data.
+            </p>
+          </article>
+          <article>
+            <h3>Built for provenance</h3>
+            <p>
+              SSRF-Lite can keep source links and notes alongside each data set,
+              making it easier to understand where a record came from and what
+              still needs verification.
+            </p>
+          </article>
+        </div>
+
+        <div class="why-contribute">
+          <h3>Contributions are welcome</h3>
+          <p>
+            Add a missing system, improve a channel plan, correct a site, attach
+            better source material, or help refine the schema. The goal is a
+            practical shared library that gets better as more local knowledge is
+            contributed.
+          </p>
+          <a id="why-repo-link" class="button-link" href="#" target="_blank" rel="noopener">Contribute on GitHub</a>
+        </div>
+      </section>
     </div>
   </main>
 

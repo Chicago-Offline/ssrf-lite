@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chicago-offline.github.io/ssrf-lite/sitemap.xml
