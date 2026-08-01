@@ -11,7 +11,7 @@ import argparse
 import json
 import pathlib
 from datetime import date
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 import yaml
 
@@ -112,19 +112,31 @@ def _assignment_display_name(a: Any) -> str:
     return name.replace("_", " ")
 
 
-def build_payload() -> Dict[str, Any]:
+def build_payload(ssrf_roots: Optional[List[pathlib.Path]] = None) -> Dict[str, Any]:
     files: List[Dict[str, Any]] = []
     channels: List[Dict[str, Any]] = []
     errors: List[str] = []
 
-    yml_files = sorted(
-        p
-        for p in SSRF_ROOT.rglob("*.yml")
-        if not p.name.startswith("_") and "_schema" not in p.parts
+    roots = ssrf_roots or [SSRF_ROOT]
+    # The first root is the public/authoritative repo; any additional roots are
+    # private overlays whose files do not exist in the public GitHub repo.
+    primary_root = roots[0]
+
+    # Pair each YAML file with the root it came from so paths stay relative to
+    # their own root (a private overlay root mirrors the public ssrf/ layout).
+    yml_pairs: List[Tuple[pathlib.Path, pathlib.Path]] = sorted(
+        (
+            (root, p)
+            for root in roots
+            for p in root.rglob("*.yml")
+            if not p.name.startswith("_") and "_schema" not in p.parts
+        ),
+        key=lambda pair: str(pair[1].relative_to(pair[0])),
     )
 
-    for path in yml_files:
-        rel = path.relative_to(SSRF_ROOT)
+    for root, path in yml_pairs:
+        rel = path.relative_to(root)
+        is_overlay = root != primary_root
         try:
             ref = load_ssrf_document(path)
         except Exception as exc:  # keep the site build resilient
@@ -168,10 +180,16 @@ def build_payload() -> Dict[str, Any]:
                 "locations": len(ref.locations),
             },
             "sources": _doc_sources(path),
-            "url": f"{REPO_URL}/blob/main/ssrf/{rel}",
-            "doc_url": f"docs/ssrf/{path.stem}.md",
-            "download_url": f"{RAW_REPO_URL}/ssrf/{rel}",
         }
+        if is_overlay:
+            # Private overlay file: it is not published in the public repo, so
+            # emit no public GitHub links (they would 404). Flag it as local
+            # so the site UI can label/handle it accordingly.
+            file_entry["local"] = True
+        else:
+            file_entry["url"] = f"{REPO_URL}/blob/main/ssrf/{rel}"
+            file_entry["doc_url"] = f"docs/ssrf/{path.stem}.md"
+            file_entry["download_url"] = f"{RAW_REPO_URL}/ssrf/{rel}"
         files.append(file_entry)
 
         for a in ref.assignments:
@@ -256,7 +274,9 @@ def write_sitemap(
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>"""
+        # Private overlay files have no public doc page; skip them.
         for file in files
+        if file.get("doc_url")
     )
     sitemap = f"""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -286,6 +306,19 @@ Sitemap: {SITE_URL}sitemap.xml
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
+        "--ssrf-root",
+        type=pathlib.Path,
+        default=SSRF_ROOT,
+        help="Primary SSRF root to scan (default: ./ssrf)",
+    )
+    parser.add_argument(
+        "--extra-ssrf-root",
+        type=pathlib.Path,
+        action="append",
+        default=[],
+        help="Additional SSRF root to include, such as a private repo's ssrf/ directory. May be repeated.",
+    )
+    parser.add_argument(
         "--output",
         type=pathlib.Path,
         default=SITE_DIR / "data.json",
@@ -293,7 +326,14 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    payload = build_payload()
+    roots = [args.ssrf_root, *args.extra_ssrf_root]
+    for root in roots:
+        if not root.exists():
+            parser.error(f"SSRF root does not exist: {root}")
+        if not root.is_dir():
+            parser.error(f"SSRF root is not a directory: {root}")
+
+    payload = build_payload(roots)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(
         json.dumps(payload, indent=None, separators=(",", ":")) + "\n",
