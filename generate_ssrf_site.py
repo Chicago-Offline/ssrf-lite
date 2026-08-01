@@ -118,6 +118,9 @@ def build_payload(ssrf_roots: Optional[List[pathlib.Path]] = None) -> Dict[str, 
     errors: List[str] = []
 
     roots = ssrf_roots or [SSRF_ROOT]
+    # The first root is the public/authoritative repo; any additional roots are
+    # private overlays whose files do not exist in the public GitHub repo.
+    primary_root = roots[0]
 
     # Pair each YAML file with the root it came from so paths stay relative to
     # their own root (a private overlay root mirrors the public ssrf/ layout).
@@ -133,6 +136,7 @@ def build_payload(ssrf_roots: Optional[List[pathlib.Path]] = None) -> Dict[str, 
 
     for root, path in yml_pairs:
         rel = path.relative_to(root)
+        is_overlay = root != primary_root
         try:
             ref = load_ssrf_document(path)
         except Exception as exc:  # keep the site build resilient
@@ -176,10 +180,16 @@ def build_payload(ssrf_roots: Optional[List[pathlib.Path]] = None) -> Dict[str, 
                 "locations": len(ref.locations),
             },
             "sources": _doc_sources(path),
-            "url": f"{REPO_URL}/blob/main/ssrf/{rel}",
-            "doc_url": f"docs/ssrf/{path.stem}.md",
-            "download_url": f"{RAW_REPO_URL}/ssrf/{rel}",
         }
+        if is_overlay:
+            # Private overlay file: it is not published in the public repo, so
+            # emit no public GitHub links (they would 404). Flag it as local
+            # so the site UI can label/handle it accordingly.
+            file_entry["local"] = True
+        else:
+            file_entry["url"] = f"{REPO_URL}/blob/main/ssrf/{rel}"
+            file_entry["doc_url"] = f"docs/ssrf/{path.stem}.md"
+            file_entry["download_url"] = f"{RAW_REPO_URL}/ssrf/{rel}"
         files.append(file_entry)
 
         for a in ref.assignments:
@@ -264,7 +274,9 @@ def write_sitemap(
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>"""
+        # Private overlay files have no public doc page; skip them.
         for file in files
+        if file.get("doc_url")
     )
     sitemap = f"""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

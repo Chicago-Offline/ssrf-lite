@@ -91,6 +91,33 @@ class SiteBuildPayloadRootsTest(unittest.TestCase):
         self.assertEqual(priv_ch["mode"], "FM")
         self.assertIn("141.3", priv_ch.get("mode_detail", ""))
 
+    def test_overlay_files_have_no_public_repo_links(self) -> None:
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as tmp:
+            priv = pathlib.Path(tmp) / "ssrf" / "systems" / "custom"
+            priv.mkdir(parents=True)
+            (priv / "priv_test.yml").write_text(PRIVATE_DOC, encoding="utf-8")
+
+            merged = gsite.build_payload(
+                [gsite.SSRF_ROOT, pathlib.Path(tmp) / "ssrf"]
+            )
+
+        by_id = {f["id"]: f for f in merged["files"]}
+        overlay = by_id["systems/custom/priv_test.yml"]
+        # Overlay files are not in the public repo, so no public GitHub links
+        # (they would 404). They are flagged local instead.
+        self.assertTrue(overlay.get("local"))
+        self.assertNotIn("url", overlay)
+        self.assertNotIn("download_url", overlay)
+        self.assertNotIn("doc_url", overlay)
+
+        # Public files keep their links and are not flagged local.
+        public = next(f for f in merged["files"] if not f.get("local"))
+        self.assertIn("url", public)
+        self.assertIn("download_url", public)
+        self.assertTrue(public["url"].startswith("https://github.com/"))
+
 
 if __name__ == "__main__":  # pragma: no cover
     unittest.main()
