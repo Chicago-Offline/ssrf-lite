@@ -165,6 +165,9 @@ td.notes { max-width: 320px; color: var(--text-dim); font-size: 0.85rem; }
 .card h3 a:hover { color: var(--accent); }
 .card .meta { color: var(--text-dim); font-size: 0.82rem; margin-bottom: 0.4rem; }
 .card .badges { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.4rem; }
+.card-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.6rem; }
+.card-actions a { color: var(--accent); font-size: 0.84rem; text-decoration: none; }
+.card-actions a:hover { text-decoration: underline; }
 .card .src { font-size: 0.8rem; margin-top: 0.5rem; }
 .card .src a { color: var(--text-dim); }
 .card .src a:hover { color: var(--accent); }

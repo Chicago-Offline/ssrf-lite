@@ -22,6 +22,7 @@ SSRF_ROOT = BASE / "ssrf"
 SITE_DIR = BASE / "site"
 
 REPO_URL = "https://github.com/Chicago-Offline/ssrf-lite"
+RAW_REPO_URL = "https://raw.githubusercontent.com/Chicago-Offline/ssrf-lite/main"
 SITE_URL = "https://chicago-offline.github.io/ssrf-lite/"
 
 
@@ -168,6 +169,8 @@ def build_payload() -> Dict[str, Any]:
             },
             "sources": _doc_sources(path),
             "url": f"{REPO_URL}/blob/main/ssrf/{rel}",
+            "doc_url": f"docs/ssrf/{path.stem}.md",
+            "download_url": f"{RAW_REPO_URL}/ssrf/{rel}",
         }
         files.append(file_entry)
 
@@ -243,7 +246,18 @@ def build_payload() -> Dict[str, Any]:
     return payload
 
 
-def write_sitemap(output_dir: pathlib.Path, generated: str) -> None:
+def write_sitemap(
+    output_dir: pathlib.Path, generated: str, files: List[Dict[str, Any]]
+) -> None:
+    detail_urls = "\n".join(
+        f"""  <url>
+    <loc>{SITE_URL}{file['doc_url']}</loc>
+    <lastmod>{generated}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>"""
+        for file in files
+    )
     sitemap = f"""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -252,6 +266,7 @@ def write_sitemap(output_dir: pathlib.Path, generated: str) -> None:
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+{detail_urls}
 </urlset>
 """
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -284,7 +299,7 @@ def main() -> int:
         json.dumps(payload, indent=None, separators=(",", ":")) + "\n",
         encoding="utf-8",
     )
-    write_sitemap(args.output.parent, payload["generated"])
+    write_sitemap(args.output.parent, payload["generated"], payload["files"])
     write_robots(args.output.parent)
 
     n_mapped = len({(c["lat"], c["lon"]) for c in payload["channels"] if c.get("lat")})

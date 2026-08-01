@@ -6,3 +6,4 @@ dist/
 uv.lock
 site/data.json
 site/codeplug.json
+site/docs/

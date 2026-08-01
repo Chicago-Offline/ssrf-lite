@@ -1,0 +1,2772 @@
+# yaml-language-server: $schema=../../../../_schema/ssrf-lite-0.5.3.schema.json
+# SSRF-Lite: Chicagoland Airports (IL / IN / MI) — VHF AM Airband Voice
+# Notes: RX-only reference. AM voice, 25 kHz channels (6K00A3E). TX requires an
+#        FCC Part 87 aeronautical authorization; treat as receive-only.
+#        Restricted to the 118.000-136.975 MHz voice band (navaids excluded).
+# Sources:
+# - ICAO Frequency Finder (https://frequency.icao.int)
+# - Airportmap open databases (https://airportmap.de/data)
+#   as compiled in infamy/NeonPlug airports_min.json
+
+$schema: "../../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
+ssrf_lite:
+  sources:
+    - name: ICAO Frequency Finder
+      url: https://frequency.icao.int
+      accessed: '2026-07-16'
+    - name: Airportmap Open Databases
+      url: https://airportmap.de/data
+      accessed: '2026-07-16'
+    - name: infamy/NeonPlug airports_min.json
+      url: https://github.com/infamy/NeonPlug/blob/main/src/data/airports_min.json
+      accessed: '2026-07-16'
+
+authorizations:
+  - id: auth_rx_only_aviation
+    authority: "FCC / FAA"
+    service: aviation
+    class: null
+    identifier: null
+    notes: >
+      Airband monitoring is unlicensed for receive. Transmitting on aeronautical
+      VHF requires an FCC Part 87 aircraft or ground station authorization.
+
+organizations:
+  - id: org_chi_airports
+    name: "Chicagoland Airport Aeronautical Stations"
+
+locations:
+  - id: loc_7in8
+    name: "7IN8 (Airport)"
+    lat: 41.372
+    lon: -85.773
+  - id: loc_82is
+    name: "82IS (Airport)"
+    lat: 42.143
+    lon: -88.403
+  - id: loc_dtg
+    name: "DTG (Airport)"
+    lat: 41.133
+    lon: -88.441
+  - id: loc_k05c
+    name: "K05C (Airport)"
+    lat: 41.52
+    lon: -87.399
+  - id: loc_k06c
+    name: "K06C (Airport)"
+    lat: 41.989
+    lon: -88.101
+  - id: loc_k0c0
+    name: "K0C0 (Airport)"
+    lat: 42.403
+    lon: -88.632
+  - id: loc_k10c
+    name: "K10C (Airport)"
+    lat: 42.403
+    lon: -88.377
+  - id: loc_k1c2
+    name: "K1C2 (Airport)"
+    lat: 41.48
+    lon: -87.921
+  - id: loc_k1c5
+    name: "K1C5 (Airport)"
+    lat: 41.696
+    lon: -88.129
+  - id: loc_k3ck
+    name: "K3CK (Airport)"
+    lat: 42.207
+    lon: -88.323
+  - id: loc_k3ho
+    name: "K3HO (Airport)"
+    lat: 41.554
+    lon: -87.262
+  - id: loc_k3tr
+    name: "K3TR (Airport)"
+    lat: 41.836
+    lon: -86.225
+  - id: loc_karr
+    name: "KARR (Airport)"
+    lat: 41.772
+    lon: -88.476
+  - id: loc_kasw
+    name: "KASW (Airport)"
+    lat: 41.275
+    lon: -85.84
+  - id: loc_kbeh
+    name: "KBEH (Airport)"
+    lat: 42.129
+    lon: -86.428
+  - id: loc_kc03
+    name: "KC03 (Airport)"
+    lat: 41.446
+    lon: -85.935
+  - id: loc_kc09
+    name: "KC09 (Airport)"
+    lat: 41.425
+    lon: -88.419
+  - id: loc_kc20
+    name: "KC20 (Airport)"
+    lat: 41.952
+    lon: -86.368
+  - id: loc_kc65
+    name: "KC65 (Airport)"
+    lat: 41.365
+    lon: -86.3
+  - id: loc_kc81
+    name: "KC81 (Airport)"
+    lat: 42.325
+    lon: -88.074
+  - id: loc_kc91
+    name: "KC91 (Airport)"
+    lat: 41.993
+    lon: -86.128
+  - id: loc_kdpa
+    name: "KDPA (Airport)"
+    lat: 41.908
+    lon: -88.249
+  - id: loc_kekm
+    name: "KEKM (Airport)"
+    lat: 41.719
+    lon: -86.003
+  - id: loc_kgsh
+    name: "KGSH (Airport)"
+    lat: 41.526
+    lon: -85.793
+  - id: loc_kgyy
+    name: "KGYY (Airport)"
+    lat: 41.616
+    lon: -87.413
+  - id: loc_kigq
+    name: "KIGQ (Airport)"
+    lat: 41.535
+    lon: -87.53
+  - id: loc_kikk
+    name: "KIKK (Airport)"
+    lat: 41.071
+    lon: -87.846
+  - id: loc_kjot
+    name: "KJOT (Airport)"
+    lat: 41.518
+    lon: -88.175
+  - id: loc_klot
+    name: "KLOT (Airport)"
+    lat: 41.607
+    lon: -88.096
+  - id: loc_klwa
+    name: "KLWA (Airport)"
+    lat: 42.351
+    lon: -86.256
+  - id: loc_kmdw
+    name: "KMDW (Airport)"
+    lat: 41.786
+    lon: -87.752
+  - id: loc_kmgc
+    name: "KMGC (Airport)"
+    lat: 41.703
+    lon: -86.821
+  - id: loc_kord
+    name: "KORD (Airport)"
+    lat: 41.979
+    lon: -87.905
+  - id: loc_koxi
+    name: "KOXI (Airport)"
+    lat: 41.33
+    lon: -86.662
+  - id: loc_kpnt
+    name: "KPNT (Airport)"
+    lat: 40.924
+    lon: -88.624
+  - id: loc_kppo
+    name: "KPPO (Airport)"
+    lat: 41.572
+    lon: -86.734
+  - id: loc_kpwk
+    name: "KPWK (Airport)"
+    lat: 42.114
+    lon: -87.901
+  - id: loc_krcr
+    name: "KRCR (Airport)"
+    lat: 41.066
+    lon: -86.182
+  - id: loc_krwn
+    name: "KRWN (Airport)"
+    lat: 41.092
+    lon: -86.613
+  - id: loc_krzl
+    name: "KRZL (Airport)"
+    lat: 40.948
+    lon: -87.183
+  - id: loc_ksbn
+    name: "KSBN (Airport)"
+    lat: 41.709
+    lon: -86.317
+  - id: loc_kugn
+    name: "KUGN (Airport)"
+    lat: 42.422
+    lon: -87.868
+  - id: loc_kvpz
+    name: "KVPZ (Airport)"
+    lat: 41.454
+    lon: -87.007
+  - id: loc_ll40
+    name: "LL40 (Airport)"
+    lat: 41.478
+    lon: -87.841
+
+stations:
+  - id: stn_7in8
+    call_sign: "7IN8"
+    organization_id: org_chi_airports
+    location_id: loc_7in8
+    service: "aviation"
+  - id: stn_82is
+    call_sign: "82IS"
+    organization_id: org_chi_airports
+    location_id: loc_82is
+    service: "aviation"
+  - id: stn_dtg
+    call_sign: "DTG"
+    organization_id: org_chi_airports
+    location_id: loc_dtg
+    service: "aviation"
+  - id: stn_k05c
+    call_sign: "K05C"
+    organization_id: org_chi_airports
+    location_id: loc_k05c
+    service: "aviation"
+  - id: stn_k06c
+    call_sign: "K06C"
+    organization_id: org_chi_airports
+    location_id: loc_k06c
+    service: "aviation"
+  - id: stn_k0c0
+    call_sign: "K0C0"
+    organization_id: org_chi_airports
+    location_id: loc_k0c0
+    service: "aviation"
+  - id: stn_k10c
+    call_sign: "K10C"
+    organization_id: org_chi_airports
+    location_id: loc_k10c
+    service: "aviation"
+  - id: stn_k1c2
+    call_sign: "K1C2"
+    organization_id: org_chi_airports
+    location_id: loc_k1c2
+    service: "aviation"
+  - id: stn_k1c5
+    call_sign: "K1C5"
+    organization_id: org_chi_airports
+    location_id: loc_k1c5
+    service: "aviation"
+  - id: stn_k3ck
+    call_sign: "K3CK"
+    organization_id: org_chi_airports
+    location_id: loc_k3ck
+    service: "aviation"
+  - id: stn_k3ho
+    call_sign: "K3HO"
+    organization_id: org_chi_airports
+    location_id: loc_k3ho
+    service: "aviation"
+  - id: stn_k3tr
+    call_sign: "K3TR"
+    organization_id: org_chi_airports
+    location_id: loc_k3tr
+    service: "aviation"
+  - id: stn_karr
+    call_sign: "KARR"
+    organization_id: org_chi_airports
+    location_id: loc_karr
+    service: "aviation"
+  - id: stn_kasw
+    call_sign: "KASW"
+    organization_id: org_chi_airports
+    location_id: loc_kasw
+    service: "aviation"
+  - id: stn_kbeh
+    call_sign: "KBEH"
+    organization_id: org_chi_airports
+    location_id: loc_kbeh
+    service: "aviation"
+  - id: stn_kc03
+    call_sign: "KC03"
+    organization_id: org_chi_airports
+    location_id: loc_kc03
+    service: "aviation"
+  - id: stn_kc09
+    call_sign: "KC09"
+    organization_id: org_chi_airports
+    location_id: loc_kc09
+    service: "aviation"
+  - id: stn_kc20
+    call_sign: "KC20"
+    organization_id: org_chi_airports
+    location_id: loc_kc20
+    service: "aviation"
+  - id: stn_kc65
+    call_sign: "KC65"
+    organization_id: org_chi_airports
+    location_id: loc_kc65
+    service: "aviation"
+  - id: stn_kc81
+    call_sign: "KC81"
+    organization_id: org_chi_airports
+    location_id: loc_kc81
+    service: "aviation"
+  - id: stn_kc91
+    call_sign: "KC91"
+    organization_id: org_chi_airports
+    location_id: loc_kc91
+    service: "aviation"
+  - id: stn_kdpa
+    call_sign: "KDPA"
+    organization_id: org_chi_airports
+    location_id: loc_kdpa
+    service: "aviation"
+  - id: stn_kekm
+    call_sign: "KEKM"
+    organization_id: org_chi_airports
+    location_id: loc_kekm
+    service: "aviation"
+  - id: stn_kgsh
+    call_sign: "KGSH"
+    organization_id: org_chi_airports
+    location_id: loc_kgsh
+    service: "aviation"
+  - id: stn_kgyy
+    call_sign: "KGYY"
+    organization_id: org_chi_airports
+    location_id: loc_kgyy
+    service: "aviation"
+  - id: stn_kigq
+    call_sign: "KIGQ"
+    organization_id: org_chi_airports
+    location_id: loc_kigq
+    service: "aviation"
+  - id: stn_kikk
+    call_sign: "KIKK"
+    organization_id: org_chi_airports
+    location_id: loc_kikk
+    service: "aviation"
+  - id: stn_kjot
+    call_sign: "KJOT"
+    organization_id: org_chi_airports
+    location_id: loc_kjot
+    service: "aviation"
+  - id: stn_klot
+    call_sign: "KLOT"
+    organization_id: org_chi_airports
+    location_id: loc_klot
+    service: "aviation"
+  - id: stn_klwa
+    call_sign: "KLWA"
+    organization_id: org_chi_airports
+    location_id: loc_klwa
+    service: "aviation"
+  - id: stn_kmdw
+    call_sign: "KMDW"
+    organization_id: org_chi_airports
+    location_id: loc_kmdw
+    service: "aviation"
+  - id: stn_kmgc
+    call_sign: "KMGC"
+    organization_id: org_chi_airports
+    location_id: loc_kmgc
+    service: "aviation"
+  - id: stn_kord
+    call_sign: "KORD"
+    organization_id: org_chi_airports
+    location_id: loc_kord
+    service: "aviation"
+  - id: stn_koxi
+    call_sign: "KOXI"
+    organization_id: org_chi_airports
+    location_id: loc_koxi
+    service: "aviation"
+  - id: stn_kpnt
+    call_sign: "KPNT"
+    organization_id: org_chi_airports
+    location_id: loc_kpnt
+    service: "aviation"
+  - id: stn_kppo
+    call_sign: "KPPO"
+    organization_id: org_chi_airports
+    location_id: loc_kppo
+    service: "aviation"
+  - id: stn_kpwk
+    call_sign: "KPWK"
+    organization_id: org_chi_airports
+    location_id: loc_kpwk
+    service: "aviation"
+  - id: stn_krcr
+    call_sign: "KRCR"
+    organization_id: org_chi_airports
+    location_id: loc_krcr
+    service: "aviation"
+  - id: stn_krwn
+    call_sign: "KRWN"
+    organization_id: org_chi_airports
+    location_id: loc_krwn
+    service: "aviation"
+  - id: stn_krzl
+    call_sign: "KRZL"
+    organization_id: org_chi_airports
+    location_id: loc_krzl
+    service: "aviation"
+  - id: stn_ksbn
+    call_sign: "KSBN"
+    organization_id: org_chi_airports
+    location_id: loc_ksbn
+    service: "aviation"
+  - id: stn_kugn
+    call_sign: "KUGN"
+    organization_id: org_chi_airports
+    location_id: loc_kugn
+    service: "aviation"
+  - id: stn_kvpz
+    call_sign: "KVPZ"
+    organization_id: org_chi_airports
+    location_id: loc_kvpz
+    service: "aviation"
+  - id: stn_ll40
+    call_sign: "LL40"
+    organization_id: org_chi_airports
+    location_id: loc_ll40
+    service: "aviation"
+
+antennas:
+  - id: ant_7in8
+    station_id: stn_7in8
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_82is
+    station_id: stn_82is
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_dtg
+    station_id: stn_dtg
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_k05c
+    station_id: stn_k05c
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_k06c
+    station_id: stn_k06c
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_k0c0
+    station_id: stn_k0c0
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_k10c
+    station_id: stn_k10c
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_k1c2
+    station_id: stn_k1c2
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_k1c5
+    station_id: stn_k1c5
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_k3ck
+    station_id: stn_k3ck
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_k3ho
+    station_id: stn_k3ho
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_k3tr
+    station_id: stn_k3tr
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_karr
+    station_id: stn_karr
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kasw
+    station_id: stn_kasw
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kbeh
+    station_id: stn_kbeh
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kc03
+    station_id: stn_kc03
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kc09
+    station_id: stn_kc09
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kc20
+    station_id: stn_kc20
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kc65
+    station_id: stn_kc65
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kc81
+    station_id: stn_kc81
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kc91
+    station_id: stn_kc91
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kdpa
+    station_id: stn_kdpa
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kekm
+    station_id: stn_kekm
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kgsh
+    station_id: stn_kgsh
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kgyy
+    station_id: stn_kgyy
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kigq
+    station_id: stn_kigq
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kikk
+    station_id: stn_kikk
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kjot
+    station_id: stn_kjot
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_klot
+    station_id: stn_klot
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_klwa
+    station_id: stn_klwa
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kmdw
+    station_id: stn_kmdw
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kmgc
+    station_id: stn_kmgc
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kord
+    station_id: stn_kord
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_koxi
+    station_id: stn_koxi
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kpnt
+    station_id: stn_kpnt
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kppo
+    station_id: stn_kppo
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kpwk
+    station_id: stn_kpwk
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_krcr
+    station_id: stn_krcr
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_krwn
+    station_id: stn_krwn
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_krzl
+    station_id: stn_krzl
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_ksbn
+    station_id: stn_ksbn
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kugn
+    station_id: stn_kugn
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_kvpz
+    station_id: stn_kvpz
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_ll40
+    station_id: stn_ll40
+    name: "Airport ground station (generic)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+
+rf_chains:
+  - {
+      id: chain_7in8_122900_ctaf,
+      station_id: stn_7in8,
+      antenna_id: ant_7in8,
+      rx: { freq_mhz: 122.900 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_82is_122900_unicom,
+      station_id: stn_82is,
+      antenna_id: ant_82is,
+      rx: { freq_mhz: 122.900 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_dtg_122800_ctaf,
+      station_id: stn_dtg,
+      antenna_id: ant_dtg,
+      rx: { freq_mhz: 122.800 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_k05c_123000_unicom,
+      station_id: stn_k05c,
+      antenna_id: ant_k05c,
+      rx: { freq_mhz: 123.000 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_k05c_123650_radio,
+      station_id: stn_k05c,
+      antenna_id: ant_k05c,
+      rx: { freq_mhz: 123.650 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_k05c_133100_ad,
+      station_id: stn_k05c,
+      antenna_id: ant_k05c,
+      rx: { freq_mhz: 133.100 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_k06c_123000_unicom,
+      station_id: stn_k06c,
+      antenna_id: ant_k06c,
+      rx: { freq_mhz: 123.000 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_k0c0_122900_ctaf,
+      station_id: stn_k0c0,
+      antenna_id: ant_k0c0,
+      rx: { freq_mhz: 122.900 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_k10c_120550_ad,
+      station_id: stn_k10c,
+      antenna_id: ant_k10c,
+      rx: { freq_mhz: 120.550 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_k10c_122800_unicom,
+      station_id: stn_k10c,
+      antenna_id: ant_k10c,
+      rx: { freq_mhz: 122.800 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_k1c2_118400_acc,
+      station_id: stn_k1c2,
+      antenna_id: ant_k1c2,
+      rx: { freq_mhz: 118.400 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_k1c2_122500_radio,
+      station_id: stn_k1c2,
+      antenna_id: ant_k1c2,
+      rx: { freq_mhz: 122.500 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_k1c2_123000_unicom,
+      station_id: stn_k1c2,
+      antenna_id: ant_k1c2,
+      rx: { freq_mhz: 123.000 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_k1c5_119350_ad,
+      station_id: stn_k1c5,
+      antenna_id: ant_k1c5,
+      rx: { freq_mhz: 119.350 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_k1c5_122900_ctaf,
+      station_id: stn_k1c5,
+      antenna_id: ant_k1c5,
+      rx: { freq_mhz: 122.900 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_k3ck_120550_ad,
+      station_id: stn_k3ck,
+      antenna_id: ant_k3ck,
+      rx: { freq_mhz: 120.550 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_k3ck_123050_unicom,
+      station_id: stn_k3ck,
+      antenna_id: ant_k3ck,
+      rx: { freq_mhz: 123.050 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_k3ho_122800_unicom,
+      station_id: stn_k3ho,
+      antenna_id: ant_k3ho,
+      rx: { freq_mhz: 122.800 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_k3ho_123650_radio,
+      station_id: stn_k3ho,
+      antenna_id: ant_k3ho,
+      rx: { freq_mhz: 123.650 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_k3tr_118550_ad,
+      station_id: stn_k3tr,
+      antenna_id: ant_k3tr,
+      rx: { freq_mhz: 118.550 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_k3tr_122800_unicom,
+      station_id: stn_k3tr,
+      antenna_id: ant_k3tr,
+      rx: { freq_mhz: 122.800 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_karr_120600_ctaf,
+      station_id: stn_karr,
+      antenna_id: ant_karr,
+      rx: { freq_mhz: 120.600 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_karr_121700_cld,
+      station_id: stn_karr,
+      antenna_id: ant_karr,
+      rx: { freq_mhz: 121.700 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_karr_122500_radio,
+      station_id: stn_karr,
+      antenna_id: ant_karr,
+      rx: { freq_mhz: 122.500 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_karr_122950_unicom,
+      station_id: stn_karr,
+      antenna_id: ant_karr,
+      rx: { freq_mhz: 122.950 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_karr_125850_asos,
+      station_id: stn_karr,
+      antenna_id: ant_karr,
+      rx: { freq_mhz: 125.850 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_karr_133500_ad,
+      station_id: stn_karr,
+      antenna_id: ant_karr,
+      rx: { freq_mhz: 133.500 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kasw_121125_asow,
+      station_id: stn_kasw,
+      antenna_id: ant_kasw,
+      rx: { freq_mhz: 121.125 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kasw_122700_unicom,
+      station_id: stn_kasw,
+      antenna_id: ant_kasw,
+      rx: { freq_mhz: 122.700 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kasw_127200_ad,
+      station_id: stn_kasw,
+      antenna_id: ant_kasw,
+      rx: { freq_mhz: 127.200 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kasw_134050_cld,
+      station_id: stn_kasw,
+      antenna_id: ant_kasw,
+      rx: { freq_mhz: 134.050 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kbeh_118550_ad,
+      station_id: stn_kbeh,
+      antenna_id: ant_kbeh,
+      rx: { freq_mhz: 118.550 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kbeh_119700_cld,
+      station_id: stn_kbeh,
+      antenna_id: ant_kbeh,
+      rx: { freq_mhz: 119.700 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kbeh_121550_asos,
+      station_id: stn_kbeh,
+      antenna_id: ant_kbeh,
+      rx: { freq_mhz: 121.550 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kbeh_123000_unicom,
+      station_id: stn_kbeh,
+      antenna_id: ant_kbeh,
+      rx: { freq_mhz: 123.000 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kc03_122800_unicom,
+      station_id: stn_kc03,
+      antenna_id: ant_kc03,
+      rx: { freq_mhz: 122.800 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kc03_132050_ad,
+      station_id: stn_kc03,
+      antenna_id: ant_kc03,
+      rx: { freq_mhz: 132.050 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kc09_118175_asow,
+      station_id: stn_kc09,
+      antenna_id: ant_kc09,
+      rx: { freq_mhz: 118.175 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kc09_119350_ad,
+      station_id: stn_kc09,
+      antenna_id: ant_kc09,
+      rx: { freq_mhz: 119.350 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kc09_122500_radio,
+      station_id: stn_kc09,
+      antenna_id: ant_kc09,
+      rx: { freq_mhz: 122.500 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kc09_122800_unicom,
+      station_id: stn_kc09,
+      antenna_id: ant_kc09,
+      rx: { freq_mhz: 122.800 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kc20_118550_ad,
+      station_id: stn_kc20,
+      antenna_id: ant_kc20,
+      rx: { freq_mhz: 118.550 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kc20_121625_rco,
+      station_id: stn_kc20,
+      antenna_id: ant_kc20,
+      rx: { freq_mhz: 121.625 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kc20_122700_unicom,
+      station_id: stn_kc20,
+      antenna_id: ant_kc20,
+      rx: { freq_mhz: 122.700 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kc20_123500_misc,
+      station_id: stn_kc20,
+      antenna_id: ant_kc20,
+      rx: { freq_mhz: 123.500 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kc65_122800_unicom,
+      station_id: stn_kc65,
+      antenna_id: ant_kc65,
+      rx: { freq_mhz: 122.800 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kc65_132050_ad,
+      station_id: stn_kc65,
+      antenna_id: ant_kc65,
+      rx: { freq_mhz: 132.050 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kc81_120550_ad,
+      station_id: stn_kc81,
+      antenna_id: ant_kc81,
+      rx: { freq_mhz: 120.550 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kc81_122700_unicom,
+      station_id: stn_kc81,
+      antenna_id: ant_kc81,
+      rx: { freq_mhz: 122.700 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kc91_118550_ad,
+      station_id: stn_kc91,
+      antenna_id: ant_kc91,
+      rx: { freq_mhz: 118.550 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kc91_122800_unicom,
+      station_id: stn_kc91,
+      antenna_id: ant_kc91,
+      rx: { freq_mhz: 122.800 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kdpa_119750_cld,
+      station_id: stn_kdpa,
+      antenna_id: ant_kdpa,
+      rx: { freq_mhz: 119.750 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kdpa_120900_twr,
+      station_id: stn_kdpa,
+      antenna_id: ant_kdpa,
+      rx: { freq_mhz: 120.900 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kdpa_121800_gnd,
+      station_id: stn_kdpa,
+      antenna_id: ant_kdpa,
+      rx: { freq_mhz: 121.800 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kdpa_122300_radio,
+      station_id: stn_kdpa,
+      antenna_id: ant_kdpa,
+      rx: { freq_mhz: 122.300 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kdpa_122950_unicom,
+      station_id: stn_kdpa,
+      antenna_id: ant_kdpa,
+      rx: { freq_mhz: 122.950 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kdpa_124800_asos,
+      station_id: stn_kdpa,
+      antenna_id: ant_kdpa,
+      rx: { freq_mhz: 124.800 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kdpa_133500_ad,
+      station_id: stn_kdpa,
+      antenna_id: ant_kdpa,
+      rx: { freq_mhz: 133.500 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kekm_118550_ad,
+      station_id: stn_kekm,
+      antenna_id: ant_kekm,
+      rx: { freq_mhz: 118.550 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kekm_119500_ctaf,
+      station_id: stn_kekm,
+      antenna_id: ant_kekm,
+      rx: { freq_mhz: 119.500 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kekm_121800_cld,
+      station_id: stn_kekm,
+      antenna_id: ant_kekm,
+      rx: { freq_mhz: 121.800 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kekm_122950_unicom,
+      station_id: stn_kekm,
+      antenna_id: ant_kekm,
+      rx: { freq_mhz: 122.950 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kekm_124475_asow,
+      station_id: stn_kekm,
+      antenna_id: ant_kekm,
+      rx: { freq_mhz: 124.475 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kgsh_123050_unicom,
+      station_id: stn_kgsh,
+      antenna_id: ant_kgsh,
+      rx: { freq_mhz: 123.050 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kgsh_125250_cld,
+      station_id: stn_kgsh,
+      antenna_id: ant_kgsh,
+      rx: { freq_mhz: 125.250 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kgsh_126475_asos,
+      station_id: stn_kgsh,
+      antenna_id: ant_kgsh,
+      rx: { freq_mhz: 126.475 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kgsh_132050_ad,
+      station_id: stn_kgsh,
+      antenna_id: ant_kgsh,
+      rx: { freq_mhz: 132.050 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kgyy_120625_atis,
+      station_id: stn_kgyy,
+      antenna_id: ant_kgyy,
+      rx: { freq_mhz: 120.625 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kgyy_121900_gnd,
+      station_id: stn_kgyy,
+      antenna_id: ant_kgyy,
+      rx: { freq_mhz: 121.900 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kgyy_123650_radio,
+      station_id: stn_kgyy,
+      antenna_id: ant_kgyy,
+      rx: { freq_mhz: 123.650 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kgyy_125600_ctaf,
+      station_id: stn_kgyy,
+      antenna_id: ant_kgyy,
+      rx: { freq_mhz: 125.600 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kgyy_133100_ad,
+      station_id: stn_kgyy,
+      antenna_id: ant_kgyy,
+      rx: { freq_mhz: 133.100 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kigq_118400_ad,
+      station_id: stn_kigq,
+      antenna_id: ant_kigq,
+      rx: { freq_mhz: 118.400 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kigq_119275_asow,
+      station_id: stn_kigq,
+      antenna_id: ant_kigq,
+      rx: { freq_mhz: 119.275 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kigq_122100_fss,
+      station_id: stn_kigq,
+      antenna_id: ant_kigq,
+      rx: { freq_mhz: 122.100 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kigq_122700_unicom,
+      station_id: stn_kigq,
+      antenna_id: ant_kigq,
+      rx: { freq_mhz: 122.700 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kikk_122200_fss,
+      station_id: stn_kikk,
+      antenna_id: ant_kikk,
+      rx: { freq_mhz: 122.200 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kikk_123000_unicom,
+      station_id: stn_kikk,
+      antenna_id: ant_kikk,
+      rx: { freq_mhz: 123.000 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kikk_132500_acc,
+      station_id: stn_kikk,
+      antenna_id: ant_kikk,
+      rx: { freq_mhz: 132.500 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kjot_119350_ad,
+      station_id: stn_kjot,
+      antenna_id: ant_kjot,
+      rx: { freq_mhz: 119.350 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kjot_119975_asow,
+      station_id: stn_kjot,
+      antenna_id: ant_kjot,
+      rx: { freq_mhz: 119.975 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kjot_122500_radio,
+      station_id: stn_kjot,
+      antenna_id: ant_kjot,
+      rx: { freq_mhz: 122.500 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kjot_122700_unicom,
+      station_id: stn_kjot,
+      antenna_id: ant_kjot,
+      rx: { freq_mhz: 122.700 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_klot_118525_asow,
+      station_id: stn_klot,
+      antenna_id: ant_klot,
+      rx: { freq_mhz: 118.525 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_klot_119350_ad,
+      station_id: stn_klot,
+      antenna_id: ant_klot,
+      rx: { freq_mhz: 119.350 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_klot_122500_fss,
+      station_id: stn_klot,
+      antenna_id: ant_klot,
+      rx: { freq_mhz: 122.500 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_klot_122800_unicom,
+      station_id: stn_klot,
+      antenna_id: ant_klot,
+      rx: { freq_mhz: 122.800 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_klwa_118025_asow,
+      station_id: stn_klwa,
+      antenna_id: ant_klwa,
+      rx: { freq_mhz: 118.025 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_klwa_122800_unicom,
+      station_id: stn_klwa,
+      antenna_id: ant_klwa,
+      rx: { freq_mhz: 122.800 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_klwa_128500_acc,
+      station_id: stn_klwa,
+      antenna_id: ant_klwa,
+      rx: { freq_mhz: 128.500 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kmdw_118400_ad,
+      station_id: stn_kmdw,
+      antenna_id: ant_kmdw,
+      rx: { freq_mhz: 118.400 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kmdw_118700_twr,
+      station_id: stn_kmdw,
+      antenna_id: ant_kmdw,
+      rx: { freq_mhz: 118.700 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kmdw_121650_gnd,
+      station_id: stn_kmdw,
+      antenna_id: ant_kmdw,
+      rx: { freq_mhz: 121.650 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kmdw_121850_cld,
+      station_id: stn_kmdw,
+      antenna_id: ant_kmdw,
+      rx: { freq_mhz: 121.850 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kmdw_122950_unicom,
+      station_id: stn_kmdw,
+      antenna_id: ant_kmdw,
+      rx: { freq_mhz: 122.950 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kmdw_132750_asos,
+      station_id: stn_kmdw,
+      antenna_id: ant_kmdw,
+      rx: { freq_mhz: 132.750 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kmgc_118550_ad,
+      station_id: stn_kmgc,
+      antenna_id: ant_kmgc,
+      rx: { freq_mhz: 118.550 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kmgc_122700_unicom,
+      station_id: stn_kmgc,
+      antenna_id: ant_kmgc,
+      rx: { freq_mhz: 122.700 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kmgc_134800_cld,
+      station_id: stn_kmgc,
+      antenna_id: ant_kmgc,
+      rx: { freq_mhz: 134.800 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kord_119000_app,
+      station_id: stn_kord,
+      antenna_id: ant_kord,
+      rx: { freq_mhz: 119.000 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kord_121600_cld,
+      station_id: stn_kord,
+      antenna_id: ant_kord,
+      rx: { freq_mhz: 121.600 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kord_121675_gnd,
+      station_id: stn_kord,
+      antenna_id: ant_kord,
+      rx: { freq_mhz: 121.675 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kord_122950_unicom,
+      station_id: stn_kord,
+      antenna_id: ant_kord,
+      rx: { freq_mhz: 122.950 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kord_125000_dep,
+      station_id: stn_kord,
+      antenna_id: ant_kord,
+      rx: { freq_mhz: 125.000 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kord_126900_twr,
+      station_id: stn_kord,
+      antenna_id: ant_kord,
+      rx: { freq_mhz: 126.900 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kord_135400_asos,
+      station_id: stn_kord,
+      antenna_id: ant_kord,
+      rx: { freq_mhz: 135.400 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_koxi_122800_unicom,
+      station_id: stn_koxi,
+      antenna_id: ant_koxi,
+      rx: { freq_mhz: 122.800 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_koxi_132050_ad,
+      station_id: stn_koxi,
+      antenna_id: ant_koxi,
+      rx: { freq_mhz: 132.050 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kpnt_119675_asow,
+      station_id: stn_kpnt,
+      antenna_id: ant_kpnt,
+      rx: { freq_mhz: 119.675 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kpnt_122800_unicom,
+      station_id: stn_kpnt,
+      antenna_id: ant_kpnt,
+      rx: { freq_mhz: 122.800 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kpnt_124550_acc,
+      station_id: stn_kpnt,
+      antenna_id: ant_kpnt,
+      rx: { freq_mhz: 124.550 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kppo_119825_asow,
+      station_id: stn_kppo,
+      antenna_id: ant_kppo,
+      rx: { freq_mhz: 119.825 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kppo_123000_unicom,
+      station_id: stn_kppo,
+      antenna_id: ant_kppo,
+      rx: { freq_mhz: 123.000 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kppo_132050_ad,
+      station_id: stn_kppo,
+      antenna_id: ant_kppo,
+      rx: { freq_mhz: 132.050 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kpwk_119900_ctaf,
+      station_id: stn_kpwk,
+      antenna_id: ant_kpwk,
+      rx: { freq_mhz: 119.900 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kpwk_120550_ad,
+      station_id: stn_kpwk,
+      antenna_id: ant_kpwk,
+      rx: { freq_mhz: 120.550 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kpwk_121700_gnd,
+      station_id: stn_kpwk,
+      antenna_id: ant_kpwk,
+      rx: { freq_mhz: 121.700 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kpwk_122950_unicom,
+      station_id: stn_kpwk,
+      antenna_id: ant_kpwk,
+      rx: { freq_mhz: 122.950 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kpwk_124200_atis,
+      station_id: stn_kpwk,
+      antenna_id: ant_kpwk,
+      rx: { freq_mhz: 124.200 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kpwk_124700_cld,
+      station_id: stn_kpwk,
+      antenna_id: ant_kpwk,
+      rx: { freq_mhz: 124.700 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_krcr_118775_asow,
+      station_id: stn_krcr,
+      antenna_id: ant_krcr,
+      rx: { freq_mhz: 118.775 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_krcr_122700_unicom,
+      station_id: stn_krcr,
+      antenna_id: ant_krcr,
+      rx: { freq_mhz: 122.700 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_krcr_132050_ad,
+      station_id: stn_krcr,
+      antenna_id: ant_krcr,
+      rx: { freq_mhz: 132.050 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_krwn_122800_unicom,
+      station_id: stn_krwn,
+      antenna_id: ant_krwn,
+      rx: { freq_mhz: 122.800 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_krwn_132050_ad,
+      station_id: stn_krwn,
+      antenna_id: ant_krwn,
+      rx: { freq_mhz: 132.050 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_krzl_122800_unicom,
+      station_id: stn_krzl,
+      antenna_id: ant_krzl,
+      rx: { freq_mhz: 122.800 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_krzl_132950_acc,
+      station_id: stn_krzl,
+      antenna_id: ant_krzl,
+      rx: { freq_mhz: 132.950 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_ksbn_118150_atis,
+      station_id: stn_ksbn,
+      antenna_id: ant_ksbn,
+      rx: { freq_mhz: 118.150 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_ksbn_118550_ad,
+      station_id: stn_ksbn,
+      antenna_id: ant_ksbn,
+      rx: { freq_mhz: 118.550 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_ksbn_118900_ctaf,
+      station_id: stn_ksbn,
+      antenna_id: ant_ksbn,
+      rx: { freq_mhz: 118.900 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_ksbn_121700_gnd,
+      station_id: stn_ksbn,
+      antenna_id: ant_ksbn,
+      rx: { freq_mhz: 121.700 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_ksbn_121900_cld,
+      station_id: stn_ksbn,
+      antenna_id: ant_ksbn,
+      rx: { freq_mhz: 121.900 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_ksbn_122600_radio,
+      station_id: stn_ksbn,
+      antenna_id: ant_ksbn,
+      rx: { freq_mhz: 122.600 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_ksbn_122950_unicom,
+      station_id: stn_ksbn,
+      antenna_id: ant_ksbn,
+      rx: { freq_mhz: 122.950 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kugn_120050_ctaf,
+      station_id: stn_kugn,
+      antenna_id: ant_kugn,
+      rx: { freq_mhz: 120.050 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kugn_120550_ad,
+      station_id: stn_kugn,
+      antenna_id: ant_kugn,
+      rx: { freq_mhz: 120.550 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kugn_121650_gnd,
+      station_id: stn_kugn,
+      antenna_id: ant_kugn,
+      rx: { freq_mhz: 121.650 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kugn_122550_radio,
+      station_id: stn_kugn,
+      antenna_id: ant_kugn,
+      rx: { freq_mhz: 122.550 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kugn_122950_unicom,
+      station_id: stn_kugn,
+      antenna_id: ant_kugn,
+      rx: { freq_mhz: 122.950 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kugn_132400_atis,
+      station_id: stn_kugn,
+      antenna_id: ant_kugn,
+      rx: { freq_mhz: 132.400 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kvpz_122725_ctaf,
+      station_id: stn_kvpz,
+      antenna_id: ant_kvpz,
+      rx: { freq_mhz: 122.725 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kvpz_123650_radio,
+      station_id: stn_kvpz,
+      antenna_id: ant_kvpz,
+      rx: { freq_mhz: 123.650 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kvpz_125875_asos,
+      station_id: stn_kvpz,
+      antenna_id: ant_kvpz,
+      rx: { freq_mhz: 125.875 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kvpz_132050_ad,
+      station_id: stn_kvpz,
+      antenna_id: ant_kvpz,
+      rx: { freq_mhz: 132.050 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_kvpz_135200_cld,
+      station_id: stn_kvpz,
+      antenna_id: ant_kvpz,
+      rx: { freq_mhz: 135.200 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_ll40_122100_fss,
+      station_id: stn_ll40,
+      antenna_id: ant_ll40,
+      rx: { freq_mhz: 122.100 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+  - {
+      id: chain_ll40_133100_ad,
+      station_id: stn_ll40,
+      antenna_id: ant_ll40,
+      rx: { freq_mhz: 133.100 },
+      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      mode: { type: "AM" },
+    }
+
+assignments:
+  - id: asg_7in8_122900_ctaf
+    rf_chain_id: chain_7in8_122900_ctaf
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "7IN8 CTAF — Common Traffic Advisory Frequency."
+  - id: asg_82is_122900_unicom
+    rf_chain_id: chain_82is_122900_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "82IS UNICOM — UNICOM advisory."
+  - id: asg_dtg_122800_ctaf
+    rf_chain_id: chain_dtg_122800_ctaf
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "DTG CTAF — Common Traffic Advisory Frequency."
+  - id: asg_k05c_123000_unicom
+    rf_chain_id: chain_k05c_123000_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "K05C UNICOM — UNICOM advisory."
+  - id: asg_k05c_123650_radio
+    rf_chain_id: chain_k05c_123650_radio
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "K05C RADIO — Radio."
+  - id: asg_k05c_133100_ad
+    rf_chain_id: chain_k05c_133100_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "K05C A/D — Arrival/Departure."
+  - id: asg_k06c_123000_unicom
+    rf_chain_id: chain_k06c_123000_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "K06C UNICOM — UNICOM advisory."
+  - id: asg_k0c0_122900_ctaf
+    rf_chain_id: chain_k0c0_122900_ctaf
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "K0C0 CTAF — Common Traffic Advisory Frequency."
+  - id: asg_k10c_120550_ad
+    rf_chain_id: chain_k10c_120550_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "K10C A/D — Arrival/Departure."
+  - id: asg_k10c_122800_unicom
+    rf_chain_id: chain_k10c_122800_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "K10C UNICOM — UNICOM advisory."
+  - id: asg_k1c2_118400_acc
+    rf_chain_id: chain_k1c2_118400_acc
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "K1C2 ACC — Area Control Center."
+  - id: asg_k1c2_122500_radio
+    rf_chain_id: chain_k1c2_122500_radio
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "K1C2 RADIO — Radio."
+  - id: asg_k1c2_123000_unicom
+    rf_chain_id: chain_k1c2_123000_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "K1C2 UNICOM — UNICOM advisory."
+  - id: asg_k1c5_119350_ad
+    rf_chain_id: chain_k1c5_119350_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "K1C5 A/D — Arrival/Departure."
+  - id: asg_k1c5_122900_ctaf
+    rf_chain_id: chain_k1c5_122900_ctaf
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "K1C5 CTAF — Common Traffic Advisory Frequency."
+  - id: asg_k3ck_120550_ad
+    rf_chain_id: chain_k3ck_120550_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "K3CK A/D — Arrival/Departure."
+  - id: asg_k3ck_123050_unicom
+    rf_chain_id: chain_k3ck_123050_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "K3CK UNICOM — UNICOM advisory."
+  - id: asg_k3ho_122800_unicom
+    rf_chain_id: chain_k3ho_122800_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "K3HO UNICOM — UNICOM advisory."
+  - id: asg_k3ho_123650_radio
+    rf_chain_id: chain_k3ho_123650_radio
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "K3HO RADIO — Radio."
+  - id: asg_k3tr_118550_ad
+    rf_chain_id: chain_k3tr_118550_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "K3TR A/D — Arrival/Departure."
+  - id: asg_k3tr_122800_unicom
+    rf_chain_id: chain_k3tr_122800_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "K3TR UNICOM — UNICOM advisory."
+  - id: asg_karr_120600_ctaf
+    rf_chain_id: chain_karr_120600_ctaf
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KARR CTAF — Common Traffic Advisory Frequency."
+  - id: asg_karr_121700_cld
+    rf_chain_id: chain_karr_121700_cld
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KARR CLD — Clearance Delivery."
+  - id: asg_karr_122500_radio
+    rf_chain_id: chain_karr_122500_radio
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KARR RADIO — Radio."
+  - id: asg_karr_122950_unicom
+    rf_chain_id: chain_karr_122950_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KARR UNICOM — UNICOM advisory."
+  - id: asg_karr_125850_asos
+    rf_chain_id: chain_karr_125850_asos
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KARR ASOS — Automated Surface Observing System."
+  - id: asg_karr_133500_ad
+    rf_chain_id: chain_karr_133500_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KARR A/D — Arrival/Departure."
+  - id: asg_kasw_121125_asow
+    rf_chain_id: chain_kasw_121125_asow
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KASW ASOW — Automated Weather Observing System."
+  - id: asg_kasw_122700_unicom
+    rf_chain_id: chain_kasw_122700_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KASW UNICOM — UNICOM advisory."
+  - id: asg_kasw_127200_ad
+    rf_chain_id: chain_kasw_127200_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KASW A/D — Arrival/Departure."
+  - id: asg_kasw_134050_cld
+    rf_chain_id: chain_kasw_134050_cld
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KASW CLD — Clearance Delivery."
+  - id: asg_kbeh_118550_ad
+    rf_chain_id: chain_kbeh_118550_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KBEH A/D — Arrival/Departure."
+  - id: asg_kbeh_119700_cld
+    rf_chain_id: chain_kbeh_119700_cld
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KBEH CLD — Clearance Delivery."
+  - id: asg_kbeh_121550_asos
+    rf_chain_id: chain_kbeh_121550_asos
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KBEH ASOS — Automated Surface Observing System."
+  - id: asg_kbeh_123000_unicom
+    rf_chain_id: chain_kbeh_123000_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KBEH UNICOM — UNICOM advisory."
+  - id: asg_kc03_122800_unicom
+    rf_chain_id: chain_kc03_122800_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KC03 UNICOM — UNICOM advisory."
+  - id: asg_kc03_132050_ad
+    rf_chain_id: chain_kc03_132050_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KC03 A/D — Arrival/Departure."
+  - id: asg_kc09_118175_asow
+    rf_chain_id: chain_kc09_118175_asow
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KC09 ASOW — Automated Weather Observing System."
+  - id: asg_kc09_119350_ad
+    rf_chain_id: chain_kc09_119350_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KC09 A/D — Arrival/Departure."
+  - id: asg_kc09_122500_radio
+    rf_chain_id: chain_kc09_122500_radio
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KC09 RADIO — Radio."
+  - id: asg_kc09_122800_unicom
+    rf_chain_id: chain_kc09_122800_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KC09 UNICOM — UNICOM advisory."
+  - id: asg_kc20_118550_ad
+    rf_chain_id: chain_kc20_118550_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KC20 A/D — Arrival/Departure."
+  - id: asg_kc20_121625_rco
+    rf_chain_id: chain_kc20_121625_rco
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KC20 RCO — Remote Communications Outlet."
+  - id: asg_kc20_122700_unicom
+    rf_chain_id: chain_kc20_122700_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KC20 UNICOM — UNICOM advisory."
+  - id: asg_kc20_123500_misc
+    rf_chain_id: chain_kc20_123500_misc
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KC20 MISC — Miscellaneous."
+  - id: asg_kc65_122800_unicom
+    rf_chain_id: chain_kc65_122800_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KC65 UNICOM — UNICOM advisory."
+  - id: asg_kc65_132050_ad
+    rf_chain_id: chain_kc65_132050_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KC65 A/D — Arrival/Departure."
+  - id: asg_kc81_120550_ad
+    rf_chain_id: chain_kc81_120550_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KC81 A/D — Arrival/Departure."
+  - id: asg_kc81_122700_unicom
+    rf_chain_id: chain_kc81_122700_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KC81 UNICOM — UNICOM advisory."
+  - id: asg_kc91_118550_ad
+    rf_chain_id: chain_kc91_118550_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KC91 A/D — Arrival/Departure."
+  - id: asg_kc91_122800_unicom
+    rf_chain_id: chain_kc91_122800_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KC91 UNICOM — UNICOM advisory."
+  - id: asg_kdpa_119750_cld
+    rf_chain_id: chain_kdpa_119750_cld
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KDPA CLD — Clearance Delivery."
+  - id: asg_kdpa_120900_twr
+    rf_chain_id: chain_kdpa_120900_twr
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KDPA TWR — Tower."
+  - id: asg_kdpa_121800_gnd
+    rf_chain_id: chain_kdpa_121800_gnd
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KDPA GND — Ground control."
+  - id: asg_kdpa_122300_radio
+    rf_chain_id: chain_kdpa_122300_radio
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KDPA RADIO — Radio."
+  - id: asg_kdpa_122950_unicom
+    rf_chain_id: chain_kdpa_122950_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KDPA UNICOM — UNICOM advisory."
+  - id: asg_kdpa_124800_asos
+    rf_chain_id: chain_kdpa_124800_asos
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KDPA ASOS — Automated Surface Observing System."
+  - id: asg_kdpa_133500_ad
+    rf_chain_id: chain_kdpa_133500_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KDPA A/D — Arrival/Departure."
+  - id: asg_kekm_118550_ad
+    rf_chain_id: chain_kekm_118550_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KEKM A/D — Arrival/Departure."
+  - id: asg_kekm_119500_ctaf
+    rf_chain_id: chain_kekm_119500_ctaf
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KEKM CTAF — Common Traffic Advisory Frequency."
+  - id: asg_kekm_121800_cld
+    rf_chain_id: chain_kekm_121800_cld
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KEKM CLD — Clearance Delivery."
+  - id: asg_kekm_122950_unicom
+    rf_chain_id: chain_kekm_122950_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KEKM UNICOM — UNICOM advisory."
+  - id: asg_kekm_124475_asow
+    rf_chain_id: chain_kekm_124475_asow
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KEKM ASOW — Automated Weather Observing System."
+  - id: asg_kgsh_123050_unicom
+    rf_chain_id: chain_kgsh_123050_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KGSH UNICOM — UNICOM advisory."
+  - id: asg_kgsh_125250_cld
+    rf_chain_id: chain_kgsh_125250_cld
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KGSH CLD — Clearance Delivery."
+  - id: asg_kgsh_126475_asos
+    rf_chain_id: chain_kgsh_126475_asos
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KGSH ASOS — Automated Surface Observing System."
+  - id: asg_kgsh_132050_ad
+    rf_chain_id: chain_kgsh_132050_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KGSH A/D — Arrival/Departure."
+  - id: asg_kgyy_120625_atis
+    rf_chain_id: chain_kgyy_120625_atis
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KGYY ATIS — Automated Terminal Information Service."
+  - id: asg_kgyy_121900_gnd
+    rf_chain_id: chain_kgyy_121900_gnd
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KGYY GND — Ground control."
+  - id: asg_kgyy_123650_radio
+    rf_chain_id: chain_kgyy_123650_radio
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KGYY RADIO — Radio."
+  - id: asg_kgyy_125600_ctaf
+    rf_chain_id: chain_kgyy_125600_ctaf
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KGYY CTAF — Common Traffic Advisory Frequency."
+  - id: asg_kgyy_133100_ad
+    rf_chain_id: chain_kgyy_133100_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KGYY A/D — Arrival/Departure."
+  - id: asg_kigq_118400_ad
+    rf_chain_id: chain_kigq_118400_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KIGQ A/D — Arrival/Departure."
+  - id: asg_kigq_119275_asow
+    rf_chain_id: chain_kigq_119275_asow
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KIGQ ASOW — Automated Weather Observing System."
+  - id: asg_kigq_122100_fss
+    rf_chain_id: chain_kigq_122100_fss
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KIGQ FSS — Flight Service Station."
+  - id: asg_kigq_122700_unicom
+    rf_chain_id: chain_kigq_122700_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KIGQ UNICOM — UNICOM advisory."
+  - id: asg_kikk_122200_fss
+    rf_chain_id: chain_kikk_122200_fss
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KIKK FSS — Flight Service Station."
+  - id: asg_kikk_123000_unicom
+    rf_chain_id: chain_kikk_123000_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KIKK UNICOM — UNICOM advisory."
+  - id: asg_kikk_132500_acc
+    rf_chain_id: chain_kikk_132500_acc
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KIKK ACC — Area Control Center."
+  - id: asg_kjot_119350_ad
+    rf_chain_id: chain_kjot_119350_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KJOT A/D — Arrival/Departure."
+  - id: asg_kjot_119975_asow
+    rf_chain_id: chain_kjot_119975_asow
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KJOT ASOW — Automated Weather Observing System."
+  - id: asg_kjot_122500_radio
+    rf_chain_id: chain_kjot_122500_radio
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KJOT RADIO — Radio."
+  - id: asg_kjot_122700_unicom
+    rf_chain_id: chain_kjot_122700_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KJOT UNICOM — UNICOM advisory."
+  - id: asg_klot_118525_asow
+    rf_chain_id: chain_klot_118525_asow
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KLOT ASOW — Automated Weather Observing System."
+  - id: asg_klot_119350_ad
+    rf_chain_id: chain_klot_119350_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KLOT A/D — Arrival/Departure."
+  - id: asg_klot_122500_fss
+    rf_chain_id: chain_klot_122500_fss
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KLOT FSS — Flight Service Station."
+  - id: asg_klot_122800_unicom
+    rf_chain_id: chain_klot_122800_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KLOT UNICOM — UNICOM advisory."
+  - id: asg_klwa_118025_asow
+    rf_chain_id: chain_klwa_118025_asow
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KLWA ASOW — Automated Weather Observing System."
+  - id: asg_klwa_122800_unicom
+    rf_chain_id: chain_klwa_122800_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KLWA UNICOM — UNICOM advisory."
+  - id: asg_klwa_128500_acc
+    rf_chain_id: chain_klwa_128500_acc
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KLWA ACC — Area Control Center."
+  - id: asg_kmdw_118400_ad
+    rf_chain_id: chain_kmdw_118400_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KMDW A/D — Arrival/Departure."
+  - id: asg_kmdw_118700_twr
+    rf_chain_id: chain_kmdw_118700_twr
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KMDW TWR — Tower."
+  - id: asg_kmdw_121650_gnd
+    rf_chain_id: chain_kmdw_121650_gnd
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KMDW GND — Ground control."
+  - id: asg_kmdw_121850_cld
+    rf_chain_id: chain_kmdw_121850_cld
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KMDW CLD — Clearance Delivery."
+  - id: asg_kmdw_122950_unicom
+    rf_chain_id: chain_kmdw_122950_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KMDW UNICOM — UNICOM advisory."
+  - id: asg_kmdw_132750_asos
+    rf_chain_id: chain_kmdw_132750_asos
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KMDW ASOS — Automated Surface Observing System."
+  - id: asg_kmgc_118550_ad
+    rf_chain_id: chain_kmgc_118550_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KMGC A/D — Arrival/Departure."
+  - id: asg_kmgc_122700_unicom
+    rf_chain_id: chain_kmgc_122700_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KMGC UNICOM — UNICOM advisory."
+  - id: asg_kmgc_134800_cld
+    rf_chain_id: chain_kmgc_134800_cld
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KMGC CLD — Clearance Delivery."
+  - id: asg_kord_119000_app
+    rf_chain_id: chain_kord_119000_app
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KORD APP — Approach control."
+  - id: asg_kord_121600_cld
+    rf_chain_id: chain_kord_121600_cld
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KORD CLD — Clearance Delivery."
+  - id: asg_kord_121675_gnd
+    rf_chain_id: chain_kord_121675_gnd
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KORD GND — Ground control."
+  - id: asg_kord_122950_unicom
+    rf_chain_id: chain_kord_122950_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KORD UNICOM — UNICOM advisory."
+  - id: asg_kord_125000_dep
+    rf_chain_id: chain_kord_125000_dep
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KORD DEP — Departure control."
+  - id: asg_kord_126900_twr
+    rf_chain_id: chain_kord_126900_twr
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KORD TWR — Tower."
+  - id: asg_kord_135400_asos
+    rf_chain_id: chain_kord_135400_asos
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KORD ASOS — Automated Surface Observing System."
+  - id: asg_koxi_122800_unicom
+    rf_chain_id: chain_koxi_122800_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KOXI UNICOM — UNICOM advisory."
+  - id: asg_koxi_132050_ad
+    rf_chain_id: chain_koxi_132050_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KOXI A/D — Arrival/Departure."
+  - id: asg_kpnt_119675_asow
+    rf_chain_id: chain_kpnt_119675_asow
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KPNT ASOW — Automated Weather Observing System."
+  - id: asg_kpnt_122800_unicom
+    rf_chain_id: chain_kpnt_122800_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KPNT UNICOM — UNICOM advisory."
+  - id: asg_kpnt_124550_acc
+    rf_chain_id: chain_kpnt_124550_acc
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KPNT ACC — Area Control Center."
+  - id: asg_kppo_119825_asow
+    rf_chain_id: chain_kppo_119825_asow
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KPPO ASOW — Automated Weather Observing System."
+  - id: asg_kppo_123000_unicom
+    rf_chain_id: chain_kppo_123000_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KPPO UNICOM — UNICOM advisory."
+  - id: asg_kppo_132050_ad
+    rf_chain_id: chain_kppo_132050_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KPPO A/D — Arrival/Departure."
+  - id: asg_kpwk_119900_ctaf
+    rf_chain_id: chain_kpwk_119900_ctaf
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KPWK CTAF — Common Traffic Advisory Frequency."
+  - id: asg_kpwk_120550_ad
+    rf_chain_id: chain_kpwk_120550_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KPWK A/D — Arrival/Departure."
+  - id: asg_kpwk_121700_gnd
+    rf_chain_id: chain_kpwk_121700_gnd
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KPWK GND — Ground control."
+  - id: asg_kpwk_122950_unicom
+    rf_chain_id: chain_kpwk_122950_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KPWK UNICOM — UNICOM advisory."
+  - id: asg_kpwk_124200_atis
+    rf_chain_id: chain_kpwk_124200_atis
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KPWK ATIS — Automated Terminal Information Service."
+  - id: asg_kpwk_124700_cld
+    rf_chain_id: chain_kpwk_124700_cld
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KPWK CLD — Clearance Delivery."
+  - id: asg_krcr_118775_asow
+    rf_chain_id: chain_krcr_118775_asow
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KRCR ASOW — Automated Weather Observing System."
+  - id: asg_krcr_122700_unicom
+    rf_chain_id: chain_krcr_122700_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KRCR UNICOM — UNICOM advisory."
+  - id: asg_krcr_132050_ad
+    rf_chain_id: chain_krcr_132050_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KRCR A/D — Arrival/Departure."
+  - id: asg_krwn_122800_unicom
+    rf_chain_id: chain_krwn_122800_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KRWN UNICOM — UNICOM advisory."
+  - id: asg_krwn_132050_ad
+    rf_chain_id: chain_krwn_132050_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KRWN A/D — Arrival/Departure."
+  - id: asg_krzl_122800_unicom
+    rf_chain_id: chain_krzl_122800_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KRZL UNICOM — UNICOM advisory."
+  - id: asg_krzl_132950_acc
+    rf_chain_id: chain_krzl_132950_acc
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KRZL ACC — Area Control Center."
+  - id: asg_ksbn_118150_atis
+    rf_chain_id: chain_ksbn_118150_atis
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KSBN ATIS — Automated Terminal Information Service."
+  - id: asg_ksbn_118550_ad
+    rf_chain_id: chain_ksbn_118550_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KSBN A/D — Arrival/Departure."
+  - id: asg_ksbn_118900_ctaf
+    rf_chain_id: chain_ksbn_118900_ctaf
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KSBN CTAF — Common Traffic Advisory Frequency."
+  - id: asg_ksbn_121700_gnd
+    rf_chain_id: chain_ksbn_121700_gnd
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KSBN GND — Ground control."
+  - id: asg_ksbn_121900_cld
+    rf_chain_id: chain_ksbn_121900_cld
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KSBN CLD — Clearance Delivery."
+  - id: asg_ksbn_122600_radio
+    rf_chain_id: chain_ksbn_122600_radio
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KSBN RADIO — Radio."
+  - id: asg_ksbn_122950_unicom
+    rf_chain_id: chain_ksbn_122950_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KSBN UNICOM — UNICOM advisory."
+  - id: asg_kugn_120050_ctaf
+    rf_chain_id: chain_kugn_120050_ctaf
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KUGN CTAF — Common Traffic Advisory Frequency."
+  - id: asg_kugn_120550_ad
+    rf_chain_id: chain_kugn_120550_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KUGN A/D — Arrival/Departure."
+  - id: asg_kugn_121650_gnd
+    rf_chain_id: chain_kugn_121650_gnd
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KUGN GND — Ground control."
+  - id: asg_kugn_122550_radio
+    rf_chain_id: chain_kugn_122550_radio
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KUGN RADIO — Radio."
+  - id: asg_kugn_122950_unicom
+    rf_chain_id: chain_kugn_122950_unicom
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KUGN UNICOM — UNICOM advisory."
+  - id: asg_kugn_132400_atis
+    rf_chain_id: chain_kugn_132400_atis
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KUGN ATIS — Automated Terminal Information Service."
+  - id: asg_kvpz_122725_ctaf
+    rf_chain_id: chain_kvpz_122725_ctaf
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KVPZ CTAF — Common Traffic Advisory Frequency."
+  - id: asg_kvpz_123650_radio
+    rf_chain_id: chain_kvpz_123650_radio
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KVPZ RADIO — Radio."
+  - id: asg_kvpz_125875_asos
+    rf_chain_id: chain_kvpz_125875_asos
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KVPZ ASOS — Automated Surface Observing System."
+  - id: asg_kvpz_132050_ad
+    rf_chain_id: chain_kvpz_132050_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KVPZ A/D — Arrival/Departure."
+  - id: asg_kvpz_135200_cld
+    rf_chain_id: chain_kvpz_135200_cld
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "KVPZ CLD — Clearance Delivery."
+  - id: asg_ll40_122100_fss
+    rf_chain_id: chain_ll40_122100_fss
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "LL40 FSS — Flight Service Station."
+  - id: asg_ll40_133100_ad
+    rf_chain_id: chain_ll40_133100_ad
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+    notes: "LL40 A/D — Arrival/Departure."
+
+comments:
+  - text: |
+      44 airports across northern Illinois, Northwest Indiana, and
+      Southwest Michigan. VHF AM voice frequencies only (118-137 MHz); RX-only for
+      scanning. Common/itinerant airband frequencies live in
+      plans/US/aviation/airband_itinerant.yml.

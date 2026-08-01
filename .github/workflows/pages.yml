@@ -25,6 +25,7 @@ jobs:
       - name: Generate site data
         run: |
           uv sync
+          uv run python generate_ssrf_docs.py --output-dir site/docs/ssrf
           uv run python generate_ssrf_site.py
           uv run python generate_ssrf_codeplug.py
 

@@ -19,6 +19,8 @@ docs: ## Generate SSRF data library documentation
 	uv run python generate_ssrf_docs.py
 
 site: codeplug ## Generate data.json for the GitHub Pages site
+	@echo "📝 Generating site markdown docs..."
+	uv run python generate_ssrf_docs.py --output-dir site/docs/ssrf
 	@echo "🌐 Generating site data..."
 	uv run python generate_ssrf_site.py
 

@@ -1,0 +1,229 @@
+# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.5.3.schema.json
+# SSRF-Lite: US Aviation Airband — Common & Itinerant Frequencies (VHF AM voice)
+# Notes: RX-only reference. AM voice, 25 kHz channels (6K00A3E). TX requires an
+#        FCC Part 87 aeronautical authorization; treat as receive-only in codeplugs.
+# Sources:
+# - FCC 47 CFR Part 87 (Aviation Services)
+# - FAA Aeronautical Information Manual (AIM) 4-1-11 (Designated CTAF/UNICOM/MULTICOM)
+
+$schema: "../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
+ssrf_lite:
+  sources:
+    - name: "FCC 47 CFR Part 87 — Aviation Services"
+      url: https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-87
+      accessed: '2026-07-16'
+    - name: "FAA Aeronautical Information Manual (AIM) 4-1-11"
+      url: https://www.faa.gov/air_traffic/publications/atpubs/aim_html/chap4_section_1.html
+      accessed: '2026-07-16'
+
+authorizations:
+  - id: auth_rx_only_aviation
+    authority: "FCC / FAA"
+    service: aviation
+    class: null
+    identifier: null
+    notes: >
+      Airband monitoring is unlicensed for receive. Transmitting on aeronautical
+      VHF requires an FCC Part 87 aircraft or ground station authorization.
+
+channel_plans:
+  - id: airband_itinerant_plan
+    name: "Aviation Airband — Common/Itinerant"
+    service: aviation
+    channels:
+      - name: "Guard 121.5"
+        freq_mhz: 121.500
+        emission: 6K00A3E
+        bandwidth_khz: 25
+        notes: "International aeronautical emergency (Guard)."
+      - name: "Flight Watch 122.0"
+        freq_mhz: 122.000
+        emission: 6K00A3E
+        bandwidth_khz: 25
+        notes: "Legacy En Route Flight Advisory Service (EFAS); largely discontinued."
+      - name: "FSS 122.2"
+        freq_mhz: 122.200
+        emission: 6K00A3E
+        bandwidth_khz: 25
+        notes: "Common Flight Service Station (FSS) frequency."
+      - name: "CTAF/UNICOM 122.7"
+        freq_mhz: 122.700
+        emission: 6K00A3E
+        bandwidth_khz: 25
+        notes: "CTAF/UNICOM at uncontrolled airports."
+      - name: "CTAF/UNICOM 122.725"
+        freq_mhz: 122.725
+        emission: 6K00A3E
+        bandwidth_khz: 25
+        notes: "CTAF/UNICOM at uncontrolled airports."
+      - name: "Air-to-Air 122.75"
+        freq_mhz: 122.750
+        emission: 6K00A3E
+        bandwidth_khz: 25
+        notes: "Fixed-wing air-to-air communications."
+      - name: "CTAF/UNICOM 122.8"
+        freq_mhz: 122.800
+        emission: 6K00A3E
+        bandwidth_khz: 25
+        notes: "CTAF/UNICOM at uncontrolled airports."
+      - name: "MULTICOM 122.85"
+        freq_mhz: 122.850
+        emission: 6K00A3E
+        bandwidth_khz: 25
+        notes: "MULTICOM."
+      - name: "MULTICOM/CTAF 122.9"
+        freq_mhz: 122.900
+        emission: 6K00A3E
+        bandwidth_khz: 25
+        notes: "MULTICOM; CTAF at airports without UNICOM."
+      - name: "MULTICOM 122.925"
+        freq_mhz: 122.925
+        emission: 6K00A3E
+        bandwidth_khz: 25
+        notes: "MULTICOM for natural resource/firefighting operations."
+      - name: "CTAF/UNICOM 122.95"
+        freq_mhz: 122.950
+        emission: 6K00A3E
+        bandwidth_khz: 25
+        notes: "CTAF/UNICOM at towered airports (when tower closed)."
+      - name: "UNICOM 122.975"
+        freq_mhz: 122.975
+        emission: 6K00A3E
+        bandwidth_khz: 25
+        notes: "UNICOM (high-altitude airports)."
+      - name: "CTAF/UNICOM 123.0"
+        freq_mhz: 123.000
+        emission: 6K00A3E
+        bandwidth_khz: 25
+        notes: "CTAF/UNICOM at uncontrolled airports."
+      - name: "Heli Air-to-Air 123.025"
+        freq_mhz: 123.025
+        emission: 6K00A3E
+        bandwidth_khz: 25
+        notes: "Helicopter air-to-air communications."
+      - name: "CTAF/UNICOM 123.05"
+        freq_mhz: 123.050
+        emission: 6K00A3E
+        bandwidth_khz: 25
+        notes: "CTAF/UNICOM (heliports)."
+      - name: "CTAF/UNICOM 123.075"
+        freq_mhz: 123.075
+        emission: 6K00A3E
+        bandwidth_khz: 25
+        notes: "CTAF/UNICOM (heliports)."
+      - name: "SAR 123.1"
+        freq_mhz: 123.100
+        emission: 6K00A3E
+        bandwidth_khz: 25
+        notes: "Search and Rescue (SAR) operations."
+
+assignments:
+  - id: asg_airband_guard_1215
+    channel_plan_id: airband_itinerant_plan
+    channel_name: "Guard 121.5"
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+  - id: asg_airband_flightwatch_1220
+    channel_plan_id: airband_itinerant_plan
+    channel_name: "Flight Watch 122.0"
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+  - id: asg_airband_fss_1222
+    channel_plan_id: airband_itinerant_plan
+    channel_name: "FSS 122.2"
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+  - id: asg_airband_ctaf_1227
+    channel_plan_id: airband_itinerant_plan
+    channel_name: "CTAF/UNICOM 122.7"
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+  - id: asg_airband_ctaf_122725
+    channel_plan_id: airband_itinerant_plan
+    channel_name: "CTAF/UNICOM 122.725"
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+  - id: asg_airband_a2a_12275
+    channel_plan_id: airband_itinerant_plan
+    channel_name: "Air-to-Air 122.75"
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+  - id: asg_airband_ctaf_1228
+    channel_plan_id: airband_itinerant_plan
+    channel_name: "CTAF/UNICOM 122.8"
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+  - id: asg_airband_multicom_12285
+    channel_plan_id: airband_itinerant_plan
+    channel_name: "MULTICOM 122.85"
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+  - id: asg_airband_multicom_1229
+    channel_plan_id: airband_itinerant_plan
+    channel_name: "MULTICOM/CTAF 122.9"
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+  - id: asg_airband_multicom_122925
+    channel_plan_id: airband_itinerant_plan
+    channel_name: "MULTICOM 122.925"
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+  - id: asg_airband_ctaf_12295
+    channel_plan_id: airband_itinerant_plan
+    channel_name: "CTAF/UNICOM 122.95"
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+  - id: asg_airband_unicom_122975
+    channel_plan_id: airband_itinerant_plan
+    channel_name: "UNICOM 122.975"
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+  - id: asg_airband_ctaf_1230
+    channel_plan_id: airband_itinerant_plan
+    channel_name: "CTAF/UNICOM 123.0"
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+  - id: asg_airband_heli_a2a_123025
+    channel_plan_id: airband_itinerant_plan
+    channel_name: "Heli Air-to-Air 123.025"
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+  - id: asg_airband_ctaf_12305
+    channel_plan_id: airband_itinerant_plan
+    channel_name: "CTAF/UNICOM 123.05"
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+  - id: asg_airband_ctaf_123075
+    channel_plan_id: airband_itinerant_plan
+    channel_name: "CTAF/UNICOM 123.075"
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+  - id: asg_airband_sar_1231
+    channel_plan_id: airband_itinerant_plan
+    channel_name: "SAR 123.1"
+    usage: "receive-only"
+    service: aviation
+    authorization_id: auth_rx_only_aviation
+
+comments:
+  - text: |
+      Common and itinerant U.S. aviation airband voice frequencies for RX-only
+      monitoring. Airport-specific tower/ground/ATIS/approach frequencies live in
+      the regional airport system files (see systems/US/_Regional/aviation/).

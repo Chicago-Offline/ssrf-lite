@@ -4,15 +4,15 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ## Quick Statistics
 
-- **Total SSRF Files:** 36
-- **Total Assignments:** 532
-- **Services Covered:** 9
-- **Modes:** APRS, C4FM, CW, D-STAR, DMR, FM, NXDN, P25, PACKET
+- **Total SSRF Files:** 38
+- **Total Assignments:** 696
+- **Services Covered:** 10
+- **Modes:** AM, APRS, C4FM, CW, D-STAR, DMR, FM, NXDN, P25, PACKET
 - **Frequency Bands:** 5
 
 ## File Categories
 
-### Channel Plan (10 files)
+### Channel Plan (11 files)
 
 | File | Services | Assignments | Modes | Geographic Scope |
 |------|----------|-------------|-------|------------------|
@@ -20,6 +20,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [ham_dmr_simplex](ham_dmr_simplex.md) | amateur | 14 | DMR | US |
 | [ham_uhf_simplex](ham_uhf_simplex.md) |  | 20 | FM | US |
 | [ham_vhf_simplex](ham_vhf_simplex.md) |  | 20 | FM | US |
+| [airband_itinerant](airband_itinerant.md) | aviation | 17 | FM | US |
 | [itinerant_business](itinerant_business.md) | business_itinerant_part90 | 27 | FM | US |
 | [gmrs_channels](gmrs_channels.md) | gmrs | 30 | FM | US |
 | [marine_vhf_channels](marine_vhf_channels.md) | marine | 52 | FM | US |
@@ -33,7 +34,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |------|----------|-------------|-------|------------------|
 | [mmdvm_duplex_hotspot](mmdvm_duplex_hotspot.md) | amateur | 2 | DMR | custom / mmdvm_duplex_hotspot.yml |
 
-### Geographic System (25 files)
+### Geographic System (26 files)
 
 | File | Services | Assignments | Modes | Geographic Scope |
 |------|----------|-------------|-------|------------------|
@@ -62,6 +63,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [kc8brs_four_flags](kc8brs_four_flags.md) | amateur | 1 | FM | US / MI / Berrien / Niles |
 | [berrien_county_amateur](berrien_county_amateur.md) | amateur | 5 | FM, D-STAR | US / MI / Berrien / _Countywide |
 | [berrien_county_public_safety](berrien_county_public_safety.md) | public_safety_part90 | 13 | FM | US / MI / Berrien / _Countywide |
+| [chicagoland_airports](chicagoland_airports.md) | aviation | 147 | AM | US / _Regional / aviation / chicagoland_airports.yml |
 
 ## Geographic Coverage
 
@@ -73,7 +75,8 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 - **IL:** 16 files
 - **IN:** 3 files
 - **MI:** 3 files
-- **National/Regional:** 9 files
+- **National/Regional:** 10 files
+- **_Regional:** 1 files
 
 ### custom
 - **mmdvm_duplex_hotspot.yml:** 1 files
@@ -83,6 +86,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | Service | Total Assignments | Files |
 |---------|------------------|-------|
 | amateur | 108 | 14 |
+| aviation | 164 | 2 |
 | business_itinerant_part90 | 92 | 3 |
 | gmrs | 78 | 5 |
 | marine | 52 | 1 |

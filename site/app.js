@@ -259,9 +259,13 @@ function renderFiles() {
       .join(" · ");
     return `
       <div class="card">
-        <h3><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.title)}</a></h3>
+        <h3><a href="${esc(f.doc_url)}">${esc(f.title)}</a></h3>
         <div class="meta">${esc(f.category)} · ${esc(f.region)} · ${byFile.get(f.id) ?? 0} channels</div>
         <div class="badges">${badges}</div>
+        <div class="card-actions">
+          <a href="${esc(f.doc_url)}">Details</a>
+          <a href="${esc(f.download_url)}" target="_blank" rel="noopener">Download YAML</a>
+        </div>
         ${srcs ? `<div class="src">Sources: ${srcs}</div>` : ""}
       </div>`;
   });
