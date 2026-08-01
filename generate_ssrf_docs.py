@@ -485,26 +485,24 @@ def generate_index_documentation(file_analyses: List[Dict[str, Any]]) -> str:
         "SSRF-Lite files contain reference data about RF systems and channel plans. They are used by:"
     )
     md.append("")
-    md.append("### Profiles")
-    md.append("Profiles select which SSRF files to include in a build:")
-    md.append("```yaml")
-    md.append("profile:")
-    md.append("  include:")
-    md.append("    paths:")
-    md.append('      - "ssrf/plans/US/amateur/*.yml"')
-    md.append('      - "ssrf/systems/US/IL/Cook/Chicago/amateur/*.yml"')
+    md.append("### Private overlays")
+    md.append(
+        "Keep private or local-only SSRF-Lite files in a separate repository that mirrors the public `ssrf/` layout, then pass that repository's `ssrf/` directory as an extra root when building local outputs."
+    )
+    md.append("```text")
+    md.append("my-ssrf-private/")
+    md.append("  ssrf/")
+    md.append("    plans/US/custom/family_channels.yml")
+    md.append("    systems/custom/home_hotspot.yml")
     md.append("```")
     md.append("")
 
     md.append("### Code Generation")
     md.append("```bash")
-    md.append("# Generate codeplug using profile that includes SSRF files")
-    md.append("uv run python generate_opengd_import.py --profile chicago_amateur")
-    md.append("")
-    md.append("# Preview which SSRF files a profile would use")
-    md.append(
-        "uv run python generate_opengd_import.py --profile chicago_amateur --dry-run"
-    )
+    md.append("# Generate a local official-plus-private codeplug feed")
+    md.append("uv run python generate_ssrf_codeplug.py \\")
+    md.append("  --extra-ssrf-root ../my-ssrf-private/ssrf \\")
+    md.append("  --output site/codeplug.local.json")
     md.append("```")
     md.append("")
 

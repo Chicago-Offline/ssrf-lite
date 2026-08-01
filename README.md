@@ -73,6 +73,40 @@ Frequencies are radio-centric (`rx_mhz`/`tx_mhz` are what the operator's radio
 listens to and transmits on); for simplex channels the two are equal. CTCSS/DCS
 values are the tones the radio must encode to key the far end.
 
+## Private SSRF overlays
+
+Recommended mechanism: keep private or local-only SSRF-Lite data in a separate
+private GitHub repository that mirrors the public `ssrf/` layout, then pass that
+repository's `ssrf/` directory as an extra root when building local outputs.
+
+Example private repo layout:
+
+```text
+my-ssrf-private/
+  ssrf/
+    plans/
+      US/custom/family_channels.yml
+    systems/
+      custom/home_hotspot.yml
+      US/IL/Cook/Chicago/gmrs/my_repeaters.yml
+```
+
+Build an official-plus-private codeplug feed without copying private YAML into
+this repo:
+
+```bash
+uv run python generate_ssrf_codeplug.py \
+  --extra-ssrf-root ../my-ssrf-private/ssrf \
+  --output site/codeplug.local.json
+```
+
+For consumers, treat every root as ordinary SSRF-Lite. The public repo remains
+the authoritative reference library; private repos should contain personal
+overlays such as family channels, home repeaters, hotspots, travel lists, or
+locally licensed systems that should not be published. Prefer unique file names
+and IDs in private data so downstream generators can distinguish official and
+personal records cleanly.
+
 ## Installation
 
 ```bash

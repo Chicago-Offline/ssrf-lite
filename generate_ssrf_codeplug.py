@@ -39,13 +39,23 @@ published alongside the GitHub Pages site.
 import argparse
 import json
 import pathlib
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 from ssrf import load_ssrf_document
 
 BASE = pathlib.Path(__file__).parent
 SSRF_ROOT = BASE / "ssrf"
 SITE_DIR = BASE / "site"
+
+
+def _iter_ssrf_files(roots: Iterable[pathlib.Path]) -> Iterable[Tuple[pathlib.Path, pathlib.Path]]:
+    for root in roots:
+        for path in sorted(
+            p
+            for p in root.rglob("*.yml")
+            if not p.name.startswith("_") and "_schema" not in p.parts
+        ):
+            yield root, path
 
 
 def _round(value: Optional[float], digits: int = 6) -> Optional[float]:
@@ -104,22 +114,17 @@ def _record_from_plan_channel(a: Any, plan: Any, ch: Any) -> Dict[str, Any]:
     }
 
 
-def build_records() -> List[Dict[str, Any]]:
+def build_records(ssrf_roots: Optional[List[pathlib.Path]] = None) -> List[Dict[str, Any]]:
     records: List[Dict[str, Any]] = []
     errors: List[str] = []
+    roots = ssrf_roots or [SSRF_ROOT]
 
-    yml_files = sorted(
-        p
-        for p in SSRF_ROOT.rglob("*.yml")
-        if not p.name.startswith("_") and "_schema" not in p.parts
-    )
-
-    for path in yml_files:
-        rel = path.relative_to(SSRF_ROOT)
+    for root, path in _iter_ssrf_files(roots):
+        rel = path.relative_to(root)
         try:
             ref = load_ssrf_document(path)
         except Exception as exc:  # keep the build resilient
-            errors.append(f"{rel}: {exc}")
+            errors.append(f"{root.name}/{rel}: {exc}")
             continue
 
         locs = {l.id: l for l in ref.locations}
@@ -157,6 +162,19 @@ def build_records() -> List[Dict[str, Any]]:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
+        "--ssrf-root",
+        type=pathlib.Path,
+        default=SSRF_ROOT,
+        help="Primary SSRF root to scan (default: ./ssrf)",
+    )
+    parser.add_argument(
+        "--extra-ssrf-root",
+        type=pathlib.Path,
+        action="append",
+        default=[],
+        help="Additional SSRF root to include, such as a private repo's ssrf/ directory. May be repeated.",
+    )
+    parser.add_argument(
         "--output",
         type=pathlib.Path,
         default=SITE_DIR / "codeplug.json",
@@ -164,7 +182,13 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    records = build_records()
+    roots = [args.ssrf_root, *args.extra_ssrf_root]
+    for root in roots:
+        if not root.exists():
+            parser.error(f"SSRF root does not exist: {root}")
+        if not root.is_dir():
+            parser.error(f"SSRF root is not a directory: {root}")
+    records = build_records(roots)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(
         json.dumps(records, indent=None, separators=(",", ":")) + "\n",

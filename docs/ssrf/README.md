@@ -100,23 +100,21 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 SSRF-Lite files contain reference data about RF systems and channel plans. They are used by:
 
-### Profiles
-Profiles select which SSRF files to include in a build:
-```yaml
-profile:
-  include:
-    paths:
-      - "ssrf/plans/US/amateur/*.yml"
-      - "ssrf/systems/US/IL/Cook/Chicago/amateur/*.yml"
+### Private overlays
+Keep private or local-only SSRF-Lite files in a separate repository that mirrors the public `ssrf/` layout, then pass that repository's `ssrf/` directory as an extra root when building local outputs.
+```text
+my-ssrf-private/
+  ssrf/
+    plans/US/custom/family_channels.yml
+    systems/custom/home_hotspot.yml
 ```
 
 ### Code Generation
 ```bash
-# Generate codeplug using profile that includes SSRF files
-uv run python generate_opengd_import.py --profile chicago_amateur
-
-# Preview which SSRF files a profile would use
-uv run python generate_opengd_import.py --profile chicago_amateur --dry-run
+# Generate a local official-plus-private codeplug feed
+uv run python generate_ssrf_codeplug.py \
+  --extra-ssrf-root ../my-ssrf-private/ssrf \
+  --output site/codeplug.local.json
 ```
 
 ## File Organization
