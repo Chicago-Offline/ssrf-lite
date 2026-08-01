@@ -91,13 +91,21 @@ my-ssrf-private/
       US/IL/Cook/Chicago/gmrs/my_repeaters.yml
 ```
 
-Build an official-plus-private codeplug feed without copying private YAML into
-this repo:
+Build an official-plus-private feed without copying private YAML into this
+repo. Both the flat codeplug feed and the site `data.json` accept
+`--extra-ssrf-root` (repeatable):
 
 ```bash
+# Flat codeplug.json (rx_mhz/tx_mhz/ctcss shape)
 uv run python generate_ssrf_codeplug.py \
   --extra-ssrf-root ../my-ssrf-private/ssrf \
   --output site/codeplug.local.json
+
+# Site data.json (freq_mhz/mode_detail shape — e.g. for NeonPlug's
+# "Local file (private)" import source)
+uv run python generate_ssrf_site.py \
+  --extra-ssrf-root ../my-ssrf-private/ssrf \
+  --output site/data.local.json
 ```
 
 For consumers, treat every root as ordinary SSRF-Lite. The public repo remains
