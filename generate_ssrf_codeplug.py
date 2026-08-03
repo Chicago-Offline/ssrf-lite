@@ -97,6 +97,29 @@ def _record_from_rf_chain(a: Any, chain: Any, station: Any, loc: Any) -> Dict[st
     }
 
 
+# ITU emission-designator (5th symbol = type of modulation) -> SSRF mode.
+# Only unambiguous analog-voice designators are mapped; digital/data emissions
+# stay None because the designator alone can't distinguish DMR/P25/NXDN/etc.
+_EMISSION_MODE_BY_DESIGNATOR = {
+    "F3E": "FM",   # angle-modulated telephony (FM voice) -> 16K0F3E, 11K0F3E, ...
+    "A3E": "AM",   # double-sideband AM telephony (aircraft band) -> 6K00A3E
+    "J3E": "USB",  # single-sideband, suppressed carrier (upper by convention)
+}
+
+
+def _mode_from_emission(emission: Optional[str]) -> Optional[str]:
+    """Infer an SSRF mode from an ITU emission designator.
+
+    The designator's 3-char modulation code is its final three characters
+    (e.g. ``16K0F3E`` -> ``F3E``). Returns None for digital/data or unknown
+    emissions, which downstream consumers treat as untyped.
+    """
+    if not emission:
+        return None
+    code = emission.strip().upper()[-3:]
+    return _EMISSION_MODE_BY_DESIGNATOR.get(code)
+
+
 def _record_from_plan_channel(a: Any, plan: Any, ch: Any) -> Dict[str, Any]:
     return {
         "callsign": None,
@@ -109,7 +132,12 @@ def _record_from_plan_channel(a: Any, plan: Any, ch: Any) -> Dict[str, Any]:
         "lat": None,
         "lon": None,
         "service": a.service or plan.service,
-        "mode": None,
+        # Plan channels carry an ITU emission designator instead of a full Mode
+        # object; infer analog-voice mode from it so downstream radio zone
+        # filters (which match on mode: FM) can pick up simplex/calling
+        # channels. Was hardcoded None, which silently dropped every plan
+        # channel from mode-filtered zones.
+        "mode": _mode_from_emission(ch.emission),
         "name": ch.name,
     }
 
