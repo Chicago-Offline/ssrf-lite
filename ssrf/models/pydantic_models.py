@@ -246,6 +246,7 @@ class ChannelPlanChannel(BaseModel):
 
     name: str
     freq_mhz: float = Field(gt=0)
+    tx_freq_mhz: Optional[float] = Field(default=None, gt=0)
     notes: Optional[str] = None
     emission: Optional[str] = None
     bandwidth_khz: Optional[float] = Field(default=None, gt=0)
@@ -404,6 +405,7 @@ def _extract_reference_payload(data: Any) -> Dict[str, Any]:
                         for key in (
                             "name",
                             "freq_mhz",
+                            "tx_freq_mhz",
                             "notes",
                             "emission",
                             "bandwidth_khz",

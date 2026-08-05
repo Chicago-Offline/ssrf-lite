@@ -7,7 +7,7 @@
 
 ## Overview
 
-- **Assignments:** 52
+- **Assignments:** 53
 - **Services:** marine
 - **Organizations:** 0
 - **Locations:** 0
@@ -16,10 +16,10 @@
 - **Contacts:** 0
 
 ### Modes
-- **FM:** 2704
+- **FM:** 2809
 
 ### Usage Types
-- **Public Correspondence:** 9
+- **Public Correspondence:** 10
 - **Port Operations:** 8
 - **Commercial:** 7
 - **Non-Commercial Working:** 4
@@ -44,7 +44,7 @@
 - **Us Government:** 1
 
 ### Frequency Bands
-- **VHF (136-174 MHz):** 2704
+- **VHF (136-174 MHz):** 2809
 
 ## Channel Plans
 
@@ -68,16 +68,17 @@
 | Ch 17 | 156.8500 MHz | 16K0F3E |
 | Ch 18A (1018) | 156.9000 MHz | 16K0F3E |
 | Ch 19A (1019) | 156.9500 MHz | 16K0F3E |
-| Ch 20 | 157.0000 MHz | 16K0F3E |
+| Ch 20 | 161.6000 MHz | 16K0F3E |
 | Ch 20A (1020) | 157.0000 MHz | 16K0F3E |
 | Ch 21A (1021) | 157.0500 MHz | 16K0F3E |
 | Ch 22A (1022) | 157.1000 MHz | 16K0F3E |
 | Ch 23A (1023) | 157.1500 MHz | 16K0F3E |
-| Ch 24 | 157.2000 MHz | 16K0F3E |
-| Ch 25 | 157.2500 MHz | 16K0F3E |
-| Ch 26 | 157.3000 MHz | 16K0F3E |
-| Ch 27 | 157.3500 MHz | 16K0F3E |
-| Ch 28 | 157.4000 MHz | 16K0F3E |
+| Ch 24 | 161.8000 MHz | 16K0F3E |
+| Ch 25 | 161.8500 MHz | 16K0F3E |
+| Ch 26 | 161.9000 MHz | 16K0F3E |
+| Ch 27 | 161.9500 MHz | 16K0F3E |
+| Ch 28 | 162.0000 MHz | 16K0F3E |
+| Ch 60 | 160.6250 MHz | 16K0F3E |
 | Ch 63A (1063) | 156.1750 MHz | 16K0F3E |
 | Ch 64A (1064) | 156.2250 MHz | 16K0F3E |
 | Ch 65A (1065) | 156.2750 MHz | 16K0F3E |
@@ -97,9 +98,9 @@
 | Ch 81A (1081) | 157.0750 MHz | 16K0F3E |
 | Ch 82A (1082) | 157.1250 MHz | 16K0F3E |
 | Ch 83A (1083) | 157.1750 MHz | 16K0F3E |
-| Ch 84 | 157.2250 MHz | 16K0F3E |
-| Ch 85 | 157.2750 MHz | 16K0F3E |
-| Ch 86 | 157.3250 MHz | 16K0F3E |
+| Ch 84 | 161.8250 MHz | 16K0F3E |
+| Ch 85 | 161.8750 MHz | 16K0F3E |
+| Ch 86 | 161.9250 MHz | 16K0F3E |
 | Ch 87 | 157.3750 MHz | 16K0F3E |
 | Ch 88 | 157.4250 MHz | 16K0F3E |
 | Ch 87B AIS1 | 161.9750 MHz | 16K0G1D |
@@ -107,7 +108,7 @@
 
 ## Assignments
 
-### Unknown (52 assignments)
+### Unknown (53 assignments)
 
 - **us_marine_vhf_ch01a** - port operations & commercial
   - *Port operations and commercial traffic; available only in the New Orleans / Lower Mississippi area (USCG note a).*
@@ -142,7 +143,7 @@
 - **us_marine_vhf_ch19a** - commercial
   - *Commercial working channel (VDSMS capable).*
 - **us_marine_vhf_ch20** - port operations duplex
-  - *Port operations duplex channel. Listed frequency monitors the ship transmit (157.000 MHz) side.*
+  - *Port operations duplex channel.*
 - **us_marine_vhf_ch20a** - port operations
   - *Simplex variant of channel 20 for port operations.*
 - **us_marine_vhf_ch21a** - us coast guard only
@@ -161,6 +162,8 @@
   - *Marine operator public correspondence channel; duplex variant pending reassignment to channel 1027 per ITU WRC-19.*
 - **us_marine_vhf_ch28** - public correspondence
   - *Marine operator public correspondence channel; duplex variant pending reassignment to channel 1028 per ITU WRC-19.*
+- **us_marine_vhf_ch60** - public correspondence
+  - *Marine operator public correspondence channel.*
 - **us_marine_vhf_ch63a** - port operations & commercial
   - *Port operations and commercial traffic; available only in the New Orleans / Lower Mississippi area.*
 - **us_marine_vhf_ch64a** - port operations

@@ -209,15 +209,18 @@ For multi-site DMR systems, capture each repeater as an `rf_chain` and centraliz
 
 Reusable collections (NOAA, Marine, GMRS interstitials). Channel plans remain purely descriptive references—no profile or scan behavior is defined here.  
 
+`freq_mhz` is the receive frequency and is also used for transmit on simplex channels. Duplex channels set `tx_freq_mhz` to the separate transmit frequency.
+
 ```yaml
 channel_plans:
-  - id: chplan_noaa
-    name: "NOAA WX"
+  - id: chplan_marine
+    name: "Marine VHF"
     channels:
-      - name: "WX1"
-        freq_mhz: 162.550
-      - name: "WX2"
-        freq_mhz: 162.400
+      - name: "Ch 06"
+        freq_mhz: 156.300
+      - name: "Ch 20"
+        freq_mhz: 161.600
+        tx_freq_mhz: 157.000
 ```
 
 ---

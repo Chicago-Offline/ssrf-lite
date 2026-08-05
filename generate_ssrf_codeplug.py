@@ -126,7 +126,7 @@ def _record_from_plan_channel(
     return {
         "callsign": None,
         "rx_mhz": ch.freq_mhz,
-        "tx_mhz": ch.freq_mhz,
+        "tx_mhz": ch.tx_freq_mhz or ch.freq_mhz,
         "ctcss": None,
         "dcs": None,
         "color_code": None,

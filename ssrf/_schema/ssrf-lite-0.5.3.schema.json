@@ -415,6 +415,19 @@
           "title": "Freq Mhz",
           "type": "number"
         },
+        "tx_freq_mhz": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tx Freq Mhz"
+        },
         "notes": {
           "anyOf": [
             {

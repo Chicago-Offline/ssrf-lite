@@ -68,7 +68,8 @@ channel_plans:
         freq_mhz: 156.950
         emission: 16K0F3E
       - name: Ch 20
-        freq_mhz: 157.000
+        freq_mhz: 161.600
+        tx_freq_mhz: 157.000
         emission: 16K0F3E
       - name: Ch 20A (1020)
         freq_mhz: 157.000
@@ -83,19 +84,28 @@ channel_plans:
         freq_mhz: 157.150
         emission: 16K0F3E
       - name: Ch 24
-        freq_mhz: 157.200
+        freq_mhz: 161.800
+        tx_freq_mhz: 157.200
         emission: 16K0F3E
       - name: Ch 25
-        freq_mhz: 157.250
+        freq_mhz: 161.850
+        tx_freq_mhz: 157.250
         emission: 16K0F3E
       - name: Ch 26
-        freq_mhz: 157.300
+        freq_mhz: 161.900
+        tx_freq_mhz: 157.300
         emission: 16K0F3E
       - name: Ch 27
-        freq_mhz: 157.350
+        freq_mhz: 161.950
+        tx_freq_mhz: 157.350
         emission: 16K0F3E
       - name: Ch 28
-        freq_mhz: 157.400
+        freq_mhz: 162.000
+        tx_freq_mhz: 157.400
+        emission: 16K0F3E
+      - name: Ch 60
+        freq_mhz: 160.625
+        tx_freq_mhz: 156.025
         emission: 16K0F3E
       - name: Ch 63A (1063)
         freq_mhz: 156.175
@@ -155,13 +165,16 @@ channel_plans:
         freq_mhz: 157.175
         emission: 16K0F3E
       - name: Ch 84
-        freq_mhz: 157.225
+        freq_mhz: 161.825
+        tx_freq_mhz: 157.225
         emission: 16K0F3E
       - name: Ch 85
-        freq_mhz: 157.275
+        freq_mhz: 161.875
+        tx_freq_mhz: 157.275
         emission: 16K0F3E
       - name: Ch 86
-        freq_mhz: 157.325
+        freq_mhz: 161.925
+        tx_freq_mhz: 157.325
         emission: 16K0F3E
       - name: Ch 87
         freq_mhz: 157.375
@@ -283,8 +296,7 @@ assignments:
     channel_name: Ch 20
     usage: port operations duplex
     authorization_id: auth_us_marine
-    notes: Port operations duplex channel. Listed frequency monitors the ship 
-      transmit (157.000 MHz) side.
+    notes: Port operations duplex channel.
   - id: us_marine_vhf_ch20a
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 20A (1020)
@@ -345,6 +357,12 @@ assignments:
     authorization_id: auth_us_marine
     notes: Marine operator public correspondence channel; duplex variant pending
       reassignment to channel 1028 per ITU WRC-19.
+  - id: us_marine_vhf_ch60
+    channel_plan_id: us_marine_vhf_plan
+    channel_name: Ch 60
+    usage: public correspondence
+    authorization_id: auth_us_marine
+    notes: Marine operator public correspondence channel.
   - id: us_marine_vhf_ch63a
     channel_plan_id: us_marine_vhf_plan
     channel_name: Ch 63A (1063)

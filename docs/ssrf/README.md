@@ -5,7 +5,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 ## Quick Statistics
 
 - **Total SSRF Files:** 38
-- **Total Assignments:** 696
+- **Total Assignments:** 697
 - **Services Covered:** 10
 - **Modes:** AM, APRS, C4FM, CW, D-STAR, DMR, FM, NXDN, P25, PACKET
 - **Frequency Bands:** 5
@@ -23,7 +23,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [airband_itinerant](airband_itinerant.md) | aviation | 17 | FM | US |
 | [itinerant_business](itinerant_business.md) | business_itinerant_part90 | 27 | FM | US |
 | [gmrs_channels](gmrs_channels.md) | gmrs | 30 | FM | US |
-| [marine_vhf_channels](marine_vhf_channels.md) | marine | 52 | FM | US |
+| [marine_vhf_channels](marine_vhf_channels.md) | marine | 53 | FM | US |
 | [murs_channels](murs_channels.md) | murs | 5 | FM | US |
 | [rail_aar_scan](rail_aar_scan.md) | railroad_aar | 24 | FM | US |
 | [noaa_weather](noaa_weather.md) | noaa_weather_radio | 7 | FM | US |
@@ -89,7 +89,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | aviation | 164 | 2 |
 | business_itinerant_part90 | 92 | 3 |
 | gmrs | 78 | 5 |
-| marine | 52 | 1 |
+| marine | 53 | 1 |
 | murs | 5 | 1 |
 | noaa_weather_radio | 7 | 1 |
 | pmr446 | 16 | 1 |
