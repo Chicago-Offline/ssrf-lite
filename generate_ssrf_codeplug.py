@@ -39,23 +39,13 @@ published alongside the GitHub Pages site.
 import argparse
 import json
 import pathlib
-from typing import Any, Dict, Iterable, List, Optional, Tuple
+from typing import Any, Dict, List, Optional
 
-from ssrf import load_ssrf_document
+from ssrf import resolve_ssrf_roots
 
 BASE = pathlib.Path(__file__).parent
 SSRF_ROOT = BASE / "ssrf"
 SITE_DIR = BASE / "site"
-
-
-def _iter_ssrf_files(roots: Iterable[pathlib.Path]) -> Iterable[Tuple[pathlib.Path, pathlib.Path]]:
-    for root in roots:
-        for path in sorted(
-            p
-            for p in root.rglob("*.yml")
-            if not p.name.startswith("_") and "_schema" not in p.parts
-        ):
-            yield root, path
 
 
 def _round(value: Optional[float], digits: int = 6) -> Optional[float]:
@@ -150,16 +140,13 @@ def _record_from_plan_channel(
 
 def build_records(ssrf_roots: Optional[List[pathlib.Path]] = None) -> List[Dict[str, Any]]:
     records: List[Dict[str, Any]] = []
-    errors: List[str] = []
     roots = ssrf_roots or [SSRF_ROOT]
 
-    for root, path in _iter_ssrf_files(roots):
+    for document in resolve_ssrf_roots(roots):
+        root = document.root
+        path = document.path
         rel = path.relative_to(root)
-        try:
-            ref = load_ssrf_document(path)
-        except Exception as exc:  # keep the build resilient
-            errors.append(f"{root.name}/{rel}: {exc}")
-            continue
+        ref = document.reference
 
         locs = {l.id: l for l in ref.locations}
         stations = {s.id: s for s in ref.stations}
@@ -198,9 +185,6 @@ def build_records(ssrf_roots: Optional[List[pathlib.Path]] = None) -> List[Dict[
                     )
             # assignments without RF data carry no channel; skip them.
 
-    if errors:
-        for err in errors:
-            print(f"⚠️  {err}")
     return records
 
 

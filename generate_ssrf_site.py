@@ -11,11 +11,11 @@ import argparse
 import json
 import pathlib
 from datetime import date
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional
 
 import yaml
 
-from ssrf import load_ssrf_document
+from ssrf import resolve_ssrf_roots
 
 BASE = pathlib.Path(__file__).parent
 SSRF_ROOT = BASE / "ssrf"
@@ -115,33 +115,15 @@ def _assignment_display_name(a: Any) -> str:
 def build_payload(ssrf_roots: Optional[List[pathlib.Path]] = None) -> Dict[str, Any]:
     files: List[Dict[str, Any]] = []
     channels: List[Dict[str, Any]] = []
-    errors: List[str] = []
 
     roots = ssrf_roots or [SSRF_ROOT]
-    # The first root is the public/authoritative repo; any additional roots are
-    # private overlays whose files do not exist in the public GitHub repo.
-    primary_root = roots[0]
 
-    # Pair each YAML file with the root it came from so paths stay relative to
-    # their own root (a private overlay root mirrors the public ssrf/ layout).
-    yml_pairs: List[Tuple[pathlib.Path, pathlib.Path]] = sorted(
-        (
-            (root, p)
-            for root in roots
-            for p in root.rglob("*.yml")
-            if not p.name.startswith("_") and "_schema" not in p.parts
-        ),
-        key=lambda pair: str(pair[1].relative_to(pair[0])),
-    )
-
-    for root, path in yml_pairs:
+    for document in resolve_ssrf_roots(roots):
+        root = document.root
+        path = document.path
         rel = path.relative_to(root)
-        is_overlay = root != primary_root
-        try:
-            ref = load_ssrf_document(path)
-        except Exception as exc:  # keep the site build resilient
-            errors.append(f"{rel}: {exc}")
-            continue
+        is_overlay = document.is_overlay
+        ref = document.reference
 
         orgs = {o.id: o for o in ref.organizations}
         locs = {l.id: l for l in ref.locations}
@@ -259,8 +241,6 @@ def build_payload(ssrf_roots: Optional[List[pathlib.Path]] = None) -> Dict[str, 
         "files": files,
         "channels": channels,
     }
-    if errors:
-        payload["errors"] = errors
     return payload
 
 

@@ -20,6 +20,7 @@ from .models import (  # noqa: F401
     validate_data,
 )
 from .models import pydantic_models as pydantic_models  # noqa: F401
+from .overlays import ResolvedSSRFDocument, resolve_ssrf_roots
 
 __all__ = [
     "Assignment",
@@ -33,11 +34,13 @@ __all__ = [
     "Organization",
     "RFChain",
     "Receiver",
+    "ResolvedSSRFDocument",
     "SSRFReference",
     "Station",
     "Transmitter",
     "load_multiple",
     "load_ssrf_document",
+    "resolve_ssrf_roots",
     "validate_data",
     "pydantic_models",
 ]
