@@ -241,6 +241,18 @@
           "default": null,
           "title": "Channel Name"
         },
+        "display_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Display Name"
+        },
         "usage": {
           "title": "Usage",
           "type": "string"
