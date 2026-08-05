@@ -111,9 +111,32 @@ uv run python generate_ssrf_site.py \
 For consumers, treat every root as ordinary SSRF-Lite. The public repo remains
 the authoritative reference library; private repos should contain personal
 overlays such as family channels, home repeaters, hotspots, travel lists, or
-locally licensed systems that should not be published. Prefer unique file names
-and IDs in private data so downstream generators can distinguish official and
-personal records cleanly.
+locally licensed systems that should not be published. Extra roots can add
+entities with unique IDs or explicitly patch fields on an existing entity.
+
+Field patches live in a top-level `overrides` mapping and select entities by
+collection and stable ID:
+
+```yaml
+ssrf_lite_version: "0.5.3"
+overrides:
+  assignments:
+    - id: asg_example
+      patch:
+        channel_name: "LOCAL NAME"
+  rf_chains:
+    - id: chain_example
+      patch:
+        mode:
+          ctcss_tx_hz: null
+```
+
+Roots are processed in command-line order, with later roots taking precedence.
+Mappings merge recursively, lists replace, and `null` explicitly clears an
+optional value. Entity IDs are immutable. Unknown or ambiguous targets fail
+resolution, as do patches that produce an invalid SSRF entity. Prefer unique
+file names and IDs in private additions so downstream generators can
+distinguish official and personal records cleanly.
 
 ## Installation
 

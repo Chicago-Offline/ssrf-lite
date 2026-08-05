@@ -90,6 +90,34 @@ class JsonSchemaValidationTest(unittest.TestCase):
         if failures:
             self.fail("JSON Schema validation failures:\n" + "\n".join(failures))
 
+    def test_override_blocks_validate_against_shipped_schema(self) -> None:
+        schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
+        validator = Draft202012Validator(schema)
+        valid = {
+            "ssrf_lite_version": "0.5.3",
+            "overrides": {
+                "assignments": [
+                    {
+                        "id": "asg_example",
+                        "patch": {"channel_name": "LOCAL NAME"},
+                    }
+                ]
+            },
+        }
+        self.assertEqual(list(validator.iter_errors(valid)), [])
+
+        missing_patch = {
+            "ssrf_lite_version": "0.5.3",
+            "overrides": {"assignments": [{"id": "asg_example"}]},
+        }
+        self.assertTrue(list(validator.iter_errors(missing_patch)))
+
+        unknown_collection = {
+            "ssrf_lite_version": "0.5.3",
+            "overrides": {"unknown_entities": []},
+        }
+        self.assertTrue(list(validator.iter_errors(unknown_collection)))
+
 
 if __name__ == "__main__":  # pragma: no cover
     unittest.main()

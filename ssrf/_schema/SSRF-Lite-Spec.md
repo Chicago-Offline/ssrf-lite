@@ -54,11 +54,37 @@ ssrf_lite_version: "0.5.3"
 The versioned JSON Schema lives beside this document at
 [`ssrf-lite-0.5.3.schema.json`](./ssrf-lite-0.5.3.schema.json) and is generated
 from the Pydantic models via `generate_ssrf_schema.py`. Optional, non-normative
-metadata keys (`ssrf_lite.sources`, `comments`) are permitted alongside the
-reference entities.
+metadata keys (`ssrf_lite.sources`, `comments`) and the normative `overrides`
+block are permitted alongside the reference entities.
 
 > Regenerate the schema and re-stamp headers with `make schema stamp-headers`
 > (or `make docs`), and verify freshness in CI with `make validate-schema`.
+
+## 1.2 Overlay field patches
+
+Additional SSRF roots may add entities with unique IDs and may patch entities
+loaded from earlier roots. Patches are explicit and grouped by entity
+collection:
+
+```yaml
+overrides:
+  assignments:
+    - id: asg_example
+      patch:
+        channel_name: "LOCAL NAME"
+  rf_chains:
+    - id: chain_example
+      patch:
+        mode:
+          ctcss_tx_hz: null
+```
+
+Patch mappings merge recursively. Lists replace rather than append, and `null`
+explicitly clears an optional field. The selector ID is immutable and cannot
+appear inside `patch`. A target must identify exactly one entity in its
+collection across roots processed so far; missing and ambiguous targets are
+errors. The complete owning document is validated after patching, so clearing
+a required field or introducing an unknown field is also an error.
 
 ---
 

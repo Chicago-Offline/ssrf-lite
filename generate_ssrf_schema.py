@@ -20,6 +20,7 @@ import json
 import pathlib
 
 from ssrf.models.pydantic_models import SSRFReference
+from ssrf.overlays import ENTITY_COLLECTIONS
 
 SPEC_VERSION = "0.5.3"
 
@@ -72,6 +73,29 @@ def _header_properties() -> dict:
                 "type": "object",
                 "properties": {"text": {"type": "string"}},
                 "additionalProperties": True,
+            },
+        },
+        "overrides": {
+            "type": "object",
+            "description": "Field-level patches targeting entities from earlier SSRF roots.",
+            "additionalProperties": False,
+            "properties": {
+                collection: {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": False,
+                        "required": ["id", "patch"],
+                        "properties": {
+                            "id": {"type": "string", "minLength": 1},
+                            "patch": {
+                                "type": "object",
+                                "description": "Fields to recursively merge into the target entity.",
+                            },
+                        },
+                    },
+                }
+                for collection in ENTITY_COLLECTIONS
             },
         },
     }
