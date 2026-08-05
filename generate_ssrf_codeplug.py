@@ -120,7 +120,9 @@ def _mode_from_emission(emission: Optional[str]) -> Optional[str]:
     return _EMISSION_MODE_BY_DESIGNATOR.get(code)
 
 
-def _record_from_plan_channel(a: Any, plan: Any, ch: Any) -> Dict[str, Any]:
+def _record_from_plan_channel(
+    a: Any, plan: Any, ch: Any, *, name_override: Optional[str] = None
+) -> Dict[str, Any]:
     return {
         "callsign": None,
         "rx_mhz": ch.freq_mhz,
@@ -138,7 +140,11 @@ def _record_from_plan_channel(a: Any, plan: Any, ch: Any) -> Dict[str, Any]:
         # channels. Was hardcoded None, which silently dropped every plan
         # channel from mode-filtered zones.
         "mode": _mode_from_emission(ch.emission),
-        "name": ch.name,
+        # Plan channels carry the canonical national name ("Ch 06"). A local
+        # assignment may prefer its own label ("M06 SAFETY") -- see
+        # `display_name` handling in build_records(). Falls back to the plan
+        # name so existing documents are unaffected.
+        "name": name_override or ch.name,
     }
 
 
@@ -177,8 +183,19 @@ def build_records(ssrf_roots: Optional[List[pathlib.Path]] = None) -> List[Dict[
                     plan_channels = [
                         c for c in plan.channels if c.name == a.channel_name
                     ] or plan.channels
+                # `display_name` renames a plan channel locally without
+                # forking the plan. Only honoured when the assignment selects
+                # exactly ONE channel -- otherwise a single override would
+                # collapse every channel in the plan to the same name.
+                name_override = None
+                if getattr(a, "display_name", None) and len(plan_channels) == 1:
+                    name_override = a.display_name
                 for ch in plan_channels:
-                    records.append(_record_from_plan_channel(a, plan, ch))
+                    records.append(
+                        _record_from_plan_channel(
+                            a, plan, ch, name_override=name_override
+                        )
+                    )
             # assignments without RF data carry no channel; skip them.
 
     if errors:

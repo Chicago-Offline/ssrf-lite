@@ -313,6 +313,12 @@ class Assignment(BaseModel):
     rf_chain_id: Optional[str] = None
     channel_plan_id: Optional[str] = None
     channel_name: Optional[str] = None
+    #: Local label for a plan channel, e.g. ``M06 SAFETY`` for the national
+    #: ``Ch 06``. Lets a downstream document reuse a shared channel plan
+    #: without forking it just to rename channels. Only honoured when
+    #: ``channel_name`` selects exactly one channel from the plan; ignored for
+    #: ``rf_chain_id`` assignments, which already name their own channel.
+    display_name: Optional[str] = None
     usage: str
     service: Optional[str] = None
     authorization_id: Optional[str] = None
