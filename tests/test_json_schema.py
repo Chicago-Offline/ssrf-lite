@@ -53,6 +53,14 @@ class SchemaFreshnessTest(unittest.TestCase):
             "ssrf-lite JSON Schema is stale. Run 'python generate_ssrf_schema.py'.",
         )
 
+    def test_dcs_polarity_is_constrained_and_defaults_to_normal(self) -> None:
+        schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
+        mode_properties = schema["$defs"]["Mode"]["properties"]
+
+        for field in ("dcs_tx_polarity", "dcs_rx_polarity"):
+            self.assertEqual(mode_properties[field]["enum"], ["N", "I"])
+            self.assertEqual(mode_properties[field]["default"], "N")
+
 
 class HeaderStampTest(unittest.TestCase):
     def test_all_files_have_up_to_date_headers(self) -> None:

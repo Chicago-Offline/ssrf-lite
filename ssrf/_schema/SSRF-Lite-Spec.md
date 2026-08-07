@@ -196,8 +196,10 @@ rf_chains:
       type: "FM"
       ctcss_tx_hz: 114.8
       ctcss_rx_hz: 114.8
-      dcs_tx_code: 023        # DCS transmit code (optional)
-      dcs_rx_code: 023        # DCS receive code (optional)
+      dcs_tx_code: "023"      # DCS transmit code (optional)
+      dcs_tx_polarity: "N"   # N (normal, default) or I (inverted)
+      dcs_rx_code: "023"      # DCS receive code (optional)
+      dcs_rx_polarity: "N"   # N (normal, default) or I (inverted)
 
   - id: chain_n9kd_444_dmr
     station_id: stn_n9kd
@@ -225,6 +227,7 @@ Fields:
   - Mode-specific fields:
     - `ctcss_tx_hz`, `ctcss_rx_hz` (optional, Hz)
     - `dcs_tx_code`, `dcs_rx_code` (optional, DCS code as string or integer, e.g. "023", "205")
+    - `dcs_tx_polarity`, `dcs_rx_polarity` (`"N"` or `"I"`; optional, defaults to `"N"`)
     - `color_code`, `timeslots` (for DMR repeaters — talkgroup slot priorities live in `contacts`)
 
 For multi-site DMR systems, capture each repeater as an `rf_chain` and centralize talkgroup metadata in `contacts`. See `chicagoland_dmr_system.yml` for a working example.

@@ -214,6 +214,8 @@ class Mode(BaseModel):
     ctcss_rx_hz: Optional[float] = Field(default=None, gt=0)
     dcs_tx_code: Optional[Union[str, int]] = None
     dcs_rx_code: Optional[Union[str, int]] = None
+    dcs_tx_polarity: Literal["N", "I"] = "N"
+    dcs_rx_polarity: Literal["N", "I"] = "N"
     color_code: Optional[int] = Field(default=None, ge=0, le=15)
     timeslots: Optional[List[int]] = None
     nac: Optional[int] = Field(default=None, ge=0, le=4095)
