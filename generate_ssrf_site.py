@@ -59,8 +59,16 @@ def _mode_summary(mode: Any) -> Dict[str, Any]:
             details.append(f"CTCSS {mode.ctcss_tx_hz:g} Hz")
     elif mode.ctcss_rx_hz:
         details.append(f"CTCSS rx {mode.ctcss_rx_hz:g} Hz")
-    if mode.dcs_tx_code:
-        details.append(f"DCS {mode.dcs_tx_code}")
+    if mode.dcs_tx_code is not None:
+        dcs = f"DCS {mode.dcs_tx_code} {mode.dcs_tx_polarity}"
+        if mode.dcs_rx_code is not None and (
+            mode.dcs_rx_code != mode.dcs_tx_code
+            or mode.dcs_rx_polarity != mode.dcs_tx_polarity
+        ):
+            dcs += f"/{mode.dcs_rx_code} {mode.dcs_rx_polarity}"
+        details.append(dcs)
+    elif mode.dcs_rx_code is not None:
+        details.append(f"DCS rx {mode.dcs_rx_code} {mode.dcs_rx_polarity}")
     if mode.color_code is not None:
         cc = f"CC{mode.color_code}"
         if mode.timeslots:

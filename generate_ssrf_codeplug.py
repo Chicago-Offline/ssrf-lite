@@ -13,6 +13,7 @@ channel records:
         "tx_mhz": float,            # frequency the radio TRANSMITS on
         "ctcss": float | null,      # CTCSS tone the radio must encode (Hz)
         "dcs": str | int | null,    # DCS code the radio must encode
+        "dcs_polarity": str | null, # DCS polarity (N or I)
         "color_code": int | null,   # DMR color code
         "timeslots": [int] | null,  # DMR timeslots
         "lat": float | null,        # site latitude
@@ -68,15 +69,26 @@ def _encode_tone(tx_tone: Optional[float], rx_tone: Optional[float]) -> Optional
     return rx_tone if rx_tone is not None else tx_tone
 
 
+def _encode_dcs(mode: Any) -> tuple[str | int | None, str | None]:
+    """DCS code and polarity the radio must transmit to access the far end."""
+    if mode.dcs_rx_code is not None:
+        return mode.dcs_rx_code, mode.dcs_rx_polarity
+    if mode.dcs_tx_code is not None:
+        return mode.dcs_tx_code, mode.dcs_tx_polarity
+    return None, None
+
+
 def _record_from_rf_chain(a: Any, chain: Any, station: Any, loc: Any) -> Dict[str, Any]:
     mode = chain.mode
+    dcs, dcs_polarity = _encode_dcs(mode)
     return {
         "callsign": station.call_sign if station else None,
         # radio rx = repeater tx (output); radio tx = repeater rx (input)
         "rx_mhz": chain.tx.freq_mhz or chain.rx.freq_mhz,
         "tx_mhz": chain.rx.freq_mhz,
         "ctcss": _encode_tone(mode.ctcss_tx_hz, mode.ctcss_rx_hz),
-        "dcs": _encode_tone(mode.dcs_tx_code, mode.dcs_rx_code),
+        "dcs": dcs,
+        "dcs_polarity": dcs_polarity,
         "color_code": mode.color_code,
         "timeslots": list(mode.timeslots) if mode.timeslots else None,
         "lat": _round(loc.lat) if loc else None,
@@ -119,6 +131,7 @@ def _record_from_plan_channel(
         "tx_mhz": ch.tx_freq_mhz or ch.freq_mhz,
         "ctcss": None,
         "dcs": None,
+        "dcs_polarity": None,
         "color_code": None,
         "timeslots": None,
         "lat": None,

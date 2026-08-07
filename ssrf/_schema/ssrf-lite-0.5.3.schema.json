@@ -845,6 +845,24 @@
           "default": null,
           "title": "Dcs Rx Code"
         },
+        "dcs_tx_polarity": {
+          "default": "N",
+          "enum": [
+            "N",
+            "I"
+          ],
+          "title": "Dcs Tx Polarity",
+          "type": "string"
+        },
+        "dcs_rx_polarity": {
+          "default": "N",
+          "enum": [
+            "N",
+            "I"
+          ],
+          "title": "Dcs Rx Polarity",
+          "type": "string"
+        },
         "color_code": {
           "anyOf": [
             {
