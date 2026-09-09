@@ -39,6 +39,7 @@ rf_chains:
       freq_mhz: 460.125
     tx:
       emission: "11K2F3E" # narrow FM ~12.5 kHz
+      bandwidth_khz: 12.5
     mode:
       type: "FM"
       ctcss_rx_hz: 173.8
@@ -50,6 +51,7 @@ rf_chains:
       freq_mhz: 460.175
     tx:
       emission: "11K2F3E"
+      bandwidth_khz: 12.5
     mode:
       type: "FM"
       ctcss_rx_hz: 123.0
@@ -61,6 +63,7 @@ rf_chains:
       freq_mhz: 460.275
     tx:
       emission: "11K2F3E"
+      bandwidth_khz: 12.5
     mode:
       type: "FM"
       ctcss_rx_hz: 141.3
@@ -72,6 +75,7 @@ rf_chains:
       freq_mhz: 460.325
     tx:
       emission: "11K2F3E"
+      bandwidth_khz: 12.5
     mode:
       type: "FM"
       ctcss_rx_hz: 192.8
@@ -83,6 +87,7 @@ rf_chains:
       freq_mhz: 460.350
     tx:
       emission: "11K2F3E"
+      bandwidth_khz: 12.5
     mode:
       type: "FM"
       ctcss_rx_hz: 97.4
@@ -94,6 +99,7 @@ rf_chains:
       freq_mhz: 460.250
     tx:
       emission: "11K2F3E"
+      bandwidth_khz: 12.5
     mode:
       type: "FM"
       ctcss_rx_hz: 162.2
@@ -105,6 +111,7 @@ rf_chains:
       freq_mhz: 460.300
     tx:
       emission: "11K2F3E"
+      bandwidth_khz: 12.5
     mode:
       type: "FM"
       ctcss_rx_hz: 131.8
@@ -117,6 +124,7 @@ rf_chains:
       freq_mhz: 154.650
     tx:
       emission: "11K2F3E"
+      bandwidth_khz: 12.5
     mode:
       type: "FM"
         # CSQ receive; no tone
