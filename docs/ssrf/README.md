@@ -43,6 +43,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [st_pete_gmrs_repeaters](st_pete_gmrs_repeaters.md) | gmrs | 7 | FM | US / FL / _Regional / gmrs |
 | [cfmc_repeaters](cfmc_repeaters.md) | amateur | 7 | FM, D-STAR, C4FM | US / IL / Cook / Chicago |
 | [chicagoland_dmr_system](chicagoland_dmr_system.md) | amateur | 2 | DMR | US / IL / Cook / Chicago |
+| [n9bbm_loop_repeater](n9bbm_loop_repeater.md) | amateur | 1 | FM | US / IL / Cook / Chicago |
 | [ns9rc_repeaters](ns9rc_repeaters.md) | amateur | 13 | FM, C4FM, D-STAR, AP... | US / IL / Cook / Chicago |
 | [sara_repeaters](sara_repeaters.md) | amateur | 3 | FM, C4FM | US / IL / Cook / Chicago |
 | [chicago_businesses_northside](chicago_businesses_northside.md) | business_itinerant_part90 | 50 | DMR, FM | US / IL / Cook / Chicago |

@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
+ssrf_lite:
+  sources:
+    - name: "RepeaterBook - N9BBM Repeater, Chicago, IL (reviewed 2025-10-12)"
+      url: "https://www.repeaterbook.com/repeaters/location_search.php?state_id=17&type=city&loc=Chicago"
+      accessed: "2026-09-09"
+
+organizations:
+  - id: org_n9bbm
+    name: "N9BBM Chicago Loop Repeater (Nate Russell, N9BBM)"
+
+locations:
+  - id: loc_chicago_wbbm_studio
+    name: "Chicago - WBBM-TV (CBS) Studio rooftop, the Loop (approx)"
+    lat: 41.8832
+    lon: -87.6285
+
+stations:
+  - id: stn_n9bbm_440
+    call_sign: "N9BBM"
+    organization_id: org_n9bbm
+    location_id: loc_chicago_wbbm_studio
+    service: "amateur"
+
+antennas:
+  - id: ant_n9bbm_440
+    station_id: stn_n9bbm_440
+    name: "WBBM-TV Rooftop Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+
+# rx = repeater downlink (what you hear), tx = uplink (what you send)
+rf_chains:
+  - id: chain_n9bbm_440_fm
+    station_id: stn_n9bbm_440
+    antenna_id: ant_n9bbm_440
+    tx:
+      freq_mhz: 446.900 # +5.000 MHz input
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 441.900
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 100.0
+      ctcss_rx_hz: 100.0
+      notes: >-
+        Open repeater, all licensed amateurs welcome. Privately owned and
+        operated by Nate Russell, N9BBM, from the WBBM-TV studio rooftop.
+        Roughly 5 mi coverage radius over the Chicago Loop. Weekly net
+        Sundays at 19:00 America/Chicago.
+
+authorizations:
+  - id: auth_fcc_amateur
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "Transmit requires US amateur license. Open access to all licensed operators."
+
+assignments:
+  - id: asgn_n9bbm_440_fm
+    rf_chain_id: chain_n9bbm_440_fm
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur
