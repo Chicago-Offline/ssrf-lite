@@ -1,0 +1,77 @@
+name: Submit a system
+description: Share an RF system for the reference library without writing YAML yourself.
+title: "[System]: "
+labels: ["data-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing! Provide what you can — a maintainer will draft
+        the SSRF-Lite file. Every entry needs a verifiable public source.
+        If you'd rather submit YAML directly, see
+        [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md).
+  - type: input
+    id: system-name
+    attributes:
+      label: System name
+      description: Repeater, network, or system name.
+      placeholder: "Four Flags ARC 2m Repeater"
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: City/county/state (and coordinates or site name if known).
+      placeholder: "Niles, Berrien County, MI (41.83, -86.24 approx)"
+    validations:
+      required: true
+  - type: dropdown
+    id: service
+    attributes:
+      label: Service
+      options:
+        - amateur
+        - gmrs
+        - frs
+        - murs
+        - pmr446
+        - noaa_weather_radio
+        - marine
+        - aviation
+        - railroad_aar
+        - public_safety_part90
+        - business_itinerant_part90
+        - other / not sure
+    validations:
+      required: true
+  - type: textarea
+    id: rf-details
+    attributes:
+      label: RF details
+      description: >
+        Frequencies (output/input), CTCSS/DCS tones, mode (FM/DMR/P25/...),
+        color code and timeslots for DMR, callsign, and anything else you know.
+      placeholder: |
+        Output 147.180 MHz, input 147.780 MHz (+0.6)
+        CTCSS 94.8 both ways, FM, callsign KC8BRS
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: >
+        Public URL(s) confirming the data (club page, RepeaterBook, FCC ULS,
+        RadioReference, ...) and the date you checked them.
+      placeholder: |
+        https://example.org/repeaters — checked 2026-09-08
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: Nets, coverage, linked systems, talkgroups, access rules, etc.
+    validations:
+      required: false

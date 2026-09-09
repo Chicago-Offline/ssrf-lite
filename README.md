@@ -181,6 +181,13 @@ make test            # run data hygiene and schema tests
 - [OpenGD77 SSRFLite Generator](https://github.com/emuehlstein/OpenGD77_SSRFLite_Generator) —
   codeplug builder producing OpenGD77, CHIRP, and VGC N76 CSVs from SSRF-Lite data.
 
+## Contributing
+
+New systems, channel plans, and corrections are welcome — see
+[CONTRIBUTING.md](CONTRIBUTING.md). No YAML required: you can also
+[submit a system as an issue](https://github.com/Chicago-Offline/ssrf-lite/issues/new?template=submit_system.yml)
+and a maintainer will draft the file.
+
 ## License
 
 Apache 2.0 — see [LICENSE](LICENSE) and [NOTICE](NOTICE).
