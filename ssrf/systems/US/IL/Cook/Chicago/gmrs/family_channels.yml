@@ -84,8 +84,8 @@ rf_chains:
       freq_mhz: 462.5750
     mode:
       type: "FM"
-      dcs_tx_code: "D023N"
-      dcs_rx_code: "D023N"
+      dcs_tx_code: "023"
+      dcs_rx_code: "023"
 
   - id: chain_family_f2_team_a
     station_id: stn_family_gmrs
@@ -99,8 +99,8 @@ rf_chains:
       freq_mhz: 462.6000
     mode:
       type: "FM"
-      dcs_tx_code: "D023N"
-      dcs_rx_code: "D023N"
+      dcs_tx_code: "023"
+      dcs_rx_code: "023"
 
   - id: chain_family_f3_team_b
     station_id: stn_family_gmrs
@@ -114,8 +114,8 @@ rf_chains:
       freq_mhz: 462.6250
     mode:
       type: "FM"
-      dcs_tx_code: "D023N"
-      dcs_rx_code: "D023N"
+      dcs_tx_code: "023"
+      dcs_rx_code: "023"
 
   - id: chain_family_f4_team_c
     station_id: stn_family_gmrs
@@ -129,8 +129,8 @@ rf_chains:
       freq_mhz: 462.6500
     mode:
       type: "FM"
-      dcs_tx_code: "D023N"
-      dcs_rx_code: "D023N"
+      dcs_tx_code: "023"
+      dcs_rx_code: "023"
 
   - id: chain_family_f5_road
     station_id: stn_family_gmrs
@@ -159,14 +159,14 @@ rf_chains:
       freq_mhz: 462.5500
     mode:
       type: "FM"
-      dcs_tx_code: "D023N"
-      dcs_rx_code: "D023N"
+      dcs_tx_code: "023"
+      dcs_rx_code: "023"
 
   - id: chain_family_f8_evnstn
     station_id: stn_family_gmrs
     antenna_id: ant_family_handheld_gmrs
     tx:
-      freq_mhz: 467.7500
+      freq_mhz: 467.7250
       power_w: 5
       emission: "16K0F3E"
       bandwidth_khz: 25
@@ -211,7 +211,7 @@ rf_chains:
     station_id: stn_family_gmrs
     antenna_id: ant_family_handheld_gmrs
     tx:
-      freq_mhz: 460.6500
+      freq_mhz: 467.6500
       power_w: 5
       emission: "16K0F3E"
       bandwidth_khz: 25
@@ -361,7 +361,7 @@ assignments:
     rf_chain_id: chain_family_f8_evnstn
     usage: "repeater"
     authorization_id: auth_fcc_gmrs_family
-    notes: "Evanston-area GMRS repeater (output 462.7250 / input 467.7500)."
+    notes: "Evanston-area GMRS repeater (output 462.7250 / input 467.7250)."
 
   - id: asgn_family_f9_prkrdg
     rf_chain_id: chain_family_f9_prkrdg

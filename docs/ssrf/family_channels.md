@@ -48,7 +48,7 @@
 - **asgn_family_f6_rptr** - repeater
   - *GMRS repeater pair assumed +5.000 MHz input (467.5500).*
 - **asgn_family_f8_evnstn** - repeater
-  - *Evanston-area GMRS repeater (output 462.7250 / input 467.7500).*
+  - *Evanston-area GMRS repeater (output 462.7250 / input 467.7250).*
 - **asgn_family_f9_prkrdg** - repeater
   - *Park Ridge GMRS repeater (output 462.6750 / input 467.6750).*
 - **asgn_family_f10_evnst** - simplex
