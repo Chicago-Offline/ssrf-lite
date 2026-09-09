@@ -4,8 +4,8 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ## Quick Statistics
 
-- **Total SSRF Files:** 39
-- **Total Assignments:** 700
+- **Total SSRF Files:** 41
+- **Total Assignments:** 704
 - **Services Covered:** 10
 - **Modes:** AM, APRS, C4FM, CW, D-STAR, DMR, FM, NXDN, P25, PACKET
 - **Frequency Bands:** 5
@@ -34,7 +34,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |------|----------|-------------|-------|------------------|
 | [mmdvm_duplex_hotspot](mmdvm_duplex_hotspot.md) | amateur | 2 | DMR | custom / mmdvm_duplex_hotspot.yml |
 
-### Geographic System (27 files)
+### Geographic System (29 files)
 
 | File | Services | Assignments | Modes | Geographic Scope |
 |------|----------|-------------|-------|------------------|
@@ -43,6 +43,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [st_pete_gmrs_repeaters](st_pete_gmrs_repeaters.md) | gmrs | 7 | FM | US / FL / _Regional / gmrs |
 | [cfmc_repeaters](cfmc_repeaters.md) | amateur | 7 | FM, D-STAR, C4FM | US / IL / Cook / Chicago |
 | [chicagoland_dmr_system](chicagoland_dmr_system.md) | amateur | 2 | DMR | US / IL / Cook / Chicago |
+| [n9bbm_loop_repeater](n9bbm_loop_repeater.md) | amateur | 1 | FM | US / IL / Cook / Chicago |
 | [ns9rc_repeaters](ns9rc_repeaters.md) | amateur | 13 | FM, C4FM, D-STAR, AP... | US / IL / Cook / Chicago |
 | [sara_repeaters](sara_repeaters.md) | amateur | 3 | FM, C4FM | US / IL / Cook / Chicago |
 | [chicago_businesses_northside](chicago_businesses_northside.md) | business_itinerant_part90 | 50 | DMR, FM | US / IL / Cook / Chicago |
@@ -74,7 +75,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ### US
 - **FL:** 3 files
-- **IL:** 17 files
+- **IL:** 18 files
 - **IN:** 3 files
 - **MI:** 3 files
 - **National/Regional:** 10 files
@@ -88,7 +89,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 | Service | Total Assignments | Files |
 |---------|------------------|-------|
-| amateur | 111 | 15 |
+| amateur | 115 | 17 |
 | aviation | 164 | 2 |
 | business_itinerant_part90 | 92 | 3 |
 | gmrs | 78 | 5 |
