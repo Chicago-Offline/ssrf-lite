@@ -1,0 +1,130 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
+ssrf_lite:
+  sources:
+    - name: "DARC Club Repeaters (W9DUP)"
+      url: "https://www.w9dup.org/repeaters.html"
+      accessed: "2026-09-09"
+    - name: "RepeaterBook - W9DUP Repeater, Downers Grove, IL"
+      url: "https://www.repeaterbook.com/repeaters/details.php?state_id=17&ID=483"
+      accessed: "2026-09-09"
+
+organizations:
+  - id: org_darc_w9dup
+    name: "DuPage Amateur Radio Club (DARC)"
+
+locations:
+  - id: loc_downers_grove_w9dup
+    name: "Downers Grove, IL - W9DUP Repeater Site (approx)"
+    lat: 41.8090
+    lon: -88.0110
+
+stations:
+  - id: stn_w9dup_2m
+    call_sign: "W9DUP"
+    organization_id: org_darc_w9dup
+    location_id: loc_downers_grove_w9dup
+    service: "amateur"
+  - id: stn_w9dup_220
+    call_sign: "W9DUP"
+    organization_id: org_darc_w9dup
+    location_id: loc_downers_grove_w9dup
+    service: "amateur"
+  - id: stn_w9dup_440
+    call_sign: "W9DUP"
+    organization_id: org_darc_w9dup
+    location_id: loc_downers_grove_w9dup
+    service: "amateur"
+
+antennas:
+  - id: ant_w9dup_2m_220
+    station_id: stn_w9dup_2m
+    name: "Shared 2m / 220 MHz Vertical"
+    gain_dbi: 3.0 # ~3 dBd on 2m per club FAQ (dual-band compromise stick)
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_w9dup_220
+    station_id: stn_w9dup_220
+    name: "220 MHz (shared stick with 2m)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_w9dup_440
+    station_id: stn_w9dup_440
+    name: "70cm Vertical"
+    gain_dbi: 10.0 # ~10 dBd per club FAQ
+    height_agl_m: null
+    height_amsl_m: null
+
+rf_chains:
+  - id: chain_w9dup_2m_fm
+    station_id: stn_w9dup_2m
+    antenna_id: ant_w9dup_2m_220
+    tx:
+      freq_mhz: 145.430
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 144.830 # -0.600 MHz input
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 107.2
+      ctcss_rx_hz: 107.2
+      notes: >-
+        CTCSS decode required to key the repeater when idle >60 s; carrier
+        access is permitted while the machine is already up. IRLP/EchoLink
+        uplink present at this site.
+
+  - id: chain_w9dup_220_fm
+    station_id: stn_w9dup_220
+    antenna_id: ant_w9dup_220
+    tx:
+      freq_mhz: 224.680
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 223.080 # -1.6 MHz input
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 110.9
+      ctcss_rx_hz: 110.9
+      notes: >-
+        CTCSS decode required to key the repeater when idle >60 s; carrier
+        access is permitted while the machine is already up.
+
+  - id: chain_w9dup_440_fm
+    station_id: stn_w9dup_440
+    antenna_id: ant_w9dup_440
+    tx:
+      freq_mhz: 442.550
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 447.550 # +5.0 MHz input
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 114.8
+      ctcss_rx_hz: 114.8
+
+authorizations:
+  - id: auth_fcc_amateur
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "Transmit requires US amateur license. Coordinated by the Illinois Repeater Association."
+
+assignments:
+  - id: asgn_w9dup_2m_fm
+    rf_chain_id: chain_w9dup_2m_fm
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur
+  - id: asgn_w9dup_220_fm
+    rf_chain_id: chain_w9dup_220_fm
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur
+  - id: asgn_w9dup_440_fm
+    rf_chain_id: chain_w9dup_440_fm
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur
