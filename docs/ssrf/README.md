@@ -4,8 +4,8 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ## Quick Statistics
 
-- **Total SSRF Files:** 38
-- **Total Assignments:** 697
+- **Total SSRF Files:** 39
+- **Total Assignments:** 700
 - **Services Covered:** 10
 - **Modes:** AM, APRS, C4FM, CW, D-STAR, DMR, FM, NXDN, P25, PACKET
 - **Frequency Bands:** 5
@@ -34,7 +34,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |------|----------|-------------|-------|------------------|
 | [mmdvm_duplex_hotspot](mmdvm_duplex_hotspot.md) | amateur | 2 | DMR | custom / mmdvm_duplex_hotspot.yml |
 
-### Geographic System (26 files)
+### Geographic System (27 files)
 
 | File | Services | Assignments | Modes | Geographic Scope |
 |------|----------|-------------|-------|------------------|
@@ -63,6 +63,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [kc8brs_four_flags](kc8brs_four_flags.md) | amateur | 1 | FM | US / MI / Berrien / Niles |
 | [berrien_county_amateur](berrien_county_amateur.md) | amateur | 5 | FM, D-STAR | US / MI / Berrien / _Countywide |
 | [berrien_county_public_safety](berrien_county_public_safety.md) | public_safety_part90 | 13 | FM | US / MI / Berrien / _Countywide |
+| [kr9rk_lakeshore_repeaters](kr9rk_lakeshore_repeaters.md) | amateur | 3 | FM, DMR | US / WI / Racine / _Countywide |
 | [chicagoland_airports](chicagoland_airports.md) | aviation | 147 | AM | US / _Regional / aviation / chicagoland_airports.yml |
 
 ## Geographic Coverage
@@ -76,6 +77,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 - **IN:** 3 files
 - **MI:** 3 files
 - **National/Regional:** 10 files
+- **WI:** 1 files
 - **_Regional:** 1 files
 
 ### custom
@@ -85,7 +87,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 | Service | Total Assignments | Files |
 |---------|------------------|-------|
-| amateur | 108 | 14 |
+| amateur | 111 | 15 |
 | aviation | 164 | 2 |
 | business_itinerant_part90 | 92 | 3 |
 | gmrs | 78 | 5 |

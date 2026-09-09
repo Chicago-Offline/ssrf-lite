@@ -1,0 +1,160 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
+ssrf_lite:
+  sources:
+    - name: "Lakeshore Repeater Association (KR9RK) - Our Repeaters"
+      url: "https://www.kr9rk.org/our-repeaters/"
+      accessed: "2026-09-09"
+    - name: "KR9RK - Analog 147.270 PL 127.3"
+      url: "https://www.kr9rk.org/our-repeaters/analog-147-270-pl-127-3/"
+      accessed: "2026-09-09"
+    - name: "KR9RK - Analog 442.000 PL 79.7"
+      url: "https://www.kr9rk.org/our-repeaters/analog-442-000-pl-79-7/"
+      accessed: "2026-09-09"
+    - name: "KR9RK - DMR 440.00625 CC9"
+      url: "https://www.kr9rk.org/our-repeaters/dmr/"
+      accessed: "2026-09-09"
+    - name: "KR9RK - About LRA (site heights, DMR freq, Walworth RX site)"
+      url: "https://www.kr9rk.org/about-lra/"
+      accessed: "2026-09-09"
+
+organizations:
+  - id: org_lra_kr9rk
+    name: "Lakeshore Repeater Association (LRA)"
+
+locations:
+  - id: loc_lra_main_site
+    name: "Racine/Kenosha County border, WI - LRA Main Site (approx)"
+    lat: 42.6200
+    lon: -87.9000
+  - id: loc_lra_kenosha_rx
+    name: "Kenosha, WI - Downtown Receiver Site (approx)"
+    lat: 42.5850
+    lon: -87.8210
+  - id: loc_lra_walworth_rx
+    name: "Walworth, WI - UHF Analog Receiver Site (approx)"
+    lat: 42.5300
+    lon: -88.5990
+
+stations:
+  - id: stn_kr9rk_2m
+    call_sign: "KR9RK"
+    organization_id: org_lra_kr9rk
+    location_id: loc_lra_main_site
+    service: "amateur"
+  - id: stn_kr9rk_440_analog
+    call_sign: "KR9RK"
+    organization_id: org_lra_kr9rk
+    location_id: loc_lra_main_site
+    service: "amateur"
+  - id: stn_kr9rk_440_dmr
+    call_sign: "KR9RK"
+    organization_id: org_lra_kr9rk
+    location_id: loc_lra_main_site
+    service: "amateur"
+
+antennas:
+  - id: ant_kr9rk_tx_dualband
+    station_id: stn_kr9rk_2m
+    name: "Main Site Dual-Band TX Standoff (2m + 70cm)"
+    gain_dbi: null
+    height_agl_m: 115.8 # 380 ft
+    height_amsl_m: null
+  - id: ant_kr9rk_tx_440
+    station_id: stn_kr9rk_440_analog
+    name: "Main Site Dual-Band TX Standoff (70cm)"
+    gain_dbi: null
+    height_agl_m: 115.8 # 380 ft
+    height_amsl_m: null
+  - id: ant_kr9rk_tx_440_dmr
+    station_id: stn_kr9rk_440_dmr
+    name: "Main Site Dual-Band TX Standoff (70cm DMR)"
+    gain_dbi: null
+    height_agl_m: 115.8 # 380 ft
+    height_amsl_m: null
+
+# rx = repeater downlink (what you hear), tx = uplink (what you send)
+rf_chains:
+  - id: chain_kr9rk_2m_fm
+    station_id: stn_kr9rk_2m
+    antenna_id: ant_kr9rk_tx_dualband
+    tx:
+      freq_mhz: 147.870 # +0.600 MHz input
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.270
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 127.3
+      ctcss_rx_hz: 127.3
+      notes: >-
+        Voted receiver network: main site plus several remote listening sites
+        (including downtown Kenosha) feed a voting controller. Linked to
+        AllStar node 511680.
+
+  - id: chain_kr9rk_440_fm
+    station_id: stn_kr9rk_440_analog
+    antenna_id: ant_kr9rk_tx_440
+    tx:
+      freq_mhz: 447.000 # +5.0 MHz input
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 442.000
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 79.7
+      ctcss_rx_hz: 79.7
+      notes: >-
+        Linked to AllStar node 511681; Hamshack Hotline extension 94034 (*99
+        keys, # unkeys). The Walworth, WI remote receive site requires a
+        114.8 Hz TX tone instead of 79.7 Hz.
+
+  - id: chain_kr9rk_440_dmr
+    station_id: stn_kr9rk_440_dmr
+    antenna_id: ant_kr9rk_tx_440_dmr
+    tx:
+      freq_mhz: 445.00625 # +5.0 MHz input
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 440.00625
+    mode:
+      type: "DMR"
+      color_code: 9
+      timeslots: [1, 2]
+      notes: >-
+        Connected to the ChicagoLand C-Bridge network. Five-plus digital voted
+        receiver sites. Primary talkgroup WI Statewide 3155 on TS1, full time;
+        TS2 carries the rest of the ChicagoLand talkgroup list.
+
+contacts:
+  - id: tg_3155_wi_statewide
+    name: "WI Statewide"
+    kind: "Group"
+    number: 3155
+    default_timeslot: 1
+    notes: "Primary talkgroup, active full time on TS1."
+
+authorizations:
+  - id: auth_fcc_amateur
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "Transmit requires US amateur license. Coordinated by the Wisconsin Association of Repeaters."
+
+assignments:
+  - id: asgn_kr9rk_2m_fm
+    rf_chain_id: chain_kr9rk_2m_fm
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur
+  - id: asgn_kr9rk_440_fm
+    rf_chain_id: chain_kr9rk_440_fm
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur
+  - id: asgn_kr9rk_440_dmr
+    rf_chain_id: chain_kr9rk_440_dmr
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur
