@@ -59,6 +59,7 @@ Each record has the shape:
   "tx_mhz": 444.75,      // frequency the radio transmits on (repeater input)
   "ctcss": 146.2,        // CTCSS tone to encode (Hz), or null
   "dcs": "023",          // DCS code to encode, or null
+  "dcs_polarity": "N",   // DCS polarity (N or I), or null
   "color_code": 1,        // DMR color code, or null
   "timeslots": [1, 2],    // DMR timeslots, or null
   "lat": 27.983104,       // site latitude, or null
