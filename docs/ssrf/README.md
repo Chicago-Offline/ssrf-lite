@@ -4,8 +4,8 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ## Quick Statistics
 
-- **Total SSRF Files:** 38
-- **Total Assignments:** 697
+- **Total SSRF Files:** 39
+- **Total Assignments:** 700
 - **Services Covered:** 10
 - **Modes:** AM, APRS, C4FM, CW, D-STAR, DMR, FM, NXDN, P25, PACKET
 - **Frequency Bands:** 5
@@ -34,7 +34,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |------|----------|-------------|-------|------------------|
 | [mmdvm_duplex_hotspot](mmdvm_duplex_hotspot.md) | amateur | 2 | DMR | custom / mmdvm_duplex_hotspot.yml |
 
-### Geographic System (26 files)
+### Geographic System (27 files)
 
 | File | Services | Assignments | Modes | Geographic Scope |
 |------|----------|-------------|-------|------------------|
@@ -55,6 +55,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [public_works_parks](public_works_parks.md) | public_safety_part90 | 17 | FM, DMR | US / IL / Cook / Chicago |
 | [transit_transport](transit_transport.md) | public_safety_part90 | 7 | FM, DMR | US / IL / Cook / Chicago |
 | [cook_county_interop](cook_county_interop.md) | public_safety_part90 | 9 | FM | US / IL / Cook / _Countywide |
+| [w9dup_darc_repeaters](w9dup_darc_repeaters.md) | amateur | 3 | FM | US / IL / DuPage / DownersGrove |
 | [tri_state_dmr](tri_state_dmr.md) | amateur | 16 | DMR | US / IL / _Statewide / amateur |
 | [il_statewide_interop](il_statewide_interop.md) | public_safety_part90 | 14 | FM | US / IL / _Statewide / public_safety |
 | [laporte_county_amateur_radio_club](laporte_county_amateur_radio_club.md) | amateur | 6 | FM, C4FM | US / IN / LaPorte / LaPorte |
@@ -72,7 +73,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ### US
 - **FL:** 3 files
-- **IL:** 16 files
+- **IL:** 17 files
 - **IN:** 3 files
 - **MI:** 3 files
 - **National/Regional:** 10 files
@@ -85,7 +86,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 | Service | Total Assignments | Files |
 |---------|------------------|-------|
-| amateur | 108 | 14 |
+| amateur | 111 | 15 |
 | aviation | 164 | 2 |
 | business_itinerant_part90 | 92 | 3 |
 | gmrs | 78 | 5 |
