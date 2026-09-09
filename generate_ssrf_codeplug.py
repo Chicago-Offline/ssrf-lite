@@ -20,6 +20,7 @@ channel records:
         "lon": float | null,        # site longitude
         "service": str | null,      # SSRF service taxonomy id
         "mode": str | null,         # modulation/mode (FM, DMR, ...)
+        "bandwidth_khz": float | null, # channel bandwidth (kHz)
         "name": str                 # human-readable channel name
     }
 
@@ -40,6 +41,7 @@ published alongside the GitHub Pages site.
 import argparse
 import json
 import pathlib
+import re
 from typing import Any, Dict, List, Optional
 
 from ssrf import resolve_ssrf_roots
@@ -69,6 +71,24 @@ def _encode_tone(tx_tone: Optional[float], rx_tone: Optional[float]) -> Optional
     return rx_tone if rx_tone is not None else tx_tone
 
 
+# ITU necessary-bandwidth prefix: digits around a decimal-point letter
+# (H = Hz, K = kHz, M = MHz), e.g. 16K0 -> 16.0 kHz, 11K2 -> 11.2 kHz.
+_EMISSION_BANDWIDTH_RE = re.compile(r"^(\d{0,3})([HKM])(\d{0,2})")
+
+
+def _emission_bandwidth_khz(emission: Optional[str]) -> Optional[float]:
+    """Necessary bandwidth in kHz from an ITU emission designator."""
+    if not emission:
+        return None
+    m = _EMISSION_BANDWIDTH_RE.match(emission.strip().upper())
+    if not m or not m.group(1):
+        return None
+    value = float(f"{m.group(1)}.{m.group(3) or 0}")
+    scale = {"H": 0.001, "K": 1.0, "M": 1000.0}[m.group(2)]
+    khz = value * scale
+    return khz or None
+
+
 def _encode_dcs(mode: Any) -> tuple[str | int | None, str | None]:
     """DCS code and polarity the radio must transmit to access the far end."""
     if mode.dcs_rx_code is not None:
@@ -95,6 +115,8 @@ def _record_from_rf_chain(a: Any, chain: Any, station: Any, loc: Any) -> Dict[st
         "lon": _round(loc.lon) if loc else None,
         "service": a.service or (station.service if station else None),
         "mode": mode.type,
+        "bandwidth_khz": chain.tx.bandwidth_khz
+        or _emission_bandwidth_khz(chain.tx.emission),
         "name": _assignment_display_name(a),
     }
 
@@ -143,6 +165,7 @@ def _record_from_plan_channel(
         # channels. Was hardcoded None, which silently dropped every plan
         # channel from mode-filtered zones.
         "mode": _mode_from_emission(ch.emission),
+        "bandwidth_khz": ch.bandwidth_khz or _emission_bandwidth_khz(ch.emission),
         # Plan channels carry the canonical national name ("Ch 06"). A local
         # assignment may prefer its own label ("M06 SAFETY") -- see
         # `display_name` handling in build_records(). Falls back to the plan

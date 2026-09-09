@@ -66,6 +66,7 @@ Each record has the shape:
   "lon": -82.490542,      // site longitude, or null
   "service": "amateur",  // SSRF service taxonomy id, or null
   "mode": "FM",          // modulation/mode, or null
+  "bandwidth_khz": 16.0,  // channel bandwidth (kHz), or null
   "name": "tarc uhf1"    // human-readable channel name
 }
 ```
