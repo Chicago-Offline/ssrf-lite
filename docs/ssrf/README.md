@@ -4,8 +4,8 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ## Quick Statistics
 
-- **Total SSRF Files:** 39
-- **Total Assignments:** 700
+- **Total SSRF Files:** 41
+- **Total Assignments:** 707
 - **Services Covered:** 10
 - **Modes:** AM, APRS, C4FM, CW, D-STAR, DMR, FM, NXDN, P25, PACKET
 - **Frequency Bands:** 5
@@ -34,7 +34,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |------|----------|-------------|-------|------------------|
 | [mmdvm_duplex_hotspot](mmdvm_duplex_hotspot.md) | amateur | 2 | DMR | custom / mmdvm_duplex_hotspot.yml |
 
-### Geographic System (27 files)
+### Geographic System (29 files)
 
 | File | Services | Assignments | Modes | Geographic Scope |
 |------|----------|-------------|-------|------------------|
@@ -54,6 +54,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [chicago_police_department](chicago_police_department.md) | public_safety_part90 | 8 | FM | US / IL / Cook / Chicago |
 | [public_works_parks](public_works_parks.md) | public_safety_part90 | 17 | FM, DMR | US / IL / Cook / Chicago |
 | [transit_transport](transit_transport.md) | public_safety_part90 | 7 | FM, DMR | US / IL / Cook / Chicago |
+| [paaros_repeaters](paaros_repeaters.md) | amateur | 4 | FM, C4FM, D-STAR | US / IL / Cook / _Countywide |
 | [cook_county_interop](cook_county_interop.md) | public_safety_part90 | 9 | FM | US / IL / Cook / _Countywide |
 | [w9dup_darc_repeaters](w9dup_darc_repeaters.md) | amateur | 3 | FM | US / IL / DuPage / DownersGrove |
 | [tri_state_dmr](tri_state_dmr.md) | amateur | 16 | DMR | US / IL / _Statewide / amateur |
@@ -74,7 +75,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ### US
 - **FL:** 3 files
-- **IL:** 17 files
+- **IL:** 18 files
 - **IN:** 3 files
 - **MI:** 3 files
 - **National/Regional:** 10 files
@@ -88,7 +89,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 | Service | Total Assignments | Files |
 |---------|------------------|-------|
-| amateur | 111 | 15 |
+| amateur | 118 | 17 |
 | aviation | 164 | 2 |
 | business_itinerant_part90 | 92 | 3 |
 | gmrs | 78 | 5 |

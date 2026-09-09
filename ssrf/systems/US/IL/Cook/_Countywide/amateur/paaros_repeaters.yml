@@ -1,0 +1,162 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
+ssrf_lite:
+  sources:
+    - name: "PAAROS - About Society"
+      url: "https://paaros.com/about-society/"
+      accessed: "2026-09-09"
+    - name: "PAAROS - Nasze przemienniki (site, height, tone, D-Star)"
+      url: "https://paaros.com/przemiennik-na9pl/"
+      accessed: "2026-09-09"
+    - name: "PAAROS - site banner (frequency/tone/link summary)"
+      url: "https://paaros.com/"
+      accessed: "2026-09-09"
+
+organizations:
+  - id: org_paaros
+    name: "Polish-American Amateur Radio Operators Society (PAAROS)"
+
+locations:
+  - id: loc_chicago_north_highrise
+    name: "Chicago - 3 mi north of downtown, 50-story rooftop (approx)"
+    lat: 41.9250
+    lon: -87.6400
+  - id: loc_streamwood_clubhouse
+    name: "Streamwood, IL - PAAROS Clubhouse (approx)"
+    lat: 42.0256
+    lon: -88.1784
+
+stations:
+  - id: stn_na9pl_440_mixed
+    call_sign: "NA9PL"
+    organization_id: org_paaros
+    location_id: loc_chicago_north_highrise
+    service: "amateur"
+  - id: stn_na9pl_440_fm_poland
+    call_sign: "NA9PL"
+    organization_id: org_paaros
+    location_id: loc_chicago_north_highrise
+    service: "amateur"
+  - id: stn_na9pl_440_dstar
+    call_sign: "NA9PL"
+    organization_id: org_paaros
+    location_id: loc_streamwood_clubhouse
+    service: "amateur"
+
+antennas:
+  - id: ant_na9pl_highrise
+    station_id: stn_na9pl_440_mixed
+    name: "50-story Rooftop Antenna"
+    gain_dbi: null
+    height_agl_m: 137.2 # ~450 ft above street level
+    height_amsl_m: null
+  - id: ant_na9pl_highrise_fm_poland
+    station_id: stn_na9pl_440_fm_poland
+    name: "50-story Rooftop Antenna (FM-Poland machine)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_na9pl_dstar
+    station_id: stn_na9pl_440_dstar
+    name: "Clubhouse D-Star Antenna"
+    gain_dbi: null
+    height_agl_m: 7.6 # ~25 ft AGL
+    height_amsl_m: null
+
+# rx = repeater downlink (what you hear), tx = uplink (what you send)
+rf_chains:
+  # Yaesu DR-2X mixed-mode: analog FM and C4FM on the same pair
+  - id: chain_na9pl_440_fm
+    station_id: stn_na9pl_440_mixed
+    antenna_id: ant_na9pl_highrise
+    tx:
+      freq_mhz: 445.250 # +5.0 MHz input
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 440.250
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 114.8
+      ctcss_rx_hz: 114.8
+      notes: >-
+        Yaesu DR-2X running mixed analog/digital (AMS). Analog side is
+        local-only; network links are reached via the C4FM side.
+  - id: chain_na9pl_440_c4fm
+    station_id: stn_na9pl_440_mixed
+    antenna_id: ant_na9pl_highrise
+    tx:
+      freq_mhz: 445.250
+      emission: "8K50F7W"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 440.250
+    mode:
+      type: "C4FM"
+      ctcss_tx_hz: 114.8
+      ctcss_rx_hz: 114.8
+      notes: >-
+        Linked to Wires-X room NA9PL-ROOM #81708, YSFReflector #88843, and
+        BrandMeister DMR talkgroup 26018.
+
+  # Motorola XPR8300, in test since May 2024; IL coordination pending
+  - id: chain_na9pl_440_500_fm
+    station_id: stn_na9pl_440_fm_poland
+    antenna_id: ant_na9pl_highrise_fm_poland
+    tx:
+      freq_mhz: 445.500 # +5.0 MHz input
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 440.500
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 67.0
+      ctcss_rx_hz: 67.0
+      notes: >-
+        Motorola XPR8300, in testing since May 2024. Frequency is NOT
+        coordinated (coordination pending with the Illinois Repeater
+        Association) - verify before relying on this pair. Connected to the
+        FM-Poland network, group 31018.
+
+  # Icom ID-RP4010V, digital-only D-Star at the clubhouse
+  - id: chain_na9pl_440_725_dstar
+    station_id: stn_na9pl_440_dstar
+    antenna_id: ant_na9pl_dstar
+    tx:
+      freq_mhz: 445.725 # +5.0 MHz input
+      emission: "6K00F7E"
+    rx:
+      freq_mhz: 440.725
+    mode:
+      type: "D-STAR"
+      notes: >-
+        Icom ID-RP4010V, digital-only (no analog). Modules B and G; gateway
+        linked to the D-Plus network with auto-linking to REF032A.
+
+authorizations:
+  - id: auth_fcc_amateur
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "Transmit requires US amateur license."
+
+assignments:
+  - id: asgn_na9pl_440_fm
+    rf_chain_id: chain_na9pl_440_fm
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur
+  - id: asgn_na9pl_440_c4fm
+    rf_chain_id: chain_na9pl_440_c4fm
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur
+  - id: asgn_na9pl_440_500_fm
+    rf_chain_id: chain_na9pl_440_500_fm
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur
+  - id: asgn_na9pl_440_725_dstar
+    rf_chain_id: chain_na9pl_440_725_dstar
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur
