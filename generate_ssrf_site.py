@@ -10,6 +10,7 @@ and writes ``site/data.json`` for the frontend in ``site/``.
 import argparse
 import json
 import pathlib
+import subprocess
 from datetime import date
 from typing import Any, Dict, List, Optional
 
@@ -109,6 +110,21 @@ def _prettify(stem: str) -> str:
     return stem.replace("_", " ").title()
 
 
+def _git_lastmod(path: pathlib.Path) -> Optional[str]:
+    """Last git commit date (YYYY-MM-DD) for path, or None if untracked/no repo."""
+    try:
+        result = subprocess.run(
+            ["git", "log", "-1", "--format=%cs", "--", str(path)],
+            cwd=path.parent,
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+    except (OSError, subprocess.CalledProcessError):
+        return None
+    return result.stdout.strip() or None
+
+
 def _assignment_display_name(a: Any) -> str:
     if a.channel_name:
         return a.channel_name
@@ -180,6 +196,7 @@ def build_payload(ssrf_roots: Optional[List[pathlib.Path]] = None) -> Dict[str, 
             file_entry["url"] = f"{REPO_URL}/blob/main/ssrf/{rel}"
             file_entry["doc_url"] = f"docs/ssrf/{path.stem}.md"
             file_entry["download_url"] = f"{RAW_REPO_URL}/ssrf/{rel}"
+            file_entry["lastmod"] = _git_lastmod(path)
         files.append(file_entry)
 
         for a in ref.assignments:
@@ -255,10 +272,14 @@ def build_payload(ssrf_roots: Optional[List[pathlib.Path]] = None) -> Dict[str, 
 def write_sitemap(
     output_dir: pathlib.Path, generated: str, files: List[Dict[str, Any]]
 ) -> None:
+    # Per-file git commit dates keep lastmod stable across rebuilds; the
+    # homepage reflects the newest content change.
+    lastmods = [f["lastmod"] for f in files if f.get("lastmod")]
+    home_lastmod = max(lastmods) if lastmods else generated
     detail_urls = "\n".join(
         f"""  <url>
     <loc>{SITE_URL}{file['doc_url']}</loc>
-    <lastmod>{generated}</lastmod>
+    <lastmod>{file.get('lastmod') or generated}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>"""
@@ -270,7 +291,7 @@ def write_sitemap(
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>{SITE_URL}</loc>
-    <lastmod>{generated}</lastmod>
+    <lastmod>{home_lastmod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
