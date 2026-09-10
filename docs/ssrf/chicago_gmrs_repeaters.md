@@ -7,22 +7,22 @@
 
 ## Overview
 
-- **Assignments:** 9
+- **Assignments:** 10
 - **Services:** gmrs
 - **Organizations:** 1
-- **Locations:** 7
-- **RF Chains:** 9
+- **Locations:** 8
+- **RF Chains:** 10
 - **Channel Plans:** 0
 - **Contacts:** 0
 
 ### Modes
-- **FM:** 9
+- **FM:** 10
 
 ### Usage Types
-- **Repeater:** 9
+- **Repeater:** 10
 
 ### Frequency Bands
-- **UHF (400-480 MHz):** 9
+- **UHF (400-480 MHz):** 10
 
 ## Organizations
 
@@ -44,9 +44,11 @@
 
 ### Oak Lawn, IL
 
+### Montclare, Chicago, IL
+
 ## Assignments
 
-### Unknown (9 assignments)
+### Unknown (10 assignments)
 
 - **asgn_gmrs_lincolnwood_575** - repeater
   - *Permission required to use. Output 462.5750 (+5.000 input).*
@@ -66,3 +68,5 @@
   - *Open system. 203.5 Hz PL. Output 462.6500 (+5.000 input).*
 - **asgn_gmrs_oak_lawn_625** - repeater
   - *Permission required. Output 462.6250 (+5.000 input).*
+- **asgn_gmrs_montclare_650** - repeater
+  - *Open system; access permission is not required. 79.7 Hz PL. FCC rules and callsign use required. Output 462.6500 (+5.000 input).*

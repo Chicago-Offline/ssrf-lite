@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
+ssrf_lite:
+  sources:
+    - name: "GMRS Two Way Radio listing on MyGMRS"
+      url: "https://mygmrs.com/user/GMRSWIS"
+      accessed: "2026-09-10"
+
+organizations:
+  - id: org_gmrs_two_way_radio
+    name: "GMRS Two Way Radio"
+
+locations:
+  - id: loc_sparta_wi
+    name: "Sparta, WI"
+
+stations:
+  - id: stn_gmrs_sparta_625
+    call_sign: "GMRS"
+    organization_id: org_gmrs_two_way_radio
+    location_id: loc_sparta_wi
+    service: "gmrs"
+
+rf_chains:
+  - id: chain_gmrs_sparta_625
+    station_id: stn_gmrs_sparta_625
+    tx:
+      freq_mhz: 467.625
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.625
+    mode:
+      type: "FM"
+
+assignments:
+  - id: asgn_gmrs_sparta_625
+    rf_chain_id: chain_gmrs_sparta_625
+    usage: "repeater"
+    notes: "Open system; operation is intermittent while the owner works on equipment and tests products. No input or output tone. Currently limited to approximately 2-2.8 miles due to the valley location. Moved to Sparta in November 2023."

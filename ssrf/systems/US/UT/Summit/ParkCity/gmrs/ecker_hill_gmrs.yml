@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
+ssrf_lite:
+  sources:
+    - name: "Ecker Hill listing on MyGMRS"
+      url: "https://mygmrs.com/user/WRZK646"
+      accessed: "2026-09-10"
+
+organizations:
+  - id: org_ecker_hill
+    name: "Ecker Hill"
+
+locations:
+  - id: loc_park_city_ut
+    name: "Park City, UT"
+
+stations:
+  - id: stn_gmrs_ecker_hill_575
+    call_sign: "WRZK646"
+    organization_id: org_ecker_hill
+    location_id: loc_park_city_ut
+    service: "gmrs"
+
+rf_chains:
+  - id: chain_gmrs_ecker_hill_575
+    station_id: stn_gmrs_ecker_hill_575
+    tx:
+      freq_mhz: 467.575
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.575
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 136.5
+
+assignments:
+  - id: asgn_gmrs_ecker_hill_575
+    rf_chain_id: chain_gmrs_ecker_hill_575
+    usage: "repeater"
+    notes: "Open system. 136.5 Hz input tone; no output tone. Primary purpose is to enhance emergency communications for the Park City community during a wide-scale event."

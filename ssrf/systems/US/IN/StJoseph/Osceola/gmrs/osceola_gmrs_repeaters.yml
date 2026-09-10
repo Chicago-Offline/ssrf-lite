@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
+ssrf_lite_version: "0.5.3"
+ssrf_lite:
+  sources:
+    - name: "Osceola 600 listing on MyGMRS"
+      url: "https://mygmrs.com/user/WRXL702"
+      accessed: "2026-09-10"
+
+organizations:
+  - id: org_osceola_600
+    name: "Osceola 600"
+
+locations:
+  - id: loc_osceola_in
+    name: "Osceola, IN"
+
+stations:
+  - id: stn_gmrs_osceola_600
+    call_sign: "WRXL702"
+    organization_id: org_osceola_600
+    location_id: loc_osceola_in
+    service: "gmrs"
+
+rf_chains:
+  - id: chain_gmrs_osceola_600
+    station_id: stn_gmrs_osceola_600
+    tx:
+      freq_mhz: 467.600
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.600
+    mode:
+      type: "FM"
+      dcs_tx_code: "343"
+      dcs_rx_code: "343"
+
+assignments:
+  - id: asgn_gmrs_osceola_600
+    rf_chain_id: chain_gmrs_osceola_600
+    usage: "repeater"
+    notes: "Open system; access requests are disabled. Adult-use local-area communications. DPL 343. FCC GMRS Part 95 Subpart E compliance required. Do not use alert tones, roger beeps, or DTMF tones. Output 462.6000 (+5.000 input)."
