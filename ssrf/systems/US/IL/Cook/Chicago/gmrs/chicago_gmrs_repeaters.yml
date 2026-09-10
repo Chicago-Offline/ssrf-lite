@@ -6,6 +6,9 @@ ssrf_lite:
     - name: "Local GMRS repeaters (user-provided)"
       url:
       accessed: "2025-09-22"
+    - name: "MontClare 650 listing on MyGMRS"
+      url: "https://mygmrs.com/user/Mike1228"
+      accessed: "2026-09-10"
 
 organizations:
   - id: org_local_gmrs
@@ -26,6 +29,8 @@ locations:
     name: "Forest View, IL"
   - id: loc_oak_lawn
     name: "Oak Lawn, IL"
+  - id: loc_montclare
+    name: "Montclare, Chicago, IL"
 
 stations:
   - id: stn_gmrs_lincolnwood_575
@@ -72,6 +77,11 @@ stations:
     call_sign: "GMRS"
     organization_id: org_local_gmrs
     location_id: loc_oak_lawn
+    service: "gmrs"
+  - id: stn_gmrs_montclare_650
+    call_sign: "WRJS281"
+    organization_id: org_local_gmrs
+    location_id: loc_montclare
     service: "gmrs"
 
 rf_chains:
@@ -189,6 +199,19 @@ rf_chains:
     mode:
       type: "FM"
 
+  - id: chain_gmrs_montclare_650
+    station_id: stn_gmrs_montclare_650
+    tx:
+      freq_mhz: 467.650
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.650
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 79.7
+      ctcss_rx_hz: 79.7
+
 assignments:
   - id: asgn_gmrs_lincolnwood_575
     rf_chain_id: chain_gmrs_lincolnwood_575
@@ -242,4 +265,10 @@ assignments:
     rf_chain_id: chain_gmrs_oak_lawn_625
     usage: "repeater"
     notes: "Permission required. Output 462.6250 (+5.000 input)."
+    authorization_id: auth_fcc_gmrs
+
+  - id: asgn_gmrs_montclare_650
+    rf_chain_id: chain_gmrs_montclare_650
+    usage: "repeater"
+    notes: "Open system; access permission is not required. 79.7 Hz PL. FCC rules and callsign use required. Output 462.6500 (+5.000 input)."
     authorization_id: auth_fcc_gmrs

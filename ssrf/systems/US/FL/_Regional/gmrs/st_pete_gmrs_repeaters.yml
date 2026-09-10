@@ -6,10 +6,15 @@ ssrf_lite:
     - name: "St. Petersburg / Tampa GMRS repeaters (user supplied)"
       url:
       accessed: "2025-10-21"
+    - name: "SUNGMRS repeater network"
+      url: "https://www.goaradio.net/sungmrs.html"
+      accessed: "2026-09-10"
 
 organizations:
   - id: org_tampa_bay_gmrs
     name: "Tampa Bay GMRS Community"
+  - id: org_sun_gmrs
+    name: "SUNGMRS"
 
 locations:
   - id: loc_seminole_fl
@@ -22,6 +27,16 @@ locations:
     name: "Tampa, FL"
   - id: loc_west_bradenton_fl
     name: "West Bradenton, FL"
+  - id: loc_sarasota_fl
+    name: "Sarasota, FL"
+  - id: loc_venice_fl
+    name: "Venice, FL"
+  - id: loc_englewood_fl
+    name: "Englewood, FL"
+  - id: loc_bonita_springs_fl
+    name: "Bonita Springs, FL"
+  - id: loc_myakka_head_fl
+    name: "Myakka Head, FL"
 
 stations:
   - id: stn_gmrs_seminole_725
@@ -58,6 +73,31 @@ stations:
     call_sign: "GMRS"
     organization_id: org_tampa_bay_gmrs
     location_id: loc_tampa_fl
+    service: "gmrs"
+  - id: stn_gmrs_sun_sara_650
+    call_sign: "GMRS"
+    organization_id: org_sun_gmrs
+    location_id: loc_sarasota_fl
+    service: "gmrs"
+  - id: stn_gmrs_sun_venice_700
+    call_sign: "GMRS"
+    organization_id: org_sun_gmrs
+    location_id: loc_venice_fl
+    service: "gmrs"
+  - id: stn_gmrs_sun_englewood_675
+    call_sign: "GMRS"
+    organization_id: org_sun_gmrs
+    location_id: loc_englewood_fl
+    service: "gmrs"
+  - id: stn_gmrs_sun_bonita_575
+    call_sign: "GMRS"
+    organization_id: org_sun_gmrs
+    location_id: loc_bonita_springs_fl
+    service: "gmrs"
+  - id: stn_gmrs_sun_duette_550
+    call_sign: "GMRS"
+    organization_id: org_sun_gmrs
+    location_id: loc_myakka_head_fl
     service: "gmrs"
 
 antennas:
@@ -162,6 +202,60 @@ rf_chains:
       type: "FM"
       ctcss_tx_hz: 131.8
       ctcss_rx_hz: 131.8
+  - id: chain_gmrs_sun_sara_650
+    station_id: stn_gmrs_sun_sara_650
+    tx:
+      freq_mhz: 467.650
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.650
+    mode:
+      type: "FM"
+
+  - id: chain_gmrs_sun_venice_700
+    station_id: stn_gmrs_sun_venice_700
+    tx:
+      freq_mhz: 467.700
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.700
+    mode:
+      type: "FM"
+
+  - id: chain_gmrs_sun_englewood_675
+    station_id: stn_gmrs_sun_englewood_675
+    tx:
+      freq_mhz: 467.675
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.675
+    mode:
+      type: "FM"
+
+  - id: chain_gmrs_sun_bonita_575
+    station_id: stn_gmrs_sun_bonita_575
+    tx:
+      freq_mhz: 467.575
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.575
+    mode:
+      type: "FM"
+
+  - id: chain_gmrs_sun_duette_550
+    station_id: stn_gmrs_sun_duette_550
+    tx:
+      freq_mhz: 467.550
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.550
+    mode:
+      type: "FM"
 
 authorizations:
   - id: auth_fcc_gmrs
@@ -217,3 +311,33 @@ assignments:
     notes: |
       Tampa Bay 600 in Tampa; open system and free for all licensed operators. Runs a 50 W
       Motorola Quantar with the antenna roughly 400 ft AGL, 131.8 Hz PL. Updated 3 months ago.
+
+  - id: asgn_gmrs_sun_sara_650
+    rf_chain_id: chain_gmrs_sun_sara_650
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: "SUNGMRS Sara 650 near McIntosh Rd and Clark Rd in Sarasota; open system. 300 ft antenna. Expected range 15+ mi on an HT / 30+ mi mobile. Tones unlisted."
+
+  - id: asgn_gmrs_sun_venice_700
+    rf_chain_id: chain_gmrs_sun_venice_700
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: "SUNGMRS Venice 700 near Albee Farm Rd and US 41 Bypass in Venice; open system. 140 ft antenna. Expected range 10-15 mi on an HT / 20-25 mi mobile. Tones unlisted."
+
+  - id: asgn_gmrs_sun_englewood_675
+    rf_chain_id: chain_gmrs_sun_englewood_675
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: "SUNGMRS Englewood 675 near Pine St and River Rd in Englewood; open system. 130 ft antenna. Expected range 10-12 mi on an HT / 20 mi mobile. Tones unlisted."
+
+  - id: asgn_gmrs_sun_bonita_575
+    rf_chain_id: chain_gmrs_sun_bonita_575
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: "SUNGMRS Bonita 575 north of Terry St and Old 41 Rd in Bonita Springs; open system. 150 ft antenna. Expected range 10-15 mi on an HT / 20-25 mi mobile. Tones unlisted."
+
+  - id: asgn_gmrs_sun_duette_550
+    rf_chain_id: chain_gmrs_sun_duette_550
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: "SUNGMRS Duette 550 north of SR 64 and Duette Rd in Myakka Head; open system. 65 ft antenna. Expected range 5-10 mi on an HT / 10-15 mi mobile. Tones unlisted."
