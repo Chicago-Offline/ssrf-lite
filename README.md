@@ -133,7 +133,30 @@ overrides:
           ctcss_tx_hz: null
 ```
 
-Roots are processed in command-line order, with later roots taking precedence.
+By default, roots are processed in command-line order, with later roots
+taking precedence — but relying on argv order is fragile once more than one
+overlay can patch the same entity, since nothing in the data itself records
+which root should win. A root can instead declare its own precedence
+explicitly with a top-level `_root.yml` file (the leading underscore keeps it
+out of `_iter_yaml_files`'s data scan):
+
+```yaml
+# my-ssrf-private/ssrf/_root.yml
+ssrf_root:
+  id: "my_private_overlay"
+  precedence: 100   # higher precedence wins on conflict; loads later
+```
+
+When present, `precedence` (an integer) determines load order regardless of
+argv position — the root with the highest declared precedence is loaded last
+and wins any field-patch conflict. Roots that don't declare a precedence keep
+falling back to their command-line position, so existing single-overlay setups
+need no changes. Two roots declaring the *same* precedence value is a hard
+error rather than a silent argv-order tiebreak. Mixing declared and undeclared
+roots works, but is only unambiguous if you keep declared values well clear of
+the undeclared roots' positional indices (0, 1, 2, ...) — when in doubt,
+declare a precedence on every root you pass.
+
 Mappings merge recursively, lists replace, and `null` explicitly clears an
 optional value. Entity IDs are immutable. Unknown or ambiguous targets fail
 resolution, as do patches that produce an invalid SSRF entity. Prefer unique
