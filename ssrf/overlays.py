@@ -5,7 +5,7 @@ from __future__ import annotations
 from copy import deepcopy
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Mapping, Sequence, Tuple, Union
+from typing import Any, Dict, Iterable, List, Mapping, Optional, Sequence, Tuple, Union
 
 import yaml
 
@@ -33,6 +33,17 @@ class ResolvedSSRFDocument:
     path: Path
     reference: SSRFReference
     is_overlay: bool
+
+
+_ROOT_DECLARATION_FILENAME = "_root.yml"
+
+
+@dataclass(frozen=True)
+class _RootDeclaration:
+    """Explicit precedence declared by a root itself, via ``_root.yml``."""
+
+    id: str
+    precedence: int
 
 
 def _iter_yaml_files(root: Path) -> Iterable[Path]:
@@ -70,6 +81,79 @@ def _merge_patch(target: Dict[str, Any], patch: Mapping[str, Any]) -> None:
             target[key] = deepcopy(value)
 
 
+def _load_root_declaration(root: Path) -> Optional[_RootDeclaration]:
+    """Read a root's optional ``_root.yml`` precedence declaration.
+
+    Returns ``None`` when the root declares no precedence, in which case the
+    root falls back to its positional (command-line) order for full backward
+    compatibility with pre-declaration behavior.
+    """
+
+    decl_path = root / _ROOT_DECLARATION_FILENAME
+    if not decl_path.is_file():
+        return None
+
+    with decl_path.open("r", encoding="utf-8") as handle:
+        raw = yaml.safe_load(handle) or {}
+    if not isinstance(raw, dict) or "ssrf_root" not in raw:
+        raise ValueError(f"{decl_path}: expected a top-level 'ssrf_root' mapping")
+
+    declared = raw["ssrf_root"]
+    if not isinstance(declared, dict):
+        raise TypeError(f"{decl_path}: 'ssrf_root' must be a mapping")
+
+    root_id = declared.get("id")
+    if not isinstance(root_id, str) or not root_id:
+        raise ValueError(f"{decl_path}: 'ssrf_root.id' must be a non-empty string")
+
+    precedence = declared.get("precedence")
+    if not isinstance(precedence, int) or isinstance(precedence, bool):
+        raise ValueError(f"{decl_path}: 'ssrf_root.precedence' must be an integer")
+
+    return _RootDeclaration(id=root_id, precedence=precedence)
+
+
+def _resolve_root_load_order(
+    resolved_roots: Sequence[Path],
+) -> Tuple[List[int], List[Optional[_RootDeclaration]]]:
+    """Compute effective load order, honoring declared precedence.
+
+    Roots that declare a ``_root.yml`` precedence are ordered by that value
+    (higher precedence loads later and wins on conflict). Roots without a
+    declaration fall back to their original positional index, preserving
+    today's argv-order behavior exactly when no root declares precedence.
+    Duplicate declared precedence values are rejected outright rather than
+    silently picking a winner.
+    """
+
+    declarations = [_load_root_declaration(root) for root in resolved_roots]
+
+    by_precedence: Dict[int, List[str]] = {}
+    for root, declaration in zip(resolved_roots, declarations):
+        if declaration is not None:
+            by_precedence.setdefault(declaration.precedence, []).append(
+                f"{declaration.id} ({root})"
+            )
+    duplicates = {
+        precedence: labels for precedence, labels in by_precedence.items() if len(labels) > 1
+    }
+    if duplicates:
+        details = "; ".join(
+            f"precedence {precedence}: {', '.join(labels)}"
+            for precedence, labels in sorted(duplicates.items())
+        )
+        raise ValueError(f"duplicate declared SSRF root precedence: {details}")
+
+    effective_precedence = [
+        declaration.precedence if declaration is not None else original_index
+        for original_index, declaration in enumerate(declarations)
+    ]
+    load_order = sorted(
+        range(len(resolved_roots)), key=lambda i: (effective_precedence[i], i)
+    )
+    return load_order, declarations
+
+
 def resolve_ssrf_roots(
     roots: Sequence[Union[str, Path]],
 ) -> List[ResolvedSSRFDocument]:
@@ -85,10 +169,13 @@ def resolve_ssrf_roots(
     if not resolved_roots:
         return []
 
+    load_order, _declarations = _resolve_root_load_order(resolved_roots)
+
     documents: List[Tuple[Path, Path, Dict[str, Any], bool]] = []
     index: Dict[Tuple[str, str], List[Tuple[Dict[str, Any], Path, int]]] = {}
 
-    for root_index, root in enumerate(resolved_roots):
+    for root_index, original_index in enumerate(load_order):
+        root = resolved_roots[original_index]
         for path in _iter_yaml_files(root):
             raw = _load_mapping(path)
             payload = _entity_payload(raw)
