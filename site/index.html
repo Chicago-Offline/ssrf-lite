@@ -4,127 +4,276 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="google-site-verification" content="uLNoAA-Ph0fU_96GtcVDTY0v7H31UOLfWm3tijJuYiw" />
-  <meta name="description" content="Browse SSRF-Lite reference data for radio channels, repeaters, channel plans, and RF systems." />
+  <meta name="description" content="SSRF-Lite is open, human-readable YAML reference data for radio channels, repeaters, channel plans, and RF systems. Search channels, browse the map, and download the source files." />
   <link rel="canonical" href="https://chicago-offline.github.io/ssrf-lite/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="SSRF-Lite Browser" />
-  <meta property="og:description" content="Search SSRF-Lite reference data for radio channels, repeaters, channel plans, and RF systems." />
+  <meta property="og:title" content="SSRF-Lite — open reference data for radio systems" />
+  <meta property="og:description" content="Search channels, repeaters, and channel plans; browse repeater sites on a map; download the YAML that feeds codeplug builders." />
   <meta property="og:url" content="https://chicago-offline.github.io/ssrf-lite/" />
+  <meta property="og:image" content="https://chicago-offline.github.io/ssrf-lite/logo.svg" />
   <meta name="twitter:card" content="summary" />
-  <title>SSRF-Lite Browser</title>
+  <title>SSRF-Lite — open reference data for radio systems</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>📡 SSRF-Lite</h1>
-    <nav>
-      <button class="tab active" data-tab="channels">Channels</button>
-      <button class="tab" data-tab="map">Map</button>
-      <button class="tab" data-tab="files">Files</button>
-      <button class="tab" data-tab="why">Why SSRF-Lite?</button>
-    </nav>
-    <a class="repo-link" id="repo-link" href="#" target="_blank" rel="noopener">GitHub ↗</a>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="#top"><img src="logo.svg" alt="" /> SSRF-Lite</a>
+      <nav>
+        <a href="#browse">Browse</a>
+        <a href="#library">Library</a>
+        <a href="#about">About</a>
+        <a href="#ecosystem">Ecosystem</a>
+        <a href="#start">Use the data</a>
+      </nav>
+      <a class="repo-link" href="https://github.com/Chicago-Offline/ssrf-lite" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
   </header>
 
-  <section id="filters">
-    <input type="search" id="search" placeholder="Search channels, frequencies, callsigns…" />
-    <select id="filter-service"><option value="">All services</option></select>
-    <select id="filter-mode"><option value="">All modes</option></select>
-    <select id="filter-band"><option value="">All bands</option></select>
-    <select id="filter-file"><option value="">All files</option></select>
-    <span id="result-count"></span>
-    <button id="export-csv" title="Download the currently filtered channels as CSV">Export CSV</button>
-  </section>
-
-  <main>
-    <div id="panel-channels" class="panel active">
-      <div class="table-wrap">
-        <table id="channel-table">
-          <thead>
-            <tr>
-              <th data-sort="name">Channel</th>
-              <th data-sort="freq_mhz" class="num">Freq (MHz)</th>
-              <th data-sort="input_mhz" class="num">Input (MHz)</th>
-              <th data-sort="mode">Mode</th>
-              <th>Tone / CC</th>
-              <th data-sort="service">Service</th>
-              <th data-sort="call_sign">Callsign</th>
-              <th data-sort="loc_name">Location</th>
-              <th>Notes</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
+  <main id="top">
+    <div class="hero">
+      <div class="wrap">
+        <div>
+          <p class="eyebrow">Open source · Chicago Offline</p>
+          <h1>Radio reference data that people and software can both read.</h1>
+          <p class="lead">
+            SSRF-Lite is plain YAML describing who runs a radio system, where it
+            lives, how it transmits, and what it takes to use it. Search the
+            channels, see repeater sites on a map, and download the same files
+            that feed <a href="https://chicago-offline.github.io/codeplugger/" target="_blank" rel="noopener">codeplugger</a>.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="#browse">Browse channels</a>
+            <a class="button" href="#library">Explore the library</a>
+            <a class="button" href="https://github.com/Chicago-Offline/ssrf-lite" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+          <div class="stats" id="stats" hidden>
+            <div><strong id="stat-channels">–</strong><span>channels</span></div>
+            <div><strong id="stat-files">–</strong><span>data files</span></div>
+            <div><strong id="stat-sites">–</strong><span>mapped sites</span></div>
+            <div><strong id="stat-services">–</strong><span>radio services</span></div>
+          </div>
+        </div>
+        <img src="logo.svg" alt="SSRF-Lite logo: a document with record lines and an antenna radiating signal arcs" />
       </div>
     </div>
 
-    <div id="panel-map" class="panel">
-      <div id="map"></div>
-    </div>
+    <section id="browse">
+      <div class="wrap wide">
+        <h2>Browse channels</h2>
+        <p class="sub">
+          Every assignment in the library as one row, sorted by frequency:
+          repeater output, input, mode, tone or color code, callsign, and site.
+          Filters apply to the table and the map together, and the URL updates
+          so a view can be shared.
+        </p>
 
-    <div id="panel-files" class="panel">
-      <div id="file-cards"></div>
-    </div>
-
-    <div id="panel-why" class="panel">
-      <section class="why-page">
-        <div class="why-intro">
-          <p class="eyebrow">Open source spectrum reference data</p>
-          <h2>More structure for radio data that people already share.</h2>
-          <p>
-            SSRF-Lite is an open source effort to add more structure, depth, and
-            detail to the kinds of frequency and repeater information commonly
-            found in RadioReference, RepeaterBook, club lists, agency pages, and
-            local notes.
-          </p>
+        <div class="toolbar">
+          <input type="search" id="search" placeholder="Search names, frequencies, callsigns, places…" autocomplete="off" />
+          <select id="filter-service" aria-label="Service"><option value="">All services</option></select>
+          <select id="filter-mode" aria-label="Mode"><option value="">All modes</option></select>
+          <select id="filter-band" aria-label="Band"><option value="">All bands</option></select>
+          <select id="filter-file" aria-label="Data file"><option value="">All files</option></select>
+          <div class="seg" role="tablist" aria-label="View">
+            <button type="button" class="active" data-view="table" role="tab">Table</button>
+            <button type="button" data-view="map" role="tab">Map</button>
+          </div>
+          <button type="button" class="button small" id="export-csv" title="Download the currently filtered channels as CSV">Export CSV</button>
         </div>
 
-        <div class="why-grid">
+        <div class="status-line">
+          <span class="count" id="result-count"></span>
+          <span id="active-filters"></span>
+          <button type="button" class="clear" id="clear-filters" hidden>Clear filters</button>
+        </div>
+
+        <div id="view-table" class="view active">
+          <div class="table-wrap">
+            <table class="data" id="channel-table">
+              <thead>
+                <tr>
+                  <th data-sort="freq_mhz" class="num">Freq (MHz)</th>
+                  <th data-sort="input_mhz" class="num">Input (MHz)</th>
+                  <th data-sort="mode">Mode</th>
+                  <th>Tone / CC</th>
+                  <th data-sort="name">Name</th>
+                  <th data-sort="call_sign">Callsign</th>
+                  <th data-sort="loc_name">Location</th>
+                  <th data-sort="service">Service</th>
+                  <th class="notes">Notes</th>
+                  <th data-sort="file_title">Source</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="view-map" class="view">
+          <div id="map"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="library">
+      <div class="wrap">
+        <h2>Library</h2>
+        <p class="sub">
+          One YAML file per system or channel plan, organized by geography and
+          service. Each file has its own page with channels, sites, sources, and
+          download links.
+        </p>
+        <div class="lib-toolbar">
+          <input type="search" id="lib-search" placeholder="Filter the library by name, place, or service…" autocomplete="off" />
+          <div class="seg" id="lib-category">
+            <button type="button" class="active" data-cat="">All</button>
+            <button type="button" data-cat="system">Systems</button>
+            <button type="button" data-cat="plan">Channel plans</button>
+            <button type="button" data-cat="custom">Custom</button>
+          </div>
+        </div>
+        <div id="library-groups"></div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <h2>What SSRF-Lite is</h2>
+        <p class="sub">
+          A simplified take on the NTIA Standard Spectrum Resource Format:
+          enough structure for software to join and validate, little enough that
+          a club member can edit it in a text editor.
+        </p>
+        <div class="features">
           <article>
-            <h3>Readable by people</h3>
-            <p>
-              The source data stays in plain YAML so radio operators can review,
-              correct, and contribute records without needing a proprietary tool.
-            </p>
+            <h3>Facts, not preferences</h3>
+            <p>Organizations, sites, stations, RF chains, channel plans, tones, talkgroups, and authorizations. Which channels go into which radio is a separate concern, handled by profiles.</p>
           </article>
           <article>
-            <h3>Useful to software</h3>
-            <p>
-              Records separate organizations, sites, stations, RF chains,
-              channel plans, tones, talkgroups, and authorizations so apps can
-              build maps, codeplugs, documentation, and search views from the
-              same data.
-            </p>
+            <h3>Readable by people</h3>
+            <p>Plain YAML with stable record IDs. Review it in a pull request, correct it in a text editor, and keep local-only data in a private overlay repo with the same layout.</p>
+          </article>
+          <article>
+            <h3>Validated by schema</h3>
+            <p>Pydantic models are the source of truth, published as JSON Schema so editors and CI can check a file without running Python.</p>
           </article>
           <article>
             <h3>Built for provenance</h3>
-            <p>
-              SSRF-Lite can keep source links and notes alongside each data set,
-              making it easier to understand where a record came from and what
-              still needs verification.
-            </p>
+            <p>Every file carries its sources and access dates, so it is clear where a record came from and what still needs verification on the air.</p>
+          </article>
+          <article>
+            <h3>Layered by design</h3>
+            <p>Public data here, community data in shared overlays, personal data in private ones. Later roots override earlier records by ID.</p>
+          </article>
+          <article>
+            <h3>Compiled for consumers</h3>
+            <p>The site also publishes a flat <code>codeplug.json</code> feed with the relational data already joined, for apps that just want channels.</p>
           </article>
         </div>
+      </div>
+    </section>
 
-        <div class="why-contribute">
-          <h3>Contributions are welcome</h3>
-          <p>
-            Add a missing system, improve a channel plan, correct a site, attach
-            better source material, or help refine the schema. The goal is a
-            practical shared library that gets better as more local knowledge is
-            contributed.
-          </p>
-          <a id="why-repo-link" class="button-link" href="#" target="_blank" rel="noopener">Contribute on GitHub</a>
+    <section id="ecosystem">
+      <div class="wrap">
+        <h2>Ecosystem</h2>
+        <p class="sub">SSRF-Lite is the data layer. These projects build on it.</p>
+        <div class="eco">
+          <a class="card" href="https://chicago-offline.github.io/codeplugger/" target="_blank" rel="noopener">
+            <h3>codeplugger</h3>
+            <p>Compiles SSRF data plus a version-controlled profile into a validated codeplug, then exports it or programs the radio headlessly.</p>
+          </a>
+          <a class="card" href="https://chicago-offline.github.io/chioff-codeplugger-profiles-shared/" target="_blank" rel="noopener">
+            <h3>ChiOff shared profiles</h3>
+            <p>Ready-made codeplugger profiles that put the Chicago Offline community net into each supported radio.</p>
+          </a>
+          <a class="card" href="https://github.com/Chicago-Offline/chioff-ssrf-shared" target="_blank" rel="noopener">
+            <h3>chioff-ssrf-shared</h3>
+            <p>Community-net GMRS and MURS channels, layered as an overlay on top of this library.</p>
+          </a>
+          <a class="card" href="https://github.com/Chicago-Offline/ssrf-lite/blob/main/ssrf/_schema/SSRF-Lite-Spec.md" target="_blank" rel="noopener">
+            <h3>The specification</h3>
+            <p>Record types, required fields, and the rules that make files mergeable across repositories.</p>
+          </a>
+          <a class="card" href="https://chicagooffline.com" target="_blank" rel="noopener">
+            <h3>Chicago Offline</h3>
+            <p>Resilient, community-owned communications for Chicagoland: amateur radio, GMRS/MURS, DMR, and LoRa mesh.</p>
+          </a>
+          <a class="card" href="https://github.com/Chicago-Offline/ssrf-lite/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">
+            <h3>Contributing</h3>
+            <p>Add a system, fix a tone, attach a better source. Local knowledge is what makes the library useful.</p>
+          </a>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+
+    <section id="start">
+      <div class="wrap">
+        <h2>Use the data</h2>
+        <p class="sub">Grab the compiled feed, or clone the repo and work with the YAML directly.</p>
+        <div class="start">
+          <div>
+            <h3>Fetch the compiled feed</h3>
+<pre><code><span class="c"># one flat array of joined channel records</span>
+curl -s https://chicago-offline.github.io/ssrf-lite/codeplug.json \
+  | jq '.[] | select(.service == "gmrs") | {callsign, rx_mhz, tx_mhz, ctcss}'</code></pre>
+            <p>Each record carries rx/tx frequency, tone or color code, callsign, coordinates, and the source file. No schema knowledge required.</p>
+          </div>
+          <div>
+            <h3>Build a codeplug</h3>
+<pre><code><span class="c"># from a codeplugger checkout next to ssrf-lite</span>
+uv run codeplugger-profile my_profile.yml \
+  --ssrf-root ../ssrf-lite/ssrf \
+  --output-format chirp-csv &gt; output.csv</code></pre>
+            <p>Profiles pick assignments by ID; SSRF-Lite supplies the facts. See <a href="https://chicago-offline.github.io/codeplugger/" target="_blank" rel="noopener">codeplugger</a>.</p>
+          </div>
+          <div>
+            <h3>Validate locally</h3>
+<pre><code>git clone https://github.com/Chicago-Offline/ssrf-lite
+cd ssrf-lite
+uv sync
+make test          <span class="c"># schema + semantic data lint</span>
+make serve-site    <span class="c"># this site at http://localhost:8000</span></code></pre>
+          </div>
+          <div>
+            <h3>A minimal file</h3>
+<pre><code>ssrf_lite_version: "0.5.3"
+organizations:
+  - id: org_example
+    name: "Example Radio Club"
+stations:
+  - id: stn_example_440
+    call_sign: "W9XYZ"
+    organization_id: org_example
+    service: "amateur"
+antennas:
+  - id: ant_example_440
+    station_id: stn_example_440
+rf_chains:
+  - id: chain_example_440
+    station_id: stn_example_440
+    antenna_id: ant_example_440
+    rx: { freq_mhz: 444.100 }
+    tx: { freq_mhz: 449.100, emission: "16K0F3E" }
+    mode: { type: "FM", ctcss_tx_hz: 107.2 }
+assignments:
+  - id: asg_example_440
+    rf_chain_id: chain_example_440
+    channel_name: "W9XYZ 440"
+    usage: "repeater"</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <span id="generated"></span>
-    <span>Built from <a id="footer-repo" href="#" target="_blank" rel="noopener">SSRF-Lite</a> reference data · Apache 2.0</span>
+  <footer class="site">
+    <div class="wrap">
+      <span>© 2026 Eric Muehlstein · Apache-2.0 · a <a href="https://chicagooffline.com">Chicago Offline</a> project</span>
+      <span><span id="generated"></span><a href="https://github.com/Chicago-Offline/ssrf-lite">Source</a> · <a href="https://github.com/Chicago-Offline/ssrf-lite/blob/main/ssrf/_schema/SSRF-Lite-Spec.md">Spec</a> · <a href="https://github.com/Chicago-Offline/ssrf-lite/issues">Issues</a></span>
+    </div>
   </footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"

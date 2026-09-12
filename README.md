@@ -27,8 +27,9 @@ documentation pipelines.
 
 ## Browse the data
 
-A searchable web frontend (channel table, map of repeater sites, and file index) is
-published via GitHub Pages from [site/](site/). Run it locally with:
+A searchable web frontend (channel table, map of repeater sites, a library index,
+and a static detail page per data file under `files/`) is published via GitHub
+Pages from [site/](site/). Run it locally with:
 
 ```bash
 make serve-site   # builds site/data.json and serves http://localhost:8000

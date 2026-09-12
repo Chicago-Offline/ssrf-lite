@@ -2,234 +2,288 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://chicago-offline.github.io/ssrf-lite/</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/pmr446_analog.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/pmr446_analog.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/ham_dmr_simplex.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/ham_dmr_simplex.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/ham_uhf_simplex.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/ham_uhf_simplex.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/ham_vhf_simplex.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/ham_vhf_simplex.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/airband_itinerant.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/airband_itinerant.html</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/itinerant_business.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/itinerant_business.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/gmrs_channels.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/gmrs_channels.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/marine_vhf_channels.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/marine_vhf_channels.html</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/murs_channels.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/murs_channels.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/rail_aar_scan.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/rail_aar_scan.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/noaa_weather.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/noaa_weather.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/tarc_repeaters.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/tarc_repeaters.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/florida_simulcast_group.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/florida_simulcast_group.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/st_pete_gmrs_repeaters.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/st_pete_gmrs_repeaters.html</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/cfmc_repeaters.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/cfmc_repeaters.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/chicagoland_dmr_system.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/chicagoland_dmr_system.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/n9bbm_loop_repeater.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/ns9rc_repeaters.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/ns9rc_repeaters.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/sara_repeaters.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/sara_repeaters.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/chicago_businesses_northside.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/chicago_businesses_northside.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/venues_chicago.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/venues_chicago.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/chicago_gmrs_repeaters.html</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/family_channels.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/chicago_ems_services.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/chicago_gmrs_repeaters.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/chicago_fire_ems_northside.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/family_channels.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/chicago_police_department.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/public_works_parks.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/chicago_ems_services.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/transit_transport.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/chicago_fire_ems_northside.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/paaros_repeaters.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/cook_county_interop.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/chicago_police_department.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/w9dup_darc_repeaters.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/zion_gmrs_repeaters.html</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/tri_state_dmr.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/public_works_parks.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/il_statewide_interop.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/transit_transport.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/laporte_county_amateur_radio_club.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/cook_county_interop.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/laporte_county_public_safety.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/tri_state_dmr.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/n9iaa_aresc_network.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/il_statewide_interop.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/osceola_gmrs_repeaters.html</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/kc8brs_four_flags.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/laporte_county_amateur_radio_club.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/berrien_county_amateur.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/laporte_county_public_safety.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/berrien_county_public_safety.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/n9iaa_aresc_network.md</loc>
-    <lastmod>2026-07-11</lastmod>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/ecker_hill_gmrs.html</loc>
+    <lastmod>2026-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/kc8brs_four_flags.md</loc>
-    <lastmod>2026-07-11</lastmod>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/gmrs_two_way_radio.html</loc>
+    <lastmod>2026-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/berrien_county_amateur.md</loc>
-    <lastmod>2026-07-11</lastmod>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/kr9rk_lakeshore_repeaters.html</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/berrien_county_public_safety.md</loc>
-    <lastmod>2026-07-11</lastmod>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/real_fine_gmrs_repeaters.html</loc>
+    <lastmod>2026-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/chicagoland_airports.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/chicagoland_airports.html</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chicago-offline.github.io/ssrf-lite/docs/ssrf/mmdvm_duplex_hotspot.md</loc>
+    <loc>https://chicago-offline.github.io/ssrf-lite/files/mmdvm_duplex_hotspot.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>

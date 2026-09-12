@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import html
 import importlib.util
 import pathlib
 import sys
@@ -117,6 +118,45 @@ class SiteBuildPayloadRootsTest(unittest.TestCase):
         self.assertIn("url", public)
         self.assertIn("download_url", public)
         self.assertTrue(public["url"].startswith("https://github.com/"))
+
+    def test_detail_pages_written_for_public_files_only(self) -> None:
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as tmp:
+            priv = pathlib.Path(tmp) / "ssrf" / "systems" / "custom"
+            priv.mkdir(parents=True)
+            (priv / "priv_test.yml").write_text(PRIVATE_DOC, encoding="utf-8")
+            payload = gsite.build_payload([gsite.SSRF_ROOT, pathlib.Path(tmp) / "ssrf"])
+
+            out = pathlib.Path(tmp) / "site"
+            written = gsite.write_detail_pages(out, payload)
+
+            public = [f for f in payload["files"] if f.get("doc_url")]
+            self.assertEqual(written, len(public))
+            self.assertGreater(written, 0)
+            for f in public:
+                page = out / f["doc_url"]
+                self.assertTrue(page.exists(), f"missing detail page {page}")
+                text = page.read_text(encoding="utf-8")
+                self.assertIn(f"<h1>{html.escape(f['title'])}</h1>", text)
+                self.assertIn('<link rel="stylesheet" href="../style.css" />', text)
+            self.assertFalse((out / gsite.DETAIL_DIR_NAME / "priv_test.html").exists())
+
+    def test_region_grouping(self) -> None:
+        region, group, topic = gsite._region(
+            pathlib.Path("systems/US/IL/Cook/Chicago/amateur/ns9rc_repeaters.yml")
+        )
+        self.assertEqual((region, group, topic), ("US / IL / Cook / Chicago", "US / IL", "amateur"))
+        region, group, topic = gsite._region(pathlib.Path("plans/US/gmrs/gmrs_channels.yml"))
+        self.assertEqual((region, group, topic), ("US", "US", "gmrs"))
+        region, group, topic = gsite._region(
+            pathlib.Path("systems/US/FL/_Regional/florida_simulcast_group.yml")
+        )
+        self.assertEqual((region, group, topic), ("US / FL / Regional", "US / FL", None))
+        self.assertEqual(
+            gsite._region(pathlib.Path("systems/custom/mmdvm_duplex_hotspot.yml")),
+            ("Global", "Global", None),
+        )
 
 
 if __name__ == "__main__":  # pragma: no cover

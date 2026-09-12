@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 112" width="96" height="112" role="img" aria-label="SSRF-Lite logo">
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e2833"/>
+      <stop offset="1" stop-color="#171e26"/>
+    </linearGradient>
+  </defs>
+  <!-- signal arcs -->
+  <path d="M56 14 A16 16 0 0 1 72 30" fill="none" stroke="#4fb3ff" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+  <path d="M60 4 A26 26 0 0 1 82 26" fill="none" stroke="#4fb3ff" stroke-width="3" stroke-linecap="round" opacity="0.3"/>
+  <!-- antenna -->
+  <line x1="46" y1="10" x2="46" y2="34" stroke="#4fb3ff" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="46" cy="8" r="3.5" fill="#4fb3ff"/>
+  <!-- document with folded corner -->
+  <path d="M18 32 H58 L76 50 V100 A8 8 0 0 1 68 108 H18 A8 8 0 0 1 10 100 V40 A8 8 0 0 1 18 32 Z" fill="url(#body)" stroke="#4fb3ff" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M58 32 V50 H76" fill="none" stroke="#4fb3ff" stroke-width="3" stroke-linejoin="round"/>
+  <!-- yaml-ish record lines: key dot + value bar -->
+  <circle cx="24" cy="62" r="2.6" fill="#4fb3ff"/>
+  <rect x="31" y="59.5" width="30" height="5" rx="2.5" fill="#d6dee6"/>
+  <circle cx="30" cy="75" r="2.6" fill="#4fb3ff"/>
+  <rect x="37" y="72.5" width="26" height="5" rx="2.5" fill="#8296a8"/>
+  <circle cx="30" cy="88" r="2.6" fill="#4fb3ff"/>
+  <rect x="37" y="85.5" width="20" height="5" rx="2.5" fill="#8296a8"/>
+  <!-- frequency tick -->
+  <rect x="24" y="97" width="42" height="3" rx="1.5" fill="#2a3743"/>
+  <rect x="42" y="95" width="3" height="7" rx="1.5" fill="#4fb3ff"/>
+</svg>
