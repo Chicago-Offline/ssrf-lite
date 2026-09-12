@@ -1,6 +1,7 @@
 # yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
 # SSRF-Lite: Chicago EMS Services (RX-only focus)
-# Sources: IDPH Region XI EMS resource plans, RadioReference (Chicago EMS conventional backup channels), last verified 2025-04-21
+# Sources: IDPH Region XI EMS resource plans, RadioReference Cook County DB export + wiki (Cook_County_(IL)_Chicago_City), last verified 2026-09-08
+# Legacy CFD UHF EMS analog channels (460.600/460.625/462.975, 156.7 PL) have transitioned to P25 conventional per RR DB.
 
 $schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
 ssrf_lite_version: "0.5.3"
@@ -37,17 +38,18 @@ antennas:
     name: "Region XI CMED UHF"
 
 rf_chains:
-  # Chicago EMS command / coordination (analogue backups)
+  # Chicago Fire / EMS legacy UHF pairs, now P25 conventional (clear) per RR DB
   - id: chain_cfd_ems_command
     station_id: stn_cfd_ems
     antenna_id: ant_cfd_ems
     rx:
       freq_mhz: 460.600
     tx:
-      emission: "11K2F3E"
+      emission: "8K10F1E"
     mode:
-      type: "FM"
-      ctcss_rx_hz: 203.5
+      type: "P25"
+      nac: 458
+      notes: "NAC $1CA. Fire: Main (patched w/ TG 1994). Former analog EMS North Ch 1 (156.7 PL)."
 
   - id: chain_cfd_ems_citywide
     station_id: stn_cfd_ems
@@ -55,21 +57,11 @@ rf_chains:
     rx:
       freq_mhz: 460.625
     tx:
-      emission: "11K2F3E"
+      emission: "8K10F1E"
     mode:
-      type: "FM"
-      ctcss_rx_hz: 203.5
-
-  - id: chain_cfd_ems_admin
-    station_id: stn_cfd_ems
-    antenna_id: ant_cfd_ems
-    rx:
-      freq_mhz: 460.650
-    tx:
-      emission: "11K2F3E"
-    mode:
-      type: "FM"
-      ctcss_rx_hz: 203.5
+      type: "P25"
+      nac: 661
+      notes: "NAC $295. Fire: Englewood (patched w/ TG 1995). Former analog EMS South Ch 2 (156.7 PL)."
 
     # Statewide EMS VHF (car-to-hospital common)
   - id: chain_il_statewide_ems
@@ -499,9 +491,6 @@ assignments:
   - id: asg_cfd_ems_citywide
     rf_chain_id: chain_cfd_ems_citywide
     usage: "repeater"
-  - id: asg_cfd_ems_admin
-    rf_chain_id: chain_cfd_ems_admin
-    usage: "repeater"
   - id: asg_il_statewide_ems
     rf_chain_id: chain_il_statewide_ems
     usage: "simplex"
@@ -618,4 +607,4 @@ assignments:
     usage: "repeater"
 comments:
   - text: |
-      Chicago/Region XI EMS conventional resources focusing on hospital MED channels by sector PL (North 156.7, Central 146.2, South 173.8), MERCI mutual-aid channels, and CFD analogue backups. Primary CFD EMS operations remain on the OEMC 800 MHz P25 system.
+      Chicago/Region XI EMS conventional resources focusing on hospital MED channels by sector PL (North 156.7, Central 146.2, South 173.8), MERCI mutual-aid channels, and the legacy CFD UHF pairs (now P25 conventional in the clear). Primary CFD EMS operations remain on the OEMC 800 MHz P25 system. Per RR DB, 462.950 is now the CDPH Healthcare Council Radio System (203.5 PL FMN) and 462.975 is CFD Citywide P25 (NAC $069); the Med-9/Med-10 sector entries reflect the IDPH Region XI plan.

@@ -16,7 +16,8 @@
 - **Contacts:** 0
 
 ### Modes
-- **FM:** 18
+- **FM:** 16
+- **P25:** 2
 
 ### Usage Types
 - **Simplex:** 11

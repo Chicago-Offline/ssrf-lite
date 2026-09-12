@@ -154,8 +154,8 @@ rf_chains:
     rx:
       freq_mhz: 159.660
     tx:
-      emission: "11K2F3E"
-    mode: {type: "FM"}
+      emission: "8K10F1E"
+    mode: {type: "P25", nac: 2341, notes: "NAC $925. RED Center Fire Dispatch North, P25 conventional per RR DB."}
 
   - id: chain_red_fire_south
     station_id: stn_northside
@@ -163,8 +163,8 @@ rf_chains:
     rx:
       freq_mhz: 156.135
     tx:
-      emission: "11K2F3E"
-    mode: {type: "FM"}
+      emission: "8K10F1E"
+    mode: {type: "P25", nac: 1147, notes: "NAC $47B. RED Center Fire Dispatch South, patched w/ SC21 TG 34065, per RR DB."}
 
   - id: chain_skookie_fire_disp
     station_id: stn_northside

@@ -7,23 +7,24 @@
 
 ## Overview
 
-- **Assignments:** 41
+- **Assignments:** 40
 - **Services:** public_safety_part90
 - **Organizations:** 2
 - **Locations:** 1
-- **RF Chains:** 41
+- **RF Chains:** 40
 - **Channel Plans:** 0
 - **Contacts:** 0
 
 ### Modes
-- **FM:** 41
+- **FM:** 38
+- **P25:** 2
 
 ### Usage Types
-- **Repeater:** 39
+- **Repeater:** 38
 - **Simplex:** 2
 
 ### Frequency Bands
-- **UHF (400-480 MHz):** 39
+- **UHF (400-480 MHz):** 38
 - **VHF (136-174 MHz):** 2
 
 ## Organizations
@@ -38,11 +39,10 @@
 
 ## Assignments
 
-### Unknown (41 assignments)
+### Unknown (40 assignments)
 
 - **asg_cfd_ems_command** - repeater
 - **asg_cfd_ems_citywide** - repeater
-- **asg_cfd_ems_admin** - repeater
 - **asg_il_statewide_ems** - simplex
 - **asg_merci400** - simplex
 - **asg_med1_north** - repeater

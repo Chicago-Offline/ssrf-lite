@@ -4,7 +4,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ## Quick Statistics
 
-- **Total SSRF Files:** 41
+- **Total SSRF Files:** 42
 - **Total Assignments:** 707
 - **Services Covered:** 10
 - **Modes:** AM, APRS, C4FM, CW, D-STAR, DMR, FM, NXDN, P25, PACKET
@@ -34,7 +34,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |------|----------|-------------|-------|------------------|
 | [mmdvm_duplex_hotspot](mmdvm_duplex_hotspot.md) | amateur | 2 | DMR | custom / mmdvm_duplex_hotspot.yml |
 
-### Geographic System (29 files)
+### Geographic System (30 files)
 
 | File | Services | Assignments | Modes | Geographic Scope |
 |------|----------|-------------|-------|------------------|
@@ -50,8 +50,8 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [venues_chicago](venues_chicago.md) | business_itinerant_part90 | 15 | DMR, FM | US / IL / Cook / Chicago |
 | [chicago_gmrs_repeaters](chicago_gmrs_repeaters.md) | gmrs | 9 | FM | US / IL / Cook / Chicago |
 | [family_channels](family_channels.md) | amateur, gmrs | 17 | FM, DMR | US / IL / Cook / Chicago |
-| [chicago_ems_services](chicago_ems_services.md) | public_safety_part90 | 41 | FM | US / IL / Cook / Chicago |
-| [chicago_fire_ems_northside](chicago_fire_ems_northside.md) | public_safety_part90 | 18 | FM | US / IL / Cook / Chicago |
+| [chicago_ems_services](chicago_ems_services.md) | public_safety_part90 | 40 | P25, FM | US / IL / Cook / Chicago |
+| [chicago_fire_ems_northside](chicago_fire_ems_northside.md) | public_safety_part90 | 18 | FM, P25 | US / IL / Cook / Chicago |
 | [chicago_police_department](chicago_police_department.md) | public_safety_part90 | 8 | FM | US / IL / Cook / Chicago |
 | [public_works_parks](public_works_parks.md) | public_safety_part90 | 17 | FM, DMR | US / IL / Cook / Chicago |
 | [transit_transport](transit_transport.md) | public_safety_part90 | 7 | FM, DMR | US / IL / Cook / Chicago |
@@ -76,7 +76,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ### US
 - **FL:** 3 files
-- **IL:** 18 files
+- **IL:** 19 files
 - **IN:** 3 files
 - **MI:** 3 files
 - **National/Regional:** 10 files
@@ -90,7 +90,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 | Service | Total Assignments | Files |
 |---------|------------------|-------|
-| amateur | 118 | 17 |
+| amateur | 119 | 18 |
 | aviation | 164 | 2 |
 | business_itinerant_part90 | 92 | 3 |
 | gmrs | 78 | 5 |
@@ -98,7 +98,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | murs | 5 | 1 |
 | noaa_weather_radio | 7 | 1 |
 | pmr446 | 16 | 1 |
-| public_safety_part90 | 142 | 9 |
+| public_safety_part90 | 141 | 9 |
 | railroad_aar | 24 | 1 |
 
 ## Using SSRF Files
