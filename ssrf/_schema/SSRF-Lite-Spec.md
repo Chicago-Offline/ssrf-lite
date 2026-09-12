@@ -3,7 +3,7 @@
 *A pragmatic spectrum data model for codeplug generation*  
 
 Version: **0.5.3**  
-Last updated: 2026-07-11  
+Last updated: 2026-09-11  
 
 ---
 
@@ -86,9 +86,45 @@ collection across roots processed so far; missing and ambiguous targets are
 errors. The complete owning document is validated after patching, so clearing
 a required field or introducing an unknown field is also an error.
 
+### Root precedence
+
+By default roots are processed in the order they are supplied, with later
+roots patching earlier ones. A root may instead declare its own precedence in
+a top-level `_root.yml` (files whose names start with `_` are skipped by the
+data scan):
+
+```yaml
+ssrf_root:
+  id: "my_private_overlay"
+  precedence: 100   # integer; higher loads later and wins on conflict
+```
+
+Roots without a declaration fall back to their positional index (0, 1, 2, …).
+Two roots declaring the same `precedence` is an error. An override may only
+target entities from roots that load *before* it.
+
+## 1.3 Legacy field handling
+
+When loading, the reference layer silently drops the deprecated policy-era
+assignment keys `codeplug`, `zones`, and `scan`, and maps a legacy `comment`
+key to `notes` when `notes` is absent. Any other unknown key on any entity is
+an error (`additionalProperties: false`).
+
 ---
 
 ## 2. Entities (Reference layer)
+
+### 2.0 Shared value constraints
+
+- **`service`** (wherever it appears) is a closed vocabulary drawn from
+  `ssrf/_taxonomies/services.yaml`. Values are matched case-insensitively and
+  normalized to lowercase. Current IDs: `amateur`, `gmrs`, `frs`, `murs`,
+  `pmr446`, `noaa_weather_radio`, `marine`, `aviation`, `railroad_aar`,
+  `public_safety_part90`, `business_itinerant_part90`.
+- **`mode.type`** is a closed vocabulary, normalized to uppercase (`DSTAR` →
+  `D-STAR`): `AM`, `APRS`, `C4FM`, `CW`, `DMR`, `D-STAR`, `DSD`, `FM`, `LSB`,
+  `NFM`, `NXDN`, `PACKET`, `P25`, `USB`.
+- Every entity forbids unknown keys.
 
 ### 2.1 Organization
 
@@ -122,7 +158,7 @@ locations:
 Fields:  
 
 - `id`, `name`  
-- `lat`, `lon` (decimal degrees)  
+- `lat`, `lon` (optional, decimal degrees; `lat` in [-90, 90], `lon` in [-180, 180])  
 
 > **Note:** See Antenna for height fields (AGL/AMSL).
 
@@ -144,10 +180,10 @@ stations:
 Fields:  
 
 - `id`  
-- `call_sign` (optional string; omit or set `null` if unknown)  
-- `organization_id` (ref → Organization)  
-- `location_id` (ref → Location)  
-- `service` (e.g. `"amateur"`, `"gmrs"`, `"marine"`)  
+- `call_sign` (optional string; omit or set `null` if unknown; blank strings become `null`)  
+- `organization_id` (optional ref → Organization)  
+- `location_id` (optional ref → Location)  
+- `service` (optional; see §2.0)  
 
 ---
 
@@ -167,10 +203,11 @@ antennas:
 
 Fields:  
 
-- `id`, `station_id`, `name`  
+- `id`, `station_id`  
+- `name` (optional)  
 - `gain_dbi` (optional)  
-- `height_agl_m` (optional, meters AGL)  
-- `height_amsl_m` (optional, meters AMSL)  
+- `height_agl_m` (optional, meters AGL, ≥ 0)  
+- `height_amsl_m` (optional, meters AMSL, ≥ 0)  
 
 > Populate whichever height(s) you know. If both are present, they need not be mathematically linked (site elevation is not modeled in SSRF-Lite).
 
@@ -218,17 +255,20 @@ rf_chains:
 
 Fields:  
 
-- `id`, `station_id`, `antenna_id`  
-- `tx`: `freq_mhz?`, `power_w?`, `emission`, `bandwidth_khz?`  
-- `rx`: `freq_mhz`, `sensitivity_dbm?`  
+- `id`, `station_id`  
+- `antenna_id` (optional ref → Antenna)  
+- `tx`: `freq_mhz?`, `power_w?`, `emission?`, `bandwidth_khz?` (all positive when present)  
+- `rx`: `freq_mhz` (required, > 0), `sensitivity_dbm?`  
 - `mode`:  
-  - `type` (`"FM"`, `"DMR"`, etc.)  
+  - `type` (closed vocabulary; see §2.0)  
   - `notes?` (optional descriptive string)  
   - Mode-specific fields:
-    - `ctcss_tx_hz`, `ctcss_rx_hz` (optional, Hz)
+    - `ctcss_tx_hz`, `ctcss_rx_hz` (optional, Hz, > 0)
     - `dcs_tx_code`, `dcs_rx_code` (optional, DCS code as string or integer, e.g. "023", "205")
     - `dcs_tx_polarity`, `dcs_rx_polarity` (`"N"` or `"I"`; optional, defaults to `"N"`)
-    - `color_code`, `timeslots` (for DMR repeaters — talkgroup slot priorities live in `contacts`)
+    - `color_code` (optional, 0–15), `timeslots` (optional list of ints) — for DMR repeaters; talkgroup slot priorities live in `contacts`
+    - `nac` (optional, 0–4095) — P25 network access code
+    - `nxdn_ran` (optional, 0–63) — NXDN radio access number
 
 For multi-site DMR systems, capture each repeater as an `rf_chain` and centralize talkgroup metadata in `contacts`. See `chicagoland_dmr_system.yml` for a working example.
 
@@ -244,13 +284,29 @@ Reusable collections (NOAA, Marine, GMRS interstitials). Channel plans remain pu
 channel_plans:
   - id: chplan_marine
     name: "Marine VHF"
+    service: "marine"
     channels:
       - name: "Ch 06"
         freq_mhz: 156.300
+        emission: "16K0F3E"
+        bandwidth_khz: 25
+        notes: "Intership safety"
       - name: "Ch 20"
         freq_mhz: 161.600
         tx_freq_mhz: 157.000
 ```
+
+Fields:  
+
+- `id`, `name`  
+- `service` (optional; see §2.0)  
+- `channels[]`:  
+  - `name` (string)  
+  - `freq_mhz` (> 0)  
+  - `tx_freq_mhz` (optional, > 0)  
+  - `emission` (optional ITU designator)  
+  - `bandwidth_khz` (optional, > 0)  
+  - `notes` (optional)  
 
 ---
 
@@ -262,26 +318,26 @@ License or permission required.
 authorizations:
   - id: auth_fcc_amateur_t
     authority: "FCC"
-    service: "Amateur Radio"
+    service: "amateur"
     class: "Technician or higher"
     identifier: null
     notes: "TX requires US amateur license."
-  - id: auth_rx_only_public
+  - id: auth_rx_only_noaa
     authority: "N/A"
-    service: "Receive-only"
+    service: "noaa_weather_radio"
     class: null
     identifier: null
-    notes: "Listening only (e.g., NOAA); no license required."
+    notes: "Listening only; no license required."
 ```
 
 Fields:  
 
 - `id`  
 - `authority` (e.g. `"FCC"`)  
-- `service` (Amateur, GMRS, Marine, etc.)  
+- `service` (required; see §2.0)  
 - `class` (optional, license class)  
-- `identifier` (e.g. license number)  
-- `notes`  
+- `identifier` (optional, e.g. license number)  
+- `notes` (optional)  
 
 ---
 
@@ -310,9 +366,9 @@ contacts:
 
 Fields:  
 
-- `id`, `name`, `kind` (`"Group"`, `"Private"`, or `"AllCall"`)  
-- `number` (integer talkgroup ID, optional for analog contacts)  
-- `default_timeslot` (1 or 2, optional)  
+- `id`, `name`, `kind` (string; by convention `"Group"`, `"Private"`, or `"AllCall"` — not enforced)  
+- `number` (integer talkgroup ID, ≥ 0, optional for analog contacts)  
+- `default_timeslot` (optional integer; by convention 1 or 2 — not enforced)  
 - `notes` (usage guidance, optional)  
 - Future extensions may add `dtmf_id`, `call_type`, etc.  
 
@@ -338,17 +394,25 @@ assignments:
     channel_plan_id: chplan_noaa
     channel_name: "WX1"
     usage: "receive-only"
-    service: "public"
-    authorization_id: auth_rx_only_public
+    service: "noaa_weather_radio"
+    authorization_id: auth_rx_only_noaa
     notes: "NOAA WX channel for Chicago core service area."
+
+  - id: asgn_marine_06_local
+    channel_plan_id: chplan_marine
+    channel_name: "Ch 06"
+    display_name: "M06 SAFETY"
+    usage: "simplex"
+    service: "marine"
 ```
 
 Fields:  
 
 - `id` (string, unique)  
 - Either `rf_chain_id` (reference to RF chain) **or** `channel_plan_id` + `channel_name` (reference to plan entry)  
+- `display_name` (optional; local label for a plan channel so a document can reuse a shared plan without forking it to rename entries. Honoured only when `channel_name` selects exactly one channel; ignored for `rf_chain_id` assignments)  
 - `usage` (string; repeater, simplex, receive-only, data link, etc.)  
-- `service` (string; supports downstream filtering without dictating policy)  
+- `service` (optional; see §2.0 — supports downstream filtering without dictating policy)  
 - `authorization_id` (optional)  
 - `notes` (optional freeform description)  
 
@@ -413,6 +477,6 @@ This spec now demonstrates:
 
 ## 7. Migration Notes
 
-- **Legacy fields**: `assignments.zones`, `assignments.codeplug.*`, and `assignments.codeplug.preferred_contacts` are deprecated as of v0.5.0. Repositories may keep them temporarily for backward compatibility but new data should omit them.  
+- **Legacy fields**: `assignments.zones`, `assignments.codeplug.*`, and `assignments.codeplug.preferred_contacts` are deprecated as of v0.5.0. The loader drops them (and `scan`) on read and maps `comment` → `notes`; see §1.3. New data should omit them.  
 - **Profiles** should continue to use path-based include/exclude semantics while adding the ability to pull in explicit assignment IDs as needed.  
 - **Policies** may be expressed in YAML/TOML/JSON (format-agnostic) so long as they reference assignments by ID and avoid redefining RF facts.  
