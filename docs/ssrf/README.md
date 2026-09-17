@@ -4,8 +4,8 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ## Quick Statistics
 
-- **Total SSRF Files:** 42
-- **Total Assignments:** 707
+- **Total SSRF Files:** 49
+- **Total Assignments:** 719
 - **Services Covered:** 10
 - **Modes:** AM, APRS, C4FM, CW, D-STAR, DMR, FM, NXDN, P25, PACKET
 - **Frequency Bands:** 5
@@ -34,13 +34,13 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |------|----------|-------------|-------|------------------|
 | [mmdvm_duplex_hotspot](mmdvm_duplex_hotspot.md) | amateur | 2 | DMR | custom / mmdvm_duplex_hotspot.yml |
 
-### Geographic System (30 files)
+### Geographic System (37 files)
 
 | File | Services | Assignments | Modes | Geographic Scope |
 |------|----------|-------------|-------|------------------|
 | [tarc_repeaters](tarc_repeaters.md) | amateur | 3 | FM | US / FL / Hillsborough / Tampa |
 | [florida_simulcast_group](florida_simulcast_group.md) | amateur, gmrs | 15 | FM, P25, DMR, NXDN, ... | US / FL / _Regional / florida_simulcast_group.yml |
-| [st_pete_gmrs_repeaters](st_pete_gmrs_repeaters.md) | gmrs | 7 | FM | US / FL / _Regional / gmrs |
+| [st_pete_gmrs_repeaters](st_pete_gmrs_repeaters.md) | gmrs | 12 | FM | US / FL / _Regional / gmrs |
 | [cfmc_repeaters](cfmc_repeaters.md) | amateur | 7 | FM, D-STAR, C4FM | US / IL / Cook / Chicago |
 | [chicagoland_dmr_system](chicagoland_dmr_system.md) | amateur | 2 | DMR | US / IL / Cook / Chicago |
 | [n9bbm_loop_repeater](n9bbm_loop_repeater.md) | amateur | 1 | FM | US / IL / Cook / Chicago |
@@ -48,25 +48,32 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [sara_repeaters](sara_repeaters.md) | amateur | 3 | FM, C4FM | US / IL / Cook / Chicago |
 | [chicago_businesses_northside](chicago_businesses_northside.md) | business_itinerant_part90 | 50 | DMR, FM | US / IL / Cook / Chicago |
 | [venues_chicago](venues_chicago.md) | business_itinerant_part90 | 15 | DMR, FM | US / IL / Cook / Chicago |
-| [chicago_gmrs_repeaters](chicago_gmrs_repeaters.md) | gmrs | 9 | FM | US / IL / Cook / Chicago |
+| [chicago_gmrs_repeaters](chicago_gmrs_repeaters.md) | gmrs | 6 | FM | US / IL / Cook / Chicago |
 | [family_channels](family_channels.md) | amateur, gmrs | 17 | FM, DMR | US / IL / Cook / Chicago |
 | [chicago_ems_services](chicago_ems_services.md) | public_safety_part90 | 40 | P25, FM | US / IL / Cook / Chicago |
 | [chicago_fire_ems_northside](chicago_fire_ems_northside.md) | public_safety_part90 | 18 | FM, P25 | US / IL / Cook / Chicago |
 | [chicago_police_department](chicago_police_department.md) | public_safety_part90 | 8 | FM | US / IL / Cook / Chicago |
 | [public_works_parks](public_works_parks.md) | public_safety_part90 | 17 | FM, DMR | US / IL / Cook / Chicago |
 | [transit_transport](transit_transport.md) | public_safety_part90 | 7 | FM, DMR | US / IL / Cook / Chicago |
+| [skokie_repeater_club](skokie_repeater_club.md) | amateur | 1 | FM | US / IL / Cook / Northbrook |
 | [paaros_repeaters](paaros_repeaters.md) | amateur | 4 | FM, C4FM, D-STAR | US / IL / Cook / _Countywide |
+| [nsea_gmrs_repeaters](nsea_gmrs_repeaters.md) | gmrs | 4 | FM | US / IL / Cook / _Countywide |
 | [cook_county_interop](cook_county_interop.md) | public_safety_part90 | 9 | FM | US / IL / Cook / _Countywide |
 | [w9dup_darc_repeaters](w9dup_darc_repeaters.md) | amateur | 3 | FM | US / IL / DuPage / DownersGrove |
+| [zion_gmrs_repeaters](zion_gmrs_repeaters.md) | gmrs | 1 | FM | US / IL / Lake / Benton |
 | [tri_state_dmr](tri_state_dmr.md) | amateur | 16 | DMR | US / IL / _Statewide / amateur |
 | [il_statewide_interop](il_statewide_interop.md) | public_safety_part90 | 14 | FM | US / IL / _Statewide / public_safety |
 | [laporte_county_amateur_radio_club](laporte_county_amateur_radio_club.md) | amateur | 6 | FM, C4FM | US / IN / LaPorte / LaPorte |
 | [laporte_county_public_safety](laporte_county_public_safety.md) | public_safety_part90 | 15 | FM | US / IN / LaPorte / LaPorte |
 | [n9iaa_aresc_network](n9iaa_aresc_network.md) | amateur | 4 | FM, DMR | US / IN / Northwest / Regional |
+| [osceola_gmrs_repeaters](osceola_gmrs_repeaters.md) | gmrs | 1 | FM | US / IN / StJoseph / Osceola |
 | [kc8brs_four_flags](kc8brs_four_flags.md) | amateur | 1 | FM | US / MI / Berrien / Niles |
 | [berrien_county_amateur](berrien_county_amateur.md) | amateur | 5 | FM, D-STAR | US / MI / Berrien / _Countywide |
 | [berrien_county_public_safety](berrien_county_public_safety.md) | public_safety_part90 | 13 | FM | US / MI / Berrien / _Countywide |
+| [ecker_hill_gmrs](ecker_hill_gmrs.md) | gmrs | 1 | FM | US / UT / Summit / ParkCity |
+| [gmrs_two_way_radio](gmrs_two_way_radio.md) | gmrs | 1 | FM | US / WI / Monroe / Sparta |
 | [kr9rk_lakeshore_repeaters](kr9rk_lakeshore_repeaters.md) | amateur | 3 | FM, DMR | US / WI / Racine / _Countywide |
+| [real_fine_gmrs_repeaters](real_fine_gmrs_repeaters.md) | gmrs | 1 | FM | US / WI / Racine / _Countywide |
 | [chicagoland_airports](chicagoland_airports.md) | aviation | 147 | AM | US / _Regional / aviation / chicagoland_airports.yml |
 
 ## Geographic Coverage
@@ -76,11 +83,12 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ### US
 - **FL:** 3 files
-- **IL:** 19 files
-- **IN:** 3 files
+- **IL:** 22 files
+- **IN:** 4 files
 - **MI:** 3 files
 - **National/Regional:** 10 files
-- **WI:** 1 files
+- **UT:** 1 files
+- **WI:** 3 files
 - **_Regional:** 1 files
 
 ### custom
@@ -90,10 +98,10 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 | Service | Total Assignments | Files |
 |---------|------------------|-------|
-| amateur | 119 | 18 |
+| amateur | 120 | 19 |
 | aviation | 164 | 2 |
 | business_itinerant_part90 | 92 | 3 |
-| gmrs | 78 | 5 |
+| gmrs | 89 | 11 |
 | marine | 53 | 1 |
 | murs | 5 | 1 |
 | noaa_weather_radio | 7 | 1 |
