@@ -1,6 +1,6 @@
 """Pydantic models for the SSRF-Lite reference schema.
 
-These models intentionally reflect the v0.5.3 specification located in
+These models intentionally reflect the v0.6.0 specification located in
 ``ssrf/_schema/SSRF-Lite-Spec.md``. They do not include legacy or policy-layer
 fields that appeared in historical data files. Use the helper functions at the
 bottom of this file to validate YAML documents against the schema.
@@ -18,6 +18,7 @@ from typing import Literal
 
 BASE_DIR = Path(__file__).resolve().parent
 _SERVICES_PATH = BASE_DIR.parent / "_taxonomies" / "services.yaml"
+_DCS_CODES_PATH = BASE_DIR.parent / "_taxonomies" / "dcs_codes.yaml"
 
 
 def _load_service_ids() -> Tuple[str, ...]:
@@ -75,6 +76,36 @@ SUPPORTED_MODES: Tuple[str, ...] = (
 )
 _mode_literal_args = ", ".join(repr(val) for val in SUPPORTED_MODES)
 ModeLiteral = eval(f"Literal[{_mode_literal_args}]", _literal_globals)
+
+
+def _load_dcs_codes() -> Tuple[str, ...]:
+    """Load the standard DCS code set from the taxonomy.
+
+    Unlike services there is no hard-coded fallback: silently validating
+    against a stale copy of a closed numeric vocabulary is worse than failing.
+    """
+    with _DCS_CODES_PATH.open("r", encoding="utf-8") as handle:
+        doc = yaml.safe_load(handle) or {}
+
+    codes: List[str] = []
+    for entry in doc.get("dcs_codes", []) or []:
+        if not isinstance(entry, str):
+            raise ValueError(
+                f"{_DCS_CODES_PATH.name}: DCS codes must be quoted strings; "
+                f"got {entry!r}. An unquoted leading zero is YAML 1.1 octal."
+            )
+        candidate = entry.strip()
+        if candidate:
+            codes.append(candidate)
+
+    if not codes:
+        raise ValueError(f"{_DCS_CODES_PATH.name} defines no DCS codes")
+    return tuple(sorted(set(codes)))
+
+
+DCS_CODES: Tuple[str, ...] = _load_dcs_codes()
+_dcs_literal_args = ", ".join(repr(val) for val in DCS_CODES)
+DcsCodeLiteral = eval(f"Literal[{_dcs_literal_args}]", _literal_globals)
 
 
 def _normalize_service_optional(value: Any) -> Optional[str]:
@@ -212,8 +243,12 @@ class Mode(BaseModel):
     type: str = Field(description="Modulation or mode (e.g., FM, DMR)")
     ctcss_tx_hz: Optional[float] = Field(default=None, gt=0)
     ctcss_rx_hz: Optional[float] = Field(default=None, gt=0)
-    dcs_tx_code: Optional[Union[str, int]] = None
-    dcs_rx_code: Optional[Union[str, int]] = None
+    dcs_tx_code: Optional[DcsCodeLiteral] = Field(
+        default=None, description='Three-digit octal DCS code as a quoted string, e.g. "023"'
+    )
+    dcs_rx_code: Optional[DcsCodeLiteral] = Field(
+        default=None, description='Three-digit octal DCS code as a quoted string, e.g. "023"'
+    )
     dcs_tx_polarity: Literal["N", "I"] = "N"
     dcs_rx_polarity: Literal["N", "I"] = "N"
     color_code: Optional[int] = Field(default=None, ge=0, le=15)
@@ -226,6 +261,39 @@ class Mode(BaseModel):
     @classmethod
     def _normalize_type_field(cls, value: Any) -> str:
         return _normalize_mode(value)
+
+    @field_validator("dcs_tx_code", "dcs_rx_code", mode="before")
+    @classmethod
+    def _normalize_dcs_code(cls, value: Any) -> Optional[str]:
+        if value is None:
+            return None
+
+        if isinstance(value, bool) or isinstance(value, int):
+            raise ValueError(
+                f"DCS code must be a quoted three-digit octal string, not the integer {value!r}. "
+                "DCS codes are octal, so an integer is ambiguous, and YAML 1.1 reads an "
+                f'unquoted leading zero as octal (032 loads as 26). Write it as "{value:03o}" '
+                f'if you meant decimal {value}, or "{value:03d}" if those digits are already octal.'
+            )
+
+        if not isinstance(value, str):
+            raise ValueError(
+                f"DCS code must be a quoted three-digit octal string; got {type(value).__name__}."
+            )
+
+        candidate = value.strip()
+        if not candidate:
+            return None
+        if candidate.isdigit():
+            candidate = candidate.zfill(3)
+
+        # Checked here so the failure names the bad code instead of listing all 104.
+        if candidate not in DCS_CODES:
+            raise ValueError(
+                f"{candidate!r} is not a standard DCS code. Expected one of the "
+                f"{len(DCS_CODES)} codes in ssrf/_taxonomies/dcs_codes.yaml."
+            )
+        return candidate
 
 
 class RFChain(BaseModel):

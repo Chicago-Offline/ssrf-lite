@@ -19,7 +19,7 @@ from ssrf import resolve_ssrf_roots
 
 BASE_DOCUMENT = textwrap.dedent(
     """\
-    ssrf_lite_version: "0.5.3"
+    ssrf_lite_version: "0.6.0"
     organizations:
       - id: org_test
         name: "Test Organization"
@@ -57,7 +57,7 @@ BASE_DOCUMENT = textwrap.dedent(
 
 PATCH_DOCUMENT = textwrap.dedent(
     """\
-    ssrf_lite_version: "0.5.3"
+    ssrf_lite_version: "0.6.0"
     overrides:
       rf_chains:
         - id: chain_test
@@ -124,7 +124,7 @@ class OverlayResolutionTest(unittest.TestCase):
     def test_unknown_override_target_fails(self) -> None:
         overlay = textwrap.dedent(
             """\
-            ssrf_lite_version: "0.5.3"
+            ssrf_lite_version: "0.6.0"
             overrides:
               assignments:
                 - id: asg_missing
@@ -140,7 +140,7 @@ class OverlayResolutionTest(unittest.TestCase):
     def test_override_cannot_target_addition_in_the_same_root(self) -> None:
         overlay = textwrap.dedent(
             """\
-            ssrf_lite_version: "0.5.3"
+            ssrf_lite_version: "0.6.0"
             organizations:
               - id: org_same_root
                 name: "Same Root"
@@ -170,7 +170,7 @@ class OverlayResolutionTest(unittest.TestCase):
     def test_override_cannot_change_entity_id(self) -> None:
         overlay = textwrap.dedent(
             """\
-            ssrf_lite_version: "0.5.3"
+            ssrf_lite_version: "0.6.0"
             overrides:
               assignments:
                 - id: asg_test
@@ -190,7 +190,7 @@ class OverlayResolutionTest(unittest.TestCase):
         # regardless of argv order.
         low_overlay = textwrap.dedent(
             """\
-            ssrf_lite_version: "0.5.3"
+            ssrf_lite_version: "0.6.0"
             overrides:
               assignments:
                 - id: asg_test
@@ -200,7 +200,7 @@ class OverlayResolutionTest(unittest.TestCase):
         )
         high_overlay = textwrap.dedent(
             """\
-            ssrf_lite_version: "0.5.3"
+            ssrf_lite_version: "0.6.0"
             overrides:
               assignments:
                 - id: asg_test
@@ -260,7 +260,7 @@ class OverlayResolutionTest(unittest.TestCase):
         # precedence still determines its is_overlay/load-order position.
         additive = textwrap.dedent(
             """\
-            ssrf_lite_version: "0.5.3"
+            ssrf_lite_version: "0.6.0"
             organizations:
               - id: org_extra
                 name: "Extra Organization"

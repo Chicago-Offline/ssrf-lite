@@ -1,10 +1,10 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.6.0.schema.json
 # SSRF-Lite: La Porte County (IN) Public Safety
 # Source: Attachment "laporte_county - Sheet1.csv" (RadioReference export)
 # Notes: Conventional VHF/UHF channels for county sheriff, EMS, fire, EMA, and Westville PD. Programmed receive-only; statewide P25 talkgroups are omitted.
 
-$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
-ssrf_lite_version: "0.5.3"
+$schema: "../../../../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
 organizations:
   - id: org_laporte_sheriff
     name: "La Porte County Sheriff"
@@ -78,7 +78,7 @@ rf_chains:
       emission: "11K2F3E"
     mode:
       type: "FM"
-      dcs_rx_code: 244
+      dcs_rx_code: "244"
 
   - id: chain_laporte_sheriff_car
     station_id: stn_laporte_sheriff
@@ -109,7 +109,7 @@ rf_chains:
       emission: "11K2F3E"
     mode:
       type: "FM"
-      dcs_rx_code: 132
+      dcs_rx_code: "132"
 
     # EMS / EMA / Municipal
   - id: chain_laporte_ems_dispatch
@@ -186,7 +186,7 @@ rf_chains:
       emission: "11K2F3E"
     mode:
       type: "FM"
-      dcs_rx_code: 712
+      dcs_rx_code: "712"
 
   - id: chain_laporte_fireground6
     station_id: stn_laporte_fire

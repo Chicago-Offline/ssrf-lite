@@ -24,7 +24,7 @@ _spec.loader.exec_module(gsite)
 
 PRIVATE_DOC = textwrap.dedent(
     """\
-    ssrf_lite_version: "0.5.3"
+    ssrf_lite_version: "0.6.0"
     organizations:
       - id: org_priv_test
         name: "Private Test Org"

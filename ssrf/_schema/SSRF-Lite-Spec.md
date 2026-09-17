@@ -2,7 +2,7 @@
 
 *A pragmatic spectrum data model for codeplug generation*  
 
-Version: **0.5.3**  
+Version: **0.6.0**  
 Last updated: 2026-09-11  
 
 ---
@@ -38,9 +38,9 @@ Every SSRF-Lite YAML document carries two schema-association headers so that
 editors and CI can validate it **without importing the Python models**:
 
 ```yaml
-# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.5.3.schema.json
-$schema: "../../../_schema/ssrf-lite-0.5.3.schema.json"
-ssrf_lite_version: "0.5.3"
+# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.6.0.schema.json
+$schema: "../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
 ```
 
 - The `# yaml-language-server:` modeline enables live validation in editors such
@@ -49,10 +49,10 @@ ssrf_lite_version: "0.5.3"
 - The top-level `$schema` key lets CI tools (e.g. `check-jsonschema`) discover the
   schema. Its value is a path relative to the file.
 - `ssrf_lite_version` pins the spec revision the file targets and must match the
-  shipped schema (`0.5.3`).
+  shipped schema (`0.6.0`).
 
 The versioned JSON Schema lives beside this document at
-[`ssrf-lite-0.5.3.schema.json`](./ssrf-lite-0.5.3.schema.json) and is generated
+[`ssrf-lite-0.6.0.schema.json`](./ssrf-lite-0.6.0.schema.json) and is generated
 from the Pydantic models via `generate_ssrf_schema.py`. Optional, non-normative
 metadata keys (`ssrf_lite.sources`, `comments`) and the normative `overrides`
 block are permitted alongside the reference entities.
@@ -264,7 +264,13 @@ Fields:
   - `notes?` (optional descriptive string)  
   - Mode-specific fields:
     - `ctcss_tx_hz`, `ctcss_rx_hz` (optional, Hz, > 0)
-    - `dcs_tx_code`, `dcs_rx_code` (optional, DCS code as string or integer, e.g. "023", "205")
+    - `dcs_tx_code`, `dcs_rx_code` (optional) — a **quoted three-digit octal**
+      DCS code drawn from the standard 104-code set in
+      `ssrf/_taxonomies/dcs_codes.yaml`, e.g. `"023"`, `"205"`, `"624"`.
+      Integers are rejected: DCS codes are octal, so `624` is ambiguous (octal
+      624 is 404 decimal), and YAML 1.1 reads an unquoted leading zero as octal,
+      silently turning `032` into `26`. Codes outside the standard set are
+      rejected — add to the taxonomy rather than loosening the type.
     - `dcs_tx_polarity`, `dcs_rx_polarity` (`"N"` or `"I"`; optional, defaults to `"N"`)
     - `color_code` (optional, 0–15), `timeslots` (optional list of ints) — for DMR repeaters; talkgroup slot priorities live in `contacts`
     - `nac` (optional, 0–4095) — P25 network access code

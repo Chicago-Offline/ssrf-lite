@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
-ssrf_lite_version: "0.5.3"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.6.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
 ssrf_lite:
   sources:
     - name: "Local GMRS repeaters (user-provided)"

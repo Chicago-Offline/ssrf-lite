@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../_schema/ssrf-lite-0.5.3.schema.json
-$schema: "../../../../_schema/ssrf-lite-0.5.3.schema.json"
-ssrf_lite_version: "0.5.3"
+# yaml-language-server: $schema=../../../../_schema/ssrf-lite-0.6.0.schema.json
+$schema: "../../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
 "ssrf_lite":
   sources:
     - name: "Florida Simulcast Group – Downtown St. Petersburg"
@@ -218,8 +218,8 @@ rf_chains:
       freq_mhz: 927.05
     mode:
       type: "FM"
-      dcs_tx_code: 546
-      dcs_rx_code: 546
+      dcs_tx_code: "546"
+      dcs_rx_code: "546"
       notes: "HearClear audio chain; alternate input 467.725 MHz with DCS 546."
   - id: chain_w9cr_tampa_927_p25
     station_id: stn_w9cr_tampa
