@@ -650,6 +650,63 @@ rf_chains:
       type: "DMR"
       color_code: 4
       timeslots: [1]
+  # WSKM439, 6601 N Ridge Blvd. Color code unknown.
+  - id: chain_sc_electric_ops1
+    station_id: stn_biz_north
+    antenna_id: ant_biz_north
+    tx:
+      freq_mhz: null
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 462.2000
+    mode:
+      type: "DMR"
+  - id: chain_sc_electric_ops2
+    station_id: stn_biz_north
+    antenna_id: ant_biz_north
+    tx:
+      freq_mhz: null
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 462.4250
+    mode:
+      type: "DMR"
+  # WQFQ228, 3401 W Ainslie.
+  - id: chain_albany_park_cc
+    station_id: stn_biz_north
+    antenna_id: ant_biz_north
+    tx:
+      freq_mhz: null
+      emission: "11K2F3E"
+    rx:
+      freq_mhz: 463.4125
+    mode:
+      type: "FM"
+  # WQZU739, 7141 N Kedzie. Shared security net for Chicagoland Jewish
+  # institutions.
+  - id: chain_community_safety_svcs
+    station_id: stn_biz_north
+    antenna_id: ant_biz_north
+    tx:
+      freq_mhz: null
+      emission: "11K2F3E"
+    rx:
+      freq_mhz: 463.9375
+    mode:
+      type: "FM"
+      notes: "Licensed NFM/DMR; emission actually in use not confirmed."
+  # WQPP355, 4250 N Marine Drive.
+  - id: chain_imperial_tower
+    station_id: stn_biz_north
+    antenna_id: ant_biz_north
+    tx:
+      freq_mhz: null
+      emission: "11K2F3E"
+    rx:
+      freq_mhz: 461.5500
+    mode:
+      type: "FM"
+      notes: "Licensed NFM/DMR; emission actually in use not confirmed."
 
 authorizations:
   - id: auth_monitor_only
@@ -862,5 +919,25 @@ assignments:
     authorization_id: auth_monitor_only
   - id: asg_rosehill_ops
     rf_chain_id: chain_rosehill_ops
+    usage: "repeater"
+    authorization_id: auth_monitor_only
+  - id: asg_sc_electric_ops1
+    rf_chain_id: chain_sc_electric_ops1
+    usage: "repeater"
+    authorization_id: auth_monitor_only
+  - id: asg_sc_electric_ops2
+    rf_chain_id: chain_sc_electric_ops2
+    usage: "repeater"
+    authorization_id: auth_monitor_only
+  - id: asg_albany_park_cc
+    rf_chain_id: chain_albany_park_cc
+    usage: "repeater"
+    authorization_id: auth_monitor_only
+  - id: asg_community_safety_svcs
+    rf_chain_id: chain_community_safety_svcs
+    usage: "repeater"
+    authorization_id: auth_monitor_only
+  - id: asg_imperial_tower
+    rf_chain_id: chain_imperial_tower
     usage: "repeater"
     authorization_id: auth_monitor_only
