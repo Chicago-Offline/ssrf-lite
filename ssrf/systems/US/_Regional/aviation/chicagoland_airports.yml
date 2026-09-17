@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=../../../../_schema/ssrf-lite-0.5.3.schema.json
+# yaml-language-server: $schema=../../../../_schema/ssrf-lite-0.6.0.schema.json
 # SSRF-Lite: Chicagoland Airports (IL / IN / MI) — VHF AM Airband Voice
 # Notes: RX-only reference. AM voice, 25 kHz channels (6K00A3E). TX requires an
 #        FCC Part 87 aeronautical authorization; treat as receive-only.
@@ -8,8 +8,8 @@
 # - Airportmap open databases (https://airportmap.de/data)
 #   as compiled in infamy/NeonPlug airports_min.json
 
-$schema: "../../../../_schema/ssrf-lite-0.5.3.schema.json"
-ssrf_lite_version: "0.5.3"
+$schema: "../../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
 ssrf_lite:
   sources:
     - name: ICAO Frequency Finder

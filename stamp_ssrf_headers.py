@@ -8,7 +8,7 @@ Adds (idempotently) to every reference document under ``ssrf/systems`` and
    Red Hat YAML extension) validate the file live.
 2. A top-level ``$schema`` key pointing at the versioned JSON Schema, for CI
    tools that read the ``$schema`` property.
-3. A top-level ``ssrf_lite_version: "0.5.3"`` key.
+3. A top-level ``ssrf_lite_version: "0.6.0"`` key.
 
 It also removes the now-redundant nested ``ssrf_lite.version`` key, leaving the
 top-level ``ssrf_lite_version`` as the single source of truth. Provenance in the
@@ -25,7 +25,7 @@ import os
 import pathlib
 import re
 
-SPEC_VERSION = "0.5.3"
+SPEC_VERSION = "0.6.0"
 
 BASE = pathlib.Path(__file__).parent
 SSRF_ROOT = BASE / "ssrf"

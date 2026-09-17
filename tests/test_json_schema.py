@@ -102,7 +102,7 @@ class JsonSchemaValidationTest(unittest.TestCase):
         schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
         validator = Draft202012Validator(schema)
         valid = {
-            "ssrf_lite_version": "0.5.3",
+            "ssrf_lite_version": "0.6.0",
             "overrides": {
                 "assignments": [
                     {
@@ -115,13 +115,13 @@ class JsonSchemaValidationTest(unittest.TestCase):
         self.assertEqual(list(validator.iter_errors(valid)), [])
 
         missing_patch = {
-            "ssrf_lite_version": "0.5.3",
+            "ssrf_lite_version": "0.6.0",
             "overrides": {"assignments": [{"id": "asg_example"}]},
         }
         self.assertTrue(list(validator.iter_errors(missing_patch)))
 
         unknown_collection = {
-            "ssrf_lite_version": "0.5.3",
+            "ssrf_lite_version": "0.6.0",
             "overrides": {"unknown_entities": []},
         }
         self.assertTrue(list(validator.iter_errors(unknown_collection)))

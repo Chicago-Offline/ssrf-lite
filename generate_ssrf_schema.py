@@ -22,7 +22,7 @@ import pathlib
 from ssrf.models.pydantic_models import SSRFReference
 from ssrf.overlays import ENTITY_COLLECTIONS
 
-SPEC_VERSION = "0.5.3"
+SPEC_VERSION = "0.6.0"
 
 BASE = pathlib.Path(__file__).parent
 SCHEMA_DIR = BASE / "ssrf" / "_schema"

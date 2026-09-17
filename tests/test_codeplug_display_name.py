@@ -31,7 +31,7 @@ _spec.loader.exec_module(gcp)
 
 PLAN_DOC = textwrap.dedent(
     """\
-    ssrf_lite_version: "0.5.3"
+    ssrf_lite_version: "0.6.0"
     channel_plans:
       - id: test_marine_plan
         name: "Test Marine VHF"
@@ -58,7 +58,7 @@ PLAN_DOC = textwrap.dedent(
 
 FANOUT_DOC = textwrap.dedent(
     """\
-    ssrf_lite_version: "0.5.3"
+    ssrf_lite_version: "0.6.0"
     channel_plans:
       - id: test_fanout_plan
         name: "Test Fanout"

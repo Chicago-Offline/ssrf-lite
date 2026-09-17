@@ -1,6 +1,6 @@
 [project]
 name = "ssrf-lite"
-version = "0.5.3"
+version = "0.6.0"
 description = "SSRF-Lite: a simplified, YAML-based spectrum resource format with Pydantic models, JSON Schema, and a reference data library"
 readme = "README.md"
 requires-python = ">=3.10"

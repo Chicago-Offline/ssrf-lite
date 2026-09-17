@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.5.3.schema.json
+# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.6.0.schema.json
 # SSRF-Lite: US Aviation Airband — Common & Itinerant Frequencies (VHF AM voice)
 # Notes: RX-only reference. AM voice, 25 kHz channels (6K00A3E). TX requires an
 #        FCC Part 87 aeronautical authorization; treat as receive-only in codeplugs.
@@ -6,8 +6,8 @@
 # - FCC 47 CFR Part 87 (Aviation Services)
 # - FAA Aeronautical Information Manual (AIM) 4-1-11 (Designated CTAF/UNICOM/MULTICOM)
 
-$schema: "../../../_schema/ssrf-lite-0.5.3.schema.json"
-ssrf_lite_version: "0.5.3"
+$schema: "../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
 ssrf_lite:
   sources:
     - name: "FCC 47 CFR Part 87 — Aviation Services"

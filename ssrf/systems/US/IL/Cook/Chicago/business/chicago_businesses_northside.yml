@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
-ssrf_lite_version: "0.5.3"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.6.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
 ssrf_lite:
   sources:
     - name: "RadioReference Wiki - Chicago/Cook County (IL) Businesses"
@@ -56,8 +56,8 @@ rf_chains:
       freq_mhz: 469.9125
     mode:
       type: "FM"
-      dcs_rx_code: 311
-      dcs_tx_code: 311
+      dcs_rx_code: "311"
+      dcs_tx_code: "311"
   - id: chain_tribune_tower
     station_id: stn_biz_north
     antenna_id: ant_biz_north
@@ -232,8 +232,8 @@ rf_chains:
       freq_mhz: 467.0875
     mode:
       type: "FM"
-      dcs_rx_code: 156
-      dcs_tx_code: 156
+      dcs_rx_code: "156"
+      dcs_tx_code: "156"
   - id: chain_flemings_a1
     station_id: stn_biz_north
     antenna_id: ant_biz_north
@@ -244,8 +244,8 @@ rf_chains:
       freq_mhz: 464.8125
     mode:
       type: "FM"
-      dcs_rx_code: 624
-      dcs_tx_code: 624
+      dcs_rx_code: "624"
+      dcs_tx_code: "624"
   - id: chain_flemings_a2
     station_id: stn_biz_north
     antenna_id: ant_biz_north
@@ -256,8 +256,8 @@ rf_chains:
       freq_mhz: 464.5125
     mode:
       type: "FM"
-      dcs_rx_code: 624
-      dcs_tx_code: 624
+      dcs_rx_code: "624"
+      dcs_tx_code: "624"
   - id: chain_dave_busters_clark
     station_id: stn_biz_north
     antenna_id: ant_biz_north
@@ -290,8 +290,8 @@ rf_chains:
       freq_mhz: 467.9250
     mode:
       type: "FM"
-      dcs_rx_code: 565
-      dcs_tx_code: 565
+      dcs_rx_code: "565"
+      dcs_tx_code: "565"
   - id: chain_park_place_rest
     station_id: stn_biz_north
     antenna_id: ant_biz_north
@@ -450,8 +450,8 @@ rf_chains:
       freq_mhz: 464.9375
     mode:
       type: "FM"
-      dcs_rx_code: 411
-      dcs_tx_code: 411
+      dcs_rx_code: "411"
+      dcs_tx_code: "411"
   - id: chain_north_water_apts
     station_id: stn_biz_north
     antenna_id: ant_biz_north
@@ -462,8 +462,8 @@ rf_chains:
       freq_mhz: 464.0000
     mode:
       type: "FM"
-      dcs_rx_code: 132
-      dcs_tx_code: 132
+      dcs_rx_code: "132"
+      dcs_tx_code: "132"
   - id: chain_river_east_center
     station_id: stn_biz_north
     antenna_id: ant_biz_north
@@ -486,8 +486,8 @@ rf_chains:
       freq_mhz: 466.3500
     mode:
       type: "FM"
-      dcs_rx_code: 32
-      dcs_tx_code: 32
+      dcs_rx_code: "032"
+      dcs_tx_code: "032"
 
   # Bucktown / Wicker Park vicinity
   - id: chain_horween_leather

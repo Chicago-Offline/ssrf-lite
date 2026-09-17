@@ -1,10 +1,10 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.5.3.schema.json
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.6.0.schema.json
 # SSRF-Lite: Fire/EMS (Chicago + Northside analogue RX-only)
 # Source: RadioReference Cook County IL – Chicago Fire/EMS and Northside suburbs
 # Notes: Many primary ops are on OEMC 800MHz P25; below includes analogue backups and TAC/OPS you can monitor.
 
-$schema: "../../../../../../_schema/ssrf-lite-0.5.3.schema.json"
-ssrf_lite_version: "0.5.3"
+$schema: "../../../../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
 organizations:
   - id: org_cfd
     name: "Chicago Fire Department"
@@ -173,7 +173,7 @@ rf_chains:
       freq_mhz: 159.195
     tx:
       emission: "11K2F3E"
-    mode: {type: "FM", dcs_rx_code: 205}
+    mode: {type: "FM", dcs_rx_code: "205"}
 
   - id: chain_north_shore_admin
     station_id: stn_northside
