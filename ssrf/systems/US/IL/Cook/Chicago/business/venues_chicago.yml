@@ -143,6 +143,9 @@ rf_chains:
       freq_mhz: 463.4375
     mode:
       type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+      notes: "Color code NOT verified; 1 assumed as the commonest commercial default so the channel can be programmed. Replace with an observed value."
   - id: chain_united_center
     station_id: stn_venues
     antenna_id: ant_venues

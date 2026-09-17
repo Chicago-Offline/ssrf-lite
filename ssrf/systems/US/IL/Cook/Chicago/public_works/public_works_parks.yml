@@ -43,13 +43,19 @@ rf_chains:
   - {id: ch_cpdistrict_ops1, station_id: stn_muni, antenna_id: ant_m, rx: {
         freq_mhz: 462.7125}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
   - {id: ch_cpdistrict_ops2, station_id: stn_muni, antenna_id: ant_m, rx: {
-        freq_mhz: 463.2625}, tx: {emission: "7K60FXE"}, mode: {type: "DMR"}}
+        freq_mhz: 463.2625}, tx: {emission: "7K60FXE"}, mode: {type: "DMR", 
+        color_code: 1, timeslots: [1, 2], notes: "Color code NOT verified; 1 
+        assumed as the commonest commercial default so the channel can be 
+        programmed. Replace with an observed value."}}
 
   # Forest Preserves of Cook County (FPDCC) – maintenance/security
   - {id: ch_fpdcc_ops1, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 
         453.175}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
   - {id: ch_fpdcc_ops2, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 
-        453.050}, tx: {emission: "7K60FXE"}, mode: {type: "DMR"}}
+        453.050}, tx: {emission: "7K60FXE"}, mode: {type: "DMR", color_code: 1, 
+        timeslots: [1, 2], notes: "Color code NOT verified; 1 assumed as the 
+        commonest commercial default so the channel can be programmed. Replace 
+        with an observed value."}}
 
   # Chicago Department of Transportation (CDOT) & Streets/Sanitation
   # Source: RadioReference Cook County -> Chicago Department of Transportation
