@@ -636,6 +636,20 @@ rf_chains:
       type: "DMR"
       color_code: 1
       timeslots: [1]
+  # WRCW601. Shares 463.5125 with chain_merch_mart; the color code is what
+  # tells them apart on air.
+  - id: chain_rosehill_ops
+    station_id: stn_biz_north
+    antenna_id: ant_biz_north
+    tx:
+      freq_mhz: null
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 463.5125
+    mode:
+      type: "DMR"
+      color_code: 4
+      timeslots: [1]
 
 authorizations:
   - id: auth_monitor_only
@@ -844,5 +858,9 @@ assignments:
     authorization_id: auth_monitor_only
   - id: asg_caa_hotel_hskp
     rf_chain_id: chain_caa_hotel_hskp
+    usage: "repeater"
+    authorization_id: auth_monitor_only
+  - id: asg_rosehill_ops
+    rf_chain_id: chain_rosehill_ops
     usage: "repeater"
     authorization_id: auth_monitor_only
