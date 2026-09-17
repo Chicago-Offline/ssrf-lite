@@ -7,22 +7,22 @@
 
 ## Overview
 
-- **Assignments:** 10
+- **Assignments:** 6
 - **Services:** gmrs
 - **Organizations:** 1
-- **Locations:** 8
-- **RF Chains:** 10
+- **Locations:** 5
+- **RF Chains:** 6
 - **Channel Plans:** 0
 - **Contacts:** 0
 
 ### Modes
-- **FM:** 10
+- **FM:** 6
 
 ### Usage Types
-- **Repeater:** 10
+- **Repeater:** 6
 
 ### Frequency Bands
-- **UHF (400-480 MHz):** 10
+- **UHF (400-480 MHz):** 6
 
 ## Organizations
 
@@ -32,13 +32,7 @@
 
 ### Lincolnwood, IL
 
-### Evanston, IL
-
 ### Chicago, IL
-
-### Park Ridge, IL
-
-### Northbrook, IL
 
 ### Forest View, IL
 
@@ -48,22 +42,14 @@
 
 ## Assignments
 
-### Unknown (10 assignments)
+### Unknown (6 assignments)
 
 - **asgn_gmrs_lincolnwood_575** - repeater
   - *Permission required to use. Output 462.5750 (+5.000 input).*
-- **asgn_gmrs_evanston_725** - repeater
-  - *Open system. 100.0 Hz PL. Output 462.7250 (+5.000 input).*
-- **asgn_gmrs_evanston_700** - repeater
-  - *Permission required. 107.2 Hz PL. Output 462.7000 (+5.000 input).*
 - **asgn_gmrs_chicago_600** - repeater
   - *Open system. 192.8 Hz PL. Output 462.6000 (+5.000 input).*
 - **asgn_gmrs_chicago_575** - repeater
   - *Open system. 141.3 Hz PL. Output 462.5750 (+5.000 input).*
-- **asgn_gmrs_parkridge_675** - repeater
-  - *Permission required. 141.3 Hz PL. Output 462.6750 (+5.000 input).*
-- **asgn_gmrs_northbrook_650** - repeater
-  - *Permission required. 107.2 Hz PL. Output 462.6500 (+5.000 input).*
 - **asgn_gmrs_forest_view_650** - repeater
   - *Open system. 203.5 Hz PL. Output 462.6500 (+5.000 input).*
 - **asgn_gmrs_oak_lawn_625** - repeater

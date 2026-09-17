@@ -1,0 +1,165 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.6.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
+ssrf_lite:
+  sources:
+    - name: "North Shore Emergency Association - Repeaters / Weekly Net / Contact"
+      url: "https://nsea.com/nextgen"
+      accessed: "2026-09-17"
+    - name: "RadioReference IL Cook County GMRS repeater export (ctid 606)"
+      url:
+      accessed: "2026-09-17"
+    - name: "NSEA member (site details and coverage notes)"
+      url:
+      accessed: "2026-09-17"
+
+organizations:
+  - id: org_nsea
+    name: "North Shore Emergency Association (NSEA)"
+  - id: org_nsea_coop_595
+    name: "Private GMRS repeater - Matt, NSEA Unit 595"
+
+locations:
+  - id: loc_nsea_park_ridge
+    name: "Park Ridge, IL - Lutheran General Hospital, Dempster St (approx)"
+    lat: 42.0432
+    lon: -87.8477
+  - id: loc_nsea_northbrook
+    name: "Northbrook, IL - Willow Hill Golf Course, W of Waukegan Rd / N of Willow Rd (approx)"
+    lat: 42.1073
+    lon: -87.8495
+  - id: loc_nsea_evanston
+    name: "Evanston, IL - former Dyche (Ryan) Stadium site, Central St (approx)"
+    lat: 42.0658
+    lon: -87.6926
+  - id: loc_nsea_coop_evanston
+    name: "Evanston, IL (approx - exact site not published)"
+
+stations:
+  - id: stn_nsea_675
+    call_sign: "KAA8142"
+    organization_id: org_nsea
+    location_id: loc_nsea_park_ridge
+    service: "gmrs"
+  - id: stn_nsea_650
+    call_sign: "KAE2050"
+    organization_id: org_nsea
+    location_id: loc_nsea_northbrook
+    service: "gmrs"
+  - id: stn_nsea_700
+    call_sign: "KAE2050"
+    organization_id: org_nsea
+    location_id: loc_nsea_evanston
+    service: "gmrs"
+  # Cooperating (non-NSEA-owned) system, operated in coordination with NSEA.
+  - id: stn_nsea_coop_evanston_725
+    call_sign: "GMRS"
+    organization_id: org_nsea_coop_595
+    location_id: loc_nsea_coop_evanston
+    service: "gmrs"
+
+rf_chains:
+  # Repeater modeling: rx = repeater output (462.xxx), tx = input (467.xxx)
+  - id: chain_nsea_675
+    station_id: stn_nsea_675
+    tx:
+      freq_mhz: 467.675
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.675
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 141.3
+      ctcss_rx_hz: 141.3
+
+  - id: chain_nsea_650
+    station_id: stn_nsea_650
+    tx:
+      freq_mhz: 467.650
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.650
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 107.2
+      ctcss_rx_hz: 107.2
+
+  - id: chain_nsea_700
+    station_id: stn_nsea_700
+    tx:
+      freq_mhz: 467.700
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.700
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 107.2
+      ctcss_rx_hz: 107.2
+
+  - id: chain_nsea_coop_evanston_725
+    station_id: stn_nsea_coop_evanston_725
+    tx:
+      freq_mhz: 467.725
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.725
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 100.0
+      ctcss_rx_hz: 100.0
+
+authorizations:
+  - id: auth_fcc_gmrs
+    authority: "FCC"
+    service: "gmrs"
+    class: "GMRS license"
+    notes: "FCC Part 95E GMRS authorization required."
+
+assignments:
+  - id: asgn_nsea_675
+    rf_chain_id: chain_nsea_675
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: >-
+      Heritage .675 - primary NSEA system; home of the weekly net (Sundays
+      7:00 PM Central) and emergency traffic. Sited at Lutheran General
+      Hospital, Dempster St, Park Ridge. Permission required; 141.3 Hz PL.
+      Coverage approx 35 mi. Output 462.6750 (+5.000 input).
+
+  - id: asgn_nsea_650
+    rf_chain_id: chain_nsea_650
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: >-
+      NSEA .650 system serving the North Shore, sited at Willow Hill Golf
+      Course in Northbrook. Permission required; 107.2 Hz PL (NSEA does not
+      publish tones publicly). Coverage approx 35 mi. Output 462.6500
+      (+5.000 input).
+
+  - id: asgn_nsea_700
+    rf_chain_id: chain_nsea_700
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: >-
+      NSEA .700 system extending coverage across the greater Chicago metro.
+      Original site was the former Dyche (Ryan) Stadium on Central St in
+      Evanston; with the stadium demolished for the rebuild, the repeater and
+      antenna are temporarily on a nearby cell tower at lower height, so
+      current range is reduced. Permission required; 107.2 Hz PL (NSEA does
+      not publish tones publicly). Coverage approx 15 mi. Output 462.7000
+      (+5.000 input).
+
+  - id: asgn_nsea_coop_evanston_725
+    rf_chain_id: chain_nsea_coop_evanston_725
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: >-
+      Evanston .725 - cooperating system privately owned by Matt (NSEA Unit
+      595); NSEA members are invited to use it. Contact the system owner for
+      access; 100.0 Hz PL. Antenna is directional facing north, so HTs and
+      mobiles south of Golf Road will struggle to access it. Coverage approx
+      20 mi. Output 462.7250 (+5.000 input).

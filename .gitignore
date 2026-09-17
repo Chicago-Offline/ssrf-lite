@@ -1,6 +1,8 @@
 __pycache__/
 *.pyc
 .venv/
+.DS_Store
+imports/
 dist/
 .pytest_cache/
 uv.lock

@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.6.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
+ssrf_lite:
+  sources:
+    - name: "Repeater owners (user-provided)"
+      url:
+      accessed: "2026-09-17"
+    - name: "RadioReference IL Cook County repeater export (ctid 606)"
+      url:
+      accessed: "2026-09-17"
+
+organizations:
+  - id: org_skokie_repeater_club
+    name: "Skokie Repeater Club (KB9TAP / KC9JXJ)"
+
+locations:
+  - id: loc_northbrook_willow_hill
+    name: "Northbrook, IL - Willow Hill (approx)"
+    lat: 42.1073
+    lon: -87.8495
+
+stations:
+  - id: stn_skokie_rc_440
+    call_sign: "KB9TAP"
+    organization_id: org_skokie_repeater_club
+    location_id: loc_northbrook_willow_hill
+    service: "amateur"
+
+rf_chains:
+  # Repeater modeling: rx = repeater output (443.175), tx = input (448.175)
+  - id: chain_skokie_rc_440_fm
+    station_id: stn_skokie_rc_440
+    tx:
+      freq_mhz: 448.175
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 443.175
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 127.3
+      ctcss_rx_hz: 127.3
+
+authorizations:
+  - id: auth_fcc_amateur
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "Transmit requires US amateur license."
+
+assignments:
+  - id: asgn_skokie_rc_440_fm
+    rf_chain_id: chain_skokie_rc_440_fm
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur
+    notes: >-
+      Skokie Repeater Club "SkokieRC" UHF repeater at Willow Hill in
+      Northbrook; 443.175 output (+5.000 input), 127.3 Hz PL both ways.
+      Owned by KB9TAP and KC9JXJ.
