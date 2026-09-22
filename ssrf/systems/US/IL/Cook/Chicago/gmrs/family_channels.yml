@@ -327,92 +327,109 @@ rf_chains:
 
 assignments:
   - id: asgn_family_f1_all
+    channel_name: "Fam F1 ALL"
     rf_chain_id: chain_family_f1_all
     usage: "simplex"
     authorization_id: auth_fcc_gmrs_family
 
   - id: asgn_family_f2_team_a
+    channel_name: "Fam F2 Team A"
     rf_chain_id: chain_family_f2_team_a
     usage: "simplex"
     authorization_id: auth_fcc_gmrs_family
 
   - id: asgn_family_f3_team_b
+    channel_name: "Fam F3 Team B"
     rf_chain_id: chain_family_f3_team_b
     usage: "simplex"
     authorization_id: auth_fcc_gmrs_family
 
   - id: asgn_family_f4_team_c
+    channel_name: "Fam F4 Team C"
     rf_chain_id: chain_family_f4_team_c
     usage: "simplex"
     authorization_id: auth_fcc_gmrs_family
 
   - id: asgn_family_f5_road
+    channel_name: "Fam F5 Road"
     rf_chain_id: chain_family_f5_road
     usage: "simplex"
     authorization_id: auth_fcc_gmrs_family
 
   - id: asgn_family_f6_rptr
+    channel_name: "Fam F6 Rptr"
     rf_chain_id: chain_family_f6_rptr
     usage: "repeater"
     authorization_id: auth_fcc_gmrs_family
     notes: "GMRS repeater pair assumed +5.000 MHz input (467.5500)."
 
   - id: asgn_family_f8_evnstn
+    channel_name: "Fam F8 Evanston"
     rf_chain_id: chain_family_f8_evnstn
     usage: "repeater"
     authorization_id: auth_fcc_gmrs_family
     notes: "Evanston-area GMRS repeater (output 462.7250 / input 467.7250)."
 
   - id: asgn_family_f9_prkrdg
+    channel_name: "Fam F9 Park Rdg"
     rf_chain_id: chain_family_f9_prkrdg
     usage: "repeater"
     authorization_id: auth_fcc_gmrs_family
     notes: "Park Ridge GMRS repeater (output 462.6750 / input 467.6750)."
 
   - id: asgn_family_f10_evnst
+    channel_name: "Fam F10 Evanstn"
     rf_chain_id: chain_family_f10_evnst
     usage: "simplex"
     authorization_id: auth_fcc_gmrs_family
 
   - id: asgn_family_f11_nrthbrk
+    channel_name: "Fam F11 Nrthbrk"
     rf_chain_id: chain_family_f11_nrthbrk
     usage: "repeater"
     authorization_id: auth_fcc_gmrs_family
     notes: "Northbrook-area repeater listing; verify coordination (unusual -2.000 MHz input)."
 
   - id: asgn_family_f13_uhf_call
+    channel_name: "Fam F13 UHF Cal"
     rf_chain_id: chain_family_f13_uhf_call
     usage: "simplex"
     authorization_id: auth_fcc_amateur_family
 
   - id: asgn_family_f14_ns9rc
+    channel_name: "Fam F14 NS9RC"
     rf_chain_id: chain_family_f14_ns9rc
     usage: "repeater"
     authorization_id: auth_fcc_amateur_family
     notes: "NS9RC 442.725 +5 MHz repeater with 114.8 Hz tone."
 
   - id: asgn_family_f15_cmfc
+    channel_name: "Fam F15 CFMC"
     rf_chain_id: chain_family_f15_cmfc
     usage: "repeater"
     authorization_id: auth_fcc_amateur_family
     notes: "Chicago FM Club 443.750 +5 MHz repeater (114.8 Hz)."
 
   - id: asgn_family_fd1_all
+    channel_name: "Fam FD1 ALL"
     rf_chain_id: chain_family_fd1_all
     usage: "digital-simplex"
     authorization_id: auth_fcc_gmrs_family
 
   - id: asgn_family_fd2_team_a
+    channel_name: "Fam FD2 Team A"
     rf_chain_id: chain_family_fd2_team_a
     usage: "digital-simplex"
     authorization_id: auth_fcc_gmrs_family
 
   - id: asgn_family_fd3_team_b
+    channel_name: "Fam FD3 Team B"
     rf_chain_id: chain_family_fd3_team_b
     usage: "digital-simplex"
     authorization_id: auth_fcc_gmrs_family
 
   - id: asgn_family_fd4_team_c
+    channel_name: "Fam FD4 Team C"
     rf_chain_id: chain_family_fd4_team_c
     usage: "digital-simplex"
     authorization_id: auth_fcc_gmrs_family

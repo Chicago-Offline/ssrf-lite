@@ -121,6 +121,7 @@ authorizations:
 
 assignments:
   - id: asgn_nsea_675
+    channel_name: "NSEA 675"
     rf_chain_id: chain_nsea_675
     usage: "repeater"
     authorization_id: auth_fcc_gmrs
@@ -131,6 +132,7 @@ assignments:
       Coverage approx 35 mi. Output 462.6750 (+5.000 input).
 
   - id: asgn_nsea_650
+    channel_name: "NSEA 650"
     rf_chain_id: chain_nsea_650
     usage: "repeater"
     authorization_id: auth_fcc_gmrs
@@ -141,6 +143,7 @@ assignments:
       (+5.000 input).
 
   - id: asgn_nsea_700
+    channel_name: "NSEA 700"
     rf_chain_id: chain_nsea_700
     usage: "repeater"
     authorization_id: auth_fcc_gmrs
@@ -154,6 +157,7 @@ assignments:
       (+5.000 input).
 
   - id: asgn_nsea_coop_evanston_725
+    channel_name: "Evanston 725"
     rf_chain_id: chain_nsea_coop_evanston_725
     usage: "repeater"
     authorization_id: auth_fcc_gmrs

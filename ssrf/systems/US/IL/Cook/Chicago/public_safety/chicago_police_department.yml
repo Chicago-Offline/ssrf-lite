@@ -132,27 +132,35 @@ rf_chains:
 assignments:
   # Zone: Chicago PD (RX-only)
   - id: asg_cpd_cw1
+    channel_name: "CPD Citywide 1"
     rf_chain_id: chain_cpd_cw1
     usage: "repeater"
   - id: asg_cpd_cw2
+    channel_name: "CPD Citywide 2"
     rf_chain_id: chain_cpd_cw2
     usage: "repeater"
   - id: asg_cpd_cw3
+    channel_name: "CPD Citywide 3"
     rf_chain_id: chain_cpd_cw3
     usage: "repeater"
   - id: asg_cpd_cw4
+    channel_name: "CPD Citywide 4"
     rf_chain_id: chain_cpd_cw4
     usage: "repeater"
   - id: asg_cpd_cw5
+    channel_name: "CPD Citywide 5"
     rf_chain_id: chain_cpd_cw5
     usage: "repeater"
   - id: asg_cpd_cw6
+    channel_name: "CPD Citywide 6"
     rf_chain_id: chain_cpd_cw6
     usage: "repeater"
   - id: asg_cpd_cw7
+    channel_name: "CPD Citywide 7"
     rf_chain_id: chain_cpd_cw7
     usage: "repeater"
   - id: asg_cpd_vhf2
+    channel_name: "CPD VHF 2"
     rf_chain_id: chain_cpd_vhf2
     usage: "simplex"
 comments:

@@ -38,6 +38,7 @@ rf_chains:
 
 assignments:
   - id: asgn_gmrs_zion_550
+    channel_name: "Zion 550"
     rf_chain_id: chain_gmrs_zion_550
     usage: "repeater"
     notes: "Permission required. Authorized licensed users welcome by request. Input tone 225.7 Hz; output tone 141.3 Hz. Local coverage around Russell, IL. Output 462.5500 (+5.000 input)."

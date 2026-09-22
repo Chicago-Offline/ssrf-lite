@@ -91,24 +91,31 @@ rf_chains:
 
 assignments:
   - id: asg_wx1
+    channel_name: "WX 1"
     rf_chain_id: chain_wx1
     usage: "simplex"
   - id: asg_wx2
+    channel_name: "WX 2"
     rf_chain_id: chain_wx2
     usage: "simplex"
   - id: asg_wx3
+    channel_name: "WX 3"
     rf_chain_id: chain_wx3
     usage: "simplex"
   - id: asg_wx4
+    channel_name: "WX 4"
     rf_chain_id: chain_wx4
     usage: "simplex"
   - id: asg_wx5
+    channel_name: "WX 5"
     rf_chain_id: chain_wx5
     usage: "simplex"
   - id: asg_wx6
+    channel_name: "WX 6"
     rf_chain_id: chain_wx6
     usage: "simplex"
   - id: asg_wx7
+    channel_name: "WX 7"
     rf_chain_id: chain_wx7
     usage: "simplex"
 

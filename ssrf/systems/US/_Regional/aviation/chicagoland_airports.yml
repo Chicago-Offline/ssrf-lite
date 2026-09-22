@@ -1882,882 +1882,1029 @@ rf_chains:
 
 assignments:
   - id: asg_7in8_122900_ctaf
+    channel_name: "7IN8 CTAF"
     rf_chain_id: chain_7in8_122900_ctaf
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "7IN8 CTAF — Common Traffic Advisory Frequency."
   - id: asg_82is_122900_unicom
+    channel_name: "82IS UNICOM"
     rf_chain_id: chain_82is_122900_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "82IS UNICOM — UNICOM advisory."
   - id: asg_dtg_122800_ctaf
+    channel_name: "DTG CTAF"
     rf_chain_id: chain_dtg_122800_ctaf
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "DTG CTAF — Common Traffic Advisory Frequency."
   - id: asg_k05c_123000_unicom
+    channel_name: "K05C UNICOM"
     rf_chain_id: chain_k05c_123000_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "K05C UNICOM — UNICOM advisory."
   - id: asg_k05c_123650_radio
+    channel_name: "K05C RADIO"
     rf_chain_id: chain_k05c_123650_radio
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "K05C RADIO — Radio."
   - id: asg_k05c_133100_ad
+    channel_name: "K05C A/D"
     rf_chain_id: chain_k05c_133100_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "K05C A/D — Arrival/Departure."
   - id: asg_k06c_123000_unicom
+    channel_name: "K06C UNICOM"
     rf_chain_id: chain_k06c_123000_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "K06C UNICOM — UNICOM advisory."
   - id: asg_k0c0_122900_ctaf
+    channel_name: "K0C0 CTAF"
     rf_chain_id: chain_k0c0_122900_ctaf
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "K0C0 CTAF — Common Traffic Advisory Frequency."
   - id: asg_k10c_120550_ad
+    channel_name: "K10C A/D"
     rf_chain_id: chain_k10c_120550_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "K10C A/D — Arrival/Departure."
   - id: asg_k10c_122800_unicom
+    channel_name: "K10C UNICOM"
     rf_chain_id: chain_k10c_122800_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "K10C UNICOM — UNICOM advisory."
   - id: asg_k1c2_118400_acc
+    channel_name: "K1C2 ACC"
     rf_chain_id: chain_k1c2_118400_acc
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "K1C2 ACC — Area Control Center."
   - id: asg_k1c2_122500_radio
+    channel_name: "K1C2 RADIO"
     rf_chain_id: chain_k1c2_122500_radio
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "K1C2 RADIO — Radio."
   - id: asg_k1c2_123000_unicom
+    channel_name: "K1C2 UNICOM"
     rf_chain_id: chain_k1c2_123000_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "K1C2 UNICOM — UNICOM advisory."
   - id: asg_k1c5_119350_ad
+    channel_name: "K1C5 A/D"
     rf_chain_id: chain_k1c5_119350_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "K1C5 A/D — Arrival/Departure."
   - id: asg_k1c5_122900_ctaf
+    channel_name: "K1C5 CTAF"
     rf_chain_id: chain_k1c5_122900_ctaf
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "K1C5 CTAF — Common Traffic Advisory Frequency."
   - id: asg_k3ck_120550_ad
+    channel_name: "K3CK A/D"
     rf_chain_id: chain_k3ck_120550_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "K3CK A/D — Arrival/Departure."
   - id: asg_k3ck_123050_unicom
+    channel_name: "K3CK UNICOM"
     rf_chain_id: chain_k3ck_123050_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "K3CK UNICOM — UNICOM advisory."
   - id: asg_k3ho_122800_unicom
+    channel_name: "K3HO UNICOM"
     rf_chain_id: chain_k3ho_122800_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "K3HO UNICOM — UNICOM advisory."
   - id: asg_k3ho_123650_radio
+    channel_name: "K3HO RADIO"
     rf_chain_id: chain_k3ho_123650_radio
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "K3HO RADIO — Radio."
   - id: asg_k3tr_118550_ad
+    channel_name: "K3TR A/D"
     rf_chain_id: chain_k3tr_118550_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "K3TR A/D — Arrival/Departure."
   - id: asg_k3tr_122800_unicom
+    channel_name: "K3TR UNICOM"
     rf_chain_id: chain_k3tr_122800_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "K3TR UNICOM — UNICOM advisory."
   - id: asg_karr_120600_ctaf
+    channel_name: "KARR CTAF"
     rf_chain_id: chain_karr_120600_ctaf
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KARR CTAF — Common Traffic Advisory Frequency."
   - id: asg_karr_121700_cld
+    channel_name: "KARR CLD"
     rf_chain_id: chain_karr_121700_cld
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KARR CLD — Clearance Delivery."
   - id: asg_karr_122500_radio
+    channel_name: "KARR RADIO"
     rf_chain_id: chain_karr_122500_radio
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KARR RADIO — Radio."
   - id: asg_karr_122950_unicom
+    channel_name: "KARR UNICOM"
     rf_chain_id: chain_karr_122950_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KARR UNICOM — UNICOM advisory."
   - id: asg_karr_125850_asos
+    channel_name: "KARR ASOS"
     rf_chain_id: chain_karr_125850_asos
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KARR ASOS — Automated Surface Observing System."
   - id: asg_karr_133500_ad
+    channel_name: "KARR A/D"
     rf_chain_id: chain_karr_133500_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KARR A/D — Arrival/Departure."
   - id: asg_kasw_121125_asow
+    channel_name: "KASW ASOW"
     rf_chain_id: chain_kasw_121125_asow
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KASW ASOW — Automated Weather Observing System."
   - id: asg_kasw_122700_unicom
+    channel_name: "KASW UNICOM"
     rf_chain_id: chain_kasw_122700_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KASW UNICOM — UNICOM advisory."
   - id: asg_kasw_127200_ad
+    channel_name: "KASW A/D"
     rf_chain_id: chain_kasw_127200_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KASW A/D — Arrival/Departure."
   - id: asg_kasw_134050_cld
+    channel_name: "KASW CLD"
     rf_chain_id: chain_kasw_134050_cld
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KASW CLD — Clearance Delivery."
   - id: asg_kbeh_118550_ad
+    channel_name: "KBEH A/D"
     rf_chain_id: chain_kbeh_118550_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KBEH A/D — Arrival/Departure."
   - id: asg_kbeh_119700_cld
+    channel_name: "KBEH CLD"
     rf_chain_id: chain_kbeh_119700_cld
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KBEH CLD — Clearance Delivery."
   - id: asg_kbeh_121550_asos
+    channel_name: "KBEH ASOS"
     rf_chain_id: chain_kbeh_121550_asos
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KBEH ASOS — Automated Surface Observing System."
   - id: asg_kbeh_123000_unicom
+    channel_name: "KBEH UNICOM"
     rf_chain_id: chain_kbeh_123000_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KBEH UNICOM — UNICOM advisory."
   - id: asg_kc03_122800_unicom
+    channel_name: "KC03 UNICOM"
     rf_chain_id: chain_kc03_122800_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KC03 UNICOM — UNICOM advisory."
   - id: asg_kc03_132050_ad
+    channel_name: "KC03 A/D"
     rf_chain_id: chain_kc03_132050_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KC03 A/D — Arrival/Departure."
   - id: asg_kc09_118175_asow
+    channel_name: "KC09 ASOW"
     rf_chain_id: chain_kc09_118175_asow
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KC09 ASOW — Automated Weather Observing System."
   - id: asg_kc09_119350_ad
+    channel_name: "KC09 A/D"
     rf_chain_id: chain_kc09_119350_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KC09 A/D — Arrival/Departure."
   - id: asg_kc09_122500_radio
+    channel_name: "KC09 RADIO"
     rf_chain_id: chain_kc09_122500_radio
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KC09 RADIO — Radio."
   - id: asg_kc09_122800_unicom
+    channel_name: "KC09 UNICOM"
     rf_chain_id: chain_kc09_122800_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KC09 UNICOM — UNICOM advisory."
   - id: asg_kc20_118550_ad
+    channel_name: "KC20 A/D"
     rf_chain_id: chain_kc20_118550_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KC20 A/D — Arrival/Departure."
   - id: asg_kc20_121625_rco
+    channel_name: "KC20 RCO"
     rf_chain_id: chain_kc20_121625_rco
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KC20 RCO — Remote Communications Outlet."
   - id: asg_kc20_122700_unicom
+    channel_name: "KC20 UNICOM"
     rf_chain_id: chain_kc20_122700_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KC20 UNICOM — UNICOM advisory."
   - id: asg_kc20_123500_misc
+    channel_name: "KC20 MISC"
     rf_chain_id: chain_kc20_123500_misc
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KC20 MISC — Miscellaneous."
   - id: asg_kc65_122800_unicom
+    channel_name: "KC65 UNICOM"
     rf_chain_id: chain_kc65_122800_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KC65 UNICOM — UNICOM advisory."
   - id: asg_kc65_132050_ad
+    channel_name: "KC65 A/D"
     rf_chain_id: chain_kc65_132050_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KC65 A/D — Arrival/Departure."
   - id: asg_kc81_120550_ad
+    channel_name: "KC81 A/D"
     rf_chain_id: chain_kc81_120550_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KC81 A/D — Arrival/Departure."
   - id: asg_kc81_122700_unicom
+    channel_name: "KC81 UNICOM"
     rf_chain_id: chain_kc81_122700_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KC81 UNICOM — UNICOM advisory."
   - id: asg_kc91_118550_ad
+    channel_name: "KC91 A/D"
     rf_chain_id: chain_kc91_118550_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KC91 A/D — Arrival/Departure."
   - id: asg_kc91_122800_unicom
+    channel_name: "KC91 UNICOM"
     rf_chain_id: chain_kc91_122800_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KC91 UNICOM — UNICOM advisory."
   - id: asg_kdpa_119750_cld
+    channel_name: "KDPA CLD"
     rf_chain_id: chain_kdpa_119750_cld
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KDPA CLD — Clearance Delivery."
   - id: asg_kdpa_120900_twr
+    channel_name: "KDPA TWR"
     rf_chain_id: chain_kdpa_120900_twr
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KDPA TWR — Tower."
   - id: asg_kdpa_121800_gnd
+    channel_name: "KDPA GND"
     rf_chain_id: chain_kdpa_121800_gnd
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KDPA GND — Ground control."
   - id: asg_kdpa_122300_radio
+    channel_name: "KDPA RADIO"
     rf_chain_id: chain_kdpa_122300_radio
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KDPA RADIO — Radio."
   - id: asg_kdpa_122950_unicom
+    channel_name: "KDPA UNICOM"
     rf_chain_id: chain_kdpa_122950_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KDPA UNICOM — UNICOM advisory."
   - id: asg_kdpa_124800_asos
+    channel_name: "KDPA ASOS"
     rf_chain_id: chain_kdpa_124800_asos
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KDPA ASOS — Automated Surface Observing System."
   - id: asg_kdpa_133500_ad
+    channel_name: "KDPA A/D"
     rf_chain_id: chain_kdpa_133500_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KDPA A/D — Arrival/Departure."
   - id: asg_kekm_118550_ad
+    channel_name: "KEKM A/D"
     rf_chain_id: chain_kekm_118550_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KEKM A/D — Arrival/Departure."
   - id: asg_kekm_119500_ctaf
+    channel_name: "KEKM CTAF"
     rf_chain_id: chain_kekm_119500_ctaf
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KEKM CTAF — Common Traffic Advisory Frequency."
   - id: asg_kekm_121800_cld
+    channel_name: "KEKM CLD"
     rf_chain_id: chain_kekm_121800_cld
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KEKM CLD — Clearance Delivery."
   - id: asg_kekm_122950_unicom
+    channel_name: "KEKM UNICOM"
     rf_chain_id: chain_kekm_122950_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KEKM UNICOM — UNICOM advisory."
   - id: asg_kekm_124475_asow
+    channel_name: "KEKM ASOW"
     rf_chain_id: chain_kekm_124475_asow
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KEKM ASOW — Automated Weather Observing System."
   - id: asg_kgsh_123050_unicom
+    channel_name: "KGSH UNICOM"
     rf_chain_id: chain_kgsh_123050_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KGSH UNICOM — UNICOM advisory."
   - id: asg_kgsh_125250_cld
+    channel_name: "KGSH CLD"
     rf_chain_id: chain_kgsh_125250_cld
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KGSH CLD — Clearance Delivery."
   - id: asg_kgsh_126475_asos
+    channel_name: "KGSH ASOS"
     rf_chain_id: chain_kgsh_126475_asos
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KGSH ASOS — Automated Surface Observing System."
   - id: asg_kgsh_132050_ad
+    channel_name: "KGSH A/D"
     rf_chain_id: chain_kgsh_132050_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KGSH A/D — Arrival/Departure."
   - id: asg_kgyy_120625_atis
+    channel_name: "KGYY ATIS"
     rf_chain_id: chain_kgyy_120625_atis
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KGYY ATIS — Automated Terminal Information Service."
   - id: asg_kgyy_121900_gnd
+    channel_name: "KGYY GND"
     rf_chain_id: chain_kgyy_121900_gnd
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KGYY GND — Ground control."
   - id: asg_kgyy_123650_radio
+    channel_name: "KGYY RADIO"
     rf_chain_id: chain_kgyy_123650_radio
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KGYY RADIO — Radio."
   - id: asg_kgyy_125600_ctaf
+    channel_name: "KGYY CTAF"
     rf_chain_id: chain_kgyy_125600_ctaf
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KGYY CTAF — Common Traffic Advisory Frequency."
   - id: asg_kgyy_133100_ad
+    channel_name: "KGYY A/D"
     rf_chain_id: chain_kgyy_133100_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KGYY A/D — Arrival/Departure."
   - id: asg_kigq_118400_ad
+    channel_name: "KIGQ A/D"
     rf_chain_id: chain_kigq_118400_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KIGQ A/D — Arrival/Departure."
   - id: asg_kigq_119275_asow
+    channel_name: "KIGQ ASOW"
     rf_chain_id: chain_kigq_119275_asow
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KIGQ ASOW — Automated Weather Observing System."
   - id: asg_kigq_122100_fss
+    channel_name: "KIGQ FSS"
     rf_chain_id: chain_kigq_122100_fss
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KIGQ FSS — Flight Service Station."
   - id: asg_kigq_122700_unicom
+    channel_name: "KIGQ UNICOM"
     rf_chain_id: chain_kigq_122700_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KIGQ UNICOM — UNICOM advisory."
   - id: asg_kikk_122200_fss
+    channel_name: "KIKK FSS"
     rf_chain_id: chain_kikk_122200_fss
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KIKK FSS — Flight Service Station."
   - id: asg_kikk_123000_unicom
+    channel_name: "KIKK UNICOM"
     rf_chain_id: chain_kikk_123000_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KIKK UNICOM — UNICOM advisory."
   - id: asg_kikk_132500_acc
+    channel_name: "KIKK ACC"
     rf_chain_id: chain_kikk_132500_acc
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KIKK ACC — Area Control Center."
   - id: asg_kjot_119350_ad
+    channel_name: "KJOT A/D"
     rf_chain_id: chain_kjot_119350_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KJOT A/D — Arrival/Departure."
   - id: asg_kjot_119975_asow
+    channel_name: "KJOT ASOW"
     rf_chain_id: chain_kjot_119975_asow
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KJOT ASOW — Automated Weather Observing System."
   - id: asg_kjot_122500_radio
+    channel_name: "KJOT RADIO"
     rf_chain_id: chain_kjot_122500_radio
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KJOT RADIO — Radio."
   - id: asg_kjot_122700_unicom
+    channel_name: "KJOT UNICOM"
     rf_chain_id: chain_kjot_122700_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KJOT UNICOM — UNICOM advisory."
   - id: asg_klot_118525_asow
+    channel_name: "KLOT ASOW"
     rf_chain_id: chain_klot_118525_asow
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KLOT ASOW — Automated Weather Observing System."
   - id: asg_klot_119350_ad
+    channel_name: "KLOT A/D"
     rf_chain_id: chain_klot_119350_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KLOT A/D — Arrival/Departure."
   - id: asg_klot_122500_fss
+    channel_name: "KLOT FSS"
     rf_chain_id: chain_klot_122500_fss
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KLOT FSS — Flight Service Station."
   - id: asg_klot_122800_unicom
+    channel_name: "KLOT UNICOM"
     rf_chain_id: chain_klot_122800_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KLOT UNICOM — UNICOM advisory."
   - id: asg_klwa_118025_asow
+    channel_name: "KLWA ASOW"
     rf_chain_id: chain_klwa_118025_asow
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KLWA ASOW — Automated Weather Observing System."
   - id: asg_klwa_122800_unicom
+    channel_name: "KLWA UNICOM"
     rf_chain_id: chain_klwa_122800_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KLWA UNICOM — UNICOM advisory."
   - id: asg_klwa_128500_acc
+    channel_name: "KLWA ACC"
     rf_chain_id: chain_klwa_128500_acc
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KLWA ACC — Area Control Center."
   - id: asg_kmdw_118400_ad
+    channel_name: "KMDW A/D"
     rf_chain_id: chain_kmdw_118400_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KMDW A/D — Arrival/Departure."
   - id: asg_kmdw_118700_twr
+    channel_name: "KMDW TWR"
     rf_chain_id: chain_kmdw_118700_twr
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KMDW TWR — Tower."
   - id: asg_kmdw_121650_gnd
+    channel_name: "KMDW GND"
     rf_chain_id: chain_kmdw_121650_gnd
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KMDW GND — Ground control."
   - id: asg_kmdw_121850_cld
+    channel_name: "KMDW CLD"
     rf_chain_id: chain_kmdw_121850_cld
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KMDW CLD — Clearance Delivery."
   - id: asg_kmdw_122950_unicom
+    channel_name: "KMDW UNICOM"
     rf_chain_id: chain_kmdw_122950_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KMDW UNICOM — UNICOM advisory."
   - id: asg_kmdw_132750_asos
+    channel_name: "KMDW ASOS"
     rf_chain_id: chain_kmdw_132750_asos
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KMDW ASOS — Automated Surface Observing System."
   - id: asg_kmgc_118550_ad
+    channel_name: "KMGC A/D"
     rf_chain_id: chain_kmgc_118550_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KMGC A/D — Arrival/Departure."
   - id: asg_kmgc_122700_unicom
+    channel_name: "KMGC UNICOM"
     rf_chain_id: chain_kmgc_122700_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KMGC UNICOM — UNICOM advisory."
   - id: asg_kmgc_134800_cld
+    channel_name: "KMGC CLD"
     rf_chain_id: chain_kmgc_134800_cld
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KMGC CLD — Clearance Delivery."
   - id: asg_kord_119000_app
+    channel_name: "KORD APP"
     rf_chain_id: chain_kord_119000_app
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KORD APP — Approach control."
   - id: asg_kord_121600_cld
+    channel_name: "KORD CLD"
     rf_chain_id: chain_kord_121600_cld
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KORD CLD — Clearance Delivery."
   - id: asg_kord_121675_gnd
+    channel_name: "KORD GND"
     rf_chain_id: chain_kord_121675_gnd
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KORD GND — Ground control."
   - id: asg_kord_122950_unicom
+    channel_name: "KORD UNICOM"
     rf_chain_id: chain_kord_122950_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KORD UNICOM — UNICOM advisory."
   - id: asg_kord_125000_dep
+    channel_name: "KORD DEP"
     rf_chain_id: chain_kord_125000_dep
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KORD DEP — Departure control."
   - id: asg_kord_126900_twr
+    channel_name: "KORD TWR"
     rf_chain_id: chain_kord_126900_twr
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KORD TWR — Tower."
   - id: asg_kord_135400_asos
+    channel_name: "KORD ASOS"
     rf_chain_id: chain_kord_135400_asos
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KORD ASOS — Automated Surface Observing System."
   - id: asg_koxi_122800_unicom
+    channel_name: "KOXI UNICOM"
     rf_chain_id: chain_koxi_122800_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KOXI UNICOM — UNICOM advisory."
   - id: asg_koxi_132050_ad
+    channel_name: "KOXI A/D"
     rf_chain_id: chain_koxi_132050_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KOXI A/D — Arrival/Departure."
   - id: asg_kpnt_119675_asow
+    channel_name: "KPNT ASOW"
     rf_chain_id: chain_kpnt_119675_asow
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KPNT ASOW — Automated Weather Observing System."
   - id: asg_kpnt_122800_unicom
+    channel_name: "KPNT UNICOM"
     rf_chain_id: chain_kpnt_122800_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KPNT UNICOM — UNICOM advisory."
   - id: asg_kpnt_124550_acc
+    channel_name: "KPNT ACC"
     rf_chain_id: chain_kpnt_124550_acc
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KPNT ACC — Area Control Center."
   - id: asg_kppo_119825_asow
+    channel_name: "KPPO ASOW"
     rf_chain_id: chain_kppo_119825_asow
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KPPO ASOW — Automated Weather Observing System."
   - id: asg_kppo_123000_unicom
+    channel_name: "KPPO UNICOM"
     rf_chain_id: chain_kppo_123000_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KPPO UNICOM — UNICOM advisory."
   - id: asg_kppo_132050_ad
+    channel_name: "KPPO A/D"
     rf_chain_id: chain_kppo_132050_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KPPO A/D — Arrival/Departure."
   - id: asg_kpwk_119900_ctaf
+    channel_name: "KPWK CTAF"
     rf_chain_id: chain_kpwk_119900_ctaf
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KPWK CTAF — Common Traffic Advisory Frequency."
   - id: asg_kpwk_120550_ad
+    channel_name: "KPWK A/D"
     rf_chain_id: chain_kpwk_120550_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KPWK A/D — Arrival/Departure."
   - id: asg_kpwk_121700_gnd
+    channel_name: "KPWK GND"
     rf_chain_id: chain_kpwk_121700_gnd
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KPWK GND — Ground control."
   - id: asg_kpwk_122950_unicom
+    channel_name: "KPWK UNICOM"
     rf_chain_id: chain_kpwk_122950_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KPWK UNICOM — UNICOM advisory."
   - id: asg_kpwk_124200_atis
+    channel_name: "KPWK ATIS"
     rf_chain_id: chain_kpwk_124200_atis
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KPWK ATIS — Automated Terminal Information Service."
   - id: asg_kpwk_124700_cld
+    channel_name: "KPWK CLD"
     rf_chain_id: chain_kpwk_124700_cld
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KPWK CLD — Clearance Delivery."
   - id: asg_krcr_118775_asow
+    channel_name: "KRCR ASOW"
     rf_chain_id: chain_krcr_118775_asow
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KRCR ASOW — Automated Weather Observing System."
   - id: asg_krcr_122700_unicom
+    channel_name: "KRCR UNICOM"
     rf_chain_id: chain_krcr_122700_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KRCR UNICOM — UNICOM advisory."
   - id: asg_krcr_132050_ad
+    channel_name: "KRCR A/D"
     rf_chain_id: chain_krcr_132050_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KRCR A/D — Arrival/Departure."
   - id: asg_krwn_122800_unicom
+    channel_name: "KRWN UNICOM"
     rf_chain_id: chain_krwn_122800_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KRWN UNICOM — UNICOM advisory."
   - id: asg_krwn_132050_ad
+    channel_name: "KRWN A/D"
     rf_chain_id: chain_krwn_132050_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KRWN A/D — Arrival/Departure."
   - id: asg_krzl_122800_unicom
+    channel_name: "KRZL UNICOM"
     rf_chain_id: chain_krzl_122800_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KRZL UNICOM — UNICOM advisory."
   - id: asg_krzl_132950_acc
+    channel_name: "KRZL ACC"
     rf_chain_id: chain_krzl_132950_acc
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KRZL ACC — Area Control Center."
   - id: asg_ksbn_118150_atis
+    channel_name: "KSBN ATIS"
     rf_chain_id: chain_ksbn_118150_atis
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KSBN ATIS — Automated Terminal Information Service."
   - id: asg_ksbn_118550_ad
+    channel_name: "KSBN A/D"
     rf_chain_id: chain_ksbn_118550_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KSBN A/D — Arrival/Departure."
   - id: asg_ksbn_118900_ctaf
+    channel_name: "KSBN CTAF"
     rf_chain_id: chain_ksbn_118900_ctaf
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KSBN CTAF — Common Traffic Advisory Frequency."
   - id: asg_ksbn_121700_gnd
+    channel_name: "KSBN GND"
     rf_chain_id: chain_ksbn_121700_gnd
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KSBN GND — Ground control."
   - id: asg_ksbn_121900_cld
+    channel_name: "KSBN CLD"
     rf_chain_id: chain_ksbn_121900_cld
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KSBN CLD — Clearance Delivery."
   - id: asg_ksbn_122600_radio
+    channel_name: "KSBN RADIO"
     rf_chain_id: chain_ksbn_122600_radio
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KSBN RADIO — Radio."
   - id: asg_ksbn_122950_unicom
+    channel_name: "KSBN UNICOM"
     rf_chain_id: chain_ksbn_122950_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KSBN UNICOM — UNICOM advisory."
   - id: asg_kugn_120050_ctaf
+    channel_name: "KUGN CTAF"
     rf_chain_id: chain_kugn_120050_ctaf
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KUGN CTAF — Common Traffic Advisory Frequency."
   - id: asg_kugn_120550_ad
+    channel_name: "KUGN A/D"
     rf_chain_id: chain_kugn_120550_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KUGN A/D — Arrival/Departure."
   - id: asg_kugn_121650_gnd
+    channel_name: "KUGN GND"
     rf_chain_id: chain_kugn_121650_gnd
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KUGN GND — Ground control."
   - id: asg_kugn_122550_radio
+    channel_name: "KUGN RADIO"
     rf_chain_id: chain_kugn_122550_radio
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KUGN RADIO — Radio."
   - id: asg_kugn_122950_unicom
+    channel_name: "KUGN UNICOM"
     rf_chain_id: chain_kugn_122950_unicom
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KUGN UNICOM — UNICOM advisory."
   - id: asg_kugn_132400_atis
+    channel_name: "KUGN ATIS"
     rf_chain_id: chain_kugn_132400_atis
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KUGN ATIS — Automated Terminal Information Service."
   - id: asg_kvpz_122725_ctaf
+    channel_name: "KVPZ CTAF"
     rf_chain_id: chain_kvpz_122725_ctaf
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KVPZ CTAF — Common Traffic Advisory Frequency."
   - id: asg_kvpz_123650_radio
+    channel_name: "KVPZ RADIO"
     rf_chain_id: chain_kvpz_123650_radio
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KVPZ RADIO — Radio."
   - id: asg_kvpz_125875_asos
+    channel_name: "KVPZ ASOS"
     rf_chain_id: chain_kvpz_125875_asos
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KVPZ ASOS — Automated Surface Observing System."
   - id: asg_kvpz_132050_ad
+    channel_name: "KVPZ A/D"
     rf_chain_id: chain_kvpz_132050_ad
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KVPZ A/D — Arrival/Departure."
   - id: asg_kvpz_135200_cld
+    channel_name: "KVPZ CLD"
     rf_chain_id: chain_kvpz_135200_cld
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "KVPZ CLD — Clearance Delivery."
   - id: asg_ll40_122100_fss
+    channel_name: "LL40 FSS"
     rf_chain_id: chain_ll40_122100_fss
     usage: "receive-only"
     service: aviation
     authorization_id: auth_rx_only_aviation
     notes: "LL40 FSS — Flight Service Station."
   - id: asg_ll40_133100_ad
+    channel_name: "LL40 A/D"
     rf_chain_id: chain_ll40_133100_ad
     usage: "receive-only"
     service: aviation

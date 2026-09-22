@@ -145,18 +145,22 @@ authorizations:
 
 assignments:
   - id: asgn_na9pl_440_fm
+    channel_name: "NA9PL 440.25"
     rf_chain_id: chain_na9pl_440_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur
   - id: asgn_na9pl_440_c4fm
+    channel_name: "NA9PL C4FM"
     rf_chain_id: chain_na9pl_440_c4fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur
   - id: asgn_na9pl_440_500_fm
+    channel_name: "NA9PL 440.50"
     rf_chain_id: chain_na9pl_440_500_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur
   - id: asgn_na9pl_440_725_dstar
+    channel_name: "NA9PL DSTAR"
     rf_chain_id: chain_na9pl_440_725_dstar
     usage: "repeater"
     authorization_id: auth_fcc_amateur

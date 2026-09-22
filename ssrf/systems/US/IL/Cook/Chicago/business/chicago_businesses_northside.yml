@@ -718,226 +718,282 @@ authorizations:
 
 assignments:
   - id: asg_875_n_mich
+    channel_name: "875 N Michigan"
     rf_chain_id: chain_875_n_mich
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_401_n_mich
+    channel_name: "401 N Michigan"
     rf_chain_id: chain_401_n_mich
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_tribune_tower
+    channel_name: "Tribune Tower"
     rf_chain_id: chain_tribune_tower
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_merch_mart
+    channel_name: "Merchandise Mart"
     rf_chain_id: chain_merch_mart
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_newyork_res
+    channel_name: "New York Res"
     rf_chain_id: chain_newyork_res
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_2650_lakeview
+    channel_name: "2650 Lakeview"
     rf_chain_id: chain_2650_lakeview
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_3950_lsd
+    channel_name: "3950 LSD"
     rf_chain_id: chain_3950_lsd
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_eugenie_terrace
+    channel_name: "Eugenie Terrace"
     rf_chain_id: chain_eugenie_terrace
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_625_n_mich
+    channel_name: "625 N Michigan"
     rf_chain_id: chain_625_n_mich
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_757_orleans
+    channel_name: "757 Orleans"
     rf_chain_id: chain_757_orleans
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_500_lsd
+    channel_name: "500 LSD"
     rf_chain_id: chain_500_lsd
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_park_place_tower
+    channel_name: "Park Place Twr"
     rf_chain_id: chain_park_place_tower
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_abm_nmh_parking
+    channel_name: "ABM NMH Parking"
     rf_chain_id: chain_abm_nmh_parking
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_live_nation_lawrence
+    channel_name: "Live Nation Law"
     rf_chain_id: chain_live_nation_lawrence
     usage: "simplex"
     authorization_id: auth_monitor_only
   - id: asg_cubby_bear
+    channel_name: "Cubby Bear"
     rf_chain_id: chain_cubby_bear
     usage: "simplex"
     authorization_id: auth_monitor_only
   - id: asg_apple_mich
+    channel_name: "Apple Michigan"
     rf_chain_id: chain_apple_mich
     usage: "simplex"
     authorization_id: auth_monitor_only
   - id: asg_northbridge_sec
+    channel_name: "Northbridge Sec"
     rf_chain_id: chain_northbridge_sec
     usage: "simplex"
     authorization_id: auth_monitor_only
   - id: asg_flemings_a1
+    channel_name: "Flemings A1"
     rf_chain_id: chain_flemings_a1
     usage: "simplex"
     authorization_id: auth_monitor_only
   - id: asg_flemings_a2
+    channel_name: "Flemings A2"
     rf_chain_id: chain_flemings_a2
     usage: "simplex"
     authorization_id: auth_monitor_only
   - id: asg_dave_busters_clark
+    channel_name: "Dave Busters Cl"
     rf_chain_id: chain_dave_busters_clark
     usage: "simplex"
     authorization_id: auth_monitor_only
   - id: asg_morettis_ep
+    channel_name: "Morettis EP"
     rf_chain_id: chain_morettis_ep
     usage: "simplex"
     authorization_id: auth_monitor_only
   - id: asg_maxbar
+    channel_name: "Max Bar"
     rf_chain_id: chain_maxbar
     usage: "simplex"
     authorization_id: auth_monitor_only
   - id: asg_park_place_rest
+    channel_name: "Park Place Rest"
     rf_chain_id: chain_park_place_rest
     usage: "simplex"
     authorization_id: auth_monitor_only
   - id: asg_holy_name_cathedral
+    channel_name: "Holy Name Cath"
     rf_chain_id: chain_holy_name_cathedral
     usage: "simplex"
     authorization_id: auth_monitor_only
   - id: asg_perillo_bmw
+    channel_name: "Perillo BMW"
     rf_chain_id: chain_perillo_bmw
     usage: "simplex"
     authorization_id: auth_monitor_only
   - id: asg_allegro_sonesta
+    channel_name: "Allegro Sonesta"
     rf_chain_id: chain_allegro_sonesta
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_allegro_sonesta_alt
+    channel_name: "Allegro Son Alt"
     rf_chain_id: chain_allegro_sonesta_alt
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_ama_plaza
+    channel_name: "AMA Plaza"
     rf_chain_id: chain_ama_plaza
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_two_prudential
+    channel_name: "Two Prudential"
     rf_chain_id: chain_two_prudential
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_aon_bldg
+    channel_name: "Aon Building"
     rf_chain_id: chain_aon_bldg
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_bcbs_illinois
+    channel_name: "BCBS Illinois"
     rf_chain_id: chain_bcbs_illinois
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_333_s_wabash
+    channel_name: "333 S Wabash"
     rf_chain_id: chain_333_s_wabash
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_old_post_office
+    channel_name: "Old Post Office"
     rf_chain_id: chain_old_post_office
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_340_on_the_park
+    channel_name: "340 On The Park"
     rf_chain_id: chain_340_on_the_park
     usage: "simplex"
     authorization_id: auth_monitor_only
   - id: asg_mcclurg_court
+    channel_name: "McClurg Court"
     rf_chain_id: chain_mcclurg_court
     usage: "simplex"
     authorization_id: auth_monitor_only
   - id: asg_north_water_apts
+    channel_name: "North Water Apt"
     rf_chain_id: chain_north_water_apts
     usage: "simplex"
     authorization_id: auth_monitor_only
   - id: asg_river_east_center
+    channel_name: "River East Ctr"
     rf_chain_id: chain_river_east_center
     usage: "simplex"
     authorization_id: auth_monitor_only
   - id: asg_cityview_condos
+    channel_name: "Cityview Condos"
     rf_chain_id: chain_cityview_condos
     usage: "simplex"
     authorization_id: auth_monitor_only
   - id: asg_horween_leather
+    channel_name: "Horween Leather"
     rf_chain_id: chain_horween_leather
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_triangle_square
+    channel_name: "Triangle Square"
     rf_chain_id: chain_triangle_square
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_lincoln_common
+    channel_name: "Lincoln Common"
     rf_chain_id: chain_lincoln_common
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_marriott_mm_sec
+    channel_name: "Marriott MM Sec"
     rf_chain_id: chain_marriott_mm_sec
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_sheraton_grand_sec
+    channel_name: "Sheraton Gr Sec"
     rf_chain_id: chain_sheraton_grand_sec
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_sheraton_grand_ops
+    channel_name: "Sheraton Gr Ops"
     rf_chain_id: chain_sheraton_grand_ops
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_peninsula_ops
+    channel_name: "Peninsula Ops"
     rf_chain_id: chain_peninsula_ops
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_trump_sec
+    channel_name: "Trump Sec"
     rf_chain_id: chain_trump_sec
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_trump_ops
+    channel_name: "Trump Ops"
     rf_chain_id: chain_trump_ops
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_renaissance_dt_h_e
+    channel_name: "Renaissance DT"
     rf_chain_id: chain_renaissance_dt_h_e
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_caa_hotel_sec
+    channel_name: "CAA Hotel Sec"
     rf_chain_id: chain_caa_hotel_sec
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_caa_hotel_hskp
+    channel_name: "CAA Hotel Hskp"
     rf_chain_id: chain_caa_hotel_hskp
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_rosehill_ops
+    channel_name: "Rosehill Ops"
     rf_chain_id: chain_rosehill_ops
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_sc_electric_ops1
+    channel_name: "SC Electric 1"
     rf_chain_id: chain_sc_electric_ops1
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_sc_electric_ops2
+    channel_name: "SC Electric 2"
     rf_chain_id: chain_sc_electric_ops2
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_albany_park_cc
+    channel_name: "Albany Park CC"
     rf_chain_id: chain_albany_park_cc
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_community_safety_svcs
+    channel_name: "Community Safty"
     rf_chain_id: chain_community_safety_svcs
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_imperial_tower
+    channel_name: "Imperial Tower"
     rf_chain_id: chain_imperial_tower
     usage: "repeater"
     authorization_id: auth_monitor_only

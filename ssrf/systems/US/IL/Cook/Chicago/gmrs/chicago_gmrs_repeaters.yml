@@ -136,36 +136,42 @@ rf_chains:
 
 assignments:
   - id: asgn_gmrs_lincolnwood_575
+    channel_name: "Lincolnwood 575"
     rf_chain_id: chain_gmrs_lincolnwood_575
     usage: "repeater"
     notes: "Permission required to use. Output 462.5750 (+5.000 input)."
     authorization_id: auth_fcc_gmrs
 
   - id: asgn_gmrs_chicago_600
+    channel_name: "Chicago 600"
     rf_chain_id: chain_gmrs_chicago_600
     usage: "repeater"
     notes: "Open system. 192.8 Hz PL. Output 462.6000 (+5.000 input)."
     authorization_id: auth_fcc_gmrs
 
   - id: asgn_gmrs_chicago_575
+    channel_name: "Chicago 575"
     rf_chain_id: chain_gmrs_chicago_575
     usage: "repeater"
     notes: "Open system. 141.3 Hz PL. Output 462.5750 (+5.000 input)."
     authorization_id: auth_fcc_gmrs
 
   - id: asgn_gmrs_forest_view_650
+    channel_name: "Forest View 650"
     rf_chain_id: chain_gmrs_forest_view_650
     usage: "repeater"
     notes: "Open system. 203.5 Hz PL. Output 462.6500 (+5.000 input)."
     authorization_id: auth_fcc_gmrs
 
   - id: asgn_gmrs_oak_lawn_625
+    channel_name: "Oak Lawn 625"
     rf_chain_id: chain_gmrs_oak_lawn_625
     usage: "repeater"
     notes: "Permission required. Output 462.6250 (+5.000 input)."
     authorization_id: auth_fcc_gmrs
 
   - id: asgn_gmrs_montclare_650
+    channel_name: "Montclare 650"
     rf_chain_id: chain_gmrs_montclare_650
     usage: "repeater"
     notes: "Open system; access permission is not required. 79.7 Hz PL. FCC rules and callsign use required. Output 462.6500 (+5.000 input)."

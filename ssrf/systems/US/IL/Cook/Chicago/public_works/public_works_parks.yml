@@ -82,25 +82,25 @@ rf_chains:
         453.500}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
 
 assignments:
-  - {id: asg_dss_n1, rf_chain_id: ch_dss_north_1, usage: "simplex"}
-  - {id: asg_dss_n2, rf_chain_id: ch_dss_north_2, usage: "simplex"}
-  - {id: asg_dss_s1, rf_chain_id: ch_dss_south_1, usage: "simplex"}
-  - {id: asg_dss_snow, rf_chain_id: ch_dss_snow_ops, usage: "simplex"}
-  - {id: asg_cpd1, rf_chain_id: ch_cpdistrict_ops1, usage: "simplex"}
-  - {id: asg_cpd2, rf_chain_id: ch_cpdistrict_ops2, usage: "repeater"}
-  - {id: asg_fpd1, rf_chain_id: ch_fpdcc_ops1, usage: "simplex"}
-  - {id: asg_fpd2, rf_chain_id: ch_fpdcc_ops2, usage: "repeater"}
+  - {id: asg_dss_n1, channel_name: "DSS North 1", rf_chain_id: ch_dss_north_1, usage: "simplex"}
+  - {id: asg_dss_n2, channel_name: "DSS North 2", rf_chain_id: ch_dss_north_2, usage: "simplex"}
+  - {id: asg_dss_s1, channel_name: "DSS South 1", rf_chain_id: ch_dss_south_1, usage: "simplex"}
+  - {id: asg_dss_snow, channel_name: "DSS Snow", rf_chain_id: ch_dss_snow_ops, usage: "simplex"}
+  - {id: asg_cpd1, channel_name: "Park Dist 1", rf_chain_id: ch_cpdistrict_ops1, usage: "simplex"}
+  - {id: asg_cpd2, channel_name: "Park Dist 2", rf_chain_id: ch_cpdistrict_ops2, usage: "repeater"}
+  - {id: asg_fpd1, channel_name: "Forest Pres 1", rf_chain_id: ch_fpdcc_ops1, usage: "simplex"}
+  - {id: asg_fpd2, channel_name: "Forest Pres 2", rf_chain_id: ch_fpdcc_ops2, usage: "repeater"}
 
   # CDOT assignments (RX-only)
-  - {id: asg_cdot_streets_n12, rf_chain_id: ch_cdot_streets_n12, usage: "repeater"}
-  - {id: asg_cdot_forestry_animal, rf_chain_id: ch_cdot_forestry_animal, usage: "repeater"}
-  - {id: asg_cdot_towing_parking, rf_chain_id: ch_cdot_towing_parking, usage: "repeater"}
-  - {id: asg_cdot_revenue_boot, rf_chain_id: ch_cdot_revenue_boot, usage: "repeater"}
-  - {id: asg_cdot_electricity_boe, rf_chain_id: ch_cdot_electricity_boe, usage: "repeater"}
-  - {id: asg_cdot_sewers_transport, rf_chain_id: ch_cdot_sewers_transport, usage: "repeater"}
-  - {id: asg_cdot_loop_ob3, rf_chain_id: ch_cdot_loop_ob3, usage: "repeater"}
-  - {id: asg_cdot_streets_s45, rf_chain_id: ch_cdot_streets_s45, usage: "repeater"}
-  - {id: asg_cdot_paging, rf_chain_id: ch_cdot_paging, usage: "receive-only"}
+  - {id: asg_cdot_streets_n12, channel_name: "Streets N 1/2", rf_chain_id: ch_cdot_streets_n12, usage: "repeater"}
+  - {id: asg_cdot_forestry_animal, channel_name: "Forestry Animal", rf_chain_id: ch_cdot_forestry_animal, usage: "repeater"}
+  - {id: asg_cdot_towing_parking, channel_name: "Towing Parking", rf_chain_id: ch_cdot_towing_parking, usage: "repeater"}
+  - {id: asg_cdot_revenue_boot, channel_name: "Revenue Boot", rf_chain_id: ch_cdot_revenue_boot, usage: "repeater"}
+  - {id: asg_cdot_electricity_boe, channel_name: "Electricity BOE", rf_chain_id: ch_cdot_electricity_boe, usage: "repeater"}
+  - {id: asg_cdot_sewers_transport, channel_name: "Sewers Transprt", rf_chain_id: ch_cdot_sewers_transport, usage: "repeater"}
+  - {id: asg_cdot_loop_ob3, channel_name: "Loop OB3", rf_chain_id: ch_cdot_loop_ob3, usage: "repeater"}
+  - {id: asg_cdot_streets_s45, channel_name: "Streets S 4/5", rf_chain_id: ch_cdot_streets_s45, usage: "repeater"}
+  - {id: asg_cdot_paging, channel_name: "CDOT Paging", rf_chain_id: ch_cdot_paging, usage: "receive-only"}
 
 comments:
   - text: |

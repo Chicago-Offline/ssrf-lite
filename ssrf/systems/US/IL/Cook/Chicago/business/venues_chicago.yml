@@ -196,62 +196,77 @@ authorizations:
 
 assignments:
   - id: asg_aon
+    channel_name: "Aon Center"
     rf_chain_id: chain_aon_center
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_two_pru
+    channel_name: "Two Prudential"
     rf_chain_id: chain_two_prudential
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_bcbs
+    channel_name: "BCBS Illinois"
     rf_chain_id: chain_bcbs_hq
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_333wab
+    channel_name: "333 S Wabash"
     rf_chain_id: chain_333_s_wabash
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_ama
+    channel_name: "AMA Plaza"
     rf_chain_id: chain_ama_plaza
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_oldpo
+    channel_name: "Old Post Office"
     rf_chain_id: chain_old_post_office
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_merch
+    channel_name: "Merchandise Mart"
     rf_chain_id: chain_merchandise_mart
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_two77
+    channel_name: "Two77"
     rf_chain_id: chain_two_pru_fm
     usage: "simplex"
     authorization_id: auth_monitor_only
   - id: asg_allegro
+    channel_name: "Allegro Hotel"
     rf_chain_id: chain_allegro_chicago
     usage: "simplex"
     authorization_id: auth_monitor_only
   - id: asg_wrigley_fm
+    channel_name: "Wrigley FM"
     rf_chain_id: chain_wrigley_field_fm
     usage: "simplex"
     authorization_id: auth_monitor_only
   - id: asg_wrigley_dmr
+    channel_name: "Wrigley DMR"
     rf_chain_id: chain_wrigley_field_dmr
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_united
+    channel_name: "United Center"
     rf_chain_id: chain_united_center
     usage: "simplex"
     authorization_id: auth_monitor_only
   - id: asg_soldier
+    channel_name: "Soldier Field"
     rf_chain_id: chain_soldier_field
     usage: "simplex"
     authorization_id: auth_monitor_only
   - id: asg_navy_pier
+    channel_name: "Navy Pier"
     rf_chain_id: chain_navy_pier
     usage: "repeater"
     authorization_id: auth_monitor_only
   - id: asg_mccormick
+    channel_name: "McCormick Place"
     rf_chain_id: chain_mccormick_place
     usage: "repeater"
     authorization_id: auth_monitor_only

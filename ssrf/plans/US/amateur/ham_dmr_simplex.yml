@@ -152,71 +152,85 @@ rf_chains:
 assignments:
   - {
       id: asg_dmr_smpx_446500,
+      channel_name: "DMR 446.500",
       rf_chain_id: chain_dmr_smpx_446500,
       usage: "simplex",
     }
   - {
       id: asg_dmr_smpx_446075,
+      channel_name: "DMR 446.075",
       rf_chain_id: chain_dmr_smpx_446075,
       usage: "simplex",
     }
   - {
       id: asg_dmr_hs_4304125,
+      channel_name: "HS 430.4125",
       rf_chain_id: chain_dmr_hs_4304125,
       usage: "simplex",
     }
   - {
       id: asg_dmr_hs_4304250,
+      channel_name: "HS 430.4250",
       rf_chain_id: chain_dmr_hs_4304250,
       usage: "simplex",
     }
   - {
       id: asg_dmr_hs_4394125,
+      channel_name: "HS 439.4125",
       rf_chain_id: chain_dmr_hs_4394125,
       usage: "simplex",
     }
   - {
       id: asg_dmr_hs_4394250,
+      channel_name: "HS 439.4250",
       rf_chain_id: chain_dmr_hs_4394250,
       usage: "simplex",
     }
   - {
       id: asg_dmr_hs_duplex_4394375,
+      channel_name: "HS Dup 439.4375",
       rf_chain_id: chain_dmr_hs_duplex_4394375,
       usage: "repeater",
     }
   - {
       id: asg_dmr_hs_duplex_4394500,
+      channel_name: "HS Dup 439.4500",
       rf_chain_id: chain_dmr_hs_duplex_4394500,
       usage: "repeater",
     }
   - {
       id: asg_dmr_hs_duplex_4394625,
+      channel_name: "HS Dup 439.4625",
       rf_chain_id: chain_dmr_hs_duplex_4394625,
       usage: "repeater",
     }
   - {
       id: asg_dmr_hs_duplex_4394750,
+      channel_name: "HS Dup 439.4750",
       rf_chain_id: chain_dmr_hs_duplex_4394750,
       usage: "repeater",
     }
   - {
       id: asg_dmr_hs_duplex_4304375,
+      channel_name: "HS Dup 430.4375",
       rf_chain_id: chain_dmr_hs_duplex_4304375,
       usage: "repeater",
     }
   - {
       id: asg_dmr_hs_duplex_4304500,
+      channel_name: "HS Dup 430.4500",
       rf_chain_id: chain_dmr_hs_duplex_4304500,
       usage: "repeater",
     }
   - {
       id: asg_dmr_hs_duplex_4304625,
+      channel_name: "HS Dup 430.4625",
       rf_chain_id: chain_dmr_hs_duplex_4304625,
       usage: "repeater",
     }
   - {
       id: asg_dmr_hs_duplex_4304750,
+      channel_name: "HS Dup 430.4750",
       rf_chain_id: chain_dmr_hs_duplex_4304750,
       usage: "repeater",
     }
