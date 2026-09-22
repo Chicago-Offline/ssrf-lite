@@ -52,6 +52,7 @@ authorizations:
 
 assignments:
   - id: asgn_skokie_rc_440_fm
+    channel_name: "KB9TAP 443.175"
     rf_chain_id: chain_skokie_rc_440_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur

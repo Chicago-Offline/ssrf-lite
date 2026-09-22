@@ -91,24 +91,31 @@ rf_chains:
 
 assignments:
   - id: asg_cta1
+    channel_name: "CTA 1"
     rf_chain_id: ch_cta_ops1
     usage: "simplex"
   - id: asg_cta2
+    channel_name: "CTA 2"
     rf_chain_id: ch_cta_ops2
     usage: "simplex"
   - id: asg_cta_yard
+    channel_name: "CTA Yard"
     rf_chain_id: ch_cta_yard
     usage: "simplex"
   - id: asg_ord_ops
+    channel_name: "ORD Ops"
     rf_chain_id: ch_ord_ops_dmr
     usage: "simplex"
   - id: asg_midway_ops
+    channel_name: "Midway Ops"
     rf_chain_id: ch_midway_ops
     usage: "simplex"
   - id: asg_deliv_u1
+    channel_name: "Delivery U1"
     rf_chain_id: ch_delivery_u1
     usage: "repeater"
   - id: asg_deliv_fm1
+    channel_name: "Delivery FM1"
     rf_chain_id: ch_delivery_fm1
     usage: "simplex"
 comments:

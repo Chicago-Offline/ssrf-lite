@@ -307,65 +307,78 @@ authorizations:
 
 assignments:
   - id: asgn_ns9rc_2m_fm
+    channel_name: "NS9RC 147.345"
     rf_chain_id: chain_ns9rc_2m_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
 
   - id: asgn_ns9rc_2m_c4fm
+    channel_name: "NS9RC C4FM"
     rf_chain_id: chain_ns9rc_2m_c4fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
 
   - id: asgn_ns9rc_220
+    channel_name: "NS9RC 224.32"
     rf_chain_id: chain_ns9rc_220_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
 
   - id: asgn_ns9rc_440
+    channel_name: "NS9RC 442.725"
     rf_chain_id: chain_ns9rc_440_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
 
   - id: asgn_ns9rc_dstar_440
+    channel_name: "NS9RC DSTAR"
     rf_chain_id: chain_ns9rc_dstar_440
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
 
   - id: asgn_ns9rc_dstar_23cm
+    channel_name: "NS9RC DSTAR 23cm"
     rf_chain_id: chain_ns9rc_dstar_23cm
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
 
   - id: asgn_ns9rc_aprs
+    channel_name: "NS9RC APRS"
     rf_chain_id: chain_ns9rc_aprs
     usage: "data"
     authorization_id: auth_fcc_amateur_t
 
   - id: asgn_ns9rc_winlink
+    channel_name: "NS9RC Winlink"
     rf_chain_id: chain_ns9rc_winlink
     usage: "packet"
     authorization_id: auth_fcc_amateur_t
 
   - id: asgn_ns9rc_beacon_10m
+    channel_name: "NS9RC Bcn 10m"
     rf_chain_id: chain_ns9rc_beacon_10m
     usage: "receive-only"
     authorization_id: auth_fcc_amateur_t
 
   - id: asgn_ns9rc_beacon_6m
+    channel_name: "NS9RC Bcn 6m"
     rf_chain_id: chain_ns9rc_beacon_6m
     usage: "receive-only"
     authorization_id: auth_fcc_amateur_t
 
   # Recommended simplex for club events
   - id: asgn_ns9rc_simplex_446_025
+    channel_name: "NS9RC 446.025"
     rf_chain_id: chain_ns9rc_simplex_446_025
     usage: "simplex"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_ns9rc_simplex_147_405
+    channel_name: "NS9RC 147.405"
     rf_chain_id: chain_ns9rc_simplex_147_405
     usage: "simplex"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_ns9rc_simplex_146_460
+    channel_name: "NS9RC 146.460"
     rf_chain_id: chain_ns9rc_simplex_146_460
     usage: "simplex"
     authorization_id: auth_fcc_amateur_t

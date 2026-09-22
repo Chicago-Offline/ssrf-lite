@@ -63,6 +63,7 @@ authorizations:
 
 assignments:
   - id: asgn_n9bbm_440_fm
+    channel_name: "N9BBM 441.90"
     rf_chain_id: chain_n9bbm_440_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur

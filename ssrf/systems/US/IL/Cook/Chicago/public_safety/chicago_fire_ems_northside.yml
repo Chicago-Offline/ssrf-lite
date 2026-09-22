@@ -205,75 +205,93 @@ rf_chains:
 assignments:
   # Fire/EMS Zone (merged Chicago + Northside)
   - id: asg_cfd_fg_a
+    channel_name: "CFD Fireground"
     rf_chain_id: chain_cfd_fg_a
     usage: "simplex"
 
   - id: asg_cfd_cmd_a
+    channel_name: "CFD Command"
     rf_chain_id: chain_cfd_cmd_a
     usage: "simplex"
 
   - id: asg_cfd_lakefront
+    channel_name: "CFD Lakefront"
     rf_chain_id: chain_cfd_lakefront
     usage: "simplex"
 
   - id: asg_cfd_tac_a
+    channel_name: "CFD Tac"
     rf_chain_id: chain_cfd_tac_a
     usage: "simplex"
 
   - id: asg_cfd_ops8_a
+    channel_name: "CFD Ops 8"
     rf_chain_id: chain_cfd_ops8_a
     usage: "simplex"
 
   - id: asg_cfd_ops9_a
+    channel_name: "CFD Ops 9"
     rf_chain_id: chain_cfd_ops9_a
     usage: "simplex"
 
   - id: asg_cfd_ops10_a
+    channel_name: "CFD Ops 10"
     rf_chain_id: chain_cfd_ops10_a
     usage: "simplex"
 
   - id: asg_cfd_cta_fire
+    channel_name: "CFD CTA Fire"
     rf_chain_id: chain_cfd_cta_fire
     usage: "simplex"
 
   - id: asg_cfd_specevt1_a
+    channel_name: "CFD Spec Event"
     rf_chain_id: chain_cfd_specevt1_a
     usage: "simplex"
 
   - id: asg_cfd_admin_a
+    channel_name: "CFD Admin"
     rf_chain_id: chain_cfd_admin_a
     usage: "simplex"
 
     # Northside Fire/EMS (merged into Fire/EMS zone name)
   - id: asg_red_south_bu
+    channel_name: "RED South BU"
     rf_chain_id: chain_red_south_bu
     usage: "repeater"
 
   - id: asg_red_north_bu
+    channel_name: "RED North BU"
     rf_chain_id: chain_red_north_bu
     usage: "repeater"
 
   - id: asg_red_fire_north
+    channel_name: "RED Fire North"
     rf_chain_id: chain_red_fire_north
     usage: "repeater"
 
   - id: asg_red_fire_south
+    channel_name: "RED Fire South"
     rf_chain_id: chain_red_fire_south
     usage: "repeater"
 
   - id: asg_skookie_fire_disp
+    channel_name: "Skokie Fire Dsp"
     rf_chain_id: chain_skookie_fire_disp
     usage: "repeater"
 
   - id: asg_north_shore_admin
+    channel_name: "N Shore Admin"
     rf_chain_id: chain_north_shore_admin
     usage: "simplex"
 
   - id: asg_evanston_fire
+    channel_name: "Evanston Fire"
     rf_chain_id: chain_evanston_fire
     usage: "repeater"
 
   - id: asg_desplaines_fire
+    channel_name: "Des Plaines Fir"
     rf_chain_id: chain_desplaines_fire
     usage: "repeater"
 

@@ -117,14 +117,17 @@ authorizations:
 
 assignments:
   - id: asgn_w9dup_2m_fm
+    channel_name: "W9DUP 144.83"
     rf_chain_id: chain_w9dup_2m_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur
   - id: asgn_w9dup_220_fm
+    channel_name: "W9DUP 223.08"
     rf_chain_id: chain_w9dup_220_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur
   - id: asgn_w9dup_440_fm
+    channel_name: "W9DUP 447.55"
     rf_chain_id: chain_w9dup_440_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur

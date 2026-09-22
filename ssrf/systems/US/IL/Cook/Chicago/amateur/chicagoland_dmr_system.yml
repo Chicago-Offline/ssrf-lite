@@ -161,12 +161,14 @@ authorizations:
 
 assignments:
   - id: asgn_cl_loop
+    channel_name: "ChiLand Loop"
     rf_chain_id: chain_cl_loop_70cm_dmr
     usage: "repeater"
     service: "amateur"
     authorization_id: auth_fcc_amateur_t
 
   - id: asgn_cl_schaumburg
+    channel_name: "ChiLand Schaum"
     rf_chain_id: chain_cl_schaumburg_70cm_dmr
     usage: "repeater"
     service: "amateur"

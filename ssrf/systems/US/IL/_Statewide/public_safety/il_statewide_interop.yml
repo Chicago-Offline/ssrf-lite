@@ -65,20 +65,20 @@ rf_chains:
         453.8625}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
 
 assignments:
-  - {id: asg_ifern, rf_chain_id: chain_ifern, usage: "simplex"}
-  - {id: asg_ireach, rf_chain_id: chain_ireach, usage: "simplex"}
-  - {id: asg_ispern, rf_chain_id: chain_ispern, usage: "simplex"}
-  - {id: asg_ptp, rf_chain_id: chain_ptp, usage: "simplex"}
-  - {id: asg_hear, rf_chain_id: chain_hear, usage: "simplex"}
-  - {id: asg_vcall10, rf_chain_id: chain_vcall10, usage: "simplex"}
-  - {id: asg_vtac11, rf_chain_id: chain_vtac11, usage: "simplex"}
-  - {id: asg_vtac12, rf_chain_id: chain_vtac12, usage: "simplex"}
-  - {id: asg_vtac13, rf_chain_id: chain_vtac13, usage: "simplex"}
-  - {id: asg_vtac14, rf_chain_id: chain_vtac14, usage: "simplex"}
-  - {id: asg_ucall40, rf_chain_id: chain_ucall40, usage: "simplex"}
-  - {id: asg_utac41, rf_chain_id: chain_utac41, usage: "simplex"}
-  - {id: asg_utac42, rf_chain_id: chain_utac42, usage: "simplex"}
-  - {id: asg_utac43, rf_chain_id: chain_utac43, usage: "simplex"}
+  - {id: asg_ifern, channel_name: "IFERN", rf_chain_id: chain_ifern, usage: "simplex"}
+  - {id: asg_ireach, channel_name: "IREACH", rf_chain_id: chain_ireach, usage: "simplex"}
+  - {id: asg_ispern, channel_name: "ISPERN", rf_chain_id: chain_ispern, usage: "simplex"}
+  - {id: asg_ptp, channel_name: "PTP", rf_chain_id: chain_ptp, usage: "simplex"}
+  - {id: asg_hear, channel_name: "HEAR", rf_chain_id: chain_hear, usage: "simplex"}
+  - {id: asg_vcall10, channel_name: "VCALL10", rf_chain_id: chain_vcall10, usage: "simplex"}
+  - {id: asg_vtac11, channel_name: "VTAC11", rf_chain_id: chain_vtac11, usage: "simplex"}
+  - {id: asg_vtac12, channel_name: "VTAC12", rf_chain_id: chain_vtac12, usage: "simplex"}
+  - {id: asg_vtac13, channel_name: "VTAC13", rf_chain_id: chain_vtac13, usage: "simplex"}
+  - {id: asg_vtac14, channel_name: "VTAC14", rf_chain_id: chain_vtac14, usage: "simplex"}
+  - {id: asg_ucall40, channel_name: "UCALL40", rf_chain_id: chain_ucall40, usage: "simplex"}
+  - {id: asg_utac41, channel_name: "UTAC41", rf_chain_id: chain_utac41, usage: "simplex"}
+  - {id: asg_utac42, channel_name: "UTAC42", rf_chain_id: chain_utac42, usage: "simplex"}
+  - {id: asg_utac43, channel_name: "UTAC43", rf_chain_id: chain_utac43, usage: "simplex"}
 
 comments:
   - text: |

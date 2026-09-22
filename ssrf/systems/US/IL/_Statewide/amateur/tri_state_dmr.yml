@@ -489,66 +489,82 @@ authorizations:
 
 assignments:
   - id: asgn_k9bar_bolingbrook
+    channel_name: "K9BAR Bolingbk"
     rf_chain_id: chain_k9bar_bolingbrook_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_n9pay_carlsville
+    channel_name: "N9PAY Carlsvle"
     rf_chain_id: chain_n9pay_carlsville_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_aa9vi_chicago
+    channel_name: "AA9VI Chicago"
     rf_chain_id: chain_aa9vi_chicago_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_k9vi_crystal_lake
+    channel_name: "K9VI Crystal Lk"
     rf_chain_id: chain_k9vi_crystal_lake_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_n9iaa_crown_point
+    channel_name: "N9IAA Crown Pt"
     rf_chain_id: chain_n9iaa_crown_point_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_k9nro_elburn
+    channel_name: "K9NRO Elburn"
     rf_chain_id: chain_k9nro_elburn_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_n9pay_green_bay
+    channel_name: "N9PAY Green Bay"
     rf_chain_id: chain_n9pay_green_bay_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_k9ord_inverness
+    channel_name: "K9ORD Invernes"
     rf_chain_id: chain_k9ord_inverness_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_n9iaa_la_porte
+    channel_name: "N9IAA La Porte"
     rf_chain_id: chain_n9iaa_la_porte_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_n9pay_milwaukee
+    channel_name: "N9PAY Milwaukee"
     rf_chain_id: chain_n9pay_milwaukee_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_kc9kko_morris
+    channel_name: "KC9KKO Morris"
     rf_chain_id: chain_kc9kko_morris_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_n9pay_new_berlin
+    channel_name: "N9PAY New Berln"
     rf_chain_id: chain_n9pay_new_berlin_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_ww9p_rockford
+    channel_name: "WW9P Rockford"
     rf_chain_id: chain_ww9p_rockford_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_k9mot_schaumburg
+    channel_name: "K9MOT Schaumbg"
     rf_chain_id: chain_k9mot_schaumburg_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_n8ouz_traverse_city
+    channel_name: "N8OUZ Traverse"
     rf_chain_id: chain_n8ouz_traverse_city_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_n9iaa_valparaiso
+    channel_name: "N9IAA Valparso"
     rf_chain_id: chain_n9iaa_valparaiso_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
