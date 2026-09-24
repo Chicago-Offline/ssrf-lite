@@ -661,6 +661,9 @@ rf_chains:
       freq_mhz: 462.2000
     mode:
       type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+      notes: "Color code NOT verified; 1 assumed as the commonest commercial default so the channel can be programmed. Replace with an observed value."
   - id: chain_sc_electric_ops2
     station_id: stn_biz_north
     antenna_id: ant_biz_north
@@ -671,6 +674,9 @@ rf_chains:
       freq_mhz: 462.4250
     mode:
       type: "DMR"
+      color_code: 1
+      timeslots: [1, 2]
+      notes: "Color code NOT verified; 1 assumed as the commonest commercial default so the channel can be programmed. Replace with an observed value."
   # WQFQ228, 3401 W Ainslie.
   - id: chain_albany_park_cc
     station_id: stn_biz_north
