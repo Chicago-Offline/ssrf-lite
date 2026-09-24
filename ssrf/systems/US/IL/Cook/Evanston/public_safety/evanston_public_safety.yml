@@ -1,0 +1,279 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.6.0.schema.json
+# SSRF-Lite: Evanston, IL — Public Safety / Public Works conventional channels
+
+
+$schema: "../../../../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
+ssrf_lite:
+  sources:
+    - name: "RadioReference — Evanston, IL (user-supplied channel list)"
+      url: "https://www.radioreference.com/db/browse/ctid/675"
+      accessed: "2026-09-24"
+
+organizations:
+  - id: org_epd
+    name: "Evanston Police Department"
+  - id: org_efd
+    name: "Evanston Fire Department"
+  - id: org_epw
+    name: "Evanston Public Works"
+  - id: org_eelec
+    name: "Evanston Electric Department"
+  - id: org_ewater
+    name: "Evanston Water Department"
+  - id: org_epkg
+    name: "Evanston Parking Garages"
+
+locations:
+  - id: loc_evanston
+    name: "Evanston, IL (approx)"
+    lat: 42.045
+    lon: -87.688
+
+stations:
+  - id: stn_epd
+    call_sign: "WIK863"
+    organization_id: org_epd
+    location_id: loc_evanston
+    service: "public_safety_part90"
+
+  - id: stn_efd_new
+    call_sign: "WQDY693"
+    organization_id: org_efd
+    location_id: loc_evanston
+    service: "public_safety_part90"
+
+  - id: stn_efd_old
+    call_sign: "KSC732"
+    organization_id: org_efd
+    location_id: loc_evanston
+    service: "public_safety_part90"
+
+  - id: stn_efd_lifeguards
+    call_sign: "WRWI447"
+    organization_id: org_efd
+    location_id: loc_evanston
+    service: "public_safety_part90"
+
+  - id: stn_epw
+    call_sign: "KDN985"
+    organization_id: org_epw
+    location_id: loc_evanston
+    service: "public_safety_part90"
+
+  - id: stn_eelec
+    call_sign: "KDM250"
+    organization_id: org_eelec
+    location_id: loc_evanston
+    service: "public_safety_part90"
+
+  - id: stn_ewater
+    call_sign: "WPRS369"
+    organization_id: org_ewater
+    location_id: loc_evanston
+    service: "public_safety_part90"
+
+  - id: stn_epkg
+    call_sign: ""
+    organization_id: org_epkg
+    location_id: loc_evanston
+    service: "business_itinerant_part90"
+
+antennas:
+  - id: ant_epd
+    station_id: stn_epd
+    name: "EPD antenna (unknown)"
+
+  - id: ant_efd_new
+    station_id: stn_efd_new
+    name: "EFD new dispatch antenna (unknown)"
+
+  - id: ant_efd_old
+    station_id: stn_efd_old
+    name: "EFD old dispatch antenna (unknown)"
+
+  - id: ant_efd_lg
+    station_id: stn_efd_lifeguards
+    name: "EFD lifeguards antenna (unknown)"
+
+  - id: ant_epw
+    station_id: stn_epw
+    name: "Public Works antenna (unknown)"
+
+  - id: ant_eelec
+    station_id: stn_eelec
+    name: "Electric Dept antenna (unknown)"
+
+  - id: ant_ewater
+    station_id: stn_ewater
+    name: "Water Dept antenna (unknown)"
+
+  - id: ant_epkg
+    station_id: stn_epkg
+    name: "Parking Garages intercom antenna (unknown)"
+
+rf_chains:
+  # Police: Alternate (UHF repeater, WIK863)
+  # Output 472.4875 / Input 475.4875 (+3 MHz split)
+  - id: chain_epd_alt
+    station_id: stn_epd
+    antenna_id: ant_epd
+    rx:
+      freq_mhz: 472.4875
+    tx:
+      freq_mhz: 475.4875  # +3.000 MHz
+      emission: "8K50F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 141.3
+      ctcss_tx_hz: 141.3
+
+  # Fire: New Dispatch (VHF repeater, WQDY693)
+  # Output 155.6925 / Input 159.4275
+  - id: chain_efd_dispatch_new
+    station_id: stn_efd_new
+    antenna_id: ant_efd_new
+    rx:
+      freq_mhz: 155.6925
+    tx:
+      freq_mhz: 159.4275  # +3.735 MHz
+      emission: "8K50F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 123.0
+      ctcss_tx_hz: 123.0
+
+  # Fire: Old Dispatch / Admin (VHF simplex, KSC732)
+  - id: chain_efd_dispatch_old
+    station_id: stn_efd_old
+    antenna_id: ant_efd_old
+    rx:
+      freq_mhz: 154.160
+    tx:
+      emission: "8K50F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 123.0
+      ctcss_tx_hz: 123.0
+
+  # Fire: Lakefront Lifeguards Ch 4 (VHF repeater, WRWI447)
+  # Output 152.330 / Input 157.590 (+5.26 MHz split — unusual for land mobile;
+  # 157 MHz falls in VHF Marine band. Split and callsign are as sourced; flagged
+  # in PR for review.)
+  - id: chain_efd_lifeguards
+    station_id: stn_efd_lifeguards
+    antenna_id: ant_efd_lg
+    rx:
+      freq_mhz: 152.330
+    tx:
+      freq_mhz: 157.590  # +5.260 MHz — see comments
+      emission: "8K50F3E"
+    mode:
+      type: "FM"
+      dcs_rx_code: "632"
+      dcs_tx_code: "632"
+
+  # Public Works (VHF simplex, KDN985)
+  - id: chain_epw_pubworks
+    station_id: stn_epw
+    antenna_id: ant_epw
+    rx:
+      freq_mhz: 155.760
+    tx:
+      emission: "8K50F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 123.0
+      ctcss_tx_hz: 123.0
+
+  # Electric Department (VHF simplex, KDM250)
+  # Same output as Public Works (155.760) with different tone
+  - id: chain_eelec_dept
+    station_id: stn_eelec
+    antenna_id: ant_eelec
+    rx:
+      freq_mhz: 155.760
+    tx:
+      emission: "8K50F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 77.0
+      ctcss_tx_hz: 77.0
+
+  # Water Department (Low-band VHF simplex, WPRS369)
+  # No tone (CSQ / carrier squelch)
+  - id: chain_ewater_dept
+    station_id: stn_ewater
+    antenna_id: ant_ewater
+    rx:
+      freq_mhz: 48.220
+    tx:
+      emission: "16K0F3E"
+    mode:
+      type: "FM"
+      notes: "Carrier squelch (CSQ); low-band VHF."
+
+  # Parking Garages Intercom (UHF itinerant, no callsign on file)
+  # No tone (244 DPL)
+  - id: chain_epkg_intercom
+    station_id: stn_epkg
+    antenna_id: ant_epkg
+    rx:
+      freq_mhz: 467.925
+    tx:
+      emission: "8K50F3E"
+    mode:
+      type: "FM"
+      dcs_rx_code: "244"
+      dcs_tx_code: "244"
+
+assignments:
+  - id: asgn_epd_alt
+    channel_name: "Evanston Police Alt"
+    rf_chain_id: chain_epd_alt
+    usage: "repeater"
+
+  - id: asgn_efd_dispatch_new
+    channel_name: "Evanston Fire New"
+    rf_chain_id: chain_efd_dispatch_new
+    usage: "repeater"
+
+  - id: asgn_efd_dispatch_old
+    channel_name: "Evanston Fire Old"
+    rf_chain_id: chain_efd_dispatch_old
+    usage: "simplex"
+
+  - id: asgn_efd_lifeguards
+    channel_name: "Evan FD Lifeguards"
+    rf_chain_id: chain_efd_lifeguards
+    usage: "repeater"
+
+  - id: asgn_epw_pubworks
+    channel_name: "Evanston Pub Works"
+    rf_chain_id: chain_epw_pubworks
+    usage: "simplex"
+
+  - id: asgn_eelec_dept
+    channel_name: "Evanston Electric"
+    rf_chain_id: chain_eelec_dept
+    usage: "simplex"
+
+  - id: asgn_ewater_dept
+    channel_name: "Evanston Water"
+    rf_chain_id: chain_ewater_dept
+    usage: "simplex"
+
+  - id: asgn_epkg_intercom
+    channel_name: "Evan Pkg Garage"
+    rf_chain_id: chain_epkg_intercom
+    usage: "simplex"
+
+comments:
+  - text: |
+      Evanston conventional public safety and public works channels. Primary
+      Evanston Police operations are on the STARCOM21 800 MHz P25 trunked
+      system; channels here are conventional analog. The lifeguards repeater
+      (WRWI447, 152.330/157.590) has an unusual +5.26 MHz split landing in the
+      VHF Marine band — sourced as-is, flagged for verification.
+      155.760 is shared by Public Works (KDN985, 123.0 PL) and Electric
+      (KDM250, 77.0 PL) with different tones.
