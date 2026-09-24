@@ -7,31 +7,31 @@
 
 ## Overview
 
-- **Assignments:** 13
+- **Assignments:** 14
 - **Services:** amateur
 - **Organizations:** 1
-- **Locations:** 4
-- **RF Chains:** 13
+- **Locations:** 5
+- **RF Chains:** 14
 - **Channel Plans:** 0
 - **Contacts:** 0
 
 ### Modes
 - **FM:** 6
 - **D-STAR:** 2
+- **APRS:** 2
 - **CW:** 2
 - **C4FM:** 1
-- **APRS:** 1
 - **PACKET:** 1
 
 ### Usage Types
 - **Repeater:** 6
 - **Simplex:** 3
+- **Data:** 2
 - **Receive-Only:** 2
-- **Data:** 1
 - **Packet:** 1
 
 ### Frequency Bands
-- **VHF (136-174 MHz):** 6
+- **VHF (136-174 MHz):** 7
 - **UHF (400-480 MHz):** 3
 - **Other:** 2
 - **Microwave (>1 GHz):** 1
@@ -55,9 +55,11 @@
 ### Highland Park - Heller Nature Center
 **Coordinates:** 42.1760, -87.7990
 
+### Highland Park - APRS fill-in digipeater site
+
 ## Assignments
 
-### Unknown (13 assignments)
+### Unknown (14 assignments)
 
 - **asgn_ns9rc_2m_fm** - repeater
 - **asgn_ns9rc_2m_c4fm** - repeater
@@ -66,6 +68,7 @@
 - **asgn_ns9rc_dstar_440** - repeater
 - **asgn_ns9rc_dstar_23cm** - repeater
 - **asgn_ns9rc_aprs** - data
+- **asgn_ns9rc_aprs_fill** - data
 - **asgn_ns9rc_winlink** - packet
 - **asgn_ns9rc_beacon_10m** - receive-only
 - **asgn_ns9rc_beacon_6m** - receive-only

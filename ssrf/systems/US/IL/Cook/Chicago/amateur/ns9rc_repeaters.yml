@@ -5,7 +5,7 @@ ssrf_lite:
   sources:
     - name: "NS9RC - Repeaters"
       url: "https://ns9rc.org/repeaters/repeater-descriptions"
-      accessed: "2025-09-19"
+      accessed: "2026-09-14"
 
 organizations:
   - id: org_ns9rc
@@ -28,6 +28,10 @@ locations:
     name: "Highland Park - Heller Nature Center"
     lat: 42.1760
     lon: -87.7990
+  - id: loc_highland_park
+    name: "Highland Park - APRS fill-in digipeater site"
+    lat: null
+    lon: null
 
 stations:
   - id: stn_ns9rc_2m
@@ -59,6 +63,11 @@ stations:
     call_sign: "NS9RC"
     organization_id: org_ns9rc
     location_id: loc_northfield_tower
+    service: "amateur"
+  - id: stn_ns9rc_aprs_fill
+    call_sign: "NS9RC-5"
+    organization_id: org_ns9rc
+    location_id: loc_highland_park
     service: "amateur"
   - id: stn_ns9rc_winlink
     call_sign: "NS9RC-10"
@@ -109,9 +118,15 @@ antennas:
     height_amsl_m: null
   - id: ant_ns9rc_aprs
     station_id: stn_ns9rc_aprs_main
-    name: "APRS Antenna"
+    name: "APRS Antenna (Diamond X-50A)"
     gain_dbi: 4.5
     height_agl_m: 13.7 # 45 ft
+    height_amsl_m: null
+  - id: ant_ns9rc_aprs_fill
+    station_id: stn_ns9rc_aprs_fill
+    name: "APRS Fill-in Antenna (J-pole, unity gain)"
+    gain_dbi: null
+    height_agl_m: 7.6 # 25 ft
     height_amsl_m: null
   - id: ant_ns9rc_winlink
     station_id: stn_ns9rc_winlink
@@ -216,6 +231,20 @@ rf_chains:
     antenna_id: ant_ns9rc_aprs
     tx:
       freq_mhz: 144.390
+      power_w: 30
+      emission: "16K0F2D"
+    rx:
+      freq_mhz: 144.390
+    mode:
+      type: "APRS"
+
+  # APRS fill-in digipeater (NS9RC-5)
+  - id: chain_ns9rc_aprs_fill
+    station_id: stn_ns9rc_aprs_fill
+    antenna_id: ant_ns9rc_aprs_fill
+    tx:
+      freq_mhz: 144.390
+      power_w: 25
       emission: "16K0F2D"
     rx:
       freq_mhz: 144.390
@@ -228,6 +257,7 @@ rf_chains:
     antenna_id: ant_ns9rc_winlink
     tx:
       freq_mhz: 145.610
+      power_w: 25
       emission: "16K0F2D"
     rx:
       freq_mhz: 145.610
@@ -345,6 +375,11 @@ assignments:
   - id: asgn_ns9rc_aprs
     channel_name: "NS9RC APRS"
     rf_chain_id: chain_ns9rc_aprs
+    usage: "data"
+    authorization_id: auth_fcc_amateur_t
+
+  - id: asgn_ns9rc_aprs_fill
+    rf_chain_id: chain_ns9rc_aprs_fill
     usage: "data"
     authorization_id: auth_fcc_amateur_t
 
