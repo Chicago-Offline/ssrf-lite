@@ -7,24 +7,24 @@
 
 ## Overview
 
-- **Assignments:** 50
+- **Assignments:** 56
 - **Services:** business_itinerant_part90
 - **Organizations:** 1
 - **Locations:** 1
-- **RF Chains:** 50
+- **RF Chains:** 56
 - **Channel Plans:** 0
 - **Contacts:** 0
 
 ### Modes
-- **DMR:** 32
-- **FM:** 18
+- **DMR:** 35
+- **FM:** 21
 
 ### Usage Types
-- **Repeater:** 33
+- **Repeater:** 39
 - **Simplex:** 17
 
 ### Frequency Bands
-- **UHF (400-480 MHz):** 50
+- **UHF (400-480 MHz):** 56
 
 ## Organizations
 
@@ -37,7 +37,7 @@
 
 ## Assignments
 
-### Unknown (50 assignments)
+### Unknown (56 assignments)
 
 - **asg_875_n_mich** - repeater
 - **asg_401_n_mich** - repeater
@@ -89,6 +89,12 @@
 - **asg_renaissance_dt_h_e** - repeater
 - **asg_caa_hotel_sec** - repeater
 - **asg_caa_hotel_hskp** - repeater
+- **asg_rosehill_ops** - repeater
+- **asg_sc_electric_ops1** - repeater
+- **asg_sc_electric_ops2** - repeater
+- **asg_albany_park_cc** - repeater
+- **asg_community_safety_svcs** - repeater
+- **asg_imperial_tower** - repeater
 
 ## Authorization Requirements
 
