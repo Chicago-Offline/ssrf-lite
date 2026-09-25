@@ -156,8 +156,17 @@ assignments:
     usage: "repeater"
     authorization_id: auth_fcc_part90
     notes: >-
-      Monitor-confirmed DMR repeater output. Talkgroups 1 and 1101 carry almost
-      all traffic on TS2; TG 200 appears on TS1.
+      Monitor-confirmed DMR repeater output, timeslot 2 - talkgroups 1 and 1101,
+      which together carry 80% of all voice traffic observed on this chain.
+  - id: asgn_chi_dmr_464_975_ts1
+    rf_chain_id: chain_chi_dmr_464_975
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: >-
+      Same transmitter as asgn_chi_dmr_464_975, split out as a separate
+      assignment for timeslot 1, which carries only TG 200 (1.0% of bursts,
+      5 radios). A receiver can only sit on one slot at a time, so monitoring
+      both slots needs two channels.
   - id: asgn_chi_dmr_462_1375
     rf_chain_id: chain_chi_dmr_462_1375
     usage: "repeater"
