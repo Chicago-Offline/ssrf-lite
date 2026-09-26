@@ -5,7 +5,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 ## Quick Statistics
 
 - **Total SSRF Files:** 51
-- **Total Assignments:** 737
+- **Total Assignments:** 738
 - **Services Covered:** 10
 - **Modes:** AM, APRS, C4FM, CW, D-STAR, DMR, FM, NXDN, P25, PACKET
 - **Frequency Bands:** 5
@@ -47,7 +47,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [ns9rc_repeaters](ns9rc_repeaters.md) | amateur | 14 | FM, C4FM, D-STAR, AP... | US / IL / Cook / Chicago |
 | [sara_repeaters](sara_repeaters.md) | amateur | 3 | FM, C4FM | US / IL / Cook / Chicago |
 | [chicago_businesses_northside](chicago_businesses_northside.md) | business_itinerant_part90 | 56 | DMR, FM | US / IL / Cook / Chicago |
-| [chicago_dmr_monitored](chicago_dmr_monitored.md) | business_itinerant_part90 | 3 | DMR | US / IL / Cook / Chicago |
+| [chicago_dmr_monitored](chicago_dmr_monitored.md) | business_itinerant_part90 | 4 | DMR | US / IL / Cook / Chicago |
 | [venues_chicago](venues_chicago.md) | business_itinerant_part90 | 15 | DMR, FM | US / IL / Cook / Chicago |
 | [chicago_gmrs_repeaters](chicago_gmrs_repeaters.md) | gmrs | 6 | FM | US / IL / Cook / Chicago |
 | [family_channels](family_channels.md) | amateur, gmrs | 17 | FM, DMR | US / IL / Cook / Chicago |
@@ -102,7 +102,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |---------|------------------|-------|
 | amateur | 121 | 19 |
 | aviation | 164 | 2 |
-| business_itinerant_part90 | 109 | 5 |
+| business_itinerant_part90 | 110 | 5 |
 | gmrs | 89 | 11 |
 | marine | 53 | 1 |
 | murs | 5 | 1 |

@@ -7,7 +7,7 @@
 
 ## Overview
 
-- **Assignments:** 3
+- **Assignments:** 4
 - **Services:** business_itinerant_part90
 - **Organizations:** 1
 - **Locations:** 1
@@ -16,13 +16,13 @@
 - **Contacts:** 4
 
 ### Modes
-- **DMR:** 3
+- **DMR:** 4
 
 ### Usage Types
-- **Repeater:** 3
+- **Repeater:** 4
 
 ### Frequency Bands
-- **UHF (400-480 MHz):** 3
+- **UHF (400-480 MHz):** 4
 
 ## Organizations
 
@@ -35,10 +35,12 @@
 
 ## Assignments
 
-### Unknown (3 assignments)
+### Unknown (4 assignments)
 
 - **asgn_chi_dmr_464_975** - repeater
-  - *Monitor-confirmed DMR repeater output. Talkgroups 1 and 1101 carry almost all traffic on TS2; TG 200 appears on TS1.*
+  - *Monitor-confirmed DMR repeater output, timeslot 2 - talkgroups 1 and 1101, which together carry 80% of all voice traffic observed on this chain.*
+- **asgn_chi_dmr_464_975_ts1** - repeater
+  - *Same transmitter as asgn_chi_dmr_464_975, split out as a separate assignment for timeslot 1, which carries only TG 200 (1.0% of bursts, 5 radios). A receiver can only sit on one slot at a time, so monitoring both slots needs two channels.*
 - **asgn_chi_dmr_462_1375** - repeater
   - *Monitor-confirmed DMR repeater output. Single-talkgroup operation (TG 50) on TS1.*
 - **asgn_chi_dmr_452_3875** - repeater
