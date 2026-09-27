@@ -1,0 +1,110 @@
+# yaml-language-server: $schema=../../../../../_schema/ssrf-lite-0.6.0.schema.json
+$schema: "../../../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
+ssrf_lite:
+  sources:
+    - name: "Illinois Railroads - RadioReference DB"
+      url: "https://www.radioreference.com/db/aid/4563"
+      accessed: "2026-09-26"
+
+organizations:
+  - id: org_css
+    name: "Chicago South Shore and South Bend Railroad (South Shore Line)"
+
+locations:
+  - id: loc_css_chicago_kensington
+    name: "Chicago–Kensington (shared Metra Electric trackage)"
+    lat: 41.8781
+    lon: -87.6298
+  - id: loc_css_kensington_southbend
+    name: "Kensington–South Bend (CSS-owned trackage)"
+    lat: 41.7000
+    lon: -87.5700
+
+stations:
+  - id: stn_css_west
+    call_sign: null
+    organization_id: org_css
+    location_id: loc_css_chicago_kensington
+    service: "railroad_aar"
+  - id: stn_css_east
+    call_sign: null
+    organization_id: org_css
+    location_id: loc_css_kensington_southbend
+    service: "railroad_aar"
+
+antennas:
+  - id: ant_css_west
+    station_id: stn_css_west
+    name: "Road West (Chicago–Kensington, simplex)"
+  - id: ant_css_east_rep
+    station_id: stn_css_east
+    name: "Road East Repeater (Kensington–South Bend)"
+
+authorizations:
+  - id: auth_css_aar
+    authority: "FCC"
+    service: "railroad_aar"
+    class: "Part 90 PLMR"
+    identifier: null
+    notes: "TX restricted to CSS licensees and contractors. RX-only for general public."
+
+rf_chains:
+  # AAR 61 — Chicago to Kensington (simplex on repeater output)
+  # CSS trains use simplex between Gary and Rolling Prairie; repeater east and west of that segment
+  - id: chain_css_61_west
+    station_id: stn_css_west
+    antenna_id: ant_css_west
+    rx: { freq_mhz: 161.025 }
+    tx: { freq_mhz: 161.025, emission: "11K2F3E" }
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 173.8
+      ctcss_rx_hz: 173.8
+      notes: "Simplex (on repeater output) Chicago–Kensington; shared with Metra Electric AAR 61"
+
+  # AAR 83 — Kensington to South Bend (repeater)
+  - id: chain_css_83_east
+    station_id: stn_css_east
+    antenna_id: ant_css_east_rep
+    rx: { freq_mhz: 161.355 }
+    tx: { freq_mhz: 161.355, emission: "11K2F3E" }
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 173.8
+      ctcss_rx_hz: 173.8
+      notes: "Repeater Kensington–South Bend; simplex between Gary and Rolling Prairie"
+
+  # AAR 66 — Maintenance of Way
+  - id: chain_css_66_mow
+    station_id: stn_css_east
+    antenna_id: ant_css_east_rep
+    rx: { freq_mhz: 161.100 }
+    tx: { freq_mhz: 161.100, emission: "11K2F3E" }
+    mode: { type: "FM" }
+
+assignments:
+  - id: asgn_css_61_west
+    channel_name: "CSS Road West (AAR 61)"
+    rf_chain_id: chain_css_61_west
+    usage: "simplex"
+    authorization_id: auth_css_aar
+
+  - id: asgn_css_83_east
+    channel_name: "CSS Road East (AAR 83)"
+    rf_chain_id: chain_css_83_east
+    usage: "repeater"
+    authorization_id: auth_css_aar
+
+  - id: asgn_css_66_mow
+    channel_name: "CSS MOW (AAR 66)"
+    rf_chain_id: chain_css_66_mow
+    usage: "simplex"
+    authorization_id: auth_css_aar
+
+comments:
+  - text: |
+      CSS uses the Road repeater from Kensington to Gary and from Rolling Prairie to South Bend.
+      Between Gary and Rolling Prairie, simplex on the repeater output is used. The Chicago to
+      Kensington segment is operated on Metra Electric (AAR 61) trackage. RX-only for general
+      public per Part 90.
