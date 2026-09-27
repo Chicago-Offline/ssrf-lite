@@ -1,0 +1,1177 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.6.0.schema.json
+# SSRF-Lite: Skokie, IL - licensed business / industrial land mobile
+
+$schema: "../../../../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
+ssrf_lite:
+  sources:
+    - name: "RadioReference Wiki - Businesses, North Cook County (IL)"
+      url: "https://wiki.radioreference.com/index.php/Businesses_-_North_Cook_County_(IL)"
+      accessed: "2026-09-26"
+
+organizations:
+  - id: org_amazon_sil2
+    name: "Amazon.com SIL2"
+  - id: org_community_safety
+    name: "Community Safety Services NFP"
+  - id: org_doubletree_north_shore
+    name: "DoubleTree Hotel North Shore"
+  - id: org_holiday_inn_north_shore
+    name: "Holiday Inn Chicago North Shore"
+  - id: org_macys
+    name: "Macy's"
+  - id: org_midland_mfg
+    name: "Midland Manufacturing"
+  - id: org_nordstrom_old_orchard
+    name: "Nordstrom (Old Orchard Shopping Center)"
+  - id: org_puttshack
+    name: "Puttshack"
+  - id: org_ups_austin_ave
+    name: "UPS (7800 Austin Ave)"
+
+locations:
+  - id: loc_skokie
+    name: "Skokie, IL (approx)"
+    lat: 42.0324
+    lon: -87.7416
+
+stations:
+  - id: stn_amazon_sil2
+    call_sign: "WRKR787"
+    organization_id: org_amazon_sil2
+    location_id: loc_skokie
+    service: "business_itinerant_part90"
+  - id: stn_community_safety
+    call_sign: "WQZU739"
+    organization_id: org_community_safety
+    location_id: loc_skokie
+    service: "business_itinerant_part90"
+  - id: stn_doubletree_north_shore
+    call_sign: "WQGG495"
+    organization_id: org_doubletree_north_shore
+    location_id: loc_skokie
+    service: "business_itinerant_part90"
+  - id: stn_holiday_inn_north_shore
+    call_sign: "WQAK806"
+    organization_id: org_holiday_inn_north_shore
+    location_id: loc_skokie
+    service: "business_itinerant_part90"
+  - id: stn_macys
+    call_sign: "WQTV585"
+    organization_id: org_macys
+    location_id: loc_skokie
+    service: "business_itinerant_part90"
+  - id: stn_midland_mfg
+    call_sign: "WSEU233"
+    organization_id: org_midland_mfg
+    location_id: loc_skokie
+    service: "business_itinerant_part90"
+  - id: stn_nordstrom_old_orchard
+    call_sign: "WQZH459"
+    organization_id: org_nordstrom_old_orchard
+    location_id: loc_skokie
+    service: "business_itinerant_part90"
+  - id: stn_puttshack
+    call_sign: "WSAY745"
+    organization_id: org_puttshack
+    location_id: loc_skokie
+    service: "business_itinerant_part90"
+  - id: stn_ups_austin_ave
+    call_sign: "WRUP228"
+    organization_id: org_ups_austin_ave
+    location_id: loc_skokie
+    service: "business_itinerant_part90"
+
+antennas:
+  - id: ant_amazon_sil2
+    station_id: stn_amazon_sil2
+    name: "Amazon.com SIL2 (site unknown)"
+  - id: ant_community_safety
+    station_id: stn_community_safety
+    name: "Community Safety Services repeaters, 9050 Gross Point Rd, Skokie"
+  - id: ant_doubletree_north_shore
+    station_id: stn_doubletree_north_shore
+    name: "DoubleTree Hotel North Shore (site unknown)"
+  - id: ant_holiday_inn_north_shore
+    station_id: stn_holiday_inn_north_shore
+    name: "Holiday Inn Chicago North Shore (site unknown)"
+  - id: ant_macys
+    station_id: stn_macys
+    name: "Macy's (site unknown)"
+  - id: ant_midland_mfg
+    station_id: stn_midland_mfg
+    name: "Midland Manufacturing (site unknown)"
+  - id: ant_nordstrom_old_orchard
+    station_id: stn_nordstrom_old_orchard
+    name: "Nordstrom (Old Orchard Shopping Center) (site unknown)"
+  - id: ant_puttshack
+    station_id: stn_puttshack
+    name: "Puttshack (site unknown)"
+  - id: ant_ups_austin_ave
+    station_id: stn_ups_austin_ave
+    name: "UPS (7800 Austin Ave) (site unknown)"
+
+authorizations:
+  - id: auth_biz_active
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: null
+    notes: "Active FCC licence. TX restricted to the licensee. RX-only for general public."
+  - id: auth_biz_expired
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: null
+    notes: "Source records this licence as EXPIRED. Retained for reference; confirm before relying on it."
+
+rf_chains:
+  # --- Amazon.com SIL2 (WRKR787) ---
+  - id: chain_amazon_sil2_462p225
+    station_id: stn_amazon_sil2
+    antenna_id: ant_amazon_sil2
+    rx:
+      freq_mhz: 462.225
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range."
+  - id: chain_amazon_sil2_463p5
+    station_id: stn_amazon_sil2
+    antenna_id: ant_amazon_sil2
+    rx:
+      freq_mhz: 463.5
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range."
+  - id: chain_amazon_sil2_463p5875
+    station_id: stn_amazon_sil2
+    antenna_id: ant_amazon_sil2
+    rx:
+      freq_mhz: 463.5875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range."
+  - id: chain_amazon_sil2_464p075
+    station_id: stn_amazon_sil2
+    antenna_id: ant_amazon_sil2
+    rx:
+      freq_mhz: 464.075
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range."
+  - id: chain_amazon_sil2_464p7375
+    station_id: stn_amazon_sil2
+    antenna_id: ant_amazon_sil2
+    rx:
+      freq_mhz: 464.7375
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range."
+  - id: chain_amazon_sil2_467p225
+    station_id: stn_amazon_sil2
+    antenna_id: ant_amazon_sil2
+    rx:
+      freq_mhz: 467.225
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range."
+  - id: chain_amazon_sil2_468p5
+    station_id: stn_amazon_sil2
+    antenna_id: ant_amazon_sil2
+    rx:
+      freq_mhz: 468.5
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range."
+  - id: chain_amazon_sil2_468p5875
+    station_id: stn_amazon_sil2
+    antenna_id: ant_amazon_sil2
+    rx:
+      freq_mhz: 468.5875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range."
+  - id: chain_amazon_sil2_469p075
+    station_id: stn_amazon_sil2
+    antenna_id: ant_amazon_sil2
+    rx:
+      freq_mhz: 469.075
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range."
+  - id: chain_amazon_sil2_469p7375
+    station_id: stn_amazon_sil2
+    antenna_id: ant_amazon_sil2
+    rx:
+      freq_mhz: 469.7375
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range."
+  # --- Community Safety Services NFP (WQZU739) ---
+  - id: chain_community_safety_463p65
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 463.65
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Repeater output; input not published by source. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_463p9375
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 463.9375
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Repeater output; input not published by source. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_452p15
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 452.15
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_452p35
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 452.35
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_452p975
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 452.975
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_453p0125
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 453.0125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_456p7875
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 456.7875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_457p15
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 457.15
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_461p4125
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 461.4125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_461p625
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 461.625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_461p8375
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 461.8375
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_462p2
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 462.2
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_462p3875
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 462.3875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_464p5875
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 464.5875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_466p15
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 466.15
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_466p4125
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 466.4125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_466p8375
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 466.8375
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_467p125
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 467.125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_467p2
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 467.2
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_467p325
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 467.325
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_467p3875
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 467.3875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_468p675
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 468.675
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_469p025
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 469.025
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_469p3875
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 469.3875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_community_safety_469p5875
+    station_id: stn_community_safety
+    antenna_id: ant_community_safety
+    rx:
+      freq_mhz: 469.5875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  # --- DoubleTree Hotel North Shore (WQGG495) ---
+  - id: chain_doubletree_north_shore_451p9125
+    station_id: stn_doubletree_north_shore
+    antenna_id: ant_doubletree_north_shore
+    rx:
+      freq_mhz: 451.9125
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Portable/mobile unit frequency; short range."
+  - id: chain_doubletree_north_shore_452p2625
+    station_id: stn_doubletree_north_shore
+    antenna_id: ant_doubletree_north_shore
+    rx:
+      freq_mhz: 452.2625
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Portable/mobile unit frequency; short range."
+  - id: chain_doubletree_north_shore_462p0375
+    station_id: stn_doubletree_north_shore
+    antenna_id: ant_doubletree_north_shore
+    rx:
+      freq_mhz: 462.0375
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Portable/mobile unit frequency; short range."
+  - id: chain_doubletree_north_shore_463p4375
+    station_id: stn_doubletree_north_shore
+    antenna_id: ant_doubletree_north_shore
+    rx:
+      freq_mhz: 463.4375
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Portable/mobile unit frequency; short range."
+  # --- Holiday Inn Chicago North Shore (WQAK806) ---
+  - id: chain_holiday_inn_north_shore_452p55
+    station_id: stn_holiday_inn_north_shore
+    antenna_id: ant_holiday_inn_north_shore
+    rx:
+      freq_mhz: 452.55
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Portable/mobile unit frequency; short range."
+  - id: chain_holiday_inn_north_shore_452p7125
+    station_id: stn_holiday_inn_north_shore
+    antenna_id: ant_holiday_inn_north_shore
+    rx:
+      freq_mhz: 452.7125
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Portable/mobile unit frequency; short range."
+  - id: chain_holiday_inn_north_shore_461p8375
+    station_id: stn_holiday_inn_north_shore
+    antenna_id: ant_holiday_inn_north_shore
+    rx:
+      freq_mhz: 461.8375
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Portable/mobile unit frequency; short range."
+  # --- Macy's (WQTV585) ---
+  - id: chain_macys_463p35
+    station_id: stn_macys
+    antenna_id: ant_macys
+    rx:
+      freq_mhz: 463.35
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Repeater output; input not published by source. Licensed for analogue NFM and DMR."
+  - id: chain_macys_463p875
+    station_id: stn_macys
+    antenna_id: ant_macys
+    rx:
+      freq_mhz: 463.875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Repeater output; input not published by source. Licensed for analogue NFM and DMR."
+  - id: chain_macys_451p7625
+    station_id: stn_macys
+    antenna_id: ant_macys
+    rx:
+      freq_mhz: 451.7625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_macys_452p6625
+    station_id: stn_macys
+    antenna_id: ant_macys
+    rx:
+      freq_mhz: 452.6625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_macys_452p7875
+    station_id: stn_macys
+    antenna_id: ant_macys
+    rx:
+      freq_mhz: 452.7875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_macys_456p7625
+    station_id: stn_macys
+    antenna_id: ant_macys
+    rx:
+      freq_mhz: 456.7625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_macys_457p7875
+    station_id: stn_macys
+    antenna_id: ant_macys
+    rx:
+      freq_mhz: 457.7875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  # --- Midland Manufacturing (WSEU233) ---
+  - id: chain_midland_mfg_451p3375
+    station_id: stn_midland_mfg
+    antenna_id: ant_midland_mfg
+    rx:
+      freq_mhz: 451.3375
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licence also covers analogue NFM and NXDN."
+  - id: chain_midland_mfg_456p1875
+    station_id: stn_midland_mfg
+    antenna_id: ant_midland_mfg
+    rx:
+      freq_mhz: 456.1875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licence also covers analogue NFM and NXDN."
+  - id: chain_midland_mfg_456p3375
+    station_id: stn_midland_mfg
+    antenna_id: ant_midland_mfg
+    rx:
+      freq_mhz: 456.3375
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licence also covers analogue NFM and NXDN."
+  - id: chain_midland_mfg_462p5125
+    station_id: stn_midland_mfg
+    antenna_id: ant_midland_mfg
+    rx:
+      freq_mhz: 462.5125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licence also covers analogue NFM and NXDN."
+  - id: chain_midland_mfg_467p5125
+    station_id: stn_midland_mfg
+    antenna_id: ant_midland_mfg
+    rx:
+      freq_mhz: 467.5125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licence also covers analogue NFM and NXDN."
+  # --- Nordstrom (Old Orchard Shopping Center) (WQZH459) ---
+  - id: chain_nordstrom_old_orchard_451p7375
+    station_id: stn_nordstrom_old_orchard
+    antenna_id: ant_nordstrom_old_orchard
+    rx:
+      freq_mhz: 451.7375
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_nordstrom_old_orchard_452p9875
+    station_id: stn_nordstrom_old_orchard
+    antenna_id: ant_nordstrom_old_orchard
+    rx:
+      freq_mhz: 452.9875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_nordstrom_old_orchard_456p7375
+    station_id: stn_nordstrom_old_orchard
+    antenna_id: ant_nordstrom_old_orchard
+    rx:
+      freq_mhz: 456.7375
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_nordstrom_old_orchard_457p8375
+    station_id: stn_nordstrom_old_orchard
+    antenna_id: ant_nordstrom_old_orchard
+    rx:
+      freq_mhz: 457.8375
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_nordstrom_old_orchard_457p9875
+    station_id: stn_nordstrom_old_orchard
+    antenna_id: ant_nordstrom_old_orchard
+    rx:
+      freq_mhz: 457.9875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  # --- Puttshack (WSAY745) ---
+  - id: chain_puttshack_452p4875
+    station_id: stn_puttshack
+    antenna_id: ant_puttshack
+    rx:
+      freq_mhz: 452.4875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range."
+  - id: chain_puttshack_456p6125
+    station_id: stn_puttshack
+    antenna_id: ant_puttshack
+    rx:
+      freq_mhz: 456.6125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range."
+  - id: chain_puttshack_457p1875
+    station_id: stn_puttshack
+    antenna_id: ant_puttshack
+    rx:
+      freq_mhz: 457.1875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range."
+  - id: chain_puttshack_457p4875
+    station_id: stn_puttshack
+    antenna_id: ant_puttshack
+    rx:
+      freq_mhz: 457.4875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range."
+  # --- UPS (7800 Austin Ave) (WRUP228) ---
+  - id: chain_ups_austin_ave_451p6875
+    station_id: stn_ups_austin_ave
+    antenna_id: ant_ups_austin_ave
+    rx:
+      freq_mhz: 451.6875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_ups_austin_ave_452p5125
+    station_id: stn_ups_austin_ave
+    antenna_id: ant_ups_austin_ave
+    rx:
+      freq_mhz: 452.5125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_ups_austin_ave_456p2875
+    station_id: stn_ups_austin_ave
+    antenna_id: ant_ups_austin_ave
+    rx:
+      freq_mhz: 456.2875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_ups_austin_ave_456p6875
+    station_id: stn_ups_austin_ave
+    antenna_id: ant_ups_austin_ave
+    rx:
+      freq_mhz: 456.6875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_ups_austin_ave_456p7625
+    station_id: stn_ups_austin_ave
+    antenna_id: ant_ups_austin_ave
+    rx:
+      freq_mhz: 456.7625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+
+assignments:
+  - id: asgn_amazon_sil2_462p225
+    channel_name: "Amazon 462.225"
+    rf_chain_id: chain_amazon_sil2_462p225
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_amazon_sil2_463p5
+    channel_name: "Amazon 463.5"
+    rf_chain_id: chain_amazon_sil2_463p5
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_amazon_sil2_463p5875
+    channel_name: "Amazon 463.5875"
+    rf_chain_id: chain_amazon_sil2_463p5875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_amazon_sil2_464p075
+    channel_name: "Amazon 464.075"
+    rf_chain_id: chain_amazon_sil2_464p075
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_amazon_sil2_464p7375
+    channel_name: "Amazon 464.7375"
+    rf_chain_id: chain_amazon_sil2_464p7375
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_amazon_sil2_467p225
+    channel_name: "Amazon 467.225"
+    rf_chain_id: chain_amazon_sil2_467p225
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_amazon_sil2_468p5
+    channel_name: "Amazon 468.5"
+    rf_chain_id: chain_amazon_sil2_468p5
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_amazon_sil2_468p5875
+    channel_name: "Amazon 468.5875"
+    rf_chain_id: chain_amazon_sil2_468p5875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_amazon_sil2_469p075
+    channel_name: "Amazon 469.075"
+    rf_chain_id: chain_amazon_sil2_469p075
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_amazon_sil2_469p7375
+    channel_name: "Amazon 469.7375"
+    rf_chain_id: chain_amazon_sil2_469p7375
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_463p65
+    channel_name: "CommSafety 463.65"
+    rf_chain_id: chain_community_safety_463p65
+    usage: "repeater"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_463p9375
+    channel_name: "CommSafety 463.9375"
+    rf_chain_id: chain_community_safety_463p9375
+    usage: "repeater"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_452p15
+    channel_name: "CommSafety 452.15"
+    rf_chain_id: chain_community_safety_452p15
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_452p35
+    channel_name: "CommSafety 452.35"
+    rf_chain_id: chain_community_safety_452p35
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_452p975
+    channel_name: "CommSafety 452.975"
+    rf_chain_id: chain_community_safety_452p975
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_453p0125
+    channel_name: "CommSafety 453.0125"
+    rf_chain_id: chain_community_safety_453p0125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_456p7875
+    channel_name: "CommSafety 456.7875"
+    rf_chain_id: chain_community_safety_456p7875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_457p15
+    channel_name: "CommSafety 457.15"
+    rf_chain_id: chain_community_safety_457p15
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_461p4125
+    channel_name: "CommSafety 461.4125"
+    rf_chain_id: chain_community_safety_461p4125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_461p625
+    channel_name: "CommSafety 461.625"
+    rf_chain_id: chain_community_safety_461p625
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_461p8375
+    channel_name: "CommSafety 461.8375"
+    rf_chain_id: chain_community_safety_461p8375
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_462p2
+    channel_name: "CommSafety 462.2"
+    rf_chain_id: chain_community_safety_462p2
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_462p3875
+    channel_name: "CommSafety 462.3875"
+    rf_chain_id: chain_community_safety_462p3875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_464p5875
+    channel_name: "CommSafety 464.5875"
+    rf_chain_id: chain_community_safety_464p5875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_466p15
+    channel_name: "CommSafety 466.15"
+    rf_chain_id: chain_community_safety_466p15
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_466p4125
+    channel_name: "CommSafety 466.4125"
+    rf_chain_id: chain_community_safety_466p4125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_466p8375
+    channel_name: "CommSafety 466.8375"
+    rf_chain_id: chain_community_safety_466p8375
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_467p125
+    channel_name: "CommSafety 467.125"
+    rf_chain_id: chain_community_safety_467p125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_467p2
+    channel_name: "CommSafety 467.2"
+    rf_chain_id: chain_community_safety_467p2
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_467p325
+    channel_name: "CommSafety 467.325"
+    rf_chain_id: chain_community_safety_467p325
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_467p3875
+    channel_name: "CommSafety 467.3875"
+    rf_chain_id: chain_community_safety_467p3875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_468p675
+    channel_name: "CommSafety 468.675"
+    rf_chain_id: chain_community_safety_468p675
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_469p025
+    channel_name: "CommSafety 469.025"
+    rf_chain_id: chain_community_safety_469p025
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_469p3875
+    channel_name: "CommSafety 469.3875"
+    rf_chain_id: chain_community_safety_469p3875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_community_safety_469p5875
+    channel_name: "CommSafety 469.5875"
+    rf_chain_id: chain_community_safety_469p5875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_doubletree_north_shore_451p9125
+    channel_name: "DoubleTree 451.9125"
+    rf_chain_id: chain_doubletree_north_shore_451p9125
+    usage: "simplex"
+    authorization_id: auth_biz_expired
+  - id: asgn_doubletree_north_shore_452p2625
+    channel_name: "DoubleTree 452.2625"
+    rf_chain_id: chain_doubletree_north_shore_452p2625
+    usage: "simplex"
+    authorization_id: auth_biz_expired
+  - id: asgn_doubletree_north_shore_462p0375
+    channel_name: "DoubleTree 462.0375"
+    rf_chain_id: chain_doubletree_north_shore_462p0375
+    usage: "simplex"
+    authorization_id: auth_biz_expired
+  - id: asgn_doubletree_north_shore_463p4375
+    channel_name: "DoubleTree 463.4375"
+    rf_chain_id: chain_doubletree_north_shore_463p4375
+    usage: "simplex"
+    authorization_id: auth_biz_expired
+  - id: asgn_holiday_inn_north_shore_452p55
+    channel_name: "HolidayInn 452.55"
+    rf_chain_id: chain_holiday_inn_north_shore_452p55
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_holiday_inn_north_shore_452p7125
+    channel_name: "HolidayInn 452.7125"
+    rf_chain_id: chain_holiday_inn_north_shore_452p7125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_holiday_inn_north_shore_461p8375
+    channel_name: "HolidayInn 461.8375"
+    rf_chain_id: chain_holiday_inn_north_shore_461p8375
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_macys_463p35
+    channel_name: "Macys 463.35"
+    rf_chain_id: chain_macys_463p35
+    usage: "repeater"
+    authorization_id: auth_biz_active
+  - id: asgn_macys_463p875
+    channel_name: "Macys 463.875"
+    rf_chain_id: chain_macys_463p875
+    usage: "repeater"
+    authorization_id: auth_biz_active
+  - id: asgn_macys_451p7625
+    channel_name: "Macys 451.7625"
+    rf_chain_id: chain_macys_451p7625
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_macys_452p6625
+    channel_name: "Macys 452.6625"
+    rf_chain_id: chain_macys_452p6625
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_macys_452p7875
+    channel_name: "Macys 452.7875"
+    rf_chain_id: chain_macys_452p7875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_macys_456p7625
+    channel_name: "Macys 456.7625"
+    rf_chain_id: chain_macys_456p7625
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_macys_457p7875
+    channel_name: "Macys 457.7875"
+    rf_chain_id: chain_macys_457p7875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_midland_mfg_451p3375
+    channel_name: "Midland 451.3375"
+    rf_chain_id: chain_midland_mfg_451p3375
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_midland_mfg_456p1875
+    channel_name: "Midland 456.1875"
+    rf_chain_id: chain_midland_mfg_456p1875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_midland_mfg_456p3375
+    channel_name: "Midland 456.3375"
+    rf_chain_id: chain_midland_mfg_456p3375
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_midland_mfg_462p5125
+    channel_name: "Midland 462.5125"
+    rf_chain_id: chain_midland_mfg_462p5125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_midland_mfg_467p5125
+    channel_name: "Midland 467.5125"
+    rf_chain_id: chain_midland_mfg_467p5125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_nordstrom_old_orchard_451p7375
+    channel_name: "Nordstrom 451.7375"
+    rf_chain_id: chain_nordstrom_old_orchard_451p7375
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_nordstrom_old_orchard_452p9875
+    channel_name: "Nordstrom 452.9875"
+    rf_chain_id: chain_nordstrom_old_orchard_452p9875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_nordstrom_old_orchard_456p7375
+    channel_name: "Nordstrom 456.7375"
+    rf_chain_id: chain_nordstrom_old_orchard_456p7375
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_nordstrom_old_orchard_457p8375
+    channel_name: "Nordstrom 457.8375"
+    rf_chain_id: chain_nordstrom_old_orchard_457p8375
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_nordstrom_old_orchard_457p9875
+    channel_name: "Nordstrom 457.9875"
+    rf_chain_id: chain_nordstrom_old_orchard_457p9875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_puttshack_452p4875
+    channel_name: "Puttshack 452.4875"
+    rf_chain_id: chain_puttshack_452p4875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_puttshack_456p6125
+    channel_name: "Puttshack 456.6125"
+    rf_chain_id: chain_puttshack_456p6125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_puttshack_457p1875
+    channel_name: "Puttshack 457.1875"
+    rf_chain_id: chain_puttshack_457p1875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_puttshack_457p4875
+    channel_name: "Puttshack 457.4875"
+    rf_chain_id: chain_puttshack_457p4875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_ups_austin_ave_451p6875
+    channel_name: "UPS 451.6875"
+    rf_chain_id: chain_ups_austin_ave_451p6875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_ups_austin_ave_452p5125
+    channel_name: "UPS 452.5125"
+    rf_chain_id: chain_ups_austin_ave_452p5125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_ups_austin_ave_456p2875
+    channel_name: "UPS 456.2875"
+    rf_chain_id: chain_ups_austin_ave_456p2875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_ups_austin_ave_456p6875
+    channel_name: "UPS 456.6875"
+    rf_chain_id: chain_ups_austin_ave_456p6875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_ups_austin_ave_456p7625
+    channel_name: "UPS 456.7625"
+    rf_chain_id: chain_ups_austin_ave_456p7625
+    usage: "simplex"
+    authorization_id: auth_biz_active
+
+comments:
+  - text: |
+      Licensed business/industrial land mobile in Skokie, from the RadioReference wiki
+      business listing for North Cook County.
+      
+      Worth knowing what is realistically receivable here: only five of these are repeaters
+      (Community Safety Services 463.650 and 463.9375, Macy's 463.350 and 463.875). Everything
+      else is a portable/mobile unit frequency - low power, usually indoors, so you generally
+      need to be close to the site. They are recorded for completeness and for identifying
+      unknown signals, not because they are wide-area targets.
+      
+      Repeater input frequencies are not published in the source, so only outputs are recorded.
+      
+      The DoubleTree Hotel North Shore licence is recorded by the source as expired in 2017 and
+      is filed under a separate authorization so the status stays visible.
+      
+      RX-only for the general public per Part 90.

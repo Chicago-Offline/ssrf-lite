@@ -1,0 +1,156 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.6.0.schema.json
+# SSRF-Lite: Evanston, IL - licensed business / industrial land mobile
+
+$schema: "../../../../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
+ssrf_lite:
+  sources:
+    - name: "RadioReference Wiki - Businesses, North Cook County (IL)"
+      url: "https://wiki.radioreference.com/index.php/Businesses_-_North_Cook_County_(IL)"
+      accessed: "2026-09-26"
+
+organizations:
+  - id: org_st_joan_of_arc
+    name: "Saint Joan of Arc Parish"
+  - id: org_sherman_plaza
+    name: "The Residences of Sherman Plaza Condominium Association"
+
+locations:
+  - id: loc_evanston
+    name: "Evanston, IL (approx)"
+    lat: 42.0451
+    lon: -87.6877
+
+stations:
+  - id: stn_st_joan_of_arc
+    call_sign: "WRJG360"
+    organization_id: org_st_joan_of_arc
+    location_id: loc_evanston
+    service: "business_itinerant_part90"
+  - id: stn_sherman_plaza
+    call_sign: "WREP963"
+    organization_id: org_sherman_plaza
+    location_id: loc_evanston
+    service: "business_itinerant_part90"
+
+antennas:
+  - id: ant_st_joan_of_arc
+    station_id: stn_st_joan_of_arc
+    name: "Saint Joan of Arc Parish (site unknown)"
+  - id: ant_sherman_plaza
+    station_id: stn_sherman_plaza
+    name: "The Residences of Sherman Plaza Condominium Association (site unknown)"
+
+authorizations:
+  - id: auth_biz_active
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: null
+    notes: "Active FCC licence. TX restricted to the licensee. RX-only for general public."
+
+rf_chains:
+  # --- Saint Joan of Arc Parish (WRJG360) ---
+  - id: chain_st_joan_of_arc_451p3125
+    station_id: stn_st_joan_of_arc
+    antenna_id: ant_st_joan_of_arc
+    rx:
+      freq_mhz: 451.3125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_st_joan_of_arc_452p3125
+    station_id: stn_st_joan_of_arc
+    antenna_id: ant_st_joan_of_arc
+    rx:
+      freq_mhz: 452.3125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_st_joan_of_arc_452p4125
+    station_id: stn_st_joan_of_arc
+    antenna_id: ant_st_joan_of_arc
+    rx:
+      freq_mhz: 452.4125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_st_joan_of_arc_462p1875
+    station_id: stn_st_joan_of_arc
+    antenna_id: ant_st_joan_of_arc
+    rx:
+      freq_mhz: 462.1875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  - id: chain_st_joan_of_arc_467p1875
+    station_id: stn_st_joan_of_arc
+    antenna_id: ant_st_joan_of_arc
+    rx:
+      freq_mhz: 467.1875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile unit frequency; short range. Licensed for analogue NFM and DMR."
+  # --- The Residences of Sherman Plaza Condominium Association (WREP963) ---
+  - id: chain_sherman_plaza_451p775
+    station_id: stn_sherman_plaza
+    antenna_id: ant_sherman_plaza
+    rx:
+      freq_mhz: 451.775
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Repeater output; input not published by source."
+
+assignments:
+  - id: asgn_st_joan_of_arc_451p3125
+    channel_name: "StJoanArc 451.3125"
+    rf_chain_id: chain_st_joan_of_arc_451p3125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_st_joan_of_arc_452p3125
+    channel_name: "StJoanArc 452.3125"
+    rf_chain_id: chain_st_joan_of_arc_452p3125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_st_joan_of_arc_452p4125
+    channel_name: "StJoanArc 452.4125"
+    rf_chain_id: chain_st_joan_of_arc_452p4125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_st_joan_of_arc_462p1875
+    channel_name: "StJoanArc 462.1875"
+    rf_chain_id: chain_st_joan_of_arc_462p1875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_st_joan_of_arc_467p1875
+    channel_name: "StJoanArc 467.1875"
+    rf_chain_id: chain_st_joan_of_arc_467p1875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_sherman_plaza_451p775
+    channel_name: "ShermanPlaza 451.775"
+    rf_chain_id: chain_sherman_plaza_451p775
+    usage: "repeater"
+    authorization_id: auth_biz_active
+
+comments:
+  - text: |
+      Licensed business/industrial land mobile in Evanston, from the RadioReference wiki
+      business listing for North Cook County.
+      
+      The Sherman Plaza 451.775 repeater is the only channel here with meaningful range;
+      the parish licence covers portables, which are low power and effectively on-site only.
+      
+      RX-only for the general public per Part 90.

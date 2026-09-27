@@ -1,0 +1,71 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.6.0.schema.json
+# SSRF-Lite: Lincolnwood, IL - licensed business / industrial land mobile
+
+$schema: "../../../../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
+ssrf_lite:
+  sources:
+    - name: "RadioReference Wiki - Businesses, North Cook County (IL)"
+      url: "https://wiki.radioreference.com/index.php/Businesses_-_North_Cook_County_(IL)"
+      accessed: "2026-09-26"
+
+organizations:
+  - id: org_carrington
+    name: "Carrington at Lincolnwood (senior living centre)"
+
+locations:
+  - id: loc_lincolnwood
+    name: "Lincolnwood, IL (approx)"
+    lat: 42.0064
+    lon: -87.7329
+
+stations:
+  - id: stn_carrington
+    call_sign: "WREY363"
+    organization_id: org_carrington
+    location_id: loc_lincolnwood
+    service: "business_itinerant_part90"
+
+antennas:
+  - id: ant_carrington
+    station_id: stn_carrington
+    name: "Carrington at Lincolnwood (senior living centre) (site unknown)"
+
+authorizations:
+  - id: auth_biz_active
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: null
+    notes: "Active FCC licence. TX restricted to the licensee. RX-only for general public."
+
+rf_chains:
+  # --- Carrington at Lincolnwood (senior living centre) (WREY363) ---
+  - id: chain_carrington_463p725
+    station_id: stn_carrington
+    antenna_id: ant_carrington
+    rx:
+      freq_mhz: 463.725
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Repeater output; input not published by source. Licensed for analogue NFM and DMR."
+
+assignments:
+  - id: asgn_carrington_463p725
+    channel_name: "Carrington 463.725"
+    rf_chain_id: chain_carrington_463p725
+    usage: "repeater"
+    authorization_id: auth_biz_active
+
+comments:
+  - text: |
+      Licensed business/industrial land mobile in Lincolnwood, from the RadioReference wiki
+      business listing for North Cook County.
+      
+      Only one licensee is listed for Lincolnwood in the source. Lincolnwood sits directly on
+      the Chicago city line, so this repeater is well placed for the Bucktown-to-Evanston
+      corridor.
+      
+      RX-only for the general public per Part 90.
