@@ -1,0 +1,420 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.6.0.schema.json
+# SSRF-Lite: Chicago Transit Authority (CTA) - Rail and Bus
+
+$schema: "../../../../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
+ssrf_lite:
+  sources:
+    - name: "RadioReference - Cook County, IL (CTA Rail / CTA Buses)"
+      url: "https://www.radioreference.com/db/browse/ctid/606"
+      accessed: "2026-09-26"
+
+organizations:
+  - id: org_cta
+    name: "Chicago Transit Authority"
+
+locations:
+  - id: loc_chicago
+    name: "Chicago, IL (CTA service area)"
+    lat: 41.8781
+    lon: -87.6298
+
+stations:
+  # --- Rail ---
+  - id: stn_cta_kyn262
+    call_sign: "KYN262"
+    organization_id: org_cta
+    location_id: loc_chicago
+    service: "public_safety_part90"
+  - id: stn_cta_kyt938
+    call_sign: "KYT938"
+    organization_id: org_cta
+    location_id: loc_chicago
+    service: "public_safety_part90"
+  - id: stn_cta_wqdy331
+    call_sign: "WQDY331"
+    organization_id: org_cta
+    location_id: loc_chicago
+    service: "public_safety_part90"
+  - id: stn_cta_wqdw399
+    call_sign: "WQDW399"
+    organization_id: org_cta
+    location_id: loc_chicago
+    service: "public_safety_part90"
+
+  # --- Bus ---
+  - id: stn_cta_wsav450
+    call_sign: "WSAV450"
+    organization_id: org_cta
+    location_id: loc_chicago
+    service: "public_safety_part90"
+  - id: stn_cta_wsav451
+    call_sign: "WSAV451"
+    organization_id: org_cta
+    location_id: loc_chicago
+    service: "public_safety_part90"
+  - id: stn_cta_wsay246
+    call_sign: "WSAY246"
+    organization_id: org_cta
+    location_id: loc_chicago
+    service: "public_safety_part90"
+  - id: stn_cta_kls562
+    call_sign: "KLS562"
+    organization_id: org_cta
+    location_id: loc_chicago
+    service: "public_safety_part90"
+  - id: stn_cta_wprr940
+    call_sign: "WPRR940"
+    organization_id: org_cta
+    location_id: loc_chicago
+    service: "public_safety_part90"
+
+antennas:
+  - id: ant_cta_kyn262
+    station_id: stn_cta_kyn262
+    name: "CTA Rail F-1 repeater (site unknown)"
+  - id: ant_cta_kyt938
+    station_id: stn_cta_kyt938
+    name: "CTA Rail F-2/F-5/F-6/F-7/F-8 repeaters (site unknown)"
+  - id: ant_cta_wqdy331
+    station_id: stn_cta_wqdy331
+    name: "CTA Rail F-3/F-4 supervisor repeaters (site unknown)"
+  - id: ant_cta_wqdw399
+    station_id: stn_cta_wqdw399
+    name: "CTA rail heater control (low band)"
+  - id: ant_cta_wsav450
+    station_id: stn_cta_wsav450
+    name: "CTA West bus garages repeater (site unknown)"
+  - id: ant_cta_wsav451
+    station_id: stn_cta_wsav451
+    name: "CTA North bus garages repeater (site unknown)"
+  - id: ant_cta_wsay246
+    station_id: stn_cta_wsay246
+    name: "CTA bus paging/data repeater (site unknown)"
+  - id: ant_cta_kls562
+    station_id: stn_cta_kls562
+    name: "CTA bus voice paging repeater (site unknown)"
+  - id: ant_cta_wprr940
+    station_id: stn_cta_wprr940
+    name: "CTA Rapid Transit Shops (simplex)"
+
+authorizations:
+  - id: auth_cta_active
+    authority: "FCC"
+    service: "public_safety_part90"
+    class: "Part 90 PLMR"
+    identifier: null
+    notes: "Active CTA licence. TX restricted to licensees. RX-only for general public."
+  - id: auth_cta_expired
+    authority: "FCC"
+    service: "public_safety_part90"
+    class: "Part 90 PLMR"
+    identifier: null
+    notes: >
+      Source records this CTA licence as EXPIRED, with the frequency reportedly now
+      licensed to A-Beep. Operational status unconfirmed - needs survey before relying on it.
+
+rf_chains:
+  # ---------------- RAIL ----------------
+  # F-1: CPD Transit Alt [Ch 1] - licence expired 4/23
+  - id: chain_cta_rail_f1
+    station_id: stn_cta_kyn262
+    antenna_id: ant_cta_kyn262
+    rx:
+      freq_mhz: 472.9375
+    tx:
+      freq_mhz: 475.9375
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 127.3
+      ctcss_tx_hz: 127.3
+      notes: "CPD Transit Alt. Source marks licence expired 4/23."
+
+  # F-2: Rail Emergency [Ch 2] (CFD contact) - licence expired 11/22
+  - id: chain_cta_rail_f2
+    station_id: stn_cta_kyt938
+    antenna_id: ant_cta_kyt938
+    rx:
+      freq_mhz: 470.9875
+    tx:
+      freq_mhz: 473.9875
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 127.3
+      ctcss_tx_hz: 127.3
+      notes: "Rail Emergency; CFD contact channel. Source marks licence expired 11/22."
+
+  # F-3: Supervisors North (includes buses) [Ch 3]
+  - id: chain_cta_rail_f3
+    station_id: stn_cta_wqdy331
+    antenna_id: ant_cta_wqdy331
+    rx:
+      freq_mhz: 470.5375
+    tx:
+      freq_mhz: 473.5375
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 127.3
+      ctcss_tx_hz: 127.3
+      notes: "Supervisors North; carries bus supervisor traffic as well as rail."
+
+  # F-4: Supervisors South (includes buses) [Ch 4]
+  - id: chain_cta_rail_f4
+    station_id: stn_cta_wqdy331
+    antenna_id: ant_cta_wqdy331
+    rx:
+      freq_mhz: 470.6375
+    tx:
+      freq_mhz: 473.6375
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 127.3
+      ctcss_tx_hz: 127.3
+      notes: "Supervisors South; carries bus supervisor traffic. Noted at N. Michigan and E. Randolph."
+
+  # F-5: Blue and Pink Line Ops [Ch 5] - licence expired 11/22
+  - id: chain_cta_rail_f5
+    station_id: stn_cta_kyt938
+    antenna_id: ant_cta_kyt938
+    rx:
+      freq_mhz: 471.0375
+    tx:
+      freq_mhz: 474.0375
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 127.3
+      ctcss_tx_hz: 127.3
+      notes: "Blue and Pink Line operations. Source marks licence expired 11/22."
+
+  # F-6: Green and Orange Line Ops [Ch 6] - licence expired 11/22
+  - id: chain_cta_rail_f6
+    station_id: stn_cta_kyt938
+    antenna_id: ant_cta_kyt938
+    rx:
+      freq_mhz: 471.0625
+    tx:
+      freq_mhz: 474.0625
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 127.3
+      ctcss_tx_hz: 127.3
+      notes: "Green and Orange Line operations. Source marks licence expired 11/22."
+
+  # F-7: Brown, Purple and Yellow Line Ops [Ch 7] - licence expired 11/22
+  - id: chain_cta_rail_f7
+    station_id: stn_cta_kyt938
+    antenna_id: ant_cta_kyt938
+    rx:
+      freq_mhz: 471.0875
+    tx:
+      freq_mhz: 474.0875
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 127.3
+      ctcss_tx_hz: 127.3
+      notes: "Brown, Purple and Yellow Line operations. Source marks licence expired 11/22."
+
+  # F-8: Red Line Ops [Ch 8] - licence expired 11/22
+  - id: chain_cta_rail_f8
+    station_id: stn_cta_kyt938
+    antenna_id: ant_cta_kyt938
+    rx:
+      freq_mhz: 471.1125
+    tx:
+      freq_mhz: 474.1125
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 127.3
+      ctcss_tx_hz: 127.3
+      notes: "Red Line operations. Source marks licence expired 11/22."
+
+  # Rail heater control (low band, simplex)
+  - id: chain_cta_rail_heater
+    station_id: stn_cta_wqdw399
+    antenna_id: ant_cta_wqdw399
+    rx:
+      freq_mhz: 44.540
+    tx:
+      emission: "16K0F3E"
+    mode:
+      type: "FM"
+      notes: "Low-band rail switch/third-rail heater control. Carrier squelch; telemetry, not voice."
+
+  # ---------------- BUS ----------------
+  # West Bus Garages
+  - id: chain_cta_bus_west
+    station_id: stn_cta_wsav450
+    antenna_id: ant_cta_wsav450
+    rx:
+      freq_mhz: 453.475
+    tx:
+      freq_mhz: 458.475
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "West bus garages. Carrier squelch; carrier/noise/DTMF signalling observed."
+
+  # North Bus Garages
+  - id: chain_cta_bus_north
+    station_id: stn_cta_wsav451
+    antenna_id: ant_cta_wsav451
+    rx:
+      freq_mhz: 453.575
+    tx:
+      freq_mhz: 458.575
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 127.3
+      ctcss_tx_hz: 127.3
+      notes: "North bus garages. Source questions a possible RTA / Oak Lawn association."
+
+  # Voice Paging / Data
+  - id: chain_cta_bus_pg1
+    station_id: stn_cta_wsay246
+    antenna_id: ant_cta_wsay246
+    rx:
+      freq_mhz: 453.275
+    tx:
+      freq_mhz: 458.275
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Voice paging and data. Carrier squelch. Source notes an alternate of 151.4 MHz."
+
+  # Voice Paging
+  - id: chain_cta_bus_pg2
+    station_id: stn_cta_kls562
+    antenna_id: ant_cta_kls562
+    rx:
+      freq_mhz: 453.325
+    tx:
+      freq_mhz: 458.325
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Voice paging. Carrier squelch."
+
+  # Rapid Transit Shops (simplex)
+  - id: chain_cta_bus_rts
+    station_id: stn_cta_wprr940
+    antenna_id: ant_cta_wprr940
+    rx:
+      freq_mhz: 471.6625
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 127.3
+      ctcss_tx_hz: 127.3
+      notes: "Rapid Transit Shops, simplex."
+
+assignments:
+  - id: asgn_cta_rail_f1
+    channel_name: "CTA Rail F-1"
+    rf_chain_id: chain_cta_rail_f1
+    usage: "repeater"
+    authorization_id: auth_cta_expired
+  - id: asgn_cta_rail_f2
+    channel_name: "CTA Rail F-2"
+    rf_chain_id: chain_cta_rail_f2
+    usage: "repeater"
+    authorization_id: auth_cta_expired
+  - id: asgn_cta_rail_f3
+    channel_name: "CTA Rail F-3"
+    rf_chain_id: chain_cta_rail_f3
+    usage: "repeater"
+    authorization_id: auth_cta_active
+  - id: asgn_cta_rail_f4
+    channel_name: "CTA Rail F-4"
+    rf_chain_id: chain_cta_rail_f4
+    usage: "repeater"
+    authorization_id: auth_cta_active
+  - id: asgn_cta_rail_f5
+    channel_name: "CTA Rail F-5"
+    rf_chain_id: chain_cta_rail_f5
+    usage: "repeater"
+    authorization_id: auth_cta_expired
+  - id: asgn_cta_rail_f6
+    channel_name: "CTA Rail F-6"
+    rf_chain_id: chain_cta_rail_f6
+    usage: "repeater"
+    authorization_id: auth_cta_expired
+  - id: asgn_cta_rail_f7
+    channel_name: "CTA Rail F-7"
+    rf_chain_id: chain_cta_rail_f7
+    usage: "repeater"
+    authorization_id: auth_cta_expired
+  - id: asgn_cta_rail_f8
+    channel_name: "CTA Rail F-8"
+    rf_chain_id: chain_cta_rail_f8
+    usage: "repeater"
+    authorization_id: auth_cta_expired
+  - id: asgn_cta_rail_heater
+    channel_name: "CTA Rail LB"
+    rf_chain_id: chain_cta_rail_heater
+    usage: "simplex"
+    authorization_id: auth_cta_active
+  - id: asgn_cta_bus_west
+    channel_name: "CTA Bus W-G"
+    rf_chain_id: chain_cta_bus_west
+    usage: "repeater"
+    authorization_id: auth_cta_active
+  - id: asgn_cta_bus_north
+    channel_name: "CTA Bus N-G"
+    rf_chain_id: chain_cta_bus_north
+    usage: "repeater"
+    authorization_id: auth_cta_active
+  - id: asgn_cta_bus_pg1
+    channel_name: "CTA Bus PG1"
+    rf_chain_id: chain_cta_bus_pg1
+    usage: "repeater"
+    authorization_id: auth_cta_active
+  - id: asgn_cta_bus_pg2
+    channel_name: "CTA Bus PG2"
+    rf_chain_id: chain_cta_bus_pg2
+    usage: "repeater"
+    authorization_id: auth_cta_active
+  - id: asgn_cta_bus_rts
+    channel_name: "CTA Bus RTS"
+    rf_chain_id: chain_cta_bus_rts
+    usage: "simplex"
+    authorization_id: auth_cta_active
+
+comments:
+  - text: |
+      Chicago Transit Authority rail and bus conventional channels.
+
+      LICENCE CAVEAT: the source flags that many of these CTA licences have expired and the
+      frequencies are now licensed to A-Beep, and explicitly asks for reports on whether they
+      are still in use. Rail F-1 (expired 4/23) and F-2, F-5, F-6, F-7, F-8 (all expired 11/22)
+      are recorded under a separate authorization (auth_cta_expired) so the uncertainty is
+      visible rather than buried. These are good survey targets for the RTL-SDR rig - confirm
+      or clear them before treating this set as current.
+
+      Rail line mapping is the useful part for scanning: F-5 Blue/Pink, F-6 Green/Orange,
+      F-7 Brown/Purple/Yellow, F-8 Red. F-3 and F-4 are the North and South supervisor
+      channels and carry bus supervisor traffic as well as rail.
+
+      Rail F-1 is labelled CPD Transit Alt - a Chicago Police transit channel on a CTA
+      licence, distinct from the CPD channels in
+      ssrf/systems/US/IL/Cook/Chicago/public_safety/chicago_police_department.yml.
+
+      The bus repeaters use a +5.000 MHz split (453.x -> 458.x). Three of them run carrier
+      squelch rather than a tone.
+
+      NOT DUPLICATED HERE: the existing transit_transport.yml already carries CTA 461.575,
+      461.825 (DMR), and 462.100; chicago_fire_ems_northside.yml already carries CTA Fire on
+      460.0625 (203.5 PL). No frequency in this file overlaps either.
+
+      44.540 MHz is low-band third-rail/switch heater control telemetry, not voice.
+
+      RX-only for the general public per Part 90.
