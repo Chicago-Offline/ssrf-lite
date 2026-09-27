@@ -1,0 +1,2705 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.6.0.schema.json
+# SSRF-Lite: Chicago north side - licensed business land mobile (Bucktown to Evanston corridor)
+
+$schema: "../../../../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
+ssrf_lite:
+  sources:
+    - name: "RadioReference Wiki - Businesses, Chicago Cook County (IL)"
+      url: "https://wiki.radioreference.com/index.php/Businesses_-_Chicago_Cook_County_(IL)"
+      accessed: "2026-09-26"
+
+organizations:
+  - id: org_wqnc265
+    name: "Costco (2746 N Clybourn Ave)"
+  - id: org_wsaw401
+    name: "Horween Leather Company (2150 N Elston Ave)"
+  - id: org_wroz989
+    name: "Triangle Square Apartments (2155 N Elston Ave)"
+  - id: org_wqfq228
+    name: "Albany Park Community Center (3401 W Ainslie St)"
+  - id: org_wryn967
+    name: "Live Nation Worldwide Inc (1106 W Lawrence Ave)"
+  - id: org_wrcw601
+    name: "Rosehill Cemetery (5800 N Ravenswood Ave)"
+  - id: org_wskm439
+    name: "S & C Electric Company (6601 N Ridge Blvd)"
+  - id: org_wrjm838
+    name: "2430 N Halsted Street (commercial research lab space)"
+  - id: org_wsjp953
+    name: "4343 Clarendon Condominium Association (4343 N Clarendon Ave)"
+  - id: org_wrxb606
+    name: "2020 Lincoln Park West Condominium Association"
+  - id: org_wrxk699
+    name: "2400 N Lakeview Ave Condominium Association"
+  - id: org_wrzb261
+    name: "2650 Lakeview Condominium Association (2650 N Lakeview Ave)"
+  - id: org_wrwu491
+    name: "3150 N Lake Shore Drive Condominium Association"
+  - id: org_wrzu968
+    name: "3750 N Lake Shore Drive Condominiums"
+  - id: org_wrye334
+    name: "4601 N Broadway Apartments"
+  - id: org_wrxa599
+    name: "5757 N Sheridan Condominium Association"
+  - id: org_wrfb621
+    name: "Beach Point Tower Condominium Association (5801 N Sheridan Rd)"
+  - id: org_wsjq485
+    name: "Commonwealth Plaza Association (330 W Diversey Pkwy)"
+  - id: org_wskb339
+    name: "Eddystone Condominium Homes Inc (421 W Montrose Ave)"
+  - id: org_wrwu490
+    name: "El Lago Condominium Association (6157 N Sheridan Rd)"
+  - id: org_wrmi715
+    name: "Eugenie Terrace Apartments (1730 N Clark St)"
+  - id: org_wqwp256
+    name: "Horizon House Condominium Association (5733 N Sheridan Rd)"
+  - id: org_wqpp355
+    name: "Imperial Tower Condominium Association (4250 N Marine Dr)"
+  - id: org_wqqk701
+    name: "Kennelly Square Condominium Association (1749 N Wells St)"
+  - id: org_wrfb378
+    name: "Lincoln Common / The Orchard (2345 N Lincoln Ave, 2350 N Orchard St)"
+  - id: org_wqtl318
+    name: "Malibu East Condominium (6033 N Sheridan Rd)"
+  - id: org_wscj367
+    name: "Solverre Apartments / MQMF Chicago Marine Drive (4600 N Marine Dr)"
+  - id: org_wsgt287
+    name: "The New York Private Residences (3660 N Lake Shore Dr)"
+  - id: org_wrcu313
+    name: "Renaissance West Apartments (2517 W Fullerton Ave)"
+  - id: org_wrep596
+    name: "United Winthrop Tower Cooperative (4848 N Winthrop Ave)"
+  - id: org_wrod666
+    name: "Wrigleyville Lofts (949 W Dakin St)"
+  - id: org_wqki514
+    name: "Cubby Bear Lounge (1059 W Addison St)"
+  - id: org_wrxa597
+    name: "Winston Towers #5 (7141 N Kedzie Ave)"
+  - id: org_wsaq430
+    name: "Moody Church (1635 N LaSalle Dr)"
+
+locations:
+  - id: loc_chicago_north
+    name: "Chicago north side, IL (Bucktown to Rogers Park, approx)"
+    lat: 41.9700
+    lon: -87.6700
+
+stations:
+  - id: stn_wqnc265
+    call_sign: "WQNC265"
+    organization_id: org_wqnc265
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wsaw401
+    call_sign: "WSAW401"
+    organization_id: org_wsaw401
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wroz989
+    call_sign: "WROZ989"
+    organization_id: org_wroz989
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wqfq228
+    call_sign: "WQFQ228"
+    organization_id: org_wqfq228
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wryn967
+    call_sign: "WRYN967"
+    organization_id: org_wryn967
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wrcw601
+    call_sign: "WRCW601"
+    organization_id: org_wrcw601
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wskm439
+    call_sign: "WSKM439"
+    organization_id: org_wskm439
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wrjm838
+    call_sign: "WRJM838"
+    organization_id: org_wrjm838
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wsjp953
+    call_sign: "WSJP953"
+    organization_id: org_wsjp953
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wrxb606
+    call_sign: "WRXB606"
+    organization_id: org_wrxb606
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wrxk699
+    call_sign: "WRXK699"
+    organization_id: org_wrxk699
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wrzb261
+    call_sign: "WRZB261"
+    organization_id: org_wrzb261
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wrwu491
+    call_sign: "WRWU491"
+    organization_id: org_wrwu491
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wrzu968
+    call_sign: "WRZU968"
+    organization_id: org_wrzu968
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wrye334
+    call_sign: "WRYE334"
+    organization_id: org_wrye334
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wrxa599
+    call_sign: "WRXA599"
+    organization_id: org_wrxa599
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wrfb621
+    call_sign: "WRFB621"
+    organization_id: org_wrfb621
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wsjq485
+    call_sign: "WSJQ485"
+    organization_id: org_wsjq485
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wskb339
+    call_sign: "WSKB339"
+    organization_id: org_wskb339
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wrwu490
+    call_sign: "WRWU490"
+    organization_id: org_wrwu490
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wrmi715
+    call_sign: "WRMI715"
+    organization_id: org_wrmi715
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wqwp256
+    call_sign: "WQWP256"
+    organization_id: org_wqwp256
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wqpp355
+    call_sign: "WQPP355"
+    organization_id: org_wqpp355
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wqqk701
+    call_sign: "WQQK701"
+    organization_id: org_wqqk701
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wrfb378
+    call_sign: "WRFB378"
+    organization_id: org_wrfb378
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wqtl318
+    call_sign: "WQTL318"
+    organization_id: org_wqtl318
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wscj367
+    call_sign: "WSCJ367"
+    organization_id: org_wscj367
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wsgt287
+    call_sign: "WSGT287"
+    organization_id: org_wsgt287
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wrcu313
+    call_sign: "WRCU313"
+    organization_id: org_wrcu313
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wrep596
+    call_sign: "WREP596"
+    organization_id: org_wrep596
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wrod666
+    call_sign: "WROD666"
+    organization_id: org_wrod666
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wqki514
+    call_sign: "WQKI514"
+    organization_id: org_wqki514
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wrxa597
+    call_sign: "WRXA597"
+    organization_id: org_wrxa597
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+  - id: stn_wsaq430
+    call_sign: "WSAQ430"
+    organization_id: org_wsaq430
+    location_id: loc_chicago_north
+    service: "business_itinerant_part90"
+
+antennas:
+  - id: ant_wqnc265
+    station_id: stn_wqnc265
+    name: "Costco (2746 N Clybourn Ave)"
+  - id: ant_wsaw401
+    station_id: stn_wsaw401
+    name: "Horween Leather Company (2150 N Elston Ave)"
+  - id: ant_wroz989
+    station_id: stn_wroz989
+    name: "Triangle Square Apartments (2155 N Elston Ave)"
+  - id: ant_wqfq228
+    station_id: stn_wqfq228
+    name: "Albany Park Community Center (3401 W Ainslie St)"
+  - id: ant_wryn967
+    station_id: stn_wryn967
+    name: "Live Nation Worldwide Inc (1106 W Lawrence Ave)"
+  - id: ant_wrcw601
+    station_id: stn_wrcw601
+    name: "Rosehill Cemetery (5800 N Ravenswood Ave)"
+  - id: ant_wskm439
+    station_id: stn_wskm439
+    name: "S & C Electric Company (6601 N Ridge Blvd)"
+  - id: ant_wrjm838
+    station_id: stn_wrjm838
+    name: "2430 N Halsted Street (commercial research lab space)"
+  - id: ant_wsjp953
+    station_id: stn_wsjp953
+    name: "4343 Clarendon Condominium Association (4343 N Clarendon Ave)"
+  - id: ant_wrxb606
+    station_id: stn_wrxb606
+    name: "2020 Lincoln Park West Condominium Association"
+  - id: ant_wrxk699
+    station_id: stn_wrxk699
+    name: "2400 N Lakeview Ave Condominium Association"
+  - id: ant_wrzb261
+    station_id: stn_wrzb261
+    name: "2650 Lakeview Condominium Association (2650 N Lakeview Ave)"
+  - id: ant_wrwu491
+    station_id: stn_wrwu491
+    name: "3150 N Lake Shore Drive Condominium Association"
+  - id: ant_wrzu968
+    station_id: stn_wrzu968
+    name: "3750 N Lake Shore Drive Condominiums"
+  - id: ant_wrye334
+    station_id: stn_wrye334
+    name: "4601 N Broadway Apartments"
+  - id: ant_wrxa599
+    station_id: stn_wrxa599
+    name: "5757 N Sheridan Condominium Association"
+  - id: ant_wrfb621
+    station_id: stn_wrfb621
+    name: "Beach Point Tower Condominium Association (5801 N Sheridan Rd)"
+  - id: ant_wsjq485
+    station_id: stn_wsjq485
+    name: "Commonwealth Plaza Association (330 W Diversey Pkwy)"
+  - id: ant_wskb339
+    station_id: stn_wskb339
+    name: "Eddystone Condominium Homes Inc (421 W Montrose Ave)"
+  - id: ant_wrwu490
+    station_id: stn_wrwu490
+    name: "El Lago Condominium Association (6157 N Sheridan Rd)"
+  - id: ant_wrmi715
+    station_id: stn_wrmi715
+    name: "Eugenie Terrace Apartments (1730 N Clark St)"
+  - id: ant_wqwp256
+    station_id: stn_wqwp256
+    name: "Horizon House Condominium Association (5733 N Sheridan Rd)"
+  - id: ant_wqpp355
+    station_id: stn_wqpp355
+    name: "Imperial Tower Condominium Association (4250 N Marine Dr)"
+  - id: ant_wqqk701
+    station_id: stn_wqqk701
+    name: "Kennelly Square Condominium Association (1749 N Wells St)"
+  - id: ant_wrfb378
+    station_id: stn_wrfb378
+    name: "Lincoln Common / The Orchard (2345 N Lincoln Ave, 2350 N Orchard St)"
+  - id: ant_wqtl318
+    station_id: stn_wqtl318
+    name: "Malibu East Condominium (6033 N Sheridan Rd)"
+  - id: ant_wscj367
+    station_id: stn_wscj367
+    name: "Solverre Apartments / MQMF Chicago Marine Drive (4600 N Marine Dr)"
+  - id: ant_wsgt287
+    station_id: stn_wsgt287
+    name: "The New York Private Residences (3660 N Lake Shore Dr)"
+  - id: ant_wrcu313
+    station_id: stn_wrcu313
+    name: "Renaissance West Apartments (2517 W Fullerton Ave)"
+  - id: ant_wrep596
+    station_id: stn_wrep596
+    name: "United Winthrop Tower Cooperative (4848 N Winthrop Ave)"
+  - id: ant_wrod666
+    station_id: stn_wrod666
+    name: "Wrigleyville Lofts (949 W Dakin St)"
+  - id: ant_wqki514
+    station_id: stn_wqki514
+    name: "Cubby Bear Lounge (1059 W Addison St)"
+  - id: ant_wrxa597
+    station_id: stn_wrxa597
+    name: "Winston Towers #5 (7141 N Kedzie Ave)"
+  - id: ant_wsaq430
+    station_id: stn_wsaq430
+    name: "Moody Church (1635 N LaSalle Dr)"
+
+authorizations:
+  - id: auth_biz_active
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: null
+    notes: "Active FCC licence. TX restricted to the licensee. RX-only for general public."
+  - id: auth_biz_expired
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: null
+    notes: "Source records this licence as EXPIRED (February 2024). Confirm before relying on it."
+
+rf_chains:
+  # --- Costco (2746 N Clybourn Ave) (WQNC265) ---
+  - id: chain_wqnc265_151p655
+    station_id: stn_wqnc265
+    antenna_id: ant_wqnc265
+    rx:
+      freq_mhz: 151.655
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wqnc265_151p955
+    station_id: stn_wqnc265
+    antenna_id: ant_wqnc265
+    rx:
+      freq_mhz: 151.955
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Portable/mobile frequency; short range."
+  # --- Horween Leather Company (2150 N Elston Ave) (WSAW401) ---
+  - id: chain_wsaw401_464p15
+    station_id: stn_wsaw401
+    antenna_id: ant_wsaw401
+    rx:
+      freq_mhz: 464.15
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Repeater output; input not published by source."
+  - id: chain_wsaw401_469p15
+    station_id: stn_wsaw401
+    antenna_id: ant_wsaw401
+    rx:
+      freq_mhz: 469.15
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wsaw401_462p1
+    station_id: stn_wsaw401
+    antenna_id: ant_wsaw401
+    rx:
+      freq_mhz: 462.1
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wsaw401_464p7875
+    station_id: stn_wsaw401
+    antenna_id: ant_wsaw401
+    rx:
+      freq_mhz: 464.7875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- Triangle Square Apartments (2155 N Elston Ave) (WROZ989) ---
+  - id: chain_wroz989_461p6625
+    station_id: stn_wroz989
+    antenna_id: ant_wroz989
+    rx:
+      freq_mhz: 461.6625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Repeater output; input not published by source."
+  - id: chain_wroz989_457p1
+    station_id: stn_wroz989
+    antenna_id: ant_wroz989
+    rx:
+      freq_mhz: 457.1
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wroz989_457p225
+    station_id: stn_wroz989
+    antenna_id: ant_wroz989
+    rx:
+      freq_mhz: 457.225
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wroz989_457p25
+    station_id: stn_wroz989
+    antenna_id: ant_wroz989
+    rx:
+      freq_mhz: 457.25
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wroz989_457p35
+    station_id: stn_wroz989
+    antenna_id: ant_wroz989
+    rx:
+      freq_mhz: 457.35
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wroz989_468p875
+    station_id: stn_wroz989
+    antenna_id: ant_wroz989
+    rx:
+      freq_mhz: 468.875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- Albany Park Community Center (3401 W Ainslie St) (WQFQ228) ---
+  - id: chain_wqfq228_463p4125
+    station_id: stn_wqfq228
+    antenna_id: ant_wqfq228
+    rx:
+      freq_mhz: 463.4125
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Repeater output; input not published by source."
+  - id: chain_wqfq228_467p7625
+    station_id: stn_wqfq228
+    antenna_id: ant_wqfq228
+    rx:
+      freq_mhz: 467.7625
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wqfq228_467p875
+    station_id: stn_wqfq228
+    antenna_id: ant_wqfq228
+    rx:
+      freq_mhz: 467.875
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Portable/mobile frequency; short range."
+  # --- Live Nation Worldwide Inc (1106 W Lawrence Ave) (WRYN967) ---
+  - id: chain_wryn967_456p3875
+    station_id: stn_wryn967
+    antenna_id: ant_wryn967
+    rx:
+      freq_mhz: 456.3875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wryn967_462p025
+    station_id: stn_wryn967
+    antenna_id: ant_wryn967
+    rx:
+      freq_mhz: 462.025
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wryn967_464p15
+    station_id: stn_wryn967
+    antenna_id: ant_wryn967
+    rx:
+      freq_mhz: 464.15
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wryn967_467p025
+    station_id: stn_wryn967
+    antenna_id: ant_wryn967
+    rx:
+      freq_mhz: 467.025
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wryn967_469p15
+    station_id: stn_wryn967
+    antenna_id: ant_wryn967
+    rx:
+      freq_mhz: 469.15
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- Rosehill Cemetery (5800 N Ravenswood Ave) (WRCW601) ---
+  - id: chain_wrcw601_463p5125
+    station_id: stn_wrcw601
+    antenna_id: ant_wrcw601
+    rx:
+      freq_mhz: 463.5125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Repeater output; input not published by source."
+  - id: chain_wrcw601_466p15
+    station_id: stn_wrcw601
+    antenna_id: ant_wrcw601
+    rx:
+      freq_mhz: 466.15
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrcw601_466p175
+    station_id: stn_wrcw601
+    antenna_id: ant_wrcw601
+    rx:
+      freq_mhz: 466.175
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrcw601_466p2
+    station_id: stn_wrcw601
+    antenna_id: ant_wrcw601
+    rx:
+      freq_mhz: 466.2
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrcw601_466p225
+    station_id: stn_wrcw601
+    antenna_id: ant_wrcw601
+    rx:
+      freq_mhz: 466.225
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrcw601_466p25
+    station_id: stn_wrcw601
+    antenna_id: ant_wrcw601
+    rx:
+      freq_mhz: 466.25
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- S & C Electric Company (6601 N Ridge Blvd) (WSKM439) ---
+  - id: chain_wskm439_462p2
+    station_id: stn_wskm439
+    antenna_id: ant_wskm439
+    rx:
+      freq_mhz: 462.2
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Repeater output; input not published by source."
+  - id: chain_wskm439_462p425
+    station_id: stn_wskm439
+    antenna_id: ant_wskm439
+    rx:
+      freq_mhz: 462.425
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Repeater output; input not published by source."
+  - id: chain_wskm439_462p025
+    station_id: stn_wskm439
+    antenna_id: ant_wskm439
+    rx:
+      freq_mhz: 462.025
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wskm439_462p525
+    station_id: stn_wskm439
+    antenna_id: ant_wskm439
+    rx:
+      freq_mhz: 462.525
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wskm439_467p525
+    station_id: stn_wskm439
+    antenna_id: ant_wskm439
+    rx:
+      freq_mhz: 467.525
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- 2430 N Halsted Street (commercial research lab space) (WRJM838) ---
+  - id: chain_wrjm838_457p05
+    station_id: stn_wrjm838
+    antenna_id: ant_wrjm838
+    rx:
+      freq_mhz: 457.05
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrjm838_457p2
+    station_id: stn_wrjm838
+    antenna_id: ant_wrjm838
+    rx:
+      freq_mhz: 457.2
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrjm838_457p4
+    station_id: stn_wrjm838
+    antenna_id: ant_wrjm838
+    rx:
+      freq_mhz: 457.4
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrjm838_457p45
+    station_id: stn_wrjm838
+    antenna_id: ant_wrjm838
+    rx:
+      freq_mhz: 457.45
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrjm838_457p55
+    station_id: stn_wrjm838
+    antenna_id: ant_wrjm838
+    rx:
+      freq_mhz: 457.55
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- 4343 Clarendon Condominium Association (4343 N Clarendon Ave) (WSJP953) ---
+  - id: chain_wsjp953_451p7125
+    station_id: stn_wsjp953
+    antenna_id: ant_wsjp953
+    rx:
+      freq_mhz: 451.7125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wsjp953_452p1875
+    station_id: stn_wsjp953
+    antenna_id: ant_wsjp953
+    rx:
+      freq_mhz: 452.1875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wsjp953_456p7125
+    station_id: stn_wsjp953
+    antenna_id: ant_wsjp953
+    rx:
+      freq_mhz: 456.7125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wsjp953_457p1875
+    station_id: stn_wsjp953
+    antenna_id: ant_wsjp953
+    rx:
+      freq_mhz: 457.1875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- 2020 Lincoln Park West Condominium Association (WRXB606) ---
+  - id: chain_wrxb606_456p325
+    station_id: stn_wrxb606
+    antenna_id: ant_wrxb606
+    rx:
+      freq_mhz: 456.325
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrxb606_457p2
+    station_id: stn_wrxb606
+    antenna_id: ant_wrxb606
+    rx:
+      freq_mhz: 457.2
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrxb606_457p45
+    station_id: stn_wrxb606
+    antenna_id: ant_wrxb606
+    rx:
+      freq_mhz: 457.45
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrxb606_457p8
+    station_id: stn_wrxb606
+    antenna_id: ant_wrxb606
+    rx:
+      freq_mhz: 457.8
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrxb606_466p275
+    station_id: stn_wrxb606
+    antenna_id: ant_wrxb606
+    rx:
+      freq_mhz: 466.275
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- 2400 N Lakeview Ave Condominium Association (WRXK699) ---
+  - id: chain_wrxk699_151p535
+    station_id: stn_wrxk699
+    antenna_id: ant_wrxk699
+    rx:
+      freq_mhz: 151.535
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrxk699_152p945
+    station_id: stn_wrxk699
+    antenna_id: ant_wrxk699
+    rx:
+      freq_mhz: 152.945
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrxk699_159p945
+    station_id: stn_wrxk699
+    antenna_id: ant_wrxk699
+    rx:
+      freq_mhz: 159.945
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrxk699_160p02
+    station_id: stn_wrxk699
+    antenna_id: ant_wrxk699
+    rx:
+      freq_mhz: 160.02
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrxk699_160p14
+    station_id: stn_wrxk699
+    antenna_id: ant_wrxk699
+    rx:
+      freq_mhz: 160.14
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- 2650 Lakeview Condominium Association (2650 N Lakeview Ave) (WRZB261) ---
+  - id: chain_wrzb261_464p8625
+    station_id: stn_wrzb261
+    antenna_id: ant_wrzb261
+    rx:
+      freq_mhz: 464.8625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Repeater output; input not published by source."
+  # --- 3150 N Lake Shore Drive Condominium Association (WRWU491) ---
+  - id: chain_wrwu491_456p4625
+    station_id: stn_wrwu491
+    antenna_id: ant_wrwu491
+    rx:
+      freq_mhz: 456.4625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrwu491_456p5875
+    station_id: stn_wrwu491
+    antenna_id: ant_wrwu491
+    rx:
+      freq_mhz: 456.5875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrwu491_456p6875
+    station_id: stn_wrwu491
+    antenna_id: ant_wrwu491
+    rx:
+      freq_mhz: 456.6875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrwu491_457p6625
+    station_id: stn_wrwu491
+    antenna_id: ant_wrwu491
+    rx:
+      freq_mhz: 457.6625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrwu491_457p7125
+    station_id: stn_wrwu491
+    antenna_id: ant_wrwu491
+    rx:
+      freq_mhz: 457.7125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrwu491_457p7875
+    station_id: stn_wrwu491
+    antenna_id: ant_wrwu491
+    rx:
+      freq_mhz: 457.7875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- 3750 N Lake Shore Drive Condominiums (WRZU968) ---
+  - id: chain_wrzu968_466p15
+    station_id: stn_wrzu968
+    antenna_id: ant_wrzu968
+    rx:
+      freq_mhz: 466.15
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrzu968_466p175
+    station_id: stn_wrzu968
+    antenna_id: ant_wrzu968
+    rx:
+      freq_mhz: 466.175
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrzu968_466p2
+    station_id: stn_wrzu968
+    antenna_id: ant_wrzu968
+    rx:
+      freq_mhz: 466.2
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrzu968_466p225
+    station_id: stn_wrzu968
+    antenna_id: ant_wrzu968
+    rx:
+      freq_mhz: 466.225
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrzu968_466p25
+    station_id: stn_wrzu968
+    antenna_id: ant_wrzu968
+    rx:
+      freq_mhz: 466.25
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- 4601 N Broadway Apartments (WRYE334) ---
+  - id: chain_wrye334_457p2
+    station_id: stn_wrye334
+    antenna_id: ant_wrye334
+    rx:
+      freq_mhz: 457.2
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrye334_457p45
+    station_id: stn_wrye334
+    antenna_id: ant_wrye334
+    rx:
+      freq_mhz: 457.45
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrye334_457p8
+    station_id: stn_wrye334
+    antenna_id: ant_wrye334
+    rx:
+      freq_mhz: 457.8
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrye334_466p05
+    station_id: stn_wrye334
+    antenna_id: ant_wrye334
+    rx:
+      freq_mhz: 466.05
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrye334_466p075
+    station_id: stn_wrye334
+    antenna_id: ant_wrye334
+    rx:
+      freq_mhz: 466.075
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- 5757 N Sheridan Condominium Association (WRXA599) ---
+  - id: chain_wrxa599_466p125
+    station_id: stn_wrxa599
+    antenna_id: ant_wrxa599
+    rx:
+      freq_mhz: 466.125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrxa599_466p15
+    station_id: stn_wrxa599
+    antenna_id: ant_wrxa599
+    rx:
+      freq_mhz: 466.15
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrxa599_466p175
+    station_id: stn_wrxa599
+    antenna_id: ant_wrxa599
+    rx:
+      freq_mhz: 466.175
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrxa599_466p25
+    station_id: stn_wrxa599
+    antenna_id: ant_wrxa599
+    rx:
+      freq_mhz: 466.25
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrxa599_466p325
+    station_id: stn_wrxa599
+    antenna_id: ant_wrxa599
+    rx:
+      freq_mhz: 466.325
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- Beach Point Tower Condominium Association (5801 N Sheridan Rd) (WRFB621) ---
+  - id: chain_wrfb621_451p4125
+    station_id: stn_wrfb621
+    antenna_id: ant_wrfb621
+    rx:
+      freq_mhz: 451.4125
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrfb621_456p4125
+    station_id: stn_wrfb621
+    antenna_id: ant_wrfb621
+    rx:
+      freq_mhz: 456.4125
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Portable/mobile frequency; short range."
+  # --- Commonwealth Plaza Association (330 W Diversey Pkwy) (WSJQ485) ---
+  - id: chain_wsjq485_452p5
+    station_id: stn_wsjq485
+    antenna_id: ant_wsjq485
+    rx:
+      freq_mhz: 452.5
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wsjq485_457p5
+    station_id: stn_wsjq485
+    antenna_id: ant_wsjq485
+    rx:
+      freq_mhz: 457.5
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wsjq485_458
+    station_id: stn_wsjq485
+    antenna_id: ant_wsjq485
+    rx:
+      freq_mhz: 458
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wsjq485_466p9875
+    station_id: stn_wsjq485
+    antenna_id: ant_wsjq485
+    rx:
+      freq_mhz: 466.9875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- Eddystone Condominium Homes Inc (421 W Montrose Ave) (WSKB339) ---
+  - id: chain_wskb339_461p025
+    station_id: stn_wskb339
+    antenna_id: ant_wskb339
+    rx:
+      freq_mhz: 461.025
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wskb339_461p075
+    station_id: stn_wskb339
+    antenna_id: ant_wskb339
+    rx:
+      freq_mhz: 461.075
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wskb339_461p125
+    station_id: stn_wskb339
+    antenna_id: ant_wskb339
+    rx:
+      freq_mhz: 461.125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wskb339_461p275
+    station_id: stn_wskb339
+    antenna_id: ant_wskb339
+    rx:
+      freq_mhz: 461.275
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wskb339_461p3
+    station_id: stn_wskb339
+    antenna_id: ant_wskb339
+    rx:
+      freq_mhz: 461.3
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- El Lago Condominium Association (6157 N Sheridan Rd) (WRWU490) ---
+  - id: chain_wrwu490_451p3875
+    station_id: stn_wrwu490
+    antenna_id: ant_wrwu490
+    rx:
+      freq_mhz: 451.3875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrwu490_451p5375
+    station_id: stn_wrwu490
+    antenna_id: ant_wrwu490
+    rx:
+      freq_mhz: 451.5375
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrwu490_452p1625
+    station_id: stn_wrwu490
+    antenna_id: ant_wrwu490
+    rx:
+      freq_mhz: 452.1625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrwu490_452p6875
+    station_id: stn_wrwu490
+    antenna_id: ant_wrwu490
+    rx:
+      freq_mhz: 452.6875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrwu490_452p7625
+    station_id: stn_wrwu490
+    antenna_id: ant_wrwu490
+    rx:
+      freq_mhz: 452.7625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrwu490_452p9875
+    station_id: stn_wrwu490
+    antenna_id: ant_wrwu490
+    rx:
+      freq_mhz: 452.9875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- Eugenie Terrace Apartments (1730 N Clark St) (WRMI715) ---
+  - id: chain_wrmi715_464p1625
+    station_id: stn_wrmi715
+    antenna_id: ant_wrmi715
+    rx:
+      freq_mhz: 464.1625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Repeater output; input not published by source."
+  - id: chain_wrmi715_456p6625
+    station_id: stn_wrmi715
+    antenna_id: ant_wrmi715
+    rx:
+      freq_mhz: 456.6625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrmi715_469p1625
+    station_id: stn_wrmi715
+    antenna_id: ant_wrmi715
+    rx:
+      freq_mhz: 469.1625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- Horizon House Condominium Association (5733 N Sheridan Rd) (WQWP256) ---
+  - id: chain_wqwp256_456p9125
+    station_id: stn_wqwp256
+    antenna_id: ant_wqwp256
+    rx:
+      freq_mhz: 456.9125
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wqwp256_457p2
+    station_id: stn_wqwp256
+    antenna_id: ant_wqwp256
+    rx:
+      freq_mhz: 457.2
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wqwp256_457p45
+    station_id: stn_wqwp256
+    antenna_id: ant_wqwp256
+    rx:
+      freq_mhz: 457.45
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wqwp256_457p8
+    station_id: stn_wqwp256
+    antenna_id: ant_wqwp256
+    rx:
+      freq_mhz: 457.8
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Portable/mobile frequency; short range."
+  # --- Imperial Tower Condominium Association (4250 N Marine Dr) (WQPP355) ---
+  - id: chain_wqpp355_461p55
+    station_id: stn_wqpp355
+    antenna_id: ant_wqpp355
+    rx:
+      freq_mhz: 461.55
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Repeater output; input not published by source."
+  - id: chain_wqpp355_451p2875
+    station_id: stn_wqpp355
+    antenna_id: ant_wqpp355
+    rx:
+      freq_mhz: 451.2875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wqpp355_466p5
+    station_id: stn_wqpp355
+    antenna_id: ant_wqpp355
+    rx:
+      freq_mhz: 466.5
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wqpp355_451p1875
+    station_id: stn_wqpp355
+    antenna_id: ant_wqpp355
+    rx:
+      freq_mhz: 451.1875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- Kennelly Square Condominium Association (1749 N Wells St) (WQQK701) ---
+  - id: chain_wqqk701_468p2375
+    station_id: stn_wqqk701
+    antenna_id: ant_wqqk701
+    rx:
+      freq_mhz: 468.2375
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- Lincoln Common / The Orchard (2345 N Lincoln Ave, 2350 N Orchard St) (WRFB378) ---
+  - id: chain_wrfb378_462p1625
+    station_id: stn_wrfb378
+    antenna_id: ant_wrfb378
+    rx:
+      freq_mhz: 462.1625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Repeater output; input not published by source."
+  - id: chain_wrfb378_461p775
+    station_id: stn_wrfb378
+    antenna_id: ant_wrfb378
+    rx:
+      freq_mhz: 461.775
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Repeater output; input not published by source."
+  - id: chain_wrfb378_457p1
+    station_id: stn_wrfb378
+    antenna_id: ant_wrfb378
+    rx:
+      freq_mhz: 457.1
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrfb378_457p35
+    station_id: stn_wrfb378
+    antenna_id: ant_wrfb378
+    rx:
+      freq_mhz: 457.35
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrfb378_468p225
+    station_id: stn_wrfb378
+    antenna_id: ant_wrfb378
+    rx:
+      freq_mhz: 468.225
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrfb378_468p875
+    station_id: stn_wrfb378
+    antenna_id: ant_wrfb378
+    rx:
+      freq_mhz: 468.875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- Malibu East Condominium (6033 N Sheridan Rd) (WQTL318) ---
+  - id: chain_wqtl318_451p1875
+    station_id: stn_wqtl318
+    antenna_id: ant_wqtl318
+    rx:
+      freq_mhz: 451.1875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wqtl318_451p5375
+    station_id: stn_wqtl318
+    antenna_id: ant_wqtl318
+    rx:
+      freq_mhz: 451.5375
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wqtl318_451p7375
+    station_id: stn_wqtl318
+    antenna_id: ant_wqtl318
+    rx:
+      freq_mhz: 451.7375
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wqtl318_452p2375
+    station_id: stn_wqtl318
+    antenna_id: ant_wqtl318
+    rx:
+      freq_mhz: 452.2375
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wqtl318_452p7625
+    station_id: stn_wqtl318
+    antenna_id: ant_wqtl318
+    rx:
+      freq_mhz: 452.7625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wqtl318_452p8625
+    station_id: stn_wqtl318
+    antenna_id: ant_wqtl318
+    rx:
+      freq_mhz: 452.8625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- Solverre Apartments / MQMF Chicago Marine Drive (4600 N Marine Dr) (WSCJ367) ---
+  - id: chain_wscj367_451p2375
+    station_id: stn_wscj367
+    antenna_id: ant_wscj367
+    rx:
+      freq_mhz: 451.2375
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wscj367_456p2375
+    station_id: stn_wscj367
+    antenna_id: ant_wscj367
+    rx:
+      freq_mhz: 456.2375
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- The New York Private Residences (3660 N Lake Shore Dr) (WSGT287) ---
+  - id: chain_wsgt287_464p825
+    station_id: stn_wsgt287
+    antenna_id: ant_wsgt287
+    rx:
+      freq_mhz: 464.825
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Repeater output; input not published by source."
+  # --- Renaissance West Apartments (2517 W Fullerton Ave) (WRCU313) ---
+  - id: chain_wrcu313_466p175
+    station_id: stn_wrcu313
+    antenna_id: ant_wrcu313
+    rx:
+      freq_mhz: 466.175
+    tx:
+      emission: "6K00FXE"
+    mode:
+      type: "NXDN"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrcu313_466p225
+    station_id: stn_wrcu313
+    antenna_id: ant_wrcu313
+    rx:
+      freq_mhz: 466.225
+    tx:
+      emission: "6K00FXE"
+    mode:
+      type: "NXDN"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrcu313_466p3
+    station_id: stn_wrcu313
+    antenna_id: ant_wrcu313
+    rx:
+      freq_mhz: 466.3
+    tx:
+      emission: "6K00FXE"
+    mode:
+      type: "NXDN"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrcu313_466p325
+    station_id: stn_wrcu313
+    antenna_id: ant_wrcu313
+    rx:
+      freq_mhz: 466.325
+    tx:
+      emission: "6K00FXE"
+    mode:
+      type: "NXDN"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrcu313_466p375
+    station_id: stn_wrcu313
+    antenna_id: ant_wrcu313
+    rx:
+      freq_mhz: 466.375
+    tx:
+      emission: "6K00FXE"
+    mode:
+      type: "NXDN"
+      notes: "Portable/mobile frequency; short range."
+  # --- United Winthrop Tower Cooperative (4848 N Winthrop Ave) (WREP596) ---
+  - id: chain_wrep596_451p5625
+    station_id: stn_wrep596
+    antenna_id: ant_wrep596
+    rx:
+      freq_mhz: 451.5625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrep596_452p2875
+    station_id: stn_wrep596
+    antenna_id: ant_wrep596
+    rx:
+      freq_mhz: 452.2875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrep596_452p5125
+    station_id: stn_wrep596
+    antenna_id: ant_wrep596
+    rx:
+      freq_mhz: 452.5125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrep596_452p8875
+    station_id: stn_wrep596
+    antenna_id: ant_wrep596
+    rx:
+      freq_mhz: 452.8875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrep596_452p9875
+    station_id: stn_wrep596
+    antenna_id: ant_wrep596
+    rx:
+      freq_mhz: 452.9875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- Wrigleyville Lofts (949 W Dakin St) (WROD666) ---
+  - id: chain_wrod666_456p325
+    station_id: stn_wrod666
+    antenna_id: ant_wrod666
+    rx:
+      freq_mhz: 456.325
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrod666_457p1
+    station_id: stn_wrod666
+    antenna_id: ant_wrod666
+    rx:
+      freq_mhz: 457.1
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrod666_457p225
+    station_id: stn_wrod666
+    antenna_id: ant_wrod666
+    rx:
+      freq_mhz: 457.225
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrod666_466p025
+    station_id: stn_wrod666
+    antenna_id: ant_wrod666
+    rx:
+      freq_mhz: 466.025
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrod666_468p875
+    station_id: stn_wrod666
+    antenna_id: ant_wrod666
+    rx:
+      freq_mhz: 468.875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- Cubby Bear Lounge (1059 W Addison St) (WQKI514) ---
+  - id: chain_wqki514_451p5125
+    station_id: stn_wqki514
+    antenna_id: ant_wqki514
+    rx:
+      freq_mhz: 451.5125
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wqki514_451p6875
+    station_id: stn_wqki514
+    antenna_id: ant_wqki514
+    rx:
+      freq_mhz: 451.6875
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wqki514_456p5125
+    station_id: stn_wqki514
+    antenna_id: ant_wqki514
+    rx:
+      freq_mhz: 456.5125
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wqki514_456p6875
+    station_id: stn_wqki514
+    antenna_id: ant_wqki514
+    rx:
+      freq_mhz: 456.6875
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Portable/mobile frequency; short range."
+  # --- Winston Towers #5 (7141 N Kedzie Ave) (WRXA597) ---
+  - id: chain_wrxa597_451p3625
+    station_id: stn_wrxa597
+    antenna_id: ant_wrxa597
+    rx:
+      freq_mhz: 451.3625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrxa597_462p2875
+    station_id: stn_wrxa597
+    antenna_id: ant_wrxa597
+    rx:
+      freq_mhz: 462.2875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrxa597_462p3125
+    station_id: stn_wrxa597
+    antenna_id: ant_wrxa597
+    rx:
+      freq_mhz: 462.3125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrxa597_467p2875
+    station_id: stn_wrxa597
+    antenna_id: ant_wrxa597
+    rx:
+      freq_mhz: 467.2875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wrxa597_467p3125
+    station_id: stn_wrxa597
+    antenna_id: ant_wrxa597
+    rx:
+      freq_mhz: 467.3125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  # --- Moody Church (1635 N LaSalle Dr) (WSAQ430) ---
+  - id: chain_wsaq430_457p025
+    station_id: stn_wsaq430
+    antenna_id: ant_wsaq430
+    rx:
+      freq_mhz: 457.025
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wsaq430_457p1
+    station_id: stn_wsaq430
+    antenna_id: ant_wsaq430
+    rx:
+      freq_mhz: 457.1
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wsaq430_457p2
+    station_id: stn_wsaq430
+    antenna_id: ant_wsaq430
+    rx:
+      freq_mhz: 457.2
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wsaq430_457p225
+    station_id: stn_wsaq430
+    antenna_id: ant_wsaq430
+    rx:
+      freq_mhz: 457.225
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wsaq430_457p25
+    station_id: stn_wsaq430
+    antenna_id: ant_wsaq430
+    rx:
+      freq_mhz: 457.25
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wsaq430_457p35
+    station_id: stn_wsaq430
+    antenna_id: ant_wsaq430
+    rx:
+      freq_mhz: 457.35
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wsaq430_457p45
+    station_id: stn_wsaq430
+    antenna_id: ant_wsaq430
+    rx:
+      freq_mhz: 457.45
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wsaq430_457p8
+    station_id: stn_wsaq430
+    antenna_id: ant_wsaq430
+    rx:
+      freq_mhz: 457.8
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wsaq430_468p25
+    station_id: stn_wsaq430
+    antenna_id: ant_wsaq430
+    rx:
+      freq_mhz: 468.25
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+  - id: chain_wsaq430_468p875
+    station_id: stn_wsaq430
+    antenna_id: ant_wsaq430
+    rx:
+      freq_mhz: 468.875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Portable/mobile frequency; short range."
+
+assignments:
+  - id: asgn_wqnc265_151p655
+    channel_name: "WQNC265 151.655"
+    rf_chain_id: chain_wqnc265_151p655
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wqnc265_151p955
+    channel_name: "WQNC265 151.955"
+    rf_chain_id: chain_wqnc265_151p955
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wsaw401_464p15
+    channel_name: "WSAW401 464.15"
+    rf_chain_id: chain_wsaw401_464p15
+    usage: "repeater"
+    authorization_id: auth_biz_active
+  - id: asgn_wsaw401_469p15
+    channel_name: "WSAW401 469.15"
+    rf_chain_id: chain_wsaw401_469p15
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wsaw401_462p1
+    channel_name: "WSAW401 462.1"
+    rf_chain_id: chain_wsaw401_462p1
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wsaw401_464p7875
+    channel_name: "WSAW401 464.7875"
+    rf_chain_id: chain_wsaw401_464p7875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wroz989_461p6625
+    channel_name: "WROZ989 461.6625"
+    rf_chain_id: chain_wroz989_461p6625
+    usage: "repeater"
+    authorization_id: auth_biz_active
+  - id: asgn_wroz989_457p1
+    channel_name: "WROZ989 457.1"
+    rf_chain_id: chain_wroz989_457p1
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wroz989_457p225
+    channel_name: "WROZ989 457.225"
+    rf_chain_id: chain_wroz989_457p225
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wroz989_457p25
+    channel_name: "WROZ989 457.25"
+    rf_chain_id: chain_wroz989_457p25
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wroz989_457p35
+    channel_name: "WROZ989 457.35"
+    rf_chain_id: chain_wroz989_457p35
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wroz989_468p875
+    channel_name: "WROZ989 468.875"
+    rf_chain_id: chain_wroz989_468p875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wqfq228_463p4125
+    channel_name: "WQFQ228 463.4125"
+    rf_chain_id: chain_wqfq228_463p4125
+    usage: "repeater"
+    authorization_id: auth_biz_active
+  - id: asgn_wqfq228_467p7625
+    channel_name: "WQFQ228 467.7625"
+    rf_chain_id: chain_wqfq228_467p7625
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wqfq228_467p875
+    channel_name: "WQFQ228 467.875"
+    rf_chain_id: chain_wqfq228_467p875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wryn967_456p3875
+    channel_name: "WRYN967 456.3875"
+    rf_chain_id: chain_wryn967_456p3875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wryn967_462p025
+    channel_name: "WRYN967 462.025"
+    rf_chain_id: chain_wryn967_462p025
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wryn967_464p15
+    channel_name: "WRYN967 464.15"
+    rf_chain_id: chain_wryn967_464p15
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wryn967_467p025
+    channel_name: "WRYN967 467.025"
+    rf_chain_id: chain_wryn967_467p025
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wryn967_469p15
+    channel_name: "WRYN967 469.15"
+    rf_chain_id: chain_wryn967_469p15
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrcw601_463p5125
+    channel_name: "WRCW601 463.5125"
+    rf_chain_id: chain_wrcw601_463p5125
+    usage: "repeater"
+    authorization_id: auth_biz_active
+  - id: asgn_wrcw601_466p15
+    channel_name: "WRCW601 466.15"
+    rf_chain_id: chain_wrcw601_466p15
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrcw601_466p175
+    channel_name: "WRCW601 466.175"
+    rf_chain_id: chain_wrcw601_466p175
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrcw601_466p2
+    channel_name: "WRCW601 466.2"
+    rf_chain_id: chain_wrcw601_466p2
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrcw601_466p225
+    channel_name: "WRCW601 466.225"
+    rf_chain_id: chain_wrcw601_466p225
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrcw601_466p25
+    channel_name: "WRCW601 466.25"
+    rf_chain_id: chain_wrcw601_466p25
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wskm439_462p2
+    channel_name: "WSKM439 462.2"
+    rf_chain_id: chain_wskm439_462p2
+    usage: "repeater"
+    authorization_id: auth_biz_active
+  - id: asgn_wskm439_462p425
+    channel_name: "WSKM439 462.425"
+    rf_chain_id: chain_wskm439_462p425
+    usage: "repeater"
+    authorization_id: auth_biz_active
+  - id: asgn_wskm439_462p025
+    channel_name: "WSKM439 462.025"
+    rf_chain_id: chain_wskm439_462p025
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wskm439_462p525
+    channel_name: "WSKM439 462.525"
+    rf_chain_id: chain_wskm439_462p525
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wskm439_467p525
+    channel_name: "WSKM439 467.525"
+    rf_chain_id: chain_wskm439_467p525
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrjm838_457p05
+    channel_name: "WRJM838 457.05"
+    rf_chain_id: chain_wrjm838_457p05
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrjm838_457p2
+    channel_name: "WRJM838 457.2"
+    rf_chain_id: chain_wrjm838_457p2
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrjm838_457p4
+    channel_name: "WRJM838 457.4"
+    rf_chain_id: chain_wrjm838_457p4
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrjm838_457p45
+    channel_name: "WRJM838 457.45"
+    rf_chain_id: chain_wrjm838_457p45
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrjm838_457p55
+    channel_name: "WRJM838 457.55"
+    rf_chain_id: chain_wrjm838_457p55
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wsjp953_451p7125
+    channel_name: "WSJP953 451.7125"
+    rf_chain_id: chain_wsjp953_451p7125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wsjp953_452p1875
+    channel_name: "WSJP953 452.1875"
+    rf_chain_id: chain_wsjp953_452p1875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wsjp953_456p7125
+    channel_name: "WSJP953 456.7125"
+    rf_chain_id: chain_wsjp953_456p7125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wsjp953_457p1875
+    channel_name: "WSJP953 457.1875"
+    rf_chain_id: chain_wsjp953_457p1875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrxb606_456p325
+    channel_name: "WRXB606 456.325"
+    rf_chain_id: chain_wrxb606_456p325
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrxb606_457p2
+    channel_name: "WRXB606 457.2"
+    rf_chain_id: chain_wrxb606_457p2
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrxb606_457p45
+    channel_name: "WRXB606 457.45"
+    rf_chain_id: chain_wrxb606_457p45
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrxb606_457p8
+    channel_name: "WRXB606 457.8"
+    rf_chain_id: chain_wrxb606_457p8
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrxb606_466p275
+    channel_name: "WRXB606 466.275"
+    rf_chain_id: chain_wrxb606_466p275
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrxk699_151p535
+    channel_name: "WRXK699 151.535"
+    rf_chain_id: chain_wrxk699_151p535
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrxk699_152p945
+    channel_name: "WRXK699 152.945"
+    rf_chain_id: chain_wrxk699_152p945
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrxk699_159p945
+    channel_name: "WRXK699 159.945"
+    rf_chain_id: chain_wrxk699_159p945
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrxk699_160p02
+    channel_name: "WRXK699 160.02"
+    rf_chain_id: chain_wrxk699_160p02
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrxk699_160p14
+    channel_name: "WRXK699 160.14"
+    rf_chain_id: chain_wrxk699_160p14
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrzb261_464p8625
+    channel_name: "WRZB261 464.8625"
+    rf_chain_id: chain_wrzb261_464p8625
+    usage: "repeater"
+    authorization_id: auth_biz_active
+  - id: asgn_wrwu491_456p4625
+    channel_name: "WRWU491 456.4625"
+    rf_chain_id: chain_wrwu491_456p4625
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrwu491_456p5875
+    channel_name: "WRWU491 456.5875"
+    rf_chain_id: chain_wrwu491_456p5875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrwu491_456p6875
+    channel_name: "WRWU491 456.6875"
+    rf_chain_id: chain_wrwu491_456p6875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrwu491_457p6625
+    channel_name: "WRWU491 457.6625"
+    rf_chain_id: chain_wrwu491_457p6625
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrwu491_457p7125
+    channel_name: "WRWU491 457.7125"
+    rf_chain_id: chain_wrwu491_457p7125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrwu491_457p7875
+    channel_name: "WRWU491 457.7875"
+    rf_chain_id: chain_wrwu491_457p7875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrzu968_466p15
+    channel_name: "WRZU968 466.15"
+    rf_chain_id: chain_wrzu968_466p15
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrzu968_466p175
+    channel_name: "WRZU968 466.175"
+    rf_chain_id: chain_wrzu968_466p175
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrzu968_466p2
+    channel_name: "WRZU968 466.2"
+    rf_chain_id: chain_wrzu968_466p2
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrzu968_466p225
+    channel_name: "WRZU968 466.225"
+    rf_chain_id: chain_wrzu968_466p225
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrzu968_466p25
+    channel_name: "WRZU968 466.25"
+    rf_chain_id: chain_wrzu968_466p25
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrye334_457p2
+    channel_name: "WRYE334 457.2"
+    rf_chain_id: chain_wrye334_457p2
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrye334_457p45
+    channel_name: "WRYE334 457.45"
+    rf_chain_id: chain_wrye334_457p45
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrye334_457p8
+    channel_name: "WRYE334 457.8"
+    rf_chain_id: chain_wrye334_457p8
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrye334_466p05
+    channel_name: "WRYE334 466.05"
+    rf_chain_id: chain_wrye334_466p05
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrye334_466p075
+    channel_name: "WRYE334 466.075"
+    rf_chain_id: chain_wrye334_466p075
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrxa599_466p125
+    channel_name: "WRXA599 466.125"
+    rf_chain_id: chain_wrxa599_466p125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrxa599_466p15
+    channel_name: "WRXA599 466.15"
+    rf_chain_id: chain_wrxa599_466p15
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrxa599_466p175
+    channel_name: "WRXA599 466.175"
+    rf_chain_id: chain_wrxa599_466p175
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrxa599_466p25
+    channel_name: "WRXA599 466.25"
+    rf_chain_id: chain_wrxa599_466p25
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrxa599_466p325
+    channel_name: "WRXA599 466.325"
+    rf_chain_id: chain_wrxa599_466p325
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrfb621_451p4125
+    channel_name: "WRFB621 451.4125"
+    rf_chain_id: chain_wrfb621_451p4125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrfb621_456p4125
+    channel_name: "WRFB621 456.4125"
+    rf_chain_id: chain_wrfb621_456p4125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wsjq485_452p5
+    channel_name: "WSJQ485 452.5"
+    rf_chain_id: chain_wsjq485_452p5
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wsjq485_457p5
+    channel_name: "WSJQ485 457.5"
+    rf_chain_id: chain_wsjq485_457p5
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wsjq485_458
+    channel_name: "WSJQ485 458"
+    rf_chain_id: chain_wsjq485_458
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wsjq485_466p9875
+    channel_name: "WSJQ485 466.9875"
+    rf_chain_id: chain_wsjq485_466p9875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wskb339_461p025
+    channel_name: "WSKB339 461.025"
+    rf_chain_id: chain_wskb339_461p025
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wskb339_461p075
+    channel_name: "WSKB339 461.075"
+    rf_chain_id: chain_wskb339_461p075
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wskb339_461p125
+    channel_name: "WSKB339 461.125"
+    rf_chain_id: chain_wskb339_461p125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wskb339_461p275
+    channel_name: "WSKB339 461.275"
+    rf_chain_id: chain_wskb339_461p275
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wskb339_461p3
+    channel_name: "WSKB339 461.3"
+    rf_chain_id: chain_wskb339_461p3
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrwu490_451p3875
+    channel_name: "WRWU490 451.3875"
+    rf_chain_id: chain_wrwu490_451p3875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrwu490_451p5375
+    channel_name: "WRWU490 451.5375"
+    rf_chain_id: chain_wrwu490_451p5375
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrwu490_452p1625
+    channel_name: "WRWU490 452.1625"
+    rf_chain_id: chain_wrwu490_452p1625
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrwu490_452p6875
+    channel_name: "WRWU490 452.6875"
+    rf_chain_id: chain_wrwu490_452p6875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrwu490_452p7625
+    channel_name: "WRWU490 452.7625"
+    rf_chain_id: chain_wrwu490_452p7625
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrwu490_452p9875
+    channel_name: "WRWU490 452.9875"
+    rf_chain_id: chain_wrwu490_452p9875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrmi715_464p1625
+    channel_name: "WRMI715 464.1625"
+    rf_chain_id: chain_wrmi715_464p1625
+    usage: "repeater"
+    authorization_id: auth_biz_active
+  - id: asgn_wrmi715_456p6625
+    channel_name: "WRMI715 456.6625"
+    rf_chain_id: chain_wrmi715_456p6625
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrmi715_469p1625
+    channel_name: "WRMI715 469.1625"
+    rf_chain_id: chain_wrmi715_469p1625
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wqwp256_456p9125
+    channel_name: "WQWP256 456.9125"
+    rf_chain_id: chain_wqwp256_456p9125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wqwp256_457p2
+    channel_name: "WQWP256 457.2"
+    rf_chain_id: chain_wqwp256_457p2
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wqwp256_457p45
+    channel_name: "WQWP256 457.45"
+    rf_chain_id: chain_wqwp256_457p45
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wqwp256_457p8
+    channel_name: "WQWP256 457.8"
+    rf_chain_id: chain_wqwp256_457p8
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wqpp355_461p55
+    channel_name: "WQPP355 461.55"
+    rf_chain_id: chain_wqpp355_461p55
+    usage: "repeater"
+    authorization_id: auth_biz_active
+  - id: asgn_wqpp355_451p2875
+    channel_name: "WQPP355 451.2875"
+    rf_chain_id: chain_wqpp355_451p2875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wqpp355_466p5
+    channel_name: "WQPP355 466.5"
+    rf_chain_id: chain_wqpp355_466p5
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wqpp355_451p1875
+    channel_name: "WQPP355 451.1875"
+    rf_chain_id: chain_wqpp355_451p1875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wqqk701_468p2375
+    channel_name: "WQQK701 468.2375"
+    rf_chain_id: chain_wqqk701_468p2375
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrfb378_462p1625
+    channel_name: "WRFB378 462.1625"
+    rf_chain_id: chain_wrfb378_462p1625
+    usage: "repeater"
+    authorization_id: auth_biz_active
+  - id: asgn_wrfb378_461p775
+    channel_name: "WRFB378 461.775"
+    rf_chain_id: chain_wrfb378_461p775
+    usage: "repeater"
+    authorization_id: auth_biz_active
+  - id: asgn_wrfb378_457p1
+    channel_name: "WRFB378 457.1"
+    rf_chain_id: chain_wrfb378_457p1
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrfb378_457p35
+    channel_name: "WRFB378 457.35"
+    rf_chain_id: chain_wrfb378_457p35
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrfb378_468p225
+    channel_name: "WRFB378 468.225"
+    rf_chain_id: chain_wrfb378_468p225
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrfb378_468p875
+    channel_name: "WRFB378 468.875"
+    rf_chain_id: chain_wrfb378_468p875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wqtl318_451p1875
+    channel_name: "WQTL318 451.1875"
+    rf_chain_id: chain_wqtl318_451p1875
+    usage: "simplex"
+    authorization_id: auth_biz_expired
+  - id: asgn_wqtl318_451p5375
+    channel_name: "WQTL318 451.5375"
+    rf_chain_id: chain_wqtl318_451p5375
+    usage: "simplex"
+    authorization_id: auth_biz_expired
+  - id: asgn_wqtl318_451p7375
+    channel_name: "WQTL318 451.7375"
+    rf_chain_id: chain_wqtl318_451p7375
+    usage: "simplex"
+    authorization_id: auth_biz_expired
+  - id: asgn_wqtl318_452p2375
+    channel_name: "WQTL318 452.2375"
+    rf_chain_id: chain_wqtl318_452p2375
+    usage: "simplex"
+    authorization_id: auth_biz_expired
+  - id: asgn_wqtl318_452p7625
+    channel_name: "WQTL318 452.7625"
+    rf_chain_id: chain_wqtl318_452p7625
+    usage: "simplex"
+    authorization_id: auth_biz_expired
+  - id: asgn_wqtl318_452p8625
+    channel_name: "WQTL318 452.8625"
+    rf_chain_id: chain_wqtl318_452p8625
+    usage: "simplex"
+    authorization_id: auth_biz_expired
+  - id: asgn_wscj367_451p2375
+    channel_name: "WSCJ367 451.2375"
+    rf_chain_id: chain_wscj367_451p2375
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wscj367_456p2375
+    channel_name: "WSCJ367 456.2375"
+    rf_chain_id: chain_wscj367_456p2375
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wsgt287_464p825
+    channel_name: "WSGT287 464.825"
+    rf_chain_id: chain_wsgt287_464p825
+    usage: "repeater"
+    authorization_id: auth_biz_active
+  - id: asgn_wrcu313_466p175
+    channel_name: "WRCU313 466.175"
+    rf_chain_id: chain_wrcu313_466p175
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrcu313_466p225
+    channel_name: "WRCU313 466.225"
+    rf_chain_id: chain_wrcu313_466p225
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrcu313_466p3
+    channel_name: "WRCU313 466.3"
+    rf_chain_id: chain_wrcu313_466p3
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrcu313_466p325
+    channel_name: "WRCU313 466.325"
+    rf_chain_id: chain_wrcu313_466p325
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrcu313_466p375
+    channel_name: "WRCU313 466.375"
+    rf_chain_id: chain_wrcu313_466p375
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrep596_451p5625
+    channel_name: "WREP596 451.5625"
+    rf_chain_id: chain_wrep596_451p5625
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrep596_452p2875
+    channel_name: "WREP596 452.2875"
+    rf_chain_id: chain_wrep596_452p2875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrep596_452p5125
+    channel_name: "WREP596 452.5125"
+    rf_chain_id: chain_wrep596_452p5125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrep596_452p8875
+    channel_name: "WREP596 452.8875"
+    rf_chain_id: chain_wrep596_452p8875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrep596_452p9875
+    channel_name: "WREP596 452.9875"
+    rf_chain_id: chain_wrep596_452p9875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrod666_456p325
+    channel_name: "WROD666 456.325"
+    rf_chain_id: chain_wrod666_456p325
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrod666_457p1
+    channel_name: "WROD666 457.1"
+    rf_chain_id: chain_wrod666_457p1
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrod666_457p225
+    channel_name: "WROD666 457.225"
+    rf_chain_id: chain_wrod666_457p225
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrod666_466p025
+    channel_name: "WROD666 466.025"
+    rf_chain_id: chain_wrod666_466p025
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrod666_468p875
+    channel_name: "WROD666 468.875"
+    rf_chain_id: chain_wrod666_468p875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wqki514_451p5125
+    channel_name: "WQKI514 451.5125"
+    rf_chain_id: chain_wqki514_451p5125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wqki514_451p6875
+    channel_name: "WQKI514 451.6875"
+    rf_chain_id: chain_wqki514_451p6875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wqki514_456p5125
+    channel_name: "WQKI514 456.5125"
+    rf_chain_id: chain_wqki514_456p5125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wqki514_456p6875
+    channel_name: "WQKI514 456.6875"
+    rf_chain_id: chain_wqki514_456p6875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrxa597_451p3625
+    channel_name: "WRXA597 451.3625"
+    rf_chain_id: chain_wrxa597_451p3625
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrxa597_462p2875
+    channel_name: "WRXA597 462.2875"
+    rf_chain_id: chain_wrxa597_462p2875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrxa597_462p3125
+    channel_name: "WRXA597 462.3125"
+    rf_chain_id: chain_wrxa597_462p3125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrxa597_467p2875
+    channel_name: "WRXA597 467.2875"
+    rf_chain_id: chain_wrxa597_467p2875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wrxa597_467p3125
+    channel_name: "WRXA597 467.3125"
+    rf_chain_id: chain_wrxa597_467p3125
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wsaq430_457p025
+    channel_name: "WSAQ430 457.025"
+    rf_chain_id: chain_wsaq430_457p025
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wsaq430_457p1
+    channel_name: "WSAQ430 457.1"
+    rf_chain_id: chain_wsaq430_457p1
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wsaq430_457p2
+    channel_name: "WSAQ430 457.2"
+    rf_chain_id: chain_wsaq430_457p2
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wsaq430_457p225
+    channel_name: "WSAQ430 457.225"
+    rf_chain_id: chain_wsaq430_457p225
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wsaq430_457p25
+    channel_name: "WSAQ430 457.25"
+    rf_chain_id: chain_wsaq430_457p25
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wsaq430_457p35
+    channel_name: "WSAQ430 457.35"
+    rf_chain_id: chain_wsaq430_457p35
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wsaq430_457p45
+    channel_name: "WSAQ430 457.45"
+    rf_chain_id: chain_wsaq430_457p45
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wsaq430_457p8
+    channel_name: "WSAQ430 457.8"
+    rf_chain_id: chain_wsaq430_457p8
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wsaq430_468p25
+    channel_name: "WSAQ430 468.25"
+    rf_chain_id: chain_wsaq430_468p25
+    usage: "simplex"
+    authorization_id: auth_biz_active
+  - id: asgn_wsaq430_468p875
+    channel_name: "WSAQ430 468.875"
+    rf_chain_id: chain_wsaq430_468p875
+    usage: "simplex"
+    authorization_id: auth_biz_active
+
+comments:
+  - text: |
+      Licensed business/industrial land mobile on the Chicago north side, filtered to the
+      Bucktown-to-Evanston corridor from the RadioReference wiki Chicago business listing.
+      
+      FILTERING: the source page covers all of Chicago. Entries were kept only if they fall
+      roughly north of North Avenue (1600 N) and east of Kedzie (3200 W). Downtown, Loop and
+      Magnificent Mile entries were excluded as being south of Bucktown, and O'Hare-area,
+      far-north-west (East River Road, Newcastle, Narragansett) and west-side (Kostner,
+      Humboldt Park) entries were excluded as off-corridor.
+      
+      WHAT IS ACTUALLY RECEIVABLE: only eleven of these are repeaters. Everything else is a
+      portable/mobile frequency, which is low power and usually indoors, so you generally need
+      to be close to the building. The repeaters are the realistic scanning targets:
+        S & C Electric        462.200 / 462.425   6601 N Ridge Blvd (Rogers Park)
+        Rosehill Cemetery     463.5125            5800 N Ravenswood
+        Lincoln Common        462.1625 / 461.775  2345 N Lincoln
+        Horween Leather       464.150             2150 N Elston (Bucktown)
+        Triangle Square       461.6625            2155 N Elston (Bucktown)
+        Imperial Tower        461.550             4250 N Marine Dr
+        Eugenie Terrace       464.1625            1730 N Clark
+        2650 Lakeview         464.8625            2650 N Lakeview
+        The New York          464.825             3660 N Lake Shore Dr
+        Albany Park Comm Ctr  463.4125            3401 W Ainslie
+      
+      S & C Electric at 6601 N Ridge is the best-placed of these for the Evanston end of the
+      corridor, and Horween and Triangle Square on N Elston cover the Bucktown end.
+      
+      Two VHF licensees are unusual for this band and worth noting: Costco at 2746 N Clybourn
+      (151.655, 151.955) and the 2400 N Lakeview condo association (151.535 through 160.140).
+      
+      SOURCE DATA ISSUES: two frequencies in the source are malformed and were omitted rather
+      than guessed - Commonwealth Plaza lists "4613.9875" (probably 461.9875) and Horizon House
+      lists "456.3265" (not a valid 12.5 kHz channel). The Solverre Apartments and MQMF Chicago
+      Marine Drive entries are the same licensee (WSCJ367, 4600 N Marine Drive) listed twice in
+      the source and are merged here.
+      
+      Repeater input frequencies are not published by the source, so only outputs are recorded.
+      
+      RX-only for the general public per Part 90.
