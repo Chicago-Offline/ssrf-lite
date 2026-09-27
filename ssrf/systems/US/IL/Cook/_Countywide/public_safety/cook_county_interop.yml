@@ -1,39 +1,73 @@
 # yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.6.0.schema.json
-# SSRF-Lite: Cook County Interoperability VHF/UHF (Analogue RX-only)
-# Source: RadioReference Cook County, IL – Interop sections
+# SSRF-Lite: Cook County Interoperability (VHF/UHF conventional, analogue)
 
 $schema: "../../../../../../_schema/ssrf-lite-0.6.0.schema.json"
 ssrf_lite_version: "0.6.0"
+ssrf_lite:
+  sources:
+    - name: "RadioReference - Cook County, IL (Cook County Interoperability)"
+      url: "https://www.radioreference.com/db/browse/ctid/606"
+      accessed: "2026-09-26"
+
 organizations:
   - id: org_cook_interop
     name: "Cook County Interoperability"
 
 locations:
-  - id: loc_cook_interop
-    name: "Cook County Interop (approx)"
+  - id: loc_cook_county
+    name: "Cook County, IL (countywide)"
     lat: 41.8781
     lon: -87.6298
 
 stations:
-  - id: stn_cook_interop
-    call_sign:
+  - id: stn_cook_io_klr279
+    call_sign: "KLR279"
     organization_id: org_cook_interop
-    location_id: loc_cook_interop
+    location_id: loc_cook_county
+    service: "public_safety_part90"
+  - id: stn_cook_io_ksa717
+    call_sign: "KSA717"
+    organization_id: org_cook_interop
+    location_id: loc_cook_county
+    service: "public_safety_part90"
+  - id: stn_cook_io_ksc711
+    call_sign: "KSC711"
+    organization_id: org_cook_interop
+    location_id: loc_cook_county
+    service: "public_safety_part90"
+  - id: stn_cook_io_wqls615
+    call_sign: "WQLS615"
+    organization_id: org_cook_interop
+    location_id: loc_cook_county
     service: "public_safety_part90"
 
 antennas:
-  - id: ant_cook_interop
-    station_id: stn_cook_interop
-    name: "Interop Antenna (unknown)"
-    gain_dbi:
-    height_agl_m:
-    height_amsl_m:
+  - id: ant_cook_io_klr279
+    station_id: stn_cook_io_klr279
+    name: "Cook Interop VHF 1 repeater (site unknown)"
+  - id: ant_cook_io_ksa717
+    station_id: stn_cook_io_ksa717
+    name: "Cook Interop VHF 2-4 repeaters (site unknown)"
+  - id: ant_cook_io_ksc711
+    station_id: stn_cook_io_ksc711
+    name: "Cook Interop V Metro repeaters (site unknown)"
+  - id: ant_cook_io_wqls615
+    station_id: stn_cook_io_wqls615
+    name: "Cook Interop UHF repeaters (site unknown)"
+
+authorizations:
+  - id: auth_cook_io
+    authority: "FCC"
+    service: "public_safety_part90"
+    class: "Part 90 Public Safety / Interoperability"
+    identifier: null
+    notes: "TX restricted to licensed public safety users. RX-only for general public."
 
 rf_chains:
-  # VHF Interop
-  - id: chain_interop_v1
-    station_id: stn_cook_interop
-    antenna_id: ant_cook_interop
+  # Interop VHF 1 // Sheriff Backup (Ch 3)
+  - id: chain_cook_io_v1
+    station_id: stn_cook_io_klr279
+    antenna_id: ant_cook_io_klr279
     rx:
       freq_mhz: 154.995
     tx:
@@ -41,10 +75,13 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_rx_hz: 107.2
+      ctcss_tx_hz: 107.2
+      notes: "Repeater; input frequency not published."
 
-  - id: chain_interop_v2
-    station_id: stn_cook_interop
-    antenna_id: ant_cook_interop
+  # Interop VHF 2 // Sheriff Backup Auxiliary Band 5 (Ch 5)
+  - id: chain_cook_io_v2
+    station_id: stn_cook_io_ksa717
+    antenna_id: ant_cook_io_ksa717
     rx:
       freq_mhz: 155.640
     tx:
@@ -52,10 +89,13 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_rx_hz: 107.2
+      ctcss_tx_hz: 107.2
+      notes: "Repeater; input frequency not published. Analogue counterpart of the Sheriff P25 Ch 5 backup."
 
-  - id: chain_interop_v3
-    station_id: stn_cook_interop
-    antenna_id: ant_cook_interop
+  # Interop VHF 3 // Sheriff Backup Talk-Around (Ch 1)
+  - id: chain_cook_io_v3
+    station_id: stn_cook_io_ksa717
+    antenna_id: ant_cook_io_ksa717
     rx:
       freq_mhz: 155.595
     tx:
@@ -63,10 +103,13 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_rx_hz: 107.2
+      ctcss_tx_hz: 107.2
+      notes: "Repeater; input not published. Marked possibly deprecated - now carries Sheriff Patrol North P25."
 
-  - id: chain_interop_v4
-    station_id: stn_cook_interop
-    antenna_id: ant_cook_interop
+  # Interop VHF 4 // Sheriff Backup South Patrol (Ch 2)
+  - id: chain_cook_io_v4
+    station_id: stn_cook_io_ksa717
+    antenna_id: ant_cook_io_ksa717
     rx:
       freq_mhz: 155.535
     tx:
@@ -74,11 +117,13 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_rx_hz: 107.2
+      ctcss_tx_hz: 107.2
+      notes: "Repeater; input not published. Marked possibly deprecated - now carries Sheriff Patrol South P25."
 
-    # V-Metro channels
-  - id: chain_interop_vmetro3
-    station_id: stn_cook_interop
-    antenna_id: ant_cook_interop
+  # Interop V Metro 3
+  - id: chain_cook_io_vmetro3
+    station_id: stn_cook_io_ksc711
+    antenna_id: ant_cook_io_ksc711
     rx:
       freq_mhz: 153.770
     tx:
@@ -86,10 +131,13 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_rx_hz: 156.7
+      ctcss_tx_hz: 156.7
+      notes: "Repeater; input frequency not published."
 
-  - id: chain_interop_vmetro4
-    station_id: stn_cook_interop
-    antenna_id: ant_cook_interop
+  # Interop V Metro 4
+  - id: chain_cook_io_vmetro4
+    station_id: stn_cook_io_ksc711
+    antenna_id: ant_cook_io_ksc711
     rx:
       freq_mhz: 154.130
     tx:
@@ -97,10 +145,13 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_rx_hz: 156.7
+      ctcss_tx_hz: 156.7
+      notes: "Repeater; input frequency not published."
 
-  - id: chain_interop_vmetro5
-    station_id: stn_cook_interop
-    antenna_id: ant_cook_interop
+  # Interop V Metro 5 (simplex)
+  - id: chain_cook_io_vmetro5
+    station_id: stn_cook_io_ksc711
+    antenna_id: ant_cook_io_ksc711
     rx:
       freq_mhz: 154.220
     tx:
@@ -108,11 +159,12 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_rx_hz: 156.7
+      ctcss_tx_hz: 156.7
 
-    # UHF Interop
-  - id: chain_interop_u1
-    station_id: stn_cook_interop
-    antenna_id: ant_cook_interop
+  # Interop UHF 1
+  - id: chain_cook_io_u1
+    station_id: stn_cook_io_wqls615
+    antenna_id: ant_cook_io_wqls615
     rx:
       freq_mhz: 453.950
     tx:
@@ -120,10 +172,13 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_rx_hz: 141.3
+      ctcss_tx_hz: 141.3
+      notes: "Repeater; input not published. Also licensed for P25."
 
-  - id: chain_interop_u2
-    station_id: stn_cook_interop
-    antenna_id: ant_cook_interop
+  # Interop UHF 2 - full-time ISPERN patch
+  - id: chain_cook_io_u2
+    station_id: stn_cook_io_wqls615
+    antenna_id: ant_cook_io_wqls615
     rx:
       freq_mhz: 453.750
     tx:
@@ -131,41 +186,75 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_rx_hz: 156.7
+      ctcss_tx_hz: 156.7
+      notes: "Repeater; input not published. Full-time patch to ISPERN (155.475). Also licensed for P25."
 
 assignments:
-  - id: asg_interop_v1
-    channel_name: "Cook V1"
-    rf_chain_id: chain_interop_v1
+  - id: asgn_cook_io_v1
+    channel_name: "Cook Interop V1"
+    rf_chain_id: chain_cook_io_v1
     usage: "repeater"
-  - id: asg_interop_v2
-    channel_name: "Cook V2"
-    rf_chain_id: chain_interop_v2
+    authorization_id: auth_cook_io
+  - id: asgn_cook_io_v2
+    channel_name: "Cook Interop V2"
+    rf_chain_id: chain_cook_io_v2
     usage: "repeater"
-  - id: asg_interop_v3
-    channel_name: "Cook V3"
-    rf_chain_id: chain_interop_v3
+    authorization_id: auth_cook_io
+  - id: asgn_cook_io_v3
+    channel_name: "Cook Interop V3"
+    rf_chain_id: chain_cook_io_v3
     usage: "repeater"
-  - id: asg_interop_v4
-    channel_name: "Cook V4"
-    rf_chain_id: chain_interop_v4
+    authorization_id: auth_cook_io
+  - id: asgn_cook_io_v4
+    channel_name: "Cook Interop V4"
+    rf_chain_id: chain_cook_io_v4
     usage: "repeater"
-  - id: asg_interop_vmetro3
-    channel_name: "Cook VMETRO3"
-    rf_chain_id: chain_interop_vmetro3
+    authorization_id: auth_cook_io
+  - id: asgn_cook_io_vmetro3
+    channel_name: "Cook I/O VMetro3"
+    rf_chain_id: chain_cook_io_vmetro3
     usage: "repeater"
-  - id: asg_interop_vmetro4
-    channel_name: "Cook VMETRO4"
-    rf_chain_id: chain_interop_vmetro4
+    authorization_id: auth_cook_io
+  - id: asgn_cook_io_vmetro4
+    channel_name: "Cook I/O VMetro4"
+    rf_chain_id: chain_cook_io_vmetro4
     usage: "repeater"
-  - id: asg_interop_vmetro5
-    channel_name: "Cook VMETRO5"
-    rf_chain_id: chain_interop_vmetro5
+    authorization_id: auth_cook_io
+  - id: asgn_cook_io_vmetro5
+    channel_name: "Cook I/O VMetro5"
+    rf_chain_id: chain_cook_io_vmetro5
+    usage: "simplex"
+    authorization_id: auth_cook_io
+  - id: asgn_cook_io_u1
+    channel_name: "Cook Interop U1"
+    rf_chain_id: chain_cook_io_u1
     usage: "repeater"
-  - id: asg_interop_u1
-    channel_name: "Cook U1"
-    rf_chain_id: chain_interop_u1
+    authorization_id: auth_cook_io
+  - id: asgn_cook_io_u2
+    channel_name: "Cook Interop U2"
+    rf_chain_id: chain_cook_io_u2
     usage: "repeater"
-  - id: asg_interop_u2
-    channel_name: "Cook U2"
-    rf_chain_id: chain_interop_u2
-    usage: "repeater"
+    authorization_id: auth_cook_io
+
+comments:
+  - text: |
+      Cook County interoperability channels. All analogue FM and unencrypted, which makes this
+      the most RX-useful conventional set in the county now that most primary dispatch has
+      moved to encrypted STARCOM21 P25.
+
+      Interop radio tests run Wednesdays at 11:00 local - a reliable way to confirm these are
+      live without waiting for an incident.
+
+      These nine channels do NOT overlap the Illinois statewide interop set already in
+      ssrf/systems/US/IL/_Statewide/public_safety/il_statewide_interop.yml (IFERN, IREACH,
+      ISPERN, PTP, HEAR, VCALL/VTAC, UCALL/UTAC). Cook Interop U2 (453.750) does carry a
+      full-time patch to ISPERN (155.475), which is in that statewide file.
+
+      VHF 2/3/4 share frequencies with the Cook County Sheriff P25 channels (155.640, 155.595,
+      155.535) - they are the same physical channels, with the analogue side retained as
+      backup. VHF 3 and 4 are flagged as possibly deprecated by the source.
+
+      Repeater input frequencies are not published in the source; only outputs are recorded.
+      453.750 and 453.950 are also licensed for P25.
+
+      RX-only for the general public per Part 90.

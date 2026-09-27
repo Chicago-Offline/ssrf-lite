@@ -1,0 +1,414 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.6.0.schema.json
+# SSRF-Lite: Cook County Sheriff (VHF conventional fallback + P25 multicast)
+
+$schema: "../../../../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
+ssrf_lite:
+  sources:
+    - name: "RadioReference - Cook County, IL (Sheriff)"
+      url: "https://www.radioreference.com/db/browse/ctid/606"
+      accessed: "2026-09-26"
+
+organizations:
+  - id: org_cook_sheriff
+    name: "Cook County Sheriff's Office"
+  - id: org_cook_doc
+    name: "Cook County Sheriff - Corrections and Courts"
+
+locations:
+  - id: loc_cook_county
+    name: "Cook County, IL (countywide)"
+    lat: 41.8781
+    lon: -87.6298
+  - id: loc_cook_doc
+    name: "Cook County Corrections / Courts complex, 26th and California, Chicago"
+    lat: 41.8420
+    lon: -87.6950
+
+stations:
+  # --- P25 (STARCOM21 multicast / backup) ---
+  - id: stn_cook_shrf_ksa717_p25
+    call_sign: "KSA717"
+    organization_id: org_cook_sheriff
+    location_id: loc_cook_county
+    service: "public_safety_part90"
+  - id: stn_cook_shrf_kfm495_p25
+    call_sign: "KFM495"
+    organization_id: org_cook_sheriff
+    location_id: loc_cook_county
+    service: "public_safety_part90"
+
+  # --- Analogue field ops (107.2 PL group) ---
+  - id: stn_cook_shrf_kl6889
+    call_sign: "KL6889"
+    organization_id: org_cook_sheriff
+    location_id: loc_cook_county
+    service: "public_safety_part90"
+  - id: stn_cook_shrf_ksa718_ops
+    call_sign: "KSA718"
+    organization_id: org_cook_sheriff
+    location_id: loc_cook_county
+    service: "public_safety_part90"
+  - id: stn_cook_shrf_kq6542_ops
+    call_sign: "KQ6542"
+    organization_id: org_cook_sheriff
+    location_id: loc_cook_county
+    service: "public_safety_part90"
+  - id: stn_cook_shrf_kzu879_ops
+    call_sign: "KZU879"
+    organization_id: org_cook_sheriff
+    location_id: loc_cook_county
+    service: "public_safety_part90"
+
+  # --- Corrections / Courts (173.8 PL group) ---
+  - id: stn_cook_doc_ksa718
+    call_sign: "KSA718"
+    organization_id: org_cook_doc
+    location_id: loc_cook_doc
+    service: "public_safety_part90"
+  - id: stn_cook_doc_kq6542
+    call_sign: "KQ6542"
+    organization_id: org_cook_doc
+    location_id: loc_cook_doc
+    service: "public_safety_part90"
+  - id: stn_cook_doc_kzu879
+    call_sign: "KZU879"
+    organization_id: org_cook_doc
+    location_id: loc_cook_doc
+    service: "public_safety_part90"
+
+antennas:
+  - id: ant_cook_shrf_ksa717_p25
+    station_id: stn_cook_shrf_ksa717_p25
+    name: "Sheriff patrol P25 (site unknown)"
+  - id: ant_cook_shrf_kfm495_p25
+    station_id: stn_cook_shrf_kfm495_p25
+    name: "Sheriff backup ops repeater (site unknown)"
+  - id: ant_cook_shrf_kl6889
+    station_id: stn_cook_shrf_kl6889
+    name: "Sheriff car-to-car (mobile/portable)"
+  - id: ant_cook_shrf_ksa718_ops
+    station_id: stn_cook_shrf_ksa718_ops
+    name: "Sheriff alternate/tactical (mobile/portable)"
+  - id: ant_cook_shrf_kq6542_ops
+    station_id: stn_cook_shrf_kq6542_ops
+    name: "Sheriff tactical/rebroadcast (mobile/portable)"
+  - id: ant_cook_shrf_kzu879_ops
+    station_id: stn_cook_shrf_kzu879_ops
+    name: "Sheriff tactical (mobile/portable)"
+  - id: ant_cook_doc_ksa718
+    station_id: stn_cook_doc_ksa718
+    name: "Corrections transport (mobile/portable)"
+  - id: ant_cook_doc_kq6542
+    station_id: stn_cook_doc_kq6542
+    name: "Courts / jail (mobile/portable)"
+  - id: ant_cook_doc_kzu879
+    station_id: stn_cook_doc_kzu879
+    name: "Jail (mobile/portable)"
+
+authorizations:
+  - id: auth_cook_sheriff
+    authority: "FCC"
+    service: "public_safety_part90"
+    class: "Part 90 Public Safety"
+    identifier: null
+    notes: "TX restricted to licensees. RX-only for general public."
+
+rf_chains:
+  # --- P25 ---
+  # Patrol North, multicast with STARCOM21 TG 25086. NAC 0x293 = 659.
+  - id: chain_cook_shrf_patrol_n
+    station_id: stn_cook_shrf_ksa717_p25
+    antenna_id: ant_cook_shrf_ksa717_p25
+    rx:
+      freq_mhz: 155.595
+    tx:
+      emission: "8K10F1E"
+    mode:
+      type: "P25"
+      nac: 659
+      notes: "NAC 0x293. Encrypted. Multicast with STARCOM21 TG 25086."
+
+  # Patrol South, multicast with STARCOM21 TG 25087. ~99% encrypted.
+  - id: chain_cook_shrf_patrol_s
+    station_id: stn_cook_shrf_ksa717_p25
+    antenna_id: ant_cook_shrf_ksa717_p25
+    rx:
+      freq_mhz: 155.535
+    tx:
+      emission: "8K10F1E"
+    mode:
+      type: "P25"
+      nac: 659
+      notes: "NAC 0x293. Approximately 99 percent encrypted. Multicast with STARCOM21 TG 25087."
+
+  # Backup Ops (Auxiliary Band 5) [Ch 5]
+  - id: chain_cook_shrf_ops_backup
+    station_id: stn_cook_shrf_kfm495_p25
+    antenna_id: ant_cook_shrf_kfm495_p25
+    rx:
+      freq_mhz: 155.640
+    tx:
+      emission: "8K10F1E"
+    mode:
+      type: "P25"
+      nac: 659
+      notes: "NAC 0x293. Backup Sheriff Ops, Auxiliary Band 5, Ch 5. Repeater; input not published."
+
+  # --- Analogue field ops (107.2 PL) ---
+  # Car-to-Car [Ch 6]
+  - id: chain_cook_shrf_c2c6
+    station_id: stn_cook_shrf_kl6889
+    antenna_id: ant_cook_shrf_kl6889
+    rx:
+      freq_mhz: 153.905
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 107.2
+      ctcss_tx_hz: 107.2
+
+  # Alternate [Ch 7]
+  - id: chain_cook_shrf_alt7
+    station_id: stn_cook_shrf_ksa718_ops
+    antenna_id: ant_cook_shrf_ksa718_ops
+    rx:
+      freq_mhz: 159.090
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 107.2
+      ctcss_tx_hz: 107.2
+
+  # Tactical / Emergency Management [Ch 14]
+  - id: chain_cook_shrf_tac14
+    station_id: stn_cook_shrf_ksa718_ops
+    antenna_id: ant_cook_shrf_ksa718_ops
+    rx:
+      freq_mhz: 158.865
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 107.2
+      ctcss_tx_hz: 107.2
+
+  # Rebroadcast of 155.535R (Patrol South)
+  - id: chain_cook_shrf_alt7_rebroadcast
+    station_id: stn_cook_shrf_kq6542_ops
+    antenna_id: ant_cook_shrf_kq6542_ops
+    rx:
+      freq_mhz: 159.090
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 173.8
+      ctcss_tx_hz: 173.8
+      notes: "Analogue rebroadcast of the 155.535 Patrol South repeater."
+
+  # Tactical [Ch 9]
+  - id: chain_cook_shrf_tac9
+    station_id: stn_cook_shrf_kq6542_ops
+    antenna_id: ant_cook_shrf_kq6542_ops
+    rx:
+      freq_mhz: 153.845
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 107.2
+      ctcss_tx_hz: 107.2
+
+  # Tactical [Ch 12]
+  - id: chain_cook_shrf_tac12
+    station_id: stn_cook_shrf_kzu879_ops
+    antenna_id: ant_cook_shrf_kzu879_ops
+    rx:
+      freq_mhz: 153.815
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 107.2
+      ctcss_tx_hz: 107.2
+
+  # --- Corrections / Courts (173.8 PL) ---
+  # 153.845 / 173.8 carries BOTH Courts [Ch 10] and Jail [Ch 3]
+  - id: chain_cook_doc_courts_jail3
+    station_id: stn_cook_doc_kq6542
+    antenna_id: ant_cook_doc_kq6542
+    rx:
+      freq_mhz: 153.845
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 173.8
+      ctcss_tx_hz: 173.8
+      notes: "Single channel listed twice by the source: Courts [Ch 10] and Jail [Ch 3]."
+
+  # 154.025 / 173.8 carries BOTH Tactical [Ch 11] and Jail [Ch 2]
+  - id: chain_cook_doc_tac11_jail2
+    station_id: stn_cook_doc_kzu879
+    antenna_id: ant_cook_doc_kzu879
+    rx:
+      freq_mhz: 154.025
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 173.8
+      ctcss_tx_hz: 173.8
+      notes: "Single channel listed twice by the source: Tactical [Ch 11] and Jail [Ch 2]."
+
+  # Jail, Surveillance [Ch 1]
+  - id: chain_cook_doc_jail1
+    station_id: stn_cook_doc_kzu879
+    antenna_id: ant_cook_doc_kzu879
+    rx:
+      freq_mhz: 153.815
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 173.8
+      ctcss_tx_hz: 173.8
+
+  # Corrections Vans / Transportation [Ch 4]
+  - id: chain_cook_doc_jail4
+    station_id: stn_cook_doc_ksa718
+    antenna_id: ant_cook_doc_ksa718
+    rx:
+      freq_mhz: 158.865
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 173.8
+      ctcss_tx_hz: 173.8
+
+contacts:
+  - id: tg_sc21_25086
+    name: "Cook Sheriff N"
+    kind: "Group"
+    number: 25086
+    notes: "STARCOM21 P25 Phase II. Sheriff Patrol North; multicast with 155.595. Encrypted."
+  - id: tg_sc21_25087
+    name: "Cook Sheriff S"
+    kind: "Group"
+    number: 25087
+    notes: "STARCOM21 P25 Phase II. Sheriff Patrol South; multicast with 155.535. Approx 99 percent encrypted."
+  - id: tg_sc21_25049
+    name: "Cook Highway N"
+    kind: "Group"
+    number: 25049
+    notes: "STARCOM21 P25 Phase II. Cook County Highway North, 500-series sites. Encrypted."
+  - id: tg_sc21_25050
+    name: "Cook Highway S"
+    kind: "Group"
+    number: 25050
+    notes: "STARCOM21 P25 Phase II. Cook County Highway South, 500-series sites. Encrypted."
+
+assignments:
+  - id: asgn_cook_shrf_patrol_n
+    channel_name: "Cook Sheriff N"
+    rf_chain_id: chain_cook_shrf_patrol_n
+    usage: "simplex"
+    authorization_id: auth_cook_sheriff
+  - id: asgn_cook_shrf_patrol_s
+    channel_name: "Cook Sheriff S"
+    rf_chain_id: chain_cook_shrf_patrol_s
+    usage: "simplex"
+    authorization_id: auth_cook_sheriff
+  - id: asgn_cook_shrf_ops_backup
+    channel_name: "Cook Sheriff 64"
+    rf_chain_id: chain_cook_shrf_ops_backup
+    usage: "repeater"
+    authorization_id: auth_cook_sheriff
+  - id: asgn_cook_shrf_c2c6
+    channel_name: "Cook Shrf C2C6"
+    rf_chain_id: chain_cook_shrf_c2c6
+    usage: "simplex"
+    authorization_id: auth_cook_sheriff
+  - id: asgn_cook_shrf_alt7
+    channel_name: "Cook Shrf Alt7"
+    rf_chain_id: chain_cook_shrf_alt7
+    usage: "simplex"
+    authorization_id: auth_cook_sheriff
+  - id: asgn_cook_shrf_tac14
+    channel_name: "Cook Shrf Tac14"
+    rf_chain_id: chain_cook_shrf_tac14
+    usage: "simplex"
+    authorization_id: auth_cook_sheriff
+  - id: asgn_cook_shrf_alt7_rebroadcast
+    channel_name: "Cook Shrf*Alt7"
+    rf_chain_id: chain_cook_shrf_alt7_rebroadcast
+    usage: "simplex"
+    authorization_id: auth_cook_sheriff
+  - id: asgn_cook_shrf_tac9
+    channel_name: "Cook Shrf Tac 9"
+    rf_chain_id: chain_cook_shrf_tac9
+    usage: "simplex"
+    authorization_id: auth_cook_sheriff
+  - id: asgn_cook_shrf_tac12
+    channel_name: "Cook Shrf Tac12"
+    rf_chain_id: chain_cook_shrf_tac12
+    usage: "simplex"
+    authorization_id: auth_cook_sheriff
+  - id: asgn_cook_shrf_court
+    channel_name: "Cook Shrf Court"
+    rf_chain_id: chain_cook_doc_courts_jail3
+    usage: "simplex"
+    authorization_id: auth_cook_sheriff
+  - id: asgn_cook_shrf_jail3
+    channel_name: "Cook Shrf Jail 3"
+    rf_chain_id: chain_cook_doc_courts_jail3
+    usage: "simplex"
+    authorization_id: auth_cook_sheriff
+  - id: asgn_cook_shrf_tac11
+    channel_name: "Cook Shrf Tac11"
+    rf_chain_id: chain_cook_doc_tac11_jail2
+    usage: "simplex"
+    authorization_id: auth_cook_sheriff
+  - id: asgn_cook_shrf_jail2
+    channel_name: "Cook Shrf Jail 2"
+    rf_chain_id: chain_cook_doc_tac11_jail2
+    usage: "simplex"
+    authorization_id: auth_cook_sheriff
+  - id: asgn_cook_shrf_jail1
+    channel_name: "Cook Shrf Jail 1"
+    rf_chain_id: chain_cook_doc_jail1
+    usage: "simplex"
+    authorization_id: auth_cook_sheriff
+  - id: asgn_cook_shrf_jail4
+    channel_name: "Cook Shrf Jail 4"
+    rf_chain_id: chain_cook_doc_jail4
+    usage: "simplex"
+    authorization_id: auth_cook_sheriff
+
+comments:
+  - text: |
+      Cook County Sheriff. Primary Sheriff and County Jail operations now run on STARCOM21
+      (P25 Phase II) sites 501/502/503 and are encrypted; the VHF channels here are the
+      documented fallback system plus the two multicast patrol channels.
+
+      The Sheriff's Police 911 Center also dispatches police for Berkeley, Blue Island,
+      Chicago Heights, Cook County Forest Preserve, Crestwood, Golf, Harvey, Hometown,
+      Indian Head Park, Lyons, Merrionette Park, Metra, Palos Park, Park Ridge, Phoenix,
+      Prairie State College, Robbins and Worth, plus the State's Attorney's Investigators.
+
+      Tone groups: 107.2 PL is the countywide field/tactical group; 173.8 PL is the
+      corrections and courts group, modelled here at the 26th and California complex so the
+      two groups stay distinguishable. Note that Tactical [Ch 11] shares 154.025 / 173.8 PL
+      with Jail [Ch 2], and Courts [Ch 10] shares 153.845 / 173.8 PL with Jail [Ch 3] - each
+      of those is one physical channel carrying two documented uses, so it is modelled as a
+      single rf_chain with two assignments.
+
+      155.640, 155.595 and 155.535 also appear as analogue backup channels in
+      cook_county_interop.yml (Cook Interop V2/V3/V4) - same physical channels, analogue side.
+
+      NAC 0x293 is recorded as decimal 659. Repeater input frequencies are not published in
+      the source. RX-only for the general public per Part 90.

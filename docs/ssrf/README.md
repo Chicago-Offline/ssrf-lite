@@ -4,8 +4,8 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ## Quick Statistics
 
-- **Total SSRF Files:** 56
-- **Total Assignments:** 779
+- **Total SSRF Files:** 57
+- **Total Assignments:** 794
 - **Services Covered:** 10
 - **Modes:** AM, APRS, C4FM, CW, D-STAR, DMR, FM, NXDN, P25, PACKET
 - **Frequency Bands:** 5
@@ -34,7 +34,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |------|----------|-------------|-------|------------------|
 | [mmdvm_duplex_hotspot](mmdvm_duplex_hotspot.md) | amateur | 2 | DMR | custom / mmdvm_duplex_hotspot.yml |
 
-### Geographic System (44 files)
+### Geographic System (45 files)
 
 | File | Services | Assignments | Modes | Geographic Scope |
 |------|----------|-------------|-------|------------------|
@@ -64,6 +64,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [paaros_repeaters](paaros_repeaters.md) | amateur | 4 | FM, C4FM, D-STAR | US / IL / Cook / _Countywide |
 | [nsea_gmrs_repeaters](nsea_gmrs_repeaters.md) | gmrs | 4 | FM | US / IL / Cook / _Countywide |
 | [cook_county_interop](cook_county_interop.md) | public_safety_part90 | 9 | FM | US / IL / Cook / _Countywide |
+| [cook_county_sheriff](cook_county_sheriff.md) | public_safety_part90 | 15 | P25, FM | US / IL / Cook / _Countywide |
 | [w9dup_darc_repeaters](w9dup_darc_repeaters.md) | amateur | 3 | FM | US / IL / DuPage / DownersGrove |
 | [zion_gmrs_repeaters](zion_gmrs_repeaters.md) | gmrs | 1 | FM | US / IL / Lake / Benton |
 | [tri_state_dmr](tri_state_dmr.md) | amateur | 16 | DMR | US / IL / _Statewide / amateur |
@@ -90,7 +91,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ### US
 - **FL:** 3 files
-- **IL:** 29 files
+- **IL:** 30 files
 - **IN:** 4 files
 - **MI:** 3 files
 - **National/Regional:** 10 files
@@ -113,7 +114,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | murs | 5 | 1 |
 | noaa_weather_radio | 7 | 1 |
 | pmr446 | 16 | 1 |
-| public_safety_part90 | 187 | 14 |
+| public_safety_part90 | 202 | 15 |
 | railroad_aar | 42 | 3 |
 
 ## Using SSRF Files
