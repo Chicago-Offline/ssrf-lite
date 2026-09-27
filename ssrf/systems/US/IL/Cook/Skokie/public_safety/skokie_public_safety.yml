@@ -1,0 +1,215 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.6.0.schema.json
+# SSRF-Lite: Skokie, IL - Public Safety / Public Works conventional channels
+
+$schema: "../../../../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
+ssrf_lite:
+  sources:
+    - name: "RadioReference - Cook County, IL (Skokie)"
+      url: "https://www.radioreference.com/db/browse/ctid/606"
+      accessed: "2026-09-26"
+
+organizations:
+  - id: org_skokie_pd
+    name: "Skokie Police Department"
+  - id: org_skokie_fd
+    name: "Skokie Fire Department"
+  - id: org_skokie_esda
+    name: "Skokie Emergency Services and Disaster Agency (ESDA)"
+  - id: org_skokie_pw
+    name: "Skokie Public Works"
+  - id: org_skokie_parks
+    name: "Skokie Park District"
+
+locations:
+  - id: loc_skokie
+    name: "Skokie, IL (approx)"
+    lat: 42.0324
+    lon: -87.7416
+
+stations:
+  - id: stn_skokie_esda
+    call_sign: "WPQE921"
+    organization_id: org_skokie_esda
+    location_id: loc_skokie
+    service: "public_safety_part90"
+
+  - id: stn_skokie_fd
+    call_sign: "KDB493"
+    organization_id: org_skokie_fd
+    location_id: loc_skokie
+    service: "public_safety_part90"
+
+  - id: stn_skokie_pw
+    call_sign: "KCR894"
+    organization_id: org_skokie_pw
+    location_id: loc_skokie
+    service: "public_safety_part90"
+
+  - id: stn_skokie_parks
+    call_sign: "KJU960"
+    organization_id: org_skokie_parks
+    location_id: loc_skokie
+    service: "public_safety_part90"
+
+antennas:
+  - id: ant_skokie_esda
+    station_id: stn_skokie_esda
+    name: "Skokie ESDA antenna (unknown)"
+  - id: ant_skokie_fd
+    station_id: stn_skokie_fd
+    name: "Skokie Fire antenna (unknown)"
+  - id: ant_skokie_pw
+    station_id: stn_skokie_pw
+    name: "Skokie Public Works antenna (unknown)"
+  - id: ant_skokie_parks
+    station_id: stn_skokie_parks
+    name: "Skokie Park District antenna (unknown)"
+
+authorizations:
+  - id: auth_skokie_part90
+    authority: "FCC"
+    service: "public_safety_part90"
+    class: "Part 90 Public Safety"
+    identifier: null
+    notes: "TX restricted to licensees. RX-only for general public."
+
+rf_chains:
+  # Skokie ESDA / Emergency Operations (VHF simplex, WPQE921)
+  - id: chain_skokie_esda
+    station_id: stn_skokie_esda
+    antenna_id: ant_skokie_esda
+    rx:
+      freq_mhz: 158.775
+    tx:
+      emission: "8K50F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 127.3
+      ctcss_tx_hz: 127.3
+
+  # Skokie Fire: Dispatch [Ch 1] (VHF repeater, KDB493)
+  # Output 159.195 / Input 153.620
+  - id: chain_skokie_fd_dispatch
+    station_id: stn_skokie_fd
+    antenna_id: ant_skokie_fd
+    rx:
+      freq_mhz: 159.195
+    tx:
+      freq_mhz: 153.620
+      emission: "8K50F3E"
+    mode:
+      type: "FM"
+      dcs_rx_code: "205"
+      dcs_tx_code: "205"
+
+  # Skokie Fire: Admin / Fire-Tac (VHF simplex, KDB493)
+  # Carries a patch to STARCOM21 TG 36500
+  - id: chain_skokie_fd_admin
+    station_id: stn_skokie_fd
+    antenna_id: ant_skokie_fd
+    rx:
+      freq_mhz: 154.340
+    tx:
+      emission: "8K50F3E"
+    mode:
+      type: "FM"
+      notes: "Carrier squelch (CSQ); patch to STARCOM21 TG 36500."
+
+  # Skokie Public Works (VHF simplex, KCR894)
+  - id: chain_skokie_pw
+    station_id: stn_skokie_pw
+    antenna_id: ant_skokie_pw
+    rx:
+      freq_mhz: 154.100
+    tx:
+      emission: "8K50F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 127.3
+      ctcss_tx_hz: 127.3
+
+  # Skokie Park District (VHF simplex, KJU960)
+  - id: chain_skokie_parks
+    station_id: stn_skokie_parks
+    antenna_id: ant_skokie_parks
+    rx:
+      freq_mhz: 151.310
+    tx:
+      emission: "8K50F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 107.2
+      ctcss_tx_hz: 107.2
+
+contacts:
+  - id: tg_sc21_3684
+    name: "Skokie PD Disp"
+    kind: "Group"
+    number: 3684
+    notes: "STARCOM21 P25 Phase II. Skokie Police dispatch. Encrypted."
+  - id: tg_sc21_36496
+    name: "Skokie Fire Disp"
+    kind: "Group"
+    number: 36496
+    notes: >
+      STARCOM21 P25 Phase II. Skokie Fire (Stations 16-18) dispatch; also dispatches
+      Skokie and Lincolnwood Police/Fire.
+  - id: tg_sc21_36500
+    name: "Skokie Fire Admin"
+    kind: "Group"
+    number: 36500
+    notes: "STARCOM21 P25 Phase II. Patched to the 154.340 conventional Fire Admin channel."
+  - id: tg_sc21_36946
+    name: "Skokie Fire Test"
+    kind: "Group"
+    number: 36946
+    notes: "STARCOM21 P25 Phase II. Fire units noted with test counts (observed 2025)."
+
+assignments:
+  - id: asgn_skokie_esda
+    channel_name: "Skokie ESDA"
+    rf_chain_id: chain_skokie_esda
+    usage: "simplex"
+    authorization_id: auth_skokie_part90
+
+  - id: asgn_skokie_fd_dispatch
+    channel_name: "Skokie Fire"
+    rf_chain_id: chain_skokie_fd_dispatch
+    usage: "repeater"
+    authorization_id: auth_skokie_part90
+
+  - id: asgn_skokie_fd_admin
+    channel_name: "Skokie Fire Admin"
+    rf_chain_id: chain_skokie_fd_admin
+    usage: "simplex"
+    authorization_id: auth_skokie_part90
+
+  - id: asgn_skokie_pw
+    channel_name: "Skokie PublicWrk"
+    rf_chain_id: chain_skokie_pw
+    usage: "simplex"
+    authorization_id: auth_skokie_part90
+
+  - id: asgn_skokie_parks
+    channel_name: "Skokie Parks"
+    rf_chain_id: chain_skokie_parks
+    usage: "simplex"
+    authorization_id: auth_skokie_part90
+
+comments:
+  - text: |
+      Skokie conventional public safety, public works and park district channels. Primary
+      police and fire dispatch have moved to STARCOM21 (P25 Phase II); Skokie Police
+      dispatch (TG 3684) is encrypted. Skokie also dispatches Lincolnwood Police/Fire.
+
+      Police and fire units have access to talkgroups in the 36486-36500 range, with both
+      clear and encrypted use observed. The 154.340 Fire Admin channel carries a patch to
+      STARCOM21 TG 36500, which makes it the most useful conventional RX channel for
+      following Skokie Fire activity.
+
+      Park District (KJU960, 151.310) and Public Works (KCR894, 154.100) are municipal
+      Part 90 local-government channels, filed under public_safety_part90 to match the
+      convention used in the Evanston file.
+
+      RX-only for the general public per Part 90.

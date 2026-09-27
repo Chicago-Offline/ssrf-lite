@@ -4,8 +4,8 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ## Quick Statistics
 
-- **Total SSRF Files:** 53
-- **Total Assignments:** 756
+- **Total SSRF Files:** 55
+- **Total Assignments:** 765
 - **Services Covered:** 10
 - **Modes:** AM, APRS, C4FM, CW, D-STAR, DMR, FM, NXDN, P25, PACKET
 - **Frequency Bands:** 5
@@ -34,7 +34,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |------|----------|-------------|-------|------------------|
 | [mmdvm_duplex_hotspot](mmdvm_duplex_hotspot.md) | amateur | 2 | DMR | custom / mmdvm_duplex_hotspot.yml |
 
-### Geographic System (41 files)
+### Geographic System (43 files)
 
 | File | Services | Assignments | Modes | Geographic Scope |
 |------|----------|-------------|-------|------------------|
@@ -57,7 +57,9 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [public_works_parks](public_works_parks.md) | public_safety_part90 | 17 | FM, DMR | US / IL / Cook / Chicago |
 | [transit_transport](transit_transport.md) | public_safety_part90 | 7 | FM, DMR | US / IL / Cook / Chicago |
 | [evanston_public_safety](evanston_public_safety.md) | business_itinerant_part90, pub... | 8 | FM | US / IL / Cook / Evanston |
+| [glenview_public_safety](glenview_public_safety.md) | public_safety_part90 | 4 | FM | US / IL / Cook / Glenview |
 | [skokie_repeater_club](skokie_repeater_club.md) | amateur | 1 | FM | US / IL / Cook / Northbrook |
+| [skokie_public_safety](skokie_public_safety.md) | public_safety_part90 | 5 | FM | US / IL / Cook / Skokie |
 | [paaros_repeaters](paaros_repeaters.md) | amateur | 4 | FM, C4FM, D-STAR | US / IL / Cook / _Countywide |
 | [nsea_gmrs_repeaters](nsea_gmrs_repeaters.md) | gmrs | 4 | FM | US / IL / Cook / _Countywide |
 | [cook_county_interop](cook_county_interop.md) | public_safety_part90 | 9 | FM | US / IL / Cook / _Countywide |
@@ -87,7 +89,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ### US
 - **FL:** 3 files
-- **IL:** 26 files
+- **IL:** 28 files
 - **IN:** 4 files
 - **MI:** 3 files
 - **National/Regional:** 10 files
@@ -110,7 +112,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | murs | 5 | 1 |
 | noaa_weather_radio | 7 | 1 |
 | pmr446 | 16 | 1 |
-| public_safety_part90 | 164 | 11 |
+| public_safety_part90 | 173 | 13 |
 | railroad_aar | 42 | 3 |
 
 ## Using SSRF Files
