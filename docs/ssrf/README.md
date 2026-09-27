@@ -5,7 +5,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 ## Quick Statistics
 
 - **Total SSRF Files:** 60
-- **Total Assignments:** 869
+- **Total Assignments:** 871
 - **Services Covered:** 10
 - **Modes:** AM, APRS, C4FM, CW, D-STAR, DMR, FM, NXDN, P25, PACKET
 - **Frequency Bands:** 5
@@ -49,7 +49,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [chicago_businesses_northside](chicago_businesses_northside.md) | business_itinerant_part90 | 56 | DMR, FM | US / IL / Cook / Chicago |
 | [chicago_dmr_monitored](chicago_dmr_monitored.md) | business_itinerant_part90 | 4 | DMR | US / IL / Cook / Chicago |
 | [venues_chicago](venues_chicago.md) | business_itinerant_part90 | 15 | DMR, FM | US / IL / Cook / Chicago |
-| [chicago_gmrs_repeaters](chicago_gmrs_repeaters.md) | gmrs | 6 | FM | US / IL / Cook / Chicago |
+| [chicago_gmrs_repeaters](chicago_gmrs_repeaters.md) | gmrs | 8 | FM | US / IL / Cook / Chicago |
 | [family_channels](family_channels.md) | amateur, gmrs | 17 | FM, DMR | US / IL / Cook / Chicago |
 | [chicago_ems_services](chicago_ems_services.md) | public_safety_part90 | 40 | P25, FM | US / IL / Cook / Chicago |
 | [chicago_fire_ems_northside](chicago_fire_ems_northside.md) | public_safety_part90 | 18 | FM, P25 | US / IL / Cook / Chicago |
@@ -112,7 +112,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | amateur | 121 | 19 |
 | aviation | 164 | 2 |
 | business_itinerant_part90 | 185 | 8 |
-| gmrs | 89 | 11 |
+| gmrs | 91 | 11 |
 | marine | 53 | 1 |
 | murs | 5 | 1 |
 | noaa_weather_radio | 7 | 1 |
