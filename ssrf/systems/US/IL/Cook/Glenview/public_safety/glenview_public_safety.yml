@@ -1,0 +1,214 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.6.0.schema.json
+# SSRF-Lite: Glenview Public Safety Dispatch Center (Cook County, IL)
+
+$schema: "../../../../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
+ssrf_lite:
+  sources:
+    - name: "RadioReference - Cook County, IL (Glenview Public Safety Dispatch Center)"
+      url: "https://www.radioreference.com/db/browse/ctid/606"
+      accessed: "2026-09-26"
+
+organizations:
+  - id: org_glenview_psdc
+    name: "Glenview Public Safety Dispatch Center (South Facility)"
+  - id: org_glenview_pd
+    name: "Glenview Police Department"
+  - id: org_glenview_fd
+    name: "Glenview Fire Department"
+  - id: org_niles_mg_pd
+    name: "Niles / Morton Grove Police Departments"
+  - id: org_grayslake_pd
+    name: "Grayslake Police Department"
+
+locations:
+  - id: loc_glenview
+    name: "Glenview, IL (approx)"
+    lat: 42.0698
+    lon: -87.7878
+  - id: loc_niles_morton_grove
+    name: "Niles / Morton Grove, IL (approx)"
+    lat: 42.0298
+    lon: -87.7950
+  - id: loc_grayslake
+    name: "Grayslake, IL (Lake County, approx)"
+    lat: 42.3447
+    lon: -88.0417
+
+stations:
+  - id: stn_glenview_pd
+    call_sign: "KXE711"
+    organization_id: org_glenview_pd
+    location_id: loc_glenview
+    service: "public_safety_part90"
+
+  - id: stn_niles_mg_pd
+    call_sign: "KXE712"
+    organization_id: org_niles_mg_pd
+    location_id: loc_niles_morton_grove
+    service: "public_safety_part90"
+
+  - id: stn_glenview_fd
+    call_sign: "KSD486"
+    organization_id: org_glenview_fd
+    location_id: loc_glenview
+    service: "public_safety_part90"
+
+  - id: stn_grayslake_pd
+    call_sign: "WQKL254"
+    organization_id: org_grayslake_pd
+    location_id: loc_grayslake
+    service: "public_safety_part90"
+
+antennas:
+  - id: ant_glenview_pd
+    station_id: stn_glenview_pd
+    name: "Glenview PD repeater antenna (unknown)"
+  - id: ant_niles_mg_pd
+    station_id: stn_niles_mg_pd
+    name: "Niles/Morton Grove PD repeater antenna (unknown)"
+  - id: ant_glenview_fd
+    station_id: stn_glenview_fd
+    name: "Glenview/Wheeling Fire repeater antenna (unknown)"
+  - id: ant_grayslake_pd
+    station_id: stn_grayslake_pd
+    name: "Grayslake PD repeater antenna (unknown)"
+
+authorizations:
+  - id: auth_glenview_part90
+    authority: "FCC"
+    service: "public_safety_part90"
+    class: "Part 90 Public Safety"
+    identifier: null
+    notes: "TX restricted to licensees. RX-only for general public."
+
+rf_chains:
+  # Glenview Police: Dispatch (UHF repeater, KXE711)
+  # Output 470.7625 / Input 473.7625 (+3.000 MHz)
+  - id: chain_glenview_pd_dispatch
+    station_id: stn_glenview_pd
+    antenna_id: ant_glenview_pd
+    rx:
+      freq_mhz: 470.7625
+    tx:
+      freq_mhz: 473.7625
+      emission: "8K50F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 192.8
+      ctcss_tx_hz: 192.8
+
+  # Niles / Morton Grove Police: Dispatch (UHF repeater, KXE712)
+  # Output 470.7125 / Input 473.7125 (+3.000 MHz)
+  - id: chain_niles_mg_pd_dispatch
+    station_id: stn_niles_mg_pd
+    antenna_id: ant_niles_mg_pd
+    rx:
+      freq_mhz: 470.7125
+    tx:
+      freq_mhz: 473.7125
+      emission: "8K50F3E"
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 192.8
+      ctcss_tx_hz: 192.8
+
+  # Glenview (Glenview-Wheeling) Fire: Dispatch (VHF repeater, KSD486)
+  # Output 159.795 / Input 154.205
+  - id: chain_glenview_fd_dispatch
+    station_id: stn_glenview_fd
+    antenna_id: ant_glenview_fd
+    rx:
+      freq_mhz: 159.795
+    tx:
+      freq_mhz: 154.205
+      emission: "8K50F3E"
+    mode:
+      type: "FM"
+      dcs_rx_code: "031"
+      dcs_tx_code: "031"
+
+  # Grayslake Police: Dispatch (UHF repeater, WQKL254) - Lake County transmitter,
+  # dispatched by the Glenview South Facility. See comments.
+  # Output 472.600 / Input 475.600 (+3.000 MHz)
+  - id: chain_grayslake_pd_dispatch
+    station_id: stn_grayslake_pd
+    antenna_id: ant_grayslake_pd
+    rx:
+      freq_mhz: 472.600
+    tx:
+      freq_mhz: 475.600
+      emission: "8K50F3E"
+    mode:
+      type: "FM"
+      dcs_rx_code: "343"
+      dcs_tx_code: "343"
+
+contacts:
+  - id: tg_sc21_3686
+    name: "Glenview PD"
+    kind: "Group"
+    number: 3686
+    notes: "STARCOM21 P25 Phase II. Glenview Police dispatch. Encrypted."
+  - id: tg_sc21_3685
+    name: "MortonGrv-Niles PD"
+    kind: "Group"
+    number: 3685
+    notes: "STARCOM21 P25 Phase II. Morton Grove and Niles Police dispatch. Encrypted."
+  - id: tg_sc21_3687
+    name: "NShore PD Disp"
+    kind: "Group"
+    number: 3687
+    notes: >
+      STARCOM21 P25 Phase II. Glencoe, Kenilworth, Northfield and Winnetka Police
+      dispatch. Encrypted.
+  - id: tg_sc21_3679
+    name: "NShore Fire Disp"
+    kind: "Group"
+    number: 3679
+    notes: >
+      STARCOM21 P25 Phase II. Glenview, Wilmette, Glencoe and Grayslake Fire
+      dispatch. Clear (unencrypted) as of 2026-09.
+
+assignments:
+  - id: asgn_glenview_pd_dispatch
+    channel_name: "Glenview Police"
+    rf_chain_id: chain_glenview_pd_dispatch
+    usage: "repeater"
+    authorization_id: auth_glenview_part90
+
+  - id: asgn_niles_mg_pd_dispatch
+    channel_name: "NilesMrtn Police"
+    rf_chain_id: chain_niles_mg_pd_dispatch
+    usage: "repeater"
+    authorization_id: auth_glenview_part90
+
+  - id: asgn_glenview_fd_dispatch
+    channel_name: "GlnvwWhlng Fire"
+    rf_chain_id: chain_glenview_fd_dispatch
+    usage: "repeater"
+    authorization_id: auth_glenview_part90
+
+  - id: asgn_grayslake_pd_dispatch
+    channel_name: "Grayslake Police"
+    rf_chain_id: chain_grayslake_pd_dispatch
+    usage: "repeater"
+    authorization_id: auth_glenview_part90
+
+comments:
+  - text: |
+      Glenview Public Safety Dispatch Center (South Facility) provides dispatch for Glenview,
+      Niles, Morton Grove, Glencoe, Kenilworth, Northfield and Winnetka, plus Grayslake and
+      Hainesville Police in Lake County. Services for Highland Park, Highwood, Lake Bluff and
+      Lake Forest are handled at the North Facility in Highland Park (Lake County) and are not
+      included here.
+
+      Most primary police dispatch has moved to STARCOM21 (P25 Phase II) and is encrypted;
+      the conventional UHF/VHF repeaters listed here remain licensed and are the RX-useful
+      analog channels. Fire dispatch on STARCOM21 TG 3679 is still clear.
+
+      NOTE: Grayslake PD (WQKL254, 472.600/475.600) is a Lake County transmitter carried in
+      this file because the Glenview South Facility dispatches it. If a
+      ssrf/systems/US/IL/Lake/Grayslake/ tree is created later, that chain should move there.
+
+      RX-only for the general public per Part 90.
