@@ -9,6 +9,9 @@ ssrf_lite:
     - name: "MontClare 650 listing on MyGMRS"
       url: "https://mygmrs.com/user/Mike1228"
       accessed: "2026-09-10"
+    - name: "RadioReference - GMRS repeaters, Cook County, IL (aid 11211)"
+      url: "https://www.radioreference.com/db/aid/11211"
+      accessed: "2026-09-26"
 
 organizations:
   - id: org_local_gmrs
@@ -21,8 +24,12 @@ locations:
     name: "Chicago, IL"
   - id: loc_forest_view
     name: "Forest View, IL"
-  - id: loc_oak_lawn
-    name: "Oak Lawn, IL"
+  - id: loc_oak_forest
+    name: "Oak Forest, IL"
+  - id: loc_ohare
+    name: "Chicago, IL - O'Hare area (approx)"
+  - id: loc_chicago_downtown
+    name: "Chicago, IL - downtown (approx)"
   - id: loc_montclare
     name: "Montclare, Chicago, IL"
 
@@ -33,24 +40,34 @@ stations:
     location_id: loc_lincolnwood
     service: "gmrs"
   - id: stn_gmrs_chicago_600
+    call_sign: "WQYP964"
+    organization_id: org_local_gmrs
+    location_id: loc_chicago
+    service: "gmrs"
+  - id: stn_gmrs_ohare_575
+    call_sign: "WRVP631"
+    organization_id: org_local_gmrs
+    location_id: loc_ohare
+    service: "gmrs"
+  - id: stn_gmrs_chicago_550
     call_sign: "GMRS"
     organization_id: org_local_gmrs
     location_id: loc_chicago
     service: "gmrs"
-  - id: stn_gmrs_chicago_575
-    call_sign: "GMRS"
+  - id: stn_gmrs_downtown_575
+    call_sign: "WRJP382"
     organization_id: org_local_gmrs
-    location_id: loc_chicago
+    location_id: loc_chicago_downtown
     service: "gmrs"
   - id: stn_gmrs_forest_view_650
     call_sign: "GMRS"
     organization_id: org_local_gmrs
     location_id: loc_forest_view
     service: "gmrs"
-  - id: stn_gmrs_oak_lawn_625
-    call_sign: "GMRS"
+  - id: stn_gmrs_oak_forest_625
+    call_sign: "WRDP370"
     organization_id: org_local_gmrs
-    location_id: loc_oak_lawn
+    location_id: loc_oak_forest
     service: "gmrs"
   - id: stn_gmrs_montclare_650
     call_sign: "WRJS281"
@@ -84,8 +101,8 @@ rf_chains:
       ctcss_tx_hz: 192.8
       ctcss_rx_hz: 192.8
 
-  - id: chain_gmrs_chicago_575
-    station_id: stn_gmrs_chicago_575
+  - id: chain_gmrs_ohare_575
+    station_id: stn_gmrs_ohare_575
     tx:
       freq_mhz: 467.575
       emission: "20K0F3E"
@@ -94,8 +111,34 @@ rf_chains:
       freq_mhz: 462.575
     mode:
       type: "FM"
+      # Output is carrier squelch (CSQ) per RadioReference; 141.3 Hz PL on input only.
       ctcss_tx_hz: 141.3
-      ctcss_rx_hz: 141.3
+
+  - id: chain_gmrs_chicago_550
+    station_id: stn_gmrs_chicago_550
+    tx:
+      freq_mhz: 467.550
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.550
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 156.7
+      ctcss_rx_hz: 156.7
+
+  - id: chain_gmrs_downtown_575
+    station_id: stn_gmrs_downtown_575
+    tx:
+      freq_mhz: 467.575
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 462.575
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 250.3
+      ctcss_rx_hz: 250.3
 
   - id: chain_gmrs_forest_view_650
     station_id: stn_gmrs_forest_view_650
@@ -110,8 +153,8 @@ rf_chains:
       ctcss_tx_hz: 203.5
       ctcss_rx_hz: 203.5
 
-  - id: chain_gmrs_oak_lawn_625
-    station_id: stn_gmrs_oak_lawn_625
+  - id: chain_gmrs_oak_forest_625
+    station_id: stn_gmrs_oak_forest_625
     tx:
       freq_mhz: 467.625
       emission: "20K0F3E"
@@ -120,6 +163,8 @@ rf_chains:
       freq_mhz: 462.625
     mode:
       type: "FM"
+      dcs_tx_code: "516"
+      dcs_rx_code: "516"
 
   - id: chain_gmrs_montclare_650
     station_id: stn_gmrs_montclare_650
@@ -139,35 +184,71 @@ assignments:
     channel_name: "Lincolnwood 575"
     rf_chain_id: chain_gmrs_lincolnwood_575
     usage: "repeater"
-    notes: "Permission required to use. Output 462.5750 (+5.000 input)."
+    notes: >-
+      Permission required to use. Output 462.5750 (+5.000 input). UNVERIFIED:
+      no matching entry in the RadioReference Cook County GMRS list (aid
+      11211) and no callsign on file; tone unknown. May be a duplicate of the
+      WRJP382 .575 system - needs RF confirmation.
     authorization_id: auth_fcc_gmrs
 
   - id: asgn_gmrs_chicago_600
     channel_name: "Chicago 600"
     rf_chain_id: chain_gmrs_chicago_600
     usage: "repeater"
-    notes: "Open system. 192.8 Hz PL. Output 462.6000 (+5.000 input)."
+    notes: >-
+      Open system (WQYP964). 192.8 Hz PL. Output 462.6000 (+5.000 input).
     authorization_id: auth_fcc_gmrs
 
-  - id: asgn_gmrs_chicago_575
-    channel_name: "Chicago 575"
-    rf_chain_id: chain_gmrs_chicago_575
+  - id: asgn_gmrs_ohare_575
+    channel_name: "OHare 575"
+    rf_chain_id: chain_gmrs_ohare_575
     usage: "repeater"
-    notes: "Open system. 141.3 Hz PL. Output 462.5750 (+5.000 input)."
+    notes: >-
+      O'Hare area .575 system (WRVP631). Output is carrier squelch - do NOT
+      program a receive tone or the repeater will be squelched out; 141.3 Hz
+      PL is required on the input only. Output 462.5750 (+5.000 input).
+    authorization_id: auth_fcc_gmrs
+
+  - id: asgn_gmrs_chicago_550
+    channel_name: "Chicago 550"
+    rf_chain_id: chain_gmrs_chicago_550
+    usage: "repeater"
+    notes: >-
+      Chicago .550 system. 156.7 Hz PL. No callsign published in the
+      RadioReference listing. Output 462.5500 (+5.000 input).
+    authorization_id: auth_fcc_gmrs
+
+  - id: asgn_gmrs_downtown_575
+    channel_name: "Downtown 575"
+    rf_chain_id: chain_gmrs_downtown_575
+    usage: "repeater"
+    notes: >-
+      Downtown Chicago .575 system (WRJP382). 250.3 Hz PL. Output 462.5750
+      (+5.000 input). Note: the RadioReference listing tags this system
+      "Downtown 675" while listing it on 462.5750 - the tag appears to be a
+      source-side typo; frequency is taken as authoritative.
     authorization_id: auth_fcc_gmrs
 
   - id: asgn_gmrs_forest_view_650
     channel_name: "Forest View 650"
     rf_chain_id: chain_gmrs_forest_view_650
     usage: "repeater"
-    notes: "Open system. 203.5 Hz PL. Output 462.6500 (+5.000 input)."
+    notes: >-
+      Open system. 203.5 Hz PL. Output 462.6500 (+5.000 input). UNVERIFIED:
+      no matching entry in the RadioReference Cook County GMRS list (aid
+      11211) and no callsign on file; would be a third user of 462.6500 in
+      the county. Needs RF confirmation.
     authorization_id: auth_fcc_gmrs
 
-  - id: asgn_gmrs_oak_lawn_625
-    channel_name: "Oak Lawn 625"
-    rf_chain_id: chain_gmrs_oak_lawn_625
+  - id: asgn_gmrs_oak_forest_625
+    channel_name: "Oak Forest 625"
+    rf_chain_id: chain_gmrs_oak_forest_625
     usage: "repeater"
-    notes: "Permission required. Output 462.6250 (+5.000 input)."
+    notes: >-
+      Oak Forest .625 system (WRDP370). Permission required. DCS/DPL 516
+      (normal polarity). Output 462.6250 (+5.000 input). Previously carried
+      here as "Oak Lawn 625" with no tone; location and access tone corrected
+      against the RadioReference Cook County GMRS list.
     authorization_id: auth_fcc_gmrs
 
   - id: asgn_gmrs_montclare_650

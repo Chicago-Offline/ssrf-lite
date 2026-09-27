@@ -1,0 +1,900 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.6.0.schema.json
+# SSRF-Lite: Chicago hotels - licensed business land mobile
+
+$schema: "../../../../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
+ssrf_lite:
+  sources:
+    - name: "RadioReference DB - Chicago Businesses (Hotels)"
+      url: "https://www.radioreference.com/db/aid/8217"
+      accessed: "2026-09-26"
+
+organizations:
+  - id: org_wqzj909
+    name: "Ace Hotel (311 N Morgan St)"
+  - id: org_wqvv406
+    name: "Chicago Athletic Association Hotel (12 S Michigan Ave)"
+  - id: org_wqqq455
+    name: "Embassy Suites (Downtown/Lakefront)"
+  - id: org_wqum495
+    name: "Fairmont Hotel (200 N Columbus Dr)"
+  - id: org_wnwa694
+    name: "Fairmont Hotel - Maintenance licence"
+  - id: org_wnpz509
+    name: "Fairmont Hotel - Operations licence"
+  - id: org_wrcw578
+    name: "Hilton Garden Inn - McCormick Place"
+  - id: org_kb66526
+    name: "Hyatt Regency O'Hare"
+  - id: org_wqxi362
+    name: "Kimpton Gray Hotel (122 W Monroe St)"
+  - id: org_wqly228
+    name: "Marriott Magnificent Mile"
+  - id: org_wqzs549
+    name: "Renaissance Chicago Downtown"
+  - id: org_wrbq292
+    name: "Sheraton Grand Chicago"
+  - id: org_wqjv437
+    name: "The Peninsula Chicago"
+  - id: org_wqin529
+    name: "Trump International Hotel and Tower"
+  - id: org_wqfw632
+    name: "Wit Hotel (State/Lake St)"
+
+locations:
+  - id: loc_chicago_downtown
+    name: "Chicago downtown / Loop (approx)"
+    lat: 41.8827
+    lon: -87.6233
+  - id: loc_mccormick
+    name: "McCormick Place, Chicago (approx)"
+    lat: 41.8519
+    lon: -87.6167
+  - id: loc_ohare
+    name: "O'Hare area, Chicago (approx)"
+    lat: 41.9803
+    lon: -87.909
+
+stations:
+  - id: stn_wqzj909
+    call_sign: "WQZJ909"
+    organization_id: org_wqzj909
+    location_id: loc_chicago_downtown
+    service: "business_itinerant_part90"
+  - id: stn_wqvv406
+    call_sign: "WQVV406"
+    organization_id: org_wqvv406
+    location_id: loc_chicago_downtown
+    service: "business_itinerant_part90"
+  - id: stn_wqqq455
+    call_sign: "WQQQ455"
+    organization_id: org_wqqq455
+    location_id: loc_chicago_downtown
+    service: "business_itinerant_part90"
+  - id: stn_wqum495
+    call_sign: "WQUM495"
+    organization_id: org_wqum495
+    location_id: loc_chicago_downtown
+    service: "business_itinerant_part90"
+  - id: stn_wnwa694
+    call_sign: "WNWA694"
+    organization_id: org_wnwa694
+    location_id: loc_chicago_downtown
+    service: "business_itinerant_part90"
+  - id: stn_wnpz509
+    call_sign: "WNPZ509"
+    organization_id: org_wnpz509
+    location_id: loc_chicago_downtown
+    service: "business_itinerant_part90"
+  - id: stn_wrcw578
+    call_sign: "WRCW578"
+    organization_id: org_wrcw578
+    location_id: loc_mccormick
+    service: "business_itinerant_part90"
+  - id: stn_kb66526
+    call_sign: "KB66526"
+    organization_id: org_kb66526
+    location_id: loc_ohare
+    service: "business_itinerant_part90"
+  - id: stn_wqxi362
+    call_sign: "WQXI362"
+    organization_id: org_wqxi362
+    location_id: loc_chicago_downtown
+    service: "business_itinerant_part90"
+  - id: stn_wqly228
+    call_sign: "WQLY228"
+    organization_id: org_wqly228
+    location_id: loc_chicago_downtown
+    service: "business_itinerant_part90"
+  - id: stn_wqzs549
+    call_sign: "WQZS549"
+    organization_id: org_wqzs549
+    location_id: loc_chicago_downtown
+    service: "business_itinerant_part90"
+  - id: stn_wrbq292
+    call_sign: "WRBQ292"
+    organization_id: org_wrbq292
+    location_id: loc_chicago_downtown
+    service: "business_itinerant_part90"
+  - id: stn_wqjv437
+    call_sign: "WQJV437"
+    organization_id: org_wqjv437
+    location_id: loc_chicago_downtown
+    service: "business_itinerant_part90"
+  - id: stn_wqin529
+    call_sign: "WQIN529"
+    organization_id: org_wqin529
+    location_id: loc_chicago_downtown
+    service: "business_itinerant_part90"
+  - id: stn_wqfw632
+    call_sign: "WQFW632"
+    organization_id: org_wqfw632
+    location_id: loc_chicago_downtown
+    service: "business_itinerant_part90"
+
+antennas:
+  - id: ant_wqzj909
+    station_id: stn_wqzj909
+    name: "Ace Hotel (311 N Morgan St) (site unknown)"
+  - id: ant_wqvv406
+    station_id: stn_wqvv406
+    name: "Chicago Athletic Association Hotel (12 S Michigan Ave) (site unknown)"
+  - id: ant_wqqq455
+    station_id: stn_wqqq455
+    name: "Embassy Suites (Downtown/Lakefront) (site unknown)"
+  - id: ant_wqum495
+    station_id: stn_wqum495
+    name: "Fairmont Hotel (200 N Columbus Dr) (site unknown)"
+  - id: ant_wnwa694
+    station_id: stn_wnwa694
+    name: "Fairmont Hotel - Maintenance licence (site unknown)"
+  - id: ant_wnpz509
+    station_id: stn_wnpz509
+    name: "Fairmont Hotel - Operations licence (site unknown)"
+  - id: ant_wrcw578
+    station_id: stn_wrcw578
+    name: "Hilton Garden Inn - McCormick Place (site unknown)"
+  - id: ant_kb66526
+    station_id: stn_kb66526
+    name: "Hyatt Regency O'Hare (site unknown)"
+  - id: ant_wqxi362
+    station_id: stn_wqxi362
+    name: "Kimpton Gray Hotel (122 W Monroe St) (site unknown)"
+  - id: ant_wqly228
+    station_id: stn_wqly228
+    name: "Marriott Magnificent Mile (site unknown)"
+  - id: ant_wqzs549
+    station_id: stn_wqzs549
+    name: "Renaissance Chicago Downtown (site unknown)"
+  - id: ant_wrbq292
+    station_id: stn_wrbq292
+    name: "Sheraton Grand Chicago (site unknown)"
+  - id: ant_wqjv437
+    station_id: stn_wqjv437
+    name: "The Peninsula Chicago (site unknown)"
+  - id: ant_wqin529
+    station_id: stn_wqin529
+    name: "Trump International Hotel and Tower (site unknown)"
+  - id: ant_wqfw632
+    station_id: stn_wqfw632
+    name: "Wit Hotel (State/Lake St) (site unknown)"
+
+authorizations:
+  - id: auth_biz
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: null
+    notes: "TX restricted to the licensee. RX-only for general public."
+
+rf_chains:
+  # --- Ace Hotel (311 N Morgan St) (WQZJ909) ---
+  - id: chain_wqzj909_452p8875
+    station_id: stn_wqzj909
+    antenna_id: ant_wqzj909
+    rx:
+      freq_mhz: 452.8875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      color_code: 1
+      notes: "Mobile/portable frequency."
+  # --- Chicago Athletic Association Hotel (12 S Michigan Ave) (WQVV406) ---
+  - id: chain_wqvv406_461p9125
+    station_id: stn_wqvv406
+    antenna_id: ant_wqvv406
+    rx:
+      freq_mhz: 461.9125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      color_code: 10
+      notes: "Repeater output; input not published by source."
+  - id: chain_wqvv406_464p7625
+    station_id: stn_wqvv406
+    antenna_id: ant_wqvv406
+    rx:
+      freq_mhz: 464.7625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      color_code: 11
+      notes: "Repeater output; input not published by source."
+  # --- Embassy Suites (Downtown/Lakefront) (WQQQ455) ---
+  - id: chain_wqqq455_464p125
+    station_id: stn_wqqq455
+    antenna_id: ant_wqqq455
+    rx:
+      freq_mhz: 464.125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      color_code: 2
+      notes: "Repeater output; input not published by source."
+  # --- Fairmont Hotel (200 N Columbus Dr) (WQUM495) ---
+  - id: chain_wqum495_452p0625
+    station_id: stn_wqum495
+    antenna_id: ant_wqum495
+    rx:
+      freq_mhz: 452.0625
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      dcs_rx_code: "306"
+      dcs_tx_code: "306"
+      notes: "Mobile/portable frequency."
+  - id: chain_wqum495_451p7375
+    station_id: stn_wqum495
+    antenna_id: ant_wqum495
+    rx:
+      freq_mhz: 451.7375
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      dcs_rx_code: "205"
+      dcs_tx_code: "205"
+      notes: "Mobile/portable frequency."
+  - id: chain_wqum495_451p1875
+    station_id: stn_wqum495
+    antenna_id: ant_wqum495
+    rx:
+      freq_mhz: 451.1875
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      dcs_rx_code: "023"
+      dcs_tx_code: "023"
+      notes: "Mobile/portable frequency."
+  - id: chain_wqum495_452p4875
+    station_id: stn_wqum495
+    antenna_id: ant_wqum495
+    rx:
+      freq_mhz: 452.4875
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      dcs_rx_code: "411"
+      dcs_tx_code: "411"
+      notes: "Mobile/portable frequency."
+  - id: chain_wqum495_451p4625
+    station_id: stn_wqum495
+    antenna_id: ant_wqum495
+    rx:
+      freq_mhz: 451.4625
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      dcs_rx_code: "155"
+      dcs_tx_code: "155"
+      notes: "Repeater output; input not published by source."
+  # --- Fairmont Hotel - Maintenance licence (WNWA694) ---
+  - id: chain_wnwa694_464p875
+    station_id: stn_wnwa694
+    antenna_id: ant_wnwa694
+    rx:
+      freq_mhz: 464.875
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      dcs_rx_code: "072"
+      dcs_tx_code: "072"
+      notes: "Repeater output; input not published by source."
+  # --- Fairmont Hotel - Operations licence (WNPZ509) ---
+  - id: chain_wnpz509_464p325
+    station_id: stn_wnpz509
+    antenna_id: ant_wnpz509
+    rx:
+      freq_mhz: 464.325
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      dcs_rx_code: "226"
+      dcs_tx_code: "226"
+      notes: "Repeater output; input not published by source."
+  # --- Hilton Garden Inn - McCormick Place (WRCW578) ---
+  - id: chain_wrcw578_463p2375
+    station_id: stn_wrcw578
+    antenna_id: ant_wrcw578
+    rx:
+      freq_mhz: 463.2375
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      color_code: 0
+      notes: "Repeater output; input not published by source."
+  - id: chain_wrcw578_464p0125
+    station_id: stn_wrcw578
+    antenna_id: ant_wrcw578
+    rx:
+      freq_mhz: 464.0125
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      color_code: 4
+      notes: "Repeater output; input not published by source."
+  # --- Hyatt Regency O'Hare (KB66526) ---
+  - id: chain_kb66526_461p2875
+    station_id: stn_kb66526
+    antenna_id: ant_kb66526
+    rx:
+      freq_mhz: 461.2875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      color_code: 12
+      notes: "Repeater output; input not published by source."
+  - id: chain_kb66526_463p2375
+    station_id: stn_kb66526
+    antenna_id: ant_kb66526
+    rx:
+      freq_mhz: 463.2375
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      color_code: 12
+      notes: "Repeater output; input not published by source."
+  - id: chain_kb66526_463p5625
+    station_id: stn_kb66526
+    antenna_id: ant_kb66526
+    rx:
+      freq_mhz: 463.5625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      color_code: 12
+      notes: "Repeater output; input not published by source."
+  # --- Kimpton Gray Hotel (122 W Monroe St) (WQXI362) ---
+  - id: chain_wqxi362_462p45
+    station_id: stn_wqxi362
+    antenna_id: ant_wqxi362
+    rx:
+      freq_mhz: 462.45
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      color_code: 6
+      notes: "Repeater output; input not published by source."
+  - id: chain_wqxi362_463p775
+    station_id: stn_wqxi362
+    antenna_id: ant_wqxi362
+    rx:
+      freq_mhz: 463.775
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      color_code: 8
+      notes: "Repeater output; input not published by source."
+  # --- Marriott Magnificent Mile (WQLY228) ---
+  - id: chain_wqly228_462p4875
+    station_id: stn_wqly228
+    antenna_id: ant_wqly228
+    rx:
+      freq_mhz: 462.4875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      color_code: 4
+      notes: "Repeater output; input not published by source."
+  # --- Renaissance Chicago Downtown (WQZS549) ---
+  - id: chain_wqzs549_461p6
+    station_id: stn_wqzs549
+    antenna_id: ant_wqzs549
+    rx:
+      freq_mhz: 461.6
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      color_code: 8
+      notes: "Repeater output; input not published by source."
+  - id: chain_wqzs549_463p6
+    station_id: stn_wqzs549
+    antenna_id: ant_wqzs549
+    rx:
+      freq_mhz: 463.6
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      color_code: 8
+      notes: "Repeater output; input not published by source."
+  # --- Sheraton Grand Chicago (WRBQ292) ---
+  - id: chain_wrbq292_462p1625
+    station_id: stn_wrbq292
+    antenna_id: ant_wrbq292
+    rx:
+      freq_mhz: 462.1625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      color_code: 9
+      notes: "Repeater output; input not published by source."
+  - id: chain_wrbq292_461p5625
+    station_id: stn_wrbq292
+    antenna_id: ant_wrbq292
+    rx:
+      freq_mhz: 461.5625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      color_code: 11
+      notes: "Repeater output; input not published by source."
+  # --- The Peninsula Chicago (WQJV437) ---
+  - id: chain_wqjv437_464p725
+    station_id: stn_wqjv437
+    antenna_id: ant_wqjv437
+    rx:
+      freq_mhz: 464.725
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      notes: "Repeater output; input not published by source."
+  - id: chain_wqjv437_464p4625
+    station_id: stn_wqjv437
+    antenna_id: ant_wqjv437
+    rx:
+      freq_mhz: 464.4625
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      color_code: 3
+      notes: "Repeater output; input not published by source."
+  # --- Trump International Hotel and Tower (WQIN529) ---
+  - id: chain_wqin529_464p2875
+    station_id: stn_wqin529
+    antenna_id: ant_wqin529
+    rx:
+      freq_mhz: 464.2875
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      color_code: 9
+      notes: "Repeater output; input not published by source."
+  - id: chain_wqin529_464p9375
+    station_id: stn_wqin529
+    antenna_id: ant_wqin529
+    rx:
+      freq_mhz: 464.9375
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      color_code: 9
+      notes: "Repeater output; input not published by source."
+  - id: chain_wqin529_464p6375
+    station_id: stn_wqin529
+    antenna_id: ant_wqin529
+    rx:
+      freq_mhz: 464.6375
+    tx:
+      emission: "7K60FXD"
+    mode:
+      type: "DMR"
+      color_code: 9
+      notes: "Repeater output; input not published by source."
+  # --- Wit Hotel (State/Lake St) (WQFW632) ---
+  - id: chain_wqfw632_467p7625
+    station_id: stn_wqfw632
+    antenna_id: ant_wqfw632
+    rx:
+      freq_mhz: 467.7625
+    tx:
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "Mobile/portable frequency. Carrier squelch."
+
+contacts:
+  - id: tg_wqzj909_1_1_ace_hotel_ops
+    name: "Ace Hotel Ops"
+    kind: "Group"
+    number: 1
+    notes: "Ace Hotel (311 N Morgan St) - Operations. DMR talkgroup 1, timeslot 1, colour code 1."
+  - id: tg_wqvv406_502_2_ccc_hotel_eng
+    name: "CCC Hotel Eng"
+    kind: "Group"
+    number: 502
+    notes: "Chicago Athletic Association Hotel (12 S Michigan Ave) - Engineering. DMR talkgroup 502, timeslot 2, colour code 10."
+  - id: tg_wqvv406_501_1_caa_hotel_sec
+    name: "CAA Hotel Sec"
+    kind: "Group"
+    number: 501
+    notes: "Chicago Athletic Association Hotel (12 S Michigan Ave) - Security. DMR talkgroup 501, timeslot 1, colour code 10."
+  - id: tg_wqvv406_503_1_caa_hotel_hsk
+    name: "CAA Hotel Hsk"
+    kind: "Group"
+    number: 503
+    notes: "Chicago Athletic Association Hotel (12 S Michigan Ave) - Housekeeping. DMR talkgroup 503, timeslot 1, colour code 11."
+  - id: tg_wqvv406_504_2_caa_hotel_ops
+    name: "CAA Hotel Ops"
+    kind: "Group"
+    number: 504
+    notes: "Chicago Athletic Association Hotel (12 S Michigan Ave) - Operations. DMR talkgroup 504, timeslot 2, colour code 11."
+  - id: tg_wqqq455_102_2_embsyste_fac
+    name: "EmbsySte Fac"
+    kind: "Group"
+    number: 102
+    notes: "Embassy Suites (Downtown/Lakefront) - Facilities/Engineering. DMR talkgroup 102, timeslot 2, colour code 2."
+  - id: tg_wqqq455_101_1_embsyste_secrty
+    name: "EmbsySte Secrty"
+    kind: "Group"
+    number: 101
+    notes: "Embassy Suites (Downtown/Lakefront) - Housekeeping, Security, Bellmen, Front Desk. DMR talkgroup 101, timeslot 1, colour code 2."
+  - id: tg_wrcw578_39_x_hilton_mccpl_1
+    name: "Hilton McCPl 1"
+    kind: "Group"
+    number: 39
+    notes: "Hilton Garden Inn - McCormick Place - Hilton Garden Inn McCormick Place. DMR talkgroup 39, colour code 0."
+  - id: tg_wrcw578_39_x_hilton_mccpl_2
+    name: "Hilton McCPl 2"
+    kind: "Group"
+    number: 39
+    notes: "Hilton Garden Inn - McCormick Place - Hilton Garden Inn McCormick Place. DMR talkgroup 39, colour code 4."
+  - id: tg_wqxi362_501_1_kimptongray_eng
+    name: "KimptonGray Eng"
+    kind: "Group"
+    number: 501
+    notes: "Kimpton Gray Hotel (122 W Monroe St) - Engineering. DMR talkgroup 501, timeslot 1, colour code 6."
+  - id: tg_wqxi362_502_2_kimptongray_ops
+    name: "KimptonGray Ops"
+    kind: "Group"
+    number: 502
+    notes: "Kimpton Gray Hotel (122 W Monroe St) - Operations. DMR talkgroup 502, timeslot 2, colour code 6."
+  - id: tg_wqxi362_503_1_kimptongrayvalet
+    name: "KimptonGrayValet"
+    kind: "Group"
+    number: 503
+    notes: "Kimpton Gray Hotel (122 W Monroe St) - Valet. DMR talkgroup 503, timeslot 1, colour code 8."
+  - id: tg_wqly228_7_1_marriott_mm_sec
+    name: "Marriott MM Sec"
+    kind: "Group"
+    number: 7
+    notes: "Marriott Magnificent Mile - Security. DMR talkgroup 7, timeslot 1, colour code 4."
+  - id: tg_wqzs549_102_1_renchgo_frontdsk
+    name: "RenChgo FrontDsk"
+    kind: "Group"
+    number: 102
+    notes: "Renaissance Chicago Downtown - Front Desk. DMR talkgroup 102, timeslot 1, colour code 8."
+  - id: tg_wqzs549_103_2_renchgo_ops_103
+    name: "RenChgo Ops 103"
+    kind: "Group"
+    number: 103
+    notes: "Renaissance Chicago Downtown - Operations. DMR talkgroup 103, timeslot 2, colour code 8."
+  - id: tg_wqzs549_101_2_renchgo_h_e
+    name: "RenChgo H/E"
+    kind: "Group"
+    number: 101
+    notes: "Renaissance Chicago Downtown - Housekeeping / Engineering. DMR talkgroup 101, timeslot 2, colour code 8."
+  - id: tg_wqzs549_102_2_renchgo_ops_102
+    name: "RenChgo Ops 102"
+    kind: "Group"
+    number: 102
+    notes: "Renaissance Chicago Downtown - Operations. DMR talkgroup 102, timeslot 2, colour code 8."
+  - id: tg_wqzs549_100_1_renaissance_sec
+    name: "Renaissance Sec"
+    kind: "Group"
+    number: 100
+    notes: "Renaissance Chicago Downtown - Security. DMR talkgroup 100, timeslot 1, colour code 8."
+  - id: tg_wrbq292_501_2_shrtnchgoenginrs
+    name: "ShrtnChgoEnginrs"
+    kind: "Group"
+    number: 501
+    notes: "Sheraton Grand Chicago - Engineering. DMR talkgroup 501, timeslot 2, colour code 9."
+  - id: tg_wrbq292_1_1_shrtnchgosecurty
+    name: "ShrtnChgoSecurty"
+    kind: "Group"
+    number: 1
+    notes: "Sheraton Grand Chicago - Security. DMR talkgroup 1, timeslot 1, colour code 9."
+  - id: tg_wrbq292_503_1_shrtnchgohsemen
+    name: "ShrtnChgoHsemen"
+    kind: "Group"
+    number: 503
+    notes: "Sheraton Grand Chicago - Housemen. DMR talkgroup 503, timeslot 1, colour code 11."
+  - id: tg_wrbq292_504_2_shrtnchgoops
+    name: "ShrtnChgoOps"
+    kind: "Group"
+    number: 504
+    notes: "Sheraton Grand Chicago - Operations. DMR talkgroup 504, timeslot 2, colour code 11."
+  - id: tg_wqin529_1_2_trumphotel_hskpg
+    name: "TrumpHotel Hskpg"
+    kind: "Group"
+    number: 1
+    notes: "Trump International Hotel and Tower - Housekeeping. DMR talkgroup 1, timeslot 2, colour code 9."
+  - id: tg_wqin529_1_1_trumphotel_ops1
+    name: "TrumpHotel Ops1"
+    kind: "Group"
+    number: 1
+    notes: "Trump International Hotel and Tower - Operations. DMR talkgroup 1, timeslot 1, colour code 9."
+  - id: tg_wqin529_1_2_trumphotel_ops6
+    name: "TrumpHotel Ops6"
+    kind: "Group"
+    number: 1
+    notes: "Trump International Hotel and Tower - Operations. DMR talkgroup 1, timeslot 2, colour code 9."
+  - id: tg_wqin529_1_1_trumphotel_scrty
+    name: "TrumpHotel Scrty"
+    kind: "Group"
+    number: 1
+    notes: "Trump International Hotel and Tower - Security. DMR talkgroup 1, timeslot 1, colour code 9."
+  - id: tg_wqin529_1_1_trumphotel_rmsvc
+    name: "TrumpHotel RmSvc"
+    kind: "Group"
+    number: 1
+    notes: "Trump International Hotel and Tower - Room Service. DMR talkgroup 1, timeslot 1, colour code 9."
+  - id: tg_wqin529_1_2_trumphotel_ops4
+    name: "TrumpHotel Ops4"
+    kind: "Group"
+    number: 1
+    notes: "Trump International Hotel and Tower - Valet Parking, Front Desk. DMR talkgroup 1, timeslot 2, colour code 9."
+
+assignments:
+  - id: asgn_ace_hotel_ops
+    channel_name: "Ace Hotel Ops"
+    rf_chain_id: chain_wqzj909_452p8875
+    usage: "simplex"
+    authorization_id: auth_biz
+  - id: asgn_ccc_hotel_eng
+    channel_name: "CCC Hotel Eng"
+    rf_chain_id: chain_wqvv406_461p9125
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_caa_hotel_sec
+    channel_name: "CAA Hotel Sec"
+    rf_chain_id: chain_wqvv406_461p9125
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_caa_hotel_hsk
+    channel_name: "CAA Hotel Hsk"
+    rf_chain_id: chain_wqvv406_464p7625
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_caa_hotel_ops
+    channel_name: "CAA Hotel Ops"
+    rf_chain_id: chain_wqvv406_464p7625
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_embsyste_fac
+    channel_name: "EmbsySte Fac"
+    rf_chain_id: chain_wqqq455_464p125
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_embsyste_secrty
+    channel_name: "EmbsySte Secrty"
+    rf_chain_id: chain_wqqq455_464p125
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_frmnthotel_ops6
+    channel_name: "FrmntHotel Ops6"
+    rf_chain_id: chain_wqum495_452p0625
+    usage: "simplex"
+    authorization_id: auth_biz
+  - id: asgn_frmnthotel_ops5
+    channel_name: "FrmntHotel Ops5"
+    rf_chain_id: chain_wqum495_451p7375
+    usage: "simplex"
+    authorization_id: auth_biz
+  - id: asgn_frmnthotel_ops3
+    channel_name: "FrmntHotel Ops3"
+    rf_chain_id: chain_wqum495_451p1875
+    usage: "simplex"
+    authorization_id: auth_biz
+  - id: asgn_frmnthotel_ops7
+    channel_name: "FrmntHotel Ops7"
+    rf_chain_id: chain_wqum495_452p4875
+    usage: "simplex"
+    authorization_id: auth_biz
+  - id: asgn_frmnthotel_ops4
+    channel_name: "FrmntHotel Ops4"
+    rf_chain_id: chain_wqum495_451p4625
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_frmnthotel_ops1
+    channel_name: "FrmntHotel Ops1"
+    rf_chain_id: chain_wnwa694_464p875
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_frmnthotel_ops2
+    channel_name: "FrmntHotel Ops2"
+    rf_chain_id: chain_wnpz509_464p325
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_hilton_mccpl_1
+    channel_name: "Hilton McCPl 1"
+    rf_chain_id: chain_wrcw578_463p2375
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_hilton_mccpl_2
+    channel_name: "Hilton McCPl 2"
+    rf_chain_id: chain_wrcw578_464p0125
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_hyatt_ord_1
+    channel_name: "Hyatt ORD 1"
+    rf_chain_id: chain_kb66526_461p2875
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_hyatt_ord_3
+    channel_name: "Hyatt ORD 3"
+    rf_chain_id: chain_kb66526_463p2375
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_hyatt_ord_2
+    channel_name: "Hyatt ORD 2"
+    rf_chain_id: chain_kb66526_463p5625
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_kimptongray_eng
+    channel_name: "KimptonGray Eng"
+    rf_chain_id: chain_wqxi362_462p45
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_kimptongray_ops
+    channel_name: "KimptonGray Ops"
+    rf_chain_id: chain_wqxi362_462p45
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_kimptongrayvalet
+    channel_name: "KimptonGrayValet"
+    rf_chain_id: chain_wqxi362_463p775
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_marriott_mm_sec
+    channel_name: "Marriott MM Sec"
+    rf_chain_id: chain_wqly228_462p4875
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_renchgo_frontdsk
+    channel_name: "RenChgo FrontDsk"
+    rf_chain_id: chain_wqzs549_461p6
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_renchgo_ops_103
+    channel_name: "RenChgo Ops 103"
+    rf_chain_id: chain_wqzs549_461p6
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_renchgo_h_e
+    channel_name: "RenChgo H/E"
+    rf_chain_id: chain_wqzs549_463p6
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_renchgo_ops_102
+    channel_name: "RenChgo Ops 102"
+    rf_chain_id: chain_wqzs549_463p6
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_renaissance_sec
+    channel_name: "Renaissance Sec"
+    rf_chain_id: chain_wqzs549_463p6
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_shrtnchgoenginrs
+    channel_name: "ShrtnChgoEnginrs"
+    rf_chain_id: chain_wrbq292_462p1625
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_shrtnchgosecurty
+    channel_name: "ShrtnChgoSecurty"
+    rf_chain_id: chain_wrbq292_462p1625
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_shrtnchgohsemen
+    channel_name: "ShrtnChgoHsemen"
+    rf_chain_id: chain_wrbq292_461p5625
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_shrtnchgoops
+    channel_name: "ShrtnChgoOps"
+    rf_chain_id: chain_wrbq292_461p5625
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_peninsula_2
+    channel_name: "Peninsula 2"
+    rf_chain_id: chain_wqjv437_464p725
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_peninsula_1
+    channel_name: "Peninsula 1"
+    rf_chain_id: chain_wqjv437_464p4625
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_trumphotel_hskpg
+    channel_name: "TrumpHotel Hskpg"
+    rf_chain_id: chain_wqin529_464p2875
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_trumphotel_ops1
+    channel_name: "TrumpHotel Ops1"
+    rf_chain_id: chain_wqin529_464p2875
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_trumphotel_ops6
+    channel_name: "TrumpHotel Ops6"
+    rf_chain_id: chain_wqin529_464p9375
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_trumphotel_scrty
+    channel_name: "TrumpHotel Scrty"
+    rf_chain_id: chain_wqin529_464p9375
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_trumphotel_rmsvc
+    channel_name: "TrumpHotel RmSvc"
+    rf_chain_id: chain_wqin529_464p6375
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_trumphotel_ops4
+    channel_name: "TrumpHotel Ops4"
+    rf_chain_id: chain_wqin529_464p6375
+    usage: "repeater"
+    authorization_id: auth_biz
+  - id: asgn_wit_hotel_1
+    channel_name: "Wit Hotel 1"
+    rf_chain_id: chain_wqfw632_467p7625
+    usage: "simplex"
+    authorization_id: auth_biz
+
+comments:
+  - text: |
+      Chicago hotel business land mobile, from the RadioReference database Chicago
+      Businesses (Hotels) listing.
+      
+      SCOPE NOTE: every licensee here is downtown / Loop / Magnificent Mile, with the
+      exception of Hilton Garden Inn at McCormick Place and Hyatt Regency at O'Hare.
+      None of this is in the Bucktown-to-Evanston corridor - downtown is south of
+      Bucktown. It is included because the data is unusually good (DMR colour codes,
+      talkgroups and timeslots are documented), and downtown rooftop UHF repeaters are
+      often receivable well up the north side.
+      
+      Most of these are DMR repeaters where several logical channels share one RF
+      channel, separated by talkgroup and timeslot. Those are modelled as a single
+      rf_chain with multiple assignments, and the talkgroups are recorded as contacts.
+      
+      Repeater input frequencies are not published by the source, so only outputs are
+      recorded. The Fairmont operates under three separate call signs (WQUM495,
+      WNWA694, WNPZ509) and is split into three organisations accordingly.
+      
+      RX-only for the general public per Part 90.

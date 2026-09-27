@@ -9,6 +9,9 @@ ssrf_lite:
     - name: "RadioReference IL Cook County GMRS repeater export (ctid 606)"
       url:
       accessed: "2026-09-17"
+    - name: "RadioReference - GMRS repeaters, Cook County, IL (aid 11211)"
+      url: "https://www.radioreference.com/db/aid/11211"
+      accessed: "2026-09-26"
     - name: "NSEA member (site details and coverage notes)"
       url:
       accessed: "2026-09-17"
@@ -53,7 +56,7 @@ stations:
     service: "gmrs"
   # Cooperating (non-NSEA-owned) system, operated in coordination with NSEA.
   - id: stn_nsea_coop_evanston_725
-    call_sign: "GMRS"
+    call_sign: "WQDY295"
     organization_id: org_nsea_coop_595
     location_id: loc_nsea_coop_evanston
     service: "gmrs"
