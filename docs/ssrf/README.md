@@ -4,8 +4,8 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ## Quick Statistics
 
-- **Total SSRF Files:** 51
-- **Total Assignments:** 738
+- **Total SSRF Files:** 53
+- **Total Assignments:** 756
 - **Services Covered:** 10
 - **Modes:** AM, APRS, C4FM, CW, D-STAR, DMR, FM, NXDN, P25, PACKET
 - **Frequency Bands:** 5
@@ -34,7 +34,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |------|----------|-------------|-------|------------------|
 | [mmdvm_duplex_hotspot](mmdvm_duplex_hotspot.md) | amateur | 2 | DMR | custom / mmdvm_duplex_hotspot.yml |
 
-### Geographic System (39 files)
+### Geographic System (41 files)
 
 | File | Services | Assignments | Modes | Geographic Scope |
 |------|----------|-------------|-------|------------------|
@@ -65,6 +65,8 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [zion_gmrs_repeaters](zion_gmrs_repeaters.md) | gmrs | 1 | FM | US / IL / Lake / Benton |
 | [tri_state_dmr](tri_state_dmr.md) | amateur | 16 | DMR | US / IL / _Statewide / amateur |
 | [il_statewide_interop](il_statewide_interop.md) | public_safety_part90 | 14 | FM | US / IL / _Statewide / public_safety |
+| [metra_commuter_rail](metra_commuter_rail.md) | public_safety_part90, railroad... | 15 | FM, NXDN | US / IL / _Statewide / railroad_aar |
+| [south_shore_line](south_shore_line.md) | railroad_aar | 3 | FM | US / IL / _Statewide / railroad_aar |
 | [laporte_county_amateur_radio_club](laporte_county_amateur_radio_club.md) | amateur | 6 | FM, C4FM | US / IN / LaPorte / LaPorte |
 | [laporte_county_public_safety](laporte_county_public_safety.md) | public_safety_part90 | 15 | FM | US / IN / LaPorte / LaPorte |
 | [n9iaa_aresc_network](n9iaa_aresc_network.md) | amateur | 4 | FM, DMR | US / IN / Northwest / Regional |
@@ -85,7 +87,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ### US
 - **FL:** 3 files
-- **IL:** 24 files
+- **IL:** 26 files
 - **IN:** 4 files
 - **MI:** 3 files
 - **National/Regional:** 10 files
@@ -108,8 +110,8 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | murs | 5 | 1 |
 | noaa_weather_radio | 7 | 1 |
 | pmr446 | 16 | 1 |
-| public_safety_part90 | 149 | 10 |
-| railroad_aar | 24 | 1 |
+| public_safety_part90 | 164 | 11 |
+| railroad_aar | 42 | 3 |
 
 ## Using SSRF Files
 

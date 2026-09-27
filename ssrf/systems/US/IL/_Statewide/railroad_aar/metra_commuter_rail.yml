@@ -1,0 +1,284 @@
+# yaml-language-server: $schema=../../../../../_schema/ssrf-lite-0.6.0.schema.json
+$schema: "../../../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
+ssrf_lite:
+  sources:
+    - name: "Illinois Railroads - RadioReference DB"
+      url: "https://www.radioreference.com/db/aid/4563"
+      accessed: "2026-09-26"
+
+organizations:
+  - id: org_metra
+    name: "Metra (Northeast Illinois Regional Commuter Railroad Corp.)"
+
+locations:
+  - id: loc_chicago_metro
+    name: "Chicago Metro (statewide operations)"
+    lat: 41.8781
+    lon: -87.6298
+
+stations:
+  - id: stn_metra_road
+    call_sign: null
+    organization_id: org_metra
+    location_id: loc_chicago_metro
+    service: "railroad_aar"
+  - id: stn_metra_pd
+    call_sign: null
+    organization_id: org_metra
+    location_id: loc_chicago_metro
+    service: "railroad_aar"
+  # Metra PD frequencies outside the AAR VHF band use public_safety_part90
+  - id: stn_metra_pd_uhf
+    call_sign: null
+    organization_id: org_metra
+    location_id: loc_chicago_metro
+    service: "public_safety_part90"
+  - id: stn_metra_nxdn
+    call_sign: "WQXZ480"
+    organization_id: org_metra
+    location_id: loc_chicago_metro
+    service: "public_safety_part90"
+
+antennas:
+  - id: ant_metra_road
+    station_id: stn_metra_road
+    name: "Road/Wayside"
+  - id: ant_metra_pd
+    station_id: stn_metra_pd
+    name: "Police (AAR band)"
+  - id: ant_metra_pd_uhf
+    station_id: stn_metra_pd_uhf
+    name: "Police (UHF / VHF out-of-band)"
+  - id: ant_metra_nxdn
+    station_id: stn_metra_nxdn
+    name: "CUS NXDN Repeater"
+
+authorizations:
+  - id: auth_metra_aar
+    authority: "FCC"
+    service: "railroad_aar"
+    class: "Part 90 PLMR"
+    identifier: null
+    notes: "TX restricted to Metra licensees and contractors. RX-only for general public."
+
+rf_chains:
+  # --- Road channels ---
+  # SW Service: Chicago to 21st St (AAR 13) — license KNFX766
+  - id: chain_metra_13_sw_north
+    station_id: stn_metra_road
+    antenna_id: ant_metra_road
+    rx: { freq_mhz: 160.305 }
+    tx: { freq_mhz: 160.305, emission: "11K2F3E" }
+    mode: { type: "FM" }
+
+  # SW Service: 21st St to Manhattan (AAR 22) — license WNQU573
+  - id: chain_metra_22_sw_south
+    station_id: stn_metra_road
+    antenna_id: ant_metra_road
+    rx: { freq_mhz: 160.440 }
+    tx: { freq_mhz: 160.440, emission: "11K2F3E" }
+    mode: { type: "FM" }
+
+  # Milwaukee District North (AAR 44) — license KFW518
+  - id: chain_metra_44_mdn
+    station_id: stn_metra_road
+    antenna_id: ant_metra_road
+    rx: { freq_mhz: 160.770 }
+    tx: { freq_mhz: 160.770, emission: "11K2F3E" }
+    mode: { type: "FM" }
+
+  # Milwaukee District West (AAR 94) — license KFW519
+  - id: chain_metra_94_mdw
+    station_id: stn_metra_road
+    antenna_id: ant_metra_road
+    rx: { freq_mhz: 161.520 }
+    tx: { freq_mhz: 161.520, emission: "11K2F3E" }
+    mode: { type: "FM" }
+
+  # Metra Electric (AAR 61) — license WNMV660, PL 173.8
+  - id: chain_metra_61_electric
+    station_id: stn_metra_road
+    antenna_id: ant_metra_road
+    rx: { freq_mhz: 161.025 }
+    tx: { freq_mhz: 161.025, emission: "11K2F3E" }
+    mode: { type: "FM", ctcss_tx_hz: 173.8, ctcss_rx_hz: 173.8 }
+
+  # Heritage Corridor (AAR 54) — license KNFX766
+  - id: chain_metra_54_heritage
+    station_id: stn_metra_road
+    antenna_id: ant_metra_road
+    rx: { freq_mhz: 160.920 }
+    tx: { freq_mhz: 160.920, emission: "11K2F3E" }
+    mode: { type: "FM" }
+
+  # Rock Island District (AAR 82) — license KSB864
+  - id: chain_metra_82_ri
+    station_id: stn_metra_road
+    antenna_id: ant_metra_road
+    rx: { freq_mhz: 161.340 }
+    tx: { freq_mhz: 161.340, emission: "11K2F3E" }
+    mode: { type: "FM" }
+
+  # UP-North Ogilvie (AAR 52) — no license listed
+  - id: chain_metra_52_up_north_ogilvie
+    station_id: stn_metra_road
+    antenna_id: ant_metra_road
+    rx: { freq_mhz: 160.890 }
+    tx: { freq_mhz: 160.890, emission: "11K2F3E" }
+    mode: { type: "FM" }
+
+  # UP-North Clybourn-Kenosha (AAR 62) — no license listed
+  - id: chain_metra_62_up_north_cly_ken
+    station_id: stn_metra_road
+    antenna_id: ant_metra_road
+    rx: { freq_mhz: 161.040 }
+    tx: { freq_mhz: 161.040, emission: "11K2F3E" }
+    mode: { type: "FM" }
+
+  # Passenger Services (AAR 74) — license WNBG753
+  - id: chain_metra_74_pass_svc
+    station_id: stn_metra_road
+    antenna_id: ant_metra_road
+    rx: { freq_mhz: 161.220 }
+    tx: { freq_mhz: 161.220, emission: "11K2F3E" }
+    mode: { type: "FM" }
+
+  # --- Police channels ---
+  # Police Ch 33 — license WNBG753, PL 146.2
+  - id: chain_metra_33_pd
+    station_id: stn_metra_pd
+    antenna_id: ant_metra_pd
+    rx: { freq_mhz: 160.605 }
+    tx: { freq_mhz: 160.605, emission: "11K2F3E" }
+    mode: { type: "FM", ctcss_tx_hz: 146.2, ctcss_rx_hz: 146.2 }
+
+  # Police (AAR 35) — license WNBG753
+  - id: chain_metra_35_pd
+    station_id: stn_metra_pd
+    antenna_id: ant_metra_pd
+    rx: { freq_mhz: 160.635 }
+    tx: { freq_mhz: 160.635, emission: "11K2F3E" }
+    mode: { type: "FM" }
+
+  # Police — license KFW518 (161.610 is above the AAR allocation ceiling; public_safety_part90)
+  - id: chain_metra_pd_kfw518
+    station_id: stn_metra_pd_uhf
+    antenna_id: ant_metra_pd_uhf
+    rx: { freq_mhz: 161.610 }
+    tx: { freq_mhz: 161.610, emission: "11K2F3E" }
+    mode: { type: "FM" }
+
+  # Police Mobile Extenders (UHF) — license WPTW445, PL 77.0
+  - id: chain_metra_pd_mx
+    station_id: stn_metra_pd_uhf
+    antenna_id: ant_metra_pd_uhf
+    rx: { freq_mhz: 453.4875 }
+    tx: { freq_mhz: 453.4875, emission: "11K2F3E" }
+    mode: { type: "FM", ctcss_tx_hz: 77.0, ctcss_rx_hz: 77.0 }
+
+  # --- NXDN repeater ---
+  # Chicago Union Station Ops — license WQXZ480 (150.890 MHz; public_safety_part90)
+  - id: chain_metra_cus_nxdn
+    station_id: stn_metra_nxdn
+    antenna_id: ant_metra_nxdn
+    rx: { freq_mhz: 150.890 }
+    tx: { freq_mhz: 150.890, emission: "6K00FXE" }
+    mode: { type: "NXDN", nxdn_ran: null, notes: "NXDN48; Chicago Union Station Ops" }
+
+assignments:
+  - id: asgn_metra_13_sw_north
+    channel_name: "Metra SW North (AAR 13)"
+    rf_chain_id: chain_metra_13_sw_north
+    usage: "simplex"
+    authorization_id: auth_metra_aar
+
+  - id: asgn_metra_22_sw_south
+    channel_name: "Metra SW South (AAR 22)"
+    rf_chain_id: chain_metra_22_sw_south
+    usage: "simplex"
+    authorization_id: auth_metra_aar
+
+  - id: asgn_metra_44_mdn
+    channel_name: "Metra MD-N (AAR 44)"
+    rf_chain_id: chain_metra_44_mdn
+    usage: "simplex"
+    authorization_id: auth_metra_aar
+
+  - id: asgn_metra_94_mdw
+    channel_name: "Metra MD-W (AAR 94)"
+    rf_chain_id: chain_metra_94_mdw
+    usage: "simplex"
+    authorization_id: auth_metra_aar
+
+  - id: asgn_metra_61_electric
+    channel_name: "Metra Electric (AAR 61)"
+    rf_chain_id: chain_metra_61_electric
+    usage: "simplex"
+    authorization_id: auth_metra_aar
+
+  - id: asgn_metra_54_heritage
+    channel_name: "Metra Heritage Corridor (AAR 54)"
+    rf_chain_id: chain_metra_54_heritage
+    usage: "simplex"
+    authorization_id: auth_metra_aar
+
+  - id: asgn_metra_82_ri
+    channel_name: "Metra Rock Island (AAR 82)"
+    rf_chain_id: chain_metra_82_ri
+    usage: "simplex"
+    authorization_id: auth_metra_aar
+
+  - id: asgn_metra_52_up_north_ogilvie
+    channel_name: "Metra UP-N Ogilvie (AAR 52)"
+    rf_chain_id: chain_metra_52_up_north_ogilvie
+    usage: "simplex"
+    authorization_id: auth_metra_aar
+
+  - id: asgn_metra_62_up_north_cly_ken
+    channel_name: "Metra UP-N Clybourn-Kenosha (AAR 62)"
+    rf_chain_id: chain_metra_62_up_north_cly_ken
+    usage: "simplex"
+    authorization_id: auth_metra_aar
+
+  - id: asgn_metra_74_pass_svc
+    channel_name: "Metra Passenger Svc (AAR 74)"
+    rf_chain_id: chain_metra_74_pass_svc
+    usage: "simplex"
+    authorization_id: auth_metra_aar
+
+  - id: asgn_metra_33_pd
+    channel_name: "Metra Police (AAR 33)"
+    rf_chain_id: chain_metra_33_pd
+    usage: "simplex"
+    authorization_id: auth_metra_aar
+
+  - id: asgn_metra_35_pd
+    channel_name: "Metra Police (AAR 35)"
+    rf_chain_id: chain_metra_35_pd
+    usage: "simplex"
+    authorization_id: auth_metra_aar
+
+  - id: asgn_metra_pd_kfw518
+    channel_name: "Metra Police 161.610"
+    rf_chain_id: chain_metra_pd_kfw518
+    usage: "simplex"
+    authorization_id: auth_metra_aar
+
+  - id: asgn_metra_pd_mx
+    channel_name: "Metra Police Mobile Ext"
+    rf_chain_id: chain_metra_pd_mx
+    usage: "simplex"
+    authorization_id: auth_metra_aar
+
+  - id: asgn_metra_cus_nxdn
+    channel_name: "Metra CUS Ops (NXDN)"
+    rf_chain_id: chain_metra_cus_nxdn
+    usage: "repeater"
+    authorization_id: auth_metra_aar
+
+comments:
+  - text: |
+      Metra crews operate on the Road channel of the host railroad for BNSF, UP-N/NW/W, Heritage
+      (CN), and North Central (CN) lines. Locomotives and rolling stock are Metra-owned; crews are
+      Metra except on BNSF and UP lines. RX-only for general public per Part 90.
