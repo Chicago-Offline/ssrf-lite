@@ -1,0 +1,411 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.6.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.6.0.schema.json"
+ssrf_lite_version: "0.6.0"
+ssrf_lite:
+  sources:
+    - name: "RadioReference - Chicago Botanic Garden (Glencoe) business radio listing"
+      url: "https://www.radioreference.com/db/browse/ctid/523"
+      accessed: "2026-09-26"
+    - name: "FCC ULS bulk data, Land Mobile - Private (l_LMpriv) weekly dump, call sign WNKX791"
+      url: "https://www.fcc.gov/uls/transactions/daily-weekly"
+      accessed: "2026-09-26"
+
+comments:
+  - text: |
+      Chicago Botanic Garden, 1000 Lake Cook Rd, Glencoe, IL 60022 (Cook County).
+      Conventional Part 90 UHF business repeater system, 12.5 kHz narrowband FM.
+  - text: |
+      AUTHORIZATION STATUS: FCC ULS shows WNKX791 EXPIRED 2024-06-22 and CANCELLED
+      2024-08-24 (granted 2014-04-11, service code IG, eligibility rule 90.35). No
+      successor Chicago Botanic Garden license was found in the 2026-09-26 l_LMpriv or
+      l_LMcomm dumps. The system is still listed as active in RadioReference, so the
+      hardware is presumed on the air under a renewal or relicense not yet reflected in
+      the bulk data. Frequencies are retained here as monitoring reference, not as
+      evidence of current authorization.
+  - text: |
+      SOURCE CORRECTION 1: the RadioReference free-text header gives the call sign as
+      WNKY791. That call sign returns zero records in FCC ULS. The tabular listing's
+      WNKX791 is correct and is used throughout this file.
+  - text: |
+      SOURCE CORRECTION 2: RadioReference lists the input for 464.1000 (CBG Garden 7) as
+      468.1000, a non-standard +4.0 MHz split. FCC ULS shows 464.1000 paired with
+      469.1000 on WNKX791, and 468.1000 does not appear anywhere on the license. This
+      file uses 469.1000 (+5.0 MHz).
+  - text: |
+      464.0625/469.0625 and 464.5250/469.5250 are authorized on WNKX791 but carry no
+      published tone or usage. 464.5250/469.5250 appears in the FCC license only - it is
+      not in the RadioReference listing.
+  - text: |
+      457.1125, 457.2875, 457.4125, 457.6875 and 457.8625 are low-power mobile/on-site
+      itinerant frequencies on the license. RadioReference notes NFM/NXDN operation on
+      these; no NXDN RAN has been observed, so mode is left as FM with a note.
+  - text: |
+      DPL codes come from RadioReference and are published as a single code per channel;
+      they are recorded as matching TX/RX DCS with normal polarity, which is the usual
+      Part 90 configuration but has not been independently verified off-air.
+
+organizations:
+  - id: org_chicago_botanic_garden
+    name: "Chicago Botanic Garden"
+
+locations:
+  - id: loc_cbg_glencoe
+    name: "Chicago Botanic Garden, 1000 Lake Cook Rd, Glencoe, IL"
+    lat: 42.145306
+    lon: -87.783667
+
+stations:
+  - id: stn_cbg_wnkx791
+    call_sign: "WNKX791"
+    organization_id: org_chicago_botanic_garden
+    location_id: loc_cbg_glencoe
+    service: "business_itinerant_part90"
+
+antennas:
+  - id: ant_cbg_wnkx791
+    station_id: stn_cbg_wnkx791
+    name: "Chicago Botanic Garden base antenna"
+    height_agl_m: 13.7
+
+authorizations:
+  - id: auth_fcc_wnkx791
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "IG"
+    identifier: "WNKX791"
+    notes: "Industrial/Business Pool, conventional. Granted 2014-04-11; expired 2024-06-22; cancelled 2024-08-24 per FCC ULS l_LMpriv dump accessed 2026-09-26. Licensee of record: Chicago Botanic Gardens, 1000 Lake Cook Rd., Glencoe, IL 60022. Base/fixed stations authorized 40.0 W ERP; mobiles 4.0-6.0 W."
+
+rf_chains:
+  - id: chain_cbg_garden_1
+    station_id: stn_cbg_wnkx791
+    antenna_id: ant_cbg_wnkx791
+    tx:
+      freq_mhz: 468.400
+      power_w: 40.0
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 463.400
+    mode:
+      type: "FM"
+      dcs_tx_code: "632"
+      dcs_rx_code: "632"
+      dcs_tx_polarity: "N"
+      dcs_rx_polarity: "N"
+
+  - id: chain_cbg_garden_2
+    station_id: stn_cbg_wnkx791
+    antenna_id: ant_cbg_wnkx791
+    tx:
+      freq_mhz: 466.775
+      power_w: 40.0
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 461.775
+    mode:
+      type: "FM"
+      dcs_tx_code: "734"
+      dcs_rx_code: "734"
+      dcs_tx_polarity: "N"
+      dcs_rx_polarity: "N"
+
+  - id: chain_cbg_garden_3
+    station_id: stn_cbg_wnkx791
+    antenna_id: ant_cbg_wnkx791
+    tx:
+      freq_mhz: 469.175
+      power_w: 40.0
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 464.175
+    mode:
+      type: "FM"
+      dcs_tx_code: "125"
+      dcs_rx_code: "125"
+      dcs_tx_polarity: "N"
+      dcs_rx_polarity: "N"
+
+  - id: chain_cbg_garden_4
+    station_id: stn_cbg_wnkx791
+    antenna_id: ant_cbg_wnkx791
+    tx:
+      freq_mhz: 468.600
+      power_w: 40.0
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 463.600
+    mode:
+      type: "FM"
+      dcs_tx_code: "624"
+      dcs_rx_code: "624"
+      dcs_tx_polarity: "N"
+      dcs_rx_polarity: "N"
+
+  - id: chain_cbg_garden_5
+    station_id: stn_cbg_wnkx791
+    antenna_id: ant_cbg_wnkx791
+    tx:
+      freq_mhz: 469.1625
+      power_w: 40.0
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 464.1625
+    mode:
+      type: "FM"
+      dcs_tx_code: "311"
+      dcs_rx_code: "311"
+      dcs_tx_polarity: "N"
+      dcs_rx_polarity: "N"
+
+  - id: chain_cbg_garden_6
+    station_id: stn_cbg_wnkx791
+    antenna_id: ant_cbg_wnkx791
+    tx:
+      freq_mhz: 467.100
+      power_w: 40.0
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 462.100
+    mode:
+      type: "FM"
+      dcs_tx_code: "703"
+      dcs_rx_code: "703"
+      dcs_tx_polarity: "N"
+      dcs_rx_polarity: "N"
+
+  - id: chain_cbg_garden_7
+    station_id: stn_cbg_wnkx791
+    antenna_id: ant_cbg_wnkx791
+    tx:
+      freq_mhz: 469.100
+      power_w: 40.0
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 464.100
+    mode:
+      type: "FM"
+      dcs_tx_code: "411"
+      dcs_rx_code: "411"
+      dcs_tx_polarity: "N"
+      dcs_rx_polarity: "N"
+
+  - id: chain_cbg_464_0625
+    station_id: stn_cbg_wnkx791
+    antenna_id: ant_cbg_wnkx791
+    tx:
+      freq_mhz: 469.0625
+      power_w: 40.0
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 464.0625
+    mode:
+      type: "FM"
+      notes: "No published tone. Listed as a repeater in the RadioReference free-text header and authorized on WNKX791, but not in the channel table."
+
+  - id: chain_cbg_464_525
+    station_id: stn_cbg_wnkx791
+    antenna_id: ant_cbg_wnkx791
+    tx:
+      freq_mhz: 469.525
+      power_w: 40.0
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 464.525
+    mode:
+      type: "FM"
+      notes: "Authorized on WNKX791 in FCC ULS but absent from the RadioReference listing. No published tone or usage."
+
+  - id: chain_cbg_mobile_457_1125
+    station_id: stn_cbg_wnkx791
+    tx:
+      freq_mhz: 457.1125
+      power_w: 6.0
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 457.1125
+    mode:
+      type: "FM"
+      notes: "Low-power on-site mobile/itinerant. RadioReference notes NFM/NXDN use on this group; no NXDN RAN observed."
+
+  - id: chain_cbg_mobile_457_2875
+    station_id: stn_cbg_wnkx791
+    tx:
+      freq_mhz: 457.2875
+      power_w: 6.0
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 457.2875
+    mode:
+      type: "FM"
+      notes: "Low-power on-site mobile/itinerant. RadioReference notes NFM/NXDN use on this group; no NXDN RAN observed."
+
+  - id: chain_cbg_mobile_457_4125
+    station_id: stn_cbg_wnkx791
+    tx:
+      freq_mhz: 457.4125
+      power_w: 6.0
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 457.4125
+    mode:
+      type: "FM"
+      notes: "Low-power on-site mobile/itinerant. RadioReference notes NFM/NXDN use on this group; no NXDN RAN observed."
+
+  - id: chain_cbg_mobile_457_6875
+    station_id: stn_cbg_wnkx791
+    tx:
+      freq_mhz: 457.6875
+      power_w: 6.0
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 457.6875
+    mode:
+      type: "FM"
+      notes: "Low-power on-site mobile/itinerant. RadioReference notes NFM/NXDN use on this group; no NXDN RAN observed."
+
+  - id: chain_cbg_mobile_457_8625
+    station_id: stn_cbg_wnkx791
+    tx:
+      freq_mhz: 457.8625
+      power_w: 4.0
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 457.8625
+    mode:
+      type: "FM"
+      notes: "Low-power on-site mobile/itinerant. RadioReference notes NFM/NXDN use on this group; no NXDN RAN observed."
+
+assignments:
+  - id: asgn_cbg_garden_1
+    rf_chain_id: chain_cbg_garden_1
+    authorization_id: auth_fcc_wnkx791
+    usage: "repeater"
+    service: "business_itinerant_part90"
+    channel_name: "CBG Garden 1"
+    display_name: "CBG Garden 1"
+    notes: "Guest Services / trams (radio Ch 1). Output 463.4000, input 468.4000 (+5.0 MHz), DPL 632."
+
+  - id: asgn_cbg_garden_2
+    rf_chain_id: chain_cbg_garden_2
+    authorization_id: auth_fcc_wnkx791
+    usage: "repeater"
+    service: "business_itinerant_part90"
+    channel_name: "CBG Garden 2"
+    display_name: "CBG Garden 2"
+    notes: "Security or parking - role unconfirmed in the source. Output 461.7750, input 466.7750 (+5.0 MHz), DPL 734."
+
+  - id: asgn_cbg_garden_3
+    rf_chain_id: chain_cbg_garden_3
+    authorization_id: auth_fcc_wnkx791
+    usage: "repeater"
+    service: "business_itinerant_part90"
+    channel_name: "CBG Garden 3"
+    display_name: "CBG Garden 3"
+    notes: "Operations, Spanish-language traffic reported. Output 464.1750, input 469.1750 (+5.0 MHz), DPL 125."
+
+  - id: asgn_cbg_garden_4
+    rf_chain_id: chain_cbg_garden_4
+    authorization_id: auth_fcc_wnkx791
+    usage: "repeater"
+    service: "business_itinerant_part90"
+    channel_name: "CBG Garden 4"
+    display_name: "CBG Garden 4"
+    notes: "Maintenance, Spanish-language traffic reported (radio Ch 4). Output 463.6000, input 468.6000 (+5.0 MHz), DPL 624."
+
+  - id: asgn_cbg_garden_5
+    rf_chain_id: chain_cbg_garden_5
+    authorization_id: auth_fcc_wnkx791
+    usage: "repeater"
+    service: "business_itinerant_part90"
+    channel_name: "CBG Garden 5"
+    display_name: "CBG Garden 5"
+    notes: "Operations. Output 464.1625, input 469.1625 (+5.0 MHz), DPL 311."
+
+  - id: asgn_cbg_garden_6
+    rf_chain_id: chain_cbg_garden_6
+    authorization_id: auth_fcc_wnkx791
+    usage: "repeater"
+    service: "business_itinerant_part90"
+    channel_name: "CBG Garden 6"
+    display_name: "CBG Garden 6"
+    notes: "Maintenance, Spanish-language traffic reported (radio Ch 6, unconfirmed). Output 462.1000, input 467.1000 (+5.0 MHz), DPL 703."
+
+  - id: asgn_cbg_garden_7
+    rf_chain_id: chain_cbg_garden_7
+    authorization_id: auth_fcc_wnkx791
+    usage: "repeater"
+    service: "business_itinerant_part90"
+    channel_name: "CBG Garden 7"
+    display_name: "CBG Garden 7"
+    notes: "Gardeners / botanists. Output 464.1000, input 469.1000 (+5.0 MHz), DPL 411. RadioReference lists the input as 468.1000; FCC ULS shows 469.1000 on this license and no 468.1000, so the +5.0 MHz pair is used here."
+
+  - id: asgn_cbg_464_0625
+    rf_chain_id: chain_cbg_464_0625
+    authorization_id: auth_fcc_wnkx791
+    usage: "repeater"
+    service: "business_itinerant_part90"
+    channel_name: "CBG 464.0625"
+    display_name: "CBG 464.0625"
+    notes: "Licensed repeater pair with no published tone or assigned role. Output 464.0625, input 469.0625 (+5.0 MHz)."
+
+  - id: asgn_cbg_464_525
+    rf_chain_id: chain_cbg_464_525
+    authorization_id: auth_fcc_wnkx791
+    usage: "repeater"
+    service: "business_itinerant_part90"
+    channel_name: "CBG 464.5250"
+    display_name: "CBG 464.5250"
+    notes: "FCC-only pair, not in the RadioReference listing. No published tone or role. Output 464.5250, input 469.5250 (+5.0 MHz)."
+
+  - id: asgn_cbg_mobile_457_1125
+    rf_chain_id: chain_cbg_mobile_457_1125
+    authorization_id: auth_fcc_wnkx791
+    usage: "simplex"
+    service: "business_itinerant_part90"
+    channel_name: "CBG Mobile 457.1125"
+    notes: "On-site low-power mobile, 6.0 W. NFM/NXDN reported; tone/RAN unknown."
+
+  - id: asgn_cbg_mobile_457_2875
+    rf_chain_id: chain_cbg_mobile_457_2875
+    authorization_id: auth_fcc_wnkx791
+    usage: "simplex"
+    service: "business_itinerant_part90"
+    channel_name: "CBG Mobile 457.2875"
+    notes: "On-site low-power mobile, 6.0 W. NFM/NXDN reported; tone/RAN unknown."
+
+  - id: asgn_cbg_mobile_457_4125
+    rf_chain_id: chain_cbg_mobile_457_4125
+    authorization_id: auth_fcc_wnkx791
+    usage: "simplex"
+    service: "business_itinerant_part90"
+    channel_name: "CBG Mobile 457.4125"
+    notes: "On-site low-power mobile, 6.0 W. NFM/NXDN reported; tone/RAN unknown."
+
+  - id: asgn_cbg_mobile_457_6875
+    rf_chain_id: chain_cbg_mobile_457_6875
+    authorization_id: auth_fcc_wnkx791
+    usage: "simplex"
+    service: "business_itinerant_part90"
+    channel_name: "CBG Mobile 457.6875"
+    notes: "On-site low-power mobile, 6.0 W. NFM/NXDN reported; tone/RAN unknown."
+
+  - id: asgn_cbg_mobile_457_8625
+    rf_chain_id: chain_cbg_mobile_457_8625
+    authorization_id: auth_fcc_wnkx791
+    usage: "simplex"
+    service: "business_itinerant_part90"
+    channel_name: "CBG Mobile 457.8625"
+    notes: "On-site low-power mobile, 4.0 W. NFM/NXDN reported; tone/RAN unknown."

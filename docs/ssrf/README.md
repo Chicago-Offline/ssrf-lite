@@ -4,8 +4,8 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ## Quick Statistics
 
-- **Total SSRF Files:** 62
-- **Total Assignments:** 1,062
+- **Total SSRF Files:** 63
+- **Total Assignments:** 1,076
 - **Services Covered:** 10
 - **Modes:** AM, APRS, C4FM, CW, D-STAR, DMR, FM, NXDN, P25, PACKET
 - **Frequency Bands:** 5
@@ -34,7 +34,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |------|----------|-------------|-------|------------------|
 | [mmdvm_duplex_hotspot](mmdvm_duplex_hotspot.md) | amateur | 2 | DMR | custom / mmdvm_duplex_hotspot.yml |
 
-### Geographic System (50 files)
+### Geographic System (51 files)
 
 | File | Services | Assignments | Modes | Geographic Scope |
 |------|----------|-------------|-------|------------------|
@@ -61,6 +61,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [transit_transport](transit_transport.md) | public_safety_part90 | 7 | FM, DMR | US / IL / Cook / Chicago |
 | [evanston_businesses](evanston_businesses.md) | business_itinerant_part90 | 6 | DMR | US / IL / Cook / Evanston |
 | [evanston_public_safety](evanston_public_safety.md) | business_itinerant_part90, pub... | 8 | FM | US / IL / Cook / Evanston |
+| [chicago_botanic_garden](chicago_botanic_garden.md) | business_itinerant_part90 | 14 | FM | US / IL / Cook / Glencoe |
 | [glenview_public_safety](glenview_public_safety.md) | public_safety_part90 | 4 | FM | US / IL / Cook / Glenview |
 | [lincolnwood_businesses](lincolnwood_businesses.md) | business_itinerant_part90 | 1 | DMR | US / IL / Cook / Lincolnwood |
 | [skokie_repeater_club](skokie_repeater_club.md) | amateur | 1 | FM | US / IL / Cook / Northbrook |
@@ -96,7 +97,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ### US
 - **FL:** 3 files
-- **IL:** 35 files
+- **IL:** 36 files
 - **IN:** 4 files
 - **MI:** 3 files
 - **National/Regional:** 10 files
@@ -113,7 +114,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |---------|------------------|-------|
 | amateur | 121 | 19 |
 | aviation | 164 | 2 |
-| business_itinerant_part90 | 376 | 10 |
+| business_itinerant_part90 | 390 | 11 |
 | gmrs | 91 | 11 |
 | marine | 53 | 1 |
 | murs | 5 | 1 |
