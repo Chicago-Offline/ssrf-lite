@@ -1,0 +1,3665 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
+ssrf_lite_version: "0.8.0"
+ssrf_lite:
+  sources:
+    - name: "RadioReference - Sussex County, New Jersey (NJ) Scanner Frequencies"
+      url: "https://www.radioreference.com/db/browse/ctid/1789"
+      accessed: "2026-09-28"
+    - name: "RadioReference - Sussex County, NJ Premium CSV export (all identified frequencies)"
+      url: "https://www.radioreference.com/db/download/ctid/?ctid=1789&type=csv"
+      accessed: "2026-09-28"
+
+comments:
+  - text: "Sussex County, NJ conventional public safety, public works, volunteer EMS squads and school systems, folded into one countywide file with each municipality carried as its own location and station."
+  - text: "Captured from the Premium CSV export (Downloads -> /db/download/ctid/?ctid=1789&type=csv), which carries eleven columns including Frequency Input, PL Output Tone and PL Input Tone. An earlier revision of this file was built from the anonymous eight-column browse table, which omits the Input column entirely rather than marking it withheld, and wrongly recorded the resulting gap as the county publishing no inputs. 46 of the 132 chains here do have published repeater inputs and now carry a real tx.freq_mhz."
+  - text: "Tone direction comes from the CSV's split columns: PL Output Tone is the tone the repeater sends and is recorded as ctcss_rx_hz / dcs_rx_code; PL Input Tone is the access tone and is recorded as ctcss_tx_hz / dcs_tx_code. The HTML browse table - anonymous or Premium - has only one undirected Tone column, so an earlier revision recorded every tone as TX-only. No public safety row in this county publishes an input tone; all 15 rows that do are amateur. Repeater chains therefore carry an output tone on rx with the input tone left unset, and simplex chains keep the single published tone on tx."
+  - text: "OMITTED: 453.98775 MHz (Fredon Township, KVT557, alpha tag 'Fredn EMS L2', EMS Mobile Uplink). The published value is not a valid channel on any Part 90 raster and is most likely a typo for 453.9875 MHz. Left out rather than repaired - a guessed frequency is worse than a documented gap."
+  - text: "SOURCE TYPO: the 155.280 MHz Blue Ridge Rescue Squad mutual-aid entry is printed with license 'KL0302' (digit zero). Every other BRRS row reads KLO302 (letter O), so it is recorded here as KLO302."
+  - text: "152.9075 MHz / WQDM238 / 218.1 PL is listed under both Andover Township and Newton, and 453.9125 MHz / WPFQ901 / 141.3 PL under both the county EMS links and Sparta ('SprtaEMS MX2'). Each is one physical transmitter with two documented uses, so each is a single rf_chain with two assignments."
+  - text: "Hopatcong police DMR (158.850 MHz) is noted by the source as protected by RAS. It is a frequency and identity reference only, not a listenable channel."
+  - text: "No transmitter site coordinates are published for any system on this page. Every location is a municipal centroid approximation rounded to three decimals and named '(approx)'. They locate the agency, not the antenna."
+  - text: "Board of Education, school and community college channels appear on this county page and are included here under service public_safety_part90 as local-government Part 90 licences."
+  - text: "Several entries are published with no callsign at all: 460.6125 (SPEN 1 link), 453.5125 (county road flagmen), 154.600 (Fredon fire/EMS private), 31.680 (Lafayette DPW), 151.880 (Montague fire police), 159.030 (Ogdensburg police) and 155.205 (Hopatcong BOE buses). Their stations carry call_sign null."
+
+organizations:
+  - id: org_sux_sheriff
+    name: "Sussex County Sheriff's Office"
+  - id: org_sux_interop
+    name: "New Jersey Statewide Police Emergency Network (SPEN)"
+  - id: org_sux_fireems
+    name: "Sussex County Communications - Fire/EMS"
+  - id: org_sux_services
+    name: "Sussex County - Public Works, Utilities and Transit"
+  - id: org_andover_boro
+    name: "Andover Borough"
+  - id: org_andover_twp
+    name: "Andover Township"
+  - id: org_byram
+    name: "Byram Township"
+  - id: org_frankford
+    name: "Frankford Township"
+  - id: org_franklin
+    name: "Franklin Borough"
+  - id: org_fredon
+    name: "Fredon Township"
+  - id: org_green
+    name: "Green Township"
+  - id: org_hamburg
+    name: "Borough of Hamburg"
+  - id: org_hampton
+    name: "Hampton Township"
+  - id: org_hardyston
+    name: "Hardyston Township"
+  - id: org_hopatcong
+    name: "Borough of Hopatcong"
+  - id: org_lafayette
+    name: "Lafayette Township"
+  - id: org_montague
+    name: "Montague Township"
+  - id: org_newton
+    name: "Town of Newton"
+  - id: org_ogdensburg
+    name: "Borough of Ogdensburg"
+  - id: org_sandyston
+    name: "Sandyston Township"
+  - id: org_sparta
+    name: "Sparta Township"
+  - id: org_stanhope
+    name: "Borough of Stanhope"
+  - id: org_stillwater
+    name: "Stillwater Township"
+  - id: org_sussex_boro
+    name: "Sussex Borough"
+  - id: org_vernon
+    name: "Vernon Township"
+  - id: org_wantage
+    name: "Wantage Township"
+  - id: org_brrs
+    name: "Blue Ridge Rescue Squad"
+  - id: org_lakeland_ems
+    name: "Lakeland Emergency Squad (Andover)"
+  - id: org_schools
+    name: "Sussex County school districts and colleges"
+
+locations:
+  - id: loc_countywide
+    name: "Sussex County, NJ - countywide system (approx, county centroid)"
+    lat: 41.14
+    lon: -74.69
+  - id: loc_andover_boro
+    name: "Andover Borough, NJ (approx)"
+    lat: 40.985
+    lon: -74.741
+  - id: loc_andover_twp
+    name: "Andover Township, NJ (approx)"
+    lat: 40.972
+    lon: -74.78
+  - id: loc_branchville
+    name: "Branchville, NJ (approx)"
+    lat: 41.147
+    lon: -74.761
+  - id: loc_byram
+    name: "Byram Township, NJ (approx)"
+    lat: 40.968
+    lon: -74.712
+  - id: loc_frankford
+    name: "Frankford Township, NJ (approx)"
+    lat: 41.145
+    lon: -74.735
+  - id: loc_franklin
+    name: "Franklin Borough, NJ (approx)"
+    lat: 41.117
+    lon: -74.58
+  - id: loc_fredon
+    name: "Fredon Township, NJ (approx)"
+    lat: 41.02
+    lon: -74.827
+  - id: loc_green
+    name: "Green Township, NJ (approx)"
+    lat: 40.955
+    lon: -74.828
+  - id: loc_hamburg
+    name: "Hamburg, NJ (approx)"
+    lat: 41.153
+    lon: -74.576
+  - id: loc_hampton
+    name: "Hampton Township, NJ (approx)"
+    lat: 41.14
+    lon: -74.8
+  - id: loc_hardyston
+    name: "Hardyston Township, NJ (approx)"
+    lat: 41.111
+    lon: -74.588
+  - id: loc_hopatcong
+    name: "Hopatcong, NJ (approx)"
+    lat: 40.934
+    lon: -74.659
+  - id: loc_lafayette
+    name: "Lafayette Township, NJ (approx)"
+    lat: 41.099
+    lon: -74.692
+  - id: loc_montague
+    name: "Montague Township, NJ (approx)"
+    lat: 41.3
+    lon: -74.783
+  - id: loc_newton
+    name: "Newton, NJ (approx)"
+    lat: 41.058
+    lon: -74.753
+  - id: loc_ogdensburg
+    name: "Ogdensburg, NJ (approx)"
+    lat: 41.081
+    lon: -74.601
+  - id: loc_sandyston
+    name: "Sandyston Township, NJ (approx)"
+    lat: 41.199
+    lon: -74.848
+  - id: loc_sparta
+    name: "Sparta Township, NJ (approx)"
+    lat: 41.033
+    lon: -74.638
+  - id: loc_stanhope
+    name: "Stanhope, NJ (approx)"
+    lat: 40.903
+    lon: -74.708
+  - id: loc_stillwater
+    name: "Stillwater Township, NJ (approx)"
+    lat: 41.048
+    lon: -74.883
+  - id: loc_sussex_boro
+    name: "Sussex Borough, NJ (approx)"
+    lat: 41.21
+    lon: -74.607
+  - id: loc_vernon
+    name: "Vernon Township, NJ (approx)"
+    lat: 41.196
+    lon: -74.487
+  - id: loc_wantage
+    name: "Wantage Township, NJ (approx)"
+    lat: 41.238
+    lon: -74.648
+
+stations:
+  - id: stn_sux_sheriff_vhf_wpem831
+    call_sign: "WPEM831"
+    organization_id: org_sux_sheriff
+    location_id: loc_countywide
+    service: "public_safety_part90"
+  - id: stn_sux_interop_uhf_nocall
+    call_sign: null
+    organization_id: org_sux_interop
+    location_id: loc_countywide
+    service: "public_safety_part90"
+  - id: stn_sux_fireems_vhf_wpem831
+    call_sign: "WPEM831"
+    organization_id: org_sux_fireems
+    location_id: loc_countywide
+    service: "public_safety_part90"
+  - id: stn_sux_fireems_vhf_kxc854
+    call_sign: "KXC854"
+    organization_id: org_sux_fireems
+    location_id: loc_countywide
+    service: "public_safety_part90"
+  - id: stn_sux_fireems_vhf_wqa723
+    call_sign: "WQA723"
+    organization_id: org_sux_fireems
+    location_id: loc_countywide
+    service: "public_safety_part90"
+  - id: stn_sux_fireems_lowband_wpga474
+    call_sign: "WPGA474"
+    organization_id: org_sux_fireems
+    location_id: loc_countywide
+    service: "public_safety_part90"
+  - id: stn_sux_fireems_uhf_wnyt790
+    call_sign: "WNYT790"
+    organization_id: org_sux_fireems
+    location_id: loc_byram
+    service: "public_safety_part90"
+  - id: stn_sux_fireems_uhf_knen690
+    call_sign: "KNEN690"
+    organization_id: org_sux_fireems
+    location_id: loc_countywide
+    service: "public_safety_part90"
+  - id: stn_sux_fireems_uhf_klp844
+    call_sign: "KLP844"
+    organization_id: org_sux_fireems
+    location_id: loc_sandyston
+    service: "public_safety_part90"
+  - id: stn_sux_fireems_vhf_wnln707
+    call_sign: "WNLN707"
+    organization_id: org_sux_fireems
+    location_id: loc_countywide
+    service: "public_safety_part90"
+  - id: stn_sux_fireems_vhf_wnyt790
+    call_sign: "WNYT790"
+    organization_id: org_sux_fireems
+    location_id: loc_countywide
+    service: "public_safety_part90"
+  - id: stn_sux_fireems_vhf_wnvy825
+    call_sign: "WNVY825"
+    organization_id: org_sux_fireems
+    location_id: loc_countywide
+    service: "public_safety_part90"
+  - id: stn_sux_fireems_uhf_wqul922
+    call_sign: "WQUL922"
+    organization_id: org_sux_fireems
+    location_id: loc_countywide
+    service: "public_safety_part90"
+  - id: stn_sux_fireems_uhf_wqwu904
+    call_sign: "WQWU904"
+    organization_id: org_sux_fireems
+    location_id: loc_countywide
+    service: "public_safety_part90"
+  - id: stn_sux_services_lowband_kef641
+    call_sign: "KEF641"
+    organization_id: org_sux_services
+    location_id: loc_countywide
+    service: "public_safety_part90"
+  - id: stn_sux_services_uhf_nocall
+    call_sign: null
+    organization_id: org_sux_services
+    location_id: loc_countywide
+    service: "public_safety_part90"
+  - id: stn_sux_services_vhf_wqsu818
+    call_sign: "WQSU818"
+    organization_id: org_sux_services
+    location_id: loc_countywide
+    service: "public_safety_part90"
+  - id: stn_sux_services_vhf_wqa723
+    call_sign: "WQA723"
+    organization_id: org_sux_services
+    location_id: loc_countywide
+    service: "public_safety_part90"
+  - id: stn_andover_boro_vhf_wqaq881
+    call_sign: "WQAQ881"
+    organization_id: org_andover_boro
+    location_id: loc_andover_boro
+    service: "public_safety_part90"
+  - id: stn_andover_boro_vhf_wpez519
+    call_sign: "WPEZ519"
+    organization_id: org_andover_boro
+    location_id: loc_andover_boro
+    service: "public_safety_part90"
+  - id: stn_andover_twp_vhf_kyu566
+    call_sign: "KYU566"
+    organization_id: org_andover_twp
+    location_id: loc_andover_twp
+    service: "public_safety_part90"
+  - id: stn_andover_twp_vhf_wqdx335
+    call_sign: "WQDX335"
+    organization_id: org_andover_twp
+    location_id: loc_andover_twp
+    service: "public_safety_part90"
+  - id: stn_byram_vhf_wrcm392
+    call_sign: "WRCM392"
+    organization_id: org_byram
+    location_id: loc_byram
+    service: "public_safety_part90"
+  - id: stn_byram_vhf_kef286
+    call_sign: "KEF286"
+    organization_id: org_byram
+    location_id: loc_byram
+    service: "public_safety_part90"
+  - id: stn_frankford_lowband_kgp712
+    call_sign: "KGP712"
+    organization_id: org_frankford
+    location_id: loc_frankford
+    service: "public_safety_part90"
+  - id: stn_frankford_lowband_kxc748
+    call_sign: "KXC748"
+    organization_id: org_frankford
+    location_id: loc_frankford
+    service: "public_safety_part90"
+  - id: stn_franklin_vhf_wprt900
+    call_sign: "WPRT900"
+    organization_id: org_franklin
+    location_id: loc_franklin
+    service: "public_safety_part90"
+  - id: stn_franklin_vhf_wpfq901
+    call_sign: "WPFQ901"
+    organization_id: org_franklin
+    location_id: loc_franklin
+    service: "public_safety_part90"
+  - id: stn_franklin_vhf_wpty660
+    call_sign: "WPTY660"
+    organization_id: org_franklin
+    location_id: loc_franklin
+    service: "public_safety_part90"
+  - id: stn_franklin_vhf_wpjq471
+    call_sign: "WPJQ471"
+    organization_id: org_franklin
+    location_id: loc_franklin
+    service: "public_safety_part90"
+  - id: stn_franklin_uhf_wphx972
+    call_sign: "WPHX972"
+    organization_id: org_franklin
+    location_id: loc_franklin
+    service: "public_safety_part90"
+  - id: stn_fredon_lowband_kvt557
+    call_sign: "KVT557"
+    organization_id: org_fredon
+    location_id: loc_fredon
+    service: "public_safety_part90"
+  - id: stn_fredon_vhf_nocall
+    call_sign: null
+    organization_id: org_fredon
+    location_id: loc_fredon
+    service: "public_safety_part90"
+  - id: stn_fredon_uhf_kvt557
+    call_sign: "KVT557"
+    organization_id: org_fredon
+    location_id: loc_fredon
+    service: "public_safety_part90"
+  - id: stn_green_vhf_wqvs785
+    call_sign: "WQVS785"
+    organization_id: org_green
+    location_id: loc_green
+    service: "public_safety_part90"
+  - id: stn_green_lowband_kah972
+    call_sign: "KAH972"
+    organization_id: org_green
+    location_id: loc_green
+    service: "public_safety_part90"
+  - id: stn_green_vhf_wqvk925
+    call_sign: "WQVK925"
+    organization_id: org_green
+    location_id: loc_green
+    service: "public_safety_part90"
+  - id: stn_hamburg_vhf_wpgi659
+    call_sign: "WPGI659"
+    organization_id: org_hamburg
+    location_id: loc_hamburg
+    service: "public_safety_part90"
+  - id: stn_hamburg_vhf_wqvz790
+    call_sign: "WQVZ790"
+    organization_id: org_hamburg
+    location_id: loc_hamburg
+    service: "public_safety_part90"
+  - id: stn_hamburg_vhf_wnuh659
+    call_sign: "WNUH659"
+    organization_id: org_hamburg
+    location_id: loc_hamburg
+    service: "public_safety_part90"
+  - id: stn_hampton_vhf_wqax338
+    call_sign: "WQAX338"
+    organization_id: org_hampton
+    location_id: loc_hampton
+    service: "public_safety_part90"
+  - id: stn_hampton_uhf_wqax338
+    call_sign: "WQAX338"
+    organization_id: org_hampton
+    location_id: loc_hampton
+    service: "public_safety_part90"
+  - id: stn_hampton_lowband_wpur760
+    call_sign: "WPUR760"
+    organization_id: org_hampton
+    location_id: loc_hampton
+    service: "public_safety_part90"
+  - id: stn_hardyston_vhf_wndy962
+    call_sign: "WNDY962"
+    organization_id: org_hardyston
+    location_id: loc_hardyston
+    service: "public_safety_part90"
+  - id: stn_hardyston_vhf_knen690
+    call_sign: "KNEN690"
+    organization_id: org_hardyston
+    location_id: loc_hardyston
+    service: "public_safety_part90"
+  - id: stn_hardyston_vhf_wpcj497
+    call_sign: "WPCJ497"
+    organization_id: org_hardyston
+    location_id: loc_hardyston
+    service: "public_safety_part90"
+  - id: stn_hopatcong_vhf_wnkj359
+    call_sign: "WNKJ359"
+    organization_id: org_hopatcong
+    location_id: loc_hopatcong
+    service: "public_safety_part90"
+  - id: stn_hopatcong_vhf_wrfi752
+    call_sign: "WRFI752"
+    organization_id: org_hopatcong
+    location_id: loc_hopatcong
+    service: "public_safety_part90"
+  - id: stn_lafayette_vhf_wpwf648
+    call_sign: "WPWF648"
+    organization_id: org_lafayette
+    location_id: loc_lafayette
+    service: "public_safety_part90"
+  - id: stn_lafayette_lowband_nocall
+    call_sign: null
+    organization_id: org_lafayette
+    location_id: loc_lafayette
+    service: "public_safety_part90"
+  - id: stn_montague_vhf_wqcx255
+    call_sign: "WQCX255"
+    organization_id: org_montague
+    location_id: loc_montague
+    service: "public_safety_part90"
+  - id: stn_montague_vhf_nocall
+    call_sign: null
+    organization_id: org_montague
+    location_id: loc_montague
+    service: "public_safety_part90"
+  - id: stn_newton_vhf_kef288
+    call_sign: "KEF288"
+    organization_id: org_newton
+    location_id: loc_newton
+    service: "public_safety_part90"
+  - id: stn_newton_vhf_wqdx335
+    call_sign: "WQDX335"
+    organization_id: org_newton
+    location_id: loc_newton
+    service: "public_safety_part90"
+  - id: stn_newton_vhf_kndh877
+    call_sign: "KNDH877"
+    organization_id: org_newton
+    location_id: loc_newton
+    service: "public_safety_part90"
+  - id: stn_ogdensburg_vhf_nocall
+    call_sign: null
+    organization_id: org_ogdensburg
+    location_id: loc_ogdensburg
+    service: "public_safety_part90"
+  - id: stn_sandyston_vhf_klp844
+    call_sign: "KLP844"
+    organization_id: org_sandyston
+    location_id: loc_sandyston
+    service: "public_safety_part90"
+  - id: stn_sandyston_uhf_wpki456
+    call_sign: "WPKI456"
+    organization_id: org_sandyston
+    location_id: loc_sandyston
+    service: "public_safety_part90"
+  - id: stn_sandyston_lowband_kncb865
+    call_sign: "KNCB865"
+    organization_id: org_sandyston
+    location_id: loc_sandyston
+    service: "public_safety_part90"
+  - id: stn_sparta_vhf_wsdr966
+    call_sign: "WSDR966"
+    organization_id: org_sparta
+    location_id: loc_sparta
+    service: "public_safety_part90"
+  - id: stn_sparta_vhf_kzr693
+    call_sign: "KZR693"
+    organization_id: org_sparta
+    location_id: loc_sparta
+    service: "public_safety_part90"
+  - id: stn_sparta_vhf_wpnu751
+    call_sign: "WPNU751"
+    organization_id: org_sparta
+    location_id: loc_sparta
+    service: "public_safety_part90"
+  - id: stn_sparta_uhf_wpnu751
+    call_sign: "WPNU751"
+    organization_id: org_sparta
+    location_id: loc_sparta
+    service: "public_safety_part90"
+  - id: stn_sparta_uhf_wpfq901
+    call_sign: "WPFQ901"
+    organization_id: org_sparta
+    location_id: loc_sparta
+    service: "public_safety_part90"
+  - id: stn_sparta_vhf_kcp547
+    call_sign: "KCP547"
+    organization_id: org_sparta
+    location_id: loc_sparta
+    service: "public_safety_part90"
+  - id: stn_schools_lowband_wpui972
+    call_sign: "WPUI972"
+    organization_id: org_schools
+    location_id: loc_sparta
+    service: "public_safety_part90"
+  - id: stn_stanhope_vhf_wqqr421
+    call_sign: "WQQR421"
+    organization_id: org_stanhope
+    location_id: loc_stanhope
+    service: "public_safety_part90"
+  - id: stn_stanhope_vhf_wpcv523
+    call_sign: "WPCV523"
+    organization_id: org_stanhope
+    location_id: loc_stanhope
+    service: "public_safety_part90"
+  - id: stn_stanhope_uhf_wqul922
+    call_sign: "WQUL922"
+    organization_id: org_stanhope
+    location_id: loc_stanhope
+    service: "public_safety_part90"
+  - id: stn_stillwater_vhf_wqix755
+    call_sign: "WQIX755"
+    organization_id: org_stillwater
+    location_id: loc_stillwater
+    service: "public_safety_part90"
+  - id: stn_sussex_boro_vhf_krf516
+    call_sign: "KRF516"
+    organization_id: org_sussex_boro
+    location_id: loc_sussex_boro
+    service: "public_safety_part90"
+  - id: stn_vernon_lowband_wqif802
+    call_sign: "WQIF802"
+    organization_id: org_vernon
+    location_id: loc_vernon
+    service: "public_safety_part90"
+  - id: stn_vernon_uhf_wpmj514
+    call_sign: "WPMJ514"
+    organization_id: org_vernon
+    location_id: loc_vernon
+    service: "public_safety_part90"
+  - id: stn_vernon_vhf_wndd419
+    call_sign: "WNDD419"
+    organization_id: org_vernon
+    location_id: loc_vernon
+    service: "public_safety_part90"
+  - id: stn_wantage_vhf_wqvj274
+    call_sign: "WQVJ274"
+    organization_id: org_wantage
+    location_id: loc_wantage
+    service: "public_safety_part90"
+  - id: stn_wantage_vhf_wqzi881
+    call_sign: "WQZI881"
+    organization_id: org_wantage
+    location_id: loc_wantage
+    service: "public_safety_part90"
+  - id: stn_wantage_vhf_wpvr575
+    call_sign: "WPVR575"
+    organization_id: org_wantage
+    location_id: loc_wantage
+    service: "public_safety_part90"
+  - id: stn_wantage_lowband_wpkv560
+    call_sign: "WPKV560"
+    organization_id: org_wantage
+    location_id: loc_wantage
+    service: "public_safety_part90"
+  - id: stn_wantage_lowband_ktl587
+    call_sign: "KTL587"
+    organization_id: org_wantage
+    location_id: loc_wantage
+    service: "public_safety_part90"
+  - id: stn_brrs_lowband_klo302
+    call_sign: "KLO302"
+    organization_id: org_brrs
+    location_id: loc_branchville
+    service: "public_safety_part90"
+  - id: stn_brrs_vhf_klo302
+    call_sign: "KLO302"
+    organization_id: org_brrs
+    location_id: loc_branchville
+    service: "public_safety_part90"
+  - id: stn_brrs_uhf_wqqq673
+    call_sign: "WQQQ673"
+    organization_id: org_brrs
+    location_id: loc_branchville
+    service: "public_safety_part90"
+  - id: stn_lakeland_ems_vhf_wqzp893
+    call_sign: "WQZP893"
+    organization_id: org_lakeland_ems
+    location_id: loc_andover_boro
+    service: "public_safety_part90"
+  - id: stn_schools_vhf_wqox263
+    call_sign: "WQOX263"
+    organization_id: org_schools
+    location_id: loc_fredon
+    service: "public_safety_part90"
+  - id: stn_schools_uhf_wqeh775
+    call_sign: "WQEH775"
+    organization_id: org_schools
+    location_id: loc_sussex_boro
+    service: "public_safety_part90"
+  - id: stn_schools_vhf_nocall
+    call_sign: null
+    organization_id: org_schools
+    location_id: loc_hopatcong
+    service: "public_safety_part90"
+  - id: stn_schools_uhf_wnkj731
+    call_sign: "WNKJ731"
+    organization_id: org_schools
+    location_id: loc_stanhope
+    service: "public_safety_part90"
+  - id: stn_schools_vhf_wqpx465
+    call_sign: "WQPX465"
+    organization_id: org_schools
+    location_id: loc_sparta
+    service: "public_safety_part90"
+  - id: stn_schools_uhf_wpzj742
+    call_sign: "WPZJ742"
+    organization_id: org_schools
+    location_id: loc_newton
+    service: "public_safety_part90"
+  - id: stn_schools_lowband_wqvq341
+    call_sign: "WQVQ341"
+    organization_id: org_schools
+    location_id: loc_wantage
+    service: "public_safety_part90"
+  - id: stn_andover_twp_vhf_wqdm238
+    call_sign: "WQDM238"
+    organization_id: org_andover_twp
+    location_id: loc_andover_twp
+    service: "public_safety_part90"
+  - id: stn_sux_fireems_uhf_wpfq901
+    call_sign: "WPFQ901"
+    organization_id: org_sux_fireems
+    location_id: loc_countywide
+    service: "public_safety_part90"
+
+antennas:
+  - id: ant_sux_sheriff_vhf_wpem831
+    station_id: stn_sux_sheriff_vhf_wpem831
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sux_interop_uhf_nocall
+    station_id: stn_sux_interop_uhf_nocall
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sux_fireems_vhf_wpem831
+    station_id: stn_sux_fireems_vhf_wpem831
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sux_fireems_vhf_kxc854
+    station_id: stn_sux_fireems_vhf_kxc854
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sux_fireems_vhf_wqa723
+    station_id: stn_sux_fireems_vhf_wqa723
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sux_fireems_lowband_wpga474
+    station_id: stn_sux_fireems_lowband_wpga474
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sux_fireems_uhf_wnyt790
+    station_id: stn_sux_fireems_uhf_wnyt790
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sux_fireems_uhf_knen690
+    station_id: stn_sux_fireems_uhf_knen690
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sux_fireems_uhf_klp844
+    station_id: stn_sux_fireems_uhf_klp844
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sux_fireems_vhf_wnln707
+    station_id: stn_sux_fireems_vhf_wnln707
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sux_fireems_vhf_wnyt790
+    station_id: stn_sux_fireems_vhf_wnyt790
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sux_fireems_vhf_wnvy825
+    station_id: stn_sux_fireems_vhf_wnvy825
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sux_fireems_uhf_wqul922
+    station_id: stn_sux_fireems_uhf_wqul922
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sux_fireems_uhf_wqwu904
+    station_id: stn_sux_fireems_uhf_wqwu904
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sux_services_lowband_kef641
+    station_id: stn_sux_services_lowband_kef641
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sux_services_uhf_nocall
+    station_id: stn_sux_services_uhf_nocall
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sux_services_vhf_wqsu818
+    station_id: stn_sux_services_vhf_wqsu818
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sux_services_vhf_wqa723
+    station_id: stn_sux_services_vhf_wqa723
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_andover_boro_vhf_wqaq881
+    station_id: stn_andover_boro_vhf_wqaq881
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_andover_boro_vhf_wpez519
+    station_id: stn_andover_boro_vhf_wpez519
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_andover_twp_vhf_kyu566
+    station_id: stn_andover_twp_vhf_kyu566
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_andover_twp_vhf_wqdx335
+    station_id: stn_andover_twp_vhf_wqdx335
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_byram_vhf_wrcm392
+    station_id: stn_byram_vhf_wrcm392
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_byram_vhf_kef286
+    station_id: stn_byram_vhf_kef286
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_frankford_lowband_kgp712
+    station_id: stn_frankford_lowband_kgp712
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_frankford_lowband_kxc748
+    station_id: stn_frankford_lowband_kxc748
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_franklin_vhf_wprt900
+    station_id: stn_franklin_vhf_wprt900
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_franklin_vhf_wpfq901
+    station_id: stn_franklin_vhf_wpfq901
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_franklin_vhf_wpty660
+    station_id: stn_franklin_vhf_wpty660
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_franklin_vhf_wpjq471
+    station_id: stn_franklin_vhf_wpjq471
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_franklin_uhf_wphx972
+    station_id: stn_franklin_uhf_wphx972
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_fredon_lowband_kvt557
+    station_id: stn_fredon_lowband_kvt557
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_fredon_vhf_nocall
+    station_id: stn_fredon_vhf_nocall
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_fredon_uhf_kvt557
+    station_id: stn_fredon_uhf_kvt557
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_green_vhf_wqvs785
+    station_id: stn_green_vhf_wqvs785
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_green_lowband_kah972
+    station_id: stn_green_lowband_kah972
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_green_vhf_wqvk925
+    station_id: stn_green_vhf_wqvk925
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_hamburg_vhf_wpgi659
+    station_id: stn_hamburg_vhf_wpgi659
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_hamburg_vhf_wqvz790
+    station_id: stn_hamburg_vhf_wqvz790
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_hamburg_vhf_wnuh659
+    station_id: stn_hamburg_vhf_wnuh659
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_hampton_vhf_wqax338
+    station_id: stn_hampton_vhf_wqax338
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_hampton_uhf_wqax338
+    station_id: stn_hampton_uhf_wqax338
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_hampton_lowband_wpur760
+    station_id: stn_hampton_lowband_wpur760
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_hardyston_vhf_wndy962
+    station_id: stn_hardyston_vhf_wndy962
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_hardyston_vhf_knen690
+    station_id: stn_hardyston_vhf_knen690
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_hardyston_vhf_wpcj497
+    station_id: stn_hardyston_vhf_wpcj497
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_hopatcong_vhf_wnkj359
+    station_id: stn_hopatcong_vhf_wnkj359
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_hopatcong_vhf_wrfi752
+    station_id: stn_hopatcong_vhf_wrfi752
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_lafayette_vhf_wpwf648
+    station_id: stn_lafayette_vhf_wpwf648
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_lafayette_lowband_nocall
+    station_id: stn_lafayette_lowband_nocall
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_montague_vhf_wqcx255
+    station_id: stn_montague_vhf_wqcx255
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_montague_vhf_nocall
+    station_id: stn_montague_vhf_nocall
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_newton_vhf_kef288
+    station_id: stn_newton_vhf_kef288
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_newton_vhf_wqdx335
+    station_id: stn_newton_vhf_wqdx335
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_newton_vhf_kndh877
+    station_id: stn_newton_vhf_kndh877
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_ogdensburg_vhf_nocall
+    station_id: stn_ogdensburg_vhf_nocall
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sandyston_vhf_klp844
+    station_id: stn_sandyston_vhf_klp844
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sandyston_uhf_wpki456
+    station_id: stn_sandyston_uhf_wpki456
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sandyston_lowband_kncb865
+    station_id: stn_sandyston_lowband_kncb865
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sparta_vhf_wsdr966
+    station_id: stn_sparta_vhf_wsdr966
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sparta_vhf_kzr693
+    station_id: stn_sparta_vhf_kzr693
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sparta_vhf_wpnu751
+    station_id: stn_sparta_vhf_wpnu751
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sparta_uhf_wpnu751
+    station_id: stn_sparta_uhf_wpnu751
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sparta_uhf_wpfq901
+    station_id: stn_sparta_uhf_wpfq901
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sparta_vhf_kcp547
+    station_id: stn_sparta_vhf_kcp547
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_schools_lowband_wpui972
+    station_id: stn_schools_lowband_wpui972
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_stanhope_vhf_wqqr421
+    station_id: stn_stanhope_vhf_wqqr421
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_stanhope_vhf_wpcv523
+    station_id: stn_stanhope_vhf_wpcv523
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_stanhope_uhf_wqul922
+    station_id: stn_stanhope_uhf_wqul922
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_stillwater_vhf_wqix755
+    station_id: stn_stillwater_vhf_wqix755
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sussex_boro_vhf_krf516
+    station_id: stn_sussex_boro_vhf_krf516
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_vernon_lowband_wqif802
+    station_id: stn_vernon_lowband_wqif802
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_vernon_uhf_wpmj514
+    station_id: stn_vernon_uhf_wpmj514
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_vernon_vhf_wndd419
+    station_id: stn_vernon_vhf_wndd419
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_wantage_vhf_wqvj274
+    station_id: stn_wantage_vhf_wqvj274
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_wantage_vhf_wqzi881
+    station_id: stn_wantage_vhf_wqzi881
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_wantage_vhf_wpvr575
+    station_id: stn_wantage_vhf_wpvr575
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_wantage_lowband_wpkv560
+    station_id: stn_wantage_lowband_wpkv560
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_wantage_lowband_ktl587
+    station_id: stn_wantage_lowband_ktl587
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_brrs_lowband_klo302
+    station_id: stn_brrs_lowband_klo302
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_brrs_vhf_klo302
+    station_id: stn_brrs_vhf_klo302
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_brrs_uhf_wqqq673
+    station_id: stn_brrs_uhf_wqqq673
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_lakeland_ems_vhf_wqzp893
+    station_id: stn_lakeland_ems_vhf_wqzp893
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_schools_vhf_wqox263
+    station_id: stn_schools_vhf_wqox263
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_schools_uhf_wqeh775
+    station_id: stn_schools_uhf_wqeh775
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_schools_vhf_nocall
+    station_id: stn_schools_vhf_nocall
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_schools_uhf_wnkj731
+    station_id: stn_schools_uhf_wnkj731
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_schools_vhf_wqpx465
+    station_id: stn_schools_vhf_wqpx465
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_schools_uhf_wpzj742
+    station_id: stn_schools_uhf_wpzj742
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_schools_lowband_wqvq341
+    station_id: stn_schools_lowband_wqvq341
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_andover_twp_vhf_wqdm238
+    station_id: stn_andover_twp_vhf_wqdm238
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_sux_fireems_uhf_wpfq901
+    station_id: stn_sux_fireems_uhf_wpfq901
+    name: null
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+
+rf_chains:
+  # ---- County - Law Enforcement ----
+  - id: chain_suxco_court_sec_155_43
+    station_id: stn_sux_sheriff_vhf_wpem831
+    antenna_id: ant_sux_sheriff_vhf_wpem831
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "8K10F1E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.43
+    mode:
+      type: "P25"
+      nac: 659
+  - id: chain_suxco_spen_1_460_6125
+    station_id: stn_sux_interop_uhf_nocall
+    antenna_id: ant_sux_interop_uhf_nocall
+    tx:
+      freq_mhz: null # source lists this as fixed link (type F) but publishes no input
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 460.6125
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 162.2
+      notes: "Fixed link/control station as listed by RadioReference (Type F)."
+  # ---- County - Fire/EMS ----
+  - id: chain_suxco_paging_155_0625
+    station_id: stn_sux_fireems_vhf_wpem831
+    antenna_id: ant_sux_fireems_vhf_wpem831
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.0625
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 131.8
+  - id: chain_suxco_fd_resp_1_155_19
+    station_id: stn_sux_fireems_vhf_kxc854
+    antenna_id: ant_sux_fireems_vhf_kxc854
+    tx:
+      freq_mhz: 155.97 # input, +0.78 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.19
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 173.8
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_suxco_fg_a_154_28
+    station_id: stn_sux_fireems_vhf_wqa723
+    antenna_id: ant_sux_fireems_vhf_wqa723
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.28
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 156.7
+  - id: chain_suxco_fg_b_154_265
+    station_id: stn_sux_fireems_vhf_wqa723
+    antenna_id: ant_sux_fireems_vhf_wqa723
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.265
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 156.7
+  - id: chain_suxco_fg_c_154_295
+    station_id: stn_sux_fireems_vhf_wqa723
+    antenna_id: ant_sux_fireems_vhf_wqa723
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.295
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 156.7
+  - id: chain_suxco_ric_ops_154_3025
+    station_id: stn_sux_fireems_vhf_wqa723
+    antenna_id: ant_sux_fireems_vhf_wqa723
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.3025
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 156.7
+  - id: chain_suxco_water_ops_154_2725
+    station_id: stn_sux_fireems_vhf_wqa723
+    antenna_id: ant_sux_fireems_vhf_wqa723
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.2725
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 156.7
+  - id: chain_suxco_fd_disp_46_1
+    station_id: stn_sux_fireems_lowband_wpga474
+    antenna_id: ant_sux_fireems_lowband_wpga474
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 46.1
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 131.8
+  - id: chain_suxco_fg_2_46_4
+    station_id: stn_sux_fireems_lowband_wpga474
+    antenna_id: ant_sux_fireems_lowband_wpga474
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 46.4
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 131.8
+  - id: chain_suxco_fg_3_s_46_24
+    station_id: stn_sux_fireems_lowband_wpga474
+    antenna_id: ant_sux_fireems_lowband_wpga474
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 46.24
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 131.8
+  - id: chain_suxco_fg_4_n_46_28
+    station_id: stn_sux_fireems_lowband_wpga474
+    antenna_id: ant_sux_fireems_lowband_wpga474
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 46.28
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 131.8
+  - id: chain_suxco_fd_tankers_46_34
+    station_id: stn_sux_fireems_lowband_wpga474
+    antenna_id: ant_sux_fireems_lowband_wpga474
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 46.34
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 131.8
+  - id: chain_suxco_fd_byram_458_4875
+    station_id: stn_sux_fireems_uhf_wnyt790
+    antenna_id: ant_sux_fireems_uhf_wnyt790
+    tx:
+      freq_mhz: null # source lists this as fixed link (type F) but publishes no input
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 458.4875
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 131.8
+      notes: "Fixed link/control station as listed by RadioReference (Type F)."
+  - id: chain_suxco_fd_link_a_460_5875
+    station_id: stn_sux_fireems_uhf_knen690
+    antenna_id: ant_sux_fireems_uhf_knen690
+    tx:
+      freq_mhz: 465.587 # input, +5 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 460.5875
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 131.8
+      notes: "Fixed link/control station as listed by RadioReference (Type F). Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_suxco_fd_sandysn_465_0625
+    station_id: stn_sux_fireems_uhf_klp844
+    antenna_id: ant_sux_fireems_uhf_klp844
+    tx:
+      freq_mhz: 460.062 # input, -5 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 465.0625
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 218.1
+      notes: "Fixed link/control station as listed by RadioReference (Type F). Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_suxco_ems_jems_155_295
+    station_id: stn_sux_fireems_vhf_wnln707
+    antenna_id: ant_sux_fireems_vhf_wnln707
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.295
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 141.3
+  - id: chain_suxco_ems_resp_2_155_7075
+    station_id: stn_sux_fireems_vhf_wnyt790
+    antenna_id: ant_sux_fireems_vhf_wnyt790
+    tx:
+      freq_mhz: 154.018 # input, -1.69 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.7075
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 151.4
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_suxco_ems_tac_155_34
+    station_id: stn_sux_fireems_vhf_wnvy825
+    antenna_id: ant_sux_fireems_vhf_wnvy825
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.34
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 156.7
+  - id: chain_suxco_ems_hear_155_34
+    station_id: stn_sux_fireems_vhf_wnln707
+    antenna_id: ant_sux_fireems_vhf_wnln707
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.34
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 141.3
+  - id: chain_suxco_ems_link_458_3125
+    station_id: stn_sux_fireems_uhf_wqul922
+    antenna_id: ant_sux_fireems_uhf_wqul922
+    tx:
+      freq_mhz: null # source lists this as fixed link (type F) but publishes no input
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 458.3125
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 71.9
+      notes: "Fixed link/control station as listed by RadioReference (Type F)."
+  - id: chain_suxco_ems_link_464_8
+    station_id: stn_sux_fireems_uhf_wqwu904
+    antenna_id: ant_sux_fireems_uhf_wqwu904
+    tx:
+      freq_mhz: 469.8 # input, +5 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 464.8
+    mode:
+      type: "NFM"
+      dcs_rx_code: "026"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  # ---- County - Services ----
+  - id: chain_suxco_roads_33_06
+    station_id: stn_sux_services_lowband_kef641
+    antenna_id: ant_sux_services_lowband_kef641
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 33.06
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 131.8
+  - id: chain_suxco_roads_flag_453_5125
+    station_id: stn_sux_services_uhf_nocall
+    antenna_id: ant_sux_services_uhf_nocall
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 453.5125
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 71.9
+  - id: chain_suxco_mua_153_0275
+    station_id: stn_sux_services_vhf_wqsu818
+    antenna_id: ant_sux_services_vhf_wqsu818
+    tx:
+      freq_mhz: 159.817 # input, +6.79 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 153.0275
+    mode:
+      type: "NFM"
+  - id: chain_suxco_transit_155_925
+    station_id: stn_sux_services_vhf_wqa723
+    antenna_id: ant_sux_services_vhf_wqa723
+    tx:
+      freq_mhz: 153.965 # input, -1.96 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.925
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 127.3
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  # ---- Andover Borough ----
+  - id: chain_andover_fg_1_154_1675
+    station_id: stn_andover_boro_vhf_wqaq881
+    antenna_id: ant_andover_boro_vhf_wqaq881
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.1675
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 131.8
+  - id: chain_andover_fg_2_151_01
+    station_id: stn_andover_boro_vhf_wqaq881
+    antenna_id: ant_andover_boro_vhf_wqaq881
+    tx:
+      freq_mhz: 154.657 # input, +3.6475 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 151.01
+    mode:
+      type: "NFM"
+      dcs_rx_code: "532"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_andover_oem_155_88
+    station_id: stn_andover_boro_vhf_wpez519
+    antenna_id: ant_andover_boro_vhf_wpez519
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.88
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 131.8
+  # ---- Andover Township ----
+  - id: chain_t_andover_pd_1_155_5575
+    station_id: stn_andover_twp_vhf_kyu566
+    antenna_id: ant_andover_twp_vhf_kyu566
+    tx:
+      freq_mhz: 153.762 # input, -1.795 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.5575
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 218.1
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_t_andover_pd_2_155_01
+    station_id: stn_andover_twp_vhf_kyu566
+    antenna_id: ant_andover_twp_vhf_kyu566
+    tx:
+      freq_mhz: null # simplex (source lists this licence as base/mobile, no input)
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.01
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 141.3
+  - id: chain_t_andover_fg_151_58
+    station_id: stn_andover_twp_vhf_wqdx335
+    antenna_id: ant_andover_twp_vhf_wqdx335
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 151.58
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 218.1
+  - id: chain_t_andover_dpw_155_61
+    station_id: stn_andover_twp_vhf_kyu566
+    antenna_id: ant_andover_twp_vhf_kyu566
+    tx:
+      freq_mhz: 158.917 # input, +3.3075 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.61
+    mode:
+      type: "NFM"
+      dcs_rx_code: "043"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  # ---- Byram ----
+  - id: chain_byram_pd_159_1575
+    station_id: stn_byram_vhf_wrcm392
+    antenna_id: ant_byram_vhf_wrcm392
+    tx:
+      freq_mhz: 155.722 # input, -3.435 MHz
+      emission: "8K10F1E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 159.1575
+    mode:
+      type: "P25"
+      nac: 659
+  - id: chain_byram_fg_154_43
+    station_id: stn_byram_vhf_kef286
+    antenna_id: ant_byram_vhf_kef286
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.43
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 107.2
+  # ---- Frankford ----
+  - id: chain_frankford_fg_45_08
+    station_id: stn_frankford_lowband_kgp712
+    antenna_id: ant_frankford_lowband_kgp712
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 45.08
+    mode:
+      type: "FM"
+  - id: chain_frankford_pw_45_52
+    station_id: stn_frankford_lowband_kxc748
+    antenna_id: ant_frankford_lowband_kxc748
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 45.52
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 127.3
+  # ---- Franklin ----
+  - id: chain_franklin_fd1_155_835
+    station_id: stn_franklin_vhf_wprt900
+    antenna_id: ant_franklin_vhf_wprt900
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.835
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 131.8
+  - id: chain_franklin_fd2_156_0525
+    station_id: stn_franklin_vhf_wprt900
+    antenna_id: ant_franklin_vhf_wprt900
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 156.0525
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 131.8
+  - id: chain_franklin_ems_155_325
+    station_id: stn_franklin_vhf_wpfq901
+    antenna_id: ant_franklin_vhf_wpfq901
+    tx:
+      freq_mhz: 150.79 # input, -4.535 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.325
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 123
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_franklin_pd4_155_07
+    station_id: stn_franklin_vhf_wpty660
+    antenna_id: ant_franklin_vhf_wpty660
+    tx:
+      freq_mhz: 151.025 # input, -4.045 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.07
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 146.2
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_franklin_dpw_154_04
+    station_id: stn_franklin_vhf_wpjq471
+    antenna_id: ant_franklin_vhf_wpjq471
+    tx:
+      freq_mhz: 153.955 # input, -0.085 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.04
+    mode:
+      type: "NFM"
+      dcs_rx_code: "265"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_frnklndpw_u1_453_2125
+    station_id: stn_franklin_uhf_wphx972
+    antenna_id: ant_franklin_uhf_wphx972
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 453.2125
+    mode:
+      type: "NFM"
+  - id: chain_frnklndpw_u2_458_2125
+    station_id: stn_franklin_uhf_wphx972
+    antenna_id: ant_franklin_uhf_wphx972
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 458.2125
+    mode:
+      type: "NFM"
+  # ---- Fredon ----
+  - id: chain_fredon_dpw_45_28
+    station_id: stn_fredon_lowband_kvt557
+    antenna_id: ant_fredon_lowband_kvt557
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 45.28
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 110.9
+  - id: chain_fredn_fd_ems_154_6
+    station_id: stn_fredon_vhf_nocall
+    antenna_id: ant_fredon_vhf_nocall
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.6
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 141.3
+  - id: chain_fredn_ems_l1_453_1375
+    station_id: stn_fredon_uhf_kvt557
+    antenna_id: ant_fredon_uhf_kvt557
+    tx:
+      freq_mhz: 458.137 # input, +5 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 453.1375
+    mode:
+      type: "NFM"
+  # ---- Green ----
+  - id: chain_green_fg_154_355
+    station_id: stn_green_vhf_wqvs785
+    antenna_id: ant_green_vhf_wqvs785
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.355
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 136.5
+  - id: chain_green_dpw_45_12
+    station_id: stn_green_lowband_kah972
+    antenna_id: ant_green_lowband_kah972
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 45.12
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 110.9
+  - id: chain_green_fd_disp_152_36
+    station_id: stn_green_vhf_wqvk925
+    antenna_id: ant_green_vhf_wqvk925
+    tx:
+      freq_mhz: 157.62 # input, +5.26 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 152.36
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 136.5
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  # ---- Hamburg ----
+  - id: chain_hamburg_pd_154_995
+    station_id: stn_hamburg_vhf_wpgi659
+    antenna_id: ant_hamburg_vhf_wpgi659
+    tx:
+      freq_mhz: 155.985 # input, +0.99 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.995
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 79.7
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_hamburg_fd1_154_34
+    station_id: stn_hamburg_vhf_wqvz790
+    antenna_id: ant_hamburg_vhf_wqvz790
+    tx:
+      freq_mhz: 150.995 # input, -3.345 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.34
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 192.8
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_hamburg_fd2_150_995
+    station_id: stn_hamburg_vhf_wqvz790
+    antenna_id: ant_hamburg_vhf_wqvz790
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 150.995
+    mode:
+      type: "NFM"
+      notes: "Listed as CSQ (carrier squelch, no tone)."
+  - id: chain_hamburg_dpw_154_1
+    station_id: stn_hamburg_vhf_wnuh659
+    antenna_id: ant_hamburg_vhf_wnuh659
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.1
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 71.9
+  # ---- Hampton ----
+  - id: chain_hmptn_trk_to_trk_151_1
+    station_id: stn_hampton_vhf_wqax338
+    antenna_id: ant_hampton_vhf_wqax338
+    tx:
+      freq_mhz: 156.083 # input, +4.9825 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 151.1
+    mode:
+      type: "NFM"
+      dcs_rx_code: "051"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_hmptn_fg_156_1425
+    station_id: stn_hampton_vhf_wqax338
+    antenna_id: ant_hampton_vhf_wqax338
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 156.1425
+    mode:
+      type: "NFM"
+      dcs_tx_code: "031"
+  - id: chain_hmptn_ems_link_453_1625
+    station_id: stn_hampton_uhf_wqax338
+    antenna_id: ant_hampton_uhf_wqax338
+    tx:
+      freq_mhz: null # source lists this as fixed link (type F) but publishes no input
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 453.1625
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 103.5
+      notes: "Fixed link/control station as listed by RadioReference (Type F)."
+  - id: chain_hmptn_dpw_45_72
+    station_id: stn_hampton_lowband_wpur760
+    antenna_id: ant_hampton_lowband_wpur760
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 45.72
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 110.9
+  # ---- Hardyston ----
+  - id: chain_hardyston_pd_158_79
+    station_id: stn_hardyston_vhf_wndy962
+    antenna_id: ant_hardyston_vhf_wndy962
+    tx:
+      freq_mhz: 155.91 # input, -2.88 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 158.79
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 203.5
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_hardyston_fd_151_205
+    station_id: stn_hardyston_vhf_knen690
+    antenna_id: ant_hardyston_vhf_knen690
+    tx:
+      freq_mhz: 154.8 # input, +3.595 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 151.205
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 107.2
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_hardyston_dpw_158_82
+    station_id: stn_hardyston_vhf_wpcj497
+    antenna_id: ant_hardyston_vhf_wpcj497
+    tx:
+      freq_mhz: 155.115 # input, -3.705 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 158.82
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 131.8
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  # ---- Hopatcong ----
+  - id: chain_hptcng_pd_158_85
+    station_id: stn_hopatcong_vhf_wnkj359
+    antenna_id: ant_hopatcong_vhf_wnkj359
+    tx:
+      freq_mhz: 155.85 # input, -3 MHz
+      emission: "7K60FXE"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 158.85
+    mode:
+      type: "DMR"
+      color_code: 8
+      timeslots: [1]
+  - id: chain_hptcng_fd_oem_154_4075
+    station_id: stn_hopatcong_vhf_wrfi752
+    antenna_id: ant_hopatcong_vhf_wrfi752
+    tx:
+      freq_mhz: 159.12 # input, +4.7125 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.4075
+    mode:
+      type: "NFM"
+      dcs_rx_code: "031"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  # ---- Lafayette ----
+  - id: chain_lafayet_oem_155_9475
+    station_id: stn_lafayette_vhf_wpwf648
+    antenna_id: ant_lafayette_vhf_wpwf648
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.9475
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 131.8
+  - id: chain_lafayet_dpw_31_68
+    station_id: stn_lafayette_lowband_nocall
+    antenna_id: ant_lafayette_lowband_nocall
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 31.68
+    mode:
+      type: "FM"
+      notes: "Listed as CSQ (carrier squelch, no tone)."
+  # ---- Montague ----
+  - id: chain_mont_fd_ops_151_1525
+    station_id: stn_montague_vhf_wqcx255
+    antenna_id: ant_montague_vhf_wqcx255
+    tx:
+      freq_mhz: 156.113 # input, +4.96 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 151.1525
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 91.5
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_mont_fd_fg_156_18
+    station_id: stn_montague_vhf_wqcx255
+    antenna_id: ant_montague_vhf_wqcx255
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 156.18
+    mode:
+      type: "NFM"
+      dcs_tx_code: "114"
+  - id: chain_mont_fp_ops_151_88
+    station_id: stn_montague_vhf_nocall
+    antenna_id: ant_montague_vhf_nocall
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 151.88
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 192.8
+  # ---- Newton ----
+  - id: chain_newton_pd_disp_155_49
+    station_id: stn_newton_vhf_kef288
+    antenna_id: ant_newton_vhf_kef288
+    tx:
+      freq_mhz: 158.895 # input, +3.405 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.49
+    mode:
+      type: "NFM"
+      dcs_rx_code: "516"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_newton_pd_2_155_01
+    station_id: stn_newton_vhf_kef288
+    antenna_id: ant_newton_vhf_kef288
+    tx:
+      freq_mhz: null # simplex (source lists this licence as base/mobile, no input)
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.01
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 141.3
+  - id: chain_newton_fg_154_49
+    station_id: stn_newton_vhf_wqdx335
+    antenna_id: ant_newton_vhf_wqdx335
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.49
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 218.1
+  - id: chain_newton_dpw_oem_155_1
+    station_id: stn_newton_vhf_kndh877
+    antenna_id: ant_newton_vhf_kndh877
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.1
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 127.3
+  # ---- Ogdensburg ----
+  - id: chain_ogdnsbrg_pd4_159_03
+    station_id: stn_ogdensburg_vhf_nocall
+    antenna_id: ant_ogdensburg_vhf_nocall
+    tx:
+      freq_mhz: null # source lists this as repeater (type RM) but publishes no input
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 159.03
+    mode:
+      type: "NFM"
+      dcs_rx_code: "134"
+  # ---- Sandyston ----
+  - id: chain_sandy_fd_ops_154_1825
+    station_id: stn_sandyston_vhf_klp844
+    antenna_id: ant_sandyston_vhf_klp844
+    tx:
+      freq_mhz: 158.977 # input, +4.795 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.1825
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 131.8
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_sandy_fd_fg1_158_8725
+    station_id: stn_sandyston_vhf_klp844
+    antenna_id: ant_sandyston_vhf_klp844
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 158.8725
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 131.8
+  - id: chain_sandy_fd_fg2_154_95
+    station_id: stn_sandyston_vhf_klp844
+    antenna_id: ant_sandyston_vhf_klp844
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.95
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 131.8
+  - id: chain_sandy_dpw_1_453_1
+    station_id: stn_sandyston_uhf_wpki456
+    antenna_id: ant_sandyston_uhf_wpki456
+    tx:
+      freq_mhz: 458.1 # input, +5 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 453.1
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 82.5
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_sandy_dpw_2_453_75
+    station_id: stn_sandyston_uhf_wpki456
+    antenna_id: ant_sandyston_uhf_wpki456
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 453.75
+    mode:
+      type: "NFM"
+  - id: chain_sandy_dpw_lb_46_54
+    station_id: stn_sandyston_lowband_kncb865
+    antenna_id: ant_sandyston_lowband_kncb865
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 46.54
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 131.8
+  # ---- Sparta ----
+  - id: chain_sparta_pd_1_155_04
+    station_id: stn_sparta_vhf_wsdr966
+    antenna_id: ant_sparta_vhf_wsdr966
+    tx:
+      freq_mhz: 150.79 # input, -4.25 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.04
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 79.7
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_sparta_fire_155_64
+    station_id: stn_sparta_vhf_wsdr966
+    antenna_id: ant_sparta_vhf_wsdr966
+    tx:
+      freq_mhz: 153.822 # input, -1.8175 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.64
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 88.5
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_sparta_ems_155_325
+    station_id: stn_sparta_vhf_wsdr966
+    antenna_id: ant_sparta_vhf_wsdr966
+    tx:
+      freq_mhz: 153.95 # input, -1.375 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.325
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 97.4
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_sparta_dpw_155_805
+    station_id: stn_sparta_vhf_wsdr966
+    antenna_id: ant_sparta_vhf_wsdr966
+    tx:
+      freq_mhz: 153.89 # input, -1.915 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.805
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 107.2
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_spartwn_pd_s_154_83
+    station_id: stn_sparta_vhf_kzr693
+    antenna_id: ant_sparta_vhf_kzr693
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.83
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 79.7
+  - id: chain_spartwn_fd_3_4_154_37
+    station_id: stn_sparta_vhf_wpnu751
+    antenna_id: ant_sparta_vhf_wpnu751
+    tx:
+      freq_mhz: 153.95 # input, -0.42 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.37
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 210.7
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_spartwn_fast_154_145
+    station_id: stn_sparta_vhf_wpnu751
+    antenna_id: ant_sparta_vhf_wpnu751
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.145
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 210.7
+  - id: chain_sparta_fdmx1_453_8875
+    station_id: stn_sparta_uhf_wpnu751
+    antenna_id: ant_sparta_uhf_wpnu751
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 453.8875
+    mode:
+      type: "NFM"
+  - id: chain_sparta_fdmx2_453_9625
+    station_id: stn_sparta_uhf_wpnu751
+    antenna_id: ant_sparta_uhf_wpnu751
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 453.9625
+    mode:
+      type: "NFM"
+  - id: chain_sparta_fdmx3_458_0875
+    station_id: stn_sparta_uhf_wpnu751
+    antenna_id: ant_sparta_uhf_wpnu751
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 458.0875
+    mode:
+      type: "NFM"
+  - id: chain_sparta_fdmx4_458_8875
+    station_id: stn_sparta_uhf_wpnu751
+    antenna_id: ant_sparta_uhf_wpnu751
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 458.8875
+    mode:
+      type: "NFM"
+  - id: chain_sparta_fdmx5_458_9625
+    station_id: stn_sparta_uhf_wpnu751
+    antenna_id: ant_sparta_uhf_wpnu751
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 458.9625
+    mode:
+      type: "NFM"
+  - id: chain_sprtaems_mx1_453_0875
+    station_id: stn_sparta_uhf_wpnu751
+    antenna_id: ant_sparta_uhf_wpnu751
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 453.0875
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 123
+  - id: chain_sprtaems_mx3_453_9875
+    station_id: stn_sparta_uhf_wpfq901
+    antenna_id: ant_sparta_uhf_wpfq901
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 453.9875
+    mode:
+      type: "NFM"
+  - id: chain_sprtaems_mx4_458_9125
+    station_id: stn_sparta_uhf_wpfq901
+    antenna_id: ant_sparta_uhf_wpfq901
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 458.9125
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 141.3
+  - id: chain_sprtaems_mx5_458_9875
+    station_id: stn_sparta_uhf_wpfq901
+    antenna_id: ant_sparta_uhf_wpfq901
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 458.9875
+    mode:
+      type: "NFM"
+  - id: chain_spart_dpw_op_154_98
+    station_id: stn_sparta_vhf_kcp547
+    antenna_id: ant_sparta_vhf_kcp547
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.98
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 114.8
+  - id: chain_sparta_boe_42_96
+    station_id: stn_schools_lowband_wpui972
+    antenna_id: ant_schools_lowband_wpui972
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 42.96
+    mode:
+      type: "FM"
+  # ---- Stanhope ----
+  - id: chain_sh_fd_sta_33_151_34
+    station_id: stn_stanhope_vhf_wqqr421
+    antenna_id: ant_stanhope_vhf_wqqr421
+    tx:
+      freq_mhz: 159.225 # input, +7.885 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 151.34
+    mode:
+      type: "NFM"
+      dcs_rx_code: "023"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_sh_fd_33fg_159_33
+    station_id: stn_stanhope_vhf_wqqr421
+    antenna_id: ant_stanhope_vhf_wqqr421
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 159.33
+    mode:
+      type: "NFM"
+      dcs_tx_code: "023"
+  - id: chain_stanh_pd_151_985
+    station_id: stn_stanhope_vhf_wpcv523
+    antenna_id: ant_stanhope_vhf_wpcv523
+    tx:
+      freq_mhz: 158.34 # input, +6.355 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 151.985
+    mode:
+      type: "NFM"
+      dcs_rx_code: "031"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_sh_fd_link_465_4625
+    station_id: stn_stanhope_uhf_wqul922
+    antenna_id: ant_stanhope_uhf_wqul922
+    tx:
+      freq_mhz: null # source lists this as fixed link (type F) but publishes no input
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 465.4625
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 88.5
+      notes: "Fixed link/control station as listed by RadioReference (Type F)."
+  # ---- Stillwater ----
+  - id: chain_stillwater_fd_155_01
+    station_id: stn_stillwater_vhf_wqix755
+    antenna_id: ant_stillwater_vhf_wqix755
+    tx:
+      freq_mhz: 151.498 # input, -3.5125 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.01
+    mode:
+      type: "NFM"
+      dcs_rx_code: "065"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  # ---- Sussex Borough ----
+  - id: chain_susbor_oem_155_01
+    station_id: stn_sussex_boro_vhf_krf516
+    antenna_id: ant_sussex_boro_vhf_krf516
+    tx:
+      freq_mhz: null # simplex (source lists this licence as base/mobile, no input)
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.01
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 103.5
+  # ---- Vernon ----
+  - id: chain_vernon_ems_47_5
+    station_id: stn_vernon_lowband_wqif802
+    antenna_id: ant_vernon_lowband_wqif802
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 47.5
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 77
+  - id: chain_vernn_pd_mx1_453_0375
+    station_id: stn_vernon_uhf_wpmj514
+    antenna_id: ant_vernon_uhf_wpmj514
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 453.0375
+    mode:
+      type: "NFM"
+  - id: chain_vernn_pd_mx2_453_0625
+    station_id: stn_vernon_uhf_wpmj514
+    antenna_id: ant_vernon_uhf_wpmj514
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 453.0625
+    mode:
+      type: "NFM"
+  - id: chain_vernn_pd_mx3_453_1125
+    station_id: stn_vernon_uhf_wpmj514
+    antenna_id: ant_vernon_uhf_wpmj514
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 453.1125
+    mode:
+      type: "NFM"
+  - id: chain_vernn_pd_mx4_453_1375
+    station_id: stn_vernon_uhf_wpmj514
+    antenna_id: ant_vernon_uhf_wpmj514
+    tx:
+      freq_mhz: 458.137 # input, +5 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 453.1375
+    mode:
+      type: "NFM"
+  - id: chain_vernon_dpw_155_8725
+    station_id: stn_vernon_vhf_wndd419
+    antenna_id: ant_vernon_vhf_wndd419
+    tx:
+      freq_mhz: 158.903 # input, +3.03 MHz
+      emission: "7K60FXE"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.8725
+    mode:
+      type: "DMR"
+      color_code: 2
+      timeslots: [1]
+  # ---- Wantage ----
+  - id: chain_wantage_fd_ops_154_3175
+    station_id: stn_wantage_vhf_wqvj274
+    antenna_id: ant_wantage_vhf_wqvj274
+    tx:
+      freq_mhz: 159.218 # input, +4.9 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.3175
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 233.6
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_wantage_fg_2_158_9475
+    station_id: stn_wantage_vhf_wqzi881
+    antenna_id: ant_wantage_vhf_wqzi881
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 158.9475
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 233.6
+  - id: chain_wantage_ems_ops_155_55
+    station_id: stn_wantage_vhf_wpvr575
+    antenna_id: ant_wantage_vhf_wpvr575
+    tx:
+      freq_mhz: 150.805 # input, -4.745 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.55
+    mode:
+      type: "NFM"
+      dcs_rx_code: "265"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_wantage_oem_46_58
+    station_id: stn_wantage_lowband_wpkv560
+    antenna_id: ant_wantage_lowband_wpkv560
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 46.58
+    mode:
+      type: "FM"
+  - id: chain_wantage_dpw_45_44
+    station_id: stn_wantage_lowband_ktl587
+    antenna_id: ant_wantage_lowband_ktl587
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 45.44
+    mode:
+      type: "FM"
+      notes: "Listed as CSQ (carrier squelch, no tone)."
+  # ---- Blue Ridge Rescue Squad ----
+  - id: chain_brrs_disptch_47_5
+    station_id: stn_brrs_lowband_klo302
+    antenna_id: ant_brrs_lowband_klo302
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 47.5
+    mode:
+      type: "FM"
+      dcs_tx_code: "532"
+  - id: chain_brrs_n_disp_47_66
+    station_id: stn_brrs_lowband_klo302
+    antenna_id: ant_brrs_lowband_klo302
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 47.66
+    mode:
+      type: "FM"
+      dcs_tx_code: "532"
+  - id: chain_brrs_mob_a_153_86
+    station_id: stn_brrs_vhf_klo302
+    antenna_id: ant_brrs_vhf_klo302
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 153.86
+    mode:
+      type: "NFM"
+      dcs_tx_code: "532"
+  - id: chain_brrs_mob_b_154_07
+    station_id: stn_brrs_vhf_klo302
+    antenna_id: ant_brrs_vhf_klo302
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.07
+    mode:
+      type: "NFM"
+      dcs_tx_code: "532"
+  - id: chain_brrs_mob_c_155_4
+    station_id: stn_brrs_vhf_klo302
+    antenna_id: ant_brrs_vhf_klo302
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.4
+    mode:
+      type: "NFM"
+      dcs_tx_code: "532"
+  - id: chain_brrs_uhf_lnk_456_3
+    station_id: stn_brrs_uhf_wqqq673
+    antenna_id: ant_brrs_uhf_wqqq673
+    tx:
+      freq_mhz: null # source lists this as fixed link (type F) but publishes no input
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 456.3
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 233.6
+      notes: "Fixed link/control station as listed by RadioReference (Type F)."
+  - id: chain_brrs_m_a_155_28
+    station_id: stn_brrs_vhf_klo302
+    antenna_id: ant_brrs_vhf_klo302
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.28
+    mode:
+      type: "NFM"
+  # ---- Lakeland Emergency Squad ----
+  - id: chain_lakeland_ems_154_3925
+    station_id: stn_lakeland_ems_vhf_wqzp893
+    antenna_id: ant_lakeland_ems_vhf_wqzp893
+    tx:
+      freq_mhz: 159.255 # input, +4.8625 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 154.3925
+    mode:
+      type: "NFM"
+      dcs_rx_code: "031"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  # ---- Schools ----
+  - id: chain_fredon_boe_152_3375
+    station_id: stn_schools_vhf_wqox263
+    antenna_id: ant_schools_vhf_wqox263
+    tx:
+      freq_mhz: 157.597 # input, +5.26 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 152.3375
+    mode:
+      type: "NFM"
+  - id: chain_hp_rhs_451_2875
+    station_id: stn_schools_uhf_wqeh775
+    antenna_id: ant_schools_uhf_wqeh775
+    tx:
+      freq_mhz: 456.288 # input, +5 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 451.2875
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 141.3
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_hopat_boe_155_205
+    station_id: stn_schools_vhf_nocall
+    antenna_id: ant_schools_vhf_nocall
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 155.205
+    mode:
+      type: "NFM"
+      ctcss_tx_hz: 118.8
+  - id: chain_lenapevallhs_453_325
+    station_id: stn_schools_uhf_wnkj731
+    antenna_id: ant_schools_uhf_wnkj731
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 453.325
+    mode:
+      type: "NFM"
+  - id: chain_sparta_hs_152_99
+    station_id: stn_schools_vhf_wqpx465
+    antenna_id: ant_schools_vhf_wqpx465
+    tx:
+      freq_mhz: 159.57 # input, +6.58 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 152.99
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 136.5
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_sccc_ops_452_975
+    station_id: stn_schools_uhf_wpzj742
+    antenna_id: ant_schools_uhf_wpzj742
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 452.975
+    mode:
+      type: "NFM"
+      dcs_tx_code: "156"
+  - id: chain_sw_boe_bus_47_54
+    station_id: stn_schools_lowband_wqvq341
+    antenna_id: ant_schools_lowband_wqvq341
+    tx:
+      freq_mhz: null # simplex; source publishes no input for this licence
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 47.54
+    mode:
+      type: "FM"
+      notes: "Listed as CSQ (carrier squelch, no tone)."
+  # ---- Shared / multi-municipality ----
+  - id: chain_andover_fd_disp_152_9075
+    station_id: stn_andover_twp_vhf_wqdm238
+    antenna_id: ant_andover_twp_vhf_wqdm238
+    tx:
+      freq_mhz: 159.833 # input, +6.925 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 152.9075
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 218.1
+      notes: "Input tone not published by the source; output tone recorded on rx only."
+  - id: chain_suxco_ems_link_453_9125
+    station_id: stn_sux_fireems_uhf_wpfq901
+    antenna_id: ant_sux_fireems_uhf_wpfq901
+    tx:
+      freq_mhz: 458.913 # input, +5 MHz
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 453.9125
+    mode:
+      type: "NFM"
+      ctcss_rx_hz: 141.3
+      notes: "Fixed link/control station as listed by RadioReference (Type F). Input tone not published by the source; output tone recorded on rx only."
+
+contacts:
+  - id: ct_hptcng_pd_tg1912000
+    name: "Hptcng PD TG 1912000"
+    kind: "Group"
+    number: 1912000
+    default_timeslot: 1
+    notes: "Talkgroup as published by RadioReference for Hptcng PD."
+  - id: ct_vernon_dpw_tg1
+    name: "Vernon DPW TG 1"
+    kind: "Group"
+    number: 1
+    default_timeslot: 1
+    notes: "Talkgroup as published by RadioReference for Vernon DPW."
+
+authorizations:
+  - id: auth_fcc_part90
+    authority: "FCC"
+    service: "public_safety_part90"
+    class: null
+    identifier: null
+    notes: "Part 90 public safety / local government licences held by the individual agencies; per-channel callsigns are carried on the stations. Receive-only for anyone without authorisation on the licence."
+
+assignments:
+  - id: asgn_suxco_court_sec_155_43
+    channel_name: "SuxCo Court Sec"
+    rf_chain_id: chain_suxco_court_sec_155_43
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Sheriff Courthouse Security. Listed by RadioReference under County - Law Enforcement."
+  - id: asgn_suxco_spen_1_460_6125
+    channel_name: "SuxCo SPEN 1"
+    rf_chain_id: chain_suxco_spen_1_460_6125
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "SPEN 1 UHF Link. Listed by RadioReference under County - Law Enforcement."
+  - id: asgn_suxco_paging_155_0625
+    channel_name: "SuxCo Paging"
+    rf_chain_id: chain_suxco_paging_155_0625
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fire/EMS Paging. Listed by RadioReference under County - Fire/EMS."
+  - id: asgn_suxco_fd_resp_1_155_19
+    channel_name: "SuxCo FD Resp 1"
+    rf_chain_id: chain_suxco_fd_resp_1_155_19
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Response 1. Listed by RadioReference under County - Fire/EMS."
+  - id: asgn_suxco_fg_a_154_28
+    channel_name: "SuxCo FG A"
+    rf_chain_id: chain_suxco_fg_a_154_28
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fireground A. Listed by RadioReference under County - Fire/EMS."
+  - id: asgn_suxco_fg_b_154_265
+    channel_name: "SuxCo FG B"
+    rf_chain_id: chain_suxco_fg_b_154_265
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fireground B. Listed by RadioReference under County - Fire/EMS."
+  - id: asgn_suxco_fg_c_154_295
+    channel_name: "SuxCo FG C"
+    rf_chain_id: chain_suxco_fg_c_154_295
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fireground C. Listed by RadioReference under County - Fire/EMS."
+  - id: asgn_suxco_ric_ops_154_3025
+    channel_name: "SuxCo RIC Ops"
+    rf_chain_id: chain_suxco_ric_ops_154_3025
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Rapid Intervention Crew Ops (RIC/RIT/FAST). Listed by RadioReference under County - Fire/EMS."
+  - id: asgn_suxco_water_ops_154_2725
+    channel_name: "SuxCo Water Ops"
+    rf_chain_id: chain_suxco_water_ops_154_2725
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Water Supply/Tender Ops. Listed by RadioReference under County - Fire/EMS."
+  - id: asgn_suxco_fd_disp_46_1
+    channel_name: "SuxCo FD Disp"
+    rf_chain_id: chain_suxco_fd_disp_46_1
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Ch. 1 Countywide Dispatch. Listed by RadioReference under County - Fire/EMS."
+  - id: asgn_suxco_fg_2_46_4
+    channel_name: "SuxCo FG 2"
+    rf_chain_id: chain_suxco_fg_2_46_4
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Ch. 2 Fireground. Listed by RadioReference under County - Fire/EMS."
+  - id: asgn_suxco_fg_3_s_46_24
+    channel_name: "SuxCo FG 3 S"
+    rf_chain_id: chain_suxco_fg_3_s_46_24
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Ch. 3 Fireground South. Listed by RadioReference under County - Fire/EMS."
+  - id: asgn_suxco_fg_4_n_46_28
+    channel_name: "SuxCo FG 4 N"
+    rf_chain_id: chain_suxco_fg_4_n_46_28
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Ch. 4 Fireground North. Listed by RadioReference under County - Fire/EMS."
+  - id: asgn_suxco_fd_tankers_46_34
+    channel_name: "SuxCo FD Tankers"
+    rf_chain_id: chain_suxco_fd_tankers_46_34
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Ch. 5 Tanker Task Force. Listed by RadioReference under County - Fire/EMS."
+  - id: asgn_suxco_fd_byram_458_4875
+    channel_name: "SuxCo FD Byram"
+    rf_chain_id: chain_suxco_fd_byram_458_4875
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Link to 155.190 - Byram. Listed by RadioReference under County - Fire/EMS."
+  - id: asgn_suxco_fd_link_a_460_5875
+    channel_name: "SuxCo FD Link A"
+    rf_chain_id: chain_suxco_fd_link_a_460_5875
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Link to 46.1 MHz. Listed by RadioReference under County - Fire/EMS."
+  - id: asgn_suxco_fd_sandysn_465_0625
+    channel_name: "SuxCo FD Sandysn"
+    rf_chain_id: chain_suxco_fd_sandysn_465_0625
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Link to 46.1 MHz - Sandyston. Listed by RadioReference under County - Fire/EMS."
+  - id: asgn_suxco_ems_jems_155_295
+    channel_name: "SuxCo EMS JEMS"
+    rf_chain_id: chain_suxco_ems_jems_155_295
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "EMS JEMS Ch. 1. Listed by RadioReference under County - Fire/EMS."
+  - id: asgn_suxco_ems_resp_2_155_7075
+    channel_name: "SuxCo EMS Resp 2"
+    rf_chain_id: chain_suxco_ems_resp_2_155_7075
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "EMS Response 2. Listed by RadioReference under County - Fire/EMS."
+  - id: asgn_suxco_ems_tac_155_34
+    channel_name: "SuxCo EMS Tac"
+    rf_chain_id: chain_suxco_ems_tac_155_34
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "EMS Tactical. Listed by RadioReference under County - Fire/EMS."
+  - id: asgn_suxco_ems_hear_155_34
+    channel_name: "SuxCo EMS HEAR"
+    rf_chain_id: chain_suxco_ems_hear_155_34
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "EMS HEAR (hospital). Listed by RadioReference under County - Fire/EMS."
+  - id: asgn_suxco_ems_link_458_3125
+    channel_name: "SuxCo EMS Link"
+    rf_chain_id: chain_suxco_ems_link_458_3125
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "EMS Link to 155.295. Listed by RadioReference under County - Fire/EMS."
+  - id: asgn_suxco_ems_link_464_8
+    channel_name: "SuxCo EMS Link"
+    rf_chain_id: chain_suxco_ems_link_464_8
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "EMS Link to 155.295 - ALA. Listed by RadioReference under County - Fire/EMS."
+  - id: asgn_suxco_roads_33_06
+    channel_name: "SuxCo Roads"
+    rf_chain_id: chain_suxco_roads_33_06
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Road Department - Dispatch. Listed by RadioReference under County - Services."
+  - id: asgn_suxco_roads_flag_453_5125
+    channel_name: "SuxCo Roads Flag"
+    rf_chain_id: chain_suxco_roads_flag_453_5125
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Road Department - Flagmen. Listed by RadioReference under County - Services."
+  - id: asgn_suxco_mua_153_0275
+    channel_name: "SuxCo MUA"
+    rf_chain_id: chain_suxco_mua_153_0275
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Sussex County Municipal Utilities Authority. Listed by RadioReference under County - Services."
+  - id: asgn_suxco_transit_155_925
+    channel_name: "SuxCo Transit"
+    rf_chain_id: chain_suxco_transit_155_925
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "County Transit. Listed by RadioReference under County - Services."
+  - id: asgn_andover_fg_1_154_1675
+    channel_name: "Andover FG 1"
+    rf_chain_id: chain_andover_fg_1_154_1675
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fireground 1. Listed by RadioReference under Andover Borough."
+  - id: asgn_andover_fg_2_151_01
+    channel_name: "Andover FG 2"
+    rf_chain_id: chain_andover_fg_2_151_01
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Fireground 2. Listed by RadioReference under Andover Borough."
+  - id: asgn_andover_oem_155_88
+    channel_name: "Andover OEM"
+    rf_chain_id: chain_andover_oem_155_88
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Emergency Management. Listed by RadioReference under Andover Borough."
+  - id: asgn_t_andover_pd_1_155_5575
+    channel_name: "T/Andover PD 1"
+    rf_chain_id: chain_t_andover_pd_1_155_5575
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Police Ch. 1. Listed by RadioReference under Andover Township."
+  - id: asgn_t_andover_pd_2_155_01
+    channel_name: "T/Andover PD 2"
+    rf_chain_id: chain_t_andover_pd_2_155_01
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Police Ch. 2. Listed by RadioReference under Andover Township."
+  - id: asgn_t_andover_fg_151_58
+    channel_name: "T/Andover FG"
+    rf_chain_id: chain_t_andover_fg_151_58
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fireground. Listed by RadioReference under Andover Township."
+  - id: asgn_t_andover_dpw_155_61
+    channel_name: "T/Andover DPW"
+    rf_chain_id: chain_t_andover_dpw_155_61
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Public Works. Listed by RadioReference under Andover Township."
+  - id: asgn_byram_pd_159_1575
+    channel_name: "Byram PD"
+    rf_chain_id: chain_byram_pd_159_1575
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Police Dispatch. Listed by RadioReference under Byram."
+  - id: asgn_byram_fg_154_43
+    channel_name: "Byram FG"
+    rf_chain_id: chain_byram_fg_154_43
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fireground. Listed by RadioReference under Byram."
+  - id: asgn_frankford_fg_45_08
+    channel_name: "Frankford FG"
+    rf_chain_id: chain_frankford_fg_45_08
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fireground. Listed by RadioReference under Frankford."
+  - id: asgn_frankford_pw_45_52
+    channel_name: "Frankford PW"
+    rf_chain_id: chain_frankford_pw_45_52
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Public Works. Listed by RadioReference under Frankford."
+  - id: asgn_franklin_fd1_155_835
+    channel_name: "Franklin FD1"
+    rf_chain_id: chain_franklin_fd1_155_835
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Operations. Listed by RadioReference under Franklin."
+  - id: asgn_franklin_fd2_156_0525
+    channel_name: "Franklin FD2"
+    rf_chain_id: chain_franklin_fd2_156_0525
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fireground Operations. Listed by RadioReference under Franklin."
+  - id: asgn_franklin_ems_155_325
+    channel_name: "Franklin EMS"
+    rf_chain_id: chain_franklin_ems_155_325
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "EMS (3190 units). Listed by RadioReference under Franklin."
+  - id: asgn_franklin_pd4_155_07
+    channel_name: "Franklin PD4"
+    rf_chain_id: chain_franklin_pd4_155_07
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Police. Listed by RadioReference under Franklin."
+  - id: asgn_franklin_dpw_154_04
+    channel_name: "Franklin DPW"
+    rf_chain_id: chain_franklin_dpw_154_04
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Public Works Operations. Listed by RadioReference under Franklin."
+  - id: asgn_frnklndpw_u1_453_2125
+    channel_name: "FrnklnDPW U1"
+    rf_chain_id: chain_frnklndpw_u1_453_2125
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Public Works. Listed by RadioReference under Franklin."
+  - id: asgn_frnklndpw_u2_458_2125
+    channel_name: "FrnklnDPW U2"
+    rf_chain_id: chain_frnklndpw_u2_458_2125
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Public Works. Listed by RadioReference under Franklin."
+  - id: asgn_fredon_dpw_45_28
+    channel_name: "Fredon DPW"
+    rf_chain_id: chain_fredon_dpw_45_28
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Public Works. Listed by RadioReference under Fredon."
+  - id: asgn_fredn_fd_ems_154_6
+    channel_name: "Fredn FD/EMS"
+    rf_chain_id: chain_fredn_fd_ems_154_6
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fire / EMS Private Ch. Listed by RadioReference under Fredon."
+  - id: asgn_fredn_ems_l1_453_1375
+    channel_name: "Fredn EMS L1"
+    rf_chain_id: chain_fredn_ems_l1_453_1375
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "EMS Mobile Uplink. Listed by RadioReference under Fredon."
+  - id: asgn_green_fg_154_355
+    channel_name: "Green FG"
+    rf_chain_id: chain_green_fg_154_355
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fireground. Listed by RadioReference under Green."
+  - id: asgn_green_dpw_45_12
+    channel_name: "Green DPW"
+    rf_chain_id: chain_green_dpw_45_12
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "DPW. Listed by RadioReference under Green."
+  - id: asgn_green_fd_disp_152_36
+    channel_name: "Green FD Disp"
+    rf_chain_id: chain_green_fd_disp_152_36
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Dispatch. Listed by RadioReference under Green."
+  - id: asgn_hamburg_pd_154_995
+    channel_name: "Hamburg PD"
+    rf_chain_id: chain_hamburg_pd_154_995
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Police. Listed by RadioReference under Hamburg."
+  - id: asgn_hamburg_fd1_154_34
+    channel_name: "Hamburg FD1"
+    rf_chain_id: chain_hamburg_fd1_154_34
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Dispatch / Operations. Listed by RadioReference under Hamburg."
+  - id: asgn_hamburg_fd2_150_995
+    channel_name: "Hamburg FD2"
+    rf_chain_id: chain_hamburg_fd2_150_995
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fireground Operations. Listed by RadioReference under Hamburg."
+  - id: asgn_hamburg_dpw_154_1
+    channel_name: "Hamburg DPW"
+    rf_chain_id: chain_hamburg_dpw_154_1
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Public Works. Listed by RadioReference under Hamburg."
+  - id: asgn_hmptn_trk_to_trk_151_1
+    channel_name: "Hmptn Trk to Trk"
+    rf_chain_id: chain_hmptn_trk_to_trk_151_1
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Fire - Truck to Truck. Listed by RadioReference under Hampton."
+  - id: asgn_hmptn_fg_156_1425
+    channel_name: "Hmptn FG"
+    rf_chain_id: chain_hmptn_fg_156_1425
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fireground Operations. Listed by RadioReference under Hampton."
+  - id: asgn_hmptn_ems_link_453_1625
+    channel_name: "Hmptn EMS Link"
+    rf_chain_id: chain_hmptn_ems_link_453_1625
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "EMS Link to 155.7075. Listed by RadioReference under Hampton."
+  - id: asgn_hmptn_dpw_45_72
+    channel_name: "Hmptn DPW"
+    rf_chain_id: chain_hmptn_dpw_45_72
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Public Works. Listed by RadioReference under Hampton."
+  - id: asgn_hardyston_pd_158_79
+    channel_name: "Hardyston PD"
+    rf_chain_id: chain_hardyston_pd_158_79
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Police (2800 units). Listed by RadioReference under Hardyston."
+  - id: asgn_hardyston_fd_151_205
+    channel_name: "Hardyston FD"
+    rf_chain_id: chain_hardyston_fd_151_205
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Fire 1 and 2 (North/South & Direct). Listed by RadioReference under Hardyston."
+  - id: asgn_hardyston_dpw_158_82
+    channel_name: "Hardyston DPW"
+    rf_chain_id: chain_hardyston_dpw_158_82
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "DPW / PD Ch 3. Listed by RadioReference under Hardyston."
+  - id: asgn_hptcng_pd_158_85
+    channel_name: "Hptcng PD"
+    rf_chain_id: chain_hptcng_pd_158_85
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Police Dispatch. Listed by RadioReference under Hopatcong."
+  - id: asgn_hptcng_fd_oem_154_4075
+    channel_name: "Hptcng FD/OEM"
+    rf_chain_id: chain_hptcng_fd_oem_154_4075
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Fire / OEM. Listed by RadioReference under Hopatcong."
+  - id: asgn_lafayet_oem_155_9475
+    channel_name: "Lafayet OEM"
+    rf_chain_id: chain_lafayet_oem_155_9475
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fireground / Emergency Management. Listed by RadioReference under Lafayette."
+  - id: asgn_lafayet_dpw_31_68
+    channel_name: "Lafayet DPW"
+    rf_chain_id: chain_lafayet_dpw_31_68
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Public Works. Listed by RadioReference under Lafayette."
+  - id: asgn_mont_fd_ops_151_1525
+    channel_name: "Mont FD Ops"
+    rf_chain_id: chain_mont_fd_ops_151_1525
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Operations (patched with 46.100 MHz). Listed by RadioReference under Montague."
+  - id: asgn_mont_fd_fg_156_18
+    channel_name: "Mont FD FG"
+    rf_chain_id: chain_mont_fd_fg_156_18
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fireground. Listed by RadioReference under Montague."
+  - id: asgn_mont_fp_ops_151_88
+    channel_name: "Mont FP Ops"
+    rf_chain_id: chain_mont_fp_ops_151_88
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Police Operations. Listed by RadioReference under Montague."
+  - id: asgn_newton_pd_disp_155_49
+    channel_name: "Newton PD Disp"
+    rf_chain_id: chain_newton_pd_disp_155_49
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Police Dispatch. Listed by RadioReference under Newton."
+  - id: asgn_newton_pd_2_155_01
+    channel_name: "Newton PD 2"
+    rf_chain_id: chain_newton_pd_2_155_01
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Police Ch. 2. Listed by RadioReference under Newton."
+  - id: asgn_newton_fg_154_49
+    channel_name: "Newton FG"
+    rf_chain_id: chain_newton_fg_154_49
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fireground. Listed by RadioReference under Newton."
+  - id: asgn_newton_dpw_oem_155_1
+    channel_name: "Newton DPW/OEM"
+    rf_chain_id: chain_newton_dpw_oem_155_1
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Road Department / Emergency Management. Listed by RadioReference under Newton."
+  - id: asgn_ogdnsbrg_pd4_159_03
+    channel_name: "Ogdnsbrg PD4"
+    rf_chain_id: chain_ogdnsbrg_pd4_159_03
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Police. Listed by RadioReference under Ogdensburg."
+  - id: asgn_sandy_fd_ops_154_1825
+    channel_name: "Sandy FD Ops"
+    rf_chain_id: chain_sandy_fd_ops_154_1825
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Operations. Listed by RadioReference under Sandyston."
+  - id: asgn_sandy_fd_fg1_158_8725
+    channel_name: "Sandy FD FG1"
+    rf_chain_id: chain_sandy_fd_fg1_158_8725
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fireground Operations. Listed by RadioReference under Sandyston."
+  - id: asgn_sandy_fd_fg2_154_95
+    channel_name: "Sandy FD FG2"
+    rf_chain_id: chain_sandy_fd_fg2_154_95
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fireground Operations (Interior Crews). Listed by RadioReference under Sandyston."
+  - id: asgn_sandy_dpw_1_453_1
+    channel_name: "Sandy DPW 1"
+    rf_chain_id: chain_sandy_dpw_1_453_1
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Township Operations. Listed by RadioReference under Sandyston."
+  - id: asgn_sandy_dpw_2_453_75
+    channel_name: "Sandy DPW 2"
+    rf_chain_id: chain_sandy_dpw_2_453_75
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Township Operations. Listed by RadioReference under Sandyston."
+  - id: asgn_sandy_dpw_lb_46_54
+    channel_name: "Sandy DPW LB"
+    rf_chain_id: chain_sandy_dpw_lb_46_54
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Public Works Operations. Listed by RadioReference under Sandyston."
+  - id: asgn_sparta_pd_1_155_04
+    channel_name: "Sparta PD 1"
+    rf_chain_id: chain_sparta_pd_1_155_04
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Police 1. Listed by RadioReference under Sparta."
+  - id: asgn_sparta_fire_155_64
+    channel_name: "Sparta Fire"
+    rf_chain_id: chain_sparta_fire_155_64
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Fire. Listed by RadioReference under Sparta."
+  - id: asgn_sparta_ems_155_325
+    channel_name: "Sparta EMS"
+    rf_chain_id: chain_sparta_ems_155_325
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "EMS. Listed by RadioReference under Sparta."
+  - id: asgn_sparta_dpw_155_805
+    channel_name: "Sparta DPW"
+    rf_chain_id: chain_sparta_dpw_155_805
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "DPW. Listed by RadioReference under Sparta."
+  - id: asgn_spartwn_pd_s_154_83
+    channel_name: "SparTwn PD S"
+    rf_chain_id: chain_spartwn_pd_s_154_83
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Police South (linked to Police North). Listed by RadioReference under Sparta."
+  - id: asgn_spartwn_fd_3_4_154_37
+    channel_name: "SparTwn FD 3/4"
+    rf_chain_id: chain_spartwn_fd_3_4_154_37
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Ch. 3 Fireground / Ch. 4 Talk-Around. Listed by RadioReference under Sparta."
+  - id: asgn_spartwn_fast_154_145
+    channel_name: "SparTwn FAST"
+    rf_chain_id: chain_spartwn_fast_154_145
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fire FAST Team Operations. Listed by RadioReference under Sparta."
+  - id: asgn_sparta_fdmx1_453_8875
+    channel_name: "Sparta FDMX1"
+    rf_chain_id: chain_sparta_fdmx1_453_8875
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Mobile Extender. Listed by RadioReference under Sparta."
+  - id: asgn_sparta_fdmx2_453_9625
+    channel_name: "Sparta FDMX2"
+    rf_chain_id: chain_sparta_fdmx2_453_9625
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Mobile Extender. Listed by RadioReference under Sparta."
+  - id: asgn_sparta_fdmx3_458_0875
+    channel_name: "Sparta FDMX3"
+    rf_chain_id: chain_sparta_fdmx3_458_0875
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Mobile Extender. Listed by RadioReference under Sparta."
+  - id: asgn_sparta_fdmx4_458_8875
+    channel_name: "Sparta FDMX4"
+    rf_chain_id: chain_sparta_fdmx4_458_8875
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Mobile Extender. Listed by RadioReference under Sparta."
+  - id: asgn_sparta_fdmx5_458_9625
+    channel_name: "Sparta FDMX5"
+    rf_chain_id: chain_sparta_fdmx5_458_9625
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Mobile Extender. Listed by RadioReference under Sparta."
+  - id: asgn_sprtaems_mx1_453_0875
+    channel_name: "SprtaEMS MX1"
+    rf_chain_id: chain_sprtaems_mx1_453_0875
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "EMS Mobile Extender. Listed by RadioReference under Sparta."
+  - id: asgn_sprtaems_mx3_453_9875
+    channel_name: "SprtaEMS MX3"
+    rf_chain_id: chain_sprtaems_mx3_453_9875
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "EMS Mobile Extender. Listed by RadioReference under Sparta."
+  - id: asgn_sprtaems_mx4_458_9125
+    channel_name: "SprtaEMS MX4"
+    rf_chain_id: chain_sprtaems_mx4_458_9125
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "EMS Mobile Extender (link to JEMS 1). Listed by RadioReference under Sparta."
+  - id: asgn_sprtaems_mx5_458_9875
+    channel_name: "SprtaEMS MX5"
+    rf_chain_id: chain_sprtaems_mx5_458_9875
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "EMS Mobile Extender. Listed by RadioReference under Sparta."
+  - id: asgn_spart_dpw_op_154_98
+    channel_name: "SparT DPW Op"
+    rf_chain_id: chain_spart_dpw_op_154_98
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Public Works Dispatch (Operations). Listed by RadioReference under Sparta."
+  - id: asgn_sparta_boe_42_96
+    channel_name: "Sparta BOE"
+    rf_chain_id: chain_sparta_boe_42_96
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Board of Education. Listed by RadioReference under Sparta."
+  - id: asgn_sh_fd_sta_33_151_34
+    channel_name: "SH FD Sta 33"
+    rf_chain_id: chain_sh_fd_sta_33_151_34
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Stanhope Hose Company No. 1 (Station 23). Listed by RadioReference under Stanhope."
+  - id: asgn_sh_fd_33fg_159_33
+    channel_name: "SH FD 33FG"
+    rf_chain_id: chain_sh_fd_33fg_159_33
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Stanhope Hose Company No. 1 Fireground. Listed by RadioReference under Stanhope."
+  - id: asgn_stanh_pd_151_985
+    channel_name: "Stanh PD"
+    rf_chain_id: chain_stanh_pd_151_985
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Police. Listed by RadioReference under Stanhope."
+  - id: asgn_sh_fd_link_465_4625
+    channel_name: "SH FD Link"
+    rf_chain_id: chain_sh_fd_link_465_4625
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Link to Stanhope 151.340 Repeater. Listed by RadioReference under Stanhope."
+  - id: asgn_stillwater_fd_155_01
+    channel_name: "Stillwater FD"
+    rf_chain_id: chain_stillwater_fd_155_01
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Fire - Truck to Truck. Listed by RadioReference under Stillwater."
+  - id: asgn_susbor_oem_155_01
+    channel_name: "SusBor OEM"
+    rf_chain_id: chain_susbor_oem_155_01
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Office of Emergency Management. Listed by RadioReference under Sussex Borough."
+  - id: asgn_vernon_ems_47_5
+    channel_name: "Vernon EMS"
+    rf_chain_id: chain_vernon_ems_47_5
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "EMS Dispatch. Listed by RadioReference under Vernon."
+  - id: asgn_vernn_pd_mx1_453_0375
+    channel_name: "Vernn PD MX1"
+    rf_chain_id: chain_vernn_pd_mx1_453_0375
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Police Mobile Extenders. Listed by RadioReference under Vernon."
+  - id: asgn_vernn_pd_mx2_453_0625
+    channel_name: "Vernn PD MX2"
+    rf_chain_id: chain_vernn_pd_mx2_453_0625
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Police Mobile Extenders. Listed by RadioReference under Vernon."
+  - id: asgn_vernn_pd_mx3_453_1125
+    channel_name: "Vernn PD MX3"
+    rf_chain_id: chain_vernn_pd_mx3_453_1125
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Police Mobile Extenders. Listed by RadioReference under Vernon."
+  - id: asgn_vernn_pd_mx4_453_1375
+    channel_name: "Vernn PD MX4"
+    rf_chain_id: chain_vernn_pd_mx4_453_1375
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Police Mobile Extenders. Listed by RadioReference under Vernon."
+  - id: asgn_vernon_dpw_155_8725
+    channel_name: "Vernon DPW"
+    rf_chain_id: chain_vernon_dpw_155_8725
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Public Works / Police 3. Listed by RadioReference under Vernon."
+  - id: asgn_wantage_fd_ops_154_3175
+    channel_name: "Wantage FD Ops"
+    rf_chain_id: chain_wantage_fd_ops_154_3175
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Ops. Listed by RadioReference under Wantage."
+  - id: asgn_wantage_fg_2_158_9475
+    channel_name: "Wantage FG 2"
+    rf_chain_id: chain_wantage_fg_2_158_9475
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Fireground 2. Listed by RadioReference under Wantage."
+  - id: asgn_wantage_ems_ops_155_55
+    channel_name: "Wantage EMS Ops"
+    rf_chain_id: chain_wantage_ems_ops_155_55
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "EMS Ops. Listed by RadioReference under Wantage."
+  - id: asgn_wantage_oem_46_58
+    channel_name: "Wantage OEM"
+    rf_chain_id: chain_wantage_oem_46_58
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Emergency Management Ops. Listed by RadioReference under Wantage."
+  - id: asgn_wantage_dpw_45_44
+    channel_name: "Wantage DPW"
+    rf_chain_id: chain_wantage_dpw_45_44
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Public Works. Listed by RadioReference under Wantage."
+  - id: asgn_brrs_disptch_47_5
+    channel_name: "BRRS Disptch"
+    rf_chain_id: chain_brrs_disptch_47_5
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Dispatch. Listed by RadioReference under Blue Ridge Rescue Squad."
+  - id: asgn_brrs_n_disp_47_66
+    channel_name: "BRRS N Disp"
+    rf_chain_id: chain_brrs_n_disp_47_66
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "North Dispatch. Listed by RadioReference under Blue Ridge Rescue Squad."
+  - id: asgn_brrs_mob_a_153_86
+    channel_name: "BRRS Mob A"
+    rf_chain_id: chain_brrs_mob_a_153_86
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Mobile A. Listed by RadioReference under Blue Ridge Rescue Squad."
+  - id: asgn_brrs_mob_b_154_07
+    channel_name: "BRRS Mob B"
+    rf_chain_id: chain_brrs_mob_b_154_07
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Mobile B. Listed by RadioReference under Blue Ridge Rescue Squad."
+  - id: asgn_brrs_mob_c_155_4
+    channel_name: "BRRS Mob C"
+    rf_chain_id: chain_brrs_mob_c_155_4
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Mobile C. Listed by RadioReference under Blue Ridge Rescue Squad."
+  - id: asgn_brrs_uhf_lnk_456_3
+    channel_name: "BRRS UHF Lnk"
+    rf_chain_id: chain_brrs_uhf_lnk_456_3
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "UHF Link to 47.50. Listed by RadioReference under Blue Ridge Rescue Squad."
+  - id: asgn_brrs_m_a_155_28
+    channel_name: "BRRS M/A"
+    rf_chain_id: chain_brrs_m_a_155_28
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Mutual Aid to State. Listed by RadioReference under Blue Ridge Rescue Squad."
+  - id: asgn_lakeland_ems_154_3925
+    channel_name: "Lakeland EMS"
+    rf_chain_id: chain_lakeland_ems_154_3925
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Operations. Listed by RadioReference under Lakeland Emergency Squad."
+  - id: asgn_fredon_boe_152_3375
+    channel_name: "Fredon BOE"
+    rf_chain_id: chain_fredon_boe_152_3375
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Fredon Township Board of Education. Listed by RadioReference under Schools."
+  - id: asgn_hp_rhs_451_2875
+    channel_name: "HP RHS"
+    rf_chain_id: chain_hp_rhs_451_2875
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "High Point Regional High School - Operations. Listed by RadioReference under Schools."
+  - id: asgn_hopat_boe_155_205
+    channel_name: "Hopat BOE"
+    rf_chain_id: chain_hopat_boe_155_205
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Hopatcong Board of Education - Buses. Listed by RadioReference under Schools."
+  - id: asgn_lenapevallhs_453_325
+    channel_name: "LenapeVallHS"
+    rf_chain_id: chain_lenapevallhs_453_325
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Lenape Valley High School. Listed by RadioReference under Schools."
+  - id: asgn_sparta_hs_152_99
+    channel_name: "Sparta HS"
+    rf_chain_id: chain_sparta_hs_152_99
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Sparta High School - Operations. Listed by RadioReference under Schools."
+  - id: asgn_sccc_ops_452_975
+    channel_name: "SCCC Ops"
+    rf_chain_id: chain_sccc_ops_452_975
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Sussex County Community College. Listed by RadioReference under Schools."
+  - id: asgn_sw_boe_bus_47_54
+    channel_name: "SW BOE Bus"
+    rf_chain_id: chain_sw_boe_bus_47_54
+    usage: "simplex"
+    authorization_id: auth_fcc_part90
+    notes: "Sussex-Wantage BOE / Buses. Listed by RadioReference under Schools."
+  - id: asgn_andover_fd_disp_152_9075
+    channel_name: "Andover FD Disp"
+    rf_chain_id: chain_andover_fd_disp_152_9075
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Dispatch/Operations Same transmitter, listed twice on the source page.. Listed by RadioReference under Andover Township."
+  - id: asgn_newton_fd_disp_152_9075
+    channel_name: "Newton FD Disp"
+    rf_chain_id: chain_andover_fd_disp_152_9075
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "Fire Dispatch/Operations Same transmitter, listed twice on the source page.. Listed by RadioReference under Newton."
+  - id: asgn_suxco_ems_link_453_9125
+    channel_name: "SuxCo EMS Link"
+    rf_chain_id: chain_suxco_ems_link_453_9125
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "EMS Link to 155.295 Same transmitter, listed twice on the source page.. Listed by RadioReference under Sussex County."
+  - id: asgn_sprtaems_mx2_453_9125
+    channel_name: "SprtaEMS MX2"
+    rf_chain_id: chain_suxco_ems_link_453_9125
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: "EMS Link to 155.295 Same transmitter, listed twice on the source page.. Listed by RadioReference under Sparta."
