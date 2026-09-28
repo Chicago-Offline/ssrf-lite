@@ -1,0 +1,194 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
+ssrf_lite_version: "0.8.0"
+ssrf_lite:
+  sources:
+    - name: "RadioReference - Sussex County, NJ Amateur Radio Repeaters"
+      url: "https://www.radioreference.com/db/browse/ctid/1789/ham"
+      accessed: "2026-09-27"
+
+# W2VER - Vernon Township ARES/RACES.
+# RadioReference publishes no site coordinates for these repeaters; locations below are
+# town-center approximations (rounded to 3 decimals) and are flagged "(approx)".
+# The 33cm 927.3375 machine is listed at Hardyston, not Vernon, so it gets its own location.
+
+organizations:
+  - id: org_w2ver
+    name: "W2VER - Vernon Township ARES/RACES"
+
+locations:
+  - id: loc_vernon_nj
+    name: "Vernon Township, NJ (approx)"
+    lat: 41.196
+    lon: -74.487
+  - id: loc_hardyston_nj
+    name: "Hardyston Township, NJ (approx)"
+    lat: 41.111
+    lon: -74.588
+
+stations:
+  - id: stn_w2ver_6m
+    call_sign: "W2VER"
+    organization_id: org_w2ver
+    location_id: loc_vernon_nj
+    service: "amateur"
+  - id: stn_w2ver_2m
+    call_sign: "W2VER"
+    organization_id: org_w2ver
+    location_id: loc_vernon_nj
+    service: "amateur"
+  - id: stn_w2ver_70cm
+    call_sign: "W2VER"
+    organization_id: org_w2ver
+    location_id: loc_vernon_nj
+    service: "amateur"
+  - id: stn_w2ver_33cm_vernon
+    call_sign: "W2VER"
+    organization_id: org_w2ver
+    location_id: loc_vernon_nj
+    service: "amateur"
+  - id: stn_w2ver_33cm_hardyston
+    call_sign: "W2VER"
+    organization_id: org_w2ver
+    location_id: loc_hardyston_nj
+    service: "amateur"
+
+antennas:
+  - id: ant_w2ver_6m
+    station_id: stn_w2ver_6m
+    name: "6m Vertical"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_w2ver_2m
+    station_id: stn_w2ver_2m
+    name: "2m Vertical"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_w2ver_70cm
+    station_id: stn_w2ver_70cm
+    name: "70cm Vertical"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_w2ver_33cm_vernon
+    station_id: stn_w2ver_33cm_vernon
+    name: "33cm Vertical (Vernon)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_w2ver_33cm_hardyston
+    station_id: stn_w2ver_33cm_hardyston
+    name: "33cm Vertical (Hardyston)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+
+rf_chains:
+  - id: chain_w2ver_6m_fm
+    station_id: stn_w2ver_6m
+    antenna_id: ant_w2ver_6m
+    tx:
+      freq_mhz: 50.720 # -1.0 MHz input
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 51.720
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 136.5
+      ctcss_rx_hz: 136.5
+      notes: "ARES/RACES 6m repeater."
+
+  - id: chain_w2ver_2m_fm
+    station_id: stn_w2ver_2m
+    antenna_id: ant_w2ver_2m
+    tx:
+      freq_mhz: 146.325 # -600 kHz input
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.925
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 151.4
+      ctcss_rx_hz: 151.4
+      notes: "RACES / Skywarn primary 2m repeater."
+
+  - id: chain_w2ver_70cm_fm
+    station_id: stn_w2ver_70cm
+    antenna_id: ant_w2ver_70cm
+    tx:
+      freq_mhz: 444.075 # -5 MHz input
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 449.075
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 141.3
+      ctcss_rx_hz: 141.3
+
+  - id: chain_w2ver_33cm_vernon_fm
+    station_id: stn_w2ver_33cm_vernon
+    antenna_id: ant_w2ver_33cm_vernon
+    tx:
+      freq_mhz: 906.075 # -12 MHz input
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 918.075
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 141.3
+      ctcss_rx_hz: 141.3
+
+  - id: chain_w2ver_33cm_hardyston_fm
+    station_id: stn_w2ver_33cm_hardyston
+    antenna_id: ant_w2ver_33cm_hardyston
+    tx:
+      freq_mhz: 902.3375 # -25 MHz input
+      emission: "11K2F3E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 927.3375
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 141.3
+      ctcss_rx_hz: 141.3
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license. ARES/RACES and Skywarn traffic has priority."
+
+assignments:
+  - id: asgn_w2ver_6m
+    channel_name: "W2VER 51.72"
+    rf_chain_id: chain_w2ver_6m_fm
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+  - id: asgn_w2ver_2m
+    channel_name: "W2VER 146.925"
+    rf_chain_id: chain_w2ver_2m_fm
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+  - id: asgn_w2ver_70cm
+    channel_name: "W2VER 449.075"
+    rf_chain_id: chain_w2ver_70cm_fm
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+  - id: asgn_w2ver_33cm_vernon
+    channel_name: "W2VER 918.075"
+    rf_chain_id: chain_w2ver_33cm_vernon_fm
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+  - id: asgn_w2ver_33cm_hardyston
+    channel_name: "W2VER 927.3375"
+    rf_chain_id: chain_w2ver_33cm_hardyston_fm
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t

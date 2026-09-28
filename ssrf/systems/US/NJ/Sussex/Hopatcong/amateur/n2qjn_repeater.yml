@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
+ssrf_lite_version: "0.8.0"
+ssrf_lite:
+  sources:
+    - name: "RadioReference - Sussex County, NJ Amateur Radio Repeaters"
+      url: "https://www.radioreference.com/db/browse/ctid/1789/ham"
+      accessed: "2026-09-27"
+
+# N2QJN - Hopatcong, NJ. General-use 1.25m repeater.
+# No site coordinates published; location is a town-center approximation.
+
+organizations:
+  - id: org_n2qjn
+    name: "N2QJN - Hopatcong 1.25m repeater"
+
+locations:
+  - id: loc_hopatcong_nj
+    name: "Hopatcong, NJ (approx)"
+    lat: 40.934
+    lon: -74.659
+
+stations:
+  - id: stn_n2qjn_125m
+    call_sign: "N2QJN"
+    organization_id: org_n2qjn
+    location_id: loc_hopatcong_nj
+    service: "amateur"
+
+antennas:
+  - id: ant_n2qjn_125m
+    station_id: stn_n2qjn_125m
+    name: "1.25m Vertical"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+
+rf_chains:
+  - id: chain_n2qjn_224280_fm
+    station_id: stn_n2qjn_125m
+    antenna_id: ant_n2qjn_125m
+    tx:
+      freq_mhz: 222.680 # -1.6 MHz input
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 224.280
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 88.5
+      ctcss_rx_hz: 88.5
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_n2qjn_224280
+    channel_name: "N2QJN 224.28"
+    rf_chain_id: chain_n2qjn_224280_fm
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t

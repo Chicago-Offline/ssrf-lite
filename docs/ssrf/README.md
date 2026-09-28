@@ -4,8 +4,8 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ## Quick Statistics
 
-- **Total SSRF Files:** 63
-- **Total Assignments:** 1,076
+- **Total SSRF Files:** 68
+- **Total Assignments:** 1,092
 - **Services Covered:** 10
 - **Modes:** AM, APRS, C4FM, CW, D-STAR, DMR, FM, NXDN, P25, PACKET
 - **Frequency Bands:** 5
@@ -34,7 +34,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |------|----------|-------------|-------|------------------|
 | [mmdvm_duplex_hotspot](mmdvm_duplex_hotspot.md) | amateur | 2 | DMR | custom / mmdvm_duplex_hotspot.yml |
 
-### Geographic System (51 files)
+### Geographic System (56 files)
 
 | File | Services | Assignments | Modes | Geographic Scope |
 |------|----------|-------------|-------|------------------|
@@ -47,7 +47,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [ns9rc_repeaters](ns9rc_repeaters.md) | amateur | 14 | FM, C4FM, D-STAR, AP... | US / IL / Cook / Chicago |
 | [sara_repeaters](sara_repeaters.md) | amateur | 3 | FM, C4FM | US / IL / Cook / Chicago |
 | [chicago_businesses_northside](chicago_businesses_northside.md) | business_itinerant_part90 | 56 | DMR, FM | US / IL / Cook / Chicago |
-| [chicago_dmr_monitored](chicago_dmr_monitored.md) | business_itinerant_part90 | 4 | DMR | US / IL / Cook / Chicago |
+| [chicago_dmr_monitored](chicago_dmr_monitored.md) | business_itinerant_part90 | 5 | DMR | US / IL / Cook / Chicago |
 | [chicago_hotels](chicago_hotels.md) | business_itinerant_part90 | 41 | DMR, FM | US / IL / Cook / Chicago |
 | [chicago_north_side_businesses](chicago_north_side_businesses.md) | business_itinerant_part90 | 150 | FM, DMR, NXDN | US / IL / Cook / Chicago |
 | [venues_chicago](venues_chicago.md) | business_itinerant_part90 | 15 | DMR, FM | US / IL / Cook / Chicago |
@@ -84,6 +84,11 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [kc8brs_four_flags](kc8brs_four_flags.md) | amateur | 1 | FM | US / MI / Berrien / Niles |
 | [berrien_county_amateur](berrien_county_amateur.md) | amateur | 5 | FM, D-STAR | US / MI / Berrien / _Countywide |
 | [berrien_county_public_safety](berrien_county_public_safety.md) | public_safety_part90 | 13 | FM | US / MI / Berrien / _Countywide |
+| [n2ozo_repeaters](n2ozo_repeaters.md) | amateur | 3 | FM, P25 | US / NJ / Sussex / Hopatcong |
+| [n2qjn_repeater](n2qjn_repeater.md) | amateur | 1 | FM | US / NJ / Sussex / Hopatcong |
+| [wr2m_repeater](wr2m_repeater.md) | amateur | 1 | FM | US / NJ / Sussex / Hopatcong |
+| [w2lv_repeaters](w2lv_repeaters.md) | amateur | 5 | FM | US / NJ / Sussex / Newton |
+| [w2ver_repeaters](w2ver_repeaters.md) | amateur | 5 | FM | US / NJ / Sussex / Vernon |
 | [ecker_hill_gmrs](ecker_hill_gmrs.md) | gmrs | 1 | FM | US / UT / Summit / ParkCity |
 | [gmrs_two_way_radio](gmrs_two_way_radio.md) | gmrs | 1 | FM | US / WI / Monroe / Sparta |
 | [kr9rk_lakeshore_repeaters](kr9rk_lakeshore_repeaters.md) | amateur | 3 | FM, DMR | US / WI / Racine / _Countywide |
@@ -101,6 +106,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 - **IN:** 4 files
 - **MI:** 3 files
 - **National/Regional:** 10 files
+- **NJ:** 5 files
 - **UT:** 1 files
 - **WI:** 3 files
 - **_Regional:** 1 files
@@ -112,9 +118,9 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 | Service | Total Assignments | Files |
 |---------|------------------|-------|
-| amateur | 121 | 19 |
+| amateur | 136 | 24 |
 | aviation | 164 | 2 |
-| business_itinerant_part90 | 390 | 11 |
+| business_itinerant_part90 | 391 | 11 |
 | gmrs | 91 | 11 |
 | marine | 53 | 1 |
 | murs | 5 | 1 |
