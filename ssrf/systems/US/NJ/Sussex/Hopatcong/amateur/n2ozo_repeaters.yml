@@ -1,0 +1,120 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
+ssrf_lite_version: "0.8.0"
+ssrf_lite:
+  sources:
+    - name: "RadioReference - Sussex County, NJ Amateur Radio Repeaters"
+      url: "https://www.radioreference.com/db/browse/ctid/1789/ham"
+      accessed: "2026-09-27"
+
+# N2OZO - Hopatcong, NJ. General-use 70cm repeaters.
+# 448.175/443.175 is listed TWICE by RadioReference: once analog FM (141.3 Hz) and once
+# P25 (NAC 293 hex). Same pair, same call, different mode -> two distinct rf_chains on one
+# station (the dedupe key includes mode type). Likely a mixed-mode machine.
+# RadioReference prints the P25 NAC in hex: 293 hex = 659 decimal.
+# No site coordinates published; location is a town-center approximation.
+
+organizations:
+  - id: org_n2ozo
+    name: "N2OZO - Hopatcong repeater system"
+
+locations:
+  - id: loc_hopatcong_nj
+    name: "Hopatcong, NJ (approx)"
+    lat: 40.934
+    lon: -74.659
+
+stations:
+  - id: stn_n2ozo_448175
+    call_sign: "N2OZO"
+    organization_id: org_n2ozo
+    location_id: loc_hopatcong_nj
+    service: "amateur"
+  - id: stn_n2ozo_448825
+    call_sign: "N2OZO"
+    organization_id: org_n2ozo
+    location_id: loc_hopatcong_nj
+    service: "amateur"
+
+antennas:
+  - id: ant_n2ozo_448175
+    station_id: stn_n2ozo_448175
+    name: "70cm Vertical (448.175)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_n2ozo_448825
+    station_id: stn_n2ozo_448825
+    name: "70cm Vertical (448.825)"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+
+rf_chains:
+  - id: chain_n2ozo_448175_fm
+    station_id: stn_n2ozo_448175
+    antenna_id: ant_n2ozo_448175
+    tx:
+      freq_mhz: 443.175 # -5 MHz input
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 448.175
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 141.3
+      ctcss_rx_hz: 141.3
+      notes: "Analog side of the 448.175 machine (RR alpha tag \"N2OZO/R Ana\")."
+
+  - id: chain_n2ozo_448175_p25
+    station_id: stn_n2ozo_448175
+    antenna_id: ant_n2ozo_448175
+    tx:
+      freq_mhz: 443.175 # -5 MHz input
+      emission: "8K10F1E"
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 448.175
+    mode:
+      type: "P25"
+      nac: 659
+      notes: "Digital side of the 448.175 machine (RR alpha tag \"N2OZO/R Dig\"). NAC 293 hex = 659 decimal."
+
+  - id: chain_n2ozo_448825_fm
+    station_id: stn_n2ozo_448825
+    antenna_id: ant_n2ozo_448825
+    tx:
+      freq_mhz: 443.825 # -5 MHz input
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 448.825
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 141.3
+      ctcss_rx_hz: 141.3
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_n2ozo_448175_fm
+    channel_name: "N2OZO Ana"
+    rf_chain_id: chain_n2ozo_448175_fm
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+  - id: asgn_n2ozo_448175_p25
+    channel_name: "N2OZO Dig"
+    rf_chain_id: chain_n2ozo_448175_p25
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+  - id: asgn_n2ozo_448825
+    channel_name: "N2OZO 448.825"
+    rf_chain_id: chain_n2ozo_448825_fm
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
