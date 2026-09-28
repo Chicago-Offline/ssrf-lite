@@ -22,8 +22,8 @@
 - **DMR:** 2
 
 ### Usage Types
-- **Simplex:** 91
-- **Repeater:** 43
+- **Simplex:** 85
+- **Repeater:** 49
 
 ### Frequency Bands
 - **VHF (136-174 MHz):** 81
@@ -170,9 +170,9 @@
   - *Fire Ch. 5 Tanker Task Force. Listed by RadioReference under County - Fire/EMS.*
 - **asgn_suxco_fd_byram_458_4875** - simplex
   - *Fire Link to 155.190 - Byram. Listed by RadioReference under County - Fire/EMS.*
-- **asgn_suxco_fd_link_a_460_5875** - simplex
+- **asgn_suxco_fd_link_a_460_5875** - repeater
   - *Fire Link to 46.1 MHz. Listed by RadioReference under County - Fire/EMS.*
-- **asgn_suxco_fd_sandysn_465_0625** - simplex
+- **asgn_suxco_fd_sandysn_465_0625** - repeater
   - *Fire Link to 46.1 MHz - Sandyston. Listed by RadioReference under County - Fire/EMS.*
 - **asgn_suxco_ems_jems_155_295** - simplex
   - *EMS JEMS Ch. 1. Listed by RadioReference under County - Fire/EMS.*
@@ -234,7 +234,7 @@
   - *Public Works. Listed by RadioReference under Fredon.*
 - **asgn_fredn_fd_ems_154_6** - simplex
   - *Fire / EMS Private Ch. Listed by RadioReference under Fredon.*
-- **asgn_fredn_ems_l1_453_1375** - simplex
+- **asgn_fredn_ems_l1_453_1375** - repeater
   - *EMS Mobile Uplink. Listed by RadioReference under Fredon.*
 - **asgn_green_fg_154_355** - simplex
   - *Fireground. Listed by RadioReference under Green.*
@@ -356,7 +356,7 @@
   - *Police Mobile Extenders. Listed by RadioReference under Vernon.*
 - **asgn_vernn_pd_mx3_453_1125** - simplex
   - *Police Mobile Extenders. Listed by RadioReference under Vernon.*
-- **asgn_vernn_pd_mx4_453_1375** - simplex
+- **asgn_vernn_pd_mx4_453_1375** - repeater
   - *Police Mobile Extenders. Listed by RadioReference under Vernon.*
 - **asgn_vernon_dpw_155_8725** - repeater
   - *Public Works / Police 3. Listed by RadioReference under Vernon.*
@@ -404,9 +404,9 @@
   - *Fire Dispatch/Operations Same transmitter, listed twice on the source page.. Listed by RadioReference under Andover Township.*
 - **asgn_newton_fd_disp_152_9075** - repeater
   - *Fire Dispatch/Operations Same transmitter, listed twice on the source page.. Listed by RadioReference under Newton.*
-- **asgn_suxco_ems_link_453_9125** - simplex
+- **asgn_suxco_ems_link_453_9125** - repeater
   - *EMS Link to 155.295 Same transmitter, listed twice on the source page.. Listed by RadioReference under Sussex County.*
-- **asgn_sprtaems_mx2_453_9125** - simplex
+- **asgn_sprtaems_mx2_453_9125** - repeater
   - *EMS Link to 155.295 Same transmitter, listed twice on the source page.. Listed by RadioReference under Sparta.*
 
 ## Authorization Requirements

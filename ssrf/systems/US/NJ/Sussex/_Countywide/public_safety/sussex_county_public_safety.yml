@@ -6,11 +6,14 @@ ssrf_lite:
     - name: "RadioReference - Sussex County, New Jersey (NJ) Scanner Frequencies"
       url: "https://www.radioreference.com/db/browse/ctid/1789"
       accessed: "2026-09-28"
+    - name: "RadioReference - Sussex County, NJ Premium CSV export (all identified frequencies)"
+      url: "https://www.radioreference.com/db/download/ctid/?ctid=1789&type=csv"
+      accessed: "2026-09-28"
 
 comments:
   - text: "Sussex County, NJ conventional public safety, public works, volunteer EMS squads and school systems, folded into one countywide file with each municipality carried as its own location and station."
-  - text: "INCOMPLETE SOURCE - repeater inputs are paywalled, not absent. The county frequency table served to anonymous users has only eight columns (Frequency, License, Type, Tone, Alpha Tag, Description, Mode, Tag). RadioReference does hold input frequencies for this county, but exposes them through a 'Show Repeater Inputs' toggle gated behind a Premium subscription (showInputs=0 for anonymous sessions). Every chain here therefore records only the published output as rx.freq_mhz and leaves tx.freq_mhz null. Type RM entries are marked usage repeater with the input recorded as unavailable at capture time rather than nonexistent. A Premium capture should revisit every RM chain and fill in tx.freq_mhz."
-  - text: "The anonymous view has a single Tone column that does not distinguish input from output; the separate Tone In / Tone Out columns are part of the same Premium-gated detail. Tones are recorded as access (TX) tones only (ctcss_tx_hz / dcs_tx_code) with the output left carrier-squelch, so a radio programmed from this data cannot be silently squelched."
+  - text: "Captured from the Premium CSV export (Downloads -> /db/download/ctid/?ctid=1789&type=csv), which carries eleven columns including Frequency Input, PL Output Tone and PL Input Tone. An earlier revision of this file was built from the anonymous eight-column browse table, which omits the Input column entirely rather than marking it withheld, and wrongly recorded the resulting gap as the county publishing no inputs. 46 of the 132 chains here do have published repeater inputs and now carry a real tx.freq_mhz."
+  - text: "Tone direction comes from the CSV's split columns: PL Output Tone is the tone the repeater sends and is recorded as ctcss_rx_hz / dcs_rx_code; PL Input Tone is the access tone and is recorded as ctcss_tx_hz / dcs_tx_code. The HTML browse table - anonymous or Premium - has only one undirected Tone column, so an earlier revision recorded every tone as TX-only. No public safety row in this county publishes an input tone; all 15 rows that do are amateur. Repeater chains therefore carry an output tone on rx with the input tone left unset, and simplex chains keep the single published tone on tx."
   - text: "OMITTED: 453.98775 MHz (Fredon Township, KVT557, alpha tag 'Fredn EMS L2', EMS Mobile Uplink). The published value is not a valid channel on any Part 90 raster and is most likely a typo for 453.9875 MHz. Left out rather than repaired - a guessed frequency is worse than a documented gap."
   - text: "SOURCE TYPO: the 155.280 MHz Blue Ridge Rescue Squad mutual-aid entry is printed with license 'KL0302' (digit zero). Every other BRRS row reads KLO302 (letter O), so it is recorded here as KLO302."
   - text: "152.9075 MHz / WQDM238 / 218.1 PL is listed under both Andover Township and Newton, and 453.9125 MHz / WPFQ901 / 141.3 PL under both the county EMS links and Sparta ('SprtaEMS MX2'). Each is one physical transmitter with two documented uses, so each is a single rf_chain with two assignments."
@@ -1199,7 +1202,7 @@ rf_chains:
     station_id: stn_sux_sheriff_vhf_wpem831
     antenna_id: ant_sux_sheriff_vhf_wpem831
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "8K10F1E"
       bandwidth_khz: 12.5
     rx:
@@ -1211,21 +1214,21 @@ rf_chains:
     station_id: stn_sux_interop_uhf_nocall
     antenna_id: ant_sux_interop_uhf_nocall
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # source lists this as fixed link (type F) but publishes no input
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 460.6125
     mode:
       type: "NFM"
-      ctcss_tx_hz: 162.2
-      notes: "Fixed link/control station as listed by RadioReference (Type F). Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 162.2
+      notes: "Fixed link/control station as listed by RadioReference (Type F)."
   # ---- County - Fire/EMS ----
   - id: chain_suxco_paging_155_0625
     station_id: stn_sux_fireems_vhf_wpem831
     antenna_id: ant_sux_fireems_vhf_wpem831
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1233,25 +1236,24 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 131.8
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_fd_resp_1_155_19
     station_id: stn_sux_fireems_vhf_kxc854
     antenna_id: ant_sux_fireems_vhf_kxc854
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 155.97 # input, +0.78 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 155.19
     mode:
       type: "NFM"
-      ctcss_tx_hz: 173.8
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 173.8
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_suxco_fg_a_154_28
     station_id: stn_sux_fireems_vhf_wqa723
     antenna_id: ant_sux_fireems_vhf_wqa723
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1259,12 +1261,11 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 156.7
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_fg_b_154_265
     station_id: stn_sux_fireems_vhf_wqa723
     antenna_id: ant_sux_fireems_vhf_wqa723
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1272,12 +1273,11 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 156.7
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_fg_c_154_295
     station_id: stn_sux_fireems_vhf_wqa723
     antenna_id: ant_sux_fireems_vhf_wqa723
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1285,12 +1285,11 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 156.7
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_ric_ops_154_3025
     station_id: stn_sux_fireems_vhf_wqa723
     antenna_id: ant_sux_fireems_vhf_wqa723
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1298,12 +1297,11 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 156.7
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_water_ops_154_2725
     station_id: stn_sux_fireems_vhf_wqa723
     antenna_id: ant_sux_fireems_vhf_wqa723
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1311,12 +1309,11 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 156.7
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_fd_disp_46_1
     station_id: stn_sux_fireems_lowband_wpga474
     antenna_id: ant_sux_fireems_lowband_wpga474
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
@@ -1324,12 +1321,11 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 131.8
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_fg_2_46_4
     station_id: stn_sux_fireems_lowband_wpga474
     antenna_id: ant_sux_fireems_lowband_wpga474
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
@@ -1337,12 +1333,11 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 131.8
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_fg_3_s_46_24
     station_id: stn_sux_fireems_lowband_wpga474
     antenna_id: ant_sux_fireems_lowband_wpga474
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
@@ -1350,12 +1345,11 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 131.8
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_fg_4_n_46_28
     station_id: stn_sux_fireems_lowband_wpga474
     antenna_id: ant_sux_fireems_lowband_wpga474
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
@@ -1363,12 +1357,11 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 131.8
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_fd_tankers_46_34
     station_id: stn_sux_fireems_lowband_wpga474
     antenna_id: ant_sux_fireems_lowband_wpga474
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
@@ -1376,51 +1369,50 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 131.8
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_fd_byram_458_4875
     station_id: stn_sux_fireems_uhf_wnyt790
     antenna_id: ant_sux_fireems_uhf_wnyt790
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # source lists this as fixed link (type F) but publishes no input
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 458.4875
     mode:
       type: "NFM"
-      ctcss_tx_hz: 131.8
-      notes: "Fixed link/control station as listed by RadioReference (Type F). Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 131.8
+      notes: "Fixed link/control station as listed by RadioReference (Type F)."
   - id: chain_suxco_fd_link_a_460_5875
     station_id: stn_sux_fireems_uhf_knen690
     antenna_id: ant_sux_fireems_uhf_knen690
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 465.587 # input, +5 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 460.5875
     mode:
       type: "NFM"
-      ctcss_tx_hz: 131.8
-      notes: "Fixed link/control station as listed by RadioReference (Type F). Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 131.8
+      notes: "Fixed link/control station as listed by RadioReference (Type F). Input tone not published by the source; output tone recorded on rx only."
   - id: chain_suxco_fd_sandysn_465_0625
     station_id: stn_sux_fireems_uhf_klp844
     antenna_id: ant_sux_fireems_uhf_klp844
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 460.062 # input, -5 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 465.0625
     mode:
       type: "NFM"
-      ctcss_tx_hz: 218.1
-      notes: "Fixed link/control station as listed by RadioReference (Type F). Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 218.1
+      notes: "Fixed link/control station as listed by RadioReference (Type F). Input tone not published by the source; output tone recorded on rx only."
   - id: chain_suxco_ems_jems_155_295
     station_id: stn_sux_fireems_vhf_wnln707
     antenna_id: ant_sux_fireems_vhf_wnln707
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1428,25 +1420,24 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 141.3
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_ems_resp_2_155_7075
     station_id: stn_sux_fireems_vhf_wnyt790
     antenna_id: ant_sux_fireems_vhf_wnyt790
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 154.018 # input, -1.69 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 155.7075
     mode:
       type: "NFM"
-      ctcss_tx_hz: 151.4
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 151.4
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_suxco_ems_tac_155_34
     station_id: stn_sux_fireems_vhf_wnvy825
     antenna_id: ant_sux_fireems_vhf_wnvy825
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1454,12 +1445,11 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 156.7
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_ems_hear_155_34
     station_id: stn_sux_fireems_vhf_wnln707
     antenna_id: ant_sux_fireems_vhf_wnln707
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1467,39 +1457,38 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 141.3
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_ems_link_458_3125
     station_id: stn_sux_fireems_uhf_wqul922
     antenna_id: ant_sux_fireems_uhf_wqul922
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # source lists this as fixed link (type F) but publishes no input
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 458.3125
     mode:
       type: "NFM"
-      ctcss_tx_hz: 71.9
-      notes: "Fixed link/control station as listed by RadioReference (Type F). Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 71.9
+      notes: "Fixed link/control station as listed by RadioReference (Type F)."
   - id: chain_suxco_ems_link_464_8
     station_id: stn_sux_fireems_uhf_wqwu904
     antenna_id: ant_sux_fireems_uhf_wqwu904
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 469.8 # input, +5 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 464.8
     mode:
       type: "NFM"
-      dcs_tx_code: "026"
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
+      dcs_rx_code: "026"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   # ---- County - Services ----
   - id: chain_suxco_roads_33_06
     station_id: stn_sux_services_lowband_kef641
     antenna_id: ant_sux_services_lowband_kef641
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
@@ -1507,12 +1496,11 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 131.8
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_roads_flag_453_5125
     station_id: stn_sux_services_uhf_nocall
     antenna_id: ant_sux_services_uhf_nocall
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1520,38 +1508,36 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 71.9
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_mua_153_0275
     station_id: stn_sux_services_vhf_wqsu818
     antenna_id: ant_sux_services_vhf_wqsu818
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 159.817 # input, +6.79 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 153.0275
     mode:
       type: "NFM"
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   - id: chain_suxco_transit_155_925
     station_id: stn_sux_services_vhf_wqa723
     antenna_id: ant_sux_services_vhf_wqa723
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 153.965 # input, -1.96 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 155.925
     mode:
       type: "NFM"
-      ctcss_tx_hz: 127.3
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 127.3
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   # ---- Andover Borough ----
   - id: chain_andover_fg_1_154_1675
     station_id: stn_andover_boro_vhf_wqaq881
     antenna_id: ant_andover_boro_vhf_wqaq881
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1559,25 +1545,24 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 131.8
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_andover_fg_2_151_01
     station_id: stn_andover_boro_vhf_wqaq881
     antenna_id: ant_andover_boro_vhf_wqaq881
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 154.657 # input, +3.6475 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 151.01
     mode:
       type: "NFM"
-      dcs_tx_code: "532"
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
+      dcs_rx_code: "532"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_andover_oem_155_88
     station_id: stn_andover_boro_vhf_wpez519
     antenna_id: ant_andover_boro_vhf_wpez519
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1585,26 +1570,25 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 131.8
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- Andover Township ----
   - id: chain_t_andover_pd_1_155_5575
     station_id: stn_andover_twp_vhf_kyu566
     antenna_id: ant_andover_twp_vhf_kyu566
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 153.762 # input, -1.795 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 155.5575
     mode:
       type: "NFM"
-      ctcss_tx_hz: 218.1
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 218.1
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_t_andover_pd_2_155_01
     station_id: stn_andover_twp_vhf_kyu566
     antenna_id: ant_andover_twp_vhf_kyu566
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex (source lists this licence as base/mobile, no input)
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1612,12 +1596,11 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 141.3
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_t_andover_fg_151_58
     station_id: stn_andover_twp_vhf_wqdx335
     antenna_id: ant_andover_twp_vhf_wqdx335
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1625,26 +1608,25 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 218.1
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_t_andover_dpw_155_61
     station_id: stn_andover_twp_vhf_kyu566
     antenna_id: ant_andover_twp_vhf_kyu566
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 158.917 # input, +3.3075 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 155.61
     mode:
       type: "NFM"
-      dcs_tx_code: "043"
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
+      dcs_rx_code: "043"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   # ---- Byram ----
   - id: chain_byram_pd_159_1575
     station_id: stn_byram_vhf_wrcm392
     antenna_id: ant_byram_vhf_wrcm392
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 155.722 # input, -3.435 MHz
       emission: "8K10F1E"
       bandwidth_khz: 12.5
     rx:
@@ -1652,12 +1634,11 @@ rf_chains:
     mode:
       type: "P25"
       nac: 659
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   - id: chain_byram_fg_154_43
     station_id: stn_byram_vhf_kef286
     antenna_id: ant_byram_vhf_kef286
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1665,13 +1646,12 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 107.2
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- Frankford ----
   - id: chain_frankford_fg_45_08
     station_id: stn_frankford_lowband_kgp712
     antenna_id: ant_frankford_lowband_kgp712
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
@@ -1682,7 +1662,7 @@ rf_chains:
     station_id: stn_frankford_lowband_kxc748
     antenna_id: ant_frankford_lowband_kxc748
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
@@ -1690,13 +1670,12 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 127.3
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- Franklin ----
   - id: chain_franklin_fd1_155_835
     station_id: stn_franklin_vhf_wprt900
     antenna_id: ant_franklin_vhf_wprt900
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1704,12 +1683,11 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 131.8
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_franklin_fd2_156_0525
     station_id: stn_franklin_vhf_wprt900
     antenna_id: ant_franklin_vhf_wprt900
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1717,51 +1695,50 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 131.8
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_franklin_ems_155_325
     station_id: stn_franklin_vhf_wpfq901
     antenna_id: ant_franklin_vhf_wpfq901
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 150.79 # input, -4.535 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 155.325
     mode:
       type: "NFM"
-      ctcss_tx_hz: 123
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 123
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_franklin_pd4_155_07
     station_id: stn_franklin_vhf_wpty660
     antenna_id: ant_franklin_vhf_wpty660
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 151.025 # input, -4.045 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 155.07
     mode:
       type: "NFM"
-      ctcss_tx_hz: 146.2
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 146.2
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_franklin_dpw_154_04
     station_id: stn_franklin_vhf_wpjq471
     antenna_id: ant_franklin_vhf_wpjq471
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 153.955 # input, -0.085 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 154.04
     mode:
       type: "NFM"
-      dcs_tx_code: "265"
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
+      dcs_rx_code: "265"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_frnklndpw_u1_453_2125
     station_id: stn_franklin_uhf_wphx972
     antenna_id: ant_franklin_uhf_wphx972
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1772,7 +1749,7 @@ rf_chains:
     station_id: stn_franklin_uhf_wphx972
     antenna_id: ant_franklin_uhf_wphx972
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1784,7 +1761,7 @@ rf_chains:
     station_id: stn_fredon_lowband_kvt557
     antenna_id: ant_fredon_lowband_kvt557
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
@@ -1792,12 +1769,11 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 110.9
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_fredn_fd_ems_154_6
     station_id: stn_fredon_vhf_nocall
     antenna_id: ant_fredon_vhf_nocall
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1805,12 +1781,11 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 141.3
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_fredn_ems_l1_453_1375
     station_id: stn_fredon_uhf_kvt557
     antenna_id: ant_fredon_uhf_kvt557
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 458.137 # input, +5 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1822,7 +1797,7 @@ rf_chains:
     station_id: stn_green_vhf_wqvs785
     antenna_id: ant_green_vhf_wqvs785
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1830,12 +1805,11 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 136.5
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_green_dpw_45_12
     station_id: stn_green_lowband_kah972
     antenna_id: ant_green_lowband_kah972
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
@@ -1843,52 +1817,51 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 110.9
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_green_fd_disp_152_36
     station_id: stn_green_vhf_wqvk925
     antenna_id: ant_green_vhf_wqvk925
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 157.62 # input, +5.26 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 152.36
     mode:
       type: "NFM"
-      ctcss_tx_hz: 136.5
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 136.5
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   # ---- Hamburg ----
   - id: chain_hamburg_pd_154_995
     station_id: stn_hamburg_vhf_wpgi659
     antenna_id: ant_hamburg_vhf_wpgi659
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 155.985 # input, +0.99 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 154.995
     mode:
       type: "NFM"
-      ctcss_tx_hz: 79.7
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 79.7
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_hamburg_fd1_154_34
     station_id: stn_hamburg_vhf_wqvz790
     antenna_id: ant_hamburg_vhf_wqvz790
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 150.995 # input, -3.345 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 154.34
     mode:
       type: "NFM"
-      ctcss_tx_hz: 192.8
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 192.8
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_hamburg_fd2_150_995
     station_id: stn_hamburg_vhf_wqvz790
     antenna_id: ant_hamburg_vhf_wqvz790
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1900,7 +1873,7 @@ rf_chains:
     station_id: stn_hamburg_vhf_wnuh659
     antenna_id: ant_hamburg_vhf_wnuh659
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1908,26 +1881,25 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 71.9
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- Hampton ----
   - id: chain_hmptn_trk_to_trk_151_1
     station_id: stn_hampton_vhf_wqax338
     antenna_id: ant_hampton_vhf_wqax338
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 156.083 # input, +4.9825 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 151.1
     mode:
       type: "NFM"
-      dcs_tx_code: "051"
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
+      dcs_rx_code: "051"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_hmptn_fg_156_1425
     station_id: stn_hampton_vhf_wqax338
     antenna_id: ant_hampton_vhf_wqax338
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -1939,20 +1911,20 @@ rf_chains:
     station_id: stn_hampton_uhf_wqax338
     antenna_id: ant_hampton_uhf_wqax338
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # source lists this as fixed link (type F) but publishes no input
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 453.1625
     mode:
       type: "NFM"
-      ctcss_tx_hz: 103.5
-      notes: "Fixed link/control station as listed by RadioReference (Type F). Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 103.5
+      notes: "Fixed link/control station as listed by RadioReference (Type F)."
   - id: chain_hmptn_dpw_45_72
     station_id: stn_hampton_lowband_wpur760
     antenna_id: ant_hampton_lowband_wpur760
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
@@ -1960,53 +1932,52 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 110.9
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- Hardyston ----
   - id: chain_hardyston_pd_158_79
     station_id: stn_hardyston_vhf_wndy962
     antenna_id: ant_hardyston_vhf_wndy962
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 155.91 # input, -2.88 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 158.79
     mode:
       type: "NFM"
-      ctcss_tx_hz: 203.5
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 203.5
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_hardyston_fd_151_205
     station_id: stn_hardyston_vhf_knen690
     antenna_id: ant_hardyston_vhf_knen690
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 154.8 # input, +3.595 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 151.205
     mode:
       type: "NFM"
-      ctcss_tx_hz: 107.2
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 107.2
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_hardyston_dpw_158_82
     station_id: stn_hardyston_vhf_wpcj497
     antenna_id: ant_hardyston_vhf_wpcj497
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 155.115 # input, -3.705 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 158.82
     mode:
       type: "NFM"
-      ctcss_tx_hz: 131.8
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 131.8
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   # ---- Hopatcong ----
   - id: chain_hptcng_pd_158_85
     station_id: stn_hopatcong_vhf_wnkj359
     antenna_id: ant_hopatcong_vhf_wnkj359
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 155.85 # input, -3 MHz
       emission: "7K60FXE"
       bandwidth_khz: 12.5
     rx:
@@ -2015,26 +1986,25 @@ rf_chains:
       type: "DMR"
       color_code: 8
       timeslots: [1]
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   - id: chain_hptcng_fd_oem_154_4075
     station_id: stn_hopatcong_vhf_wrfi752
     antenna_id: ant_hopatcong_vhf_wrfi752
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 159.12 # input, +4.7125 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 154.4075
     mode:
       type: "NFM"
-      dcs_tx_code: "031"
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
+      dcs_rx_code: "031"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   # ---- Lafayette ----
   - id: chain_lafayet_oem_155_9475
     station_id: stn_lafayette_vhf_wpwf648
     antenna_id: ant_lafayette_vhf_wpwf648
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2042,12 +2012,11 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 131.8
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_lafayet_dpw_31_68
     station_id: stn_lafayette_lowband_nocall
     antenna_id: ant_lafayette_lowband_nocall
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
@@ -2060,20 +2029,20 @@ rf_chains:
     station_id: stn_montague_vhf_wqcx255
     antenna_id: ant_montague_vhf_wqcx255
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 156.113 # input, +4.96 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 151.1525
     mode:
       type: "NFM"
-      ctcss_tx_hz: 91.5
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 91.5
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_mont_fd_fg_156_18
     station_id: stn_montague_vhf_wqcx255
     antenna_id: ant_montague_vhf_wqcx255
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2085,7 +2054,7 @@ rf_chains:
     station_id: stn_montague_vhf_nocall
     antenna_id: ant_montague_vhf_nocall
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2093,26 +2062,25 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 192.8
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- Newton ----
   - id: chain_newton_pd_disp_155_49
     station_id: stn_newton_vhf_kef288
     antenna_id: ant_newton_vhf_kef288
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 158.895 # input, +3.405 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 155.49
     mode:
       type: "NFM"
-      dcs_tx_code: "516"
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
+      dcs_rx_code: "516"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_newton_pd_2_155_01
     station_id: stn_newton_vhf_kef288
     antenna_id: ant_newton_vhf_kef288
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex (source lists this licence as base/mobile, no input)
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2120,12 +2088,11 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 141.3
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_newton_fg_154_49
     station_id: stn_newton_vhf_wqdx335
     antenna_id: ant_newton_vhf_wqdx335
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2133,12 +2100,11 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 218.1
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_newton_dpw_oem_155_1
     station_id: stn_newton_vhf_kndh877
     antenna_id: ant_newton_vhf_kndh877
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2146,40 +2112,38 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 127.3
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- Ogdensburg ----
   - id: chain_ogdnsbrg_pd4_159_03
     station_id: stn_ogdensburg_vhf_nocall
     antenna_id: ant_ogdensburg_vhf_nocall
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # source lists this as repeater (type RM) but publishes no input
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 159.03
     mode:
       type: "NFM"
-      dcs_tx_code: "134"
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
+      dcs_rx_code: "134"
   # ---- Sandyston ----
   - id: chain_sandy_fd_ops_154_1825
     station_id: stn_sandyston_vhf_klp844
     antenna_id: ant_sandyston_vhf_klp844
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 158.977 # input, +4.795 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 154.1825
     mode:
       type: "NFM"
-      ctcss_tx_hz: 131.8
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 131.8
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_sandy_fd_fg1_158_8725
     station_id: stn_sandyston_vhf_klp844
     antenna_id: ant_sandyston_vhf_klp844
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2187,12 +2151,11 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 131.8
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_sandy_fd_fg2_154_95
     station_id: stn_sandyston_vhf_klp844
     antenna_id: ant_sandyston_vhf_klp844
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2200,25 +2163,24 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 131.8
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_sandy_dpw_1_453_1
     station_id: stn_sandyston_uhf_wpki456
     antenna_id: ant_sandyston_uhf_wpki456
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 458.1 # input, +5 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 453.1
     mode:
       type: "NFM"
-      ctcss_tx_hz: 82.5
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 82.5
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_sandy_dpw_2_453_75
     station_id: stn_sandyston_uhf_wpki456
     antenna_id: ant_sandyston_uhf_wpki456
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2229,7 +2191,7 @@ rf_chains:
     station_id: stn_sandyston_lowband_kncb865
     antenna_id: ant_sandyston_lowband_kncb865
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
@@ -2237,65 +2199,64 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 131.8
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- Sparta ----
   - id: chain_sparta_pd_1_155_04
     station_id: stn_sparta_vhf_wsdr966
     antenna_id: ant_sparta_vhf_wsdr966
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 150.79 # input, -4.25 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 155.04
     mode:
       type: "NFM"
-      ctcss_tx_hz: 79.7
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 79.7
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_sparta_fire_155_64
     station_id: stn_sparta_vhf_wsdr966
     antenna_id: ant_sparta_vhf_wsdr966
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 153.822 # input, -1.8175 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 155.64
     mode:
       type: "NFM"
-      ctcss_tx_hz: 88.5
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 88.5
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_sparta_ems_155_325
     station_id: stn_sparta_vhf_wsdr966
     antenna_id: ant_sparta_vhf_wsdr966
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 153.95 # input, -1.375 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 155.325
     mode:
       type: "NFM"
-      ctcss_tx_hz: 97.4
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 97.4
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_sparta_dpw_155_805
     station_id: stn_sparta_vhf_wsdr966
     antenna_id: ant_sparta_vhf_wsdr966
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 153.89 # input, -1.915 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 155.805
     mode:
       type: "NFM"
-      ctcss_tx_hz: 107.2
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 107.2
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_spartwn_pd_s_154_83
     station_id: stn_sparta_vhf_kzr693
     antenna_id: ant_sparta_vhf_kzr693
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2303,25 +2264,24 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 79.7
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_spartwn_fd_3_4_154_37
     station_id: stn_sparta_vhf_wpnu751
     antenna_id: ant_sparta_vhf_wpnu751
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 153.95 # input, -0.42 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 154.37
     mode:
       type: "NFM"
-      ctcss_tx_hz: 210.7
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 210.7
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_spartwn_fast_154_145
     station_id: stn_sparta_vhf_wpnu751
     antenna_id: ant_sparta_vhf_wpnu751
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2329,12 +2289,11 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 210.7
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_sparta_fdmx1_453_8875
     station_id: stn_sparta_uhf_wpnu751
     antenna_id: ant_sparta_uhf_wpnu751
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2345,7 +2304,7 @@ rf_chains:
     station_id: stn_sparta_uhf_wpnu751
     antenna_id: ant_sparta_uhf_wpnu751
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2356,7 +2315,7 @@ rf_chains:
     station_id: stn_sparta_uhf_wpnu751
     antenna_id: ant_sparta_uhf_wpnu751
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2367,7 +2326,7 @@ rf_chains:
     station_id: stn_sparta_uhf_wpnu751
     antenna_id: ant_sparta_uhf_wpnu751
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2378,7 +2337,7 @@ rf_chains:
     station_id: stn_sparta_uhf_wpnu751
     antenna_id: ant_sparta_uhf_wpnu751
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2389,7 +2348,7 @@ rf_chains:
     station_id: stn_sparta_uhf_wpnu751
     antenna_id: ant_sparta_uhf_wpnu751
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2397,12 +2356,11 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 123
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_sprtaems_mx3_453_9875
     station_id: stn_sparta_uhf_wpfq901
     antenna_id: ant_sparta_uhf_wpfq901
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2413,7 +2371,7 @@ rf_chains:
     station_id: stn_sparta_uhf_wpfq901
     antenna_id: ant_sparta_uhf_wpfq901
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2421,12 +2379,11 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 141.3
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_sprtaems_mx5_458_9875
     station_id: stn_sparta_uhf_wpfq901
     antenna_id: ant_sparta_uhf_wpfq901
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2437,7 +2394,7 @@ rf_chains:
     station_id: stn_sparta_vhf_kcp547
     antenna_id: ant_sparta_vhf_kcp547
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2445,12 +2402,11 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 114.8
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_sparta_boe_42_96
     station_id: stn_schools_lowband_wpui972
     antenna_id: ant_schools_lowband_wpui972
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
@@ -2462,20 +2418,20 @@ rf_chains:
     station_id: stn_stanhope_vhf_wqqr421
     antenna_id: ant_stanhope_vhf_wqqr421
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 159.225 # input, +7.885 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 151.34
     mode:
       type: "NFM"
-      dcs_tx_code: "023"
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
+      dcs_rx_code: "023"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_sh_fd_33fg_159_33
     station_id: stn_stanhope_vhf_wqqr421
     antenna_id: ant_stanhope_vhf_wqqr421
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2487,48 +2443,48 @@ rf_chains:
     station_id: stn_stanhope_vhf_wpcv523
     antenna_id: ant_stanhope_vhf_wpcv523
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 158.34 # input, +6.355 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 151.985
     mode:
       type: "NFM"
-      dcs_tx_code: "031"
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
+      dcs_rx_code: "031"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_sh_fd_link_465_4625
     station_id: stn_stanhope_uhf_wqul922
     antenna_id: ant_stanhope_uhf_wqul922
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # source lists this as fixed link (type F) but publishes no input
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 465.4625
     mode:
       type: "NFM"
-      ctcss_tx_hz: 88.5
-      notes: "Fixed link/control station as listed by RadioReference (Type F). Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 88.5
+      notes: "Fixed link/control station as listed by RadioReference (Type F)."
   # ---- Stillwater ----
   - id: chain_stillwater_fd_155_01
     station_id: stn_stillwater_vhf_wqix755
     antenna_id: ant_stillwater_vhf_wqix755
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 151.498 # input, -3.5125 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 155.01
     mode:
       type: "NFM"
-      dcs_tx_code: "065"
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
+      dcs_rx_code: "065"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   # ---- Sussex Borough ----
   - id: chain_susbor_oem_155_01
     station_id: stn_sussex_boro_vhf_krf516
     antenna_id: ant_sussex_boro_vhf_krf516
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex (source lists this licence as base/mobile, no input)
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2536,13 +2492,12 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 103.5
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- Vernon ----
   - id: chain_vernon_ems_47_5
     station_id: stn_vernon_lowband_wqif802
     antenna_id: ant_vernon_lowband_wqif802
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
@@ -2550,12 +2505,11 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 77
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_vernn_pd_mx1_453_0375
     station_id: stn_vernon_uhf_wpmj514
     antenna_id: ant_vernon_uhf_wpmj514
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2566,7 +2520,7 @@ rf_chains:
     station_id: stn_vernon_uhf_wpmj514
     antenna_id: ant_vernon_uhf_wpmj514
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2577,7 +2531,7 @@ rf_chains:
     station_id: stn_vernon_uhf_wpmj514
     antenna_id: ant_vernon_uhf_wpmj514
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2588,7 +2542,7 @@ rf_chains:
     station_id: stn_vernon_uhf_wpmj514
     antenna_id: ant_vernon_uhf_wpmj514
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 458.137 # input, +5 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2599,7 +2553,7 @@ rf_chains:
     station_id: stn_vernon_vhf_wndd419
     antenna_id: ant_vernon_vhf_wndd419
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 158.903 # input, +3.03 MHz
       emission: "7K60FXE"
       bandwidth_khz: 12.5
     rx:
@@ -2608,26 +2562,25 @@ rf_chains:
       type: "DMR"
       color_code: 2
       timeslots: [1]
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   # ---- Wantage ----
   - id: chain_wantage_fd_ops_154_3175
     station_id: stn_wantage_vhf_wqvj274
     antenna_id: ant_wantage_vhf_wqvj274
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 159.218 # input, +4.9 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 154.3175
     mode:
       type: "NFM"
-      ctcss_tx_hz: 233.6
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 233.6
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_wantage_fg_2_158_9475
     station_id: stn_wantage_vhf_wqzi881
     antenna_id: ant_wantage_vhf_wqzi881
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2635,25 +2588,24 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 233.6
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_wantage_ems_ops_155_55
     station_id: stn_wantage_vhf_wpvr575
     antenna_id: ant_wantage_vhf_wpvr575
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 150.805 # input, -4.745 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 155.55
     mode:
       type: "NFM"
-      dcs_tx_code: "265"
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
+      dcs_rx_code: "265"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_wantage_oem_46_58
     station_id: stn_wantage_lowband_wpkv560
     antenna_id: ant_wantage_lowband_wpkv560
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
@@ -2664,7 +2616,7 @@ rf_chains:
     station_id: stn_wantage_lowband_ktl587
     antenna_id: ant_wantage_lowband_ktl587
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
@@ -2677,7 +2629,7 @@ rf_chains:
     station_id: stn_brrs_lowband_klo302
     antenna_id: ant_brrs_lowband_klo302
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
@@ -2689,7 +2641,7 @@ rf_chains:
     station_id: stn_brrs_lowband_klo302
     antenna_id: ant_brrs_lowband_klo302
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
@@ -2701,7 +2653,7 @@ rf_chains:
     station_id: stn_brrs_vhf_klo302
     antenna_id: ant_brrs_vhf_klo302
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2713,7 +2665,7 @@ rf_chains:
     station_id: stn_brrs_vhf_klo302
     antenna_id: ant_brrs_vhf_klo302
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2725,7 +2677,7 @@ rf_chains:
     station_id: stn_brrs_vhf_klo302
     antenna_id: ant_brrs_vhf_klo302
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2737,20 +2689,20 @@ rf_chains:
     station_id: stn_brrs_uhf_wqqq673
     antenna_id: ant_brrs_uhf_wqqq673
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # source lists this as fixed link (type F) but publishes no input
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 456.3
     mode:
       type: "NFM"
-      ctcss_tx_hz: 233.6
-      notes: "Fixed link/control station as listed by RadioReference (Type F). Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 233.6
+      notes: "Fixed link/control station as listed by RadioReference (Type F)."
   - id: chain_brrs_m_a_155_28
     station_id: stn_brrs_vhf_klo302
     antenna_id: ant_brrs_vhf_klo302
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2762,46 +2714,45 @@ rf_chains:
     station_id: stn_lakeland_ems_vhf_wqzp893
     antenna_id: ant_lakeland_ems_vhf_wqzp893
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 159.255 # input, +4.8625 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 154.3925
     mode:
       type: "NFM"
-      dcs_tx_code: "031"
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
+      dcs_rx_code: "031"
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   # ---- Schools ----
   - id: chain_fredon_boe_152_3375
     station_id: stn_schools_vhf_wqox263
     antenna_id: ant_schools_vhf_wqox263
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 157.597 # input, +5.26 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 152.3375
     mode:
       type: "NFM"
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   - id: chain_hp_rhs_451_2875
     station_id: stn_schools_uhf_wqeh775
     antenna_id: ant_schools_uhf_wqeh775
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 456.288 # input, +5 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 451.2875
     mode:
       type: "NFM"
-      ctcss_tx_hz: 141.3
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 141.3
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_hopat_boe_155_205
     station_id: stn_schools_vhf_nocall
     antenna_id: ant_schools_vhf_nocall
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2809,12 +2760,11 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 118.8
-      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_lenapevallhs_453_325
     station_id: stn_schools_uhf_wnkj731
     antenna_id: ant_schools_uhf_wnkj731
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2825,20 +2775,20 @@ rf_chains:
     station_id: stn_schools_vhf_wqpx465
     antenna_id: ant_schools_vhf_wqpx465
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 159.57 # input, +6.58 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 152.99
     mode:
       type: "NFM"
-      ctcss_tx_hz: 136.5
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 136.5
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_sccc_ops_452_975
     station_id: stn_schools_uhf_wpzj742
     antenna_id: ant_schools_uhf_wpzj742
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
@@ -2850,7 +2800,7 @@ rf_chains:
     station_id: stn_schools_lowband_wqvq341
     antenna_id: ant_schools_lowband_wqvq341
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: null # simplex; source publishes no input for this licence
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
@@ -2863,28 +2813,28 @@ rf_chains:
     station_id: stn_andover_twp_vhf_wqdm238
     antenna_id: ant_andover_twp_vhf_wqdm238
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 159.833 # input, +6.925 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 152.9075
     mode:
       type: "NFM"
-      ctcss_tx_hz: 218.1
-      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 218.1
+      notes: "Input tone not published by the source; output tone recorded on rx only."
   - id: chain_suxco_ems_link_453_9125
     station_id: stn_sux_fireems_uhf_wpfq901
     antenna_id: ant_sux_fireems_uhf_wpfq901
     tx:
-      freq_mhz: null # input not published by the source
+      freq_mhz: 458.913 # input, +5 MHz
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
       freq_mhz: 453.9125
     mode:
       type: "NFM"
-      ctcss_tx_hz: 141.3
-      notes: "Fixed link/control station as listed by RadioReference (Type F). Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      ctcss_rx_hz: 141.3
+      notes: "Fixed link/control station as listed by RadioReference (Type F). Input tone not published by the source; output tone recorded on rx only."
 
 contacts:
   - id: ct_hptcng_pd_tg1912000
@@ -3002,13 +2952,13 @@ assignments:
   - id: asgn_suxco_fd_link_a_460_5875
     channel_name: "SuxCo FD Link A"
     rf_chain_id: chain_suxco_fd_link_a_460_5875
-    usage: "simplex"
+    usage: "repeater"
     authorization_id: auth_fcc_part90
     notes: "Fire Link to 46.1 MHz. Listed by RadioReference under County - Fire/EMS."
   - id: asgn_suxco_fd_sandysn_465_0625
     channel_name: "SuxCo FD Sandysn"
     rf_chain_id: chain_suxco_fd_sandysn_465_0625
-    usage: "simplex"
+    usage: "repeater"
     authorization_id: auth_fcc_part90
     notes: "Fire Link to 46.1 MHz - Sandyston. Listed by RadioReference under County - Fire/EMS."
   - id: asgn_suxco_ems_jems_155_295
@@ -3194,7 +3144,7 @@ assignments:
   - id: asgn_fredn_ems_l1_453_1375
     channel_name: "Fredn EMS L1"
     rf_chain_id: chain_fredn_ems_l1_453_1375
-    usage: "simplex"
+    usage: "repeater"
     authorization_id: auth_fcc_part90
     notes: "EMS Mobile Uplink. Listed by RadioReference under Fredon."
   - id: asgn_green_fg_154_355
@@ -3560,7 +3510,7 @@ assignments:
   - id: asgn_vernn_pd_mx4_453_1375
     channel_name: "Vernn PD MX4"
     rf_chain_id: chain_vernn_pd_mx4_453_1375
-    usage: "simplex"
+    usage: "repeater"
     authorization_id: auth_fcc_part90
     notes: "Police Mobile Extenders. Listed by RadioReference under Vernon."
   - id: asgn_vernon_dpw_155_8725
@@ -3704,12 +3654,12 @@ assignments:
   - id: asgn_suxco_ems_link_453_9125
     channel_name: "SuxCo EMS Link"
     rf_chain_id: chain_suxco_ems_link_453_9125
-    usage: "simplex"
+    usage: "repeater"
     authorization_id: auth_fcc_part90
     notes: "EMS Link to 155.295 Same transmitter, listed twice on the source page.. Listed by RadioReference under Sussex County."
   - id: asgn_sprtaems_mx2_453_9125
     channel_name: "SprtaEMS MX2"
     rf_chain_id: chain_suxco_ems_link_453_9125
-    usage: "simplex"
+    usage: "repeater"
     authorization_id: auth_fcc_part90
     notes: "EMS Link to 155.295 Same transmitter, listed twice on the source page.. Listed by RadioReference under Sparta."
