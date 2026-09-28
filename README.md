@@ -121,7 +121,7 @@ Field patches live in a top-level `overrides` mapping and select entities by
 collection and stable ID:
 
 ```yaml
-ssrf_lite_version: "0.7.0"
+ssrf_lite_version: "0.8.0"
 overrides:
   assignments:
     - id: asg_example

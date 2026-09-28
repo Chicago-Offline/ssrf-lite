@@ -102,7 +102,7 @@ class JsonSchemaValidationTest(unittest.TestCase):
         schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
         validator = Draft202012Validator(schema)
         valid = {
-            "ssrf_lite_version": "0.7.0",
+            "ssrf_lite_version": "0.8.0",
             "overrides": {
                 "assignments": [
                     {
@@ -115,19 +115,19 @@ class JsonSchemaValidationTest(unittest.TestCase):
         self.assertEqual(list(validator.iter_errors(valid)), [])
 
         missing_patch = {
-            "ssrf_lite_version": "0.7.0",
+            "ssrf_lite_version": "0.8.0",
             "overrides": {"assignments": [{"id": "asg_example"}]},
         }
         self.assertTrue(list(validator.iter_errors(missing_patch)))
 
         unknown_collection = {
-            "ssrf_lite_version": "0.7.0",
+            "ssrf_lite_version": "0.8.0",
             "overrides": {"unknown_entities": []},
         }
         self.assertTrue(list(validator.iter_errors(unknown_collection)))
 
     def test_verified_block_validates_against_shipped_schema(self) -> None:
-        """Freshness markers (v0.7.0) are optional but strictly shaped."""
+        """Freshness markers (v0.8.0) are optional but strictly shaped."""
 
         schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
         validator = Draft202012Validator(schema)
@@ -188,6 +188,84 @@ class JsonSchemaValidationTest(unittest.TestCase):
                 )
             )
         )
+
+    def test_verified_block_accepted_on_rf_chains(self) -> None:
+        """v0.8.0: chains carry freshness independently of assignments."""
+
+        schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
+        validator = Draft202012Validator(schema)
+
+        def _chain(extra: dict) -> dict:
+            chain = {
+                "id": "ch_example",
+                "station_id": "stn_example",
+                "rx": {"freq_mhz": 453.775},
+                "tx": {"emission": "11K2F3E"},
+                "mode": {"type": "FM"},
+            }
+            chain.update(extra)
+            return {
+                "ssrf_lite_version": generate_ssrf_schema.SPEC_VERSION,
+                "rf_chains": [chain],
+            }
+
+        # Present and absent both validate.
+        self.assertEqual(
+            list(
+                validator.iter_errors(
+                    _chain(
+                        {
+                            "verified": {
+                                "date": "2026-09-27",
+                                "method": "monitor",
+                                "by": "WRXC682",
+                            }
+                        }
+                    )
+                )
+            ),
+            [],
+        )
+        self.assertEqual(list(validator.iter_errors(_chain({}))), [])
+
+        # Same strictness as on assignments: required pair, date shape,
+        # closed method enum, no stray keys.
+        for bad in (
+            {"method": "monitor"},
+            {"date": "2026-09-27"},
+            {"date": "9/27/26", "method": "monitor"},
+            {"date": "2026-09-27", "method": "rumour"},
+            {"date": "2026-09-27", "method": "monitor", "extra": 1},
+        ):
+            self.assertTrue(
+                list(validator.iter_errors(_chain({"verified": bad}))),
+                f"expected chain verified={bad!r} to be rejected",
+            )
+
+        # Chain and assignment freshness are independent, not mirrored:
+        # a freshly heard chain may hang off a stale assignment claim.
+        both = {
+            "ssrf_lite_version": generate_ssrf_schema.SPEC_VERSION,
+            "rf_chains": [
+                {
+                    "id": "ch_example",
+                    "station_id": "stn_example",
+                    "rx": {"freq_mhz": 453.775},
+                    "tx": {"emission": "11K2F3E"},
+                    "mode": {"type": "FM"},
+                    "verified": {"date": "2026-09-27", "method": "monitor"},
+                }
+            ],
+            "assignments": [
+                {
+                    "id": "asg_example",
+                    "usage": "repeater",
+                    "rf_chain_id": "ch_example",
+                    "verified": {"date": "2024-01-15", "method": "published"},
+                }
+            ],
+        }
+        self.assertEqual(list(validator.iter_errors(both)), [])
 
 
 if __name__ == "__main__":  # pragma: no cover

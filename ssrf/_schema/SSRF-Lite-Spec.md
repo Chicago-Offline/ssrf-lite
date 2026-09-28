@@ -2,7 +2,7 @@
 
 *A pragmatic spectrum data model for codeplug generation*  
 
-Version: **0.7.0**  
+Version: **0.8.0**  
 Last updated: 2026-09-11  
 
 ---
@@ -38,9 +38,9 @@ Every SSRF-Lite YAML document carries two schema-association headers so that
 editors and CI can validate it **without importing the Python models**:
 
 ```yaml
-# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.7.0.schema.json
-$schema: "../../../_schema/ssrf-lite-0.7.0.schema.json"
-ssrf_lite_version: "0.7.0"
+# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.8.0.schema.json
+$schema: "../../../_schema/ssrf-lite-0.8.0.schema.json"
+ssrf_lite_version: "0.8.0"
 ```
 
 - The `# yaml-language-server:` modeline enables live validation in editors such
@@ -49,10 +49,10 @@ ssrf_lite_version: "0.7.0"
 - The top-level `$schema` key lets CI tools (e.g. `check-jsonschema`) discover the
   schema. Its value is a path relative to the file.
 - `ssrf_lite_version` pins the spec revision the file targets and must match the
-  shipped schema (`0.7.0`).
+  shipped schema (`0.8.0`).
 
 The versioned JSON Schema lives beside this document at
-[`ssrf-lite-0.7.0.schema.json`](./ssrf-lite-0.7.0.schema.json) and is generated
+[`ssrf-lite-0.8.0.schema.json`](./ssrf-lite-0.8.0.schema.json) and is generated
 from the Pydantic models via `generate_ssrf_schema.py`. Optional, non-normative
 metadata keys (`ssrf_lite.sources`, `comments`) and the normative `overrides`
 block are permitted alongside the reference entities.
@@ -427,11 +427,20 @@ Fields:
 
 ---
 
-### 2.10 Verification (v0.7.0)
+### 2.10 Verification (v0.7.0; extended to `rf_chains[]` in v0.8.0)
 
 Reference data goes stale quietly. `verified` records the most recent positive confirmation that an entry still reflects on-the-air reality, so consumers can distinguish *"checked last week"* from *"transcribed from a club page in 2019 and never touched since."*
 
 It is a provenance claim about the **record**, not an operational fact about the RF resource. A repeater does not stop existing because nobody verified it; the claim simply ages.
+
+The block is accepted on both **`assignments[]`** and **`rf_chains[]`**, and the two are deliberately independent:
+
+| Host | The claim being made |
+|---|---|
+| `assignments[]` | *This operational use is still current* — the org still runs this channel for this purpose |
+| `rf_chains[]` | *These radio parameters still work* — frequency, offset, tone, and mode still produce a usable contact |
+
+A CTCSS tone can be re-confirmed without re-confirming who is using the channel, and an assignment can be confirmed current by someone who never checked the tone. Recording them separately keeps an old tone from being laundered as fresh by a recent assignment check.
 
 ```yaml
 assignments:
@@ -456,12 +465,30 @@ Fields:
 | `method` | Meaning |
 |---|---|
 | `on-air` | An operator transmitted through or worked the resource |
-| `monitor` | Unattended receiver or SDR capture observed it |
+| `monitor` | Received on a receiver or SDR without transmitting — attended or unattended |
 | `licensee` | Owner, trustee, or coordinator confirmed it directly |
 | `published` | Authoritative document or database (FCC ULS, coordinator list) |
 | `survey` | Deliberate RF survey or measurement |
 
-> **Absence is not staleness.** A missing `verified` block means *never verified*, which is a different (and weaker) claim than an old date. Tooling should treat the two distinctly.  
+On an RF chain the block sits alongside the radio parameters it vouches for:
+
+```yaml
+rf_chains:
+  - id: ch_cdot_towing_parking
+    station_id: stn_muni
+    rx: {freq_mhz: 453.775}
+    tx: {emission: "11K2F3E"}
+    mode: {type: "FM", ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2}
+    verified:
+      date: "2026-09-27"
+      method: "monitor"
+      by: "WRXC682"
+      note: "Received several times over several days; most recent copy ~2300 local."
+```
+
+> **Absence is not staleness.** A missing `verified` block means *never verified*, which is a different (and weaker) claim than an old date. Tooling should treat the two distinctly.
+
+> **Only claim what was actually checked.** `method: monitor` on an RF chain confirms that the receive frequency carries the expected traffic. It does **not** by itself confirm a listed CTCSS/DCS tone, an input frequency, or an emission designator, since a receiver with squelch open will hear the carrier regardless. Say in `note` what was genuinely observed.  
 
 > `verified` describes a single assignment. Document-wide provenance stays in the `ssrf_lite.sources[]` header block (§1.1), and the two are complementary: cite the source, then record who last confirmed it on the air.  
 
@@ -525,6 +552,7 @@ This spec now demonstrates:
 ## 7. Migration Notes
 
 - **`verified` (v0.7.0)**: new optional block on `assignments[]`. Purely additive — existing documents remain valid in content, but the `ssrf_lite_version` const and `$schema` path both move to `0.7.0`, so headers must be restamped (`make stamp-headers`). Validators pinned to the 0.6.0 schema will reject documents carrying `verified`, since assignments are `additionalProperties: false`.
+- **`verified` on `rf_chains[]` (v0.8.0)**: the same block is now accepted on RF chains, so radio parameters can be confirmed independently of the operational use that references them. Additive; headers move to `0.8.0` and must be restamped. The `monitor` method was also widened to cover **attended** receive-only observation, not just unattended captures — no data change, but the old wording excluded "I heard it on my scanner", which is the most common way a receive-only channel gets confirmed.
 
 - **Legacy fields**: `assignments.zones`, `assignments.codeplug.*`, and `assignments.codeplug.preferred_contacts` are deprecated as of v0.5.0. The loader drops them (and `scan`) on read and maps `comment` → `notes`; see §1.3. New data should omit them.  
 - **Profiles** should continue to use path-based include/exclude semantics while adding the ability to pull in explicit assignment IDs as needed.  
