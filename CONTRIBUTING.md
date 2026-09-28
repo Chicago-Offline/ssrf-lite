@@ -70,6 +70,21 @@ make validate-schema  # schema + header freshness
 make test             # full suite, including semantic data checks
 ```
 
+### tx/rx perspective
+
+`rf_chain.tx` is the **radio's transmit frequency** (repeater input — what you key up on).  
+`rf_chain.rx` is the **radio's receive frequency** (repeater output — what you listen to).  
+This is radio-centric, not station-centric, despite the field names. The schema's
+`Transmitter`/`Receiver` labels describe the fields, not the repeater's perspective.
+
+Example for a standard 70 cm repeater with output 443.700 and +5 MHz split:
+```yaml
+tx:
+  freq_mhz: 448.700   # radio transmit / repeater input
+rx:
+  freq_mhz: 443.700   # radio receive / repeater output
+```
+
 The test suite validates every YAML file against the schema **and** runs
 semantic checks: frequencies must sit inside the declared service's
 allocation, CTCSS/DCS values must be standard, repeater splits must be

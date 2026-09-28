@@ -223,12 +223,12 @@ rf_chains:
     station_id: stn_ns9rc_440
     antenna_id: ant_ns9rc_440
     tx:
-      freq_mhz: 447.725       # uplink (ERP, repeater output +5 MHz)
+      freq_mhz: 447.725       # radio transmit / repeater input (+5 MHz above output)
       power_w: 80             # ERP approx
       emission: "16K0F3E"     # FM voice, wideband (25 kHz)
       bandwidth_khz: 25
     rx:
-      freq_mhz: 442.725       # repeater input
+      freq_mhz: 442.725       # radio receive / repeater output (what the radio listens to)
     mode:
       type: "FM"
       ctcss_tx_hz: 114.8
