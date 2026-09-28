@@ -10,6 +10,15 @@ ssrf_lite:
         2026-09-25.
       url: null
       accessed: "2026-09-25"
+    - name: >-
+        Chicago Offline UHF monitoring survey - continuous run 2026-09-27. Two
+        RTL-SDR receivers at the same Chicago north side site: one cycling
+        probe/camp across five confirmed UHF DMR channels, one dedicated
+        continuous camp on 452.3875 from 19:23 local. 5.2 h of targeted dwell
+        across the three chains updated here; link-control extraction from 558
+        dsd-fme camp logs.
+      url: null
+      accessed: "2026-09-27"
 
 organizations:
   - id: org_chi_dmr_monitored
@@ -81,6 +90,17 @@ rf_chains:
         was on timeslot 1; TS2 never carried a voice header, so timeslots is
         recorded as [1] rather than the [1, 2] default. Re-confirmed live
         2026-09-25 (112 DMR frames, CC=03 x109, in a 45 s probe).
+        Re-confirmed again 2026-09-27 over 1.9 h of camps: 19,323 syncs,
+        CC=03 x18,680, and 283 clean voice headers ALL on slot 1 - TS1-only
+        operation holds. TG 50 (259 headers) plus DMR All Call 16777215 (24);
+        five distinct radio IDs in clean headers (234, 31, 46, 51, 64250).
+        The privacy bit (service options bit 6) was set on 100% of those clean
+        headers, so this chain carries no listenable audio. Slot activity
+        updates also showed individual data on TS1 (101 updates). That session
+        ran a far noisier link than the August capture - 68.8% of voice headers
+        failed CRC against the 0.1% corruption rate above - so the August
+        talkgroup percentages, not the 2026-09-27 counts, remain the better
+        traffic-share estimate.
   - id: chain_chi_dmr_452_3875
     station_id: stn_chi_dmr_monitored
     antenna_id: ant_chi_north_rx
@@ -97,10 +117,47 @@ rf_chains:
         Motorola Capacity Plus. CC=11 observed 181 times against 11 for the
         next-ranked value, with 95 Capacity Plus indications and 178 CSBK.
         Lower traffic volume than the other two chains, but the CC margin and
-        the Cap+ signalling are unambiguous. FREQUENCY NEEDS CONFIRMATION: the
-        decoder was tuned to 452.3854 MHz, a sweep bin centre rather than a
-        channel centre; 452.3875 is the nearest Part 90 12.5 kHz channel and is
-        recorded here. A confirming dwell at exactly 452.3875 is outstanding.
+        the Cap+ signalling are unambiguous. FREQUENCY CONFIRMED 2026-09-27:
+        the outstanding dwell was run at exactly 452.3875 MHz rather than the
+        earlier 452.3854 sweep-bin centre, for 1.8 h, returning 18,733 syncs,
+        CC=11 x14,898, 14,892 CSBK and 8,173 Capacity Plus indications - about
+        an 86-fold increase in Cap+ signalling over the August sample. A
+        dedicated continuous receiver was parked on the channel from 19:23
+        local the same day. Cap+ control signalling identifies Capacity Plus
+        Site 1 and reports logical slot numbers LSN 01-04 and LSN 13-16, with
+        the rest slot seen first at LSN 15 and then at LSN 03. Under the
+        standard Cap+ mapping (LSN n -> physical channel ceil(n/2), timeslot
+        ((n-1) mod 2)+1) that would imply a system of at least eight physical
+        channels, of which 452.3875 is one; the other channel frequencies have
+        not been located, so that channel-count figure is inference, not
+        observation.
+
+  - id: chain_chi_dmr_453_5875
+    station_id: stn_chi_dmr_monitored
+    antenna_id: ant_chi_north_rx
+    tx:
+      freq_mhz: null
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 453.5875
+    mode:
+      type: "DMR"
+      color_code: 9
+      timeslots: [1]
+      notes: >-
+        New chain, first confirmed 2026-09-27 over 1.5 h of camps: 20,972
+        syncs, with CC=09 observed 12,613 times and no competing colour code
+        recorded at all. 1,319 of 1,778 voice headers passed CRC (25.8%
+        failed). All voice is on timeslot 1 - 1,297 of 1,319 clean headers sat
+        on slot 1, and every one of 1,388 slot activity updates reported TS1
+        Group Voice against TS2 Idle - so timeslots is recorded as [1] rather
+        than the [1, 2] default. Motorola feature set (FID 0x10) on 93% of
+        clean headers. The privacy bit (service options bit 6) was set on 93.3%
+        of clean headers, so the system carries no listenable audio despite
+        heavy voice traffic. An earlier 15-burst sample the same morning
+        produced a scatter of implausible talkgroup and radio ID values; those
+        were single-bit corruptions rather than real identifiers, and every
+        figure here comes from the larger clean-header sample instead.
 
 contacts:
   - id: tg_464975_1
@@ -137,6 +194,22 @@ contacts:
         voice-header bursts (9,412 of 10,181), 38 distinct radio IDs, all on
         timeslot 1. Remaining traffic is the DMR All Call broadcast address
         (16777215, 6.2%).
+
+  - id: tg_453587_1
+    name: "453.5875 TG 1"
+    kind: "Group"
+    number: 1
+    default_timeslot: 1
+    notes: >-
+        Sole talkgroup observed on this chain - 967 of 1,319 clean voice
+        headers carried TG 1 exactly, rising to 1,140 once values within two
+        bit-flips are folded back (262145, 524289, 1048577, 131073 and 8388609
+        are each a single high-order bit set on top of 1). Raw decoder output
+        listed 285 distinct radio IDs, but almost all are corruptions; the
+        coherent fleet is a tight block in the 315-381 range, most active being
+        317 (272 headers), 323 (138), 315 (99), 343 (85), 342 (71), 373 (68)
+        and 379 (63). Traffic is encrypted, so talkgroup function cannot be
+        characterised beyond the identifiers themselves.
 
 authorizations:
   - id: auth_fcc_part90
@@ -179,6 +252,22 @@ assignments:
     usage: "repeater"
     authorization_id: auth_fcc_part90
     notes: >-
-      Monitor-confirmed Motorola Capacity Plus system. No talkgroup captured -
-      traffic volume was too low during the survey window for a voice header to
-      be decoded.
+      Monitor-confirmed Motorola Capacity Plus system, frequency confirmed by
+      exact-channel dwell 2026-09-27. Still no talkgroup captured: 1.8 h of
+      camps plus a dedicated continuous camp produced 14,892 CSBK and 8,173
+      Cap+ indications but zero decodable voice headers. On Capacity Plus the
+      payload follows the rest slot as it moves, so a single fixed receiver on
+      one channel sees control traffic almost exclusively - the earlier "traffic
+      volume was too low" reading was wrong about the cause. Harvesting
+      talkgroups here needs a trunk-following receiver driven by an
+      LSN-to-frequency channel map, which does not exist yet.
+  - id: asgn_chi_dmr_453_5875
+    rf_chain_id: chain_chi_dmr_453_5875
+    usage: "repeater"
+    authorization_id: auth_fcc_part90
+    notes: >-
+      Monitor-confirmed DMR repeater output, timeslot 1 only, single talkgroup
+      (TG 1). Downlink only - the uplink was never observed, so tx.freq_mhz is
+      null rather than guessed from a standard Part 90 offset. Traffic carries
+      the privacy bit, so this entry is a frequency and identity reference, not
+      a listenable channel.
