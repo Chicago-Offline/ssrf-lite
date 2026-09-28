@@ -2,7 +2,7 @@
 
 *A pragmatic spectrum data model for codeplug generation*  
 
-Version: **0.6.0**  
+Version: **0.7.0**  
 Last updated: 2026-09-11  
 
 ---
@@ -38,9 +38,9 @@ Every SSRF-Lite YAML document carries two schema-association headers so that
 editors and CI can validate it **without importing the Python models**:
 
 ```yaml
-# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.6.0.schema.json
-$schema: "../../../_schema/ssrf-lite-0.6.0.schema.json"
-ssrf_lite_version: "0.6.0"
+# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.7.0.schema.json
+$schema: "../../../_schema/ssrf-lite-0.7.0.schema.json"
+ssrf_lite_version: "0.7.0"
 ```
 
 - The `# yaml-language-server:` modeline enables live validation in editors such
@@ -49,10 +49,10 @@ ssrf_lite_version: "0.6.0"
 - The top-level `$schema` key lets CI tools (e.g. `check-jsonschema`) discover the
   schema. Its value is a path relative to the file.
 - `ssrf_lite_version` pins the spec revision the file targets and must match the
-  shipped schema (`0.6.0`).
+  shipped schema (`0.7.0`).
 
 The versioned JSON Schema lives beside this document at
-[`ssrf-lite-0.6.0.schema.json`](./ssrf-lite-0.6.0.schema.json) and is generated
+[`ssrf-lite-0.7.0.schema.json`](./ssrf-lite-0.7.0.schema.json) and is generated
 from the Pydantic models via `generate_ssrf_schema.py`. Optional, non-normative
 metadata keys (`ssrf_lite.sources`, `comments`) and the normative `overrides`
 block are permitted alongside the reference entities.
@@ -421,8 +421,49 @@ Fields:
 - `service` (optional; see §2.0 — supports downstream filtering without dictating policy)  
 - `authorization_id` (optional)  
 - `notes` (optional freeform description)  
+- `verified` (optional; freshness marker — see §2.10)  
 
 > **Deprecated fields:** prior versions allowed `zones`, `codeplug.*`, and `preferred_contacts`. These are now owned by the policy layer. Generators should migrate those concerns to policy definitions (see §3.2).  
+
+---
+
+### 2.10 Verification (v0.7.0)
+
+Reference data goes stale quietly. `verified` records the most recent positive confirmation that an entry still reflects on-the-air reality, so consumers can distinguish *"checked last week"* from *"transcribed from a club page in 2019 and never touched since."*
+
+It is a provenance claim about the **record**, not an operational fact about the RF resource. A repeater does not stop existing because nobody verified it; the claim simply ages.
+
+```yaml
+assignments:
+  - id: asgn_nsea_675
+    rf_chain_id: chain_nsea_675
+    usage: "repeater"
+    service: "gmrs"
+    verified:
+      date: "2026-09-27"
+      method: "on-air"
+      by: "WRXC682"
+      note: "Checked into the Sunday evening net; full quieting from Edgewater."
+```
+
+Fields:  
+
+- `date` (**required**; ISO 8601 calendar date, `YYYY-MM-DD`)  
+- `method` (**required**; one of the values below)  
+- `by` (optional; call sign, unit ID, or handle of whoever confirmed it)  
+- `note` (optional; detail about the confirmation)  
+
+| `method` | Meaning |
+|---|---|
+| `on-air` | An operator transmitted through or worked the resource |
+| `monitor` | Unattended receiver or SDR capture observed it |
+| `licensee` | Owner, trustee, or coordinator confirmed it directly |
+| `published` | Authoritative document or database (FCC ULS, coordinator list) |
+| `survey` | Deliberate RF survey or measurement |
+
+> **Absence is not staleness.** A missing `verified` block means *never verified*, which is a different (and weaker) claim than an old date. Tooling should treat the two distinctly.  
+
+> `verified` describes a single assignment. Document-wide provenance stays in the `ssrf_lite.sources[]` header block (§1.1), and the two are complementary: cite the source, then record who last confirmed it on the air.  
 
 ---
 
@@ -482,6 +523,8 @@ This spec now demonstrates:
 ---
 
 ## 7. Migration Notes
+
+- **`verified` (v0.7.0)**: new optional block on `assignments[]`. Purely additive — existing documents remain valid in content, but the `ssrf_lite_version` const and `$schema` path both move to `0.7.0`, so headers must be restamped (`make stamp-headers`). Validators pinned to the 0.6.0 schema will reject documents carrying `verified`, since assignments are `additionalProperties: false`.
 
 - **Legacy fields**: `assignments.zones`, `assignments.codeplug.*`, and `assignments.codeplug.preferred_contacts` are deprecated as of v0.5.0. The loader drops them (and `scan`) on read and maps `comment` → `notes`; see §1.3. New data should omit them.  
 - **Profiles** should continue to use path-based include/exclude semantics while adding the ability to pull in explicit assignment IDs as needed.  

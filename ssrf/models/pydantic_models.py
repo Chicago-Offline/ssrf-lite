@@ -1,6 +1,6 @@
 """Pydantic models for the SSRF-Lite reference schema.
 
-These models intentionally reflect the v0.6.0 specification located in
+These models intentionally reflect the v0.7.0 specification located in
 ``ssrf/_schema/SSRF-Lite-Spec.md``. They do not include legacy or policy-layer
 fields that appeared in historical data files. Use the helper functions at the
 bottom of this file to validate YAML documents against the schema.
@@ -375,6 +375,50 @@ class Contact(BaseModel):
     notes: Optional[str] = None
 
 
+VerificationMethodLiteral = Literal[
+    "on-air",
+    "monitor",
+    "licensee",
+    "published",
+    "survey",
+]
+
+
+class Verification(BaseModel):
+    """Freshness marker: when, how, and by whom a record was last confirmed.
+
+    Reference data goes stale. ``verified`` records the most recent positive
+    confirmation that an entry still reflects on-the-air reality, so that
+    downstream tooling can surface records which have not been checked
+    within a chosen window. It is a provenance claim about the *record*,
+    not an operational fact about the RF resource itself.
+    """
+
+    model_config = ConfigDict(extra="forbid")
+
+    date: str = Field(
+        pattern=r"^\d{4}-\d{2}-\d{2}$",
+        description="ISO 8601 calendar date (YYYY-MM-DD) of the confirmation.",
+    )
+    method: VerificationMethodLiteral = Field(
+        description=(
+            "How the record was confirmed: on-air (an operator transmitted "
+            "through or worked the resource), monitor (unattended receiver "
+            "or SDR capture), licensee (owner, trustee, or coordinator "
+            "confirmed), published (authoritative document or database), "
+            "survey (deliberate RF survey or measurement)."
+        )
+    )
+    by: Optional[str] = Field(
+        default=None,
+        description="Call sign, unit ID, or handle of whoever confirmed it.",
+    )
+    note: Optional[str] = Field(
+        default=None,
+        description="Optional detail about the confirmation.",
+    )
+
+
 class Assignment(BaseModel):
     """Link between RF resources and an operational use."""
 
@@ -394,6 +438,9 @@ class Assignment(BaseModel):
     service: Optional[str] = None
     authorization_id: Optional[str] = None
     notes: Optional[str] = None
+    #: Most recent positive confirmation that this assignment still reflects
+    #: reality. Optional; absence means "never verified", not "stale".
+    verified: Optional[Verification] = None
 
     @field_validator("service", mode="before")
     @classmethod
