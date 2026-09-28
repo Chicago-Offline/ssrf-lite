@@ -9,8 +9,8 @@ ssrf_lite:
 
 comments:
   - text: "Sussex County, NJ conventional public safety, public works, volunteer EMS squads and school systems, folded into one countywide file with each municipality carried as its own location and station."
-  - text: "RadioReference publishes OUTPUT/carrier frequencies only for this county - no repeater input frequencies are listed anywhere on the page. Every chain therefore sets rx.freq_mhz to the published frequency and leaves tx.freq_mhz null rather than inventing a split. Type RM entries are marked usage repeater and note the missing input."
-  - text: "The source has a single Tone column that does not distinguish input from output. Tones are recorded as access (TX) tones only (ctcss_tx_hz / dcs_tx_code) with the output left carrier-squelch, so a radio programmed from this data cannot be silently squelched."
+  - text: "INCOMPLETE SOURCE - repeater inputs are paywalled, not absent. The county frequency table served to anonymous users has only eight columns (Frequency, License, Type, Tone, Alpha Tag, Description, Mode, Tag). RadioReference does hold input frequencies for this county, but exposes them through a 'Show Repeater Inputs' toggle gated behind a Premium subscription (showInputs=0 for anonymous sessions). Every chain here therefore records only the published output as rx.freq_mhz and leaves tx.freq_mhz null. Type RM entries are marked usage repeater with the input recorded as unavailable at capture time rather than nonexistent. A Premium capture should revisit every RM chain and fill in tx.freq_mhz."
+  - text: "The anonymous view has a single Tone column that does not distinguish input from output; the separate Tone In / Tone Out columns are part of the same Premium-gated detail. Tones are recorded as access (TX) tones only (ctcss_tx_hz / dcs_tx_code) with the output left carrier-squelch, so a radio programmed from this data cannot be silently squelched."
   - text: "OMITTED: 453.98775 MHz (Fredon Township, KVT557, alpha tag 'Fredn EMS L2', EMS Mobile Uplink). The published value is not a valid channel on any Part 90 raster and is most likely a typo for 453.9875 MHz. Left out rather than repaired - a guessed frequency is worse than a documented gap."
   - text: "SOURCE TYPO: the 155.280 MHz Blue Ridge Rescue Squad mutual-aid entry is printed with license 'KL0302' (digit zero). Every other BRRS row reads KLO302 (letter O), so it is recorded here as KLO302."
   - text: "152.9075 MHz / WQDM238 / 218.1 PL is listed under both Andover Township and Newton, and 453.9125 MHz / WPFQ901 / 141.3 PL under both the county EMS links and Sparta ('SprtaEMS MX2'). Each is one physical transmitter with two documented uses, so each is a single rf_chain with two assignments."
@@ -1219,7 +1219,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 162.2
-      notes: "Fixed link/control station as listed by RadioReference (Type F). RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Fixed link/control station as listed by RadioReference (Type F). Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- County - Fire/EMS ----
   - id: chain_suxco_paging_155_0625
     station_id: stn_sux_fireems_vhf_wpem831
@@ -1233,7 +1233,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 131.8
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_fd_resp_1_155_19
     station_id: stn_sux_fireems_vhf_kxc854
     antenna_id: ant_sux_fireems_vhf_kxc854
@@ -1246,7 +1246,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 173.8
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_fg_a_154_28
     station_id: stn_sux_fireems_vhf_wqa723
     antenna_id: ant_sux_fireems_vhf_wqa723
@@ -1259,7 +1259,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 156.7
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_fg_b_154_265
     station_id: stn_sux_fireems_vhf_wqa723
     antenna_id: ant_sux_fireems_vhf_wqa723
@@ -1272,7 +1272,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 156.7
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_fg_c_154_295
     station_id: stn_sux_fireems_vhf_wqa723
     antenna_id: ant_sux_fireems_vhf_wqa723
@@ -1285,7 +1285,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 156.7
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_ric_ops_154_3025
     station_id: stn_sux_fireems_vhf_wqa723
     antenna_id: ant_sux_fireems_vhf_wqa723
@@ -1298,7 +1298,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 156.7
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_water_ops_154_2725
     station_id: stn_sux_fireems_vhf_wqa723
     antenna_id: ant_sux_fireems_vhf_wqa723
@@ -1311,7 +1311,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 156.7
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_fd_disp_46_1
     station_id: stn_sux_fireems_lowband_wpga474
     antenna_id: ant_sux_fireems_lowband_wpga474
@@ -1324,7 +1324,7 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 131.8
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_fg_2_46_4
     station_id: stn_sux_fireems_lowband_wpga474
     antenna_id: ant_sux_fireems_lowband_wpga474
@@ -1337,7 +1337,7 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 131.8
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_fg_3_s_46_24
     station_id: stn_sux_fireems_lowband_wpga474
     antenna_id: ant_sux_fireems_lowband_wpga474
@@ -1350,7 +1350,7 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 131.8
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_fg_4_n_46_28
     station_id: stn_sux_fireems_lowband_wpga474
     antenna_id: ant_sux_fireems_lowband_wpga474
@@ -1363,7 +1363,7 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 131.8
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_fd_tankers_46_34
     station_id: stn_sux_fireems_lowband_wpga474
     antenna_id: ant_sux_fireems_lowband_wpga474
@@ -1376,7 +1376,7 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 131.8
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_fd_byram_458_4875
     station_id: stn_sux_fireems_uhf_wnyt790
     antenna_id: ant_sux_fireems_uhf_wnyt790
@@ -1389,7 +1389,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 131.8
-      notes: "Fixed link/control station as listed by RadioReference (Type F). RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Fixed link/control station as listed by RadioReference (Type F). Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_fd_link_a_460_5875
     station_id: stn_sux_fireems_uhf_knen690
     antenna_id: ant_sux_fireems_uhf_knen690
@@ -1402,7 +1402,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 131.8
-      notes: "Fixed link/control station as listed by RadioReference (Type F). RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Fixed link/control station as listed by RadioReference (Type F). Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_fd_sandysn_465_0625
     station_id: stn_sux_fireems_uhf_klp844
     antenna_id: ant_sux_fireems_uhf_klp844
@@ -1415,7 +1415,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 218.1
-      notes: "Fixed link/control station as listed by RadioReference (Type F). RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Fixed link/control station as listed by RadioReference (Type F). Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_ems_jems_155_295
     station_id: stn_sux_fireems_vhf_wnln707
     antenna_id: ant_sux_fireems_vhf_wnln707
@@ -1428,7 +1428,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 141.3
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_ems_resp_2_155_7075
     station_id: stn_sux_fireems_vhf_wnyt790
     antenna_id: ant_sux_fireems_vhf_wnyt790
@@ -1441,7 +1441,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 151.4
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_ems_tac_155_34
     station_id: stn_sux_fireems_vhf_wnvy825
     antenna_id: ant_sux_fireems_vhf_wnvy825
@@ -1454,7 +1454,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 156.7
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_ems_hear_155_34
     station_id: stn_sux_fireems_vhf_wnln707
     antenna_id: ant_sux_fireems_vhf_wnln707
@@ -1467,7 +1467,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 141.3
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_ems_link_458_3125
     station_id: stn_sux_fireems_uhf_wqul922
     antenna_id: ant_sux_fireems_uhf_wqul922
@@ -1480,7 +1480,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 71.9
-      notes: "Fixed link/control station as listed by RadioReference (Type F). RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Fixed link/control station as listed by RadioReference (Type F). Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_ems_link_464_8
     station_id: stn_sux_fireems_uhf_wqwu904
     antenna_id: ant_sux_fireems_uhf_wqwu904
@@ -1493,7 +1493,7 @@ rf_chains:
     mode:
       type: "NFM"
       dcs_tx_code: "026"
-      notes: "RadioReference lists the repeater output only; the input frequency is not published."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   # ---- County - Services ----
   - id: chain_suxco_roads_33_06
     station_id: stn_sux_services_lowband_kef641
@@ -1507,7 +1507,7 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 131.8
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_roads_flag_453_5125
     station_id: stn_sux_services_uhf_nocall
     antenna_id: ant_sux_services_uhf_nocall
@@ -1520,7 +1520,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 71.9
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_mua_153_0275
     station_id: stn_sux_services_vhf_wqsu818
     antenna_id: ant_sux_services_vhf_wqsu818
@@ -1532,7 +1532,7 @@ rf_chains:
       freq_mhz: 153.0275
     mode:
       type: "NFM"
-      notes: "RadioReference lists the repeater output only; the input frequency is not published."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   - id: chain_suxco_transit_155_925
     station_id: stn_sux_services_vhf_wqa723
     antenna_id: ant_sux_services_vhf_wqa723
@@ -1545,7 +1545,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 127.3
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- Andover Borough ----
   - id: chain_andover_fg_1_154_1675
     station_id: stn_andover_boro_vhf_wqaq881
@@ -1559,7 +1559,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 131.8
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_andover_fg_2_151_01
     station_id: stn_andover_boro_vhf_wqaq881
     antenna_id: ant_andover_boro_vhf_wqaq881
@@ -1572,7 +1572,7 @@ rf_chains:
     mode:
       type: "NFM"
       dcs_tx_code: "532"
-      notes: "RadioReference lists the repeater output only; the input frequency is not published."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   - id: chain_andover_oem_155_88
     station_id: stn_andover_boro_vhf_wpez519
     antenna_id: ant_andover_boro_vhf_wpez519
@@ -1585,7 +1585,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 131.8
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- Andover Township ----
   - id: chain_t_andover_pd_1_155_5575
     station_id: stn_andover_twp_vhf_kyu566
@@ -1599,7 +1599,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 218.1
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_t_andover_pd_2_155_01
     station_id: stn_andover_twp_vhf_kyu566
     antenna_id: ant_andover_twp_vhf_kyu566
@@ -1612,7 +1612,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 141.3
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_t_andover_fg_151_58
     station_id: stn_andover_twp_vhf_wqdx335
     antenna_id: ant_andover_twp_vhf_wqdx335
@@ -1625,7 +1625,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 218.1
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_t_andover_dpw_155_61
     station_id: stn_andover_twp_vhf_kyu566
     antenna_id: ant_andover_twp_vhf_kyu566
@@ -1638,7 +1638,7 @@ rf_chains:
     mode:
       type: "NFM"
       dcs_tx_code: "043"
-      notes: "RadioReference lists the repeater output only; the input frequency is not published."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   # ---- Byram ----
   - id: chain_byram_pd_159_1575
     station_id: stn_byram_vhf_wrcm392
@@ -1652,7 +1652,7 @@ rf_chains:
     mode:
       type: "P25"
       nac: 659
-      notes: "RadioReference lists the repeater output only; the input frequency is not published."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   - id: chain_byram_fg_154_43
     station_id: stn_byram_vhf_kef286
     antenna_id: ant_byram_vhf_kef286
@@ -1665,7 +1665,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 107.2
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- Frankford ----
   - id: chain_frankford_fg_45_08
     station_id: stn_frankford_lowband_kgp712
@@ -1690,7 +1690,7 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 127.3
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- Franklin ----
   - id: chain_franklin_fd1_155_835
     station_id: stn_franklin_vhf_wprt900
@@ -1704,7 +1704,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 131.8
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_franklin_fd2_156_0525
     station_id: stn_franklin_vhf_wprt900
     antenna_id: ant_franklin_vhf_wprt900
@@ -1717,7 +1717,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 131.8
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_franklin_ems_155_325
     station_id: stn_franklin_vhf_wpfq901
     antenna_id: ant_franklin_vhf_wpfq901
@@ -1730,7 +1730,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 123
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_franklin_pd4_155_07
     station_id: stn_franklin_vhf_wpty660
     antenna_id: ant_franklin_vhf_wpty660
@@ -1743,7 +1743,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 146.2
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_franklin_dpw_154_04
     station_id: stn_franklin_vhf_wpjq471
     antenna_id: ant_franklin_vhf_wpjq471
@@ -1756,7 +1756,7 @@ rf_chains:
     mode:
       type: "NFM"
       dcs_tx_code: "265"
-      notes: "RadioReference lists the repeater output only; the input frequency is not published."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   - id: chain_frnklndpw_u1_453_2125
     station_id: stn_franklin_uhf_wphx972
     antenna_id: ant_franklin_uhf_wphx972
@@ -1792,7 +1792,7 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 110.9
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_fredn_fd_ems_154_6
     station_id: stn_fredon_vhf_nocall
     antenna_id: ant_fredon_vhf_nocall
@@ -1805,7 +1805,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 141.3
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_fredn_ems_l1_453_1375
     station_id: stn_fredon_uhf_kvt557
     antenna_id: ant_fredon_uhf_kvt557
@@ -1830,7 +1830,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 136.5
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_green_dpw_45_12
     station_id: stn_green_lowband_kah972
     antenna_id: ant_green_lowband_kah972
@@ -1843,7 +1843,7 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 110.9
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_green_fd_disp_152_36
     station_id: stn_green_vhf_wqvk925
     antenna_id: ant_green_vhf_wqvk925
@@ -1856,7 +1856,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 136.5
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- Hamburg ----
   - id: chain_hamburg_pd_154_995
     station_id: stn_hamburg_vhf_wpgi659
@@ -1870,7 +1870,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 79.7
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_hamburg_fd1_154_34
     station_id: stn_hamburg_vhf_wqvz790
     antenna_id: ant_hamburg_vhf_wqvz790
@@ -1883,7 +1883,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 192.8
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_hamburg_fd2_150_995
     station_id: stn_hamburg_vhf_wqvz790
     antenna_id: ant_hamburg_vhf_wqvz790
@@ -1908,7 +1908,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 71.9
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- Hampton ----
   - id: chain_hmptn_trk_to_trk_151_1
     station_id: stn_hampton_vhf_wqax338
@@ -1922,7 +1922,7 @@ rf_chains:
     mode:
       type: "NFM"
       dcs_tx_code: "051"
-      notes: "RadioReference lists the repeater output only; the input frequency is not published."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   - id: chain_hmptn_fg_156_1425
     station_id: stn_hampton_vhf_wqax338
     antenna_id: ant_hampton_vhf_wqax338
@@ -1947,7 +1947,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 103.5
-      notes: "Fixed link/control station as listed by RadioReference (Type F). RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Fixed link/control station as listed by RadioReference (Type F). Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_hmptn_dpw_45_72
     station_id: stn_hampton_lowband_wpur760
     antenna_id: ant_hampton_lowband_wpur760
@@ -1960,7 +1960,7 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 110.9
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- Hardyston ----
   - id: chain_hardyston_pd_158_79
     station_id: stn_hardyston_vhf_wndy962
@@ -1974,7 +1974,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 203.5
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_hardyston_fd_151_205
     station_id: stn_hardyston_vhf_knen690
     antenna_id: ant_hardyston_vhf_knen690
@@ -1987,7 +1987,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 107.2
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_hardyston_dpw_158_82
     station_id: stn_hardyston_vhf_wpcj497
     antenna_id: ant_hardyston_vhf_wpcj497
@@ -2000,7 +2000,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 131.8
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- Hopatcong ----
   - id: chain_hptcng_pd_158_85
     station_id: stn_hopatcong_vhf_wnkj359
@@ -2015,7 +2015,7 @@ rf_chains:
       type: "DMR"
       color_code: 8
       timeslots: [1]
-      notes: "RadioReference lists the repeater output only; the input frequency is not published."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   - id: chain_hptcng_fd_oem_154_4075
     station_id: stn_hopatcong_vhf_wrfi752
     antenna_id: ant_hopatcong_vhf_wrfi752
@@ -2028,7 +2028,7 @@ rf_chains:
     mode:
       type: "NFM"
       dcs_tx_code: "031"
-      notes: "RadioReference lists the repeater output only; the input frequency is not published."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   # ---- Lafayette ----
   - id: chain_lafayet_oem_155_9475
     station_id: stn_lafayette_vhf_wpwf648
@@ -2042,7 +2042,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 131.8
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_lafayet_dpw_31_68
     station_id: stn_lafayette_lowband_nocall
     antenna_id: ant_lafayette_lowband_nocall
@@ -2068,7 +2068,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 91.5
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_mont_fd_fg_156_18
     station_id: stn_montague_vhf_wqcx255
     antenna_id: ant_montague_vhf_wqcx255
@@ -2093,7 +2093,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 192.8
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- Newton ----
   - id: chain_newton_pd_disp_155_49
     station_id: stn_newton_vhf_kef288
@@ -2107,7 +2107,7 @@ rf_chains:
     mode:
       type: "NFM"
       dcs_tx_code: "516"
-      notes: "RadioReference lists the repeater output only; the input frequency is not published."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   - id: chain_newton_pd_2_155_01
     station_id: stn_newton_vhf_kef288
     antenna_id: ant_newton_vhf_kef288
@@ -2120,7 +2120,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 141.3
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_newton_fg_154_49
     station_id: stn_newton_vhf_wqdx335
     antenna_id: ant_newton_vhf_wqdx335
@@ -2133,7 +2133,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 218.1
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_newton_dpw_oem_155_1
     station_id: stn_newton_vhf_kndh877
     antenna_id: ant_newton_vhf_kndh877
@@ -2146,7 +2146,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 127.3
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- Ogdensburg ----
   - id: chain_ogdnsbrg_pd4_159_03
     station_id: stn_ogdensburg_vhf_nocall
@@ -2160,7 +2160,7 @@ rf_chains:
     mode:
       type: "NFM"
       dcs_tx_code: "134"
-      notes: "RadioReference lists the repeater output only; the input frequency is not published."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   # ---- Sandyston ----
   - id: chain_sandy_fd_ops_154_1825
     station_id: stn_sandyston_vhf_klp844
@@ -2174,7 +2174,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 131.8
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_sandy_fd_fg1_158_8725
     station_id: stn_sandyston_vhf_klp844
     antenna_id: ant_sandyston_vhf_klp844
@@ -2187,7 +2187,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 131.8
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_sandy_fd_fg2_154_95
     station_id: stn_sandyston_vhf_klp844
     antenna_id: ant_sandyston_vhf_klp844
@@ -2200,7 +2200,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 131.8
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_sandy_dpw_1_453_1
     station_id: stn_sandyston_uhf_wpki456
     antenna_id: ant_sandyston_uhf_wpki456
@@ -2213,7 +2213,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 82.5
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_sandy_dpw_2_453_75
     station_id: stn_sandyston_uhf_wpki456
     antenna_id: ant_sandyston_uhf_wpki456
@@ -2237,7 +2237,7 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 131.8
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- Sparta ----
   - id: chain_sparta_pd_1_155_04
     station_id: stn_sparta_vhf_wsdr966
@@ -2251,7 +2251,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 79.7
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_sparta_fire_155_64
     station_id: stn_sparta_vhf_wsdr966
     antenna_id: ant_sparta_vhf_wsdr966
@@ -2264,7 +2264,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 88.5
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_sparta_ems_155_325
     station_id: stn_sparta_vhf_wsdr966
     antenna_id: ant_sparta_vhf_wsdr966
@@ -2277,7 +2277,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 97.4
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_sparta_dpw_155_805
     station_id: stn_sparta_vhf_wsdr966
     antenna_id: ant_sparta_vhf_wsdr966
@@ -2290,7 +2290,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 107.2
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_spartwn_pd_s_154_83
     station_id: stn_sparta_vhf_kzr693
     antenna_id: ant_sparta_vhf_kzr693
@@ -2303,7 +2303,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 79.7
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_spartwn_fd_3_4_154_37
     station_id: stn_sparta_vhf_wpnu751
     antenna_id: ant_sparta_vhf_wpnu751
@@ -2316,7 +2316,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 210.7
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_spartwn_fast_154_145
     station_id: stn_sparta_vhf_wpnu751
     antenna_id: ant_sparta_vhf_wpnu751
@@ -2329,7 +2329,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 210.7
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_sparta_fdmx1_453_8875
     station_id: stn_sparta_uhf_wpnu751
     antenna_id: ant_sparta_uhf_wpnu751
@@ -2397,7 +2397,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 123
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_sprtaems_mx3_453_9875
     station_id: stn_sparta_uhf_wpfq901
     antenna_id: ant_sparta_uhf_wpfq901
@@ -2421,7 +2421,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 141.3
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_sprtaems_mx5_458_9875
     station_id: stn_sparta_uhf_wpfq901
     antenna_id: ant_sparta_uhf_wpfq901
@@ -2445,7 +2445,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 114.8
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_sparta_boe_42_96
     station_id: stn_schools_lowband_wpui972
     antenna_id: ant_schools_lowband_wpui972
@@ -2470,7 +2470,7 @@ rf_chains:
     mode:
       type: "NFM"
       dcs_tx_code: "023"
-      notes: "RadioReference lists the repeater output only; the input frequency is not published."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   - id: chain_sh_fd_33fg_159_33
     station_id: stn_stanhope_vhf_wqqr421
     antenna_id: ant_stanhope_vhf_wqqr421
@@ -2495,7 +2495,7 @@ rf_chains:
     mode:
       type: "NFM"
       dcs_tx_code: "031"
-      notes: "RadioReference lists the repeater output only; the input frequency is not published."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   - id: chain_sh_fd_link_465_4625
     station_id: stn_stanhope_uhf_wqul922
     antenna_id: ant_stanhope_uhf_wqul922
@@ -2508,7 +2508,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 88.5
-      notes: "Fixed link/control station as listed by RadioReference (Type F). RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Fixed link/control station as listed by RadioReference (Type F). Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- Stillwater ----
   - id: chain_stillwater_fd_155_01
     station_id: stn_stillwater_vhf_wqix755
@@ -2522,7 +2522,7 @@ rf_chains:
     mode:
       type: "NFM"
       dcs_tx_code: "065"
-      notes: "RadioReference lists the repeater output only; the input frequency is not published."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   # ---- Sussex Borough ----
   - id: chain_susbor_oem_155_01
     station_id: stn_sussex_boro_vhf_krf516
@@ -2536,7 +2536,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 103.5
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   # ---- Vernon ----
   - id: chain_vernon_ems_47_5
     station_id: stn_vernon_lowband_wqif802
@@ -2550,7 +2550,7 @@ rf_chains:
     mode:
       type: "FM"
       ctcss_tx_hz: 77
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_vernn_pd_mx1_453_0375
     station_id: stn_vernon_uhf_wpmj514
     antenna_id: ant_vernon_uhf_wpmj514
@@ -2608,7 +2608,7 @@ rf_chains:
       type: "DMR"
       color_code: 2
       timeslots: [1]
-      notes: "RadioReference lists the repeater output only; the input frequency is not published."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   # ---- Wantage ----
   - id: chain_wantage_fd_ops_154_3175
     station_id: stn_wantage_vhf_wqvj274
@@ -2622,7 +2622,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 233.6
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_wantage_fg_2_158_9475
     station_id: stn_wantage_vhf_wqzi881
     antenna_id: ant_wantage_vhf_wqzi881
@@ -2635,7 +2635,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 233.6
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_wantage_ems_ops_155_55
     station_id: stn_wantage_vhf_wpvr575
     antenna_id: ant_wantage_vhf_wpvr575
@@ -2648,7 +2648,7 @@ rf_chains:
     mode:
       type: "NFM"
       dcs_tx_code: "265"
-      notes: "RadioReference lists the repeater output only; the input frequency is not published."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   - id: chain_wantage_oem_46_58
     station_id: stn_wantage_lowband_wpkv560
     antenna_id: ant_wantage_lowband_wpkv560
@@ -2745,7 +2745,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 233.6
-      notes: "Fixed link/control station as listed by RadioReference (Type F). RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Fixed link/control station as listed by RadioReference (Type F). Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_brrs_m_a_155_28
     station_id: stn_brrs_vhf_klo302
     antenna_id: ant_brrs_vhf_klo302
@@ -2770,7 +2770,7 @@ rf_chains:
     mode:
       type: "NFM"
       dcs_tx_code: "031"
-      notes: "RadioReference lists the repeater output only; the input frequency is not published."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   # ---- Schools ----
   - id: chain_fredon_boe_152_3375
     station_id: stn_schools_vhf_wqox263
@@ -2783,7 +2783,7 @@ rf_chains:
       freq_mhz: 152.3375
     mode:
       type: "NFM"
-      notes: "RadioReference lists the repeater output only; the input frequency is not published."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent."
   - id: chain_hp_rhs_451_2875
     station_id: stn_schools_uhf_wqeh775
     antenna_id: ant_schools_uhf_wqeh775
@@ -2796,7 +2796,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 141.3
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_hopat_boe_155_205
     station_id: stn_schools_vhf_nocall
     antenna_id: ant_schools_vhf_nocall
@@ -2809,7 +2809,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 118.8
-      notes: "RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_lenapevallhs_453_325
     station_id: stn_schools_uhf_wnkj731
     antenna_id: ant_schools_uhf_wnkj731
@@ -2833,7 +2833,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 136.5
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_sccc_ops_452_975
     station_id: stn_schools_uhf_wpzj742
     antenna_id: ant_schools_uhf_wpzj742
@@ -2871,7 +2871,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 218.1
-      notes: "RadioReference lists the repeater output only; the input frequency is not published. RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Output only; input frequency is Premium-gated on RadioReference and was unavailable at capture, not absent. Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
   - id: chain_suxco_ems_link_453_9125
     station_id: stn_sux_fireems_uhf_wpfq901
     antenna_id: ant_sux_fireems_uhf_wpfq901
@@ -2884,7 +2884,7 @@ rf_chains:
     mode:
       type: "NFM"
       ctcss_tx_hz: 141.3
-      notes: "Fixed link/control station as listed by RadioReference (Type F). RadioReference publishes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
+      notes: "Fixed link/control station as listed by RadioReference (Type F). Anonymous view exposes a single tone column; recorded as the access (TX) tone only, output left carrier-squelch."
 
 contacts:
   - id: ct_hptcng_pd_tg1912000
