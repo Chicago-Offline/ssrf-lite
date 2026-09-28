@@ -102,7 +102,7 @@ class JsonSchemaValidationTest(unittest.TestCase):
         schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
         validator = Draft202012Validator(schema)
         valid = {
-            "ssrf_lite_version": "0.6.0",
+            "ssrf_lite_version": "0.7.0",
             "overrides": {
                 "assignments": [
                     {
@@ -115,16 +115,79 @@ class JsonSchemaValidationTest(unittest.TestCase):
         self.assertEqual(list(validator.iter_errors(valid)), [])
 
         missing_patch = {
-            "ssrf_lite_version": "0.6.0",
+            "ssrf_lite_version": "0.7.0",
             "overrides": {"assignments": [{"id": "asg_example"}]},
         }
         self.assertTrue(list(validator.iter_errors(missing_patch)))
 
         unknown_collection = {
-            "ssrf_lite_version": "0.6.0",
+            "ssrf_lite_version": "0.7.0",
             "overrides": {"unknown_entities": []},
         }
         self.assertTrue(list(validator.iter_errors(unknown_collection)))
+
+    def test_verified_block_validates_against_shipped_schema(self) -> None:
+        """Freshness markers (v0.7.0) are optional but strictly shaped."""
+
+        schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
+        validator = Draft202012Validator(schema)
+
+        def _doc(verified: object) -> dict:
+            return {
+                "ssrf_lite_version": generate_ssrf_schema.SPEC_VERSION,
+                "assignments": [
+                    {"id": "asgn_example", "usage": "repeater", "verified": verified}
+                ],
+            }
+
+        # A full block and the minimal required pair both validate.
+        full = {
+            "date": "2026-09-27",
+            "method": "on-air",
+            "by": "WRXC682",
+            "note": "Checked into the Sunday net.",
+        }
+        self.assertEqual(list(validator.iter_errors(_doc(full))), [])
+        self.assertEqual(
+            list(validator.iter_errors(_doc({"date": "2026-09-27", "method": "published"}))),
+            [],
+        )
+
+        # Absence is legal: "never verified" is a valid state.
+        self.assertEqual(
+            list(
+                validator.iter_errors(
+                    {
+                        "ssrf_lite_version": generate_ssrf_schema.SPEC_VERSION,
+                        "assignments": [{"id": "asgn_example", "usage": "repeater"}],
+                    }
+                )
+            ),
+            [],
+        )
+
+        # date and method are both required when the block is present.
+        self.assertTrue(list(validator.iter_errors(_doc({"method": "on-air"}))))
+        self.assertTrue(list(validator.iter_errors(_doc({"date": "2026-09-27"}))))
+
+        # Malformed dates are rejected rather than silently stored.
+        for bad_date in ("2026-9-27", "27-09-2026", "September 27 2026", ""):
+            self.assertTrue(
+                list(validator.iter_errors(_doc({"date": bad_date, "method": "on-air"}))),
+                f"expected date {bad_date!r} to be rejected",
+            )
+
+        # Unknown methods and stray keys are rejected.
+        self.assertTrue(
+            list(validator.iter_errors(_doc({"date": "2026-09-27", "method": "vibes"})))
+        )
+        self.assertTrue(
+            list(
+                validator.iter_errors(
+                    _doc({"date": "2026-09-27", "method": "on-air", "confirms": "x"})
+                )
+            )
+        )
 
 
 if __name__ == "__main__":  # pragma: no cover

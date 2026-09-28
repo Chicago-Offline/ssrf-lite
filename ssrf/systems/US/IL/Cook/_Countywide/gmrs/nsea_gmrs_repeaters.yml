@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.6.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.6.0.schema.json"
-ssrf_lite_version: "0.6.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.7.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.7.0.schema.json"
+ssrf_lite_version: "0.7.0"
 ssrf_lite:
   sources:
     - name: "North Shore Emergency Association - Repeaters / Weekly Net / Contact"
@@ -133,6 +133,11 @@ assignments:
       7:00 PM Central) and emergency traffic. Sited at Lutheran General
       Hospital, Dempster St, Park Ridge. Permission required; 141.3 Hz PL.
       Coverage approx 35 mi. Output 462.6750 (+5.000 input).
+    verified:
+      date: "2026-09-27"
+      method: "on-air"
+      by: "WRXC682"
+      note: "Checked into the NSEA Sunday evening net via the Park Ridge machine."
 
   - id: asgn_nsea_650
     channel_name: "NSEA 650"
