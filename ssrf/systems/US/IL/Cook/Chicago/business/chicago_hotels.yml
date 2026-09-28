@@ -1,8 +1,8 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.7.0.schema.json
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
 # SSRF-Lite: Chicago hotels - licensed business land mobile
 
-$schema: "../../../../../../_schema/ssrf-lite-0.7.0.schema.json"
-ssrf_lite_version: "0.7.0"
+$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
+ssrf_lite_version: "0.8.0"
 ssrf_lite:
   sources:
     - name: "RadioReference DB - Chicago Businesses (Hotels)"
