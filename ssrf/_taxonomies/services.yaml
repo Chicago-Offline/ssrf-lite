@@ -151,3 +151,20 @@ services:
       requires appropriate licensing under Part 90.
     usage_notes: >
       Often audible at venues/hotels; set RX-only unless user holds or operates under a valid license.
+
+  - id: cb
+    label: Citizens Band Radio Service (CBRS)
+    regulatory_body: FCC
+    rule_part: "47 CFR Part 95"
+    subpart: "D"
+    rx_only_by_regulation: false
+    typical_bands: ["HF 26.965-27.405 MHz (40 channels)"]
+    geography: ["US"]
+    description: >
+      Licence-by-rule personal and business HF voice service on 40 shared channels at 27 MHz.
+      AM and SSB are permitted on every channel, and FM was added by the FCC in 2021.
+    usage_notes: >
+      No individual licence, no repeaters, and external RF power amplifiers are prohibited.
+      Channel 9 is reserved for emergency and traveler assistance; channel 19 is the
+      customary highway calling channel. Skip propagation makes distant stations common.
+
