@@ -1,0 +1,379 @@
+# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.8.0.schema.json
+$schema: "../../../_schema/ssrf-lite-0.8.0.schema.json"
+ssrf_lite_version: "0.8.0"
+ssrf_lite:
+  sources:
+    - name: "47 CFR Part 95 Subpart D - Citizens Band Radio Service (CBRS)"
+      url: "https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95/subpart-D"
+      accessed: "2026-09-29"
+    - name: "47 CFR 95.963 - CBRS channel frequencies"
+      url: "https://www.ecfr.gov/current/title-47/section-95.963"
+      accessed: "2026-09-29"
+
+organizations:
+  - id: org_fcc
+    name: "Federal Communications Commission (FCC)"
+
+authorizations:
+  - id: auth_fcc_cb
+    authority: "FCC"
+    service: "cb"
+    class: "Licensed by rule"
+    identifier:
+    notes: |
+      No individual license required under 47 CFR Part 95, Subpart D (95.305).
+      Power (95.967): AM (A3E) and FM (F3E) mean carrier power <= 4 W; SSB
+      (J3E/R3E/H3E) peak envelope power <= 12 W.
+      Emissions (95.971): A3E or SSB required; F3E permitted since the 2021
+      amendment (86 FR 53565). SSB sets must offer USB and may add LSB.
+      Bandwidth (95.973): 8 kHz for A3E/F3E, 4 kHz for J3E/R3E/H3E. Channel rows
+      below carry 8K00A3E as the baseline emission; FM and SSB are permitted on
+      every channel but cannot be expressed per-channel in this spec version.
+      Channel 9 is restricted to emergency and traveler assistance (95.931(a)(2)).
+      External RF power amplifiers are prohibited outright (95.939).
+      Antenna height (95.941): <= 18.3 m (60 ft) AGL, or 6.1 m (20 ft) above the
+      building or tree it is mounted on, whichever is higher.
+      No repeaters. No international contacts except Canadian General Radio
+      Service stations (95.933(d)).
+
+channel_plans:
+  - id: chplan_us_cb
+    name: "US CB (Citizens Band)"
+    service: "cb"
+    channels:
+      - name: "CB 01"
+        freq_mhz: 26.9650
+        emission: "8K00A3E"
+      - name: "CB 02"
+        freq_mhz: 26.9750
+        emission: "8K00A3E"
+      - name: "CB 03"
+        freq_mhz: 26.9850
+        emission: "8K00A3E"
+      - name: "CB 04"
+        freq_mhz: 27.0050
+        emission: "8K00A3E"
+      - name: "CB 05"
+        freq_mhz: 27.0150
+        emission: "8K00A3E"
+      - name: "CB 06"
+        freq_mhz: 27.0250
+        emission: "8K00A3E"
+      - name: "CB 07"
+        freq_mhz: 27.0350
+        emission: "8K00A3E"
+      - name: "CB 08"
+        freq_mhz: 27.0550
+        emission: "8K00A3E"
+      - name: "CB 09 (Emergency)"
+        freq_mhz: 27.0650
+        emission: "8K00A3E"
+        notes: |
+          Emergency and traveler-assistance use only (47 CFR 95.931(a)(2)).
+      - name: "CB 10"
+        freq_mhz: 27.0750
+        emission: "8K00A3E"
+      - name: "CB 11"
+        freq_mhz: 27.0850
+        emission: "8K00A3E"
+      - name: "CB 12"
+        freq_mhz: 27.1050
+        emission: "8K00A3E"
+      - name: "CB 13"
+        freq_mhz: 27.1150
+        emission: "8K00A3E"
+      - name: "CB 14"
+        freq_mhz: 27.1250
+        emission: "8K00A3E"
+      - name: "CB 15"
+        freq_mhz: 27.1350
+        emission: "8K00A3E"
+      - name: "CB 16"
+        freq_mhz: 27.1550
+        emission: "8K00A3E"
+      - name: "CB 17"
+        freq_mhz: 27.1650
+        emission: "8K00A3E"
+      - name: "CB 18"
+        freq_mhz: 27.1750
+        emission: "8K00A3E"
+      - name: "CB 19 (Highway)"
+        freq_mhz: 27.1850
+        emission: "8K00A3E"
+        notes: |
+          De facto highway/trucker calling channel. Convention, not an FCC rule.
+      - name: "CB 20"
+        freq_mhz: 27.2050
+        emission: "8K00A3E"
+      - name: "CB 21"
+        freq_mhz: 27.2150
+        emission: "8K00A3E"
+      - name: "CB 22"
+        freq_mhz: 27.2250
+        emission: "8K00A3E"
+      - name: "CB 23"
+        freq_mhz: 27.2550
+        emission: "8K00A3E"
+      - name: "CB 24"
+        freq_mhz: 27.2350
+        emission: "8K00A3E"
+      - name: "CB 25"
+        freq_mhz: 27.2450
+        emission: "8K00A3E"
+      - name: "CB 26"
+        freq_mhz: 27.2650
+        emission: "8K00A3E"
+      - name: "CB 27"
+        freq_mhz: 27.2750
+        emission: "8K00A3E"
+      - name: "CB 28"
+        freq_mhz: 27.2850
+        emission: "8K00A3E"
+      - name: "CB 29"
+        freq_mhz: 27.2950
+        emission: "8K00A3E"
+      - name: "CB 30"
+        freq_mhz: 27.3050
+        emission: "8K00A3E"
+      - name: "CB 31"
+        freq_mhz: 27.3150
+        emission: "8K00A3E"
+      - name: "CB 32"
+        freq_mhz: 27.3250
+        emission: "8K00A3E"
+      - name: "CB 33"
+        freq_mhz: 27.3350
+        emission: "8K00A3E"
+      - name: "CB 34"
+        freq_mhz: 27.3450
+        emission: "8K00A3E"
+      - name: "CB 35"
+        freq_mhz: 27.3550
+        emission: "8K00A3E"
+      - name: "CB 36"
+        freq_mhz: 27.3650
+        emission: "8K00A3E"
+        notes: |
+          Commonly used for SSB (J3E) operation by convention; not an FCC allocation.
+      - name: "CB 37"
+        freq_mhz: 27.3750
+        emission: "8K00A3E"
+        notes: |
+          Commonly used for SSB (J3E) operation by convention; not an FCC allocation.
+      - name: "CB 38"
+        freq_mhz: 27.3850
+        emission: "8K00A3E"
+        notes: |
+          Commonly used for SSB (J3E) operation by convention; not an FCC allocation.
+      - name: "CB 39"
+        freq_mhz: 27.3950
+        emission: "8K00A3E"
+        notes: |
+          Commonly used for SSB (J3E) operation by convention; not an FCC allocation.
+      - name: "CB 40"
+        freq_mhz: 27.4050
+        emission: "8K00A3E"
+        notes: |
+          Commonly used for SSB (J3E) operation by convention; not an FCC allocation.
+
+assignments:
+  - id: asgn_cb_01
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 01"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_02
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 02"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_03
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 03"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_04
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 04"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_05
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 05"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_06
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 06"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_07
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 07"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_08
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 08"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_09
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 09 (Emergency)"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_10
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 10"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_11
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 11"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_12
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 12"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_13
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 13"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_14
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 14"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_15
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 15"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_16
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 16"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_17
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 17"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_18
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 18"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_19
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 19 (Highway)"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_20
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 20"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_21
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 21"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_22
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 22"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_23
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 23"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_24
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 24"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_25
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 25"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_26
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 26"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_27
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 27"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_28
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 28"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_29
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 29"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_30
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 30"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_31
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 31"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_32
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 32"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_33
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 33"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_34
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 34"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_35
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 35"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_36
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 36"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_37
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 37"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_38
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 38"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_39
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 39"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
+  - id: asgn_cb_40
+    channel_plan_id: chplan_us_cb
+    channel_name: "CB 40"
+    usage: "simplex"
+    authorization_id: auth_fcc_cb
