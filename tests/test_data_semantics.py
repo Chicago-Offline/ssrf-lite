@@ -285,5 +285,51 @@ class DuplicateChannelTest(unittest.TestCase):
         self.assertEqual(failures, [], "\n" + "\n".join(failures))
 
 
+class ShortNameCollisionTest(unittest.TestCase):
+    def test_authored_short_names_map_to_one_channel_per_file(self) -> None:
+        """A 6-char tag reused for two different channels is unreadable on-radio.
+
+        Only authored values are checked, and only within a file: the same tag
+        appearing in a club file and a regional roll-up is the same repeater
+        listed twice, which is legitimate. Cross-zone uniqueness belongs to
+        whichever consumer assembles the codeplug.
+        """
+        failures: List[str] = []
+        for path, ref in _iter_documents():
+            chains = {c.id: c for c in ref.rf_chains}
+            targets: Dict[str, set] = {}
+
+            for a in ref.assignments:
+                if not a.short_name:
+                    continue
+                chain = chains.get(a.rf_chain_id) if a.rf_chain_id else None
+                if chain:
+                    key: Tuple[Any, ...] = (
+                        round(chain.tx.freq_mhz, 4) if chain.tx.freq_mhz else None,
+                        round(chain.rx.freq_mhz, 4) if chain.rx.freq_mhz else None,
+                    )
+                else:
+                    key = (a.channel_plan_id, a.channel_name)
+                targets.setdefault(a.short_name, set()).add(key)
+
+            for plan in ref.channel_plans:
+                for ch in plan.channels:
+                    if not ch.short_name:
+                        continue
+                    key = (
+                        round(ch.freq_mhz, 4),
+                        round(ch.rx_freq_mhz, 4) if ch.rx_freq_mhz else None,
+                    )
+                    targets.setdefault(ch.short_name, set()).add(key)
+
+            for short_name, keys in sorted(targets.items()):
+                if len(keys) > 1:
+                    failures.append(
+                        f"{_rel(path)}: short_name '{short_name}' labels "
+                        f"{len(keys)} different channels {sorted(map(str, keys))}"
+                    )
+        self.assertEqual(failures, [], "\n" + "\n".join(failures))
+
+
 if __name__ == "__main__":  # pragma: no cover
     unittest.main()

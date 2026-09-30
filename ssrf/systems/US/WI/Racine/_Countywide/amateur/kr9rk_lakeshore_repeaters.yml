@@ -147,14 +147,17 @@ authorizations:
 
 assignments:
   - id: asgn_kr9rk_2m_fm
+    short_name: "LRA2M"
     rf_chain_id: chain_kr9rk_2m_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur
   - id: asgn_kr9rk_440_fm
+    short_name: "LRA7C"
     rf_chain_id: chain_kr9rk_440_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur
   - id: asgn_kr9rk_440_dmr
+    short_name: "LRA7D"
     rf_chain_id: chain_kr9rk_440_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur

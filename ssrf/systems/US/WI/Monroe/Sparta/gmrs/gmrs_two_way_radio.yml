@@ -36,6 +36,7 @@ rf_chains:
 
 assignments:
   - id: asgn_gmrs_sparta_625
+    short_name: "SPRT62"
     rf_chain_id: chain_gmrs_sparta_625
     usage: "repeater"
     notes: "Open system; operation is intermittent while the owner works on equipment and tests products. No input or output tone. Currently limited to approximately 2-2.8 miles due to the valley location. Moved to Sparta in November 2023."

@@ -38,6 +38,7 @@ rf_chains:
 
 assignments:
   - id: asgn_gmrs_osceola_600
+    short_name: "OSCE60"
     rf_chain_id: chain_gmrs_osceola_600
     usage: "repeater"
     notes: "Open system; access requests are disabled. Adult-use local-area communications. DPL 343. FCC GMRS Part 95 Subpart E compliance required. Do not use alert tones, roger beeps, or DTMF tones. Output 462.6000 (+5.000 input)."

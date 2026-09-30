@@ -60,6 +60,7 @@ authorizations:
 
 assignments:
   - id: asgn_wr2m_448675
+    short_name: "WR2M7C"
     channel_name: "WR2M 448.675"
     rf_chain_id: chain_wr2m_448675_fm
     usage: "repeater"

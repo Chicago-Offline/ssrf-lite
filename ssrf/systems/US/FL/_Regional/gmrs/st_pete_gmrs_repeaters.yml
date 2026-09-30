@@ -266,36 +266,42 @@ authorizations:
 
 assignments:
   - id: asg_gmrs_seminole_725
+    short_name: "TBSEMI"
     rf_chain_id: chain_gmrs_seminole_725
     usage: "repeater"
     authorization_id: auth_fcc_gmrs
     notes: "Seminole 725 - ThrashedNet; open system. Last reported update 2 months ago."
 
   - id: asg_gmrs_clearwater_675
+    short_name: "TBCLWR"
     rf_chain_id: chain_gmrs_clearwater_675
     usage: "repeater"
     authorization_id: auth_fcc_gmrs
     notes: "PINELLAS-675 Clearwater; open system. 77.0 Hz input, carrier output. Updated 7 months ago."
 
   - id: asg_gmrs_ruskin_700
+    short_name: "TBRUSK"
     rf_chain_id: chain_gmrs_ruskin_700
     usage: "repeater"
     authorization_id: auth_fcc_gmrs
     notes: "RUSKIN700; open system with 123.0 Hz PL. Updated 4 months ago."
 
   - id: asg_gmrs_tampa_shores_700
+    short_name: "TBTSH7"
     rf_chain_id: chain_gmrs_tampa_shores_700
     usage: "repeater"
     authorization_id: auth_fcc_gmrs
     notes: "Tampa Shores 700 Node 191133; open system, DPL 065. Updated 4 months ago."
 
   - id: asg_gmrs_tampa_shores_650
+    short_name: "TBTSH6"
     rf_chain_id: chain_gmrs_tampa_shores_650
     usage: "repeater"
     authorization_id: auth_fcc_gmrs
     notes: "Tampa Shores 650 Node 191123; open system, DPL 065. Updated 4 months ago."
 
   - id: asg_gmrs_west_bradenton_625
+    short_name: "TBWBRA"
     rf_chain_id: chain_gmrs_west_bradenton_625
     usage: "repeater"
     authorization_id: auth_fcc_gmrs
@@ -305,6 +311,7 @@ assignments:
       unlisted. Typical range 10-15 mi HT / 20-25 mi mobile. Updated 2 months ago.
 
   - id: asg_gmrs_tampa_600
+    short_name: "TBTAMP"
     rf_chain_id: chain_gmrs_tampa_600
     usage: "repeater"
     authorization_id: auth_fcc_gmrs
@@ -313,30 +320,35 @@ assignments:
       Motorola Quantar with the antenna roughly 400 ft AGL, 131.8 Hz PL. Updated 3 months ago.
 
   - id: asgn_gmrs_sun_sara_650
+    short_name: "SUNSAR"
     rf_chain_id: chain_gmrs_sun_sara_650
     usage: "repeater"
     authorization_id: auth_fcc_gmrs
     notes: "SUNGMRS Sara 650 near McIntosh Rd and Clark Rd in Sarasota; open system. 300 ft antenna. Expected range 15+ mi on an HT / 30+ mi mobile. Tones unlisted."
 
   - id: asgn_gmrs_sun_venice_700
+    short_name: "SUNVEN"
     rf_chain_id: chain_gmrs_sun_venice_700
     usage: "repeater"
     authorization_id: auth_fcc_gmrs
     notes: "SUNGMRS Venice 700 near Albee Farm Rd and US 41 Bypass in Venice; open system. 140 ft antenna. Expected range 10-15 mi on an HT / 20-25 mi mobile. Tones unlisted."
 
   - id: asgn_gmrs_sun_englewood_675
+    short_name: "SUNENG"
     rf_chain_id: chain_gmrs_sun_englewood_675
     usage: "repeater"
     authorization_id: auth_fcc_gmrs
     notes: "SUNGMRS Englewood 675 near Pine St and River Rd in Englewood; open system. 130 ft antenna. Expected range 10-12 mi on an HT / 20 mi mobile. Tones unlisted."
 
   - id: asgn_gmrs_sun_bonita_575
+    short_name: "SUNBON"
     rf_chain_id: chain_gmrs_sun_bonita_575
     usage: "repeater"
     authorization_id: auth_fcc_gmrs
     notes: "SUNGMRS Bonita 575 north of Terry St and Old 41 Rd in Bonita Springs; open system. 150 ft antenna. Expected range 10-15 mi on an HT / 20-25 mi mobile. Tones unlisted."
 
   - id: asgn_gmrs_sun_duette_550
+    short_name: "SUNDUE"
     rf_chain_id: chain_gmrs_sun_duette_550
     usage: "repeater"
     authorization_id: auth_fcc_gmrs

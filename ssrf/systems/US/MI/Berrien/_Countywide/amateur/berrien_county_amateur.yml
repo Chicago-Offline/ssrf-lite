@@ -143,27 +143,32 @@ authorizations:
 assignments:
   # Skywarn / analog
   - id: asg_skywarn_primary
+    short_name: "BCSW82"
     rf_chain_id: chain_skywarn_primary_146_820
     usage: "repeater"
     authorization_id: auth_fcc_amateur
 
   - id: asg_skywarn_secondary
+    short_name: "BCSW72"
     rf_chain_id: chain_skywarn_secondary_146_720
     usage: "repeater"
     authorization_id: auth_fcc_amateur
 
   - id: asg_skywarn_intercounty
+    short_name: "BCSW43"
     rf_chain_id: chain_skywarn_intercounty_145_430
     usage: "repeater"
     authorization_id: auth_fcc_amateur
 
   - id: asg_skywarn_link
+    short_name: "BCSWLK"
     rf_chain_id: chain_skywarn_link_442_775
     usage: "repeater"
     authorization_id: auth_fcc_amateur
 
     # Digital voice
   - id: asg_w8mai_dstar_b
+    short_name: "W8MAIB"
     rf_chain_id: chain_w8mai_dstar_b
     usage: "repeater"
     authorization_id: auth_fcc_amateur

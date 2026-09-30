@@ -168,26 +168,31 @@ authorizations:
 
 assignments:
   - id: asgn_w2ver_6m
+    short_name: "W2VER6"
     channel_name: "W2VER 51.72"
     rf_chain_id: chain_w2ver_6m_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_w2ver_2m
+    short_name: "W2VER2"
     channel_name: "W2VER 146.925"
     rf_chain_id: chain_w2ver_2m_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_w2ver_70cm
+    short_name: "W2VER7"
     channel_name: "W2VER 449.075"
     rf_chain_id: chain_w2ver_70cm_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_w2ver_33cm_vernon
+    short_name: "W2V33V"
     channel_name: "W2VER 918.075"
     rf_chain_id: chain_w2ver_33cm_vernon_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_w2ver_33cm_hardyston
+    short_name: "W2V33H"
     channel_name: "W2VER 927.3375"
     rf_chain_id: chain_w2ver_33cm_hardyston_fm
     usage: "repeater"

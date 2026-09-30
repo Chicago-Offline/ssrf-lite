@@ -489,81 +489,97 @@ authorizations:
 
 assignments:
   - id: asgn_k9bar_bolingbrook
+    short_name: "TSDBOL"
     channel_name: "K9BAR Bolingbk"
     rf_chain_id: chain_k9bar_bolingbrook_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_n9pay_carlsville
+    short_name: "TSDCAR"
     channel_name: "N9PAY Carlsvle"
     rf_chain_id: chain_n9pay_carlsville_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_aa9vi_chicago
+    short_name: "TSDCHI"
     channel_name: "AA9VI Chicago"
     rf_chain_id: chain_aa9vi_chicago_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_k9vi_crystal_lake
+    short_name: "TSDCRY"
     channel_name: "K9VI Crystal Lk"
     rf_chain_id: chain_k9vi_crystal_lake_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_n9iaa_crown_point
+    short_name: "TSDCRP"
     channel_name: "N9IAA Crown Pt"
     rf_chain_id: chain_n9iaa_crown_point_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_k9nro_elburn
+    short_name: "TSDELB"
     channel_name: "K9NRO Elburn"
     rf_chain_id: chain_k9nro_elburn_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_n9pay_green_bay
+    short_name: "TSDGRB"
     channel_name: "N9PAY Green Bay"
     rf_chain_id: chain_n9pay_green_bay_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_k9ord_inverness
+    short_name: "TSDINV"
     channel_name: "K9ORD Invernes"
     rf_chain_id: chain_k9ord_inverness_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_n9iaa_la_porte
+    short_name: "TSDLAP"
     channel_name: "N9IAA La Porte"
     rf_chain_id: chain_n9iaa_la_porte_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_n9pay_milwaukee
+    short_name: "TSDMIL"
     channel_name: "N9PAY Milwaukee"
     rf_chain_id: chain_n9pay_milwaukee_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_kc9kko_morris
+    short_name: "TSDMOR"
     channel_name: "KC9KKO Morris"
     rf_chain_id: chain_kc9kko_morris_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_n9pay_new_berlin
+    short_name: "TSDNWB"
     channel_name: "N9PAY New Berln"
     rf_chain_id: chain_n9pay_new_berlin_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_ww9p_rockford
+    short_name: "TSDROC"
     channel_name: "WW9P Rockford"
     rf_chain_id: chain_ww9p_rockford_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_k9mot_schaumburg
+    short_name: "TSDSCH"
     channel_name: "K9MOT Schaumbg"
     rf_chain_id: chain_k9mot_schaumburg_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_n8ouz_traverse_city
+    short_name: "TSDTRV"
     channel_name: "N8OUZ Traverse"
     rf_chain_id: chain_n8ouz_traverse_city_dmr
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_n9iaa_valparaiso
+    short_name: "TSDVAL"
     channel_name: "N9IAA Valparso"
     rf_chain_id: chain_n9iaa_valparaiso_dmr
     usage: "repeater"

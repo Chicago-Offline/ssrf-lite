@@ -181,6 +181,7 @@ rf_chains:
 
 assignments:
   - id: asgn_gmrs_lincolnwood_575
+    short_name: "LNWD57"
     channel_name: "Lincolnwood 575"
     rf_chain_id: chain_gmrs_lincolnwood_575
     usage: "repeater"
@@ -192,6 +193,7 @@ assignments:
     authorization_id: auth_fcc_gmrs
 
   - id: asgn_gmrs_chicago_600
+    short_name: "CHI600"
     channel_name: "Chicago 600"
     rf_chain_id: chain_gmrs_chicago_600
     usage: "repeater"
@@ -200,6 +202,7 @@ assignments:
     authorization_id: auth_fcc_gmrs
 
   - id: asgn_gmrs_ohare_575
+    short_name: "OHAR57"
     channel_name: "OHare 575"
     rf_chain_id: chain_gmrs_ohare_575
     usage: "repeater"
@@ -210,6 +213,7 @@ assignments:
     authorization_id: auth_fcc_gmrs
 
   - id: asgn_gmrs_chicago_550
+    short_name: "CHI550"
     channel_name: "Chicago 550"
     rf_chain_id: chain_gmrs_chicago_550
     usage: "repeater"
@@ -219,6 +223,7 @@ assignments:
     authorization_id: auth_fcc_gmrs
 
   - id: asgn_gmrs_downtown_575
+    short_name: "DWTN57"
     channel_name: "Downtown 575"
     rf_chain_id: chain_gmrs_downtown_575
     usage: "repeater"
@@ -230,6 +235,7 @@ assignments:
     authorization_id: auth_fcc_gmrs
 
   - id: asgn_gmrs_forest_view_650
+    short_name: "FSTV65"
     channel_name: "Forest View 650"
     rf_chain_id: chain_gmrs_forest_view_650
     usage: "repeater"
@@ -241,6 +247,7 @@ assignments:
     authorization_id: auth_fcc_gmrs
 
   - id: asgn_gmrs_oak_forest_625
+    short_name: "OAKF62"
     channel_name: "Oak Forest 625"
     rf_chain_id: chain_gmrs_oak_forest_625
     usage: "repeater"
@@ -252,6 +259,7 @@ assignments:
     authorization_id: auth_fcc_gmrs
 
   - id: asgn_gmrs_montclare_650
+    short_name: "MNTC65"
     channel_name: "Montclare 650"
     rf_chain_id: chain_gmrs_montclare_650
     usage: "repeater"

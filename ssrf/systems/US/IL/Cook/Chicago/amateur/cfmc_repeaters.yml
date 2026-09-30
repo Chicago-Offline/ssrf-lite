@@ -208,42 +208,49 @@ authorizations:
 
 assignments:
   - id: asgn_cfmc_440
+    short_name: "CFMC7F"
     channel_name: "WA9ORC 443.75"
     rf_chain_id: chain_cfmc_440_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
 
   - id: asgn_cfmc_2m
+    short_name: "CFM676"
     channel_name: "WA9ORC 146.76"
     rf_chain_id: chain_cfmc_2m_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
 
   - id: asgn_cfmc_220_north
+    short_name: "CFM241"
     channel_name: "WA9ORC 224.10 N"
     rf_chain_id: chain_cfmc_220_north_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
 
   - id: asgn_cfmc_220_south
+    short_name: "CFM418"
     channel_name: "WA9ORC 224.18 S"
     rf_chain_id: chain_cfmc_220_south_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
 
   - id: asgn_cfmc_dstar_440
+    short_name: "CFMC7S"
     channel_name: "WA9ORC DSTAR"
     rf_chain_id: chain_cfmc_dstar_440
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
 
   - id: asgn_cfmc_fusion_2m_fm
+    short_name: "CFM535"
     channel_name: "WA9ORC 145.35"
     rf_chain_id: chain_cfmc_fusion_2m_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
 
   - id: asgn_cfmc_fusion_2m_c4fm
+    short_name: "CFM53C"
     channel_name: "WA9ORC C4FM"
     rf_chain_id: chain_cfmc_fusion_2m_c4fm
     usage: "repeater"

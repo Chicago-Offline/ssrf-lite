@@ -95,6 +95,7 @@ authorizations:
 
 assignments:
   - id: asgn_ka9hhh_2m_fm
+    short_name: "SARA2M"
     channel_name: "KA9HHH 146.88"
     rf_chain_id: chain_ka9hhh_2m_fm
     usage: "repeater"
@@ -102,6 +103,7 @@ assignments:
     authorization_id: auth_fcc_amateur_t
 
   - id: asgn_ka9hhh_440_fm
+    short_name: "SARA7C"
     channel_name: "KA9HHH 444.375"
     rf_chain_id: chain_ka9hhh_440_fm
     usage: "repeater"
@@ -109,6 +111,7 @@ assignments:
     authorization_id: auth_fcc_amateur_t
 
   - id: asgn_na9pl_440_c4fm
+    short_name: "PAA25C"
     channel_name: "NA9PL C4FM"
     rf_chain_id: chain_na9pl_440_c4fm
     usage: "repeater"
