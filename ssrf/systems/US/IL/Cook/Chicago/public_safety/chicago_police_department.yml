@@ -1,10 +1,10 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
 # SSRF-Lite: Chicago Police Department (analogue monitoring)
 # Source: RadioReference Cook County IL DB – Chicago Police Department section
 # Encrypted P25 dispatch channels are intentionally excluded. Only analogue/FM channels added.
 
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 organizations:
   - id: org_chi_cpd
     name: "Chicago Police Department"
@@ -35,94 +35,86 @@ rf_chains:
   - id: chain_cpd_cw1
     station_id: stn_cpd
     antenna_id: ant_cpd
-    rx:
-      freq_mhz: 460.125
     tx:
+      freq_mhz: 460.125
       emission: "11K2F3E" # narrow FM ~12.5 kHz
       bandwidth_khz: 12.5
     mode:
       type: "FM"
-      ctcss_rx_hz: 173.8
+      ctcss_tx_hz: 173.8
 
   - id: chain_cpd_cw2
     station_id: stn_cpd
     antenna_id: ant_cpd
-    rx:
-      freq_mhz: 460.175
     tx:
+      freq_mhz: 460.175
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     mode:
       type: "FM"
-      ctcss_rx_hz: 123.0
+      ctcss_tx_hz: 123.0
 
   - id: chain_cpd_cw3
     station_id: stn_cpd
     antenna_id: ant_cpd
-    rx:
-      freq_mhz: 460.275
     tx:
+      freq_mhz: 460.275
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     mode:
       type: "FM"
-      ctcss_rx_hz: 141.3
+      ctcss_tx_hz: 141.3
 
   - id: chain_cpd_cw4
     station_id: stn_cpd
     antenna_id: ant_cpd
-    rx:
-      freq_mhz: 460.325
     tx:
+      freq_mhz: 460.325
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     mode:
       type: "FM"
-      ctcss_rx_hz: 192.8
+      ctcss_tx_hz: 192.8
 
   - id: chain_cpd_cw5
     station_id: stn_cpd
     antenna_id: ant_cpd
-    rx:
-      freq_mhz: 460.350
     tx:
+      freq_mhz: 460.350
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     mode:
       type: "FM"
-      ctcss_rx_hz: 97.4
+      ctcss_tx_hz: 97.4
 
   - id: chain_cpd_cw6
     station_id: stn_cpd
     antenna_id: ant_cpd
-    rx:
-      freq_mhz: 460.250
     tx:
+      freq_mhz: 460.250
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     mode:
       type: "FM"
-      ctcss_rx_hz: 162.2
+      ctcss_tx_hz: 162.2
 
   - id: chain_cpd_cw7
     station_id: stn_cpd
     antenna_id: ant_cpd
-    rx:
-      freq_mhz: 460.300
     tx:
+      freq_mhz: 460.300
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     mode:
       type: "FM"
-      ctcss_rx_hz: 131.8
+      ctcss_tx_hz: 131.8
 
     # VHF Car-to-Car (listed as CSQ)
   - id: chain_cpd_vhf2
     station_id: stn_cpd
     antenna_id: ant_cpd
-    rx:
-      freq_mhz: 154.650
     tx:
+      freq_mhz: 154.650
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     mode:

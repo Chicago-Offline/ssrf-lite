@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 "ssrf_lite":
   sources:
     - name: "Tri-State DMR - Repeaters"
@@ -235,10 +235,10 @@ rf_chains:
     station_id: stn_k9bar_bolingbrook
     antenna_id: ant_k9bar_bolingbrook
     tx:
-      freq_mhz: 448.7
+      freq_mhz: 443.7
       emission: "7K60FXE"
     rx:
-      freq_mhz: 443.7
+      freq_mhz: 448.7
     mode:
       type: "DMR"
       color_code: 1
@@ -247,10 +247,10 @@ rf_chains:
     station_id: stn_n9pay_carlsville
     antenna_id: ant_n9pay_carlsville
     tx:
-      freq_mhz: 448.49375
+      freq_mhz: 443.49375
       emission: "7K60FXE"
     rx:
-      freq_mhz: 443.49375
+      freq_mhz: 448.49375
     mode:
       type: "DMR"
       color_code: 6
@@ -259,10 +259,10 @@ rf_chains:
     station_id: stn_aa9vi_chicago
     antenna_id: ant_aa9vi_chicago
     tx:
-      freq_mhz: 446.21875
+      freq_mhz: 441.21875
       emission: "7K60FXE"
     rx:
-      freq_mhz: 441.21875
+      freq_mhz: 446.21875
     mode:
       type: "DMR"
       color_code: 1
@@ -271,10 +271,10 @@ rf_chains:
     station_id: stn_k9vi_crystal_lake
     antenna_id: ant_k9vi_crystal_lake
     tx:
-      freq_mhz: 449.80625
+      freq_mhz: 444.80625
       emission: "7K60FXE"
     rx:
-      freq_mhz: 444.80625
+      freq_mhz: 449.80625
     mode:
       type: "DMR"
       color_code: 4
@@ -283,10 +283,10 @@ rf_chains:
     station_id: stn_n9iaa_crown_point
     antenna_id: ant_n9iaa_crown_point
     tx:
-      freq_mhz: 449.35
+      freq_mhz: 444.35
       emission: "7K60FXE"
     rx:
-      freq_mhz: 444.35
+      freq_mhz: 449.35
     mode:
       type: "DMR"
       color_code: 1
@@ -295,10 +295,10 @@ rf_chains:
     station_id: stn_k9nro_elburn
     antenna_id: ant_k9nro_elburn
     tx:
-      freq_mhz: 447.425
+      freq_mhz: 442.425
       emission: "7K60FXE"
     rx:
-      freq_mhz: 442.425
+      freq_mhz: 447.425
     mode:
       type: "DMR"
       color_code: 1
@@ -307,10 +307,10 @@ rf_chains:
     station_id: stn_n9pay_green_bay
     antenna_id: ant_n9pay_green_bay
     tx:
-      freq_mhz: 448.50625
+      freq_mhz: 443.50625
       emission: "7K60FXE"
     rx:
-      freq_mhz: 443.50625
+      freq_mhz: 448.50625
     mode:
       type: "DMR"
       color_code: 6
@@ -319,10 +319,10 @@ rf_chains:
     station_id: stn_k9ord_inverness
     antenna_id: ant_k9ord_inverness
     tx:
-      freq_mhz: 446.05
+      freq_mhz: 441.05
       emission: "7K60FXE"
     rx:
-      freq_mhz: 441.05
+      freq_mhz: 446.05
     mode:
       type: "DMR"
       color_code: 1
@@ -331,10 +331,10 @@ rf_chains:
     station_id: stn_n9iaa_la_porte
     antenna_id: ant_n9iaa_la_porte
     tx:
-      freq_mhz: 449.675
+      freq_mhz: 444.675
       emission: "7K60FXE"
     rx:
-      freq_mhz: 444.675
+      freq_mhz: 449.675
     mode:
       type: "DMR"
       color_code: 1
@@ -343,10 +343,10 @@ rf_chains:
     station_id: stn_n9pay_milwaukee
     antenna_id: ant_n9pay_milwaukee
     tx:
-      freq_mhz: 449.53125
+      freq_mhz: 444.53125
       emission: "7K60FXE"
     rx:
-      freq_mhz: 444.53125
+      freq_mhz: 449.53125
     mode:
       type: "DMR"
       color_code: 1
@@ -355,10 +355,10 @@ rf_chains:
     station_id: stn_kc9kko_morris
     antenna_id: ant_kc9kko_morris
     tx:
-      freq_mhz: 447.0
+      freq_mhz: 442.0
       emission: "7K60FXE"
     rx:
-      freq_mhz: 442.0
+      freq_mhz: 447.0
     mode:
       type: "DMR"
       color_code: 1
@@ -367,10 +367,10 @@ rf_chains:
     station_id: stn_n9pay_new_berlin
     antenna_id: ant_n9pay_new_berlin
     tx:
-      freq_mhz: 446.4375
+      freq_mhz: 441.4375
       emission: "7K60FXE"
     rx:
-      freq_mhz: 441.4375
+      freq_mhz: 446.4375
     mode:
       type: "DMR"
       color_code: 1
@@ -379,10 +379,10 @@ rf_chains:
     station_id: stn_ww9p_rockford
     antenna_id: ant_ww9p_rockford
     tx:
-      freq_mhz: 448.325
+      freq_mhz: 443.325
       emission: "7K60FXE"
     rx:
-      freq_mhz: 443.325
+      freq_mhz: 448.325
     mode:
       type: "DMR"
       color_code: 1
@@ -391,10 +391,10 @@ rf_chains:
     station_id: stn_k9mot_schaumburg
     antenna_id: ant_k9mot_schaumburg
     tx:
-      freq_mhz: 449.79375
+      freq_mhz: 444.79375
       emission: "7K60FXE"
     rx:
-      freq_mhz: 444.79375
+      freq_mhz: 449.79375
     mode:
       type: "DMR"
       color_code: 1
@@ -403,10 +403,10 @@ rf_chains:
     station_id: stn_n8ouz_traverse_city
     antenna_id: ant_n8ouz_traverse_city
     tx:
-      freq_mhz: 447.2875
+      freq_mhz: 442.2875
       emission: "7K60FXE"
     rx:
-      freq_mhz: 442.2875
+      freq_mhz: 447.2875
     mode:
       type: "DMR"
       color_code: 1
@@ -415,10 +415,10 @@ rf_chains:
     station_id: stn_n9iaa_valparaiso
     antenna_id: ant_n9iaa_valparaiso
     tx:
-      freq_mhz: 446.575
+      freq_mhz: 441.575
       emission: "7K60FXE"
     rx:
-      freq_mhz: 441.575
+      freq_mhz: 446.575
     mode:
       type: "DMR"
       color_code: 1

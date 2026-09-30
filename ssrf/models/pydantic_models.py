@@ -1,6 +1,6 @@
 """Pydantic models for the SSRF-Lite reference schema.
 
-These models intentionally reflect the v0.8.0 specification located in
+These models intentionally reflect the v0.9.0 specification located in
 ``ssrf/_schema/SSRF-Lite-Spec.md``. They do not include legacy or policy-layer
 fields that appeared in historical data files. Use the helper functions at the
 bottom of this file to validate YAML documents against the schema.
@@ -216,22 +216,37 @@ class Antenna(BaseModel):
 
 
 class Transmitter(BaseModel):
-    """Transmitter metadata (frequency, power, emission designator)."""
+    """This station's transmitter: what it emits, and how."""
 
     model_config = ConfigDict(extra="forbid")
 
-    freq_mhz: Optional[float] = Field(default=None, gt=0)
+    freq_mhz: Optional[float] = Field(
+        default=None,
+        gt=0,
+        description=(
+            "Frequency this station transmits on. For a repeater this is the "
+            "output. Omit only for a receive-only station."
+        ),
+    )
     power_w: Optional[float] = Field(default=None, gt=0)
     emission: Optional[str] = None
     bandwidth_khz: Optional[float] = Field(default=None, gt=0)
 
 
 class Receiver(BaseModel):
-    """Receiver metadata (frequency and sensitivity)."""
+    """This station's receiver: what it listens on, and how well."""
 
     model_config = ConfigDict(extra="forbid")
 
-    freq_mhz: float = Field(gt=0)
+    freq_mhz: Optional[float] = Field(
+        default=None,
+        gt=0,
+        description=(
+            "Frequency this station receives on. For a repeater this is the "
+            "input. Omit for simplex, where the station receives on its "
+            "transmit frequency."
+        ),
+    )
     sensitivity_dbm: Optional[float] = None
 
 
@@ -347,20 +362,89 @@ class Verification(BaseModel):
 
 
 class RFChain(BaseModel):
-    """Bundled transmitter + receiver + mode for a station."""
+    """One station's transmitter + receiver + mode, described from that station.
+
+    Every frequency here belongs to the station itself: ``tx`` is what it
+    radiates, ``rx`` is what it listens for. A repeater's ``tx`` is therefore
+    its output and its ``rx`` is its input.
+    """
 
     model_config = ConfigDict(extra="forbid")
 
     id: str
     station_id: str
     antenna_id: Optional[str] = None
-    tx: Transmitter
-    rx: Receiver
+    tx: Transmitter = Field(default_factory=Transmitter)
+    rx: Receiver = Field(default_factory=Receiver)
     mode: Mode
     #: Most recent positive confirmation that these radio parameters still
     #: produce a usable contact. Independent of the owning assignment's own
     #: ``verified`` block. Optional; absence means "never verified".
     verified: Optional[Verification] = None
+
+    @model_validator(mode="after")
+    def _require_a_frequency(self) -> "RFChain":
+        if self.tx.freq_mhz is None and self.rx.freq_mhz is None:
+            raise ValueError(
+                f"rf_chain '{self.id}' sets neither tx.freq_mhz nor rx.freq_mhz. "
+                "Give the station's transmit frequency (repeater output), its "
+                "receive frequency (repeater input), or both."
+            )
+        return self
+
+    @property
+    def simplex(self) -> bool:
+        """True when the station receives on the frequency it transmits on."""
+
+        return self.rx.freq_mhz is None or self.rx.freq_mhz == self.tx.freq_mhz
+
+
+class Emission(BaseModel):
+    """One way a channel may be used: an ITU designator plus its parameters.
+
+    Channels that permit several incompatible modulations on the same
+    frequency -- US CB allows AM, SSB, and FM on all 40 channels -- carry one
+    of these per permitted modulation rather than collapsing to a single
+    designator.
+    """
+
+    model_config = ConfigDict(extra="forbid")
+
+    emission: str = Field(description='ITU emission designator, e.g. "8K00A3E".')
+    mode: Optional[ModeLiteral] = Field(
+        default=None,
+        description=(
+            "Mode this emission corresponds to. Set it where the designator "
+            'is ambiguous -- J3E covers both "USB" and "LSB".'
+        ),
+    )
+    bandwidth_khz: Optional[float] = Field(default=None, gt=0)
+    power_w: Optional[float] = Field(
+        default=None,
+        gt=0,
+        description="Power limit for this emission, where it differs by modulation.",
+    )
+    notes: Optional[str] = None
+
+    @field_validator("mode", mode="before")
+    @classmethod
+    def _normalize_type_field(cls, value: Any) -> Optional[str]:
+        return None if value is None else _normalize_mode(value)
+
+
+#: Radios with narrow channel displays (Yaesu 6-character alpha tags being the
+#: tightest common limit) need a label that is authored, not truncated. A name
+#: that fits 6 characters fits every wider radio, so one short tier plus the
+#: full name spans the whole range.
+SHORT_NAME_MAX_LEN = 6
+_SHORT_NAME_PATTERN = r"^[A-Z0-9][A-Z0-9 /-]*$"
+_SHORT_NAME_DESCRIPTION = (
+    "Uppercase label of at most 6 characters for radios with narrow channel "
+    "displays. House style: amateur = club + band (SARA2M, NSRC7C), GMRS = "
+    "system + site (NSEAPK, NSEAEV), public safety = agency + function "
+    "(CPDZ1), plan channels = plan prefix + number (M06, WX1). Omit to let "
+    "consumers abbreviate the full name automatically."
+)
 
 
 class ChannelPlanChannel(BaseModel):
@@ -369,11 +453,65 @@ class ChannelPlanChannel(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     name: str
-    freq_mhz: float = Field(gt=0)
-    tx_freq_mhz: Optional[float] = Field(default=None, gt=0)
+    short_name: Optional[str] = Field(
+        default=None,
+        max_length=SHORT_NAME_MAX_LEN,
+        pattern=_SHORT_NAME_PATTERN,
+        description=_SHORT_NAME_DESCRIPTION,
+    )
+    freq_mhz: float = Field(
+        gt=0,
+        description=(
+            "Frequency the channel's transmitting station radiates on -- the "
+            "coast station, repeater output, or broadcaster."
+        ),
+    )
+    rx_freq_mhz: Optional[float] = Field(
+        default=None,
+        gt=0,
+        description=(
+            "Frequency that same station receives on, for duplex channels. "
+            "Omit for simplex."
+        ),
+    )
     notes: Optional[str] = None
-    emission: Optional[str] = None
+    emission: Optional[str] = Field(
+        default=None,
+        description="Shorthand for a channel permitting a single emission.",
+    )
     bandwidth_khz: Optional[float] = Field(default=None, gt=0)
+    emissions: Optional[List[Emission]] = Field(
+        default=None,
+        description=(
+            "Every emission this channel permits, most typical first. Use "
+            "instead of `emission` when more than one is allowed."
+        ),
+    )
+
+    @model_validator(mode="after")
+    def _one_emission_style(self) -> "ChannelPlanChannel":
+        if self.emissions is not None:
+            if self.emission is not None:
+                raise ValueError(
+                    f"channel '{self.name}' sets both `emission` and `emissions`. "
+                    "Use `emission` for a single permitted emission, or list them "
+                    "all under `emissions`."
+                )
+            if not self.emissions:
+                raise ValueError(
+                    f"channel '{self.name}' has an empty `emissions` list. Omit "
+                    "the key, or list at least one emission."
+                )
+        return self
+
+    def permitted_emissions(self) -> List[Emission]:
+        """Emissions this channel allows, whichever style declared them."""
+
+        if self.emissions:
+            return list(self.emissions)
+        if self.emission:
+            return [Emission(emission=self.emission, bandwidth_khz=self.bandwidth_khz)]
+        return []
 
 
 class ChannelPlan(BaseModel):
@@ -385,11 +523,28 @@ class ChannelPlan(BaseModel):
     name: str
     channels: List[ChannelPlanChannel]
     service: Optional[str] = None
+    emissions: Optional[List[Emission]] = Field(
+        default=None,
+        description=(
+            "Emissions permitted on every channel in the plan, most typical "
+            "first. Saves repeating a service-wide rule -- US CB allows AM, "
+            "SSB, and FM on all 40 -- on each channel. A channel that "
+            "declares its own `emission` or `emissions` overrides this."
+        ),
+    )
 
     @field_validator("service", mode="before")
     @classmethod
     def _normalize_service(cls, value: Any) -> Optional[str]:
         return _normalize_service_optional(value)
+
+    @model_validator(mode="after")
+    def _apply_plan_emissions(self) -> "ChannelPlan":
+        if self.emissions:
+            for channel in self.channels:
+                if channel.emission is None and channel.emissions is None:
+                    channel.emissions = list(self.emissions)
+        return self
 
 
 class Authorization(BaseModel):
@@ -444,6 +599,15 @@ class Assignment(BaseModel):
     #: ``channel_name`` selects exactly one channel from the plan; ignored for
     #: ``rf_chain_id`` assignments, which already name their own channel.
     display_name: Optional[str] = None
+    #: Applies directly to ``rf_chain_id`` assignments; for ``channel_plan_id``
+    #: assignments it overrides the plan channel's own ``short_name`` under the
+    #: same single-channel rule as ``display_name``.
+    short_name: Optional[str] = Field(
+        default=None,
+        max_length=SHORT_NAME_MAX_LEN,
+        pattern=_SHORT_NAME_PATTERN,
+        description=_SHORT_NAME_DESCRIPTION,
+    )
     usage: str
     service: Optional[str] = None
     authorization_id: Optional[str] = None
@@ -527,15 +691,28 @@ def _extract_reference_payload(data: Any) -> Dict[str, Any]:
                 for ch in channels:
                     if not isinstance(ch, dict):
                         continue
+                    # The surrounding whitelist would drop this silently, and a
+                    # silently halved duplex pair is worse than a load failure.
+                    if "tx_freq_mhz" in ch:
+                        raise ValueError(
+                            f"channel {ch.get('name', '?')!r} uses `tx_freq_mhz`, "
+                            "removed in SSRF-Lite 0.9.0. Channel plans now describe "
+                            "the transmitting station: `freq_mhz` is what it "
+                            "radiates and `rx_freq_mhz` is what it receives. The "
+                            "old `tx_freq_mhz` value is the station's receive "
+                            "frequency, so rename the key and keep the value."
+                        )
                     channel_copy = {
                         key: ch[key]
                         for key in (
                             "name",
+                            "short_name",
                             "freq_mhz",
-                            "tx_freq_mhz",
+                            "rx_freq_mhz",
                             "notes",
                             "emission",
                             "bandwidth_khz",
+                            "emissions",
                         )
                         if key in ch
                     }
@@ -581,6 +758,7 @@ __all__ = [
     "ChannelPlan",
     "ChannelPlanChannel",
     "Contact",
+    "Emission",
     "Location",
     "Mode",
     "Organization",

@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "Zion 550 listing on MyGMRS"
@@ -26,15 +26,15 @@ rf_chains:
   - id: chain_gmrs_zion_550
     station_id: stn_gmrs_zion_550
     tx:
-      freq_mhz: 467.550
+      freq_mhz: 462.550
       emission: "20K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.550
+      freq_mhz: 467.550
     mode:
       type: "FM"
-      ctcss_tx_hz: 225.7
-      ctcss_rx_hz: 141.3
+      ctcss_rx_hz: 225.7
+      ctcss_tx_hz: 141.3
 
 assignments:
   - id: asgn_gmrs_zion_550

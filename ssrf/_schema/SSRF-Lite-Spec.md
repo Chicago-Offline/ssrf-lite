@@ -2,8 +2,8 @@
 
 *A pragmatic spectrum data model for codeplug generation*  
 
-Version: **0.8.0**  
-Last updated: 2026-09-11  
+Version: **0.9.0**  
+Last updated: 2026-09-29  
 
 ---
 
@@ -38,9 +38,9 @@ Every SSRF-Lite YAML document carries two schema-association headers so that
 editors and CI can validate it **without importing the Python models**:
 
 ```yaml
-# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ```
 
 - The `# yaml-language-server:` modeline enables live validation in editors such
@@ -49,10 +49,10 @@ ssrf_lite_version: "0.8.0"
 - The top-level `$schema` key lets CI tools (e.g. `check-jsonschema`) discover the
   schema. Its value is a path relative to the file.
 - `ssrf_lite_version` pins the spec revision the file targets and must match the
-  shipped schema (`0.8.0`).
+  shipped schema (`0.9.0`).
 
 The versioned JSON Schema lives beside this document at
-[`ssrf-lite-0.8.0.schema.json`](./ssrf-lite-0.8.0.schema.json) and is generated
+[`ssrf-lite-0.9.0.schema.json`](./ssrf-lite-0.9.0.schema.json) and is generated
 from the Pydantic models via `generate_ssrf_schema.py`. Optional, non-normative
 metadata keys (`ssrf_lite.sources`, `comments`) and the normative `overrides`
 block are permitted alongside the reference entities.
@@ -217,35 +217,42 @@ Fields:
 
 Bundled **Transmitter + Receiver + Mode**. Reference-only facts (frequencies, emissions, and modulation metadata) live here; codeplug behaviors are defined elsewhere.  
 
+> **Perspective.** Every RF chain is written from the point of view of the
+> station it belongs to, matching SSRF, where a `Transmitter` describes what a
+> piece of equipment radiates and a `Receiver` what it tunes. `tx` is therefore
+> a repeater's **output** and `rx` its **input** — never the other way round.
+> The same applies to the tones: `ctcss_tx_hz` is what the station sends,
+> `ctcss_rx_hz` what it requires to be keyed up.
+
 ```yaml
 rf_chains:
   - id: chain_ns9rc_440_fm
     station_id: stn_ns9rc_440
     antenna_id: ant_ns9rc_440
     tx:
-      freq_mhz: 447.725       # radio transmit / repeater input (+5 MHz above output)
+      freq_mhz: 442.725       # repeater output
       power_w: 80             # ERP approx
       emission: "16K0F3E"     # FM voice, wideband (25 kHz)
       bandwidth_khz: 25
     rx:
-      freq_mhz: 442.725       # radio receive / repeater output (what the radio listens to)
+      freq_mhz: 447.725       # repeater input (+5 MHz above output)
     mode:
       type: "FM"
-      ctcss_tx_hz: 114.8
-      ctcss_rx_hz: 114.8
-      dcs_tx_code: "023"      # DCS transmit code (optional)
+      ctcss_tx_hz: 114.8      # tone sent on the output
+      ctcss_rx_hz: 114.8      # tone required on the input
+      dcs_tx_code: "023"      # DCS code sent on the output (optional)
       dcs_tx_polarity: "N"   # N (normal, default) or I (inverted)
-      dcs_rx_code: "023"      # DCS receive code (optional)
+      dcs_rx_code: "023"      # DCS code required on the input (optional)
       dcs_rx_polarity: "N"   # N (normal, default) or I (inverted)
 
   - id: chain_n9kd_444_dmr
     station_id: stn_n9kd
     antenna_id: ant_n9kd
     tx:
-      freq_mhz: 449.000
+      freq_mhz: 444.000
       emission: "7K60FXE"     # DMR voice/data
     rx:
-      freq_mhz: 444.000
+      freq_mhz: 449.000
     mode:
       type: "DMR"
       color_code: 0
@@ -258,7 +265,7 @@ Fields:
 - `id`, `station_id`  
 - `antenna_id` (optional ref → Antenna)  
 - `tx`: `freq_mhz?`, `power_w?`, `emission?`, `bandwidth_khz?` (all positive when present)  
-- `rx`: `freq_mhz` (required, > 0), `sensitivity_dbm?`  
+- `rx`: `freq_mhz?`, `sensitivity_dbm?`  
 - `mode`:  
   - `type` (closed vocabulary; see §2.0)  
   - `notes?` (optional descriptive string)  
@@ -278,13 +285,24 @@ Fields:
 
 For multi-site DMR systems, capture each repeater as an `rf_chain` and centralize talkgroup metadata in `contacts`. See `chicagoland_dmr_system.yml` for a working example.
 
+A chain must set at least one of `tx.freq_mhz` / `rx.freq_mhz`:
+
+| Case | `tx.freq_mhz` | `rx.freq_mhz` |
+|---|---|---|
+| Duplex repeater | output | input |
+| Simplex | frequency | *omit* |
+| Output logged, input unconfirmed | output | *omit* — don't guess an offset |
+| Receive-only site (voting RX) | *omit* | frequency |
+
 
 
 ### 2.6 Channel Plan
 
 Reusable collections (NOAA, Marine, GMRS interstitials). Channel plans remain purely descriptive references—no profile or scan behavior is defined here.  
 
-`freq_mhz` is the receive frequency and is also used for transmit on simplex channels. Duplex channels set `tx_freq_mhz` to the separate transmit frequency.
+`freq_mhz` is the frequency the channel's **transmitting station** radiates on — the coast station, repeater output, or broadcaster. Duplex channels add `rx_freq_mhz` for the frequency that same station receives on. Simplex channels omit it.
+
+Where a service permits several incompatible modulations on one frequency, list them under `emissions` (most typical first) instead of the single `emission` key. A plan-level `emissions` block applies to every channel that does not declare its own. Setting both `emission` and `emissions` on one channel is an error.
 
 ```yaml
 channel_plans:
@@ -298,21 +316,42 @@ channel_plans:
         bandwidth_khz: 25
         notes: "Intership safety"
       - name: "Ch 20"
-        freq_mhz: 161.600
-        tx_freq_mhz: 157.000
+        freq_mhz: 161.600     # coast station transmit
+        rx_freq_mhz: 157.000  # coast station receive
+
+  - id: chplan_us_cb
+    name: "US CB (Citizens Band)"
+    service: "cb"
+    emissions:                # applies to every channel below
+      - emission: "8K00A3E"
+        mode: "AM"
+        bandwidth_khz: 8
+        power_w: 4
+      - emission: "4K00J3E"
+        mode: "USB"           # J3E alone can't distinguish USB from LSB
+        bandwidth_khz: 4
+        power_w: 12
+    channels:
+      - name: "CB 01"
+        freq_mhz: 26.9650
 ```
 
 Fields:  
 
 - `id`, `name`  
 - `service` (optional; see §2.0)  
+- `emissions[]` (optional; default for every channel in the plan)  
 - `channels[]`:  
   - `name` (string)  
+  - `short_name` (optional)  
   - `freq_mhz` (> 0)  
-  - `tx_freq_mhz` (optional, > 0)  
+  - `rx_freq_mhz` (optional, > 0)  
   - `emission` (optional ITU designator)  
   - `bandwidth_khz` (optional, > 0)  
+  - `emissions[]` (optional; mutually exclusive with `emission`)  
   - `notes` (optional)  
+
+Each `emissions[]` entry carries `emission` (required ITU designator), plus optional `mode`, `bandwidth_khz`, `power_w`, and `notes`. Set `mode` where the designator is ambiguous — `J3E` covers both `USB` and `LSB`.  
 
 ---
 
@@ -504,12 +543,19 @@ rf_chains:
 | Location | `locations[]` | same (no site elevation) |
 | Station | `stations[]` | same |
 | Antenna | `antennas[]` | same, + `height_agl_m` / `height_amsl_m` |
-| Equipment / Tx / Rx / TxMode / RxMode | `rf_chains[]` | consolidated |
+| Equipment / Tx / Rx / TxMode / RxMode | `rf_chains[]` | consolidated; same station-centric perspective |
 | ChannelPlan / ChannelFreq | `channel_plans[]` | same |
 | Authorization | `authorizations[]` | same |
 | Assignment | `assignments[]` | same intent, policy fields removed |
 | Contacts (not in SSRF) | `contacts[]` | **added** for DMR convenience |
 | Codeplug / Zones | *(policy layer)* | handled via policy documents |
+
+SSRF describes spectrum from the equipment outward: a `Transmitter`'s
+frequencies are what that transmitter emits, a `Receiver`'s are what it tunes,
+and `StationConfig.Type` labels a station `Transmit Only` / `Receive Only` /
+`Transmit-Receive` from its own point of view. SSRF-Lite keeps that rule, which
+is why a repeater's `tx` is its output. Mirroring into the operator's frame of
+reference is a consumer concern, handled once in `codeplug.json`.
 
 ### 3.2 Profiles & Policies interface
 
@@ -551,6 +597,23 @@ This spec now demonstrates:
 
 ## 7. Migration Notes
 
+- **Station perspective (v0.9.0)**: **breaking.** RF chains and channel plans
+  are now written from the perspective of the station being described, matching
+  SSRF (§3.1). A repeater's `tx` is its **output** and its `rx` is its
+  **input** — the reverse of 0.8.0, which recorded both from the operator
+  radio's side. The mode tones moved with them: `ctcss_tx_hz` / `dcs_tx_code`
+  are what the station sends, `ctcss_rx_hz` / `dcs_rx_code` what it requires to
+  be keyed up. `rx.freq_mhz` is no longer required, and a chain must now set at
+  least one of `tx.freq_mhz` / `rx.freq_mhz`. On channel plans `tx_freq_mhz` is
+  renamed `rx_freq_mhz` and keeps its value; loading a document that still uses
+  `tx_freq_mhz` is an error rather than a silent drop. Run
+  `python migrate_0_8_to_0_9.py [ROOT ...]` to convert a tree, including private
+  overlays — it verifies that the swap is the only change it made.
+- **Multi-emission channels (v0.9.0)**: new optional `emissions[]` on channel
+  plans and their channels, for services permitting several incompatible
+  modulations on one frequency (US CB allows AM, SSB, and FM on all 40).
+  Additive. A plan-level block applies to every channel that does not declare
+  its own; `emission` and `emissions` are mutually exclusive on a channel.
 - **`verified` (v0.7.0)**: new optional block on `assignments[]`. Purely additive — existing documents remain valid in content, but the `ssrf_lite_version` const and `$schema` path both move to `0.7.0`, so headers must be restamped (`make stamp-headers`). Validators pinned to the 0.6.0 schema will reject documents carrying `verified`, since assignments are `additionalProperties: false`.
 - **`verified` on `rf_chains[]` (v0.8.0)**: the same block is now accepted on RF chains, so radio parameters can be confirmed independently of the operational use that references them. Additive; headers move to `0.8.0` and must be restamped. The `monitor` method was also widened to cover **attended** receive-only observation, not just unattended captures — no data change, but the old wording excluded "I heard it on my scanner", which is the most common way a receive-only channel gets confirmed.
 

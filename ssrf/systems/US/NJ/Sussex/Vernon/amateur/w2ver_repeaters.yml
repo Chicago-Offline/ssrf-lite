@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "RadioReference - Sussex County, NJ Amateur Radio Repeaters"
@@ -90,73 +90,73 @@ rf_chains:
     station_id: stn_w2ver_6m
     antenna_id: ant_w2ver_6m
     tx:
-      freq_mhz: 50.720 # -1.0 MHz input
+      freq_mhz: 51.720
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 51.720
+      freq_mhz: 50.720 # -1.0 MHz input
     mode:
       type: "FM"
-      ctcss_tx_hz: 136.5
       ctcss_rx_hz: 136.5
+      ctcss_tx_hz: 136.5
       notes: "ARES/RACES 6m repeater."
 
   - id: chain_w2ver_2m_fm
     station_id: stn_w2ver_2m
     antenna_id: ant_w2ver_2m
     tx:
-      freq_mhz: 146.325 # -600 kHz input
+      freq_mhz: 146.925
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 146.925
+      freq_mhz: 146.325 # -600 kHz input
     mode:
       type: "FM"
-      ctcss_tx_hz: 151.4
       ctcss_rx_hz: 151.4
+      ctcss_tx_hz: 151.4
       notes: "RACES / Skywarn primary 2m repeater."
 
   - id: chain_w2ver_70cm_fm
     station_id: stn_w2ver_70cm
     antenna_id: ant_w2ver_70cm
     tx:
-      freq_mhz: 444.075 # -5 MHz input
+      freq_mhz: 449.075
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 449.075
+      freq_mhz: 444.075 # -5 MHz input
     mode:
       type: "FM"
-      ctcss_tx_hz: 141.3
       ctcss_rx_hz: 141.3
+      ctcss_tx_hz: 141.3
 
   - id: chain_w2ver_33cm_vernon_fm
     station_id: stn_w2ver_33cm_vernon
     antenna_id: ant_w2ver_33cm_vernon
     tx:
-      freq_mhz: 906.075 # -12 MHz input
+      freq_mhz: 918.075
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
-      freq_mhz: 918.075
+      freq_mhz: 906.075 # -12 MHz input
     mode:
       type: "FM"
-      ctcss_tx_hz: 141.3
       ctcss_rx_hz: 141.3
+      ctcss_tx_hz: 141.3
 
   - id: chain_w2ver_33cm_hardyston_fm
     station_id: stn_w2ver_33cm_hardyston
     antenna_id: ant_w2ver_33cm_hardyston
     tx:
-      freq_mhz: 902.3375 # -25 MHz input
+      freq_mhz: 927.3375
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
-      freq_mhz: 927.3375
+      freq_mhz: 902.3375 # -25 MHz input
     mode:
       type: "FM"
-      ctcss_tx_hz: 141.3
       ctcss_rx_hz: 141.3
+      ctcss_tx_hz: 141.3
 
 authorizations:
   - id: auth_fcc_amateur_t

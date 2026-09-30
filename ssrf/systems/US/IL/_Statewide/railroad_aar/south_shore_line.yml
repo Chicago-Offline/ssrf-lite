@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "Illinois Railroads - RadioReference DB"
@@ -56,11 +56,11 @@ rf_chains:
     station_id: stn_css_west
     antenna_id: ant_css_west
     rx: { freq_mhz: 161.025 }
-    tx: { freq_mhz: 161.025, emission: "11K2F3E" }
+    tx: { freq_mhz: 161.025, emission: "11K2F3E"  }
     mode:
       type: "FM"
-      ctcss_tx_hz: 173.8
       ctcss_rx_hz: 173.8
+      ctcss_tx_hz: 173.8
       notes: "Simplex (on repeater output) Chicago–Kensington; shared with Metra Electric AAR 61"
 
   # AAR 83 — Kensington to South Bend (repeater)
@@ -68,11 +68,11 @@ rf_chains:
     station_id: stn_css_east
     antenna_id: ant_css_east_rep
     rx: { freq_mhz: 161.355 }
-    tx: { freq_mhz: 161.355, emission: "11K2F3E" }
+    tx: { freq_mhz: 161.355, emission: "11K2F3E"  }
     mode:
       type: "FM"
-      ctcss_tx_hz: 173.8
       ctcss_rx_hz: 173.8
+      ctcss_tx_hz: 173.8
       notes: "Repeater Kensington–South Bend; simplex between Gary and Rolling Prairie"
 
   # AAR 66 — Maintenance of Way
@@ -80,7 +80,7 @@ rf_chains:
     station_id: stn_css_east
     antenna_id: ant_css_east_rep
     rx: { freq_mhz: 161.100 }
-    tx: { freq_mhz: 161.100, emission: "11K2F3E" }
+    tx: { freq_mhz: 161.100, emission: "11K2F3E"  }
     mode: { type: "FM" }
 
 assignments:

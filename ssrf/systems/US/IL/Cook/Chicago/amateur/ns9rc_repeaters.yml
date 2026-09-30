@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "NS9RC - Repeaters"
@@ -147,26 +147,26 @@ rf_chains:
     station_id: stn_ns9rc_2m
     antenna_id: ant_ns9rc_2m
     tx:
-      freq_mhz: 147.945 # +0.6 input
+      freq_mhz: 147.345
       power_w: 50
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 147.345
+      freq_mhz: 147.945 # +0.6 input
     mode:
       type: "FM"
-      ctcss_tx_hz: 107.2
       ctcss_rx_hz: 107.2
+      ctcss_tx_hz: 107.2
   - id: chain_ns9rc_2m_c4fm
     station_id: stn_ns9rc_2m
     antenna_id: ant_ns9rc_2m
     tx:
-      freq_mhz: 147.945
+      freq_mhz: 147.345
       power_w: 50
       emission: "8K50F7W"
       bandwidth_khz: 12.5
     rx:
-      freq_mhz: 147.345
+      freq_mhz: 147.945
     mode:
       type: "C4FM"
 
@@ -175,42 +175,42 @@ rf_chains:
     station_id: stn_ns9rc_220
     antenna_id: ant_ns9rc_220
     tx:
-      freq_mhz: 222.720 # -1.6 input
+      freq_mhz: 224.320
       power_w: 60
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 224.320
+      freq_mhz: 222.720 # -1.6 input
     mode:
       type: "FM"
-      ctcss_tx_hz: 110.9
       ctcss_rx_hz: 110.9
+      ctcss_tx_hz: 110.9
 
   # 440 MHz analog repeater
   - id: chain_ns9rc_440_fm
     station_id: stn_ns9rc_440
     antenna_id: ant_ns9rc_440
     tx:
-      freq_mhz: 447.725 # +5 input
+      freq_mhz: 442.725
       power_w: 80
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 442.725
+      freq_mhz: 447.725 # +5 input
     mode:
       type: "FM"
-      ctcss_tx_hz: 114.8
       ctcss_rx_hz: 114.8
+      ctcss_tx_hz: 114.8
 
   # D-STAR systems (DV)
   - id: chain_ns9rc_dstar_440
     station_id: stn_ns9rc_dstar_440
     antenna_id: ant_ns9rc_dstar
     tx:
-      freq_mhz: 447.09375
+      freq_mhz: 442.09375
       emission: "6K00F7E"
     rx:
-      freq_mhz: 442.09375
+      freq_mhz: 447.09375
     mode:
       type: "D-STAR"
       notes: "Linked to Talk Group 51C (D-STAR reflector)"
@@ -218,10 +218,10 @@ rf_chains:
     station_id: stn_ns9rc_dstar_23cm
     antenna_id: ant_ns9rc_dstar_23cm
     tx:
-      freq_mhz: 1272.200
+      freq_mhz: 1292.200
       emission: "6K00F7E"
     rx:
-      freq_mhz: 1292.200
+      freq_mhz: 1272.200
     mode:
       type: "D-STAR"
 
@@ -300,8 +300,8 @@ rf_chains:
       freq_mhz: 446.025
     mode:
       type: "FM"
-      ctcss_tx_hz: 114.8
       ctcss_rx_hz: 114.8
+      ctcss_tx_hz: 114.8
   - id: chain_ns9rc_simplex_147_405
     station_id: stn_ns9rc_2m
     antenna_id: ant_ns9rc_2m
@@ -313,8 +313,8 @@ rf_chains:
       freq_mhz: 147.405
     mode:
       type: "FM"
-      dcs_tx_code: "073"
       dcs_rx_code: "073"
+      dcs_tx_code: "073"
   - id: chain_ns9rc_simplex_146_460
     station_id: stn_ns9rc_2m
     antenna_id: ant_ns9rc_2m

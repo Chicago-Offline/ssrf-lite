@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "Illinois Railroads - RadioReference DB"
@@ -69,7 +69,7 @@ rf_chains:
     station_id: stn_metra_road
     antenna_id: ant_metra_road
     rx: { freq_mhz: 160.305 }
-    tx: { freq_mhz: 160.305, emission: "11K2F3E" }
+    tx: { freq_mhz: 160.305, emission: "11K2F3E"  }
     mode: { type: "FM" }
 
   # SW Service: 21st St to Manhattan (AAR 22) — license WNQU573
@@ -77,7 +77,7 @@ rf_chains:
     station_id: stn_metra_road
     antenna_id: ant_metra_road
     rx: { freq_mhz: 160.440 }
-    tx: { freq_mhz: 160.440, emission: "11K2F3E" }
+    tx: { freq_mhz: 160.440, emission: "11K2F3E"  }
     mode: { type: "FM" }
 
   # Milwaukee District North (AAR 44) — license KFW518
@@ -85,7 +85,7 @@ rf_chains:
     station_id: stn_metra_road
     antenna_id: ant_metra_road
     rx: { freq_mhz: 160.770 }
-    tx: { freq_mhz: 160.770, emission: "11K2F3E" }
+    tx: { freq_mhz: 160.770, emission: "11K2F3E"  }
     mode: { type: "FM" }
 
   # Milwaukee District West (AAR 94) — license KFW519
@@ -93,7 +93,7 @@ rf_chains:
     station_id: stn_metra_road
     antenna_id: ant_metra_road
     rx: { freq_mhz: 161.520 }
-    tx: { freq_mhz: 161.520, emission: "11K2F3E" }
+    tx: { freq_mhz: 161.520, emission: "11K2F3E"  }
     mode: { type: "FM" }
 
   # Metra Electric (AAR 61) — license WNMV660, PL 173.8
@@ -101,15 +101,15 @@ rf_chains:
     station_id: stn_metra_road
     antenna_id: ant_metra_road
     rx: { freq_mhz: 161.025 }
-    tx: { freq_mhz: 161.025, emission: "11K2F3E" }
-    mode: { type: "FM", ctcss_tx_hz: 173.8, ctcss_rx_hz: 173.8 }
+    tx: { freq_mhz: 161.025, emission: "11K2F3E"  }
+    mode: { type: "FM", ctcss_rx_hz: 173.8, ctcss_tx_hz: 173.8 }
 
   # Heritage Corridor (AAR 54) — license KNFX766
   - id: chain_metra_54_heritage
     station_id: stn_metra_road
     antenna_id: ant_metra_road
     rx: { freq_mhz: 160.920 }
-    tx: { freq_mhz: 160.920, emission: "11K2F3E" }
+    tx: { freq_mhz: 160.920, emission: "11K2F3E"  }
     mode: { type: "FM" }
 
   # Rock Island District (AAR 82) — license KSB864
@@ -117,7 +117,7 @@ rf_chains:
     station_id: stn_metra_road
     antenna_id: ant_metra_road
     rx: { freq_mhz: 161.340 }
-    tx: { freq_mhz: 161.340, emission: "11K2F3E" }
+    tx: { freq_mhz: 161.340, emission: "11K2F3E"  }
     mode: { type: "FM" }
 
   # UP-North Ogilvie (AAR 52) — no license listed
@@ -125,7 +125,7 @@ rf_chains:
     station_id: stn_metra_road
     antenna_id: ant_metra_road
     rx: { freq_mhz: 160.890 }
-    tx: { freq_mhz: 160.890, emission: "11K2F3E" }
+    tx: { freq_mhz: 160.890, emission: "11K2F3E"  }
     mode: { type: "FM" }
 
   # UP-North Clybourn-Kenosha (AAR 62) — no license listed
@@ -133,7 +133,7 @@ rf_chains:
     station_id: stn_metra_road
     antenna_id: ant_metra_road
     rx: { freq_mhz: 161.040 }
-    tx: { freq_mhz: 161.040, emission: "11K2F3E" }
+    tx: { freq_mhz: 161.040, emission: "11K2F3E"  }
     mode: { type: "FM" }
 
   # Passenger Services (AAR 74) — license WNBG753
@@ -141,7 +141,7 @@ rf_chains:
     station_id: stn_metra_road
     antenna_id: ant_metra_road
     rx: { freq_mhz: 161.220 }
-    tx: { freq_mhz: 161.220, emission: "11K2F3E" }
+    tx: { freq_mhz: 161.220, emission: "11K2F3E"  }
     mode: { type: "FM" }
 
   # --- Police channels ---
@@ -150,15 +150,15 @@ rf_chains:
     station_id: stn_metra_pd
     antenna_id: ant_metra_pd
     rx: { freq_mhz: 160.605 }
-    tx: { freq_mhz: 160.605, emission: "11K2F3E" }
-    mode: { type: "FM", ctcss_tx_hz: 146.2, ctcss_rx_hz: 146.2 }
+    tx: { freq_mhz: 160.605, emission: "11K2F3E"  }
+    mode: { type: "FM", ctcss_rx_hz: 146.2, ctcss_tx_hz: 146.2 }
 
   # Police (AAR 35) — license WNBG753
   - id: chain_metra_35_pd
     station_id: stn_metra_pd
     antenna_id: ant_metra_pd
     rx: { freq_mhz: 160.635 }
-    tx: { freq_mhz: 160.635, emission: "11K2F3E" }
+    tx: { freq_mhz: 160.635, emission: "11K2F3E"  }
     mode: { type: "FM" }
 
   # Police — license KFW518 (161.610 is above the AAR allocation ceiling; public_safety_part90)
@@ -166,7 +166,7 @@ rf_chains:
     station_id: stn_metra_pd_uhf
     antenna_id: ant_metra_pd_uhf
     rx: { freq_mhz: 161.610 }
-    tx: { freq_mhz: 161.610, emission: "11K2F3E" }
+    tx: { freq_mhz: 161.610, emission: "11K2F3E"  }
     mode: { type: "FM" }
 
   # Police Mobile Extenders (UHF) — license WPTW445, PL 77.0
@@ -174,8 +174,8 @@ rf_chains:
     station_id: stn_metra_pd_uhf
     antenna_id: ant_metra_pd_uhf
     rx: { freq_mhz: 453.4875 }
-    tx: { freq_mhz: 453.4875, emission: "11K2F3E" }
-    mode: { type: "FM", ctcss_tx_hz: 77.0, ctcss_rx_hz: 77.0 }
+    tx: { freq_mhz: 453.4875, emission: "11K2F3E"  }
+    mode: { type: "FM", ctcss_rx_hz: 77.0, ctcss_tx_hz: 77.0 }
 
   # --- NXDN repeater ---
   # Chicago Union Station Ops — license WQXZ480 (150.890 MHz; public_safety_part90)
@@ -183,7 +183,7 @@ rf_chains:
     station_id: stn_metra_nxdn
     antenna_id: ant_metra_nxdn
     rx: { freq_mhz: 150.890 }
-    tx: { freq_mhz: 150.890, emission: "6K00FXE" }
+    tx: { freq_mhz: 150.890, emission: "6K00FXE"  }
     mode: { type: "NXDN", nxdn_ran: null, notes: "NXDN48; Chicago Union Station Ops" }
 
 assignments:

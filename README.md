@@ -72,9 +72,15 @@ Each record has the shape:
 }
 ```
 
-Frequencies are radio-centric (`rx_mhz`/`tx_mhz` are what the operator's radio
-listens to and transmits on); for simplex channels the two are equal. CTCSS/DCS
-values are the tones the radio must encode to key the far end.
+Frequencies in `codeplug.json` are **radio-centric**: `rx_mhz` is what the
+operator's radio listens to and `tx_mhz` is what it transmits, so for simplex
+channels the two are equal. CTCSS/DCS values are the tones the radio must
+encode to key the far end.
+
+This is the mirror image of the SSRF-Lite library itself, where every record is
+written from the perspective of the **station being described** — a repeater's
+`tx` is its output and its `rx` is its input. The generator flips it once, here,
+so consumers never have to.
 
 ## Private SSRF overlays
 

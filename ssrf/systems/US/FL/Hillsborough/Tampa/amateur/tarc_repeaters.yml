@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 "ssrf_lite":
   sources:
     - name: "Tampa Amateur Radio Club – Repeater Information"
@@ -67,38 +67,38 @@ rf_chains:
     station_id: stn_tarc_vhf
     antenna_id: ant_tarc_vhf
     tx:
-      freq_mhz: 147.705
+      freq_mhz: 147.105
       emission: "11K2F3E"
     rx:
-      freq_mhz: 147.105
+      freq_mhz: 147.705
     mode:
       type: "FM"
-      ctcss_tx_hz: 146.2
       ctcss_rx_hz: 146.2
+      ctcss_tx_hz: 146.2
   - id: chain_tarc_uhf1_fm
     station_id: stn_tarc_uhf1
     antenna_id: ant_tarc_uhf1
     tx:
-      freq_mhz: 449.75
+      freq_mhz: 444.75
       emission: "11K2F3E"
     rx:
-      freq_mhz: 444.75
+      freq_mhz: 449.75
     mode:
       type: "FM"
-      ctcss_tx_hz: 146.2
       ctcss_rx_hz: 146.2
+      ctcss_tx_hz: 146.2
   - id: chain_tarc_uhf2_fm
     station_id: stn_tarc_uhf2
     antenna_id: ant_tarc_uhf2
     tx:
-      freq_mhz: 448.025
+      freq_mhz: 443.025
       emission: "11K2F3E"
     rx:
-      freq_mhz: 443.025
+      freq_mhz: 448.025
     mode:
       type: "FM"
-      ctcss_tx_hz: 146.2
       ctcss_rx_hz: 146.2
+      ctcss_tx_hz: 146.2
 
 authorizations:
   - id: auth_fcc_amateur_t

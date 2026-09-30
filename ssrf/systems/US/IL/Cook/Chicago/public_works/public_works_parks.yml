@@ -1,10 +1,10 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
 # SSRF-Lite: Public Works & Parks (UHF FM/DMR, RX-only)
 # Chicago municipal operations: Streets & Sanitation (DSS), Park District, and Forest Preserves of Cook County.
 # RX-only monitoring. Frequencies and modes can vary by district and may change.
 
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 organizations:
   - id: org_muni
     name: "Public Works & Parks"
@@ -29,30 +29,22 @@ antennas:
 
 rf_chains:
   # Chicago Streets & Sanitation (example district channels; FM conventional)
-  - {id: ch_dss_north_1, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 460.1375},
-    tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
-  - {id: ch_dss_north_2, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 
-        460.1875}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
-  - {id: ch_dss_south_1, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 
-        460.2625}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
-  - {id: ch_dss_snow_ops, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 
-        453.900}, tx: {emission: "7K60FXE"}, mode: {type: "DMR", color_code: 11, 
+  - {id: ch_dss_north_1, station_id: stn_muni, antenna_id: ant_m, tx: { freq_mhz: 460.1375, emission: "11K2F3E" }, mode: {type: "FM"}}
+  - {id: ch_dss_north_2, station_id: stn_muni, antenna_id: ant_m, tx: { freq_mhz: 460.1875, emission: "11K2F3E" }, mode: {type: "FM"}}
+  - {id: ch_dss_south_1, station_id: stn_muni, antenna_id: ant_m, tx: { freq_mhz: 460.2625, emission: "11K2F3E" }, mode: {type: "FM"}}
+  - {id: ch_dss_snow_ops, station_id: stn_muni, antenna_id: ant_m, tx: { freq_mhz: 453.900, emission: "7K60FXE" }, mode: {type: "DMR", color_code: 11, 
         timeslots: [1, 2]}}
 
   # Chicago Park District Ops/Security (mix of FM/DMR conventional by site)
-  - {id: ch_cpdistrict_ops1, station_id: stn_muni, antenna_id: ant_m, rx: {
-        freq_mhz: 462.7125}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
-  - {id: ch_cpdistrict_ops2, station_id: stn_muni, antenna_id: ant_m, rx: {
-        freq_mhz: 463.2625}, tx: {emission: "7K60FXE"}, mode: {type: "DMR", 
+  - {id: ch_cpdistrict_ops1, station_id: stn_muni, antenna_id: ant_m, tx: { freq_mhz: 462.7125, emission: "11K2F3E" }, mode: {type: "FM"}}
+  - {id: ch_cpdistrict_ops2, station_id: stn_muni, antenna_id: ant_m, tx: { freq_mhz: 463.2625, emission: "7K60FXE" }, mode: {type: "DMR", 
         color_code: 1, timeslots: [1, 2], notes: "Color code NOT verified; 1 
         assumed as the commonest commercial default so the channel can be 
         programmed. Replace with an observed value."}}
 
   # Forest Preserves of Cook County (FPDCC) – maintenance/security
-  - {id: ch_fpdcc_ops1, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 
-        453.175}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
-  - {id: ch_fpdcc_ops2, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 
-        453.050}, tx: {emission: "7K60FXE"}, mode: {type: "DMR", color_code: 1, 
+  - {id: ch_fpdcc_ops1, station_id: stn_muni, antenna_id: ant_m, tx: { freq_mhz: 453.175, emission: "11K2F3E" }, mode: {type: "FM"}}
+  - {id: ch_fpdcc_ops2, station_id: stn_muni, antenna_id: ant_m, tx: { freq_mhz: 453.050, emission: "7K60FXE" }, mode: {type: "DMR", color_code: 1, 
         timeslots: [1, 2], notes: "Color code NOT verified; 1 assumed as the 
         commonest commercial default so the channel can be programmed. Replace 
         with an observed value."}}
@@ -60,19 +52,16 @@ rf_chains:
   # Chicago Department of Transportation (CDOT) & Streets/Sanitation
   # Source: RadioReference Cook County -> Chicago Department of Transportation
   # All RX-only monitoring. PL tones set where listed; conventional FM.
-  - {id: ch_cdot_streets_n12, station_id: stn_muni, antenna_id: ant_m, rx: {
-        freq_mhz: 453.650}, tx: {emission: "11K2F3E"}, mode: {type: "FM", 
-        ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2}}
-  - {id: ch_cdot_forestry_animal, station_id: stn_muni, antenna_id: ant_m, rx: {
-        freq_mhz: 453.725}, tx: {emission: "11K2F3E"}, mode: {type: "FM", 
-        ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2}}
+  - {id: ch_cdot_streets_n12, station_id: stn_muni, antenna_id: ant_m, tx: { freq_mhz: 453.650, emission: "11K2F3E" }, mode: {type: "FM", 
+        ctcss_tx_hz: 107.2, ctcss_rx_hz: 107.2}}
+  - {id: ch_cdot_forestry_animal, station_id: stn_muni, antenna_id: ant_m, tx: { freq_mhz: 453.725, emission: "11K2F3E" }, mode: {type: "FM", 
+        ctcss_tx_hz: 107.2, ctcss_rx_hz: 107.2}}
   # Expanded from flow style to carry a verification block.
   - id: ch_cdot_towing_parking
     station_id: stn_muni
     antenna_id: ant_m
-    rx: {freq_mhz: 453.775}
-    tx: {emission: "11K2F3E"}
-    mode: {type: "FM", ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2}
+    tx: { freq_mhz: 453.775, emission: "11K2F3E" }
+    mode: {type: "FM", ctcss_tx_hz: 107.2, ctcss_rx_hz: 107.2}
     verified:
       date: "2026-09-27"
       method: "monitor"
@@ -82,23 +71,17 @@ rf_chains:
         copy approximately 2300 local on 2026-09-27. Voice traffic on
         453.775 confirmed present. The listed 107.2 Hz CTCSS was not
         independently verified and remains as sourced from RadioReference.
-  - {id: ch_cdot_revenue_boot, station_id: stn_muni, antenna_id: ant_m, rx: {
-        freq_mhz: 453.825}, tx: {emission: "11K2F3E"}, mode: {type: "FM", 
-        ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2}}
-  - {id: ch_cdot_electricity_boe, station_id: stn_muni, antenna_id: ant_m, rx: {
-        freq_mhz: 453.975}, tx: {emission: "11K2F3E"}, mode: {type: "FM", 
-        ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2}}
-  - {id: ch_cdot_sewers_transport, station_id: stn_muni, antenna_id: ant_m, rx: {
-      freq_mhz: 453.675}, tx: {emission: "11K2F3E"}, mode: {type: "FM", 
-        ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2}}
-  - {id: ch_cdot_loop_ob3, station_id: stn_muni, antenna_id: ant_m, rx: {
-        freq_mhz: 453.100}, tx: {emission: "11K2F3E"}, mode: {type: "FM", 
-        ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2}}
-  - {id: ch_cdot_streets_s45, station_id: stn_muni, antenna_id: ant_m, rx: {
-        freq_mhz: 453.550}, tx: {emission: "11K2F3E"}, mode: {type: "FM", 
-        ctcss_rx_hz: 107.2, ctcss_tx_hz: 107.2}}
-  - {id: ch_cdot_paging, station_id: stn_muni, antenna_id: ant_m, rx: {freq_mhz: 
-        453.500}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
+  - {id: ch_cdot_revenue_boot, station_id: stn_muni, antenna_id: ant_m, tx: { freq_mhz: 453.825, emission: "11K2F3E" }, mode: {type: "FM", 
+        ctcss_tx_hz: 107.2, ctcss_rx_hz: 107.2}}
+  - {id: ch_cdot_electricity_boe, station_id: stn_muni, antenna_id: ant_m, tx: { freq_mhz: 453.975, emission: "11K2F3E" }, mode: {type: "FM", 
+        ctcss_tx_hz: 107.2, ctcss_rx_hz: 107.2}}
+  - {id: ch_cdot_sewers_transport, station_id: stn_muni, antenna_id: ant_m, tx: { freq_mhz: 453.675, emission: "11K2F3E" }, mode: {type: "FM", 
+        ctcss_tx_hz: 107.2, ctcss_rx_hz: 107.2}}
+  - {id: ch_cdot_loop_ob3, station_id: stn_muni, antenna_id: ant_m, tx: { freq_mhz: 453.100, emission: "11K2F3E" }, mode: {type: "FM", 
+        ctcss_tx_hz: 107.2, ctcss_rx_hz: 107.2}}
+  - {id: ch_cdot_streets_s45, station_id: stn_muni, antenna_id: ant_m, tx: { freq_mhz: 453.550, emission: "11K2F3E" }, mode: {type: "FM", 
+        ctcss_tx_hz: 107.2, ctcss_rx_hz: 107.2}}
+  - {id: ch_cdot_paging, station_id: stn_muni, antenna_id: ant_m, tx: { freq_mhz: 453.500, emission: "11K2F3E" }, mode: {type: "FM"}}
 
 assignments:
   - {id: asg_dss_n1, channel_name: "DSS North 1", rf_chain_id: ch_dss_north_1, usage: "simplex"}

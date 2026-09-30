@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "Amateur Radio Emergency Services Company - System Information"
@@ -78,25 +78,25 @@ rf_chains:
     station_id: stn_n9iaa_146
     antenna_id: ant_n9iaa_146
     tx:
-      freq_mhz: 146.085 # user transmit (600 kHz low)
+      freq_mhz: 146.685
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 146.685
+      freq_mhz: 146.085 # user transmit (600 kHz low)
     mode:
       type: "FM"
-      ctcss_tx_hz: 173.8
       ctcss_rx_hz: 173.8
+      ctcss_tx_hz: 173.8
       notes: "Voted multi-site network covering Indiana District 1."
 
   - id: chain_n9iaa_dmr_valpo
     station_id: stn_n9iaa_dmr_valpo
     antenna_id: ant_n9iaa_dmr_valpo
     tx:
-      freq_mhz: 446.350
+      freq_mhz: 441.350
       emission: "7K60FXE"
     rx:
-      freq_mhz: 441.350
+      freq_mhz: 446.350
     mode:
       type: "DMR"
       color_code: 1
@@ -107,10 +107,10 @@ rf_chains:
     station_id: stn_n9iaa_dmr_crown_point
     antenna_id: ant_n9iaa_dmr_crown_point
     tx:
-      freq_mhz: 449.350
+      freq_mhz: 444.350
       emission: "7K60FXE"
     rx:
-      freq_mhz: 444.350
+      freq_mhz: 449.350
     mode:
       type: "DMR"
       color_code: 1
@@ -121,10 +121,10 @@ rf_chains:
     station_id: stn_n9iaa_dmr_la_porte
     antenna_id: ant_n9iaa_dmr_la_porte
     tx:
-      freq_mhz: 449.350
+      freq_mhz: 444.350
       emission: "7K60FXE"
     rx:
-      freq_mhz: 444.350
+      freq_mhz: 449.350
     mode:
       type: "DMR"
       color_code: 1

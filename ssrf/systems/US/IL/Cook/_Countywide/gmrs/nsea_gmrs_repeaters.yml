@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "North Shore Emergency Association - Repeaters / Weekly Net / Contact"
@@ -66,54 +66,54 @@ rf_chains:
   - id: chain_nsea_675
     station_id: stn_nsea_675
     tx:
-      freq_mhz: 467.675
+      freq_mhz: 462.675
       emission: "20K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.675
+      freq_mhz: 467.675
     mode:
       type: "FM"
-      ctcss_tx_hz: 141.3
       ctcss_rx_hz: 141.3
+      ctcss_tx_hz: 141.3
 
   - id: chain_nsea_650
     station_id: stn_nsea_650
     tx:
-      freq_mhz: 467.650
+      freq_mhz: 462.650
       emission: "20K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.650
+      freq_mhz: 467.650
     mode:
       type: "FM"
-      ctcss_tx_hz: 107.2
       ctcss_rx_hz: 107.2
+      ctcss_tx_hz: 107.2
 
   - id: chain_nsea_700
     station_id: stn_nsea_700
     tx:
-      freq_mhz: 467.700
+      freq_mhz: 462.700
       emission: "20K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.700
+      freq_mhz: 467.700
     mode:
       type: "FM"
-      ctcss_tx_hz: 107.2
       ctcss_rx_hz: 107.2
+      ctcss_tx_hz: 107.2
 
   - id: chain_nsea_coop_evanston_725
     station_id: stn_nsea_coop_evanston_725
     tx:
-      freq_mhz: 467.725
+      freq_mhz: 462.725
       emission: "20K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.725
+      freq_mhz: 467.725
     mode:
       type: "FM"
-      ctcss_tx_hz: 100.0
       ctcss_rx_hz: 100.0
+      ctcss_tx_hz: 100.0
 
 authorizations:
   - id: auth_fcc_gmrs

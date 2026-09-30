@@ -1,8 +1,8 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
 # SSRF-Lite: Skokie, IL - licensed business / industrial land mobile
 
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "RadioReference Wiki - Businesses, North Cook County (IL)"
@@ -130,9 +130,8 @@ rf_chains:
   - id: chain_amazon_sil2_462p225
     station_id: stn_amazon_sil2
     antenna_id: ant_amazon_sil2
-    rx:
-      freq_mhz: 462.225
     tx:
+      freq_mhz: 462.225
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -140,9 +139,8 @@ rf_chains:
   - id: chain_amazon_sil2_463p5
     station_id: stn_amazon_sil2
     antenna_id: ant_amazon_sil2
-    rx:
-      freq_mhz: 463.5
     tx:
+      freq_mhz: 463.5
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -150,9 +148,8 @@ rf_chains:
   - id: chain_amazon_sil2_463p5875
     station_id: stn_amazon_sil2
     antenna_id: ant_amazon_sil2
-    rx:
-      freq_mhz: 463.5875
     tx:
+      freq_mhz: 463.5875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -160,9 +157,8 @@ rf_chains:
   - id: chain_amazon_sil2_464p075
     station_id: stn_amazon_sil2
     antenna_id: ant_amazon_sil2
-    rx:
-      freq_mhz: 464.075
     tx:
+      freq_mhz: 464.075
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -170,9 +166,8 @@ rf_chains:
   - id: chain_amazon_sil2_464p7375
     station_id: stn_amazon_sil2
     antenna_id: ant_amazon_sil2
-    rx:
-      freq_mhz: 464.7375
     tx:
+      freq_mhz: 464.7375
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -180,9 +175,8 @@ rf_chains:
   - id: chain_amazon_sil2_467p225
     station_id: stn_amazon_sil2
     antenna_id: ant_amazon_sil2
-    rx:
-      freq_mhz: 467.225
     tx:
+      freq_mhz: 467.225
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -190,9 +184,8 @@ rf_chains:
   - id: chain_amazon_sil2_468p5
     station_id: stn_amazon_sil2
     antenna_id: ant_amazon_sil2
-    rx:
-      freq_mhz: 468.5
     tx:
+      freq_mhz: 468.5
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -200,9 +193,8 @@ rf_chains:
   - id: chain_amazon_sil2_468p5875
     station_id: stn_amazon_sil2
     antenna_id: ant_amazon_sil2
-    rx:
-      freq_mhz: 468.5875
     tx:
+      freq_mhz: 468.5875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -210,9 +202,8 @@ rf_chains:
   - id: chain_amazon_sil2_469p075
     station_id: stn_amazon_sil2
     antenna_id: ant_amazon_sil2
-    rx:
-      freq_mhz: 469.075
     tx:
+      freq_mhz: 469.075
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -220,9 +211,8 @@ rf_chains:
   - id: chain_amazon_sil2_469p7375
     station_id: stn_amazon_sil2
     antenna_id: ant_amazon_sil2
-    rx:
-      freq_mhz: 469.7375
     tx:
+      freq_mhz: 469.7375
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -231,9 +221,8 @@ rf_chains:
   - id: chain_community_safety_463p65
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 463.65
     tx:
+      freq_mhz: 463.65
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -241,9 +230,8 @@ rf_chains:
   - id: chain_community_safety_463p9375
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 463.9375
     tx:
+      freq_mhz: 463.9375
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -251,9 +239,8 @@ rf_chains:
   - id: chain_community_safety_452p15
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 452.15
     tx:
+      freq_mhz: 452.15
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -261,9 +248,8 @@ rf_chains:
   - id: chain_community_safety_452p35
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 452.35
     tx:
+      freq_mhz: 452.35
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -271,9 +257,8 @@ rf_chains:
   - id: chain_community_safety_452p975
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 452.975
     tx:
+      freq_mhz: 452.975
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -281,9 +266,8 @@ rf_chains:
   - id: chain_community_safety_453p0125
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 453.0125
     tx:
+      freq_mhz: 453.0125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -291,9 +275,8 @@ rf_chains:
   - id: chain_community_safety_456p7875
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 456.7875
     tx:
+      freq_mhz: 456.7875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -301,9 +284,8 @@ rf_chains:
   - id: chain_community_safety_457p15
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 457.15
     tx:
+      freq_mhz: 457.15
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -311,9 +293,8 @@ rf_chains:
   - id: chain_community_safety_461p4125
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 461.4125
     tx:
+      freq_mhz: 461.4125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -321,9 +302,8 @@ rf_chains:
   - id: chain_community_safety_461p625
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 461.625
     tx:
+      freq_mhz: 461.625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -331,9 +311,8 @@ rf_chains:
   - id: chain_community_safety_461p8375
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 461.8375
     tx:
+      freq_mhz: 461.8375
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -341,9 +320,8 @@ rf_chains:
   - id: chain_community_safety_462p2
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 462.2
     tx:
+      freq_mhz: 462.2
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -351,9 +329,8 @@ rf_chains:
   - id: chain_community_safety_462p3875
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 462.3875
     tx:
+      freq_mhz: 462.3875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -361,9 +338,8 @@ rf_chains:
   - id: chain_community_safety_464p5875
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 464.5875
     tx:
+      freq_mhz: 464.5875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -371,9 +347,8 @@ rf_chains:
   - id: chain_community_safety_466p15
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 466.15
     tx:
+      freq_mhz: 466.15
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -381,9 +356,8 @@ rf_chains:
   - id: chain_community_safety_466p4125
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 466.4125
     tx:
+      freq_mhz: 466.4125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -391,9 +365,8 @@ rf_chains:
   - id: chain_community_safety_466p8375
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 466.8375
     tx:
+      freq_mhz: 466.8375
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -401,9 +374,8 @@ rf_chains:
   - id: chain_community_safety_467p125
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 467.125
     tx:
+      freq_mhz: 467.125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -411,9 +383,8 @@ rf_chains:
   - id: chain_community_safety_467p2
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 467.2
     tx:
+      freq_mhz: 467.2
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -421,9 +392,8 @@ rf_chains:
   - id: chain_community_safety_467p325
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 467.325
     tx:
+      freq_mhz: 467.325
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -431,9 +401,8 @@ rf_chains:
   - id: chain_community_safety_467p3875
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 467.3875
     tx:
+      freq_mhz: 467.3875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -441,9 +410,8 @@ rf_chains:
   - id: chain_community_safety_468p675
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 468.675
     tx:
+      freq_mhz: 468.675
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -451,9 +419,8 @@ rf_chains:
   - id: chain_community_safety_469p025
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 469.025
     tx:
+      freq_mhz: 469.025
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -461,9 +428,8 @@ rf_chains:
   - id: chain_community_safety_469p3875
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 469.3875
     tx:
+      freq_mhz: 469.3875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -471,9 +437,8 @@ rf_chains:
   - id: chain_community_safety_469p5875
     station_id: stn_community_safety
     antenna_id: ant_community_safety
-    rx:
-      freq_mhz: 469.5875
     tx:
+      freq_mhz: 469.5875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -482,9 +447,8 @@ rf_chains:
   - id: chain_doubletree_north_shore_451p9125
     station_id: stn_doubletree_north_shore
     antenna_id: ant_doubletree_north_shore
-    rx:
-      freq_mhz: 451.9125
     tx:
+      freq_mhz: 451.9125
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -492,9 +456,8 @@ rf_chains:
   - id: chain_doubletree_north_shore_452p2625
     station_id: stn_doubletree_north_shore
     antenna_id: ant_doubletree_north_shore
-    rx:
-      freq_mhz: 452.2625
     tx:
+      freq_mhz: 452.2625
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -502,9 +465,8 @@ rf_chains:
   - id: chain_doubletree_north_shore_462p0375
     station_id: stn_doubletree_north_shore
     antenna_id: ant_doubletree_north_shore
-    rx:
-      freq_mhz: 462.0375
     tx:
+      freq_mhz: 462.0375
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -512,9 +474,8 @@ rf_chains:
   - id: chain_doubletree_north_shore_463p4375
     station_id: stn_doubletree_north_shore
     antenna_id: ant_doubletree_north_shore
-    rx:
-      freq_mhz: 463.4375
     tx:
+      freq_mhz: 463.4375
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -523,9 +484,8 @@ rf_chains:
   - id: chain_holiday_inn_north_shore_452p55
     station_id: stn_holiday_inn_north_shore
     antenna_id: ant_holiday_inn_north_shore
-    rx:
-      freq_mhz: 452.55
     tx:
+      freq_mhz: 452.55
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -533,9 +493,8 @@ rf_chains:
   - id: chain_holiday_inn_north_shore_452p7125
     station_id: stn_holiday_inn_north_shore
     antenna_id: ant_holiday_inn_north_shore
-    rx:
-      freq_mhz: 452.7125
     tx:
+      freq_mhz: 452.7125
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -543,9 +502,8 @@ rf_chains:
   - id: chain_holiday_inn_north_shore_461p8375
     station_id: stn_holiday_inn_north_shore
     antenna_id: ant_holiday_inn_north_shore
-    rx:
-      freq_mhz: 461.8375
     tx:
+      freq_mhz: 461.8375
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -554,9 +512,8 @@ rf_chains:
   - id: chain_macys_463p35
     station_id: stn_macys
     antenna_id: ant_macys
-    rx:
-      freq_mhz: 463.35
     tx:
+      freq_mhz: 463.35
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -564,9 +521,8 @@ rf_chains:
   - id: chain_macys_463p875
     station_id: stn_macys
     antenna_id: ant_macys
-    rx:
-      freq_mhz: 463.875
     tx:
+      freq_mhz: 463.875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -574,9 +530,8 @@ rf_chains:
   - id: chain_macys_451p7625
     station_id: stn_macys
     antenna_id: ant_macys
-    rx:
-      freq_mhz: 451.7625
     tx:
+      freq_mhz: 451.7625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -584,9 +539,8 @@ rf_chains:
   - id: chain_macys_452p6625
     station_id: stn_macys
     antenna_id: ant_macys
-    rx:
-      freq_mhz: 452.6625
     tx:
+      freq_mhz: 452.6625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -594,9 +548,8 @@ rf_chains:
   - id: chain_macys_452p7875
     station_id: stn_macys
     antenna_id: ant_macys
-    rx:
-      freq_mhz: 452.7875
     tx:
+      freq_mhz: 452.7875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -604,9 +557,8 @@ rf_chains:
   - id: chain_macys_456p7625
     station_id: stn_macys
     antenna_id: ant_macys
-    rx:
-      freq_mhz: 456.7625
     tx:
+      freq_mhz: 456.7625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -614,9 +566,8 @@ rf_chains:
   - id: chain_macys_457p7875
     station_id: stn_macys
     antenna_id: ant_macys
-    rx:
-      freq_mhz: 457.7875
     tx:
+      freq_mhz: 457.7875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -625,9 +576,8 @@ rf_chains:
   - id: chain_midland_mfg_451p3375
     station_id: stn_midland_mfg
     antenna_id: ant_midland_mfg
-    rx:
-      freq_mhz: 451.3375
     tx:
+      freq_mhz: 451.3375
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -635,9 +585,8 @@ rf_chains:
   - id: chain_midland_mfg_456p1875
     station_id: stn_midland_mfg
     antenna_id: ant_midland_mfg
-    rx:
-      freq_mhz: 456.1875
     tx:
+      freq_mhz: 456.1875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -645,9 +594,8 @@ rf_chains:
   - id: chain_midland_mfg_456p3375
     station_id: stn_midland_mfg
     antenna_id: ant_midland_mfg
-    rx:
-      freq_mhz: 456.3375
     tx:
+      freq_mhz: 456.3375
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -655,9 +603,8 @@ rf_chains:
   - id: chain_midland_mfg_462p5125
     station_id: stn_midland_mfg
     antenna_id: ant_midland_mfg
-    rx:
-      freq_mhz: 462.5125
     tx:
+      freq_mhz: 462.5125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -665,9 +612,8 @@ rf_chains:
   - id: chain_midland_mfg_467p5125
     station_id: stn_midland_mfg
     antenna_id: ant_midland_mfg
-    rx:
-      freq_mhz: 467.5125
     tx:
+      freq_mhz: 467.5125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -676,9 +622,8 @@ rf_chains:
   - id: chain_nordstrom_old_orchard_451p7375
     station_id: stn_nordstrom_old_orchard
     antenna_id: ant_nordstrom_old_orchard
-    rx:
-      freq_mhz: 451.7375
     tx:
+      freq_mhz: 451.7375
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -686,9 +631,8 @@ rf_chains:
   - id: chain_nordstrom_old_orchard_452p9875
     station_id: stn_nordstrom_old_orchard
     antenna_id: ant_nordstrom_old_orchard
-    rx:
-      freq_mhz: 452.9875
     tx:
+      freq_mhz: 452.9875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -696,9 +640,8 @@ rf_chains:
   - id: chain_nordstrom_old_orchard_456p7375
     station_id: stn_nordstrom_old_orchard
     antenna_id: ant_nordstrom_old_orchard
-    rx:
-      freq_mhz: 456.7375
     tx:
+      freq_mhz: 456.7375
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -706,9 +649,8 @@ rf_chains:
   - id: chain_nordstrom_old_orchard_457p8375
     station_id: stn_nordstrom_old_orchard
     antenna_id: ant_nordstrom_old_orchard
-    rx:
-      freq_mhz: 457.8375
     tx:
+      freq_mhz: 457.8375
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -716,9 +658,8 @@ rf_chains:
   - id: chain_nordstrom_old_orchard_457p9875
     station_id: stn_nordstrom_old_orchard
     antenna_id: ant_nordstrom_old_orchard
-    rx:
-      freq_mhz: 457.9875
     tx:
+      freq_mhz: 457.9875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -727,9 +668,8 @@ rf_chains:
   - id: chain_puttshack_452p4875
     station_id: stn_puttshack
     antenna_id: ant_puttshack
-    rx:
-      freq_mhz: 452.4875
     tx:
+      freq_mhz: 452.4875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -737,9 +677,8 @@ rf_chains:
   - id: chain_puttshack_456p6125
     station_id: stn_puttshack
     antenna_id: ant_puttshack
-    rx:
-      freq_mhz: 456.6125
     tx:
+      freq_mhz: 456.6125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -747,9 +686,8 @@ rf_chains:
   - id: chain_puttshack_457p1875
     station_id: stn_puttshack
     antenna_id: ant_puttshack
-    rx:
-      freq_mhz: 457.1875
     tx:
+      freq_mhz: 457.1875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -757,9 +695,8 @@ rf_chains:
   - id: chain_puttshack_457p4875
     station_id: stn_puttshack
     antenna_id: ant_puttshack
-    rx:
-      freq_mhz: 457.4875
     tx:
+      freq_mhz: 457.4875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -768,9 +705,8 @@ rf_chains:
   - id: chain_ups_austin_ave_451p6875
     station_id: stn_ups_austin_ave
     antenna_id: ant_ups_austin_ave
-    rx:
-      freq_mhz: 451.6875
     tx:
+      freq_mhz: 451.6875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -778,9 +714,8 @@ rf_chains:
   - id: chain_ups_austin_ave_452p5125
     station_id: stn_ups_austin_ave
     antenna_id: ant_ups_austin_ave
-    rx:
-      freq_mhz: 452.5125
     tx:
+      freq_mhz: 452.5125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -788,9 +723,8 @@ rf_chains:
   - id: chain_ups_austin_ave_456p2875
     station_id: stn_ups_austin_ave
     antenna_id: ant_ups_austin_ave
-    rx:
-      freq_mhz: 456.2875
     tx:
+      freq_mhz: 456.2875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -798,9 +732,8 @@ rf_chains:
   - id: chain_ups_austin_ave_456p6875
     station_id: stn_ups_austin_ave
     antenna_id: ant_ups_austin_ave
-    rx:
-      freq_mhz: 456.6875
     tx:
+      freq_mhz: 456.6875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -808,9 +741,8 @@ rf_chains:
   - id: chain_ups_austin_ave_456p7625
     station_id: stn_ups_austin_ave
     antenna_id: ant_ups_austin_ave
-    rx:
-      freq_mhz: 456.7625
     tx:
+      freq_mhz: 456.7625
       emission: "7K60FXD"
     mode:
       type: "DMR"

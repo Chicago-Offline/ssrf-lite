@@ -1,8 +1,8 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
 # SSRF-Lite: Cook County Sheriff (VHF conventional fallback + P25 multicast)
 
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "RadioReference - Cook County, IL (Sheriff)"
@@ -120,9 +120,8 @@ rf_chains:
   - id: chain_cook_shrf_patrol_n
     station_id: stn_cook_shrf_ksa717_p25
     antenna_id: ant_cook_shrf_ksa717_p25
-    rx:
-      freq_mhz: 155.595
     tx:
+      freq_mhz: 155.595
       emission: "8K10F1E"
     mode:
       type: "P25"
@@ -133,9 +132,8 @@ rf_chains:
   - id: chain_cook_shrf_patrol_s
     station_id: stn_cook_shrf_ksa717_p25
     antenna_id: ant_cook_shrf_ksa717_p25
-    rx:
-      freq_mhz: 155.535
     tx:
+      freq_mhz: 155.535
       emission: "8K10F1E"
     mode:
       type: "P25"
@@ -146,9 +144,8 @@ rf_chains:
   - id: chain_cook_shrf_ops_backup
     station_id: stn_cook_shrf_kfm495_p25
     antenna_id: ant_cook_shrf_kfm495_p25
-    rx:
-      freq_mhz: 155.640
     tx:
+      freq_mhz: 155.640
       emission: "8K10F1E"
     mode:
       type: "P25"
@@ -160,135 +157,125 @@ rf_chains:
   - id: chain_cook_shrf_c2c6
     station_id: stn_cook_shrf_kl6889
     antenna_id: ant_cook_shrf_kl6889
-    rx:
-      freq_mhz: 153.905
     tx:
+      freq_mhz: 153.905
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 107.2
       ctcss_tx_hz: 107.2
+      ctcss_rx_hz: 107.2
 
   # Alternate [Ch 7]
   - id: chain_cook_shrf_alt7
     station_id: stn_cook_shrf_ksa718_ops
     antenna_id: ant_cook_shrf_ksa718_ops
-    rx:
-      freq_mhz: 159.090
     tx:
+      freq_mhz: 159.090
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 107.2
       ctcss_tx_hz: 107.2
+      ctcss_rx_hz: 107.2
 
   # Tactical / Emergency Management [Ch 14]
   - id: chain_cook_shrf_tac14
     station_id: stn_cook_shrf_ksa718_ops
     antenna_id: ant_cook_shrf_ksa718_ops
-    rx:
-      freq_mhz: 158.865
     tx:
+      freq_mhz: 158.865
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 107.2
       ctcss_tx_hz: 107.2
+      ctcss_rx_hz: 107.2
 
   # Rebroadcast of 155.535R (Patrol South)
   - id: chain_cook_shrf_alt7_rebroadcast
     station_id: stn_cook_shrf_kq6542_ops
     antenna_id: ant_cook_shrf_kq6542_ops
-    rx:
-      freq_mhz: 159.090
     tx:
+      freq_mhz: 159.090
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 173.8
       ctcss_tx_hz: 173.8
+      ctcss_rx_hz: 173.8
       notes: "Analogue rebroadcast of the 155.535 Patrol South repeater."
 
   # Tactical [Ch 9]
   - id: chain_cook_shrf_tac9
     station_id: stn_cook_shrf_kq6542_ops
     antenna_id: ant_cook_shrf_kq6542_ops
-    rx:
-      freq_mhz: 153.845
     tx:
+      freq_mhz: 153.845
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 107.2
       ctcss_tx_hz: 107.2
+      ctcss_rx_hz: 107.2
 
   # Tactical [Ch 12]
   - id: chain_cook_shrf_tac12
     station_id: stn_cook_shrf_kzu879_ops
     antenna_id: ant_cook_shrf_kzu879_ops
-    rx:
-      freq_mhz: 153.815
     tx:
+      freq_mhz: 153.815
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 107.2
       ctcss_tx_hz: 107.2
+      ctcss_rx_hz: 107.2
 
   # --- Corrections / Courts (173.8 PL) ---
   # 153.845 / 173.8 carries BOTH Courts [Ch 10] and Jail [Ch 3]
   - id: chain_cook_doc_courts_jail3
     station_id: stn_cook_doc_kq6542
     antenna_id: ant_cook_doc_kq6542
-    rx:
-      freq_mhz: 153.845
     tx:
+      freq_mhz: 153.845
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 173.8
       ctcss_tx_hz: 173.8
+      ctcss_rx_hz: 173.8
       notes: "Single channel listed twice by the source: Courts [Ch 10] and Jail [Ch 3]."
 
   # 154.025 / 173.8 carries BOTH Tactical [Ch 11] and Jail [Ch 2]
   - id: chain_cook_doc_tac11_jail2
     station_id: stn_cook_doc_kzu879
     antenna_id: ant_cook_doc_kzu879
-    rx:
-      freq_mhz: 154.025
     tx:
+      freq_mhz: 154.025
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 173.8
       ctcss_tx_hz: 173.8
+      ctcss_rx_hz: 173.8
       notes: "Single channel listed twice by the source: Tactical [Ch 11] and Jail [Ch 2]."
 
   # Jail, Surveillance [Ch 1]
   - id: chain_cook_doc_jail1
     station_id: stn_cook_doc_kzu879
     antenna_id: ant_cook_doc_kzu879
-    rx:
-      freq_mhz: 153.815
     tx:
+      freq_mhz: 153.815
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 173.8
       ctcss_tx_hz: 173.8
+      ctcss_rx_hz: 173.8
 
   # Corrections Vans / Transportation [Ch 4]
   - id: chain_cook_doc_jail4
     station_id: stn_cook_doc_ksa718
     antenna_id: ant_cook_doc_ksa718
-    rx:
-      freq_mhz: 158.865
     tx:
+      freq_mhz: 158.865
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 173.8
       ctcss_tx_hz: 173.8
+      ctcss_rx_hz: 173.8
 
 contacts:
   - id: tg_sc21_25086

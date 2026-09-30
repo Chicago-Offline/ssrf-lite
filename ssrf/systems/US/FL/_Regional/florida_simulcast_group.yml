@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 "ssrf_lite":
   sources:
     - name: "Florida Simulcast Group – Downtown St. Petersburg"
@@ -116,23 +116,23 @@ rf_chains:
     station_id: stn_w9cr_stpete
     antenna_id: ant_w9cr_stpete
     tx:
-      freq_mhz: 449.375
+      freq_mhz: 444.375
       emission: "11K2F3E"
     rx:
-      freq_mhz: 444.375
+      freq_mhz: 449.375
     mode:
       type: "FM"
-      ctcss_tx_hz: 146.2
       ctcss_rx_hz: 146.2
+      ctcss_tx_hz: 146.2
       notes: "Analog voice; co-located with mixed-mode P25."
   - id: chain_w9cr_stpete_444_p25
     station_id: stn_w9cr_stpete
     antenna_id: ant_w9cr_stpete
     tx:
-      freq_mhz: 449.375
+      freq_mhz: 444.375
       emission: "8K10F1E"
     rx:
-      freq_mhz: 444.375
+      freq_mhz: 449.375
     mode:
       type: "P25"
       nac: 293
@@ -141,10 +141,10 @@ rf_chains:
     station_id: stn_kj4shl_stpete
     antenna_id: ant_kj4shl_stpete
     tx:
-      freq_mhz: 449.9625
+      freq_mhz: 444.9625
       emission: "7K60FXE"
     rx:
-      freq_mhz: 444.9625
+      freq_mhz: 449.9625
     mode:
       type: "DMR"
       color_code: 1
@@ -153,10 +153,10 @@ rf_chains:
     station_id: stn_kj4shl_stpete
     antenna_id: ant_kj4shl_stpete
     tx:
-      freq_mhz: 448.7625
+      freq_mhz: 443.7625
       emission: "4K00F1E"
     rx:
-      freq_mhz: 443.7625
+      freq_mhz: 448.7625
     mode:
       type: "NXDN"
       nxdn_ran: 1
@@ -164,47 +164,47 @@ rf_chains:
     station_id: stn_wd4scd_remote
     antenna_id: ant_wd4scd_remote
     tx:
-      freq_mhz: 147.63
+      freq_mhz: 147.03
       emission: "11K2F3E"
     rx:
-      freq_mhz: 147.03
+      freq_mhz: 147.63
     mode:
       type: "FM"
-      ctcss_tx_hz: 100.0
       ctcss_rx_hz: 100.0
+      ctcss_tx_hz: 100.0
       notes: "Remote receiver input for WD4SCD system."
   - id: chain_w9cr_tampa_224_fm
     station_id: stn_w9cr_tampa
     antenna_id: ant_w9cr_tampa
     tx:
-      freq_mhz: 222.68
+      freq_mhz: 224.28
       emission: "11K2F3E"
     rx:
-      freq_mhz: 224.28
+      freq_mhz: 222.68
     mode:
       type: "FM"
-      ctcss_tx_hz: 146.2
       ctcss_rx_hz: 146.2
+      ctcss_tx_hz: 146.2
   - id: chain_w9cr_tampa_443_fm
     station_id: stn_w9cr_tampa
     antenna_id: ant_w9cr_tampa
     tx:
-      freq_mhz: 448.525
+      freq_mhz: 443.525
       emission: "11K2F3E"
     rx:
-      freq_mhz: 443.525
+      freq_mhz: 448.525
     mode:
       type: "FM"
-      ctcss_tx_hz: 146.2
       ctcss_rx_hz: 146.2
+      ctcss_tx_hz: 146.2
   - id: chain_w9cr_tampa_443_p25
     station_id: stn_w9cr_tampa
     antenna_id: ant_w9cr_tampa
     tx:
-      freq_mhz: 448.525
+      freq_mhz: 443.525
       emission: "8K10F1E"
     rx:
-      freq_mhz: 443.525
+      freq_mhz: 448.525
     mode:
       type: "P25"
       nac: 293
@@ -212,23 +212,23 @@ rf_chains:
     station_id: stn_w9cr_tampa
     antenna_id: ant_w9cr_tampa
     tx:
-      freq_mhz: 902.05
+      freq_mhz: 927.05
       emission: "11K2F3E"
     rx:
-      freq_mhz: 927.05
+      freq_mhz: 902.05
     mode:
       type: "FM"
-      dcs_tx_code: "546"
       dcs_rx_code: "546"
+      dcs_tx_code: "546"
       notes: "HearClear audio chain; alternate input 467.725 MHz with DCS 546."
   - id: chain_w9cr_tampa_927_p25
     station_id: stn_w9cr_tampa
     antenna_id: ant_w9cr_tampa
     tx:
-      freq_mhz: 902.05
+      freq_mhz: 927.05
       emission: "8K10F1E"
     rx:
-      freq_mhz: 927.05
+      freq_mhz: 902.05
     mode:
       type: "P25"
       nac: 293
@@ -236,22 +236,22 @@ rf_chains:
     station_id: stn_ka9rix_tampa
     antenna_id: ant_ka9rix_tampa
     tx:
-      freq_mhz: 448.425
+      freq_mhz: 443.425
       emission: "11K2F3E"
     rx:
-      freq_mhz: 443.425
+      freq_mhz: 448.425
     mode:
       type: "FM"
-      ctcss_tx_hz: 146.2
       ctcss_rx_hz: 146.2
+      ctcss_tx_hz: 146.2
   - id: chain_ka9rix_tampa_dstar
     station_id: stn_ka9rix_tampa
     antenna_id: ant_ka9rix_tampa
     tx:
-      freq_mhz: 448.425
+      freq_mhz: 443.425
       emission: "6K00F7W"
     rx:
-      freq_mhz: 443.425
+      freq_mhz: 448.425
     mode:
       type: "DStar"
       notes: "D-STAR with analog mixed-mode support."
@@ -259,23 +259,23 @@ rf_chains:
     station_id: stn_wraf954_tampa
     antenna_id: ant_wraf954_tampa
     tx:
-      freq_mhz: 467.575
+      freq_mhz: 462.575
       emission: "16K0F3E"
     rx:
-      freq_mhz: 462.575
+      freq_mhz: 467.575
     mode:
       type: "FM"
-      ctcss_tx_hz: 141.3
       ctcss_rx_hz: 141.3
+      ctcss_tx_hz: 141.3
       notes: "Primary GMRS input; see notes for alternate input."
   - id: chain_wraf954_tampa_p25
     station_id: stn_wraf954_tampa
     antenna_id: ant_wraf954_tampa
     tx:
-      freq_mhz: 467.575
+      freq_mhz: 462.575
       emission: "8K10F1E"
     rx:
-      freq_mhz: 462.575
+      freq_mhz: 467.575
     mode:
       type: "P25"
       nac: 575
@@ -284,10 +284,10 @@ rf_chains:
     station_id: stn_kj4shl_tampa
     antenna_id: ant_kj4shl_tampa
     tx:
-      freq_mhz: 448.1875
+      freq_mhz: 443.1875
       emission: "7K60FXE"
     rx:
-      freq_mhz: 443.1875
+      freq_mhz: 448.1875
     mode:
       type: "DMR"
       color_code: 1

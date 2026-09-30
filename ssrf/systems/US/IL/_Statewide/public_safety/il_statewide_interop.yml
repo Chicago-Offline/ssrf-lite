@@ -1,11 +1,11 @@
-# yaml-language-server: $schema=../../../../../_schema/ssrf-lite-0.8.0.schema.json
+# yaml-language-server: $schema=../../../../../_schema/ssrf-lite-0.9.0.schema.json
 # SSRF-Lite: Illinois Statewide Interop (VHF/UHF analogue conventional)
 # RX-only. Includes common mutual aid/interop conventional channels within VHF/UHF bands.
 # Excludes 700/800 MHz (out of OpenGD77 range).
 # Channels: IFERN, IREACH, ISPERN (VLAW31), Point-to-Point, HEAR, VCALL/VTAC, UCALL/UTAC.
 
-$schema: "../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+$schema: "../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 organizations:
   - id: org_il_interop
     name: "Illinois Statewide Interop"
@@ -33,36 +33,22 @@ antennas:
 
 rf_chains:
   # VHF interop
-  - {id: chain_ifern, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 154.265},
-    tx: {emission: "16K0F3E"}, mode: {type: "FM"}}
-  - {id: chain_ireach, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 
-        155.055}, tx: {emission: "16K0F3E"}, mode: {type: "FM"}}
-  - {id: chain_ispern, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 
-        155.475}, tx: {emission: "16K0F3E"}, mode: {type: "FM"}} # VLAW31
-  - {id: chain_ptp, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 
-        155.370}, tx: {emission: "16K0F3E"}, mode: {type: "FM"}} # Point-to-Point
-  - {id: chain_hear, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 
-        155.340}, tx: {emission: "16K0F3E"}, mode: {type: "FM"}}
-  - {id: chain_vcall10, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 
-        155.7525}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
-  - {id: chain_vtac11, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 
-        151.1375}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
-  - {id: chain_vtac12, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 
-        154.4525}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
-  - {id: chain_vtac13, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 
-        158.7375}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
-  - {id: chain_vtac14, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 
-        159.4725}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
+  - {id: chain_ifern, station_id: stn_il, antenna_id: ant_il, tx: { freq_mhz: 154.265, emission: "16K0F3E" }, mode: {type: "FM"}}
+  - {id: chain_ireach, station_id: stn_il, antenna_id: ant_il, tx: { freq_mhz: 155.055, emission: "16K0F3E" }, mode: {type: "FM"}}
+  - {id: chain_ispern, station_id: stn_il, antenna_id: ant_il, tx: { freq_mhz: 155.475, emission: "16K0F3E" }, mode: {type: "FM"}} # VLAW31
+  - {id: chain_ptp, station_id: stn_il, antenna_id: ant_il, tx: { freq_mhz: 155.370, emission: "16K0F3E" }, mode: {type: "FM"}} # Point-to-Point
+  - {id: chain_hear, station_id: stn_il, antenna_id: ant_il, tx: { freq_mhz: 155.340, emission: "16K0F3E" }, mode: {type: "FM"}}
+  - {id: chain_vcall10, station_id: stn_il, antenna_id: ant_il, tx: { freq_mhz: 155.7525, emission: "11K2F3E" }, mode: {type: "FM"}}
+  - {id: chain_vtac11, station_id: stn_il, antenna_id: ant_il, tx: { freq_mhz: 151.1375, emission: "11K2F3E" }, mode: {type: "FM"}}
+  - {id: chain_vtac12, station_id: stn_il, antenna_id: ant_il, tx: { freq_mhz: 154.4525, emission: "11K2F3E" }, mode: {type: "FM"}}
+  - {id: chain_vtac13, station_id: stn_il, antenna_id: ant_il, tx: { freq_mhz: 158.7375, emission: "11K2F3E" }, mode: {type: "FM"}}
+  - {id: chain_vtac14, station_id: stn_il, antenna_id: ant_il, tx: { freq_mhz: 159.4725, emission: "11K2F3E" }, mode: {type: "FM"}}
 
     # UHF interop (UCALL/UTAC)
-  - {id: chain_ucall40, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 
-        453.2125}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
-  - {id: chain_utac41, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 
-        453.4625}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
-  - {id: chain_utac42, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 
-        453.7125}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
-  - {id: chain_utac43, station_id: stn_il, antenna_id: ant_il, rx: {freq_mhz: 
-        453.8625}, tx: {emission: "11K2F3E"}, mode: {type: "FM"}}
+  - {id: chain_ucall40, station_id: stn_il, antenna_id: ant_il, tx: { freq_mhz: 453.2125, emission: "11K2F3E" }, mode: {type: "FM"}}
+  - {id: chain_utac41, station_id: stn_il, antenna_id: ant_il, tx: { freq_mhz: 453.4625, emission: "11K2F3E" }, mode: {type: "FM"}}
+  - {id: chain_utac42, station_id: stn_il, antenna_id: ant_il, tx: { freq_mhz: 453.7125, emission: "11K2F3E" }, mode: {type: "FM"}}
+  - {id: chain_utac43, station_id: stn_il, antenna_id: ant_il, tx: { freq_mhz: 453.8625, emission: "11K2F3E" }, mode: {type: "FM"}}
 
 assignments:
   - {id: asg_ifern, channel_name: "IFERN", rf_chain_id: chain_ifern, usage: "simplex"}

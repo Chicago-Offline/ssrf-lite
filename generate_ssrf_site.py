@@ -18,6 +18,7 @@ from typing import Any, Dict, List, Optional, Tuple
 import yaml
 
 from ssrf import resolve_ssrf_roots
+from ssrf.emissions import mode_from_emission as _mode_from_emission
 
 BASE = pathlib.Path(__file__).parent
 SSRF_ROOT = BASE / "ssrf"
@@ -271,11 +272,13 @@ def build_payload(ssrf_roots: Optional[List[pathlib.Path]] = None) -> Dict[str, 
                 mode = _mode_summary(chain.mode)
                 row.update(
                     {
-                        # tx = repeater transmit = user receive frequency
+                        # The station's own transmit frequency is what a
+                        # listener tunes, so it leads the table.
                         "freq_mhz": chain.tx.freq_mhz or chain.rx.freq_mhz,
                         "input_mhz": (
                             chain.rx.freq_mhz
-                            if chain.tx.freq_mhz and chain.rx.freq_mhz != chain.tx.freq_mhz
+                            if chain.rx.freq_mhz
+                            and chain.rx.freq_mhz != chain.tx.freq_mhz
                             else None
                         ),
                         "mode": mode["type"],
@@ -298,15 +301,21 @@ def build_payload(ssrf_roots: Optional[List[pathlib.Path]] = None) -> Dict[str, 
                         c for c in plan.channels if c.name == a.channel_name
                     ] or plan.channels
                 for ch in plan_channels:
+                    permitted = ch.permitted_emissions()
+                    modes = [
+                        spec.mode or _mode_from_emission(spec.emission)
+                        for spec in permitted
+                    ]
+                    modes = [m for m in modes if m]
                     ch_row = dict(row)
                     ch_row.update(
                         {
                             "name": ch.name,
                             "name_derived": False,
                             "freq_mhz": ch.freq_mhz,
-                            "input_mhz": None,
-                            "mode": None,
-                            "mode_detail": "",
+                            "input_mhz": ch.rx_freq_mhz,
+                            "mode": modes[0] if modes else None,
+                            "mode_detail": " / ".join(modes) if len(modes) > 1 else "",
                             "notes": ch.notes or row["notes"],
                         }
                     )

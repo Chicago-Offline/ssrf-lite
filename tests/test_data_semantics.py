@@ -151,7 +151,7 @@ def _iter_service_freqs(ref: Any) -> Iterator[Tuple[str, str, float]]:
                     c for c in plan.channels if c.name == a.channel_name
                 ] or plan.channels
             for ch in channels:
-                for freq in (ch.freq_mhz, ch.tx_freq_mhz):
+                for freq in (ch.freq_mhz, ch.rx_freq_mhz):
                     if freq:
                         yield service, f"{plan.id}/{ch.name}", freq
 
@@ -160,7 +160,7 @@ def _iter_service_freqs(ref: Any) -> Iterator[Tuple[str, str, float]]:
         if not plan.service:
             continue
         for ch in plan.channels:
-            for freq in (ch.freq_mhz, ch.tx_freq_mhz):
+            for freq in (ch.freq_mhz, ch.rx_freq_mhz):
                 if freq:
                     yield plan.service, f"{plan.id}/{ch.name}", freq
 
@@ -271,7 +271,7 @@ class DuplicateChannelTest(unittest.TestCase):
                 key = (
                     station.call_sign,
                     round(chain.tx.freq_mhz, 4) if chain.tx.freq_mhz else None,
-                    round(chain.rx.freq_mhz, 4),
+                    round(chain.rx.freq_mhz, 4) if chain.rx.freq_mhz else None,
                     chain.mode.type,
                     station.location_id,
                 )

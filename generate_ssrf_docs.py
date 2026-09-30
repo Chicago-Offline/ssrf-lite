@@ -105,16 +105,16 @@ def analyze_ssrf_file(file_path: pathlib.Path) -> Dict[str, Any]:
                     mode = rf_chain.mode.type
                     file_info["modes"][mode] += 1
 
-                    # Categorize frequency
-                    rx_freq = rf_chain.rx.freq_mhz if rf_chain.rx else None
-                    if rx_freq:
-                        if rx_freq < 30:
+                    # The station's own transmit frequency identifies its band.
+                    tx_freq = rf_chain.tx.freq_mhz or rf_chain.rx.freq_mhz
+                    if tx_freq:
+                        if tx_freq < 30:
                             file_info["frequency_bands"]["HF (<30 MHz)"] += 1
-                        elif 136 <= rx_freq <= 174:
+                        elif 136 <= tx_freq <= 174:
                             file_info["frequency_bands"]["VHF (136-174 MHz)"] += 1
-                        elif 400 <= rx_freq <= 480:
+                        elif 400 <= tx_freq <= 480:
                             file_info["frequency_bands"]["UHF (400-480 MHz)"] += 1
-                        elif rx_freq > 1000:
+                        elif tx_freq > 1000:
                             file_info["frequency_bands"]["Microwave (>1 GHz)"] += 1
                         else:
                             file_info["frequency_bands"]["Other"] += 1

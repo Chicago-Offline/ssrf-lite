@@ -1,9 +1,9 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
 # SSRF-Lite: Evanston, IL — Public Safety / Public Works conventional channels
 
 
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "RadioReference — Evanston, IL (user-supplied channel list)"
@@ -119,14 +119,14 @@ rf_chains:
     station_id: stn_epd
     antenna_id: ant_epd
     rx:
-      freq_mhz: 472.4875
-    tx:
       freq_mhz: 475.4875  # +3.000 MHz
+    tx:
+      freq_mhz: 472.4875
       emission: "8K50F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 141.3
       ctcss_tx_hz: 141.3
+      ctcss_rx_hz: 141.3
 
   # Fire: New Dispatch (VHF repeater, WQDY693)
   # Output 155.6925 / Input 159.4275
@@ -134,27 +134,26 @@ rf_chains:
     station_id: stn_efd_new
     antenna_id: ant_efd_new
     rx:
-      freq_mhz: 155.6925
-    tx:
       freq_mhz: 159.4275  # +3.735 MHz
+    tx:
+      freq_mhz: 155.6925
       emission: "8K50F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 123.0
       ctcss_tx_hz: 123.0
+      ctcss_rx_hz: 123.0
 
   # Fire: Old Dispatch / Admin (VHF simplex, KSC732)
   - id: chain_efd_dispatch_old
     station_id: stn_efd_old
     antenna_id: ant_efd_old
-    rx:
-      freq_mhz: 154.160
     tx:
+      freq_mhz: 154.160
       emission: "8K50F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 123.0
       ctcss_tx_hz: 123.0
+      ctcss_rx_hz: 123.0
 
   # Fire: Lakefront Lifeguards Ch 4 (VHF repeater, WRWI447)
   # Output 152.330 / Input 157.590 (+5.26 MHz split — unusual for land mobile;
@@ -164,50 +163,47 @@ rf_chains:
     station_id: stn_efd_lifeguards
     antenna_id: ant_efd_lg
     rx:
-      freq_mhz: 152.330
-    tx:
       freq_mhz: 157.590  # +5.260 MHz — see comments
+    tx:
+      freq_mhz: 152.330
       emission: "8K50F3E"
     mode:
       type: "FM"
-      dcs_rx_code: "632"
       dcs_tx_code: "632"
+      dcs_rx_code: "632"
 
   # Public Works (VHF simplex, KDN985)
   - id: chain_epw_pubworks
     station_id: stn_epw
     antenna_id: ant_epw
-    rx:
-      freq_mhz: 155.760
     tx:
+      freq_mhz: 155.760
       emission: "8K50F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 123.0
       ctcss_tx_hz: 123.0
+      ctcss_rx_hz: 123.0
 
   # Electric Department (VHF simplex, KDM250)
   # Same output as Public Works (155.760) with different tone
   - id: chain_eelec_dept
     station_id: stn_eelec
     antenna_id: ant_eelec
-    rx:
-      freq_mhz: 155.760
     tx:
+      freq_mhz: 155.760
       emission: "8K50F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 77.0
       ctcss_tx_hz: 77.0
+      ctcss_rx_hz: 77.0
 
   # Water Department (Low-band VHF simplex, WPRS369)
   # No tone (CSQ / carrier squelch)
   - id: chain_ewater_dept
     station_id: stn_ewater
     antenna_id: ant_ewater
-    rx:
-      freq_mhz: 48.220
     tx:
+      freq_mhz: 48.220
       emission: "16K0F3E"
     mode:
       type: "FM"
@@ -218,14 +214,13 @@ rf_chains:
   - id: chain_epkg_intercom
     station_id: stn_epkg
     antenna_id: ant_epkg
-    rx:
-      freq_mhz: 467.925
     tx:
+      freq_mhz: 467.925
       emission: "8K50F3E"
     mode:
       type: "FM"
-      dcs_rx_code: "244"
       dcs_tx_code: "244"
+      dcs_rx_code: "244"
 
 assignments:
   - id: asgn_epd_alt

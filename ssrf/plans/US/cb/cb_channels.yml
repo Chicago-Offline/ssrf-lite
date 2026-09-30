@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "47 CFR Part 95 Subpart D - Citizens Band Radio Service (CBRS)"
@@ -26,9 +26,9 @@ authorizations:
       (J3E/R3E/H3E) peak envelope power <= 12 W.
       Emissions (95.971): A3E or SSB required; F3E permitted since the 2021
       amendment (86 FR 53565). SSB sets must offer USB and may add LSB.
-      Bandwidth (95.973): 8 kHz for A3E/F3E, 4 kHz for J3E/R3E/H3E. Channel rows
-      below carry 8K00A3E as the baseline emission; FM and SSB are permitted on
-      every channel but cannot be expressed per-channel in this spec version.
+      Bandwidth (95.973): 8 kHz for A3E/F3E, 4 kHz for J3E/R3E/H3E. All four
+      permitted emissions are carried on the channel plan's `emissions` block
+      and apply to every channel.
       Channel 9 is restricted to emergency and traveler assistance (95.931(a)(2)).
       External RF power amplifiers are prohibited outright (95.939).
       Antenna height (95.941): <= 18.3 m (60 ft) AGL, or 6.1 m (20 ft) above the
@@ -40,139 +40,120 @@ channel_plans:
   - id: chplan_us_cb
     name: "US CB (Citizens Band)"
     service: "cb"
+    emissions:
+      # 95.971 permits A3E or SSB on every channel; F3E was added by the 2021
+      # amendment (86 FR 53565). Bandwidth per 95.973, power per 95.967.
+      - emission: "8K00A3E"
+        mode: "AM"
+        bandwidth_khz: 8
+        power_w: 4
+      - emission: "4K00J3E"
+        mode: "USB"
+        bandwidth_khz: 4
+        power_w: 12
+        notes: "SSB sets must offer USB (95.971)."
+      - emission: "4K00J3E"
+        mode: "LSB"
+        bandwidth_khz: 4
+        power_w: 12
+        notes: "SSB sets may add LSB (95.971)."
+      - emission: "8K00F3E"
+        mode: "FM"
+        bandwidth_khz: 8
+        power_w: 4
     channels:
       - name: "CB 01"
         freq_mhz: 26.9650
-        emission: "8K00A3E"
       - name: "CB 02"
         freq_mhz: 26.9750
-        emission: "8K00A3E"
       - name: "CB 03"
         freq_mhz: 26.9850
-        emission: "8K00A3E"
       - name: "CB 04"
         freq_mhz: 27.0050
-        emission: "8K00A3E"
       - name: "CB 05"
         freq_mhz: 27.0150
-        emission: "8K00A3E"
       - name: "CB 06"
         freq_mhz: 27.0250
-        emission: "8K00A3E"
       - name: "CB 07"
         freq_mhz: 27.0350
-        emission: "8K00A3E"
       - name: "CB 08"
         freq_mhz: 27.0550
-        emission: "8K00A3E"
       - name: "CB 09 (Emergency)"
         freq_mhz: 27.0650
-        emission: "8K00A3E"
         notes: |
           Emergency and traveler-assistance use only (47 CFR 95.931(a)(2)).
       - name: "CB 10"
         freq_mhz: 27.0750
-        emission: "8K00A3E"
       - name: "CB 11"
         freq_mhz: 27.0850
-        emission: "8K00A3E"
       - name: "CB 12"
         freq_mhz: 27.1050
-        emission: "8K00A3E"
       - name: "CB 13"
         freq_mhz: 27.1150
-        emission: "8K00A3E"
       - name: "CB 14"
         freq_mhz: 27.1250
-        emission: "8K00A3E"
       - name: "CB 15"
         freq_mhz: 27.1350
-        emission: "8K00A3E"
       - name: "CB 16"
         freq_mhz: 27.1550
-        emission: "8K00A3E"
       - name: "CB 17"
         freq_mhz: 27.1650
-        emission: "8K00A3E"
       - name: "CB 18"
         freq_mhz: 27.1750
-        emission: "8K00A3E"
       - name: "CB 19 (Highway)"
         freq_mhz: 27.1850
-        emission: "8K00A3E"
         notes: |
           De facto highway/trucker calling channel. Convention, not an FCC rule.
       - name: "CB 20"
         freq_mhz: 27.2050
-        emission: "8K00A3E"
       - name: "CB 21"
         freq_mhz: 27.2150
-        emission: "8K00A3E"
       - name: "CB 22"
         freq_mhz: 27.2250
-        emission: "8K00A3E"
       - name: "CB 23"
         freq_mhz: 27.2550
-        emission: "8K00A3E"
       - name: "CB 24"
         freq_mhz: 27.2350
-        emission: "8K00A3E"
       - name: "CB 25"
         freq_mhz: 27.2450
-        emission: "8K00A3E"
       - name: "CB 26"
         freq_mhz: 27.2650
-        emission: "8K00A3E"
       - name: "CB 27"
         freq_mhz: 27.2750
-        emission: "8K00A3E"
       - name: "CB 28"
         freq_mhz: 27.2850
-        emission: "8K00A3E"
       - name: "CB 29"
         freq_mhz: 27.2950
-        emission: "8K00A3E"
       - name: "CB 30"
         freq_mhz: 27.3050
-        emission: "8K00A3E"
       - name: "CB 31"
         freq_mhz: 27.3150
-        emission: "8K00A3E"
       - name: "CB 32"
         freq_mhz: 27.3250
-        emission: "8K00A3E"
       - name: "CB 33"
         freq_mhz: 27.3350
-        emission: "8K00A3E"
       - name: "CB 34"
         freq_mhz: 27.3450
-        emission: "8K00A3E"
       - name: "CB 35"
         freq_mhz: 27.3550
-        emission: "8K00A3E"
       - name: "CB 36"
         freq_mhz: 27.3650
-        emission: "8K00A3E"
         notes: |
           Commonly used for SSB (J3E) operation by convention; not an FCC allocation.
       - name: "CB 37"
         freq_mhz: 27.3750
-        emission: "8K00A3E"
         notes: |
           Commonly used for SSB (J3E) operation by convention; not an FCC allocation.
       - name: "CB 38"
         freq_mhz: 27.3850
-        emission: "8K00A3E"
         notes: |
           Commonly used for SSB (J3E) operation by convention; not an FCC allocation.
       - name: "CB 39"
         freq_mhz: 27.3950
-        emission: "8K00A3E"
         notes: |
           Commonly used for SSB (J3E) operation by convention; not an FCC allocation.
       - name: "CB 40"
         freq_mhz: 27.4050
-        emission: "8K00A3E"
         notes: |
           Commonly used for SSB (J3E) operation by convention; not an FCC allocation.
 

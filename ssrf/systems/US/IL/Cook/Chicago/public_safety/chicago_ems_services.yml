@@ -1,10 +1,10 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
 # SSRF-Lite: Chicago EMS Services (RX-only focus)
 # Sources: IDPH Region XI EMS resource plans, RadioReference Cook County DB export + wiki (Cook_County_(IL)_Chicago_City), last verified 2026-09-08
 # Legacy CFD UHF EMS analog channels (460.600/460.625/462.975, 156.7 PL) have transitioned to P25 conventional per RR DB.
 
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 organizations:
   - id: org_cfd_ems
     name: "Chicago Fire Department – EMS"
@@ -42,9 +42,8 @@ rf_chains:
   - id: chain_cfd_ems_command
     station_id: stn_cfd_ems
     antenna_id: ant_cfd_ems
-    rx:
-      freq_mhz: 460.600
     tx:
+      freq_mhz: 460.600
       emission: "8K10F1E"
     mode:
       type: "P25"
@@ -54,9 +53,8 @@ rf_chains:
   - id: chain_cfd_ems_citywide
     station_id: stn_cfd_ems
     antenna_id: ant_cfd_ems
-    rx:
-      freq_mhz: 460.625
     tx:
+      freq_mhz: 460.625
       emission: "8K10F1E"
     mode:
       type: "P25"
@@ -67,9 +65,8 @@ rf_chains:
   - id: chain_il_statewide_ems
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 155.340
     tx:
+      freq_mhz: 155.340
       emission: "11K0F3E"
     mode:
       type: "FM"
@@ -77,9 +74,8 @@ rf_chains:
   - id: chain_merci400
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 155.400
     tx:
+      freq_mhz: 155.400
       emission: "11K0F3E"
     mode:
       type: "FM"
@@ -89,400 +85,364 @@ rf_chains:
   - id: chain_med1_north
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.000
     tx:
+      freq_mhz: 463.000
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 156.7
+      ctcss_tx_hz: 156.7
 
   - id: chain_med2_north
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.025
     tx:
+      freq_mhz: 463.025
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 156.7
+      ctcss_tx_hz: 156.7
 
   - id: chain_med3_north
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.050
     tx:
+      freq_mhz: 463.050
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 156.7
+      ctcss_tx_hz: 156.7
 
   - id: chain_med4_north
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.075
     tx:
+      freq_mhz: 463.075
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 156.7
+      ctcss_tx_hz: 156.7
 
   - id: chain_med5_north
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.100
     tx:
+      freq_mhz: 463.100
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 156.7
+      ctcss_tx_hz: 156.7
 
   - id: chain_med6_north
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.125
     tx:
+      freq_mhz: 463.125
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 156.7
+      ctcss_tx_hz: 156.7
 
   - id: chain_med7_north
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.150
     tx:
+      freq_mhz: 463.150
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 156.7
+      ctcss_tx_hz: 156.7
 
   - id: chain_med8_north
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.175
     tx:
+      freq_mhz: 463.175
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 156.7
+      ctcss_tx_hz: 156.7
 
   - id: chain_med9_north
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.950
     tx:
+      freq_mhz: 462.950
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 156.7
+      ctcss_tx_hz: 156.7
 
   - id: chain_med10_north
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.975
     tx:
+      freq_mhz: 462.975
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 156.7
+      ctcss_tx_hz: 156.7
 
   - id: chain_med11_north
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.7375
     tx:
+      freq_mhz: 462.7375
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 156.7
+      ctcss_tx_hz: 156.7
 
   - id: chain_med12_north
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.7625
     tx:
+      freq_mhz: 462.7625
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 156.7
+      ctcss_tx_hz: 156.7
 
     # Central Sector (146.2 PL)
   - id: chain_med1_central
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.000
     tx:
+      freq_mhz: 463.000
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 146.2
+      ctcss_tx_hz: 146.2
 
   - id: chain_med2_central
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.025
     tx:
+      freq_mhz: 463.025
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 146.2
+      ctcss_tx_hz: 146.2
 
   - id: chain_med3_central
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.050
     tx:
+      freq_mhz: 463.050
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 146.2
+      ctcss_tx_hz: 146.2
 
   - id: chain_med4_central
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.075
     tx:
+      freq_mhz: 463.075
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 146.2
+      ctcss_tx_hz: 146.2
 
   - id: chain_med5_central
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.100
     tx:
+      freq_mhz: 463.100
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 146.2
+      ctcss_tx_hz: 146.2
 
   - id: chain_med6_central
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.125
     tx:
+      freq_mhz: 463.125
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 146.2
+      ctcss_tx_hz: 146.2
 
   - id: chain_med7_central
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.150
     tx:
+      freq_mhz: 463.150
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 146.2
+      ctcss_tx_hz: 146.2
 
   - id: chain_med8_central
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.175
     tx:
+      freq_mhz: 463.175
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 146.2
+      ctcss_tx_hz: 146.2
 
   - id: chain_med9_central
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.950
     tx:
+      freq_mhz: 462.950
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 146.2
+      ctcss_tx_hz: 146.2
 
   - id: chain_med10_central
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.975
     tx:
+      freq_mhz: 462.975
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 146.2
+      ctcss_tx_hz: 146.2
 
   - id: chain_med11_central
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.7375
     tx:
+      freq_mhz: 462.7375
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 146.2
+      ctcss_tx_hz: 146.2
 
   - id: chain_med12_central
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.7625
     tx:
+      freq_mhz: 462.7625
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 146.2
+      ctcss_tx_hz: 146.2
 
     # South Sector (173.8 PL)
   - id: chain_med1_south
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.000
     tx:
+      freq_mhz: 463.000
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 173.8
+      ctcss_tx_hz: 173.8
 
   - id: chain_med2_south
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.025
     tx:
+      freq_mhz: 463.025
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 173.8
+      ctcss_tx_hz: 173.8
 
   - id: chain_med3_south
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.050
     tx:
+      freq_mhz: 463.050
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 173.8
+      ctcss_tx_hz: 173.8
 
   - id: chain_med4_south
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.075
     tx:
+      freq_mhz: 463.075
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 173.8
+      ctcss_tx_hz: 173.8
 
   - id: chain_med5_south
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.100
     tx:
+      freq_mhz: 463.100
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 173.8
+      ctcss_tx_hz: 173.8
 
   - id: chain_med6_south
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.125
     tx:
+      freq_mhz: 463.125
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 173.8
+      ctcss_tx_hz: 173.8
 
   - id: chain_med7_south
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.150
     tx:
+      freq_mhz: 463.150
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 173.8
+      ctcss_tx_hz: 173.8
 
   - id: chain_med8_south
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 463.175
     tx:
+      freq_mhz: 463.175
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 173.8
+      ctcss_tx_hz: 173.8
 
   - id: chain_med9_south
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.950
     tx:
+      freq_mhz: 462.950
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 173.8
+      ctcss_tx_hz: 173.8
 
   - id: chain_med10_south
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.975
     tx:
+      freq_mhz: 462.975
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 173.8
+      ctcss_tx_hz: 173.8
 
   - id: chain_med11_south
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.7375
     tx:
+      freq_mhz: 462.7375
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 173.8
+      ctcss_tx_hz: 173.8
 
   - id: chain_med12_south
     station_id: stn_cmed_xi
     antenna_id: ant_cmed_xi
-    rx:
-      freq_mhz: 462.7625
     tx:
+      freq_mhz: 462.7625
       emission: "11K0F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 173.8
+      ctcss_tx_hz: 173.8
 
 assignments:
   - id: asg_cfd_ems_command

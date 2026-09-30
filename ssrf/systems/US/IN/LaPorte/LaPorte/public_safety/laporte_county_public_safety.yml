@@ -1,10 +1,10 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
 # SSRF-Lite: La Porte County (IN) Public Safety
 # Source: Attachment "laporte_county - Sheet1.csv" (RadioReference export)
 # Notes: Conventional VHF/UHF channels for county sheriff, EMS, fire, EMA, and Westville PD. Programmed receive-only; statewide P25 talkgroups are omitted.
 
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 organizations:
   - id: org_laporte_sheriff
     name: "La Porte County Sheriff"
@@ -72,20 +72,18 @@ rf_chains:
   - id: chain_laporte_sheriff_dispatch
     station_id: stn_laporte_sheriff
     antenna_id: ant_laporte_sheriff
-    rx:
-      freq_mhz: 155.010
     tx:
+      freq_mhz: 155.010
       emission: "11K2F3E"
     mode:
       type: "FM"
-      dcs_rx_code: "244"
+      dcs_tx_code: "244"
 
   - id: chain_laporte_sheriff_car
     station_id: stn_laporte_sheriff
     antenna_id: ant_laporte_sheriff
-    rx:
-      freq_mhz: 156.210
     tx:
+      freq_mhz: 156.210
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -93,9 +91,8 @@ rf_chains:
   - id: chain_laporte_sheriff_swat
     station_id: stn_laporte_sheriff
     antenna_id: ant_laporte_sheriff
-    rx:
-      freq_mhz: 153.8525
     tx:
+      freq_mhz: 153.8525
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -103,32 +100,29 @@ rf_chains:
   - id: chain_laporte_jail
     station_id: stn_laporte_sheriff
     antenna_id: ant_laporte_sheriff
-    rx:
-      freq_mhz: 154.8675
     tx:
+      freq_mhz: 154.8675
       emission: "11K2F3E"
     mode:
       type: "FM"
-      dcs_rx_code: "132"
+      dcs_tx_code: "132"
 
     # EMS / EMA / Municipal
   - id: chain_laporte_ems_dispatch
     station_id: stn_laporte_ems
     antenna_id: ant_laporte_ems
-    rx:
-      freq_mhz: 155.220
     tx:
+      freq_mhz: 155.220
       emission: "11K2F3E"
     mode:
       type: "FM"
-      dcs_rx_code: "051"
+      dcs_tx_code: "051"
 
   - id: chain_laporte_ema_ops
     station_id: stn_laporte_ema
     antenna_id: ant_laporte_ema
-    rx:
-      freq_mhz: 151.400
     tx:
+      freq_mhz: 151.400
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -136,9 +130,8 @@ rf_chains:
   - id: chain_westville_pd
     station_id: stn_westville_pd
     antenna_id: ant_westville_pd
-    rx:
-      freq_mhz: 154.0625
     tx:
+      freq_mhz: 154.0625
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -147,75 +140,68 @@ rf_chains:
   - id: chain_laporte_fire_dispatch
     station_id: stn_laporte_fire
     antenna_id: ant_laporte_fire
-    rx:
-      freq_mhz: 154.160
     tx:
+      freq_mhz: 154.160
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 141.3
+      ctcss_tx_hz: 141.3
 
   - id: chain_laporte_fire_tertiary
     station_id: stn_laporte_fire
     antenna_id: ant_laporte_fire
-    rx:
-      freq_mhz: 153.355
     tx:
+      freq_mhz: 153.355
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 141.3
+      ctcss_tx_hz: 141.3
 
   - id: chain_laporte_fireground14
     station_id: stn_laporte_fire
     antenna_id: ant_laporte_fire
-    rx:
-      freq_mhz: 156.240
     tx:
+      freq_mhz: 156.240
       emission: "11K2F3E"
     mode:
       type: "FM"
-      dcs_rx_code: "051"
+      dcs_tx_code: "051"
 
   - id: chain_laporte_fireground5
     station_id: stn_laporte_fire
     antenna_id: ant_laporte_fire
-    rx:
-      freq_mhz: 151.055
     tx:
+      freq_mhz: 151.055
       emission: "11K2F3E"
     mode:
       type: "FM"
-      dcs_rx_code: "712"
+      dcs_tx_code: "712"
 
   - id: chain_laporte_fireground6
     station_id: stn_laporte_fire
     antenna_id: ant_laporte_fire
-    rx:
-      freq_mhz: 154.240
     tx:
+      freq_mhz: 154.240
       emission: "11K2F3E"
     mode:
       type: "FM"
-      dcs_rx_code: "051"
+      dcs_tx_code: "051"
 
   - id: chain_laporte_fireground7
     station_id: stn_laporte_fire
     antenna_id: ant_laporte_fire
-    rx:
-      freq_mhz: 154.355
     tx:
+      freq_mhz: 154.355
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 210.7
+      ctcss_tx_hz: 210.7
 
   - id: chain_laporte_fire_mutual_aid
     station_id: stn_laporte_fire
     antenna_id: ant_laporte_fire
-    rx:
-      freq_mhz: 154.280
     tx:
+      freq_mhz: 154.280
       emission: "11K2F3E"
     mode:
       type: "FM"

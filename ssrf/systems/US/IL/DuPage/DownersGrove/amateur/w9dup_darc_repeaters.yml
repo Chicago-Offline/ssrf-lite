@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "DARC Club Repeaters (W9DUP)"
@@ -62,15 +62,15 @@ rf_chains:
     station_id: stn_w9dup_2m
     antenna_id: ant_w9dup_2m_220
     tx:
-      freq_mhz: 145.430
+      freq_mhz: 144.830 # -0.600 MHz input
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 144.830 # -0.600 MHz input
+      freq_mhz: 145.430
     mode:
       type: "FM"
-      ctcss_tx_hz: 107.2
       ctcss_rx_hz: 107.2
+      ctcss_tx_hz: 107.2
       notes: >-
         CTCSS decode required to key the repeater when idle >60 s; carrier
         access is permitted while the machine is already up. IRLP/EchoLink
@@ -80,15 +80,15 @@ rf_chains:
     station_id: stn_w9dup_220
     antenna_id: ant_w9dup_220
     tx:
-      freq_mhz: 224.680
+      freq_mhz: 223.080 # -1.6 MHz input
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 223.080 # -1.6 MHz input
+      freq_mhz: 224.680
     mode:
       type: "FM"
-      ctcss_tx_hz: 110.9
       ctcss_rx_hz: 110.9
+      ctcss_tx_hz: 110.9
       notes: >-
         CTCSS decode required to key the repeater when idle >60 s; carrier
         access is permitted while the machine is already up.
@@ -97,15 +97,15 @@ rf_chains:
     station_id: stn_w9dup_440
     antenna_id: ant_w9dup_440
     tx:
-      freq_mhz: 442.550
+      freq_mhz: 447.550 # +5.0 MHz input
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 447.550 # +5.0 MHz input
+      freq_mhz: 442.550
     mode:
       type: "FM"
-      ctcss_tx_hz: 114.8
       ctcss_rx_hz: 114.8
+      ctcss_tx_hz: 114.8
 
 authorizations:
   - id: auth_fcc_amateur

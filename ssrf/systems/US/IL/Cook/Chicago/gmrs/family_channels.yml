@@ -1,8 +1,8 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
 # SSRF-Lite: Family Event Channels (KC9MHE)
 
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "Family operations channel spreadsheet"
@@ -84,8 +84,8 @@ rf_chains:
       freq_mhz: 462.5750
     mode:
       type: "FM"
-      dcs_tx_code: "023"
       dcs_rx_code: "023"
+      dcs_tx_code: "023"
 
   - id: chain_family_f2_team_a
     station_id: stn_family_gmrs
@@ -99,8 +99,8 @@ rf_chains:
       freq_mhz: 462.6000
     mode:
       type: "FM"
-      dcs_tx_code: "023"
       dcs_rx_code: "023"
+      dcs_tx_code: "023"
 
   - id: chain_family_f3_team_b
     station_id: stn_family_gmrs
@@ -114,8 +114,8 @@ rf_chains:
       freq_mhz: 462.6250
     mode:
       type: "FM"
-      dcs_tx_code: "023"
       dcs_rx_code: "023"
+      dcs_tx_code: "023"
 
   - id: chain_family_f4_team_c
     station_id: stn_family_gmrs
@@ -129,8 +129,8 @@ rf_chains:
       freq_mhz: 462.6500
     mode:
       type: "FM"
-      dcs_tx_code: "023"
       dcs_rx_code: "023"
+      dcs_tx_code: "023"
 
   - id: chain_family_f5_road
     station_id: stn_family_gmrs
@@ -144,53 +144,53 @@ rf_chains:
       freq_mhz: 462.6750
     mode:
       type: "FM"
-      ctcss_tx_hz: 141.3
       ctcss_rx_hz: 141.3
+      ctcss_tx_hz: 141.3
 
   - id: chain_family_f6_rptr
     station_id: stn_family_gmrs
     antenna_id: ant_family_handheld_gmrs
     tx:
-      freq_mhz: 467.5500
+      freq_mhz: 462.5500
       power_w: 5
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.5500
+      freq_mhz: 467.5500
     mode:
       type: "FM"
-      dcs_tx_code: "023"
       dcs_rx_code: "023"
+      dcs_tx_code: "023"
 
   - id: chain_family_f8_evnstn
     station_id: stn_family_gmrs
     antenna_id: ant_family_handheld_gmrs
     tx:
-      freq_mhz: 467.7250
+      freq_mhz: 462.7250
       power_w: 5
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.7250
+      freq_mhz: 467.7250
     mode:
       type: "FM"
-      ctcss_tx_hz: 100.0
       ctcss_rx_hz: 100.0
+      ctcss_tx_hz: 100.0
 
   - id: chain_family_f9_prkrdg
     station_id: stn_family_gmrs
     antenna_id: ant_family_handheld_gmrs
     tx:
-      freq_mhz: 467.6750
+      freq_mhz: 462.6750
       power_w: 5
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.6750
+      freq_mhz: 467.6750
     mode:
       type: "FM"
-      ctcss_tx_hz: 141.3
       ctcss_rx_hz: 141.3
+      ctcss_tx_hz: 141.3
 
   - id: chain_family_f10_evnst
     station_id: stn_family_gmrs
@@ -204,23 +204,23 @@ rf_chains:
       freq_mhz: 462.7000
     mode:
       type: "FM"
-      ctcss_tx_hz: 107.2
       ctcss_rx_hz: 107.2
+      ctcss_tx_hz: 107.2
 
   - id: chain_family_f11_nrthbrk
     station_id: stn_family_gmrs
     antenna_id: ant_family_handheld_gmrs
     tx:
-      freq_mhz: 467.6500
+      freq_mhz: 462.6500
       power_w: 5
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.6500
+      freq_mhz: 467.6500
     mode:
       type: "FM"
-      ctcss_tx_hz: 107.2
       ctcss_rx_hz: 107.2
+      ctcss_tx_hz: 107.2
 
   - id: chain_family_f13_uhf_call
     station_id: stn_family_amateur
@@ -239,31 +239,31 @@ rf_chains:
     station_id: stn_family_amateur
     antenna_id: ant_family_handheld_amateur
     tx:
-      freq_mhz: 447.7250
+      freq_mhz: 442.7250
       power_w: 5
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 442.7250
+      freq_mhz: 447.7250
     mode:
       type: "FM"
-      ctcss_tx_hz: 114.8
       ctcss_rx_hz: 114.8
+      ctcss_tx_hz: 114.8
 
   - id: chain_family_f15_cmfc
     station_id: stn_family_amateur
     antenna_id: ant_family_handheld_amateur
     tx:
-      freq_mhz: 448.7500
+      freq_mhz: 443.7500
       power_w: 5
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 443.7500
+      freq_mhz: 448.7500
     mode:
       type: "FM"
-      ctcss_tx_hz: 114.8
       ctcss_rx_hz: 114.8
+      ctcss_tx_hz: 114.8
 
   - id: chain_family_fd1_all
     station_id: stn_family_gmrs

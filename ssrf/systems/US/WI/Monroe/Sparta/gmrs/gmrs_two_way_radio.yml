@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "GMRS Two Way Radio listing on MyGMRS"
@@ -26,11 +26,11 @@ rf_chains:
   - id: chain_gmrs_sparta_625
     station_id: stn_gmrs_sparta_625
     tx:
-      freq_mhz: 467.625
+      freq_mhz: 462.625
       emission: "20K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.625
+      freq_mhz: 467.625
     mode:
       type: "FM"
 

@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/Chicago-Offline/ssrf-lite/main/ssrf/_schema/ssrf-lite-0.8.0.schema.json",
+  "$id": "https://raw.githubusercontent.com/Chicago-Offline/ssrf-lite/main/ssrf/_schema/ssrf-lite-0.9.0.schema.json",
   "title": "SSRF-Lite Reference Document",
-  "description": "Schema for SSRF-Lite YAML reference documents (specification v0.8.0). Generated from the Pydantic models in ssrf/models/pydantic_models.py. See ssrf/_schema/SSRF-Lite-Spec.md for prose documentation.",
+  "description": "Schema for SSRF-Lite YAML reference documents (specification v0.9.0). Generated from the Pydantic models in ssrf/models/pydantic_models.py. See ssrf/_schema/SSRF-Lite-Spec.md for prose documentation.",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -12,7 +12,7 @@
     },
     "ssrf_lite_version": {
       "type": "string",
-      "const": "0.8.0",
+      "const": "0.9.0",
       "description": "SSRF-Lite specification version this file targets."
     },
     "ssrf_lite": {
@@ -449,6 +449,21 @@
           "default": null,
           "title": "Display Name"
         },
+        "short_name": {
+          "anyOf": [
+            {
+              "maxLength": 6,
+              "pattern": "^[A-Z0-9][A-Z0-9 /-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Uppercase label of at most 6 characters for radios with narrow channel displays. House style: amateur = club + band (SARA2M, NSRC7C), GMRS = system + site (NSEAPK, NSEAEV), public safety = agency + function (CPDZ1), plan channels = plan prefix + number (M06, WX1). Omit to let consumers abbreviate the full name automatically.",
+          "title": "Short Name"
+        },
         "usage": {
           "title": "Usage",
           "type": "string"
@@ -599,6 +614,22 @@
           ],
           "default": null,
           "title": "Service"
+        },
+        "emissions": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/Emission"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Emissions permitted on every channel in the plan, most typical first. Saves repeating a service-wide rule -- US CB allows AM, SSB, and FM on all 40 -- on each channel. A channel that declares its own `emission` or `emissions` overrides this.",
+          "title": "Emissions"
         }
       },
       "required": [
@@ -617,12 +648,28 @@
           "title": "Name",
           "type": "string"
         },
+        "short_name": {
+          "anyOf": [
+            {
+              "maxLength": 6,
+              "pattern": "^[A-Z0-9][A-Z0-9 /-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Uppercase label of at most 6 characters for radios with narrow channel displays. House style: amateur = club + band (SARA2M, NSRC7C), GMRS = system + site (NSEAPK, NSEAEV), public safety = agency + function (CPDZ1), plan channels = plan prefix + number (M06, WX1). Omit to let consumers abbreviate the full name automatically.",
+          "title": "Short Name"
+        },
         "freq_mhz": {
+          "description": "Frequency the channel's transmitting station radiates on -- the coast station, repeater output, or broadcaster.",
           "exclusiveMinimum": 0,
           "title": "Freq Mhz",
           "type": "number"
         },
-        "tx_freq_mhz": {
+        "rx_freq_mhz": {
           "anyOf": [
             {
               "exclusiveMinimum": 0,
@@ -633,7 +680,8 @@
             }
           ],
           "default": null,
-          "title": "Tx Freq Mhz"
+          "description": "Frequency that same station receives on, for duplex channels. Omit for simplex.",
+          "title": "Rx Freq Mhz"
         },
         "notes": {
           "anyOf": [
@@ -657,6 +705,7 @@
             }
           ],
           "default": null,
+          "description": "Shorthand for a channel permitting a single emission.",
           "title": "Emission"
         },
         "bandwidth_khz": {
@@ -671,6 +720,22 @@
           ],
           "default": null,
           "title": "Bandwidth Khz"
+        },
+        "emissions": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/Emission"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Every emission this channel permits, most typical first. Use instead of `emission` when more than one is allowed.",
+          "title": "Emissions"
         }
       },
       "required": [
@@ -741,6 +806,90 @@
         "kind"
       ],
       "title": "Contact",
+      "type": "object"
+    },
+    "Emission": {
+      "additionalProperties": false,
+      "description": "One way a channel may be used: an ITU designator plus its parameters.\n\nChannels that permit several incompatible modulations on the same\nfrequency -- US CB allows AM, SSB, and FM on all 40 channels -- carry one\nof these per permitted modulation rather than collapsing to a single\ndesignator.",
+      "properties": {
+        "emission": {
+          "description": "ITU emission designator, e.g. \"8K00A3E\".",
+          "title": "Emission",
+          "type": "string"
+        },
+        "mode": {
+          "anyOf": [
+            {
+              "enum": [
+                "AM",
+                "APRS",
+                "C4FM",
+                "CW",
+                "DMR",
+                "D-STAR",
+                "DSD",
+                "FM",
+                "LSB",
+                "NFM",
+                "NXDN",
+                "PACKET",
+                "P25",
+                "USB"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Mode this emission corresponds to. Set it where the designator is ambiguous -- J3E covers both \"USB\" and \"LSB\".",
+          "title": "Mode"
+        },
+        "bandwidth_khz": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bandwidth Khz"
+        },
+        "power_w": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Power limit for this emission, where it differs by modulation.",
+          "title": "Power W"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "required": [
+        "emission"
+      ],
+      "title": "Emission",
       "type": "object"
     },
     "Location": {
@@ -1180,7 +1329,7 @@
     },
     "RFChain": {
       "additionalProperties": false,
-      "description": "Bundled transmitter + receiver + mode for a station.",
+      "description": "One station's transmitter + receiver + mode, described from that station.\n\nEvery frequency here belongs to the station itself: ``tx`` is what it\nradiates, ``rx`` is what it listens for. A repeater's ``tx`` is therefore\nits output and its ``rx`` is its input.",
       "properties": {
         "id": {
           "title": "Id",
@@ -1226,8 +1375,6 @@
       "required": [
         "id",
         "station_id",
-        "tx",
-        "rx",
         "mode"
       ],
       "title": "RFChain",
@@ -1235,12 +1382,21 @@
     },
     "Receiver": {
       "additionalProperties": false,
-      "description": "Receiver metadata (frequency and sensitivity).",
+      "description": "This station's receiver: what it listens on, and how well.",
       "properties": {
         "freq_mhz": {
-          "exclusiveMinimum": 0,
-          "title": "Freq Mhz",
-          "type": "number"
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Frequency this station receives on. For a repeater this is the input. Omit for simplex, where the station receives on its transmit frequency.",
+          "title": "Freq Mhz"
         },
         "sensitivity_dbm": {
           "anyOf": [
@@ -1255,9 +1411,6 @@
           "title": "Sensitivity Dbm"
         }
       },
-      "required": [
-        "freq_mhz"
-      ],
       "title": "Receiver",
       "type": "object"
     },
@@ -1326,7 +1479,7 @@
     },
     "Transmitter": {
       "additionalProperties": false,
-      "description": "Transmitter metadata (frequency, power, emission designator).",
+      "description": "This station's transmitter: what it emits, and how.",
       "properties": {
         "freq_mhz": {
           "anyOf": [
@@ -1339,6 +1492,7 @@
             }
           ],
           "default": null,
+          "description": "Frequency this station transmits on. For a repeater this is the output. Omit only for a receive-only station.",
           "title": "Freq Mhz"
         },
         "power_w": {

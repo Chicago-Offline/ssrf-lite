@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "La Porte County ARC - Repeaters"
@@ -85,41 +85,41 @@ rf_chains:
     station_id: stn_k9jsi_vhf
     antenna_id: ant_k9jsi_vhf
     tx:
-      freq_mhz: 146.010 # -0.6 MHz input
+      freq_mhz: 146.610
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 146.610
+      freq_mhz: 146.010 # -0.6 MHz input
     mode:
       type: "FM"
-      ctcss_tx_hz: 131.8
       ctcss_rx_hz: 131.8
+      ctcss_tx_hz: 131.8
       notes: "Kenwood TKR-750 + Pacific Research RI-300 controller"
 
   - id: chain_w9ly_vhf_fm
     station_id: stn_w9ly_vhf
     antenna_id: ant_w9ly_vhf
     tx:
-      freq_mhz: 146.370 # -0.6 MHz input
+      freq_mhz: 146.970
       power_w: 50
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 146.970
+      freq_mhz: 146.370 # -0.6 MHz input
     mode:
       type: "FM"
-      ctcss_tx_hz: 131.8
       ctcss_rx_hz: 131.8
+      ctcss_tx_hz: 131.8
   - id: chain_w9ly_vhf_c4fm
     station_id: stn_w9ly_vhf
     antenna_id: ant_w9ly_vhf
     tx:
-      freq_mhz: 146.370
+      freq_mhz: 146.970
       power_w: 50
       emission: "8K50F7W"
       bandwidth_khz: 12.5
     rx:
-      freq_mhz: 146.970
+      freq_mhz: 146.370
     mode:
       type: "C4FM"
       notes: "Yaesu DR-1X System Fusion (dual-mode)"
@@ -128,26 +128,26 @@ rf_chains:
     station_id: stn_w9ly_uhf
     antenna_id: ant_w9ly_uhf
     tx:
-      freq_mhz: 446.950 # +5 MHz input
+      freq_mhz: 441.950
       power_w: 40
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 441.950
+      freq_mhz: 446.950 # +5 MHz input
     mode:
       type: "FM"
-      ctcss_tx_hz: 131.8
       ctcss_rx_hz: 131.8
+      ctcss_tx_hz: 131.8
   - id: chain_w9ly_uhf_c4fm
     station_id: stn_w9ly_uhf
     antenna_id: ant_w9ly_uhf
     tx:
-      freq_mhz: 446.950
+      freq_mhz: 441.950
       power_w: 40
       emission: "8K50F7W"
       bandwidth_khz: 12.5
     rx:
-      freq_mhz: 441.950
+      freq_mhz: 446.950
     mode:
       type: "C4FM"
       notes: "Yaesu DR-1X; normally linked to WIRES-X room 21421"
@@ -156,15 +156,15 @@ rf_chains:
     station_id: stn_w9sal_uhf
     antenna_id: ant_w9sal_uhf
     tx:
-      freq_mhz: 449.950
+      freq_mhz: 444.950
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 444.950
+      freq_mhz: 449.950
     mode:
       type: "FM"
-      ctcss_tx_hz: 131.8
       ctcss_rx_hz: 131.8
+      ctcss_tx_hz: 131.8
 
 authorizations:
   - id: auth_fcc_amateur
