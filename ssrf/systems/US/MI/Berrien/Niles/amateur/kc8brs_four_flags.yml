@@ -58,6 +58,7 @@ authorizations:
 
 assignments:
   - id: asgn_kc8brs_vhf_fm
+    short_name: "FFRC2M"
     rf_chain_id: chain_kc8brs_vhf_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur

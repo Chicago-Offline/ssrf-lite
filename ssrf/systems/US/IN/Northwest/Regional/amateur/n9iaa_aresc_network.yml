@@ -184,6 +184,7 @@ authorizations:
 
 assignments:
   - id: asgn_n9iaa_146_fm
+    short_name: "ARSC2M"
     rf_chain_id: chain_n9iaa_146_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur
@@ -192,6 +193,7 @@ assignments:
       Designed for handheld coverage across NWS Indiana District 1 (Lake, Porter, La Porte, Newton, Jasper, Benton).
       Sites linked via microwave with battery backup.
   - id: asgn_n9iaa_valpo_dmr
+    short_name: "ARSCVA"
     rf_chain_id: chain_n9iaa_dmr_valpo
     usage: "repeater"
     authorization_id: auth_fcc_amateur
@@ -199,12 +201,14 @@ assignments:
       441.350 MHz output (+5 MHz offset), Color Code 1. Time Slot 1 TG8 (full-time), TS2 TG3118 (full-time),
       TS2 PTT: TG1 Worldwide, TG3 Worldwide English, TG9 DMR+ Talk, TG5000 status, TG4000 disconnect. Disable ARS per site guidance.
   - id: asgn_n9iaa_crownpoint_dmr
+    short_name: "ARSCCP"
     rf_chain_id: chain_n9iaa_dmr_crown_point
     usage: "repeater"
     authorization_id: auth_fcc_amateur
     notes: |
       444.350 MHz output (+5 MHz offset), Color Code 1. Same talkgroup lineup as Valparaiso site; typically networked.
   - id: asgn_n9iaa_laporte_dmr
+    short_name: "ARSCLP"
     rf_chain_id: chain_n9iaa_dmr_la_porte
     usage: "repeater"
     authorization_id: auth_fcc_amateur

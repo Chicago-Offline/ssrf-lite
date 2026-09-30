@@ -124,6 +124,7 @@ authorizations:
 
 assignments:
   - id: asgn_nsea_675
+    short_name: "NSEAPK"
     channel_name: "NSEA 675"
     rf_chain_id: chain_nsea_675
     usage: "repeater"
@@ -140,6 +141,7 @@ assignments:
       note: "Checked into the NSEA Sunday evening net via the Park Ridge machine."
 
   - id: asgn_nsea_650
+    short_name: "NSEANB"
     channel_name: "NSEA 650"
     rf_chain_id: chain_nsea_650
     usage: "repeater"
@@ -151,6 +153,7 @@ assignments:
       (+5.000 input).
 
   - id: asgn_nsea_700
+    short_name: "NSEAEV"
     channel_name: "NSEA 700"
     rf_chain_id: chain_nsea_700
     usage: "repeater"
@@ -165,6 +168,7 @@ assignments:
       (+5.000 input).
 
   - id: asgn_nsea_coop_evanston_725
+    short_name: "EVAN72"
     channel_name: "Evanston 725"
     rf_chain_id: chain_nsea_coop_evanston_725
     usage: "repeater"

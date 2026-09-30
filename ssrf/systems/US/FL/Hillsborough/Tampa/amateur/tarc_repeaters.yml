@@ -110,16 +110,19 @@ authorizations:
 
 assignments:
   - id: asgn_tarc_vhf
+    short_name: "TARC2M"
     rf_chain_id: chain_tarc_vhf_fm
     usage: "repeater"
     service: "amateur"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_tarc_uhf1
+    short_name: "TRC475"
     rf_chain_id: chain_tarc_uhf1_fm
     usage: "repeater"
     service: "amateur"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_tarc_uhf2
+    short_name: "TRC025"
     rf_chain_id: chain_tarc_uhf2_fm
     usage: "repeater"
     service: "amateur"

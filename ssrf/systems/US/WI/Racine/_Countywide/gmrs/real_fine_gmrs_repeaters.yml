@@ -38,6 +38,7 @@ rf_chains:
 
 assignments:
   - id: asgn_gmrs_real_fine_650
+    short_name: "RFGM65"
     rf_chain_id: chain_gmrs_real_fine_650
     usage: "repeater"
     notes: "Open system; free to use for all GMRS traffic types. 77.0 Hz PL on input and output. Coverage includes Racine, Kenosha, and southern Milwaukee County areas."

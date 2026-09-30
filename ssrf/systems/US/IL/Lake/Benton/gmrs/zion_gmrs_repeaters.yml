@@ -38,6 +38,7 @@ rf_chains:
 
 assignments:
   - id: asgn_gmrs_zion_550
+    short_name: "ZION55"
     channel_name: "Zion 550"
     rf_chain_id: chain_gmrs_zion_550
     usage: "repeater"

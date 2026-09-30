@@ -104,16 +104,19 @@ authorizations:
 
 assignments:
   - id: asgn_n2ozo_448175_fm
+    short_name: "N2OZOA"
     channel_name: "N2OZO Ana"
     rf_chain_id: chain_n2ozo_448175_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_n2ozo_448175_p25
+    short_name: "N2OZOD"
     channel_name: "N2OZO Dig"
     rf_chain_id: chain_n2ozo_448175_p25
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_n2ozo_448825
+    short_name: "N2OZ82"
     channel_name: "N2OZO 448.825"
     rf_chain_id: chain_n2ozo_448825_fm
     usage: "repeater"

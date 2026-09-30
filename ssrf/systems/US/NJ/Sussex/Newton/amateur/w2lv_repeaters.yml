@@ -142,26 +142,31 @@ authorizations:
 
 assignments:
   - id: asgn_w2lv_147210
+    short_name: "W2L210"
     channel_name: "W2LV 147.210"
     rf_chain_id: chain_w2lv_147210_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_w2lv_147300
+    short_name: "W2L300"
     channel_name: "W2LV 147.300"
     rf_chain_id: chain_w2lv_147300_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_w2lv_147330
+    short_name: "W2L330"
     channel_name: "W2LV 147.330"
     rf_chain_id: chain_w2lv_147330_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_w2lv_224500
+    short_name: "W2LV12"
     channel_name: "W2LV 224.500"
     rf_chain_id: chain_w2lv_224500_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur_t
   - id: asgn_w2lv_443000
+    short_name: "W2LV7C"
     channel_name: "W2LV 443.000"
     rf_chain_id: chain_w2lv_443000_fm
     usage: "repeater"

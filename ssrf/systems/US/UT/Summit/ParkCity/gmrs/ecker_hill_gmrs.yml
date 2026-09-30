@@ -37,6 +37,7 @@ rf_chains:
 
 assignments:
   - id: asgn_gmrs_ecker_hill_575
+    short_name: "ECKH57"
     rf_chain_id: chain_gmrs_ecker_hill_575
     usage: "repeater"
     notes: "Open system. 136.5 Hz input tone; no output tone. Primary purpose is to enhance emergency communications for the Park City community during a wide-scale event."

@@ -176,6 +176,7 @@ authorizations:
 
 assignments:
   - id: asgn_k9jsi_vhf_fm
+    short_name: "LPC661"
     rf_chain_id: chain_k9jsi_vhf_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur
@@ -184,6 +185,7 @@ assignments:
       Supports SKYWARN weather nets and monthly siren checks; Wednesday club net at 1900 CDT.
       Located on Schultz Road tower site shared with W9LY UHF system.
   - id: asgn_w9ly_vhf_fm
+    short_name: "LPC697"
     rf_chain_id: chain_w9ly_vhf_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur
@@ -191,11 +193,13 @@ assignments:
       Yaesu DR-1X dual-mode repeater on 146.970 -0.600 MHz, 131.8 Hz PL for analog access.
       Located atop Northwest Health (La Porte Hospital); ~50 W into Telewave TPRD-1454 duplexer.
   - id: asgn_w9ly_vhf_c4fm
+    short_name: "LPC69C"
     rf_chain_id: chain_w9ly_vhf_c4fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur
     notes: "System Fusion (C4FM) access on 146.970 MHz; same DR-1X platform as FM."
   - id: asgn_w9ly_uhf_fm
+    short_name: "LPC195"
     rf_chain_id: chain_w9ly_uhf_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur
@@ -203,6 +207,7 @@ assignments:
       441.950 +5.000 MHz with 131.8 Hz PL for analog. Hustler 6 dBd antenna ~200 ft AGL.
       Telewave duplexer and ~40 W ERP. Collocated at Schultz Road tower (US 35).
   - id: asgn_w9ly_uhf_c4fm
+    short_name: "LPC19C"
     rf_chain_id: chain_w9ly_uhf_c4fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur
@@ -210,6 +215,7 @@ assignments:
       Yaesu System Fusion digital voice; normally linked to WIRES-X room 21421.
       Same Schultz Road site and antenna as FM chain.
   - id: asgn_w9sal_uhf_fm
+    short_name: "LPC495"
     rf_chain_id: chain_w9sal_uhf_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur

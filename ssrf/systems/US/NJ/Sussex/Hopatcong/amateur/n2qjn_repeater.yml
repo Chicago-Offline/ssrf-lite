@@ -60,6 +60,7 @@ authorizations:
 
 assignments:
   - id: asgn_n2qjn_224280
+    short_name: "N2QJN"
     channel_name: "N2QJN 224.28"
     rf_chain_id: chain_n2qjn_224280_fm
     usage: "repeater"
