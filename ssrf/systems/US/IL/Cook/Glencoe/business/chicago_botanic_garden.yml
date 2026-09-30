@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "RadioReference - Chicago Botanic Garden (Glencoe) business radio listing"
@@ -80,131 +80,131 @@ rf_chains:
     station_id: stn_cbg_wnkx791
     antenna_id: ant_cbg_wnkx791
     tx:
-      freq_mhz: 468.400
+      freq_mhz: 463.400
       power_w: 40.0
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
-      freq_mhz: 463.400
+      freq_mhz: 468.400
     mode:
       type: "FM"
-      dcs_tx_code: "632"
       dcs_rx_code: "632"
-      dcs_tx_polarity: "N"
+      dcs_tx_code: "632"
       dcs_rx_polarity: "N"
+      dcs_tx_polarity: "N"
 
   - id: chain_cbg_garden_2
     station_id: stn_cbg_wnkx791
     antenna_id: ant_cbg_wnkx791
     tx:
-      freq_mhz: 466.775
+      freq_mhz: 461.775
       power_w: 40.0
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
-      freq_mhz: 461.775
+      freq_mhz: 466.775
     mode:
       type: "FM"
-      dcs_tx_code: "734"
       dcs_rx_code: "734"
-      dcs_tx_polarity: "N"
+      dcs_tx_code: "734"
       dcs_rx_polarity: "N"
+      dcs_tx_polarity: "N"
 
   - id: chain_cbg_garden_3
     station_id: stn_cbg_wnkx791
     antenna_id: ant_cbg_wnkx791
     tx:
-      freq_mhz: 469.175
+      freq_mhz: 464.175
       power_w: 40.0
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
-      freq_mhz: 464.175
+      freq_mhz: 469.175
     mode:
       type: "FM"
-      dcs_tx_code: "125"
       dcs_rx_code: "125"
-      dcs_tx_polarity: "N"
+      dcs_tx_code: "125"
       dcs_rx_polarity: "N"
+      dcs_tx_polarity: "N"
 
   - id: chain_cbg_garden_4
     station_id: stn_cbg_wnkx791
     antenna_id: ant_cbg_wnkx791
     tx:
-      freq_mhz: 468.600
+      freq_mhz: 463.600
       power_w: 40.0
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
-      freq_mhz: 463.600
+      freq_mhz: 468.600
     mode:
       type: "FM"
-      dcs_tx_code: "624"
       dcs_rx_code: "624"
-      dcs_tx_polarity: "N"
+      dcs_tx_code: "624"
       dcs_rx_polarity: "N"
+      dcs_tx_polarity: "N"
 
   - id: chain_cbg_garden_5
     station_id: stn_cbg_wnkx791
     antenna_id: ant_cbg_wnkx791
     tx:
-      freq_mhz: 469.1625
+      freq_mhz: 464.1625
       power_w: 40.0
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
-      freq_mhz: 464.1625
+      freq_mhz: 469.1625
     mode:
       type: "FM"
-      dcs_tx_code: "311"
       dcs_rx_code: "311"
-      dcs_tx_polarity: "N"
+      dcs_tx_code: "311"
       dcs_rx_polarity: "N"
+      dcs_tx_polarity: "N"
 
   - id: chain_cbg_garden_6
     station_id: stn_cbg_wnkx791
     antenna_id: ant_cbg_wnkx791
     tx:
-      freq_mhz: 467.100
+      freq_mhz: 462.100
       power_w: 40.0
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
-      freq_mhz: 462.100
+      freq_mhz: 467.100
     mode:
       type: "FM"
-      dcs_tx_code: "703"
       dcs_rx_code: "703"
-      dcs_tx_polarity: "N"
+      dcs_tx_code: "703"
       dcs_rx_polarity: "N"
+      dcs_tx_polarity: "N"
 
   - id: chain_cbg_garden_7
     station_id: stn_cbg_wnkx791
     antenna_id: ant_cbg_wnkx791
     tx:
-      freq_mhz: 469.100
+      freq_mhz: 464.100
       power_w: 40.0
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
-      freq_mhz: 464.100
+      freq_mhz: 469.100
     mode:
       type: "FM"
-      dcs_tx_code: "411"
       dcs_rx_code: "411"
-      dcs_tx_polarity: "N"
+      dcs_tx_code: "411"
       dcs_rx_polarity: "N"
+      dcs_tx_polarity: "N"
 
   - id: chain_cbg_464_0625
     station_id: stn_cbg_wnkx791
     antenna_id: ant_cbg_wnkx791
     tx:
-      freq_mhz: 469.0625
+      freq_mhz: 464.0625
       power_w: 40.0
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
-      freq_mhz: 464.0625
+      freq_mhz: 469.0625
     mode:
       type: "FM"
       notes: "No published tone. Listed as a repeater in the RadioReference free-text header and authorized on WNKX791, but not in the channel table."
@@ -213,12 +213,12 @@ rf_chains:
     station_id: stn_cbg_wnkx791
     antenna_id: ant_cbg_wnkx791
     tx:
-      freq_mhz: 469.525
+      freq_mhz: 464.525
       power_w: 40.0
       emission: "11K2F3E"
       bandwidth_khz: 12.5
     rx:
-      freq_mhz: 464.525
+      freq_mhz: 469.525
     mode:
       type: "FM"
       notes: "Authorized on WNKX791 in FCC ULS but absent from the RadioReference listing. No published tone or usage."

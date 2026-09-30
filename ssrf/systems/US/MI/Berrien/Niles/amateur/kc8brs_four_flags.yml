@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "KC8BRS Repeater Detail (Artsci Publishing)"
@@ -37,15 +37,15 @@ rf_chains:
     station_id: stn_kc8brs_vhf
     antenna_id: ant_kc8brs_vhf
     tx:
-      freq_mhz: 147.780
+      freq_mhz: 147.180
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 147.180
+      freq_mhz: 147.780
     mode:
       type: "FM"
-      ctcss_tx_hz: 94.8
       ctcss_rx_hz: 94.8
+      ctcss_tx_hz: 94.8
       notes: "Standard +0.600 MHz offset."
 
 authorizations:

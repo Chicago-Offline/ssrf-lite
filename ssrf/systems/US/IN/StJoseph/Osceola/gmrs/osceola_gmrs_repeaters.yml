@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "Osceola 600 listing on MyGMRS"
@@ -26,15 +26,15 @@ rf_chains:
   - id: chain_gmrs_osceola_600
     station_id: stn_gmrs_osceola_600
     tx:
-      freq_mhz: 467.600
+      freq_mhz: 462.600
       emission: "20K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.600
+      freq_mhz: 467.600
     mode:
       type: "FM"
-      dcs_tx_code: "343"
       dcs_rx_code: "343"
+      dcs_tx_code: "343"
 
 assignments:
   - id: asgn_gmrs_osceola_600

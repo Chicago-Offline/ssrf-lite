@@ -1,8 +1,8 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
 # SSRF-Lite: Cook County Interoperability (VHF/UHF conventional, analogue)
 
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "RadioReference - Cook County, IL (Cook County Interoperability)"
@@ -68,125 +68,116 @@ rf_chains:
   - id: chain_cook_io_v1
     station_id: stn_cook_io_klr279
     antenna_id: ant_cook_io_klr279
-    rx:
-      freq_mhz: 154.995
     tx:
+      freq_mhz: 154.995
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 107.2
       ctcss_tx_hz: 107.2
+      ctcss_rx_hz: 107.2
       notes: "Repeater; input frequency not published."
 
   # Interop VHF 2 // Sheriff Backup Auxiliary Band 5 (Ch 5)
   - id: chain_cook_io_v2
     station_id: stn_cook_io_ksa717
     antenna_id: ant_cook_io_ksa717
-    rx:
-      freq_mhz: 155.640
     tx:
+      freq_mhz: 155.640
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 107.2
       ctcss_tx_hz: 107.2
+      ctcss_rx_hz: 107.2
       notes: "Repeater; input frequency not published. Analogue counterpart of the Sheriff P25 Ch 5 backup."
 
   # Interop VHF 3 // Sheriff Backup Talk-Around (Ch 1)
   - id: chain_cook_io_v3
     station_id: stn_cook_io_ksa717
     antenna_id: ant_cook_io_ksa717
-    rx:
-      freq_mhz: 155.595
     tx:
+      freq_mhz: 155.595
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 107.2
       ctcss_tx_hz: 107.2
+      ctcss_rx_hz: 107.2
       notes: "Repeater; input not published. Marked possibly deprecated - now carries Sheriff Patrol North P25."
 
   # Interop VHF 4 // Sheriff Backup South Patrol (Ch 2)
   - id: chain_cook_io_v4
     station_id: stn_cook_io_ksa717
     antenna_id: ant_cook_io_ksa717
-    rx:
-      freq_mhz: 155.535
     tx:
+      freq_mhz: 155.535
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 107.2
       ctcss_tx_hz: 107.2
+      ctcss_rx_hz: 107.2
       notes: "Repeater; input not published. Marked possibly deprecated - now carries Sheriff Patrol South P25."
 
   # Interop V Metro 3
   - id: chain_cook_io_vmetro3
     station_id: stn_cook_io_ksc711
     antenna_id: ant_cook_io_ksc711
-    rx:
-      freq_mhz: 153.770
     tx:
+      freq_mhz: 153.770
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 156.7
       ctcss_tx_hz: 156.7
+      ctcss_rx_hz: 156.7
       notes: "Repeater; input frequency not published."
 
   # Interop V Metro 4
   - id: chain_cook_io_vmetro4
     station_id: stn_cook_io_ksc711
     antenna_id: ant_cook_io_ksc711
-    rx:
-      freq_mhz: 154.130
     tx:
+      freq_mhz: 154.130
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 156.7
       ctcss_tx_hz: 156.7
+      ctcss_rx_hz: 156.7
       notes: "Repeater; input frequency not published."
 
   # Interop V Metro 5 (simplex)
   - id: chain_cook_io_vmetro5
     station_id: stn_cook_io_ksc711
     antenna_id: ant_cook_io_ksc711
-    rx:
-      freq_mhz: 154.220
     tx:
+      freq_mhz: 154.220
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 156.7
       ctcss_tx_hz: 156.7
+      ctcss_rx_hz: 156.7
 
   # Interop UHF 1
   - id: chain_cook_io_u1
     station_id: stn_cook_io_wqls615
     antenna_id: ant_cook_io_wqls615
-    rx:
-      freq_mhz: 453.950
     tx:
+      freq_mhz: 453.950
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 141.3
       ctcss_tx_hz: 141.3
+      ctcss_rx_hz: 141.3
       notes: "Repeater; input not published. Also licensed for P25."
 
   # Interop UHF 2 - full-time ISPERN patch
   - id: chain_cook_io_u2
     station_id: stn_cook_io_wqls615
     antenna_id: ant_cook_io_wqls615
-    rx:
-      freq_mhz: 453.750
     tx:
+      freq_mhz: 453.750
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 156.7
       ctcss_tx_hz: 156.7
+      ctcss_rx_hz: 156.7
       notes: "Repeater; input not published. Full-time patch to ISPERN (155.475). Also licensed for P25."
 
 assignments:

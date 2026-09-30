@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "Lakeshore Repeater Association (KR9RK) - Our Repeaters"
@@ -80,15 +80,15 @@ rf_chains:
     station_id: stn_kr9rk_2m
     antenna_id: ant_kr9rk_tx_dualband
     tx:
-      freq_mhz: 147.870 # +0.600 MHz input
+      freq_mhz: 147.270
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 147.270
+      freq_mhz: 147.870 # +0.600 MHz input
     mode:
       type: "FM"
-      ctcss_tx_hz: 127.3
       ctcss_rx_hz: 127.3
+      ctcss_tx_hz: 127.3
       notes: >-
         Voted receiver network: main site plus several remote listening sites
         (including downtown Kenosha) feed a voting controller. Linked to
@@ -98,15 +98,15 @@ rf_chains:
     station_id: stn_kr9rk_440_analog
     antenna_id: ant_kr9rk_tx_440
     tx:
-      freq_mhz: 447.000 # +5.0 MHz input
+      freq_mhz: 442.000
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 442.000
+      freq_mhz: 447.000 # +5.0 MHz input
     mode:
       type: "FM"
-      ctcss_tx_hz: 79.7
       ctcss_rx_hz: 79.7
+      ctcss_tx_hz: 79.7
       notes: >-
         Linked to AllStar node 511681; Hamshack Hotline extension 94034 (*99
         keys, # unkeys). The Walworth, WI remote receive site requires a
@@ -116,10 +116,10 @@ rf_chains:
     station_id: stn_kr9rk_440_dmr
     antenna_id: ant_kr9rk_tx_440_dmr
     tx:
-      freq_mhz: 445.00625 # +5.0 MHz input
+      freq_mhz: 440.00625
       emission: "7K60FXE"
     rx:
-      freq_mhz: 440.00625
+      freq_mhz: 445.00625 # +5.0 MHz input
     mode:
       type: "DMR"
       color_code: 9

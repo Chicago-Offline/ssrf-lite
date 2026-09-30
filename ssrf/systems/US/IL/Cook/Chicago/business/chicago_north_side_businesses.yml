@@ -1,8 +1,8 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
 # SSRF-Lite: Chicago north side - licensed business land mobile (Bucktown to Evanston corridor)
 
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "RadioReference Wiki - Businesses, Chicago Cook County (IL)"
@@ -380,9 +380,8 @@ rf_chains:
   - id: chain_wqnc265_151p655
     station_id: stn_wqnc265
     antenna_id: ant_wqnc265
-    rx:
-      freq_mhz: 151.655
     tx:
+      freq_mhz: 151.655
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -390,9 +389,8 @@ rf_chains:
   - id: chain_wqnc265_151p955
     station_id: stn_wqnc265
     antenna_id: ant_wqnc265
-    rx:
-      freq_mhz: 151.955
     tx:
+      freq_mhz: 151.955
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -401,9 +399,8 @@ rf_chains:
   - id: chain_wsaw401_464p15
     station_id: stn_wsaw401
     antenna_id: ant_wsaw401
-    rx:
-      freq_mhz: 464.15
     tx:
+      freq_mhz: 464.15
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -411,9 +408,8 @@ rf_chains:
   - id: chain_wsaw401_469p15
     station_id: stn_wsaw401
     antenna_id: ant_wsaw401
-    rx:
-      freq_mhz: 469.15
     tx:
+      freq_mhz: 469.15
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -421,9 +417,8 @@ rf_chains:
   - id: chain_wsaw401_462p1
     station_id: stn_wsaw401
     antenna_id: ant_wsaw401
-    rx:
-      freq_mhz: 462.1
     tx:
+      freq_mhz: 462.1
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -431,9 +426,8 @@ rf_chains:
   - id: chain_wsaw401_464p7875
     station_id: stn_wsaw401
     antenna_id: ant_wsaw401
-    rx:
-      freq_mhz: 464.7875
     tx:
+      freq_mhz: 464.7875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -442,9 +436,8 @@ rf_chains:
   - id: chain_wroz989_461p6625
     station_id: stn_wroz989
     antenna_id: ant_wroz989
-    rx:
-      freq_mhz: 461.6625
     tx:
+      freq_mhz: 461.6625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -452,9 +445,8 @@ rf_chains:
   - id: chain_wroz989_457p1
     station_id: stn_wroz989
     antenna_id: ant_wroz989
-    rx:
-      freq_mhz: 457.1
     tx:
+      freq_mhz: 457.1
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -462,9 +454,8 @@ rf_chains:
   - id: chain_wroz989_457p225
     station_id: stn_wroz989
     antenna_id: ant_wroz989
-    rx:
-      freq_mhz: 457.225
     tx:
+      freq_mhz: 457.225
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -472,9 +463,8 @@ rf_chains:
   - id: chain_wroz989_457p25
     station_id: stn_wroz989
     antenna_id: ant_wroz989
-    rx:
-      freq_mhz: 457.25
     tx:
+      freq_mhz: 457.25
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -482,9 +472,8 @@ rf_chains:
   - id: chain_wroz989_457p35
     station_id: stn_wroz989
     antenna_id: ant_wroz989
-    rx:
-      freq_mhz: 457.35
     tx:
+      freq_mhz: 457.35
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -492,9 +481,8 @@ rf_chains:
   - id: chain_wroz989_468p875
     station_id: stn_wroz989
     antenna_id: ant_wroz989
-    rx:
-      freq_mhz: 468.875
     tx:
+      freq_mhz: 468.875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -503,9 +491,8 @@ rf_chains:
   - id: chain_wqfq228_463p4125
     station_id: stn_wqfq228
     antenna_id: ant_wqfq228
-    rx:
-      freq_mhz: 463.4125
     tx:
+      freq_mhz: 463.4125
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -513,9 +500,8 @@ rf_chains:
   - id: chain_wqfq228_467p7625
     station_id: stn_wqfq228
     antenna_id: ant_wqfq228
-    rx:
-      freq_mhz: 467.7625
     tx:
+      freq_mhz: 467.7625
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -523,9 +509,8 @@ rf_chains:
   - id: chain_wqfq228_467p875
     station_id: stn_wqfq228
     antenna_id: ant_wqfq228
-    rx:
-      freq_mhz: 467.875
     tx:
+      freq_mhz: 467.875
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -534,9 +519,8 @@ rf_chains:
   - id: chain_wryn967_456p3875
     station_id: stn_wryn967
     antenna_id: ant_wryn967
-    rx:
-      freq_mhz: 456.3875
     tx:
+      freq_mhz: 456.3875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -544,9 +528,8 @@ rf_chains:
   - id: chain_wryn967_462p025
     station_id: stn_wryn967
     antenna_id: ant_wryn967
-    rx:
-      freq_mhz: 462.025
     tx:
+      freq_mhz: 462.025
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -554,9 +537,8 @@ rf_chains:
   - id: chain_wryn967_464p15
     station_id: stn_wryn967
     antenna_id: ant_wryn967
-    rx:
-      freq_mhz: 464.15
     tx:
+      freq_mhz: 464.15
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -564,9 +546,8 @@ rf_chains:
   - id: chain_wryn967_467p025
     station_id: stn_wryn967
     antenna_id: ant_wryn967
-    rx:
-      freq_mhz: 467.025
     tx:
+      freq_mhz: 467.025
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -574,9 +555,8 @@ rf_chains:
   - id: chain_wryn967_469p15
     station_id: stn_wryn967
     antenna_id: ant_wryn967
-    rx:
-      freq_mhz: 469.15
     tx:
+      freq_mhz: 469.15
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -585,9 +565,8 @@ rf_chains:
   - id: chain_wrcw601_463p5125
     station_id: stn_wrcw601
     antenna_id: ant_wrcw601
-    rx:
-      freq_mhz: 463.5125
     tx:
+      freq_mhz: 463.5125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -595,9 +574,8 @@ rf_chains:
   - id: chain_wrcw601_466p15
     station_id: stn_wrcw601
     antenna_id: ant_wrcw601
-    rx:
-      freq_mhz: 466.15
     tx:
+      freq_mhz: 466.15
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -605,9 +583,8 @@ rf_chains:
   - id: chain_wrcw601_466p175
     station_id: stn_wrcw601
     antenna_id: ant_wrcw601
-    rx:
-      freq_mhz: 466.175
     tx:
+      freq_mhz: 466.175
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -615,9 +592,8 @@ rf_chains:
   - id: chain_wrcw601_466p2
     station_id: stn_wrcw601
     antenna_id: ant_wrcw601
-    rx:
-      freq_mhz: 466.2
     tx:
+      freq_mhz: 466.2
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -625,9 +601,8 @@ rf_chains:
   - id: chain_wrcw601_466p225
     station_id: stn_wrcw601
     antenna_id: ant_wrcw601
-    rx:
-      freq_mhz: 466.225
     tx:
+      freq_mhz: 466.225
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -635,9 +610,8 @@ rf_chains:
   - id: chain_wrcw601_466p25
     station_id: stn_wrcw601
     antenna_id: ant_wrcw601
-    rx:
-      freq_mhz: 466.25
     tx:
+      freq_mhz: 466.25
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -646,9 +620,8 @@ rf_chains:
   - id: chain_wskm439_462p2
     station_id: stn_wskm439
     antenna_id: ant_wskm439
-    rx:
-      freq_mhz: 462.2
     tx:
+      freq_mhz: 462.2
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -656,9 +629,8 @@ rf_chains:
   - id: chain_wskm439_462p425
     station_id: stn_wskm439
     antenna_id: ant_wskm439
-    rx:
-      freq_mhz: 462.425
     tx:
+      freq_mhz: 462.425
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -666,9 +638,8 @@ rf_chains:
   - id: chain_wskm439_462p025
     station_id: stn_wskm439
     antenna_id: ant_wskm439
-    rx:
-      freq_mhz: 462.025
     tx:
+      freq_mhz: 462.025
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -676,9 +647,8 @@ rf_chains:
   - id: chain_wskm439_462p525
     station_id: stn_wskm439
     antenna_id: ant_wskm439
-    rx:
-      freq_mhz: 462.525
     tx:
+      freq_mhz: 462.525
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -686,9 +656,8 @@ rf_chains:
   - id: chain_wskm439_467p525
     station_id: stn_wskm439
     antenna_id: ant_wskm439
-    rx:
-      freq_mhz: 467.525
     tx:
+      freq_mhz: 467.525
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -697,9 +666,8 @@ rf_chains:
   - id: chain_wrjm838_457p05
     station_id: stn_wrjm838
     antenna_id: ant_wrjm838
-    rx:
-      freq_mhz: 457.05
     tx:
+      freq_mhz: 457.05
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -707,9 +675,8 @@ rf_chains:
   - id: chain_wrjm838_457p2
     station_id: stn_wrjm838
     antenna_id: ant_wrjm838
-    rx:
-      freq_mhz: 457.2
     tx:
+      freq_mhz: 457.2
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -717,9 +684,8 @@ rf_chains:
   - id: chain_wrjm838_457p4
     station_id: stn_wrjm838
     antenna_id: ant_wrjm838
-    rx:
-      freq_mhz: 457.4
     tx:
+      freq_mhz: 457.4
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -727,9 +693,8 @@ rf_chains:
   - id: chain_wrjm838_457p45
     station_id: stn_wrjm838
     antenna_id: ant_wrjm838
-    rx:
-      freq_mhz: 457.45
     tx:
+      freq_mhz: 457.45
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -737,9 +702,8 @@ rf_chains:
   - id: chain_wrjm838_457p55
     station_id: stn_wrjm838
     antenna_id: ant_wrjm838
-    rx:
-      freq_mhz: 457.55
     tx:
+      freq_mhz: 457.55
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -748,9 +712,8 @@ rf_chains:
   - id: chain_wsjp953_451p7125
     station_id: stn_wsjp953
     antenna_id: ant_wsjp953
-    rx:
-      freq_mhz: 451.7125
     tx:
+      freq_mhz: 451.7125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -758,9 +721,8 @@ rf_chains:
   - id: chain_wsjp953_452p1875
     station_id: stn_wsjp953
     antenna_id: ant_wsjp953
-    rx:
-      freq_mhz: 452.1875
     tx:
+      freq_mhz: 452.1875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -768,9 +730,8 @@ rf_chains:
   - id: chain_wsjp953_456p7125
     station_id: stn_wsjp953
     antenna_id: ant_wsjp953
-    rx:
-      freq_mhz: 456.7125
     tx:
+      freq_mhz: 456.7125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -778,9 +739,8 @@ rf_chains:
   - id: chain_wsjp953_457p1875
     station_id: stn_wsjp953
     antenna_id: ant_wsjp953
-    rx:
-      freq_mhz: 457.1875
     tx:
+      freq_mhz: 457.1875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -789,9 +749,8 @@ rf_chains:
   - id: chain_wrxb606_456p325
     station_id: stn_wrxb606
     antenna_id: ant_wrxb606
-    rx:
-      freq_mhz: 456.325
     tx:
+      freq_mhz: 456.325
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -799,9 +758,8 @@ rf_chains:
   - id: chain_wrxb606_457p2
     station_id: stn_wrxb606
     antenna_id: ant_wrxb606
-    rx:
-      freq_mhz: 457.2
     tx:
+      freq_mhz: 457.2
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -809,9 +767,8 @@ rf_chains:
   - id: chain_wrxb606_457p45
     station_id: stn_wrxb606
     antenna_id: ant_wrxb606
-    rx:
-      freq_mhz: 457.45
     tx:
+      freq_mhz: 457.45
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -819,9 +776,8 @@ rf_chains:
   - id: chain_wrxb606_457p8
     station_id: stn_wrxb606
     antenna_id: ant_wrxb606
-    rx:
-      freq_mhz: 457.8
     tx:
+      freq_mhz: 457.8
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -829,9 +785,8 @@ rf_chains:
   - id: chain_wrxb606_466p275
     station_id: stn_wrxb606
     antenna_id: ant_wrxb606
-    rx:
-      freq_mhz: 466.275
     tx:
+      freq_mhz: 466.275
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -840,9 +795,8 @@ rf_chains:
   - id: chain_wrxk699_151p535
     station_id: stn_wrxk699
     antenna_id: ant_wrxk699
-    rx:
-      freq_mhz: 151.535
     tx:
+      freq_mhz: 151.535
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -850,9 +804,8 @@ rf_chains:
   - id: chain_wrxk699_152p945
     station_id: stn_wrxk699
     antenna_id: ant_wrxk699
-    rx:
-      freq_mhz: 152.945
     tx:
+      freq_mhz: 152.945
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -860,9 +813,8 @@ rf_chains:
   - id: chain_wrxk699_159p945
     station_id: stn_wrxk699
     antenna_id: ant_wrxk699
-    rx:
-      freq_mhz: 159.945
     tx:
+      freq_mhz: 159.945
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -870,9 +822,8 @@ rf_chains:
   - id: chain_wrxk699_160p02
     station_id: stn_wrxk699
     antenna_id: ant_wrxk699
-    rx:
-      freq_mhz: 160.02
     tx:
+      freq_mhz: 160.02
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -880,9 +831,8 @@ rf_chains:
   - id: chain_wrxk699_160p14
     station_id: stn_wrxk699
     antenna_id: ant_wrxk699
-    rx:
-      freq_mhz: 160.14
     tx:
+      freq_mhz: 160.14
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -891,9 +841,8 @@ rf_chains:
   - id: chain_wrzb261_464p8625
     station_id: stn_wrzb261
     antenna_id: ant_wrzb261
-    rx:
-      freq_mhz: 464.8625
     tx:
+      freq_mhz: 464.8625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -902,9 +851,8 @@ rf_chains:
   - id: chain_wrwu491_456p4625
     station_id: stn_wrwu491
     antenna_id: ant_wrwu491
-    rx:
-      freq_mhz: 456.4625
     tx:
+      freq_mhz: 456.4625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -912,9 +860,8 @@ rf_chains:
   - id: chain_wrwu491_456p5875
     station_id: stn_wrwu491
     antenna_id: ant_wrwu491
-    rx:
-      freq_mhz: 456.5875
     tx:
+      freq_mhz: 456.5875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -922,9 +869,8 @@ rf_chains:
   - id: chain_wrwu491_456p6875
     station_id: stn_wrwu491
     antenna_id: ant_wrwu491
-    rx:
-      freq_mhz: 456.6875
     tx:
+      freq_mhz: 456.6875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -932,9 +878,8 @@ rf_chains:
   - id: chain_wrwu491_457p6625
     station_id: stn_wrwu491
     antenna_id: ant_wrwu491
-    rx:
-      freq_mhz: 457.6625
     tx:
+      freq_mhz: 457.6625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -942,9 +887,8 @@ rf_chains:
   - id: chain_wrwu491_457p7125
     station_id: stn_wrwu491
     antenna_id: ant_wrwu491
-    rx:
-      freq_mhz: 457.7125
     tx:
+      freq_mhz: 457.7125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -952,9 +896,8 @@ rf_chains:
   - id: chain_wrwu491_457p7875
     station_id: stn_wrwu491
     antenna_id: ant_wrwu491
-    rx:
-      freq_mhz: 457.7875
     tx:
+      freq_mhz: 457.7875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -963,9 +906,8 @@ rf_chains:
   - id: chain_wrzu968_466p15
     station_id: stn_wrzu968
     antenna_id: ant_wrzu968
-    rx:
-      freq_mhz: 466.15
     tx:
+      freq_mhz: 466.15
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -973,9 +915,8 @@ rf_chains:
   - id: chain_wrzu968_466p175
     station_id: stn_wrzu968
     antenna_id: ant_wrzu968
-    rx:
-      freq_mhz: 466.175
     tx:
+      freq_mhz: 466.175
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -983,9 +924,8 @@ rf_chains:
   - id: chain_wrzu968_466p2
     station_id: stn_wrzu968
     antenna_id: ant_wrzu968
-    rx:
-      freq_mhz: 466.2
     tx:
+      freq_mhz: 466.2
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -993,9 +933,8 @@ rf_chains:
   - id: chain_wrzu968_466p225
     station_id: stn_wrzu968
     antenna_id: ant_wrzu968
-    rx:
-      freq_mhz: 466.225
     tx:
+      freq_mhz: 466.225
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1003,9 +942,8 @@ rf_chains:
   - id: chain_wrzu968_466p25
     station_id: stn_wrzu968
     antenna_id: ant_wrzu968
-    rx:
-      freq_mhz: 466.25
     tx:
+      freq_mhz: 466.25
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1014,9 +952,8 @@ rf_chains:
   - id: chain_wrye334_457p2
     station_id: stn_wrye334
     antenna_id: ant_wrye334
-    rx:
-      freq_mhz: 457.2
     tx:
+      freq_mhz: 457.2
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1024,9 +961,8 @@ rf_chains:
   - id: chain_wrye334_457p45
     station_id: stn_wrye334
     antenna_id: ant_wrye334
-    rx:
-      freq_mhz: 457.45
     tx:
+      freq_mhz: 457.45
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1034,9 +970,8 @@ rf_chains:
   - id: chain_wrye334_457p8
     station_id: stn_wrye334
     antenna_id: ant_wrye334
-    rx:
-      freq_mhz: 457.8
     tx:
+      freq_mhz: 457.8
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1044,9 +979,8 @@ rf_chains:
   - id: chain_wrye334_466p05
     station_id: stn_wrye334
     antenna_id: ant_wrye334
-    rx:
-      freq_mhz: 466.05
     tx:
+      freq_mhz: 466.05
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1054,9 +988,8 @@ rf_chains:
   - id: chain_wrye334_466p075
     station_id: stn_wrye334
     antenna_id: ant_wrye334
-    rx:
-      freq_mhz: 466.075
     tx:
+      freq_mhz: 466.075
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1065,9 +998,8 @@ rf_chains:
   - id: chain_wrxa599_466p125
     station_id: stn_wrxa599
     antenna_id: ant_wrxa599
-    rx:
-      freq_mhz: 466.125
     tx:
+      freq_mhz: 466.125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1075,9 +1007,8 @@ rf_chains:
   - id: chain_wrxa599_466p15
     station_id: stn_wrxa599
     antenna_id: ant_wrxa599
-    rx:
-      freq_mhz: 466.15
     tx:
+      freq_mhz: 466.15
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1085,9 +1016,8 @@ rf_chains:
   - id: chain_wrxa599_466p175
     station_id: stn_wrxa599
     antenna_id: ant_wrxa599
-    rx:
-      freq_mhz: 466.175
     tx:
+      freq_mhz: 466.175
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1095,9 +1025,8 @@ rf_chains:
   - id: chain_wrxa599_466p25
     station_id: stn_wrxa599
     antenna_id: ant_wrxa599
-    rx:
-      freq_mhz: 466.25
     tx:
+      freq_mhz: 466.25
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1105,9 +1034,8 @@ rf_chains:
   - id: chain_wrxa599_466p325
     station_id: stn_wrxa599
     antenna_id: ant_wrxa599
-    rx:
-      freq_mhz: 466.325
     tx:
+      freq_mhz: 466.325
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1116,9 +1044,8 @@ rf_chains:
   - id: chain_wrfb621_451p4125
     station_id: stn_wrfb621
     antenna_id: ant_wrfb621
-    rx:
-      freq_mhz: 451.4125
     tx:
+      freq_mhz: 451.4125
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -1126,9 +1053,8 @@ rf_chains:
   - id: chain_wrfb621_456p4125
     station_id: stn_wrfb621
     antenna_id: ant_wrfb621
-    rx:
-      freq_mhz: 456.4125
     tx:
+      freq_mhz: 456.4125
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -1137,9 +1063,8 @@ rf_chains:
   - id: chain_wsjq485_452p5
     station_id: stn_wsjq485
     antenna_id: ant_wsjq485
-    rx:
-      freq_mhz: 452.5
     tx:
+      freq_mhz: 452.5
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1147,9 +1072,8 @@ rf_chains:
   - id: chain_wsjq485_457p5
     station_id: stn_wsjq485
     antenna_id: ant_wsjq485
-    rx:
-      freq_mhz: 457.5
     tx:
+      freq_mhz: 457.5
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1157,9 +1081,8 @@ rf_chains:
   - id: chain_wsjq485_458
     station_id: stn_wsjq485
     antenna_id: ant_wsjq485
-    rx:
-      freq_mhz: 458
     tx:
+      freq_mhz: 458
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1167,9 +1090,8 @@ rf_chains:
   - id: chain_wsjq485_466p9875
     station_id: stn_wsjq485
     antenna_id: ant_wsjq485
-    rx:
-      freq_mhz: 466.9875
     tx:
+      freq_mhz: 466.9875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1178,9 +1100,8 @@ rf_chains:
   - id: chain_wskb339_461p025
     station_id: stn_wskb339
     antenna_id: ant_wskb339
-    rx:
-      freq_mhz: 461.025
     tx:
+      freq_mhz: 461.025
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1188,9 +1109,8 @@ rf_chains:
   - id: chain_wskb339_461p075
     station_id: stn_wskb339
     antenna_id: ant_wskb339
-    rx:
-      freq_mhz: 461.075
     tx:
+      freq_mhz: 461.075
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1198,9 +1118,8 @@ rf_chains:
   - id: chain_wskb339_461p125
     station_id: stn_wskb339
     antenna_id: ant_wskb339
-    rx:
-      freq_mhz: 461.125
     tx:
+      freq_mhz: 461.125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1208,9 +1127,8 @@ rf_chains:
   - id: chain_wskb339_461p275
     station_id: stn_wskb339
     antenna_id: ant_wskb339
-    rx:
-      freq_mhz: 461.275
     tx:
+      freq_mhz: 461.275
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1218,9 +1136,8 @@ rf_chains:
   - id: chain_wskb339_461p3
     station_id: stn_wskb339
     antenna_id: ant_wskb339
-    rx:
-      freq_mhz: 461.3
     tx:
+      freq_mhz: 461.3
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1229,9 +1146,8 @@ rf_chains:
   - id: chain_wrwu490_451p3875
     station_id: stn_wrwu490
     antenna_id: ant_wrwu490
-    rx:
-      freq_mhz: 451.3875
     tx:
+      freq_mhz: 451.3875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1239,9 +1155,8 @@ rf_chains:
   - id: chain_wrwu490_451p5375
     station_id: stn_wrwu490
     antenna_id: ant_wrwu490
-    rx:
-      freq_mhz: 451.5375
     tx:
+      freq_mhz: 451.5375
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1249,9 +1164,8 @@ rf_chains:
   - id: chain_wrwu490_452p1625
     station_id: stn_wrwu490
     antenna_id: ant_wrwu490
-    rx:
-      freq_mhz: 452.1625
     tx:
+      freq_mhz: 452.1625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1259,9 +1173,8 @@ rf_chains:
   - id: chain_wrwu490_452p6875
     station_id: stn_wrwu490
     antenna_id: ant_wrwu490
-    rx:
-      freq_mhz: 452.6875
     tx:
+      freq_mhz: 452.6875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1269,9 +1182,8 @@ rf_chains:
   - id: chain_wrwu490_452p7625
     station_id: stn_wrwu490
     antenna_id: ant_wrwu490
-    rx:
-      freq_mhz: 452.7625
     tx:
+      freq_mhz: 452.7625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1279,9 +1191,8 @@ rf_chains:
   - id: chain_wrwu490_452p9875
     station_id: stn_wrwu490
     antenna_id: ant_wrwu490
-    rx:
-      freq_mhz: 452.9875
     tx:
+      freq_mhz: 452.9875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1290,9 +1201,8 @@ rf_chains:
   - id: chain_wrmi715_464p1625
     station_id: stn_wrmi715
     antenna_id: ant_wrmi715
-    rx:
-      freq_mhz: 464.1625
     tx:
+      freq_mhz: 464.1625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1300,9 +1210,8 @@ rf_chains:
   - id: chain_wrmi715_456p6625
     station_id: stn_wrmi715
     antenna_id: ant_wrmi715
-    rx:
-      freq_mhz: 456.6625
     tx:
+      freq_mhz: 456.6625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1310,9 +1219,8 @@ rf_chains:
   - id: chain_wrmi715_469p1625
     station_id: stn_wrmi715
     antenna_id: ant_wrmi715
-    rx:
-      freq_mhz: 469.1625
     tx:
+      freq_mhz: 469.1625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1321,9 +1229,8 @@ rf_chains:
   - id: chain_wqwp256_456p9125
     station_id: stn_wqwp256
     antenna_id: ant_wqwp256
-    rx:
-      freq_mhz: 456.9125
     tx:
+      freq_mhz: 456.9125
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -1331,9 +1238,8 @@ rf_chains:
   - id: chain_wqwp256_457p2
     station_id: stn_wqwp256
     antenna_id: ant_wqwp256
-    rx:
-      freq_mhz: 457.2
     tx:
+      freq_mhz: 457.2
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -1341,9 +1247,8 @@ rf_chains:
   - id: chain_wqwp256_457p45
     station_id: stn_wqwp256
     antenna_id: ant_wqwp256
-    rx:
-      freq_mhz: 457.45
     tx:
+      freq_mhz: 457.45
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -1351,9 +1256,8 @@ rf_chains:
   - id: chain_wqwp256_457p8
     station_id: stn_wqwp256
     antenna_id: ant_wqwp256
-    rx:
-      freq_mhz: 457.8
     tx:
+      freq_mhz: 457.8
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -1362,9 +1266,8 @@ rf_chains:
   - id: chain_wqpp355_461p55
     station_id: stn_wqpp355
     antenna_id: ant_wqpp355
-    rx:
-      freq_mhz: 461.55
     tx:
+      freq_mhz: 461.55
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1372,9 +1275,8 @@ rf_chains:
   - id: chain_wqpp355_451p2875
     station_id: stn_wqpp355
     antenna_id: ant_wqpp355
-    rx:
-      freq_mhz: 451.2875
     tx:
+      freq_mhz: 451.2875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1382,9 +1284,8 @@ rf_chains:
   - id: chain_wqpp355_466p5
     station_id: stn_wqpp355
     antenna_id: ant_wqpp355
-    rx:
-      freq_mhz: 466.5
     tx:
+      freq_mhz: 466.5
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1392,9 +1293,8 @@ rf_chains:
   - id: chain_wqpp355_451p1875
     station_id: stn_wqpp355
     antenna_id: ant_wqpp355
-    rx:
-      freq_mhz: 451.1875
     tx:
+      freq_mhz: 451.1875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1403,9 +1303,8 @@ rf_chains:
   - id: chain_wqqk701_468p2375
     station_id: stn_wqqk701
     antenna_id: ant_wqqk701
-    rx:
-      freq_mhz: 468.2375
     tx:
+      freq_mhz: 468.2375
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1414,9 +1313,8 @@ rf_chains:
   - id: chain_wrfb378_462p1625
     station_id: stn_wrfb378
     antenna_id: ant_wrfb378
-    rx:
-      freq_mhz: 462.1625
     tx:
+      freq_mhz: 462.1625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1424,9 +1322,8 @@ rf_chains:
   - id: chain_wrfb378_461p775
     station_id: stn_wrfb378
     antenna_id: ant_wrfb378
-    rx:
-      freq_mhz: 461.775
     tx:
+      freq_mhz: 461.775
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1434,9 +1331,8 @@ rf_chains:
   - id: chain_wrfb378_457p1
     station_id: stn_wrfb378
     antenna_id: ant_wrfb378
-    rx:
-      freq_mhz: 457.1
     tx:
+      freq_mhz: 457.1
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1444,9 +1340,8 @@ rf_chains:
   - id: chain_wrfb378_457p35
     station_id: stn_wrfb378
     antenna_id: ant_wrfb378
-    rx:
-      freq_mhz: 457.35
     tx:
+      freq_mhz: 457.35
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1454,9 +1349,8 @@ rf_chains:
   - id: chain_wrfb378_468p225
     station_id: stn_wrfb378
     antenna_id: ant_wrfb378
-    rx:
-      freq_mhz: 468.225
     tx:
+      freq_mhz: 468.225
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1464,9 +1358,8 @@ rf_chains:
   - id: chain_wrfb378_468p875
     station_id: stn_wrfb378
     antenna_id: ant_wrfb378
-    rx:
-      freq_mhz: 468.875
     tx:
+      freq_mhz: 468.875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1475,9 +1368,8 @@ rf_chains:
   - id: chain_wqtl318_451p1875
     station_id: stn_wqtl318
     antenna_id: ant_wqtl318
-    rx:
-      freq_mhz: 451.1875
     tx:
+      freq_mhz: 451.1875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1485,9 +1377,8 @@ rf_chains:
   - id: chain_wqtl318_451p5375
     station_id: stn_wqtl318
     antenna_id: ant_wqtl318
-    rx:
-      freq_mhz: 451.5375
     tx:
+      freq_mhz: 451.5375
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1495,9 +1386,8 @@ rf_chains:
   - id: chain_wqtl318_451p7375
     station_id: stn_wqtl318
     antenna_id: ant_wqtl318
-    rx:
-      freq_mhz: 451.7375
     tx:
+      freq_mhz: 451.7375
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1505,9 +1395,8 @@ rf_chains:
   - id: chain_wqtl318_452p2375
     station_id: stn_wqtl318
     antenna_id: ant_wqtl318
-    rx:
-      freq_mhz: 452.2375
     tx:
+      freq_mhz: 452.2375
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1515,9 +1404,8 @@ rf_chains:
   - id: chain_wqtl318_452p7625
     station_id: stn_wqtl318
     antenna_id: ant_wqtl318
-    rx:
-      freq_mhz: 452.7625
     tx:
+      freq_mhz: 452.7625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1525,9 +1413,8 @@ rf_chains:
   - id: chain_wqtl318_452p8625
     station_id: stn_wqtl318
     antenna_id: ant_wqtl318
-    rx:
-      freq_mhz: 452.8625
     tx:
+      freq_mhz: 452.8625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1536,9 +1423,8 @@ rf_chains:
   - id: chain_wscj367_451p2375
     station_id: stn_wscj367
     antenna_id: ant_wscj367
-    rx:
-      freq_mhz: 451.2375
     tx:
+      freq_mhz: 451.2375
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1546,9 +1432,8 @@ rf_chains:
   - id: chain_wscj367_456p2375
     station_id: stn_wscj367
     antenna_id: ant_wscj367
-    rx:
-      freq_mhz: 456.2375
     tx:
+      freq_mhz: 456.2375
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1557,9 +1442,8 @@ rf_chains:
   - id: chain_wsgt287_464p825
     station_id: stn_wsgt287
     antenna_id: ant_wsgt287
-    rx:
-      freq_mhz: 464.825
     tx:
+      freq_mhz: 464.825
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1568,9 +1452,8 @@ rf_chains:
   - id: chain_wrcu313_466p175
     station_id: stn_wrcu313
     antenna_id: ant_wrcu313
-    rx:
-      freq_mhz: 466.175
     tx:
+      freq_mhz: 466.175
       emission: "6K00FXE"
     mode:
       type: "NXDN"
@@ -1578,9 +1461,8 @@ rf_chains:
   - id: chain_wrcu313_466p225
     station_id: stn_wrcu313
     antenna_id: ant_wrcu313
-    rx:
-      freq_mhz: 466.225
     tx:
+      freq_mhz: 466.225
       emission: "6K00FXE"
     mode:
       type: "NXDN"
@@ -1588,9 +1470,8 @@ rf_chains:
   - id: chain_wrcu313_466p3
     station_id: stn_wrcu313
     antenna_id: ant_wrcu313
-    rx:
-      freq_mhz: 466.3
     tx:
+      freq_mhz: 466.3
       emission: "6K00FXE"
     mode:
       type: "NXDN"
@@ -1598,9 +1479,8 @@ rf_chains:
   - id: chain_wrcu313_466p325
     station_id: stn_wrcu313
     antenna_id: ant_wrcu313
-    rx:
-      freq_mhz: 466.325
     tx:
+      freq_mhz: 466.325
       emission: "6K00FXE"
     mode:
       type: "NXDN"
@@ -1608,9 +1488,8 @@ rf_chains:
   - id: chain_wrcu313_466p375
     station_id: stn_wrcu313
     antenna_id: ant_wrcu313
-    rx:
-      freq_mhz: 466.375
     tx:
+      freq_mhz: 466.375
       emission: "6K00FXE"
     mode:
       type: "NXDN"
@@ -1619,9 +1498,8 @@ rf_chains:
   - id: chain_wrep596_451p5625
     station_id: stn_wrep596
     antenna_id: ant_wrep596
-    rx:
-      freq_mhz: 451.5625
     tx:
+      freq_mhz: 451.5625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1629,9 +1507,8 @@ rf_chains:
   - id: chain_wrep596_452p2875
     station_id: stn_wrep596
     antenna_id: ant_wrep596
-    rx:
-      freq_mhz: 452.2875
     tx:
+      freq_mhz: 452.2875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1639,9 +1516,8 @@ rf_chains:
   - id: chain_wrep596_452p5125
     station_id: stn_wrep596
     antenna_id: ant_wrep596
-    rx:
-      freq_mhz: 452.5125
     tx:
+      freq_mhz: 452.5125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1649,9 +1525,8 @@ rf_chains:
   - id: chain_wrep596_452p8875
     station_id: stn_wrep596
     antenna_id: ant_wrep596
-    rx:
-      freq_mhz: 452.8875
     tx:
+      freq_mhz: 452.8875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1659,9 +1534,8 @@ rf_chains:
   - id: chain_wrep596_452p9875
     station_id: stn_wrep596
     antenna_id: ant_wrep596
-    rx:
-      freq_mhz: 452.9875
     tx:
+      freq_mhz: 452.9875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1670,9 +1544,8 @@ rf_chains:
   - id: chain_wrod666_456p325
     station_id: stn_wrod666
     antenna_id: ant_wrod666
-    rx:
-      freq_mhz: 456.325
     tx:
+      freq_mhz: 456.325
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1680,9 +1553,8 @@ rf_chains:
   - id: chain_wrod666_457p1
     station_id: stn_wrod666
     antenna_id: ant_wrod666
-    rx:
-      freq_mhz: 457.1
     tx:
+      freq_mhz: 457.1
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1690,9 +1562,8 @@ rf_chains:
   - id: chain_wrod666_457p225
     station_id: stn_wrod666
     antenna_id: ant_wrod666
-    rx:
-      freq_mhz: 457.225
     tx:
+      freq_mhz: 457.225
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1700,9 +1571,8 @@ rf_chains:
   - id: chain_wrod666_466p025
     station_id: stn_wrod666
     antenna_id: ant_wrod666
-    rx:
-      freq_mhz: 466.025
     tx:
+      freq_mhz: 466.025
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1710,9 +1580,8 @@ rf_chains:
   - id: chain_wrod666_468p875
     station_id: stn_wrod666
     antenna_id: ant_wrod666
-    rx:
-      freq_mhz: 468.875
     tx:
+      freq_mhz: 468.875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1721,9 +1590,8 @@ rf_chains:
   - id: chain_wqki514_451p5125
     station_id: stn_wqki514
     antenna_id: ant_wqki514
-    rx:
-      freq_mhz: 451.5125
     tx:
+      freq_mhz: 451.5125
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -1731,9 +1599,8 @@ rf_chains:
   - id: chain_wqki514_451p6875
     station_id: stn_wqki514
     antenna_id: ant_wqki514
-    rx:
-      freq_mhz: 451.6875
     tx:
+      freq_mhz: 451.6875
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -1741,9 +1608,8 @@ rf_chains:
   - id: chain_wqki514_456p5125
     station_id: stn_wqki514
     antenna_id: ant_wqki514
-    rx:
-      freq_mhz: 456.5125
     tx:
+      freq_mhz: 456.5125
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -1751,9 +1617,8 @@ rf_chains:
   - id: chain_wqki514_456p6875
     station_id: stn_wqki514
     antenna_id: ant_wqki514
-    rx:
-      freq_mhz: 456.6875
     tx:
+      freq_mhz: 456.6875
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -1762,9 +1627,8 @@ rf_chains:
   - id: chain_wrxa597_451p3625
     station_id: stn_wrxa597
     antenna_id: ant_wrxa597
-    rx:
-      freq_mhz: 451.3625
     tx:
+      freq_mhz: 451.3625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1772,9 +1636,8 @@ rf_chains:
   - id: chain_wrxa597_462p2875
     station_id: stn_wrxa597
     antenna_id: ant_wrxa597
-    rx:
-      freq_mhz: 462.2875
     tx:
+      freq_mhz: 462.2875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1782,9 +1645,8 @@ rf_chains:
   - id: chain_wrxa597_462p3125
     station_id: stn_wrxa597
     antenna_id: ant_wrxa597
-    rx:
-      freq_mhz: 462.3125
     tx:
+      freq_mhz: 462.3125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1792,9 +1654,8 @@ rf_chains:
   - id: chain_wrxa597_467p2875
     station_id: stn_wrxa597
     antenna_id: ant_wrxa597
-    rx:
-      freq_mhz: 467.2875
     tx:
+      freq_mhz: 467.2875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1802,9 +1663,8 @@ rf_chains:
   - id: chain_wrxa597_467p3125
     station_id: stn_wrxa597
     antenna_id: ant_wrxa597
-    rx:
-      freq_mhz: 467.3125
     tx:
+      freq_mhz: 467.3125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1813,9 +1673,8 @@ rf_chains:
   - id: chain_wsaq430_457p025
     station_id: stn_wsaq430
     antenna_id: ant_wsaq430
-    rx:
-      freq_mhz: 457.025
     tx:
+      freq_mhz: 457.025
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1823,9 +1682,8 @@ rf_chains:
   - id: chain_wsaq430_457p1
     station_id: stn_wsaq430
     antenna_id: ant_wsaq430
-    rx:
-      freq_mhz: 457.1
     tx:
+      freq_mhz: 457.1
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1833,9 +1691,8 @@ rf_chains:
   - id: chain_wsaq430_457p2
     station_id: stn_wsaq430
     antenna_id: ant_wsaq430
-    rx:
-      freq_mhz: 457.2
     tx:
+      freq_mhz: 457.2
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1843,9 +1700,8 @@ rf_chains:
   - id: chain_wsaq430_457p225
     station_id: stn_wsaq430
     antenna_id: ant_wsaq430
-    rx:
-      freq_mhz: 457.225
     tx:
+      freq_mhz: 457.225
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1853,9 +1709,8 @@ rf_chains:
   - id: chain_wsaq430_457p25
     station_id: stn_wsaq430
     antenna_id: ant_wsaq430
-    rx:
-      freq_mhz: 457.25
     tx:
+      freq_mhz: 457.25
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1863,9 +1718,8 @@ rf_chains:
   - id: chain_wsaq430_457p35
     station_id: stn_wsaq430
     antenna_id: ant_wsaq430
-    rx:
-      freq_mhz: 457.35
     tx:
+      freq_mhz: 457.35
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1873,9 +1727,8 @@ rf_chains:
   - id: chain_wsaq430_457p45
     station_id: stn_wsaq430
     antenna_id: ant_wsaq430
-    rx:
-      freq_mhz: 457.45
     tx:
+      freq_mhz: 457.45
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1883,9 +1736,8 @@ rf_chains:
   - id: chain_wsaq430_457p8
     station_id: stn_wsaq430
     antenna_id: ant_wsaq430
-    rx:
-      freq_mhz: 457.8
     tx:
+      freq_mhz: 457.8
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1893,9 +1745,8 @@ rf_chains:
   - id: chain_wsaq430_468p25
     station_id: stn_wsaq430
     antenna_id: ant_wsaq430
-    rx:
-      freq_mhz: 468.25
     tx:
+      freq_mhz: 468.25
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -1903,9 +1754,8 @@ rf_chains:
   - id: chain_wsaq430_468p875
     station_id: stn_wsaq430
     antenna_id: ant_wsaq430
-    rx:
-      freq_mhz: 468.875
     tx:
+      freq_mhz: 468.875
       emission: "7K60FXD"
     mode:
       type: "DMR"

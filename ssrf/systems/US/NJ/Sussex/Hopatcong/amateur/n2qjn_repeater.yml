@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "RadioReference - Sussex County, NJ Amateur Radio Repeaters"
@@ -40,15 +40,15 @@ rf_chains:
     station_id: stn_n2qjn_125m
     antenna_id: ant_n2qjn_125m
     tx:
-      freq_mhz: 222.680 # -1.6 MHz input
+      freq_mhz: 224.280
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 224.280
+      freq_mhz: 222.680 # -1.6 MHz input
     mode:
       type: "FM"
-      ctcss_tx_hz: 88.5
       ctcss_rx_hz: 88.5
+      ctcss_tx_hz: 88.5
 
 authorizations:
   - id: auth_fcc_amateur_t

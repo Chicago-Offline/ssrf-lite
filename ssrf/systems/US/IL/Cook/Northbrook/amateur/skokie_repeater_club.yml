@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "Repeater owners (user-provided)"
@@ -32,15 +32,15 @@ rf_chains:
   - id: chain_skokie_rc_440_fm
     station_id: stn_skokie_rc_440
     tx:
-      freq_mhz: 448.175
+      freq_mhz: 443.175
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 443.175
+      freq_mhz: 448.175
     mode:
       type: "FM"
-      ctcss_tx_hz: 127.3
       ctcss_rx_hz: 127.3
+      ctcss_tx_hz: 127.3
 
 authorizations:
   - id: auth_fcc_amateur

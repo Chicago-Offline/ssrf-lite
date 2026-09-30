@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "RadioReference Wiki - Chicago/Cook County (IL) Businesses"
@@ -37,70 +37,70 @@ rf_chains:
     station_id: stn_venues
     antenna_id: ant_venues
     tx:
-      freq_mhz: null
+      freq_mhz: 464.2125
       emission: "7K60FXE"
     rx:
-      freq_mhz: 464.2125
+      freq_mhz: null
     mode:
       type: "DMR"
   - id: chain_two_prudential
     station_id: stn_venues
     antenna_id: ant_venues
     tx:
-      freq_mhz: null
+      freq_mhz: 464.9250
       emission: "7K60FXE"
     rx:
-      freq_mhz: 464.9250
+      freq_mhz: null
     mode:
       type: "DMR"
   - id: chain_bcbs_hq
     station_id: stn_venues
     antenna_id: ant_venues
     tx:
-      freq_mhz: null
+      freq_mhz: 461.6625
       emission: "7K60FXE"
     rx:
-      freq_mhz: 461.6625
+      freq_mhz: null
     mode:
       type: "DMR"
   - id: chain_333_s_wabash
     station_id: stn_venues
     antenna_id: ant_venues
     tx:
-      freq_mhz: null
+      freq_mhz: 464.7125
       emission: "7K60FXE"
     rx:
-      freq_mhz: 464.7125
+      freq_mhz: null
     mode:
       type: "DMR"
   - id: chain_ama_plaza
     station_id: stn_venues
     antenna_id: ant_venues
     tx:
-      freq_mhz: null
+      freq_mhz: 463.4000
       emission: "7K60FXE"
     rx:
-      freq_mhz: 463.4000
+      freq_mhz: null
     mode:
       type: "DMR"
   - id: chain_old_post_office
     station_id: stn_venues
     antenna_id: ant_venues
     tx:
-      freq_mhz: null
+      freq_mhz: 463.9250
       emission: "7K60FXE"
     rx:
-      freq_mhz: 463.9250
+      freq_mhz: null
     mode:
       type: "DMR"
   - id: chain_merchandise_mart
     station_id: stn_venues
     antenna_id: ant_venues
     tx:
-      freq_mhz: null
+      freq_mhz: 463.5125
       emission: "7K60FXE"
     rx:
-      freq_mhz: 463.5125
+      freq_mhz: null
     mode:
       type: "DMR"
   - id: chain_two_pru_fm
@@ -137,10 +137,10 @@ rf_chains:
     station_id: stn_venues
     antenna_id: ant_venues
     tx:
-      freq_mhz: null
+      freq_mhz: 463.4375
       emission: "7K60FXE"
     rx:
-      freq_mhz: 463.4375
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -160,10 +160,10 @@ rf_chains:
     station_id: stn_venues
     antenna_id: ant_venues
     tx:
-      freq_mhz: null
+      freq_mhz: 462.1125
       emission: "7K60FXE"
     rx:
-      freq_mhz: 462.1125
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -172,20 +172,20 @@ rf_chains:
     station_id: stn_venues
     antenna_id: ant_venues
     tx:
-      freq_mhz: null
+      freq_mhz: 464.8250
       emission: "11K2F3E"
     rx:
-      freq_mhz: 464.8250
+      freq_mhz: null
     mode:
       type: "FM"
   - id: chain_mccormick_place
     station_id: stn_venues
     antenna_id: ant_venues
     tx:
-      freq_mhz: null
+      freq_mhz: 464.5000
       emission: "11K2F3E"
     rx:
-      freq_mhz: 464.5000
+      freq_mhz: null
     mode:
       type: "FM"
 

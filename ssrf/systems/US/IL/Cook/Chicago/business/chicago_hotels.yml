@@ -1,8 +1,8 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
 # SSRF-Lite: Chicago hotels - licensed business land mobile
 
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "RadioReference DB - Chicago Businesses (Hotels)"
@@ -192,9 +192,8 @@ rf_chains:
   - id: chain_wqzj909_452p8875
     station_id: stn_wqzj909
     antenna_id: ant_wqzj909
-    rx:
-      freq_mhz: 452.8875
     tx:
+      freq_mhz: 452.8875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -204,9 +203,8 @@ rf_chains:
   - id: chain_wqvv406_461p9125
     station_id: stn_wqvv406
     antenna_id: ant_wqvv406
-    rx:
-      freq_mhz: 461.9125
     tx:
+      freq_mhz: 461.9125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -215,9 +213,8 @@ rf_chains:
   - id: chain_wqvv406_464p7625
     station_id: stn_wqvv406
     antenna_id: ant_wqvv406
-    rx:
-      freq_mhz: 464.7625
     tx:
+      freq_mhz: 464.7625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -227,9 +224,8 @@ rf_chains:
   - id: chain_wqqq455_464p125
     station_id: stn_wqqq455
     antenna_id: ant_wqqq455
-    rx:
-      freq_mhz: 464.125
     tx:
+      freq_mhz: 464.125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -239,96 +235,88 @@ rf_chains:
   - id: chain_wqum495_452p0625
     station_id: stn_wqum495
     antenna_id: ant_wqum495
-    rx:
-      freq_mhz: 452.0625
     tx:
+      freq_mhz: 452.0625
       emission: "11K2F3E"
     mode:
       type: "FM"
-      dcs_rx_code: "306"
       dcs_tx_code: "306"
+      dcs_rx_code: "306"
       notes: "Mobile/portable frequency."
   - id: chain_wqum495_451p7375
     station_id: stn_wqum495
     antenna_id: ant_wqum495
-    rx:
-      freq_mhz: 451.7375
     tx:
+      freq_mhz: 451.7375
       emission: "11K2F3E"
     mode:
       type: "FM"
-      dcs_rx_code: "205"
       dcs_tx_code: "205"
+      dcs_rx_code: "205"
       notes: "Mobile/portable frequency."
   - id: chain_wqum495_451p1875
     station_id: stn_wqum495
     antenna_id: ant_wqum495
-    rx:
-      freq_mhz: 451.1875
     tx:
+      freq_mhz: 451.1875
       emission: "11K2F3E"
     mode:
       type: "FM"
-      dcs_rx_code: "023"
       dcs_tx_code: "023"
+      dcs_rx_code: "023"
       notes: "Mobile/portable frequency."
   - id: chain_wqum495_452p4875
     station_id: stn_wqum495
     antenna_id: ant_wqum495
-    rx:
-      freq_mhz: 452.4875
     tx:
+      freq_mhz: 452.4875
       emission: "11K2F3E"
     mode:
       type: "FM"
-      dcs_rx_code: "411"
       dcs_tx_code: "411"
+      dcs_rx_code: "411"
       notes: "Mobile/portable frequency."
   - id: chain_wqum495_451p4625
     station_id: stn_wqum495
     antenna_id: ant_wqum495
-    rx:
-      freq_mhz: 451.4625
     tx:
+      freq_mhz: 451.4625
       emission: "11K2F3E"
     mode:
       type: "FM"
-      dcs_rx_code: "155"
       dcs_tx_code: "155"
+      dcs_rx_code: "155"
       notes: "Repeater output; input not published by source."
   # --- Fairmont Hotel - Maintenance licence (WNWA694) ---
   - id: chain_wnwa694_464p875
     station_id: stn_wnwa694
     antenna_id: ant_wnwa694
-    rx:
-      freq_mhz: 464.875
     tx:
+      freq_mhz: 464.875
       emission: "11K2F3E"
     mode:
       type: "FM"
-      dcs_rx_code: "072"
       dcs_tx_code: "072"
+      dcs_rx_code: "072"
       notes: "Repeater output; input not published by source."
   # --- Fairmont Hotel - Operations licence (WNPZ509) ---
   - id: chain_wnpz509_464p325
     station_id: stn_wnpz509
     antenna_id: ant_wnpz509
-    rx:
-      freq_mhz: 464.325
     tx:
+      freq_mhz: 464.325
       emission: "11K2F3E"
     mode:
       type: "FM"
-      dcs_rx_code: "226"
       dcs_tx_code: "226"
+      dcs_rx_code: "226"
       notes: "Repeater output; input not published by source."
   # --- Hilton Garden Inn - McCormick Place (WRCW578) ---
   - id: chain_wrcw578_463p2375
     station_id: stn_wrcw578
     antenna_id: ant_wrcw578
-    rx:
-      freq_mhz: 463.2375
     tx:
+      freq_mhz: 463.2375
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -337,9 +325,8 @@ rf_chains:
   - id: chain_wrcw578_464p0125
     station_id: stn_wrcw578
     antenna_id: ant_wrcw578
-    rx:
-      freq_mhz: 464.0125
     tx:
+      freq_mhz: 464.0125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -349,9 +336,8 @@ rf_chains:
   - id: chain_kb66526_461p2875
     station_id: stn_kb66526
     antenna_id: ant_kb66526
-    rx:
-      freq_mhz: 461.2875
     tx:
+      freq_mhz: 461.2875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -360,9 +346,8 @@ rf_chains:
   - id: chain_kb66526_463p2375
     station_id: stn_kb66526
     antenna_id: ant_kb66526
-    rx:
-      freq_mhz: 463.2375
     tx:
+      freq_mhz: 463.2375
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -371,9 +356,8 @@ rf_chains:
   - id: chain_kb66526_463p5625
     station_id: stn_kb66526
     antenna_id: ant_kb66526
-    rx:
-      freq_mhz: 463.5625
     tx:
+      freq_mhz: 463.5625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -383,9 +367,8 @@ rf_chains:
   - id: chain_wqxi362_462p45
     station_id: stn_wqxi362
     antenna_id: ant_wqxi362
-    rx:
-      freq_mhz: 462.45
     tx:
+      freq_mhz: 462.45
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -394,9 +377,8 @@ rf_chains:
   - id: chain_wqxi362_463p775
     station_id: stn_wqxi362
     antenna_id: ant_wqxi362
-    rx:
-      freq_mhz: 463.775
     tx:
+      freq_mhz: 463.775
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -406,9 +388,8 @@ rf_chains:
   - id: chain_wqly228_462p4875
     station_id: stn_wqly228
     antenna_id: ant_wqly228
-    rx:
-      freq_mhz: 462.4875
     tx:
+      freq_mhz: 462.4875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -418,9 +399,8 @@ rf_chains:
   - id: chain_wqzs549_461p6
     station_id: stn_wqzs549
     antenna_id: ant_wqzs549
-    rx:
-      freq_mhz: 461.6
     tx:
+      freq_mhz: 461.6
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -429,9 +409,8 @@ rf_chains:
   - id: chain_wqzs549_463p6
     station_id: stn_wqzs549
     antenna_id: ant_wqzs549
-    rx:
-      freq_mhz: 463.6
     tx:
+      freq_mhz: 463.6
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -441,9 +420,8 @@ rf_chains:
   - id: chain_wrbq292_462p1625
     station_id: stn_wrbq292
     antenna_id: ant_wrbq292
-    rx:
-      freq_mhz: 462.1625
     tx:
+      freq_mhz: 462.1625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -452,9 +430,8 @@ rf_chains:
   - id: chain_wrbq292_461p5625
     station_id: stn_wrbq292
     antenna_id: ant_wrbq292
-    rx:
-      freq_mhz: 461.5625
     tx:
+      freq_mhz: 461.5625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -464,9 +441,8 @@ rf_chains:
   - id: chain_wqjv437_464p725
     station_id: stn_wqjv437
     antenna_id: ant_wqjv437
-    rx:
-      freq_mhz: 464.725
     tx:
+      freq_mhz: 464.725
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -474,9 +450,8 @@ rf_chains:
   - id: chain_wqjv437_464p4625
     station_id: stn_wqjv437
     antenna_id: ant_wqjv437
-    rx:
-      freq_mhz: 464.4625
     tx:
+      freq_mhz: 464.4625
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -486,9 +461,8 @@ rf_chains:
   - id: chain_wqin529_464p2875
     station_id: stn_wqin529
     antenna_id: ant_wqin529
-    rx:
-      freq_mhz: 464.2875
     tx:
+      freq_mhz: 464.2875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -497,9 +471,8 @@ rf_chains:
   - id: chain_wqin529_464p9375
     station_id: stn_wqin529
     antenna_id: ant_wqin529
-    rx:
-      freq_mhz: 464.9375
     tx:
+      freq_mhz: 464.9375
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -508,9 +481,8 @@ rf_chains:
   - id: chain_wqin529_464p6375
     station_id: stn_wqin529
     antenna_id: ant_wqin529
-    rx:
-      freq_mhz: 464.6375
     tx:
+      freq_mhz: 464.6375
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -520,9 +492,8 @@ rf_chains:
   - id: chain_wqfw632_467p7625
     station_id: stn_wqfw632
     antenna_id: ant_wqfw632
-    rx:
-      freq_mhz: 467.7625
     tx:
+      freq_mhz: 467.7625
       emission: "11K2F3E"
     mode:
       type: "FM"

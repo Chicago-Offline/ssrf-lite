@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "Chicago FM Club — CFMC Repeaters"
@@ -97,81 +97,77 @@ antennas:
     height_amsl_m: null
 
 rf_chains:
-  # NOTE: tx/rx are RADIO-CENTRIC per CONTRIBUTING.md -- tx is the radio's
-  # transmit (repeater input), rx is the radio's receive (repeater output).
-  # This file was originally authored station-centric and every chain was
-  # reversed; corrected 2026-09-29 against the club's own repeater page.
   # 440 MHz analog FM (dual-mode site; analog prioritized). EchoLink & AllStar available.
   - id: chain_cfmc_440_fm
     station_id: stn_cfmc_440
     antenna_id: ant_cfmc_440
     tx:
-      freq_mhz: 448.750
+      freq_mhz: 443.750
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 443.750
+      freq_mhz: 448.750
     mode:
       type: "FM"
-      ctcss_tx_hz: 114.8
       ctcss_rx_hz: 114.8
+      ctcss_tx_hz: 114.8
 
   # 2m analog FM with EchoLink & AllStar
   - id: chain_cfmc_2m_fm
     station_id: stn_cfmc_2m
     antenna_id: ant_cfmc_2m
     tx:
-      freq_mhz: 146.160
+      freq_mhz: 146.760
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 146.760
+      freq_mhz: 146.160
     mode:
       type: "FM"
-      ctcss_tx_hz: 107.2
       ctcss_rx_hz: 107.2
+      ctcss_tx_hz: 107.2
 
   # 220 MHz North analog FM (~15 W)
   - id: chain_cfmc_220_north_fm
     station_id: stn_cfmc_220_north
     antenna_id: ant_cfmc_220_north
     tx:
-      freq_mhz: 222.500
+      freq_mhz: 224.100
       power_w: 15
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 224.100
+      freq_mhz: 222.500
     mode:
       type: "FM"
-      ctcss_tx_hz: 110.9
       ctcss_rx_hz: 110.9
+      ctcss_tx_hz: 110.9
 
   # 220 MHz South analog FM (~15 W) - Worth, IL
   - id: chain_cfmc_220_south_fm
     station_id: stn_cfmc_220_south
     antenna_id: ant_cfmc_220_south
     tx:
-      freq_mhz: 222.580
+      freq_mhz: 224.180
       power_w: 15
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 224.180
+      freq_mhz: 222.580
     mode:
       type: "FM"
-      ctcss_tx_hz: 110.9
       ctcss_rx_hz: 110.9
+      ctcss_tx_hz: 110.9
 
   # D-STAR UHF DV — Park Ridge near Dempster & 294, ~180 ft AGL
   - id: chain_cfmc_dstar_440
     station_id: stn_cfmc_dstar_440
     antenna_id: ant_cfmc_dstar
     tx:
-      freq_mhz: 446.90625
+      freq_mhz: 441.90625
       emission: "6K00F7E"
     rx:
-      freq_mhz: 441.90625
+      freq_mhz: 446.90625
     mode:
       type: "D-STAR"
       notes: "Linked to Reflector 1C; single-site ICOM."
@@ -181,24 +177,24 @@ rf_chains:
     station_id: stn_cfmc_fusion_2m
     antenna_id: ant_cfmc_fusion
     tx:
-      freq_mhz: 144.750
+      freq_mhz: 145.350
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 145.350
+      freq_mhz: 144.750
     mode:
       type: "FM"
-      dcs_tx_code: "072"
       dcs_rx_code: "072"
+      dcs_tx_code: "072"
   - id: chain_cfmc_fusion_2m_c4fm
     station_id: stn_cfmc_fusion_2m
     antenna_id: ant_cfmc_fusion
     tx:
-      freq_mhz: 144.750
+      freq_mhz: 145.350
       emission: "8K50F7W"
       bandwidth_khz: 12.5
     rx:
-      freq_mhz: 145.350
+      freq_mhz: 144.750
     mode:
       type: "C4FM"
 

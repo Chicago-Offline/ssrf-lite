@@ -1,10 +1,10 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
 # SSRF-Lite: Fire/EMS (Chicago + Northside analogue RX-only)
 # Source: RadioReference Cook County IL – Chicago Fire/EMS and Northside suburbs
 # Notes: Many primary ops are on OEMC 800MHz P25; below includes analogue backups and TAC/OPS you can monitor.
 
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 organizations:
   - id: org_cfd
     name: "Chicago Fire Department"
@@ -42,165 +42,147 @@ rf_chains:
   - id: chain_cfd_fg_a
     station_id: stn_cfd
     antenna_id: ant_cfd
-    rx:
-      freq_mhz: 458.025
     tx:
+      freq_mhz: 458.025
       emission: "11K2F3E"
-    mode: {type: "FM", ctcss_rx_hz: 203.5}
+    mode: {type: "FM", ctcss_tx_hz: 203.5}
 
   - id: chain_cfd_cmd_a
     station_id: stn_cfd
     antenna_id: ant_cfd
-    rx:
-      freq_mhz: 458.125
     tx:
+      freq_mhz: 458.125
       emission: "11K2F3E"
-    mode: {type: "FM", ctcss_rx_hz: 218.1}
+    mode: {type: "FM", ctcss_tx_hz: 218.1}
 
   - id: chain_cfd_lakefront
     station_id: stn_cfd
     antenna_id: ant_cfd
-    rx:
-      freq_mhz: 458.075
     tx:
+      freq_mhz: 458.075
       emission: "11K2F3E"
-    mode: {type: "FM", ctcss_rx_hz: 210.7}
+    mode: {type: "FM", ctcss_tx_hz: 210.7}
 
   - id: chain_cfd_tac_a
     station_id: stn_cfd
     antenna_id: ant_cfd
-    rx:
-      freq_mhz: 470.1625
     tx:
+      freq_mhz: 470.1625
       emission: "11K2F3E"
-    mode: {type: "FM", ctcss_rx_hz: 97.4}
+    mode: {type: "FM", ctcss_tx_hz: 97.4}
 
   - id: chain_cfd_ops8_a
     station_id: stn_cfd
     antenna_id: ant_cfd
-    rx:
-      freq_mhz: 476.2875
     tx:
+      freq_mhz: 476.2875
       emission: "11K2F3E"
-    mode: {type: "FM", ctcss_rx_hz: 69.3}
+    mode: {type: "FM", ctcss_tx_hz: 69.3}
 
   - id: chain_cfd_ops9_a
     station_id: stn_cfd
     antenna_id: ant_cfd
-    rx:
-      freq_mhz: 479.2875
     tx:
+      freq_mhz: 479.2875
       emission: "11K2F3E"
-    mode: {type: "FM", ctcss_rx_hz: 74.4}
+    mode: {type: "FM", ctcss_tx_hz: 74.4}
 
   - id: chain_cfd_ops10_a
     station_id: stn_cfd
     antenna_id: ant_cfd
-    rx:
-      freq_mhz: 477.6625
     tx:
+      freq_mhz: 477.6625
       emission: "11K2F3E"
-    mode: {type: "FM", ctcss_rx_hz: 79.7}
+    mode: {type: "FM", ctcss_tx_hz: 79.7}
 
   - id: chain_cfd_cta_fire
     station_id: stn_cfd
     antenna_id: ant_cfd
-    rx:
-      freq_mhz: 460.0625
     tx:
+      freq_mhz: 460.0625
       emission: "11K2F3E"
-    mode: {type: "FM", ctcss_rx_hz: 203.5}
+    mode: {type: "FM", ctcss_tx_hz: 203.5}
 
   - id: chain_cfd_specevt1_a
     station_id: stn_cfd
     antenna_id: ant_cfd
-    rx:
-      freq_mhz: 478.500
     tx:
+      freq_mhz: 478.500
       emission: "11K2F3E"
-    mode: {type: "FM", ctcss_rx_hz: 103.5}
+    mode: {type: "FM", ctcss_tx_hz: 103.5}
 
   - id: chain_cfd_admin_a
     station_id: stn_cfd
     antenna_id: ant_cfd
-    rx:
-      freq_mhz: 458.175
     tx:
+      freq_mhz: 458.175
       emission: "11K2F3E"
-    mode: {type: "FM", ctcss_rx_hz: 225.7}
+    mode: {type: "FM", ctcss_tx_hz: 225.7}
 
     # Northside fire/EMS conventional (backups/dispatch)
   - id: chain_red_south_bu
     station_id: stn_northside
     antenna_id: ant_north
-    rx:
-      freq_mhz: 154.355
     tx:
+      freq_mhz: 154.355
       emission: "11K2F3E"
-    mode: {type: "FM", ctcss_rx_hz: 127.3}
+    mode: {type: "FM", ctcss_tx_hz: 127.3}
 
   - id: chain_red_north_bu
     station_id: stn_northside
     antenna_id: ant_north
-    rx:
-      freq_mhz: 154.445
     tx:
+      freq_mhz: 154.445
       emission: "11K2F3E"
-    mode: {type: "FM", ctcss_rx_hz: 127.3}
+    mode: {type: "FM", ctcss_tx_hz: 127.3}
 
   - id: chain_red_fire_north
     station_id: stn_northside
     antenna_id: ant_north
-    rx:
-      freq_mhz: 159.660
     tx:
+      freq_mhz: 159.660
       emission: "8K10F1E"
     mode: {type: "P25", nac: 2341, notes: "NAC $925. RED Center Fire Dispatch North, P25 conventional per RR DB."}
 
   - id: chain_red_fire_south
     station_id: stn_northside
     antenna_id: ant_north
-    rx:
-      freq_mhz: 156.135
     tx:
+      freq_mhz: 156.135
       emission: "8K10F1E"
     mode: {type: "P25", nac: 1147, notes: "NAC $47B. RED Center Fire Dispatch South, patched w/ SC21 TG 34065, per RR DB."}
 
   - id: chain_skookie_fire_disp
     station_id: stn_northside
     antenna_id: ant_north
-    rx:
-      freq_mhz: 159.195
     tx:
+      freq_mhz: 159.195
       emission: "11K2F3E"
-    mode: {type: "FM", dcs_rx_code: "205"}
+    mode: {type: "FM", dcs_tx_code: "205"}
 
   - id: chain_north_shore_admin
     station_id: stn_northside
     antenna_id: ant_north
-    rx:
-      freq_mhz: 151.010
     tx:
+      freq_mhz: 151.010
       emission: "11K2F3E"
-    mode: {type: "FM", ctcss_rx_hz: 127.3}
+    mode: {type: "FM", ctcss_tx_hz: 127.3}
 
   - id: chain_evanston_fire
     station_id: stn_northside
     antenna_id: ant_north
-    rx:
-      freq_mhz: 155.6925
     tx:
+      freq_mhz: 155.6925
       emission: "11K2F3E"
-    mode: {type: "FM", ctcss_rx_hz: 123.0}
+    mode: {type: "FM", ctcss_tx_hz: 123.0}
 
   - id: chain_desplaines_fire
     station_id: stn_northside
     antenna_id: ant_north
-    rx:
-      freq_mhz: 155.4375
     tx:
+      freq_mhz: 155.4375
       emission: "11K2F3E"
-    mode: {type: "FM", ctcss_rx_hz: 225.7}
+    mode: {type: "FM", ctcss_tx_hz: 225.7}
 
 assignments:
   # Fire/EMS Zone (merged Chicago + Northside)

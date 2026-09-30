@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "RadioReference Wiki - Chicago/Cook County (IL) Businesses"
@@ -38,10 +38,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 464.7750
       emission: "7K60FXE"
     rx:
-      freq_mhz: 464.7750
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -50,22 +50,22 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 469.9125
       emission: "11K2F3E"
     rx:
-      freq_mhz: 469.9125
+      freq_mhz: null
     mode:
       type: "FM"
-      dcs_rx_code: "311"
       dcs_tx_code: "311"
+      dcs_rx_code: "311"
   - id: chain_tribune_tower
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 463.3375
       emission: "7K60FXE"
     rx:
-      freq_mhz: 463.3375
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -74,10 +74,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 463.5125
       emission: "7K60FXE"
     rx:
-      freq_mhz: 463.5125
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -86,10 +86,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 464.8250
       emission: "7K60FXE"
     rx:
-      freq_mhz: 464.8250
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -98,10 +98,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 464.8625
       emission: "7K60FXE"
     rx:
-      freq_mhz: 464.8625
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -110,10 +110,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 461.9750
       emission: "7K60FXE"
     rx:
-      freq_mhz: 461.9750
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -122,20 +122,20 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 464.1625
       emission: "7K60F3E"
     rx:
-      freq_mhz: 464.1625
+      freq_mhz: null
     mode:
       type: "FM"
   - id: chain_625_n_mich
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 452.1625
       emission: "7K60FXE"
     rx:
-      freq_mhz: 452.1625
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -144,10 +144,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 464.2000
       emission: "7K60FXE"
     rx:
-      freq_mhz: 464.2000
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 7
@@ -156,10 +156,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 464.0875
       emission: "7K60FXE"
     rx:
-      freq_mhz: 464.0875
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 10
@@ -168,10 +168,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 463.9500
       emission: "7K60FXE"
     rx:
-      freq_mhz: 463.9500
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -180,10 +180,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 464.8125
       emission: "7K60FXE"
     rx:
-      freq_mhz: 464.8125
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 6
@@ -192,20 +192,20 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 464.1500
       emission: "11K2F3E"
     rx:
-      freq_mhz: 464.1500
+      freq_mhz: null
     mode:
       type: "FM"
   - id: chain_cubby_bear
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 461.0250
       emission: "11K2F3E"
     rx:
-      freq_mhz: 461.0250
+      freq_mhz: null
     mode:
       type: "FM"
 
@@ -214,118 +214,118 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 469.5625
       emission: "11K2F3E"
     rx:
-      freq_mhz: 469.5625
+      freq_mhz: null
     mode:
       type: "FM"
-      ctcss_rx_hz: 82.5
       ctcss_tx_hz: 82.5
+      ctcss_rx_hz: 82.5
   - id: chain_northbridge_sec
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 467.0875
       emission: "11K2F3E"
     rx:
-      freq_mhz: 467.0875
+      freq_mhz: null
     mode:
       type: "FM"
-      dcs_rx_code: "156"
       dcs_tx_code: "156"
+      dcs_rx_code: "156"
   - id: chain_flemings_a1
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 464.8125
       emission: "11K2F3E"
     rx:
-      freq_mhz: 464.8125
+      freq_mhz: null
     mode:
       type: "FM"
-      dcs_rx_code: "624"
       dcs_tx_code: "624"
+      dcs_rx_code: "624"
   - id: chain_flemings_a2
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 464.5125
       emission: "11K2F3E"
     rx:
-      freq_mhz: 464.5125
+      freq_mhz: null
     mode:
       type: "FM"
-      dcs_rx_code: "624"
       dcs_tx_code: "624"
+      dcs_rx_code: "624"
   - id: chain_dave_busters_clark
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 467.1125
       emission: "11K2F3E"
     rx:
-      freq_mhz: 467.1125
+      freq_mhz: null
     mode:
       type: "FM"
   - id: chain_morettis_ep
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 469.1125
       emission: "11K2F3E"
     rx:
-      freq_mhz: 469.1125
+      freq_mhz: null
     mode:
       type: "FM"
-      ctcss_rx_hz: 186.2
       ctcss_tx_hz: 186.2
+      ctcss_rx_hz: 186.2
   - id: chain_maxbar
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 467.9250
       emission: "11K2F3E"
     rx:
-      freq_mhz: 467.9250
+      freq_mhz: null
     mode:
       type: "FM"
-      dcs_rx_code: "565"
       dcs_tx_code: "565"
+      dcs_rx_code: "565"
   - id: chain_park_place_rest
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 467.9250
       emission: "11K2F3E"
     rx:
-      freq_mhz: 467.9250
+      freq_mhz: null
     mode:
       type: "FM"
-      ctcss_rx_hz: 173.8
       ctcss_tx_hz: 173.8
+      ctcss_rx_hz: 173.8
 
   # Misc near-north businesses
   - id: chain_holy_name_cathedral
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 461.0625
       emission: "11K2F3E"
     rx:
-      freq_mhz: 461.0625
+      freq_mhz: null
     mode:
       type: "FM"
-      ctcss_rx_hz: 67.0
       ctcss_tx_hz: 67.0
+      ctcss_rx_hz: 67.0
   - id: chain_perillo_bmw
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 464.5000
       emission: "11K2F3E"
     rx:
-      freq_mhz: 464.5000
+      freq_mhz: null
     mode:
       type: "FM"
 
@@ -334,10 +334,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 463.7250
       emission: "7K60FXE"
     rx:
-      freq_mhz: 463.7250
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 6
@@ -346,10 +346,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 461.8250
       emission: "7K60FXE"
     rx:
-      freq_mhz: 461.8250
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -358,10 +358,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 463.4000
       emission: "7K60FXE"
     rx:
-      freq_mhz: 463.4000
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -370,10 +370,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 464.9250
       emission: "7K60FXE"
     rx:
-      freq_mhz: 464.9250
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -382,10 +382,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 464.2125
       emission: "7K60FXE"
     rx:
-      freq_mhz: 464.2125
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -394,10 +394,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 461.6625
       emission: "7K60FXE"
     rx:
-      freq_mhz: 461.6625
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -406,10 +406,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 464.7125
       emission: "7K60FXE"
     rx:
-      freq_mhz: 464.7125
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -418,10 +418,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 463.9250
       emission: "7K60FXE"
     rx:
-      freq_mhz: 463.9250
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -432,10 +432,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 463.8125
       emission: "7K60FXE"
     rx:
-      freq_mhz: 463.8125
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -444,60 +444,60 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 464.9375
       emission: "11K2F3E"
     rx:
-      freq_mhz: 464.9375
+      freq_mhz: null
     mode:
       type: "FM"
-      dcs_rx_code: "411"
       dcs_tx_code: "411"
+      dcs_rx_code: "411"
   - id: chain_north_water_apts
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 464.0000
       emission: "11K2F3E"
     rx:
-      freq_mhz: 464.0000
+      freq_mhz: null
     mode:
       type: "FM"
-      dcs_rx_code: "132"
       dcs_tx_code: "132"
+      dcs_rx_code: "132"
   - id: chain_river_east_center
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 451.5125
       emission: "11K2F3E"
     rx:
-      freq_mhz: 451.5125
+      freq_mhz: null
     mode:
       type: "FM"
-      ctcss_rx_hz: 123.0
       ctcss_tx_hz: 123.0
+      ctcss_rx_hz: 123.0
   - id: chain_cityview_condos
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 466.3500
       emission: "11K2F3E"
     rx:
-      freq_mhz: 466.3500
+      freq_mhz: null
     mode:
       type: "FM"
-      dcs_rx_code: "032"
       dcs_tx_code: "032"
+      dcs_rx_code: "032"
 
   # Bucktown / Wicker Park vicinity
   - id: chain_horween_leather
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 464.1500
       emission: "7K60FXE"
     rx:
-      freq_mhz: 464.1500
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -506,10 +506,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 461.6625
       emission: "7K60FXE"
     rx:
-      freq_mhz: 461.6625
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -518,10 +518,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 462.1625
       emission: "7K60FXE"
     rx:
-      freq_mhz: 462.1625
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -532,10 +532,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 462.4875
       emission: "7K60FXE"
     rx:
-      freq_mhz: 462.4875
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 4
@@ -544,10 +544,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 462.1625
       emission: "7K60FXE"
     rx:
-      freq_mhz: 462.1625
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 9
@@ -556,10 +556,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 461.5625
       emission: "7K60FXE"
     rx:
-      freq_mhz: 461.5625
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 11
@@ -568,10 +568,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 464.4625
       emission: "7K60FXE"
     rx:
-      freq_mhz: 464.4625
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 3
@@ -580,10 +580,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 464.9375
       emission: "7K60FXE"
     rx:
-      freq_mhz: 464.9375
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 9
@@ -592,10 +592,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 464.2875
       emission: "7K60FXE"
     rx:
-      freq_mhz: 464.2875
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 9
@@ -604,10 +604,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 463.6000
       emission: "7K60FXE"
     rx:
-      freq_mhz: 463.6000
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 8
@@ -616,10 +616,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 461.9125
       emission: "7K60FXE"
     rx:
-      freq_mhz: 461.9125
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 10
@@ -628,10 +628,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 464.7625
       emission: "7K60FXE"
     rx:
-      freq_mhz: 464.7625
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -642,10 +642,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 463.5125
       emission: "7K60FXE"
     rx:
-      freq_mhz: 463.5125
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 4
@@ -655,10 +655,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 462.2000
       emission: "7K60FXE"
     rx:
-      freq_mhz: 462.2000
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -668,10 +668,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 462.4250
       emission: "7K60FXE"
     rx:
-      freq_mhz: 462.4250
+      freq_mhz: null
     mode:
       type: "DMR"
       color_code: 1
@@ -682,10 +682,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 463.4125
       emission: "11K2F3E"
     rx:
-      freq_mhz: 463.4125
+      freq_mhz: null
     mode:
       type: "FM"
   # WQZU739, 7141 N Kedzie. Shared security net for Chicagoland Jewish
@@ -694,10 +694,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 463.9375
       emission: "11K2F3E"
     rx:
-      freq_mhz: 463.9375
+      freq_mhz: null
     mode:
       type: "FM"
       notes: "Licensed NFM/DMR; emission actually in use not confirmed."
@@ -706,10 +706,10 @@ rf_chains:
     station_id: stn_biz_north
     antenna_id: ant_biz_north
     tx:
-      freq_mhz: null
+      freq_mhz: 461.5500
       emission: "11K2F3E"
     rx:
-      freq_mhz: 461.5500
+      freq_mhz: null
     mode:
       type: "FM"
       notes: "Licensed NFM/DMR; emission actually in use not confirmed."

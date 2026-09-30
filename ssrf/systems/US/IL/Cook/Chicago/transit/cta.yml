@@ -1,8 +1,8 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
 # SSRF-Lite: Chicago Transit Authority (CTA) - Rail and Bus
 
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "RadioReference - Cook County, IL (CTA Rail / CTA Buses)"
@@ -121,14 +121,14 @@ rf_chains:
     station_id: stn_cta_kyn262
     antenna_id: ant_cta_kyn262
     rx:
-      freq_mhz: 472.9375
-    tx:
       freq_mhz: 475.9375
+    tx:
+      freq_mhz: 472.9375
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 127.3
       ctcss_tx_hz: 127.3
+      ctcss_rx_hz: 127.3
       notes: "CPD Transit Alt. Source marks licence expired 4/23."
 
   # F-2: Rail Emergency [Ch 2] (CFD contact) - licence expired 11/22
@@ -136,14 +136,14 @@ rf_chains:
     station_id: stn_cta_kyt938
     antenna_id: ant_cta_kyt938
     rx:
-      freq_mhz: 470.9875
-    tx:
       freq_mhz: 473.9875
+    tx:
+      freq_mhz: 470.9875
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 127.3
       ctcss_tx_hz: 127.3
+      ctcss_rx_hz: 127.3
       notes: "Rail Emergency; CFD contact channel. Source marks licence expired 11/22."
 
   # F-3: Supervisors North (includes buses) [Ch 3]
@@ -151,14 +151,14 @@ rf_chains:
     station_id: stn_cta_wqdy331
     antenna_id: ant_cta_wqdy331
     rx:
-      freq_mhz: 470.5375
-    tx:
       freq_mhz: 473.5375
+    tx:
+      freq_mhz: 470.5375
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 127.3
       ctcss_tx_hz: 127.3
+      ctcss_rx_hz: 127.3
       notes: "Supervisors North; carries bus supervisor traffic as well as rail."
 
   # F-4: Supervisors South (includes buses) [Ch 4]
@@ -166,14 +166,14 @@ rf_chains:
     station_id: stn_cta_wqdy331
     antenna_id: ant_cta_wqdy331
     rx:
-      freq_mhz: 470.6375
-    tx:
       freq_mhz: 473.6375
+    tx:
+      freq_mhz: 470.6375
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 127.3
       ctcss_tx_hz: 127.3
+      ctcss_rx_hz: 127.3
       notes: "Supervisors South; carries bus supervisor traffic. Noted at N. Michigan and E. Randolph."
 
   # F-5: Blue and Pink Line Ops [Ch 5] - licence expired 11/22
@@ -181,14 +181,14 @@ rf_chains:
     station_id: stn_cta_kyt938
     antenna_id: ant_cta_kyt938
     rx:
-      freq_mhz: 471.0375
-    tx:
       freq_mhz: 474.0375
+    tx:
+      freq_mhz: 471.0375
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 127.3
       ctcss_tx_hz: 127.3
+      ctcss_rx_hz: 127.3
       notes: "Blue and Pink Line operations. Source marks licence expired 11/22."
 
   # F-6: Green and Orange Line Ops [Ch 6] - licence expired 11/22
@@ -196,14 +196,14 @@ rf_chains:
     station_id: stn_cta_kyt938
     antenna_id: ant_cta_kyt938
     rx:
-      freq_mhz: 471.0625
-    tx:
       freq_mhz: 474.0625
+    tx:
+      freq_mhz: 471.0625
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 127.3
       ctcss_tx_hz: 127.3
+      ctcss_rx_hz: 127.3
       notes: "Green and Orange Line operations. Source marks licence expired 11/22."
 
   # F-7: Brown, Purple and Yellow Line Ops [Ch 7] - licence expired 11/22
@@ -211,14 +211,14 @@ rf_chains:
     station_id: stn_cta_kyt938
     antenna_id: ant_cta_kyt938
     rx:
-      freq_mhz: 471.0875
-    tx:
       freq_mhz: 474.0875
+    tx:
+      freq_mhz: 471.0875
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 127.3
       ctcss_tx_hz: 127.3
+      ctcss_rx_hz: 127.3
       notes: "Brown, Purple and Yellow Line operations. Source marks licence expired 11/22."
 
   # F-8: Red Line Ops [Ch 8] - licence expired 11/22
@@ -226,23 +226,22 @@ rf_chains:
     station_id: stn_cta_kyt938
     antenna_id: ant_cta_kyt938
     rx:
-      freq_mhz: 471.1125
-    tx:
       freq_mhz: 474.1125
+    tx:
+      freq_mhz: 471.1125
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 127.3
       ctcss_tx_hz: 127.3
+      ctcss_rx_hz: 127.3
       notes: "Red Line operations. Source marks licence expired 11/22."
 
   # Rail heater control (low band, simplex)
   - id: chain_cta_rail_heater
     station_id: stn_cta_wqdw399
     antenna_id: ant_cta_wqdw399
-    rx:
-      freq_mhz: 44.540
     tx:
+      freq_mhz: 44.540
       emission: "16K0F3E"
     mode:
       type: "FM"
@@ -254,9 +253,9 @@ rf_chains:
     station_id: stn_cta_wsav450
     antenna_id: ant_cta_wsav450
     rx:
-      freq_mhz: 453.475
-    tx:
       freq_mhz: 458.475
+    tx:
+      freq_mhz: 453.475
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -267,14 +266,14 @@ rf_chains:
     station_id: stn_cta_wsav451
     antenna_id: ant_cta_wsav451
     rx:
-      freq_mhz: 453.575
-    tx:
       freq_mhz: 458.575
+    tx:
+      freq_mhz: 453.575
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 127.3
       ctcss_tx_hz: 127.3
+      ctcss_rx_hz: 127.3
       notes: "North bus garages. Source questions a possible RTA / Oak Lawn association."
 
   # Voice Paging / Data
@@ -282,9 +281,9 @@ rf_chains:
     station_id: stn_cta_wsay246
     antenna_id: ant_cta_wsay246
     rx:
-      freq_mhz: 453.275
-    tx:
       freq_mhz: 458.275
+    tx:
+      freq_mhz: 453.275
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -295,9 +294,9 @@ rf_chains:
     station_id: stn_cta_kls562
     antenna_id: ant_cta_kls562
     rx:
-      freq_mhz: 453.325
-    tx:
       freq_mhz: 458.325
+    tx:
+      freq_mhz: 453.325
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -307,14 +306,13 @@ rf_chains:
   - id: chain_cta_bus_rts
     station_id: stn_cta_wprr940
     antenna_id: ant_cta_wprr940
-    rx:
-      freq_mhz: 471.6625
     tx:
+      freq_mhz: 471.6625
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 127.3
       ctcss_tx_hz: 127.3
+      ctcss_rx_hz: 127.3
       notes: "Rapid Transit Shops, simplex."
 
 assignments:

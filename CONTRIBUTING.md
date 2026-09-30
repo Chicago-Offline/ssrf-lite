@@ -70,20 +70,64 @@ make validate-schema  # schema + header freshness
 make test             # full suite, including semantic data checks
 ```
 
-### tx/rx perspective
+### Whose station is this? (tx/rx perspective)
 
-`rf_chain.tx` is the **radio's transmit frequency** (repeater input — what you key up on).  
-`rf_chain.rx` is the **radio's receive frequency** (repeater output — what you listen to).  
-This is radio-centric, not station-centric, despite the field names. The schema's
-`Transmitter`/`Receiver` labels describe the fields, not the repeater's perspective.
+**Every record is written from the perspective of the station it describes.**
+`tx` is what that station *transmits*; `rx` is what that station *receives*.
 
-Example for a standard 70 cm repeater with output 443.700 and +5 MHz split:
+For a repeater that means `tx` is the output you listen to, and `rx` is the
+input you key up on:
+
 ```yaml
 tx:
-  freq_mhz: 448.700   # radio transmit / repeater input
+  freq_mhz: 462.550   # repeater output
 rx:
-  freq_mhz: 443.700   # radio receive / repeater output
+  freq_mhz: 467.550   # repeater input
+mode:
+  ctcss_tx_hz: 141.3  # tone the repeater sends on its output
+  ctcss_rx_hz: 225.7  # tone the repeater requires on its input
 ```
+
+The same rule covers the other cases:
+
+- **Simplex** — set `tx.freq_mhz` and omit `rx.freq_mhz`.
+- **Monitored only** — if you have logged a station's output but never
+  confirmed its input, set `tx.freq_mhz` and leave `rx.freq_mhz` unset rather
+  than guessing a standard offset.
+- **Receive-only sites** (voting receivers, remote RX) — set `rx.freq_mhz`
+  and omit `tx.freq_mhz`.
+
+A chain must carry at least one of the two.
+
+Consumers that build codeplugs mirror this for you: `codeplug.json` reports
+`rx_mhz` as what the *operator's radio* listens to and `tx_mhz` as what it
+transmits. Don't pre-mirror the reference data by hand.
+
+### Channels permitting more than one emission
+
+Where a service allows several incompatible modulations on one frequency —
+US CB runs AM, SSB, and FM on all 40 channels — list them under `emissions`
+rather than the single `emission` key, most typical first. If the rule covers
+the whole plan, declare it once on the plan and every channel inherits it:
+
+```yaml
+channel_plans:
+  - id: chplan_us_cb
+    emissions:
+      - emission: "8K00A3E"
+        mode: "AM"
+        bandwidth_khz: 8
+        power_w: 4
+      - emission: "4K00J3E"
+        mode: "USB"   # J3E alone can't distinguish USB from LSB
+        bandwidth_khz: 4
+        power_w: 12
+    channels:
+      - name: "CB 01"
+        freq_mhz: 26.9650
+```
+
+Setting both `emission` and `emissions` on one channel is an error.
 
 The test suite validates every YAML file against the schema **and** runs
 semantic checks: frequencies must sit inside the declared service's

@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "RepeaterBook - N9BBM Repeater, Chicago, IL (reviewed 2025-10-12)"
@@ -38,15 +38,15 @@ rf_chains:
     station_id: stn_n9bbm_440
     antenna_id: ant_n9bbm_440
     tx:
-      freq_mhz: 446.900 # +5.000 MHz input
+      freq_mhz: 441.900
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 441.900
+      freq_mhz: 446.900 # +5.000 MHz input
     mode:
       type: "FM"
-      ctcss_tx_hz: 100.0
       ctcss_rx_hz: 100.0
+      ctcss_tx_hz: 100.0
       notes: >-
         Open repeater, all licensed amateurs welcome. Privately owned and
         operated by Nate Russell, N9BBM, from the WBBM-TV studio rooftop.

@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 "ssrf_lite":
   sources:
     - name: "ChicagoLand Control Center - Repeaters"
@@ -57,10 +57,10 @@ rf_chains:
     station_id: stn_cl_loop
     antenna_id: ant_cl_loop
     tx:
-      freq_mhz: 447.975
+      freq_mhz: 442.975
       emission: "7K60FXE" # DMR
     rx:
-      freq_mhz: 442.975
+      freq_mhz: 447.975
     mode:
       type: "DMR"
       color_code: 4
@@ -69,10 +69,10 @@ rf_chains:
     station_id: stn_cl_schaumburg
     antenna_id: ant_cl_schaumburg
     tx:
-      freq_mhz: 448.06875
+      freq_mhz: 443.06875
       emission: "7K60FXE" # DMR
     rx:
-      freq_mhz: 443.06875
+      freq_mhz: 448.06875
     mode:
       type: "DMR"
       color_code: 0

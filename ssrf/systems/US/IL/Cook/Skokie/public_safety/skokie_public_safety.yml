@@ -1,8 +1,8 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
 # SSRF-Lite: Skokie, IL - Public Safety / Public Works conventional channels
 
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "RadioReference - Cook County, IL (Skokie)"
@@ -79,14 +79,13 @@ rf_chains:
   - id: chain_skokie_esda
     station_id: stn_skokie_esda
     antenna_id: ant_skokie_esda
-    rx:
-      freq_mhz: 158.775
     tx:
+      freq_mhz: 158.775
       emission: "8K50F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 127.3
       ctcss_tx_hz: 127.3
+      ctcss_rx_hz: 127.3
 
   # Skokie Fire: Dispatch [Ch 1] (VHF repeater, KDB493)
   # Output 159.195 / Input 153.620
@@ -94,23 +93,22 @@ rf_chains:
     station_id: stn_skokie_fd
     antenna_id: ant_skokie_fd
     rx:
-      freq_mhz: 159.195
-    tx:
       freq_mhz: 153.620
+    tx:
+      freq_mhz: 159.195
       emission: "8K50F3E"
     mode:
       type: "FM"
-      dcs_rx_code: "205"
       dcs_tx_code: "205"
+      dcs_rx_code: "205"
 
   # Skokie Fire: Admin / Fire-Tac (VHF simplex, KDB493)
   # Carries a patch to STARCOM21 TG 36500
   - id: chain_skokie_fd_admin
     station_id: stn_skokie_fd
     antenna_id: ant_skokie_fd
-    rx:
-      freq_mhz: 154.340
     tx:
+      freq_mhz: 154.340
       emission: "8K50F3E"
     mode:
       type: "FM"
@@ -120,27 +118,25 @@ rf_chains:
   - id: chain_skokie_pw
     station_id: stn_skokie_pw
     antenna_id: ant_skokie_pw
-    rx:
-      freq_mhz: 154.100
     tx:
+      freq_mhz: 154.100
       emission: "8K50F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 127.3
       ctcss_tx_hz: 127.3
+      ctcss_rx_hz: 127.3
 
   # Skokie Park District (VHF simplex, KJU960)
   - id: chain_skokie_parks
     station_id: stn_skokie_parks
     antenna_id: ant_skokie_parks
-    rx:
-      freq_mhz: 151.310
     tx:
+      freq_mhz: 151.310
       emission: "8K50F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 107.2
       ctcss_tx_hz: 107.2
+      ctcss_rx_hz: 107.2
 
 contacts:
   - id: tg_sc21_3684

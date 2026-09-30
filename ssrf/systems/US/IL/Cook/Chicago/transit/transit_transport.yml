@@ -1,9 +1,9 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
 # SSRF-Lite: Transit & Transport (UHF FM/DMR, RX-only)
 # CTA and other transport/logistics ops that remain on conventional UHF; RX-only.
 
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 organizations:
   - id: org_transit
     name: "Transit & Transport"
@@ -32,24 +32,21 @@ rf_chains:
       id: ch_cta_ops1,
       station_id: stn_transit,
       antenna_id: ant_t,
-      rx: { freq_mhz: 461.575 },
-      tx: { emission: "11K2F3E" },
+      tx: { freq_mhz: 461.575, emission: "11K2F3E" },
       mode: { type: "FM" },
     }
   - {
       id: ch_cta_ops2,
       station_id: stn_transit,
       antenna_id: ant_t,
-      rx: { freq_mhz: 461.825 },
-      tx: { emission: "7K60FXE" },
+      tx: { freq_mhz: 461.825, emission: "7K60FXE" },
       mode: { type: "DMR", color_code: 6, timeslots: [1] },
     }
   - {
       id: ch_cta_yard,
       station_id: stn_transit,
       antenna_id: ant_t,
-      rx: { freq_mhz: 462.100 },
-      tx: { emission: "11K2F3E" },
+      tx: { freq_mhz: 462.100, emission: "11K2F3E" },
       mode: { type: "FM" },
     }
 
@@ -58,16 +55,14 @@ rf_chains:
       id: ch_ord_ops_dmr,
       station_id: stn_transit,
       antenna_id: ant_t,
-      rx: { freq_mhz: 464.575 },
-      tx: { emission: "7K60FXE" },
+      tx: { freq_mhz: 464.575, emission: "7K60FXE" },
       mode: { type: "DMR", color_code: 1, timeslots: [1] },
     }
   - {
       id: ch_midway_ops,
       station_id: stn_transit,
       antenna_id: ant_t,
-      rx: { freq_mhz: 462.225 },
-      tx: { emission: "11K2F3E" },
+      tx: { freq_mhz: 462.225, emission: "11K2F3E" },
       mode: { type: "FM" },
     }
 
@@ -76,16 +71,14 @@ rf_chains:
       id: ch_delivery_u1,
       station_id: stn_transit,
       antenna_id: ant_t,
-      rx: { freq_mhz: 464.550 },
-      tx: { emission: "7K60FXE" },
+      tx: { freq_mhz: 464.550, emission: "7K60FXE" },
       mode: { type: "DMR" },
     }
   - {
       id: ch_delivery_fm1,
       station_id: stn_transit,
       antenna_id: ant_t,
-      rx: { freq_mhz: 464.450 },
-      tx: { emission: "11K2F3E" },
+      tx: { freq_mhz: 464.450, emission: "11K2F3E" },
       mode: { type: "FM" },
     }
 

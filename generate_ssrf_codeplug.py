@@ -21,13 +21,17 @@ channel records:
         "service": str | null,      # SSRF service taxonomy id
         "mode": str | null,         # modulation/mode (FM, DMR, ...)
         "bandwidth_khz": float | null, # channel bandwidth (kHz)
-        "name": str                 # human-readable channel name
+        "name": str,                # human-readable channel name
+        "short_name": str           # <=6 char label for narrow displays
     }
 
-Frequencies are radio-centric: ``rx_mhz`` is what the operator's radio listens
-to (the repeater's transmit / output), and ``tx_mhz`` is what the radio
-transmits (the repeater's receive / input). For simplex channels the two are
-equal.
+Frequencies in the SSRF-Lite library belong to the *station* being described:
+an rf_chain's ``tx`` is what that station radiates (a repeater's output) and
+its ``rx`` is what that station listens for (a repeater's input). The records
+emitted here are the mirror image, because a codeplug describes the operator's
+radio: ``rx_mhz`` is what the radio listens to (the station's tx) and
+``tx_mhz`` is what the radio transmits (the station's rx). For simplex
+channels the two are equal.
 
 CTCSS/DCS values are the tones the radio must *encode* to key a repeater, i.e.
 the repeater's receive (input) tone, falling back to the transmit tone when only
@@ -45,6 +49,9 @@ import re
 from typing import Any, Dict, List, Optional
 
 from ssrf import resolve_ssrf_roots
+from ssrf.emissions import bandwidth_khz as _emission_bandwidth_khz
+from ssrf.emissions import mode_from_emission as _mode_from_emission
+from ssrf.models.pydantic_models import SHORT_NAME_MAX_LEN
 
 BASE = pathlib.Path(__file__).parent
 SSRF_ROOT = BASE / "ssrf"
@@ -66,27 +73,56 @@ def _assignment_display_name(a: Any) -> str:
     return name.replace("_", " ")
 
 
+_WORD_RE = re.compile(r"[A-Za-z]+|\d+")
+_VOWEL_RE = re.compile(r"[AEIOU]")
+
+
+def _abbreviate(name: Optional[str], limit: int = SHORT_NAME_MAX_LEN) -> str:
+    """Squeeze a channel name into ``limit`` characters, deterministically.
+
+    A last resort for records that never authored a ``short_name``: tries the
+    whole name without separators, then drops interior vowels, then falls back
+    to initials. Numeric runs survive every stage because they usually carry
+    the channel number or frequency that distinguishes the record.
+    """
+    tokens = [t.upper() for t in _WORD_RE.findall(name or "")]
+    if not tokens:
+        return ""
+    compact = "".join(tokens)
+    if len(compact) <= limit:
+        return compact
+    devoweled = "".join(
+        t if t.isdigit() else t[0] + _VOWEL_RE.sub("", t[1:]) for t in tokens
+    )
+    if len(devoweled) <= limit:
+        return devoweled
+    initials = "".join(t if t.isdigit() else t[0] for t in tokens)
+    if len(initials) <= limit:
+        return initials
+    return compact[:limit]
+
+
+def _short_name(
+    authored: Optional[str], display_name: str, callsign: Optional[str] = None
+) -> str:
+    """Authored short name, else the callsign if it fits, else an abbreviation.
+
+    Collision handling is deliberately absent: uniqueness is a property of a
+    particular codeplug's zone, which this library cannot see. Consumers
+    disambiguate once they know which subset of channels they are loading.
+    """
+    if authored:
+        return authored
+    if callsign:
+        compact = "".join(_WORD_RE.findall(callsign.upper()))
+        if compact and len(compact) <= SHORT_NAME_MAX_LEN:
+            return compact
+    return _abbreviate(display_name)
+
+
 def _encode_tone(tx_tone: Optional[float], rx_tone: Optional[float]) -> Optional[float]:
     """Tone the radio must transmit to access the far end (repeater input)."""
     return rx_tone if rx_tone is not None else tx_tone
-
-
-# ITU necessary-bandwidth prefix: digits around a decimal-point letter
-# (H = Hz, K = kHz, M = MHz), e.g. 16K0 -> 16.0 kHz, 11K2 -> 11.2 kHz.
-_EMISSION_BANDWIDTH_RE = re.compile(r"^(\d{0,3})([HKM])(\d{0,2})")
-
-
-def _emission_bandwidth_khz(emission: Optional[str]) -> Optional[float]:
-    """Necessary bandwidth in kHz from an ITU emission designator."""
-    if not emission:
-        return None
-    m = _EMISSION_BANDWIDTH_RE.match(emission.strip().upper())
-    if not m or not m.group(1):
-        return None
-    value = float(f"{m.group(1)}.{m.group(3) or 0}")
-    scale = {"H": 0.001, "K": 1.0, "M": 1000.0}[m.group(2)]
-    khz = value * scale
-    return khz or None
 
 
 def _encode_dcs(mode: Any) -> tuple[str | int | None, str | None]:
@@ -101,11 +137,13 @@ def _encode_dcs(mode: Any) -> tuple[str | int | None, str | None]:
 def _record_from_rf_chain(a: Any, chain: Any, station: Any, loc: Any) -> Dict[str, Any]:
     mode = chain.mode
     dcs, dcs_polarity = _encode_dcs(mode)
+    callsign = station.call_sign if station else None
+    display_name = _assignment_display_name(a)
     return {
-        "callsign": station.call_sign if station else None,
-        # radio rx = repeater tx (output); radio tx = repeater rx (input)
+        "callsign": callsign,
+        # Mirrored: the radio hears what the station sends, and vice versa.
         "rx_mhz": chain.tx.freq_mhz or chain.rx.freq_mhz,
-        "tx_mhz": chain.rx.freq_mhz,
+        "tx_mhz": chain.rx.freq_mhz or chain.tx.freq_mhz,
         "ctcss": _encode_tone(mode.ctcss_tx_hz, mode.ctcss_rx_hz),
         "dcs": dcs,
         "dcs_polarity": dcs_polarity,
@@ -117,40 +155,27 @@ def _record_from_rf_chain(a: Any, chain: Any, station: Any, loc: Any) -> Dict[st
         "mode": mode.type,
         "bandwidth_khz": chain.tx.bandwidth_khz
         or _emission_bandwidth_khz(chain.tx.emission),
-        "name": _assignment_display_name(a),
+        "name": display_name,
+        "short_name": _short_name(a.short_name, display_name, callsign),
     }
 
 
-# ITU emission-designator (5th symbol = type of modulation) -> SSRF mode.
-# Only unambiguous analog-voice designators are mapped; digital/data emissions
-# stay None because the designator alone can't distinguish DMR/P25/NXDN/etc.
-_EMISSION_MODE_BY_DESIGNATOR = {
-    "F3E": "FM",   # angle-modulated telephony (FM voice) -> 16K0F3E, 11K0F3E, ...
-    "A3E": "AM",   # double-sideband AM telephony (aircraft band) -> 6K00A3E
-    "J3E": "USB",  # single-sideband, suppressed carrier (upper by convention)
-}
-
-
-def _mode_from_emission(emission: Optional[str]) -> Optional[str]:
-    """Infer an SSRF mode from an ITU emission designator.
-
-    The designator's 3-char modulation code is its final three characters
-    (e.g. ``16K0F3E`` -> ``F3E``). Returns None for digital/data or unknown
-    emissions, which downstream consumers treat as untyped.
-    """
-    if not emission:
-        return None
-    code = emission.strip().upper()[-3:]
-    return _EMISSION_MODE_BY_DESIGNATOR.get(code)
-
-
 def _record_from_plan_channel(
-    a: Any, plan: Any, ch: Any, *, name_override: Optional[str] = None
+    a: Any,
+    plan: Any,
+    ch: Any,
+    *,
+    name_override: Optional[str] = None,
+    short_name_override: Optional[str] = None,
+    emission: Any = None,
 ) -> Dict[str, Any]:
+    name = name_override or ch.name
+    designator = emission.emission if emission else ch.emission
     return {
         "callsign": None,
+        # Mirrored: the radio hears what the channel's station sends.
         "rx_mhz": ch.freq_mhz,
-        "tx_mhz": ch.tx_freq_mhz or ch.freq_mhz,
+        "tx_mhz": ch.rx_freq_mhz or ch.freq_mhz,
         "ctcss": None,
         "dcs": None,
         "dcs_polarity": None,
@@ -164,14 +189,64 @@ def _record_from_plan_channel(
         # filters (which match on mode: FM) can pick up simplex/calling
         # channels. Was hardcoded None, which silently dropped every plan
         # channel from mode-filtered zones.
-        "mode": _mode_from_emission(ch.emission),
-        "bandwidth_khz": ch.bandwidth_khz or _emission_bandwidth_khz(ch.emission),
+        "mode": (emission.mode if emission and emission.mode else None)
+        or _mode_from_emission(designator),
+        "bandwidth_khz": (emission.bandwidth_khz if emission else ch.bandwidth_khz)
+        or _emission_bandwidth_khz(designator),
         # Plan channels carry the canonical national name ("Ch 06"). A local
         # assignment may prefer its own label ("M06 SAFETY") -- see
         # `display_name` handling in build_records(). Falls back to the plan
         # name so existing documents are unaffected.
-        "name": name_override or ch.name,
+        "name": name,
+        "short_name": _short_name(short_name_override or ch.short_name, name),
     }
+
+
+def _records_from_plan_channel(
+    a: Any,
+    plan: Any,
+    ch: Any,
+    *,
+    name_override: Optional[str] = None,
+    short_name_override: Optional[str] = None,
+) -> List[Dict[str, Any]]:
+    """One record per permitted emission.
+
+    A channel that allows several incompatible modulations on one frequency --
+    US CB runs AM, SSB, and FM on all 40 -- is several channels as far as a
+    radio is concerned, so each gets its own record with the mode appended to
+    the name.
+    """
+
+    permitted = ch.permitted_emissions()
+    if len(permitted) <= 1:
+        return [
+            _record_from_plan_channel(
+                a,
+                plan,
+                ch,
+                name_override=name_override,
+                short_name_override=short_name_override,
+                emission=permitted[0] if permitted else None,
+            )
+        ]
+
+    records: List[Dict[str, Any]] = []
+    for spec in permitted:
+        record = _record_from_plan_channel(
+            a,
+            plan,
+            ch,
+            name_override=name_override,
+            short_name_override=short_name_override,
+            emission=spec,
+        )
+        suffix = spec.mode or _mode_from_emission(spec.emission)
+        if suffix:
+            record["name"] = f"{record['name']} {suffix}"
+            record["short_name"] = _short_name(None, record["name"])
+        records.append(record)
+    return records
 
 
 def build_records(ssrf_roots: Optional[List[pathlib.Path]] = None) -> List[Dict[str, Any]]:
@@ -211,12 +286,18 @@ def build_records(ssrf_roots: Optional[List[pathlib.Path]] = None) -> List[Dict[
                 # exactly ONE channel -- otherwise a single override would
                 # collapse every channel in the plan to the same name.
                 name_override = None
-                if getattr(a, "display_name", None) and len(plan_channels) == 1:
-                    name_override = a.display_name
+                short_name_override = None
+                if len(plan_channels) == 1:
+                    name_override = getattr(a, "display_name", None)
+                    short_name_override = getattr(a, "short_name", None)
                 for ch in plan_channels:
-                    records.append(
-                        _record_from_plan_channel(
-                            a, plan, ch, name_override=name_override
+                    records.extend(
+                        _records_from_plan_channel(
+                            a,
+                            plan,
+                            ch,
+                            name_override=name_override,
+                            short_name_override=short_name_override,
                         )
                     )
             # assignments without RF data carry no channel; skip them.

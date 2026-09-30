@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "Real Fine 650 listing on MyGMRS"
@@ -26,15 +26,15 @@ rf_chains:
   - id: chain_gmrs_real_fine_650
     station_id: stn_gmrs_real_fine_650
     tx:
-      freq_mhz: 467.650
+      freq_mhz: 462.650
       emission: "20K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.650
+      freq_mhz: 467.650
     mode:
       type: "FM"
-      ctcss_tx_hz: 77.0
       ctcss_rx_hz: 77.0
+      ctcss_tx_hz: 77.0
 
 assignments:
   - id: asgn_gmrs_real_fine_650

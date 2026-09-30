@@ -25,12 +25,14 @@ def test_plan_channel_uses_frequency_for_simplex_tx() -> None:
     assert record["tx_mhz"] == 156.3
 
 
-def test_plan_channel_uses_explicit_duplex_tx_frequency() -> None:
+def test_plan_channel_uses_explicit_duplex_rx_frequency() -> None:
+    # The plan describes the coast station: it sends 161.6 and hears 157.0, so
+    # the radio is the mirror.
     record = _record(
         ChannelPlanChannel(
             name="Ch 20",
             freq_mhz=161.6,
-            tx_freq_mhz=157.0,
+            rx_freq_mhz=157.0,
         )
     )
 
@@ -58,6 +60,6 @@ def test_us_marine_plan_defines_duplex_pairs() -> None:
         channel.name: channel for channel in document.channel_plans[0].channels
     }
 
-    for name, (rx_mhz, tx_mhz) in expected_pairs.items():
-        assert channels[name].freq_mhz == rx_mhz
-        assert channels[name].tx_freq_mhz == tx_mhz
+    for name, (station_tx, station_rx) in expected_pairs.items():
+        assert channels[name].freq_mhz == station_tx
+        assert channels[name].rx_freq_mhz == station_rx

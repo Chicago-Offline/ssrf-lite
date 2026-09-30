@@ -1,10 +1,10 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
 # SSRF-Lite: Berrien County (MI) Public Safety
 # Source: Attachment "barrien_county.csv" (RadioReference extract)
 # Notes: Conventional VHF/UHF channels for county fire, EMS, sheriff, EMA, and parks. Programmed receive-only.
 
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 organizations:
   - id: org_berrien_sheriff
     name: "Berrien County Sheriff"
@@ -62,21 +62,19 @@ rf_chains:
   - id: chain_berrien_jail
     station_id: stn_berrien_sheriff
     antenna_id: ant_berrien_sheriff
-    rx:
-      freq_mhz: 859.9625
     tx:
+      freq_mhz: 859.9625
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 167.9
+      ctcss_tx_hz: 167.9
 
     # EMA / Fire Dispatch & Alerting
   - id: chain_berrien_ema_sirens
     station_id: stn_berrien_ema
     antenna_id: ant_berrien_ema
-    rx:
-      freq_mhz: 155.925
     tx:
+      freq_mhz: 155.925
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -84,9 +82,8 @@ rf_chains:
   - id: chain_berrien_eoc
     station_id: stn_berrien_ema
     antenna_id: ant_berrien_ema
-    rx:
-      freq_mhz: 453.900
     tx:
+      freq_mhz: 453.900
       emission: "11K2F3E"
     mode:
       type: "FM"
@@ -94,112 +91,102 @@ rf_chains:
   - id: chain_berrien_media_page
     station_id: stn_berrien_fire
     antenna_id: ant_berrien_fire
-    rx:
-      freq_mhz: 154.250
     tx:
+      freq_mhz: 154.250
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 136.5
+      ctcss_tx_hz: 136.5
 
   - id: chain_berrien_fire1
     station_id: stn_berrien_fire
     antenna_id: ant_berrien_fire
-    rx:
-      freq_mhz: 156.105
     tx:
+      freq_mhz: 156.105
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 123.0
+      ctcss_tx_hz: 123.0
 
   - id: chain_berrien_fire2
     station_id: stn_berrien_fire
     antenna_id: ant_berrien_fire
-    rx:
-      freq_mhz: 151.295
     tx:
+      freq_mhz: 151.295
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 100.0
+      ctcss_tx_hz: 100.0
 
   - id: chain_berrien_fire3
     station_id: stn_berrien_fire
     antenna_id: ant_berrien_fire
-    rx:
-      freq_mhz: 151.370
     tx:
+      freq_mhz: 151.370
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 85.4
+      ctcss_tx_hz: 85.4
 
   - id: chain_berrien_fg1
     station_id: stn_berrien_fire
     antenna_id: ant_berrien_fire
-    rx:
-      freq_mhz: 155.175
     tx:
+      freq_mhz: 155.175
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 136.5
+      ctcss_tx_hz: 136.5
 
   - id: chain_berrien_fg2
     station_id: stn_berrien_fire
     antenna_id: ant_berrien_fire
-    rx:
-      freq_mhz: 151.205
     tx:
+      freq_mhz: 151.205
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 136.5
+      ctcss_tx_hz: 136.5
 
   - id: chain_berrien_fg3
     station_id: stn_berrien_fire
     antenna_id: ant_berrien_fire
-    rx:
-      freq_mhz: 151.235
     tx:
+      freq_mhz: 151.235
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 136.5
+      ctcss_tx_hz: 136.5
 
   - id: chain_berrien_fg4
     station_id: stn_berrien_fire
     antenna_id: ant_berrien_fire
-    rx:
-      freq_mhz: 159.315
     tx:
+      freq_mhz: 159.315
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 136.5
+      ctcss_tx_hz: 136.5
 
   - id: chain_berrien_fg5
     station_id: stn_berrien_fire
     antenna_id: ant_berrien_fire
-    rx:
-      freq_mhz: 159.405
     tx:
+      freq_mhz: 159.405
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 136.5
+      ctcss_tx_hz: 136.5
 
   - id: chain_berrien_silver_beach
     station_id: stn_berrien_parks
     antenna_id: ant_berrien_parks
-    rx:
-      freq_mhz: 151.370
     tx:
+      freq_mhz: 151.370
       emission: "11K2F3E"
     mode:
       type: "FM"
-      ctcss_rx_hz: 103.5
+      ctcss_tx_hz: 103.5
 
 assignments:
   # Sheriff / Corrections

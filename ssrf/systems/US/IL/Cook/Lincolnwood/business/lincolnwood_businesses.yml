@@ -1,8 +1,8 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
 # SSRF-Lite: Lincolnwood, IL - licensed business / industrial land mobile
 
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "RadioReference Wiki - Businesses, North Cook County (IL)"
@@ -44,9 +44,8 @@ rf_chains:
   - id: chain_carrington_463p725
     station_id: stn_carrington
     antenna_id: ant_carrington
-    rx:
-      freq_mhz: 463.725
     tx:
+      freq_mhz: 463.725
       emission: "7K60FXD"
     mode:
       type: "DMR"

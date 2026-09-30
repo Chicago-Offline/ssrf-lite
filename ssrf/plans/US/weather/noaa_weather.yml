@@ -1,10 +1,10 @@
-# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.8.0.schema.json
+# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.9.0.schema.json
 # SSRF-Lite: NOAA Weather Radio (WX1–WX7)
 # Notes: RX-only, FM (wide). Kept as a separate zone for quick access.
 # Sources: NOAA Weather Radio channel plan.
 
-$schema: "../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+$schema: "../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 organizations:
   - id: org_noaa
     name: "NOAA Weather Radio"
@@ -36,56 +36,49 @@ rf_chains:
       id: chain_wx1,
       station_id: stn_noaa,
       antenna_id: ant_noaa,
-      rx: { freq_mhz: 162.550 },
-      tx: { emission: "16K0F3E" },
+      tx: { freq_mhz: 162.550, emission: "16K0F3E" },
       mode: { type: "FM" },
     }
   - {
       id: chain_wx2,
       station_id: stn_noaa,
       antenna_id: ant_noaa,
-      rx: { freq_mhz: 162.400 },
-      tx: { emission: "16K0F3E" },
+      tx: { freq_mhz: 162.400, emission: "16K0F3E" },
       mode: { type: "FM" },
     }
   - {
       id: chain_wx3,
       station_id: stn_noaa,
       antenna_id: ant_noaa,
-      rx: { freq_mhz: 162.475 },
-      tx: { emission: "16K0F3E" },
+      tx: { freq_mhz: 162.475, emission: "16K0F3E" },
       mode: { type: "FM" },
     }
   - {
       id: chain_wx4,
       station_id: stn_noaa,
       antenna_id: ant_noaa,
-      rx: { freq_mhz: 162.425 },
-      tx: { emission: "16K0F3E" },
+      tx: { freq_mhz: 162.425, emission: "16K0F3E" },
       mode: { type: "FM" },
     }
   - {
       id: chain_wx5,
       station_id: stn_noaa,
       antenna_id: ant_noaa,
-      rx: { freq_mhz: 162.450 },
-      tx: { emission: "16K0F3E" },
+      tx: { freq_mhz: 162.450, emission: "16K0F3E" },
       mode: { type: "FM" },
     }
   - {
       id: chain_wx6,
       station_id: stn_noaa,
       antenna_id: ant_noaa,
-      rx: { freq_mhz: 162.500 },
-      tx: { emission: "16K0F3E" },
+      tx: { freq_mhz: 162.500, emission: "16K0F3E" },
       mode: { type: "FM" },
     }
   - {
       id: chain_wx7,
       station_id: stn_noaa,
       antenna_id: ant_noaa,
-      rx: { freq_mhz: 162.525 },
-      tx: { emission: "16K0F3E" },
+      tx: { freq_mhz: 162.525, emission: "16K0F3E" },
       mode: { type: "FM" },
     }
 

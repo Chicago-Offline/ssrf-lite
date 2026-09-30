@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "PAAROS - About Society"
@@ -71,15 +71,15 @@ rf_chains:
     station_id: stn_na9pl_440_mixed
     antenna_id: ant_na9pl_highrise
     tx:
-      freq_mhz: 445.250 # +5.0 MHz input
+      freq_mhz: 440.250
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 440.250
+      freq_mhz: 445.250 # +5.0 MHz input
     mode:
       type: "FM"
-      ctcss_tx_hz: 114.8
       ctcss_rx_hz: 114.8
+      ctcss_tx_hz: 114.8
       notes: >-
         Yaesu DR-2X running mixed analog/digital (AMS). Analog side is
         local-only; network links are reached via the C4FM side.
@@ -87,15 +87,15 @@ rf_chains:
     station_id: stn_na9pl_440_mixed
     antenna_id: ant_na9pl_highrise
     tx:
-      freq_mhz: 445.250
+      freq_mhz: 440.250
       emission: "8K50F7W"
       bandwidth_khz: 12.5
     rx:
-      freq_mhz: 440.250
+      freq_mhz: 445.250
     mode:
       type: "C4FM"
-      ctcss_tx_hz: 114.8
       ctcss_rx_hz: 114.8
+      ctcss_tx_hz: 114.8
       notes: >-
         Linked to Wires-X room NA9PL-ROOM #81708, YSFReflector #88843, and
         BrandMeister DMR talkgroup 26018.
@@ -105,15 +105,15 @@ rf_chains:
     station_id: stn_na9pl_440_fm_poland
     antenna_id: ant_na9pl_highrise_fm_poland
     tx:
-      freq_mhz: 445.500 # +5.0 MHz input
+      freq_mhz: 440.500
       emission: "16K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 440.500
+      freq_mhz: 445.500 # +5.0 MHz input
     mode:
       type: "FM"
-      ctcss_tx_hz: 67.0
       ctcss_rx_hz: 67.0
+      ctcss_tx_hz: 67.0
       notes: >-
         Motorola XPR8300, in testing since May 2024. Frequency is NOT
         coordinated (coordination pending with the Illinois Repeater
@@ -125,10 +125,10 @@ rf_chains:
     station_id: stn_na9pl_440_dstar
     antenna_id: ant_na9pl_dstar
     tx:
-      freq_mhz: 445.725 # +5.0 MHz input
+      freq_mhz: 440.725
       emission: "6K00F7E"
     rx:
-      freq_mhz: 440.725
+      freq_mhz: 445.725 # +5.0 MHz input
     mode:
       type: "D-STAR"
       notes: >-

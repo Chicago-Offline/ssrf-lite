@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../../../_schema/ssrf-lite-0.8.0.schema.json
-$schema: "../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+# yaml-language-server: $schema=../../../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "St. Petersburg / Tampa GMRS repeaters (user supplied)"
@@ -115,76 +115,76 @@ rf_chains:
   - id: chain_gmrs_seminole_725
     station_id: stn_gmrs_seminole_725
     tx:
-      freq_mhz: 467.725
+      freq_mhz: 462.725
       emission: "20K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.725
+      freq_mhz: 467.725
     mode:
       type: "FM"
-      ctcss_tx_hz: 141.3
       ctcss_rx_hz: 141.3
+      ctcss_tx_hz: 141.3
 
   - id: chain_gmrs_clearwater_675
     station_id: stn_gmrs_clearwater_675
     tx:
-      freq_mhz: 467.675
+      freq_mhz: 462.675
       emission: "20K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.675
+      freq_mhz: 467.675
     mode:
       type: "FM"
-      ctcss_tx_hz: 77.0
+      ctcss_rx_hz: 77.0
 
   - id: chain_gmrs_ruskin_700
     station_id: stn_gmrs_ruskin_700
     tx:
-      freq_mhz: 467.700
+      freq_mhz: 462.700
       emission: "20K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.700
+      freq_mhz: 467.700
     mode:
       type: "FM"
-      ctcss_tx_hz: 123.0
       ctcss_rx_hz: 123.0
+      ctcss_tx_hz: 123.0
 
   - id: chain_gmrs_tampa_shores_700
     station_id: stn_gmrs_tampa_shores_700
     tx:
-      freq_mhz: 467.700
+      freq_mhz: 462.700
       emission: "20K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.700
+      freq_mhz: 467.700
     mode:
       type: "FM"
-      dcs_tx_code: "065"
       dcs_rx_code: "065"
+      dcs_tx_code: "065"
 
   - id: chain_gmrs_tampa_shores_650
     station_id: stn_gmrs_tampa_shores_650
     tx:
-      freq_mhz: 467.650
+      freq_mhz: 462.650
       emission: "20K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.650
+      freq_mhz: 467.650
     mode:
       type: "FM"
-      dcs_tx_code: "065"
       dcs_rx_code: "065"
+      dcs_tx_code: "065"
 
   - id: chain_gmrs_west_bradenton_625
     station_id: stn_gmrs_west_bradenton_625
     antenna_id: ant_gmrs_west_bradenton_625
     tx:
-      freq_mhz: 467.625
+      freq_mhz: 462.625
       emission: "20K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.625
+      freq_mhz: 467.625
     mode:
       type: "FM"
 
@@ -192,68 +192,68 @@ rf_chains:
     station_id: stn_gmrs_tampa_600
     antenna_id: ant_gmrs_tampa_600
     tx:
-      freq_mhz: 467.600
+      freq_mhz: 462.600
       power_w: 50
       emission: "20K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.600
+      freq_mhz: 467.600
     mode:
       type: "FM"
-      ctcss_tx_hz: 131.8
       ctcss_rx_hz: 131.8
+      ctcss_tx_hz: 131.8
   - id: chain_gmrs_sun_sara_650
     station_id: stn_gmrs_sun_sara_650
     tx:
-      freq_mhz: 467.650
+      freq_mhz: 462.650
       emission: "20K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.650
+      freq_mhz: 467.650
     mode:
       type: "FM"
 
   - id: chain_gmrs_sun_venice_700
     station_id: stn_gmrs_sun_venice_700
     tx:
-      freq_mhz: 467.700
+      freq_mhz: 462.700
       emission: "20K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.700
+      freq_mhz: 467.700
     mode:
       type: "FM"
 
   - id: chain_gmrs_sun_englewood_675
     station_id: stn_gmrs_sun_englewood_675
     tx:
-      freq_mhz: 467.675
+      freq_mhz: 462.675
       emission: "20K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.675
+      freq_mhz: 467.675
     mode:
       type: "FM"
 
   - id: chain_gmrs_sun_bonita_575
     station_id: stn_gmrs_sun_bonita_575
     tx:
-      freq_mhz: 467.575
+      freq_mhz: 462.575
       emission: "20K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.575
+      freq_mhz: 467.575
     mode:
       type: "FM"
 
   - id: chain_gmrs_sun_duette_550
     station_id: stn_gmrs_sun_duette_550
     tx:
-      freq_mhz: 467.550
+      freq_mhz: 462.550
       emission: "20K0F3E"
       bandwidth_khz: 25
     rx:
-      freq_mhz: 462.550
+      freq_mhz: 467.550
     mode:
       type: "FM"
 

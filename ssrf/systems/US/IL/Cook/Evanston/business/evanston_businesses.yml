@@ -1,8 +1,8 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.8.0.schema.json
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
 # SSRF-Lite: Evanston, IL - licensed business / industrial land mobile
 
-$schema: "../../../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: "RadioReference Wiki - Businesses, North Cook County (IL)"
@@ -54,9 +54,8 @@ rf_chains:
   - id: chain_st_joan_of_arc_451p3125
     station_id: stn_st_joan_of_arc
     antenna_id: ant_st_joan_of_arc
-    rx:
-      freq_mhz: 451.3125
     tx:
+      freq_mhz: 451.3125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -64,9 +63,8 @@ rf_chains:
   - id: chain_st_joan_of_arc_452p3125
     station_id: stn_st_joan_of_arc
     antenna_id: ant_st_joan_of_arc
-    rx:
-      freq_mhz: 452.3125
     tx:
+      freq_mhz: 452.3125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -74,9 +72,8 @@ rf_chains:
   - id: chain_st_joan_of_arc_452p4125
     station_id: stn_st_joan_of_arc
     antenna_id: ant_st_joan_of_arc
-    rx:
-      freq_mhz: 452.4125
     tx:
+      freq_mhz: 452.4125
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -84,9 +81,8 @@ rf_chains:
   - id: chain_st_joan_of_arc_462p1875
     station_id: stn_st_joan_of_arc
     antenna_id: ant_st_joan_of_arc
-    rx:
-      freq_mhz: 462.1875
     tx:
+      freq_mhz: 462.1875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -94,9 +90,8 @@ rf_chains:
   - id: chain_st_joan_of_arc_467p1875
     station_id: stn_st_joan_of_arc
     antenna_id: ant_st_joan_of_arc
-    rx:
-      freq_mhz: 467.1875
     tx:
+      freq_mhz: 467.1875
       emission: "7K60FXD"
     mode:
       type: "DMR"
@@ -105,9 +100,8 @@ rf_chains:
   - id: chain_sherman_plaza_451p775
     station_id: stn_sherman_plaza
     antenna_id: ant_sherman_plaza
-    rx:
-      freq_mhz: 451.775
     tx:
+      freq_mhz: 451.775
       emission: "7K60FXD"
     mode:
       type: "DMR"

@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=../../../../_schema/ssrf-lite-0.8.0.schema.json
+# yaml-language-server: $schema=../../../../_schema/ssrf-lite-0.9.0.schema.json
 # SSRF-Lite: Chicagoland Airports (IL / IN / MI) — VHF AM Airband Voice
 # Notes: RX-only reference. AM voice, 25 kHz channels (6K00A3E). TX requires an
 #        FCC Part 87 aeronautical authorization; treat as receive-only.
@@ -8,8 +8,8 @@
 # - Airportmap open databases (https://airportmap.de/data)
 #   as compiled in infamy/NeonPlug airports_min.json
 
-$schema: "../../../../_schema/ssrf-lite-0.8.0.schema.json"
-ssrf_lite_version: "0.8.0"
+$schema: "../../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
 ssrf_lite:
   sources:
     - name: ICAO Frequency Finder
@@ -707,1176 +707,1029 @@ rf_chains:
       id: chain_7in8_122900_ctaf,
       station_id: stn_7in8,
       antenna_id: ant_7in8,
-      rx: { freq_mhz: 122.900 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.900, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_82is_122900_unicom,
       station_id: stn_82is,
       antenna_id: ant_82is,
-      rx: { freq_mhz: 122.900 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.900, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_dtg_122800_ctaf,
       station_id: stn_dtg,
       antenna_id: ant_dtg,
-      rx: { freq_mhz: 122.800 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.800, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_k05c_123000_unicom,
       station_id: stn_k05c,
       antenna_id: ant_k05c,
-      rx: { freq_mhz: 123.000 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 123.000, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_k05c_123650_radio,
       station_id: stn_k05c,
       antenna_id: ant_k05c,
-      rx: { freq_mhz: 123.650 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 123.650, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_k05c_133100_ad,
       station_id: stn_k05c,
       antenna_id: ant_k05c,
-      rx: { freq_mhz: 133.100 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 133.100, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_k06c_123000_unicom,
       station_id: stn_k06c,
       antenna_id: ant_k06c,
-      rx: { freq_mhz: 123.000 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 123.000, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_k0c0_122900_ctaf,
       station_id: stn_k0c0,
       antenna_id: ant_k0c0,
-      rx: { freq_mhz: 122.900 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.900, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_k10c_120550_ad,
       station_id: stn_k10c,
       antenna_id: ant_k10c,
-      rx: { freq_mhz: 120.550 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 120.550, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_k10c_122800_unicom,
       station_id: stn_k10c,
       antenna_id: ant_k10c,
-      rx: { freq_mhz: 122.800 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.800, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_k1c2_118400_acc,
       station_id: stn_k1c2,
       antenna_id: ant_k1c2,
-      rx: { freq_mhz: 118.400 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 118.400, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_k1c2_122500_radio,
       station_id: stn_k1c2,
       antenna_id: ant_k1c2,
-      rx: { freq_mhz: 122.500 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.500, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_k1c2_123000_unicom,
       station_id: stn_k1c2,
       antenna_id: ant_k1c2,
-      rx: { freq_mhz: 123.000 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 123.000, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_k1c5_119350_ad,
       station_id: stn_k1c5,
       antenna_id: ant_k1c5,
-      rx: { freq_mhz: 119.350 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 119.350, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_k1c5_122900_ctaf,
       station_id: stn_k1c5,
       antenna_id: ant_k1c5,
-      rx: { freq_mhz: 122.900 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.900, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_k3ck_120550_ad,
       station_id: stn_k3ck,
       antenna_id: ant_k3ck,
-      rx: { freq_mhz: 120.550 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 120.550, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_k3ck_123050_unicom,
       station_id: stn_k3ck,
       antenna_id: ant_k3ck,
-      rx: { freq_mhz: 123.050 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 123.050, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_k3ho_122800_unicom,
       station_id: stn_k3ho,
       antenna_id: ant_k3ho,
-      rx: { freq_mhz: 122.800 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.800, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_k3ho_123650_radio,
       station_id: stn_k3ho,
       antenna_id: ant_k3ho,
-      rx: { freq_mhz: 123.650 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 123.650, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_k3tr_118550_ad,
       station_id: stn_k3tr,
       antenna_id: ant_k3tr,
-      rx: { freq_mhz: 118.550 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 118.550, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_k3tr_122800_unicom,
       station_id: stn_k3tr,
       antenna_id: ant_k3tr,
-      rx: { freq_mhz: 122.800 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.800, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_karr_120600_ctaf,
       station_id: stn_karr,
       antenna_id: ant_karr,
-      rx: { freq_mhz: 120.600 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 120.600, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_karr_121700_cld,
       station_id: stn_karr,
       antenna_id: ant_karr,
-      rx: { freq_mhz: 121.700 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 121.700, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_karr_122500_radio,
       station_id: stn_karr,
       antenna_id: ant_karr,
-      rx: { freq_mhz: 122.500 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.500, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_karr_122950_unicom,
       station_id: stn_karr,
       antenna_id: ant_karr,
-      rx: { freq_mhz: 122.950 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.950, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_karr_125850_asos,
       station_id: stn_karr,
       antenna_id: ant_karr,
-      rx: { freq_mhz: 125.850 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 125.850, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_karr_133500_ad,
       station_id: stn_karr,
       antenna_id: ant_karr,
-      rx: { freq_mhz: 133.500 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 133.500, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kasw_121125_asow,
       station_id: stn_kasw,
       antenna_id: ant_kasw,
-      rx: { freq_mhz: 121.125 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 121.125, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kasw_122700_unicom,
       station_id: stn_kasw,
       antenna_id: ant_kasw,
-      rx: { freq_mhz: 122.700 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.700, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kasw_127200_ad,
       station_id: stn_kasw,
       antenna_id: ant_kasw,
-      rx: { freq_mhz: 127.200 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 127.200, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kasw_134050_cld,
       station_id: stn_kasw,
       antenna_id: ant_kasw,
-      rx: { freq_mhz: 134.050 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 134.050, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kbeh_118550_ad,
       station_id: stn_kbeh,
       antenna_id: ant_kbeh,
-      rx: { freq_mhz: 118.550 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 118.550, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kbeh_119700_cld,
       station_id: stn_kbeh,
       antenna_id: ant_kbeh,
-      rx: { freq_mhz: 119.700 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 119.700, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kbeh_121550_asos,
       station_id: stn_kbeh,
       antenna_id: ant_kbeh,
-      rx: { freq_mhz: 121.550 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 121.550, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kbeh_123000_unicom,
       station_id: stn_kbeh,
       antenna_id: ant_kbeh,
-      rx: { freq_mhz: 123.000 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 123.000, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kc03_122800_unicom,
       station_id: stn_kc03,
       antenna_id: ant_kc03,
-      rx: { freq_mhz: 122.800 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.800, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kc03_132050_ad,
       station_id: stn_kc03,
       antenna_id: ant_kc03,
-      rx: { freq_mhz: 132.050 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 132.050, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kc09_118175_asow,
       station_id: stn_kc09,
       antenna_id: ant_kc09,
-      rx: { freq_mhz: 118.175 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 118.175, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kc09_119350_ad,
       station_id: stn_kc09,
       antenna_id: ant_kc09,
-      rx: { freq_mhz: 119.350 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 119.350, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kc09_122500_radio,
       station_id: stn_kc09,
       antenna_id: ant_kc09,
-      rx: { freq_mhz: 122.500 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.500, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kc09_122800_unicom,
       station_id: stn_kc09,
       antenna_id: ant_kc09,
-      rx: { freq_mhz: 122.800 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.800, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kc20_118550_ad,
       station_id: stn_kc20,
       antenna_id: ant_kc20,
-      rx: { freq_mhz: 118.550 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 118.550, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kc20_121625_rco,
       station_id: stn_kc20,
       antenna_id: ant_kc20,
-      rx: { freq_mhz: 121.625 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 121.625, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kc20_122700_unicom,
       station_id: stn_kc20,
       antenna_id: ant_kc20,
-      rx: { freq_mhz: 122.700 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.700, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kc20_123500_misc,
       station_id: stn_kc20,
       antenna_id: ant_kc20,
-      rx: { freq_mhz: 123.500 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 123.500, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kc65_122800_unicom,
       station_id: stn_kc65,
       antenna_id: ant_kc65,
-      rx: { freq_mhz: 122.800 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.800, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kc65_132050_ad,
       station_id: stn_kc65,
       antenna_id: ant_kc65,
-      rx: { freq_mhz: 132.050 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 132.050, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kc81_120550_ad,
       station_id: stn_kc81,
       antenna_id: ant_kc81,
-      rx: { freq_mhz: 120.550 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 120.550, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kc81_122700_unicom,
       station_id: stn_kc81,
       antenna_id: ant_kc81,
-      rx: { freq_mhz: 122.700 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.700, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kc91_118550_ad,
       station_id: stn_kc91,
       antenna_id: ant_kc91,
-      rx: { freq_mhz: 118.550 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 118.550, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kc91_122800_unicom,
       station_id: stn_kc91,
       antenna_id: ant_kc91,
-      rx: { freq_mhz: 122.800 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.800, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kdpa_119750_cld,
       station_id: stn_kdpa,
       antenna_id: ant_kdpa,
-      rx: { freq_mhz: 119.750 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 119.750, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kdpa_120900_twr,
       station_id: stn_kdpa,
       antenna_id: ant_kdpa,
-      rx: { freq_mhz: 120.900 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 120.900, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kdpa_121800_gnd,
       station_id: stn_kdpa,
       antenna_id: ant_kdpa,
-      rx: { freq_mhz: 121.800 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 121.800, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kdpa_122300_radio,
       station_id: stn_kdpa,
       antenna_id: ant_kdpa,
-      rx: { freq_mhz: 122.300 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.300, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kdpa_122950_unicom,
       station_id: stn_kdpa,
       antenna_id: ant_kdpa,
-      rx: { freq_mhz: 122.950 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.950, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kdpa_124800_asos,
       station_id: stn_kdpa,
       antenna_id: ant_kdpa,
-      rx: { freq_mhz: 124.800 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 124.800, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kdpa_133500_ad,
       station_id: stn_kdpa,
       antenna_id: ant_kdpa,
-      rx: { freq_mhz: 133.500 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 133.500, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kekm_118550_ad,
       station_id: stn_kekm,
       antenna_id: ant_kekm,
-      rx: { freq_mhz: 118.550 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 118.550, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kekm_119500_ctaf,
       station_id: stn_kekm,
       antenna_id: ant_kekm,
-      rx: { freq_mhz: 119.500 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 119.500, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kekm_121800_cld,
       station_id: stn_kekm,
       antenna_id: ant_kekm,
-      rx: { freq_mhz: 121.800 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 121.800, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kekm_122950_unicom,
       station_id: stn_kekm,
       antenna_id: ant_kekm,
-      rx: { freq_mhz: 122.950 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.950, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kekm_124475_asow,
       station_id: stn_kekm,
       antenna_id: ant_kekm,
-      rx: { freq_mhz: 124.475 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 124.475, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kgsh_123050_unicom,
       station_id: stn_kgsh,
       antenna_id: ant_kgsh,
-      rx: { freq_mhz: 123.050 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 123.050, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kgsh_125250_cld,
       station_id: stn_kgsh,
       antenna_id: ant_kgsh,
-      rx: { freq_mhz: 125.250 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 125.250, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kgsh_126475_asos,
       station_id: stn_kgsh,
       antenna_id: ant_kgsh,
-      rx: { freq_mhz: 126.475 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 126.475, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kgsh_132050_ad,
       station_id: stn_kgsh,
       antenna_id: ant_kgsh,
-      rx: { freq_mhz: 132.050 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 132.050, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kgyy_120625_atis,
       station_id: stn_kgyy,
       antenna_id: ant_kgyy,
-      rx: { freq_mhz: 120.625 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 120.625, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kgyy_121900_gnd,
       station_id: stn_kgyy,
       antenna_id: ant_kgyy,
-      rx: { freq_mhz: 121.900 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 121.900, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kgyy_123650_radio,
       station_id: stn_kgyy,
       antenna_id: ant_kgyy,
-      rx: { freq_mhz: 123.650 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 123.650, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kgyy_125600_ctaf,
       station_id: stn_kgyy,
       antenna_id: ant_kgyy,
-      rx: { freq_mhz: 125.600 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 125.600, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kgyy_133100_ad,
       station_id: stn_kgyy,
       antenna_id: ant_kgyy,
-      rx: { freq_mhz: 133.100 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 133.100, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kigq_118400_ad,
       station_id: stn_kigq,
       antenna_id: ant_kigq,
-      rx: { freq_mhz: 118.400 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 118.400, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kigq_119275_asow,
       station_id: stn_kigq,
       antenna_id: ant_kigq,
-      rx: { freq_mhz: 119.275 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 119.275, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kigq_122100_fss,
       station_id: stn_kigq,
       antenna_id: ant_kigq,
-      rx: { freq_mhz: 122.100 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.100, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kigq_122700_unicom,
       station_id: stn_kigq,
       antenna_id: ant_kigq,
-      rx: { freq_mhz: 122.700 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.700, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kikk_122200_fss,
       station_id: stn_kikk,
       antenna_id: ant_kikk,
-      rx: { freq_mhz: 122.200 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.200, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kikk_123000_unicom,
       station_id: stn_kikk,
       antenna_id: ant_kikk,
-      rx: { freq_mhz: 123.000 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 123.000, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kikk_132500_acc,
       station_id: stn_kikk,
       antenna_id: ant_kikk,
-      rx: { freq_mhz: 132.500 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 132.500, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kjot_119350_ad,
       station_id: stn_kjot,
       antenna_id: ant_kjot,
-      rx: { freq_mhz: 119.350 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 119.350, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kjot_119975_asow,
       station_id: stn_kjot,
       antenna_id: ant_kjot,
-      rx: { freq_mhz: 119.975 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 119.975, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kjot_122500_radio,
       station_id: stn_kjot,
       antenna_id: ant_kjot,
-      rx: { freq_mhz: 122.500 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.500, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kjot_122700_unicom,
       station_id: stn_kjot,
       antenna_id: ant_kjot,
-      rx: { freq_mhz: 122.700 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.700, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_klot_118525_asow,
       station_id: stn_klot,
       antenna_id: ant_klot,
-      rx: { freq_mhz: 118.525 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 118.525, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_klot_119350_ad,
       station_id: stn_klot,
       antenna_id: ant_klot,
-      rx: { freq_mhz: 119.350 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 119.350, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_klot_122500_fss,
       station_id: stn_klot,
       antenna_id: ant_klot,
-      rx: { freq_mhz: 122.500 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.500, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_klot_122800_unicom,
       station_id: stn_klot,
       antenna_id: ant_klot,
-      rx: { freq_mhz: 122.800 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.800, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_klwa_118025_asow,
       station_id: stn_klwa,
       antenna_id: ant_klwa,
-      rx: { freq_mhz: 118.025 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 118.025, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_klwa_122800_unicom,
       station_id: stn_klwa,
       antenna_id: ant_klwa,
-      rx: { freq_mhz: 122.800 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.800, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_klwa_128500_acc,
       station_id: stn_klwa,
       antenna_id: ant_klwa,
-      rx: { freq_mhz: 128.500 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 128.500, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kmdw_118400_ad,
       station_id: stn_kmdw,
       antenna_id: ant_kmdw,
-      rx: { freq_mhz: 118.400 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 118.400, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kmdw_118700_twr,
       station_id: stn_kmdw,
       antenna_id: ant_kmdw,
-      rx: { freq_mhz: 118.700 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 118.700, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kmdw_121650_gnd,
       station_id: stn_kmdw,
       antenna_id: ant_kmdw,
-      rx: { freq_mhz: 121.650 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 121.650, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kmdw_121850_cld,
       station_id: stn_kmdw,
       antenna_id: ant_kmdw,
-      rx: { freq_mhz: 121.850 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 121.850, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kmdw_122950_unicom,
       station_id: stn_kmdw,
       antenna_id: ant_kmdw,
-      rx: { freq_mhz: 122.950 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.950, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kmdw_132750_asos,
       station_id: stn_kmdw,
       antenna_id: ant_kmdw,
-      rx: { freq_mhz: 132.750 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 132.750, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kmgc_118550_ad,
       station_id: stn_kmgc,
       antenna_id: ant_kmgc,
-      rx: { freq_mhz: 118.550 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 118.550, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kmgc_122700_unicom,
       station_id: stn_kmgc,
       antenna_id: ant_kmgc,
-      rx: { freq_mhz: 122.700 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.700, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kmgc_134800_cld,
       station_id: stn_kmgc,
       antenna_id: ant_kmgc,
-      rx: { freq_mhz: 134.800 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 134.800, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kord_119000_app,
       station_id: stn_kord,
       antenna_id: ant_kord,
-      rx: { freq_mhz: 119.000 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 119.000, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kord_121600_cld,
       station_id: stn_kord,
       antenna_id: ant_kord,
-      rx: { freq_mhz: 121.600 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 121.600, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kord_121675_gnd,
       station_id: stn_kord,
       antenna_id: ant_kord,
-      rx: { freq_mhz: 121.675 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 121.675, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kord_122950_unicom,
       station_id: stn_kord,
       antenna_id: ant_kord,
-      rx: { freq_mhz: 122.950 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.950, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kord_125000_dep,
       station_id: stn_kord,
       antenna_id: ant_kord,
-      rx: { freq_mhz: 125.000 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 125.000, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kord_126900_twr,
       station_id: stn_kord,
       antenna_id: ant_kord,
-      rx: { freq_mhz: 126.900 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 126.900, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kord_135400_asos,
       station_id: stn_kord,
       antenna_id: ant_kord,
-      rx: { freq_mhz: 135.400 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 135.400, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_koxi_122800_unicom,
       station_id: stn_koxi,
       antenna_id: ant_koxi,
-      rx: { freq_mhz: 122.800 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.800, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_koxi_132050_ad,
       station_id: stn_koxi,
       antenna_id: ant_koxi,
-      rx: { freq_mhz: 132.050 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 132.050, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kpnt_119675_asow,
       station_id: stn_kpnt,
       antenna_id: ant_kpnt,
-      rx: { freq_mhz: 119.675 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 119.675, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kpnt_122800_unicom,
       station_id: stn_kpnt,
       antenna_id: ant_kpnt,
-      rx: { freq_mhz: 122.800 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.800, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kpnt_124550_acc,
       station_id: stn_kpnt,
       antenna_id: ant_kpnt,
-      rx: { freq_mhz: 124.550 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 124.550, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kppo_119825_asow,
       station_id: stn_kppo,
       antenna_id: ant_kppo,
-      rx: { freq_mhz: 119.825 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 119.825, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kppo_123000_unicom,
       station_id: stn_kppo,
       antenna_id: ant_kppo,
-      rx: { freq_mhz: 123.000 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 123.000, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kppo_132050_ad,
       station_id: stn_kppo,
       antenna_id: ant_kppo,
-      rx: { freq_mhz: 132.050 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 132.050, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kpwk_119900_ctaf,
       station_id: stn_kpwk,
       antenna_id: ant_kpwk,
-      rx: { freq_mhz: 119.900 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 119.900, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kpwk_120550_ad,
       station_id: stn_kpwk,
       antenna_id: ant_kpwk,
-      rx: { freq_mhz: 120.550 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 120.550, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kpwk_121700_gnd,
       station_id: stn_kpwk,
       antenna_id: ant_kpwk,
-      rx: { freq_mhz: 121.700 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 121.700, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kpwk_122950_unicom,
       station_id: stn_kpwk,
       antenna_id: ant_kpwk,
-      rx: { freq_mhz: 122.950 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.950, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kpwk_124200_atis,
       station_id: stn_kpwk,
       antenna_id: ant_kpwk,
-      rx: { freq_mhz: 124.200 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 124.200, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kpwk_124700_cld,
       station_id: stn_kpwk,
       antenna_id: ant_kpwk,
-      rx: { freq_mhz: 124.700 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 124.700, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_krcr_118775_asow,
       station_id: stn_krcr,
       antenna_id: ant_krcr,
-      rx: { freq_mhz: 118.775 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 118.775, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_krcr_122700_unicom,
       station_id: stn_krcr,
       antenna_id: ant_krcr,
-      rx: { freq_mhz: 122.700 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.700, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_krcr_132050_ad,
       station_id: stn_krcr,
       antenna_id: ant_krcr,
-      rx: { freq_mhz: 132.050 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 132.050, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_krwn_122800_unicom,
       station_id: stn_krwn,
       antenna_id: ant_krwn,
-      rx: { freq_mhz: 122.800 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.800, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_krwn_132050_ad,
       station_id: stn_krwn,
       antenna_id: ant_krwn,
-      rx: { freq_mhz: 132.050 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 132.050, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_krzl_122800_unicom,
       station_id: stn_krzl,
       antenna_id: ant_krzl,
-      rx: { freq_mhz: 122.800 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.800, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_krzl_132950_acc,
       station_id: stn_krzl,
       antenna_id: ant_krzl,
-      rx: { freq_mhz: 132.950 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 132.950, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_ksbn_118150_atis,
       station_id: stn_ksbn,
       antenna_id: ant_ksbn,
-      rx: { freq_mhz: 118.150 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 118.150, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_ksbn_118550_ad,
       station_id: stn_ksbn,
       antenna_id: ant_ksbn,
-      rx: { freq_mhz: 118.550 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 118.550, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_ksbn_118900_ctaf,
       station_id: stn_ksbn,
       antenna_id: ant_ksbn,
-      rx: { freq_mhz: 118.900 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 118.900, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_ksbn_121700_gnd,
       station_id: stn_ksbn,
       antenna_id: ant_ksbn,
-      rx: { freq_mhz: 121.700 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 121.700, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_ksbn_121900_cld,
       station_id: stn_ksbn,
       antenna_id: ant_ksbn,
-      rx: { freq_mhz: 121.900 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 121.900, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_ksbn_122600_radio,
       station_id: stn_ksbn,
       antenna_id: ant_ksbn,
-      rx: { freq_mhz: 122.600 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.600, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_ksbn_122950_unicom,
       station_id: stn_ksbn,
       antenna_id: ant_ksbn,
-      rx: { freq_mhz: 122.950 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.950, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kugn_120050_ctaf,
       station_id: stn_kugn,
       antenna_id: ant_kugn,
-      rx: { freq_mhz: 120.050 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 120.050, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kugn_120550_ad,
       station_id: stn_kugn,
       antenna_id: ant_kugn,
-      rx: { freq_mhz: 120.550 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 120.550, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kugn_121650_gnd,
       station_id: stn_kugn,
       antenna_id: ant_kugn,
-      rx: { freq_mhz: 121.650 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 121.650, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kugn_122550_radio,
       station_id: stn_kugn,
       antenna_id: ant_kugn,
-      rx: { freq_mhz: 122.550 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.550, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kugn_122950_unicom,
       station_id: stn_kugn,
       antenna_id: ant_kugn,
-      rx: { freq_mhz: 122.950 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.950, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kugn_132400_atis,
       station_id: stn_kugn,
       antenna_id: ant_kugn,
-      rx: { freq_mhz: 132.400 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 132.400, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kvpz_122725_ctaf,
       station_id: stn_kvpz,
       antenna_id: ant_kvpz,
-      rx: { freq_mhz: 122.725 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.725, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kvpz_123650_radio,
       station_id: stn_kvpz,
       antenna_id: ant_kvpz,
-      rx: { freq_mhz: 123.650 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 123.650, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kvpz_125875_asos,
       station_id: stn_kvpz,
       antenna_id: ant_kvpz,
-      rx: { freq_mhz: 125.875 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 125.875, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kvpz_132050_ad,
       station_id: stn_kvpz,
       antenna_id: ant_kvpz,
-      rx: { freq_mhz: 132.050 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 132.050, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_kvpz_135200_cld,
       station_id: stn_kvpz,
       antenna_id: ant_kvpz,
-      rx: { freq_mhz: 135.200 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 135.200, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_ll40_122100_fss,
       station_id: stn_ll40,
       antenna_id: ant_ll40,
-      rx: { freq_mhz: 122.100 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 122.100, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
   - {
       id: chain_ll40_133100_ad,
       station_id: stn_ll40,
       antenna_id: ant_ll40,
-      rx: { freq_mhz: 133.100 },
-      tx: { emission: "6K00A3E", bandwidth_khz: 25 },
+      tx: { freq_mhz: 133.100, emission: "6K00A3E", bandwidth_khz: 25 },
       mode: { type: "AM" },
     }
 
