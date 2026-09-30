@@ -66,7 +66,7 @@ def _assignment_display_name(a: Any) -> str:
     if a.channel_name:
         return a.channel_name
     name = a.id
-    for prefix in ("asgn_", "assign_", "chan_", "ch_"):
+    for prefix in ("asg_", "asgn_", "assign_", "chan_", "ch_"):
         if name.startswith(prefix):
             name = name[len(prefix):]
             break
@@ -74,38 +74,60 @@ def _assignment_display_name(a: Any) -> str:
 
 
 _WORD_RE = re.compile(r"[A-Za-z]+|\d+")
-_VOWEL_RE = re.compile(r"[AEIOU]")
 
 
 def _abbreviate(name: Optional[str], limit: int = SHORT_NAME_MAX_LEN) -> str:
     """Squeeze a channel name into ``limit`` characters, deterministically.
 
-    A last resort for records that never authored a ``short_name``: tries the
-    whole name without separators, then drops interior vowels, then falls back
-    to initials. Numeric runs survive every stage because they usually carry
-    the channel number or frequency that distinguishes the record.
+    A last resort for records that never authored a ``short_name``. What
+    distinguishes sibling channels sits in a different place in every naming
+    convention this library carries -- the tail ("Sparta BOE" / "Sparta DPW"),
+    the head ("KORD ASOS" / "KDPA ASOS"), or the middle ("CB 30 USB" / "CB 31
+    USB") -- so no fixed truncation can work. Instead every word keeps at
+    least one character and the longest words give up the most, which
+    preserves a little of each part rather than all of one and none of another.
+
+    Numbers surrender their high-order digits and words their trailing
+    letters, because that is the end each one repeats across siblings:
+    ``160230`` and ``160320`` differ late, ``UNICOM`` and ``UNICOM`` not at all.
     """
     tokens = [t.upper() for t in _WORD_RE.findall(name or "")]
     if not tokens:
         return ""
+
     compact = "".join(tokens)
     if len(compact) <= limit:
         return compact
-    devoweled = "".join(
-        t if t.isdigit() else t[0] + _VOWEL_RE.sub("", t[1:]) for t in tokens
-    )
-    if len(devoweled) <= limit:
-        return devoweled
-    initials = "".join(t if t.isdigit() else t[0] for t in tokens)
-    if len(initials) <= limit:
-        return initials
-    return compact[:limit]
+
+    # An acronym only reads as one when there are enough words to make it:
+    # "Tampa Amateur Radio Club" -> TARC, but "SuxCo EMS Link" -> SEL is noise.
+    alpha = [t for t in tokens if not t.isdigit()]
+    if len(alpha) >= 3:
+        initials = "".join(t if t.isdigit() else t[0] for t in tokens)
+        if 4 <= len(initials) <= limit:
+            return initials
+
+    parts = list(tokens)
+    total = len(compact)
+    while total > limit:
+        longest = max(range(len(parts)), key=lambda i: (len(parts[i]), -i))
+        if len(parts[longest]) <= 1:
+            break
+        token = parts[longest]
+        parts[longest] = token[1:] if token.isdigit() else token[:-1]
+        total -= 1
+    return "".join(parts)[:limit]
 
 
 def _short_name(
     authored: Optional[str], display_name: str, callsign: Optional[str] = None
 ) -> str:
     """Authored short name, else the callsign if it fits, else an abbreviation.
+
+    The callsign is only worth borrowing when the name says nothing more than
+    the callsign already does. One licensee routinely holds a dozen channels
+    ("KORD APP", "KORD ASOS"), and collapsing them all to the callsign loses
+    the only thing that tells them apart.
 
     Collision handling is deliberately absent: uniqueness is a property of a
     particular codeplug's zone, which this library cannot see. Consumers
@@ -114,9 +136,10 @@ def _short_name(
     if authored:
         return authored
     if callsign:
-        compact = "".join(_WORD_RE.findall(callsign.upper()))
-        if compact and len(compact) <= SHORT_NAME_MAX_LEN:
-            return compact
+        call = "".join(_WORD_RE.findall(callsign.upper()))
+        name = "".join(_WORD_RE.findall((display_name or "").upper()))
+        if call and len(call) <= SHORT_NAME_MAX_LEN and name in ("", call):
+            return call
     return _abbreviate(display_name)
 
 
