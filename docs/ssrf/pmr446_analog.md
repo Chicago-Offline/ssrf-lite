@@ -32,24 +32,24 @@
 
 ### PMR446 (Analog) (`chplan_pmr446_analog`)
 
-| Channel | Frequency | Emission |
-|---------|-----------|----------|
-| PMR 01 | 446.0063 MHz | 11K0F3E |
-| PMR 02 | 446.0188 MHz | 11K0F3E |
-| PMR 03 | 446.0312 MHz | 11K0F3E |
-| PMR 04 | 446.0437 MHz | 11K0F3E |
-| PMR 05 | 446.0562 MHz | 11K0F3E |
-| PMR 06 | 446.0688 MHz | 11K0F3E |
-| PMR 07 | 446.0813 MHz | 11K0F3E |
-| PMR 08 | 446.0938 MHz | 11K0F3E |
-| PMR 09 | 446.1062 MHz | 11K0F3E |
-| PMR 10 | 446.1187 MHz | 11K0F3E |
-| PMR 11 | 446.1313 MHz | 11K0F3E |
-| PMR 12 | 446.1438 MHz | 11K0F3E |
-| PMR 13 | 446.1562 MHz | 11K0F3E |
-| PMR 14 | 446.1687 MHz | 11K0F3E |
-| PMR 15 | 446.1812 MHz | 11K0F3E |
-| PMR 16 | 446.1938 MHz | 11K0F3E |
+| Channel | Frequency | Emission | Mode |
+|---------|-----------|----------|------|
+| PMR 01 | 446.0063 MHz | 11K0F3E |  |
+| PMR 02 | 446.0188 MHz | 11K0F3E |  |
+| PMR 03 | 446.0312 MHz | 11K0F3E |  |
+| PMR 04 | 446.0437 MHz | 11K0F3E |  |
+| PMR 05 | 446.0562 MHz | 11K0F3E |  |
+| PMR 06 | 446.0688 MHz | 11K0F3E |  |
+| PMR 07 | 446.0813 MHz | 11K0F3E |  |
+| PMR 08 | 446.0938 MHz | 11K0F3E |  |
+| PMR 09 | 446.1062 MHz | 11K0F3E |  |
+| PMR 10 | 446.1187 MHz | 11K0F3E |  |
+| PMR 11 | 446.1313 MHz | 11K0F3E |  |
+| PMR 12 | 446.1438 MHz | 11K0F3E |  |
+| PMR 13 | 446.1562 MHz | 11K0F3E |  |
+| PMR 14 | 446.1687 MHz | 11K0F3E |  |
+| PMR 15 | 446.1812 MHz | 11K0F3E |  |
+| PMR 16 | 446.1938 MHz | 11K0F3E |  |
 
 ## Assignments
 

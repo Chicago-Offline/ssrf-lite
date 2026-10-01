@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/Chicago-Offline/ssrf-lite/main/ssrf/_schema/ssrf-lite-0.9.0.schema.json",
+  "$id": "https://raw.githubusercontent.com/Chicago-Offline/ssrf-lite/main/ssrf/_schema/ssrf-lite-0.10.0.schema.json",
   "title": "SSRF-Lite Reference Document",
-  "description": "Schema for SSRF-Lite YAML reference documents (specification v0.9.0). Generated from the Pydantic models in ssrf/models/pydantic_models.py. See ssrf/_schema/SSRF-Lite-Spec.md for prose documentation.",
+  "description": "Schema for SSRF-Lite YAML reference documents (specification v0.10.0). Generated from the Pydantic models in ssrf/models/pydantic_models.py. See ssrf/_schema/SSRF-Lite-Spec.md for prose documentation.",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -12,7 +12,7 @@
     },
     "ssrf_lite_version": {
       "type": "string",
-      "const": "0.9.0",
+      "const": "0.10.0",
       "description": "SSRF-Lite specification version this file targets."
     },
     "ssrf_lite": {
@@ -630,6 +630,18 @@
           "default": null,
           "description": "Emissions permitted on every channel in the plan, most typical first. Saves repeating a service-wide rule -- US CB allows AM, SSB, and FM on all 40 -- on each channel. A channel that declares its own `emission` or `emissions` overrides this.",
           "title": "Emissions"
+        },
+        "mode": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Mode"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Mode applied to every channel that does not declare its own. Saves repeating a plan-wide tone (NIFOG non-federal channels are 156.7 Hz throughout) on each channel."
         }
       },
       "required": [
@@ -736,6 +748,18 @@
           "default": null,
           "description": "Every emission this channel permits, most typical first. Use instead of `emission` when more than one is allowed.",
           "title": "Emissions"
+        },
+        "mode": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Mode"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Squelch and digital parameters that are part of the channel's definition -- a regulator- or convention-specified CTCSS/DCS tone (NIFOG 156.7 Hz, GMRS travel tone 141.3 Hz) or a shared DMR simplex colour code. Written from the channel's transmitting station like an rf_chain mode: `ctcss_tx_hz` is what it sends, `ctcss_rx_hz` what keys it. A system's rf_chain on the same frequency describes an actual deployment and takes precedence."
         }
       },
       "required": [

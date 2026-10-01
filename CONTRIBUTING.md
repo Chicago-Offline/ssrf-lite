@@ -129,6 +129,36 @@ channel_plans:
 
 Setting both `emission` and `emissions` on one channel is an error.
 
+### Channels whose definition includes a tone or colour code
+
+Some plan channels have squelch or digital parameters baked into the rule
+that creates them — NIFOG channels are 156.7 Hz nationwide, the GMRS travel
+convention is 141.3 Hz, a club's shared DMR simplex plan has a fixed colour
+code. Put those in a `mode` block on the channel (or once on the plan as the
+default), not in `notes`, so codeplug generators can see them. It is the same
+`mode` an `rf_chain` carries, written from the channel's transmitting
+station: `ctcss_tx_hz` is what it sends, `ctcss_rx_hz` what keys it.
+
+```yaml
+channel_plans:
+  - id: chplan_nifog_nonfederal
+    mode: { type: "FM", ctcss_tx_hz: 156.7, ctcss_rx_hz: 156.7 }
+    channels:
+      - name: "VCALL10"
+        freq_mhz: 155.7525
+        emission: "11K0F3E"
+      - name: "VTAC36"
+        freq_mhz: 151.1375
+        rx_freq_mhz: 159.4725
+        emission: "11K0F3E"
+        mode: { type: "FM", ctcss_tx_hz: 156.7, ctcss_rx_hz: 136.5 }
+```
+
+Do **not** model a nationally defined channel+tone as a bespoke system with
+`rf_chains` just to carry the tone. Systems describe actual deployments; where
+one exists on a plan frequency, the system's `rf_chain` is authoritative for
+that deployment and the plan `mode` is the regulatory default.
+
 The test suite validates every YAML file against the schema **and** runs
 semantic checks: frequencies must sit inside the declared service's
 allocation, CTCSS/DCS values must be standard, repeater splits must be

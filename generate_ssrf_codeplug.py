@@ -194,25 +194,26 @@ def _record_from_plan_channel(
 ) -> Dict[str, Any]:
     name = name_override or ch.name
     designator = emission.emission if emission else ch.emission
+    mode = ch.mode
+    dcs, dcs_polarity = _encode_dcs(mode) if mode else (None, None)
     return {
         "callsign": None,
         # Mirrored: the radio hears what the channel's station sends.
         "rx_mhz": ch.freq_mhz,
         "tx_mhz": ch.rx_freq_mhz or ch.freq_mhz,
-        "ctcss": None,
-        "dcs": None,
-        "dcs_polarity": None,
-        "color_code": None,
-        "timeslots": None,
+        "ctcss": _encode_tone(mode.ctcss_tx_hz, mode.ctcss_rx_hz) if mode else None,
+        "dcs": dcs,
+        "dcs_polarity": dcs_polarity,
+        "color_code": mode.color_code if mode else None,
+        "timeslots": list(mode.timeslots) if mode and mode.timeslots else None,
         "lat": None,
         "lon": None,
         "service": a.service or plan.service,
-        # Plan channels carry an ITU emission designator instead of a full Mode
-        # object; infer analog-voice mode from it so downstream radio zone
-        # filters (which match on mode: FM) can pick up simplex/calling
-        # channels. Was hardcoded None, which silently dropped every plan
-        # channel from mode-filtered zones.
+        # A plan channel may carry a full Mode (regulatory tone, shared DMR
+        # colour code); otherwise infer analog-voice mode from the ITU
+        # designator so mode-filtered zones still pick up plan channels.
         "mode": (emission.mode if emission and emission.mode else None)
+        or (mode.type if mode else None)
         or _mode_from_emission(designator),
         "bandwidth_khz": (emission.bandwidth_khz if emission else ch.bandwidth_khz)
         or _emission_bandwidth_khz(designator),
