@@ -16,6 +16,7 @@ documentation pipelines.
 | Path | Contents |
 | --- | --- |
 | [ssrf/_schema/SSRF-Lite-Spec.md](ssrf/_schema/SSRF-Lite-Spec.md) | The SSRF-Lite specification |
+| [CHANGELOG.md](CHANGELOG.md) | Spec and data-model history, one entry per `ssrf_lite_version` |
 | [ssrf/_schema/](ssrf/_schema/) | Versioned JSON Schema (Draft 2020-12) for editor/CI validation without Python |
 | [ssrf/models/](ssrf/models/) | Pydantic models — the source of truth for the schema |
 | [ssrf/systems/](ssrf/systems/) | Reference data library: RF systems by geography |
@@ -127,7 +128,7 @@ Field patches live in a top-level `overrides` mapping and select entities by
 collection and stable ID:
 
 ```yaml
-ssrf_lite_version: "0.8.0"
+ssrf_lite_version: "0.10.0"
 overrides:
   assignments:
     - id: asg_example
@@ -172,15 +173,25 @@ distinguish official and personal records cleanly.
 
 ## Installation
 
+Pin to a release tag; `main` moves.
+
 ```bash
-pip install "ssrf-lite @ git+https://github.com/Chicago-Offline/ssrf-lite"
+pip install "ssrf-lite @ git+https://github.com/Chicago-Offline/ssrf-lite@v0.10.0"
 ```
 
 Or with `uv`:
 
 ```bash
-uv add "ssrf-lite @ git+https://github.com/Chicago-Offline/ssrf-lite"
+uv add "ssrf-lite @ git+https://github.com/Chicago-Offline/ssrf-lite@v0.10.0"
 ```
+
+## Versioning
+
+The spec version is the `ssrf_lite_version` every data file carries. Minor
+releases are additive (restamp headers, nothing else changes); major releases
+may change the meaning of existing documents and ship with a migration
+script. Before 1.0 the minor version carried breaking changes; from 1.0.0 that
+stops. Details in [CHANGELOG.md](CHANGELOG.md) and spec §8.
 
 ## Usage
 
