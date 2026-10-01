@@ -4,15 +4,15 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ## Quick Statistics
 
-- **Total SSRF Files:** 70
-- **Total Assignments:** 1,266
-- **Services Covered:** 11
+- **Total SSRF Files:** 72
+- **Total Assignments:** 1,323
+- **Services Covered:** 12
 - **Modes:** AM, APRS, C4FM, CW, D-STAR, DMR, FM, NFM, NXDN, P25, PACKET
 - **Frequency Bands:** 5
 
 ## File Categories
 
-### Channel Plan (12 files)
+### Channel Plan (14 files)
 
 | File | Services | Assignments | Modes | Geographic Scope |
 |------|----------|-------------|-------|------------------|
@@ -24,6 +24,8 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [itinerant_business](itinerant_business.md) | business_itinerant_part90 | 27 | FM | US |
 | [cb_channels](cb_channels.md) | cb | 40 | FM | US |
 | [gmrs_channels](gmrs_channels.md) | gmrs | 30 | FM | US |
+| [nifog_federal](nifog_federal.md) | federal_interop_ntia | 25 | FM | US |
+| [nifog_nonfederal](nifog_nonfederal.md) | public_safety_part90 | 32 | FM | US |
 | [marine_vhf_channels](marine_vhf_channels.md) | marine | 53 | FM | US |
 | [murs_channels](murs_channels.md) | murs | 5 | FM | US |
 | [rail_aar_scan](rail_aar_scan.md) | railroad_aar | 24 | FM | US |
@@ -107,7 +109,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 - **IL:** 36 files
 - **IN:** 4 files
 - **MI:** 3 files
-- **National/Regional:** 11 files
+- **National/Regional:** 13 files
 - **NJ:** 6 files
 - **UT:** 1 files
 - **WI:** 3 files
@@ -124,12 +126,13 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | aviation | 164 | 2 |
 | business_itinerant_part90 | 391 | 11 |
 | cb | 40 | 1 |
+| federal_interop_ntia | 25 | 1 |
 | gmrs | 91 | 11 |
 | marine | 53 | 1 |
 | murs | 5 | 1 |
 | noaa_weather_radio | 7 | 1 |
 | pmr446 | 16 | 1 |
-| public_safety_part90 | 336 | 16 |
+| public_safety_part90 | 368 | 17 |
 | railroad_aar | 42 | 3 |
 
 ## Using SSRF Files
