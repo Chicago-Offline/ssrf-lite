@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.9.0.schema.json
-$schema: "../../../_schema/ssrf-lite-0.9.0.schema.json"
-ssrf_lite_version: "0.9.0"
+# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
 ssrf_lite:
   sources:
     - name: "CISA National Interoperability Field Operations Guide (NIFOG) 2.02"
@@ -32,9 +32,9 @@ authorizations:
       GMRS operators hold no transmit privileges here. Treat every channel in this plan as
       receive-only unless the operator is covered by an appropriate Part 90 authorization.
 
-      CTCSS tones are recorded per channel in the notes field rather than as structured mode data,
-      because channel plans carry no tone/rf_chain information in SSRF-Lite. Default monitoring
-      practice is carrier squelch receive.
+      CTCSS tones are part of the national channel definition and are carried as structured
+      `mode` data: 156.7 Hz plan-wide, with per-channel overrides where NIFOG differs. Default
+      monitoring practice is still carrier squelch receive.
 
       VTAC33-38 mobile receive frequencies intentionally duplicate the VTAC11-14 simplex
       frequencies; they differ only in mobile transmit frequency and in mobile TX tone (136.5 Hz
@@ -47,146 +47,156 @@ channel_plans:
   - id: chplan_us_nifog_nonfed
     name: "US NIFOG Non-Federal Interoperability"
     service: "public_safety_part90"
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 156.7
+      ctcss_rx_hz: 156.7
     channels:
       - name: "VCALL10"
         freq_mhz: 155.7525
         emission: "11K0F3E"
-        notes: "Nationwide VHF calling channel. CTCSS 156.7 Hz."
+        notes: "Nationwide VHF calling channel."
       - name: "VTAC11"
         freq_mhz: 151.1375
         emission: "11K0F3E"
-        notes: "CTCSS 156.7 Hz. Not for use in PR/USVI."
+        notes: "Not for use in PR/USVI."
       - name: "VTAC12"
         freq_mhz: 154.4525
         emission: "11K0F3E"
-        notes: "CTCSS 156.7 Hz. Not for use in PR/USVI."
+        notes: "Not for use in PR/USVI."
       - name: "VTAC13"
         freq_mhz: 158.7375
         emission: "11K0F3E"
-        notes: "CTCSS 156.7 Hz."
       - name: "VTAC14"
         freq_mhz: 159.4725
         emission: "11K0F3E"
-        notes: "CTCSS 156.7 Hz."
       - name: "VTAC33"
         freq_mhz: 159.4725
         rx_freq_mhz: 151.1375
         emission: "11K0F3E"
-        notes: "Tactical repeater. Mobile TX CTCSS 136.5 Hz. Reverse of VTAC36. Not for use in PR/USVI."
+        mode: { type: "FM", ctcss_tx_hz: 156.7, ctcss_rx_hz: 136.5 }
+        notes: "Tactical repeater. Reverse of VTAC36. Not for use in PR/USVI."
       - name: "VTAC34"
         freq_mhz: 158.7375
         rx_freq_mhz: 154.4525
         emission: "11K0F3E"
-        notes: "Tactical repeater. Mobile TX CTCSS 136.5 Hz. Reverse of VTAC37. Not for use in PR/USVI."
+        mode: { type: "FM", ctcss_tx_hz: 156.7, ctcss_rx_hz: 136.5 }
+        notes: "Tactical repeater. Reverse of VTAC37. Not for use in PR/USVI."
       - name: "VTAC35"
         freq_mhz: 159.4725
         rx_freq_mhz: 158.7375
         emission: "11K0F3E"
-        notes: "Tactical repeater. Mobile TX CTCSS 136.5 Hz. Reverse of VTAC38."
+        mode: { type: "FM", ctcss_tx_hz: 156.7, ctcss_rx_hz: 136.5 }
+        notes: "Tactical repeater. Reverse of VTAC38."
       - name: "VTAC36"
         freq_mhz: 151.1375
         rx_freq_mhz: 159.4725
         emission: "11K0F3E"
-        notes: "Tactical repeater, preferred over VTAC33. Mobile TX CTCSS 136.5 Hz. Not for use in PR/USVI."
+        mode: { type: "FM", ctcss_tx_hz: 156.7, ctcss_rx_hz: 136.5 }
+        notes: "Tactical repeater, preferred over VTAC33. Not for use in PR/USVI."
       - name: "VTAC37"
         freq_mhz: 154.4525
         rx_freq_mhz: 158.7375
         emission: "11K0F3E"
-        notes: "Tactical repeater, preferred over VTAC34. Mobile TX CTCSS 136.5 Hz. Not for use in PR/USVI."
+        mode: { type: "FM", ctcss_tx_hz: 156.7, ctcss_rx_hz: 136.5 }
+        notes: "Tactical repeater, preferred over VTAC34. Not for use in PR/USVI."
       - name: "VTAC38"
         freq_mhz: 158.7375
         rx_freq_mhz: 159.4725
         emission: "11K0F3E"
-        notes: "Tactical repeater, preferred over VTAC35. Mobile TX CTCSS 136.5 Hz."
+        mode: { type: "FM", ctcss_tx_hz: 156.7, ctcss_rx_hz: 136.5 }
+        notes: "Tactical repeater, preferred over VTAC35."
       - name: "VTAC17"
         freq_mhz: 161.8500
         rx_freq_mhz: 157.2500
         emission: "11K0F3E"
-        notes: "Inland waterways/major rivers only; see NIFOG county map. CTCSS 156.7 Hz."
+        notes: "Inland waterways/major rivers only; see NIFOG county map."
       - name: "VTAC17D"
         freq_mhz: 161.8500
         emission: "11K0F3E"
-        notes: "Simplex variant of VTAC17; same geographic restriction. CTCSS 156.7 Hz."
+        notes: "Simplex variant of VTAC17; same geographic restriction."
       - name: "VSAR16"
         freq_mhz: 155.1600
         bandwidth_khz: 12.5
-        notes: "Search and rescue mutual aid. CTCSS 127.3 Hz."
+        mode: { type: "FM", ctcss_tx_hz: 127.3, ctcss_rx_hz: 127.3 }
+        notes: "Search and rescue mutual aid."
       - name: "VFIRE21"
         freq_mhz: 154.2800
         bandwidth_khz: 12.5
-        notes: "Fire mutual aid. CTCSS 156.7 Hz."
+        notes: "Fire mutual aid."
       - name: "VFIRE22"
         freq_mhz: 154.2650
         bandwidth_khz: 12.5
-        notes: "Fire mutual aid. CTCSS 156.7 Hz. Known in Illinois as IFERN."
+        notes: "Fire mutual aid. Known in Illinois as IFERN."
       - name: "VFIRE23"
         freq_mhz: 154.2950
         bandwidth_khz: 12.5
-        notes: "Fire mutual aid. CTCSS 156.7 Hz."
+        notes: "Fire mutual aid."
       - name: "VFIRE24"
         freq_mhz: 154.2725
         bandwidth_khz: 12.5
-        notes: "Fire mutual aid. CTCSS 156.7 Hz."
+        notes: "Fire mutual aid."
       - name: "VFIRE25"
         freq_mhz: 154.2875
         bandwidth_khz: 12.5
-        notes: "Fire mutual aid. CTCSS 156.7 Hz."
+        notes: "Fire mutual aid."
       - name: "VFIRE26"
         freq_mhz: 154.3025
         bandwidth_khz: 12.5
-        notes: "Fire mutual aid. CTCSS 156.7 Hz."
+        notes: "Fire mutual aid."
       - name: "VMED28"
         freq_mhz: 155.3400
         bandwidth_khz: 12.5
+        mode: { type: "FM" }  # carrier squelch; overrides the plan-wide tone
         notes: "EMS mutual aid. Carrier squelch RX recommended. Legacy name HEAR."
       - name: "VMED29"
         freq_mhz: 155.3475
         bandwidth_khz: 12.5
-        notes: "EMS mutual aid. CTCSS 156.7 Hz."
+        notes: "EMS mutual aid."
       - name: "VLAW31"
         freq_mhz: 155.4750
         bandwidth_khz: 12.5
-        notes: "Law enforcement mutual aid. CTCSS 156.7 Hz. Known in Illinois as ISPERN."
+        notes: "Law enforcement mutual aid. Known in Illinois as ISPERN."
       - name: "VLAW32"
         freq_mhz: 155.4825
         bandwidth_khz: 12.5
-        notes: "Law enforcement mutual aid. CTCSS 156.7 Hz."
+        notes: "Law enforcement mutual aid."
       - name: "UCALL40"
         freq_mhz: 453.2125
         rx_freq_mhz: 458.2125
         emission: "11K0F3E"
-        notes: "Nationwide UHF calling, repeater. CTCSS 156.7 Hz."
+        notes: "Nationwide UHF calling, repeater."
       - name: "UCALL40D"
         freq_mhz: 453.2125
         emission: "11K0F3E"
-        notes: "Nationwide UHF calling, direct/simplex. CTCSS 156.7 Hz."
+        notes: "Nationwide UHF calling, direct/simplex."
       - name: "UTAC41"
         freq_mhz: 453.4625
         rx_freq_mhz: 458.4625
         emission: "11K0F3E"
-        notes: "Repeater. CTCSS 156.7 Hz."
+        notes: "Repeater."
       - name: "UTAC41D"
         freq_mhz: 453.4625
         emission: "11K0F3E"
-        notes: "Direct/simplex. CTCSS 156.7 Hz."
+        notes: "Direct/simplex."
       - name: "UTAC42"
         freq_mhz: 453.7125
         rx_freq_mhz: 458.7125
         emission: "11K0F3E"
-        notes: "Repeater. CTCSS 156.7 Hz."
+        notes: "Repeater."
       - name: "UTAC42D"
         freq_mhz: 453.7125
         emission: "11K0F3E"
-        notes: "Direct/simplex. CTCSS 156.7 Hz."
+        notes: "Direct/simplex."
       - name: "UTAC43"
         freq_mhz: 453.8625
         rx_freq_mhz: 458.8625
         emission: "11K0F3E"
-        notes: "Repeater. CTCSS 156.7 Hz."
+        notes: "Repeater."
       - name: "UTAC43D"
         freq_mhz: 453.8625
         emission: "11K0F3E"
-        notes: "Direct/simplex. CTCSS 156.7 Hz."
+        notes: "Direct/simplex."
 
 assignments:
   - id: asgn_nifog_vcall10

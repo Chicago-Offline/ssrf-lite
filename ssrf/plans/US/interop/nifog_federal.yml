@@ -1,6 +1,6 @@
-# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.9.0.schema.json
-$schema: "../../../_schema/ssrf-lite-0.9.0.schema.json"
-ssrf_lite_version: "0.9.0"
+# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
 ssrf_lite:
   sources:
     - name: "CISA National Interoperability Field Operations Guide (NIFOG) 2.02"
@@ -31,9 +31,9 @@ authorizations:
       AUTHORIZATION. There is no license class available to amateur or GMRS operators that confers
       transmit privileges here. Treat every channel in this plan as receive-only.
 
-      Repeater channels use a 167.9 Hz mobile transmit CTCSS tone; receive is carrier squelch by
-      default. Tones are recorded per channel in the notes field because channel plans carry no
-      tone/rf_chain data in SSRF-Lite.
+      NC/IR repeater channels require a 167.9 Hz mobile transmit CTCSS tone and are carrier
+      squelch on receive; that is carried as structured `mode` data (`ctcss_rx_hz` from the
+      repeater's perspective). Simplex channels and the LE repeaters are carrier squelch.
 
       SCOPE: this plan records only the ANALOG FM federal interoperability channels. The federal law
       enforcement channels that are P25-only (LE 2 through LE 9 on VHF, and LE 11 through LE 15 plus
@@ -49,32 +49,38 @@ channel_plans:
   - id: chplan_us_nifog_federal
     name: "US NIFOG Federal Interoperability (analog)"
     service: "federal_interop_ntia"
+    mode: { type: "FM" }
     channels:
       - name: "NC 1"
         freq_mhz: 169.5375
         rx_freq_mhz: 164.7125
         bandwidth_khz: 12.5
-        notes: "National calling, repeater. Mobile TX CTCSS 167.9 Hz; carrier squelch RX."
+        mode: { type: "FM", ctcss_rx_hz: 167.9 }
+        notes: "National calling, repeater."
       - name: "IR 1"
         freq_mhz: 170.0125
         rx_freq_mhz: 165.2500
         bandwidth_khz: 12.5
-        notes: "Incident response repeater. Mobile TX CTCSS 167.9 Hz."
+        mode: { type: "FM", ctcss_rx_hz: 167.9 }
+        notes: "Incident response repeater."
       - name: "IR 2"
         freq_mhz: 170.4125
         rx_freq_mhz: 165.9625
         bandwidth_khz: 12.5
-        notes: "Incident response repeater. Mobile TX CTCSS 167.9 Hz."
+        mode: { type: "FM", ctcss_rx_hz: 167.9 }
+        notes: "Incident response repeater."
       - name: "IR 3"
         freq_mhz: 170.6875
         rx_freq_mhz: 166.5750
         bandwidth_khz: 12.5
-        notes: "Incident response repeater. Mobile TX CTCSS 167.9 Hz."
+        mode: { type: "FM", ctcss_rx_hz: 167.9 }
+        notes: "Incident response repeater."
       - name: "IR 4"
         freq_mhz: 173.0375
         rx_freq_mhz: 167.3250
         bandwidth_khz: 12.5
-        notes: "Incident response repeater. Mobile TX CTCSS 167.9 Hz."
+        mode: { type: "FM", ctcss_rx_hz: 167.9 }
+        notes: "Incident response repeater."
       - name: "IR 5"
         freq_mhz: 169.5375
         bandwidth_khz: 12.5
@@ -108,22 +114,26 @@ channel_plans:
         freq_mhz: 410.2375
         rx_freq_mhz: 419.2375
         bandwidth_khz: 12.5
-        notes: "National calling, repeater. Mobile TX CTCSS 167.9 Hz; carrier squelch RX."
+        mode: { type: "FM", ctcss_rx_hz: 167.9 }
+        notes: "National calling, repeater."
       - name: "IR 10"
         freq_mhz: 410.4375
         rx_freq_mhz: 419.4375
         bandwidth_khz: 12.5
-        notes: "Incident response repeater. Mobile TX CTCSS 167.9 Hz."
+        mode: { type: "FM", ctcss_rx_hz: 167.9 }
+        notes: "Incident response repeater."
       - name: "IR 11"
         freq_mhz: 410.6375
         rx_freq_mhz: 419.6375
         bandwidth_khz: 12.5
-        notes: "Incident response repeater. Mobile TX CTCSS 167.9 Hz."
+        mode: { type: "FM", ctcss_rx_hz: 167.9 }
+        notes: "Incident response repeater."
       - name: "IR 12"
         freq_mhz: 410.8375
         rx_freq_mhz: 419.8375
         bandwidth_khz: 12.5
-        notes: "Incident response repeater. Mobile TX CTCSS 167.9 Hz."
+        mode: { type: "FM", ctcss_rx_hz: 167.9 }
+        notes: "Incident response repeater."
       - name: "IR 13"
         freq_mhz: 413.1875
         bandwidth_khz: 12.5
