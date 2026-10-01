@@ -1,0 +1,290 @@
+# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.9.0.schema.json
+$schema: "../../../_schema/ssrf-lite-0.9.0.schema.json"
+ssrf_lite_version: "0.9.0"
+ssrf_lite:
+  sources:
+    - name: "CISA National Interoperability Field Operations Guide (NIFOG) 2.02"
+      url: "https://www.cisa.gov/sites/default/files/2024-12/NIFOG%202.02_508%20FINAL%20VERSION%2012%2003%202024.pdf"
+      accessed: "2026-09-30"
+    - name: "RadioReference - NIFOG channel listing (aid 7742)"
+      url: "https://www.radioreference.com/db/aid/7742"
+      accessed: "2026-09-30"
+
+organizations:
+  - id: org_ntia
+    name: "National Telecommunications and Information Administration (NTIA)"
+  - id: org_cisa
+    name: "Cybersecurity and Infrastructure Security Agency (CISA)"
+
+authorizations:
+  - id: auth_ntia_nifog_federal
+    authority: "NTIA"
+    service: "federal_interop_ntia"
+    class: "Federal assignment"
+    identifier:
+    notes: |
+      Nationwide federal interoperability channels (Incident Response "IR", National Calling "NC",
+      and Federal Law Enforcement "LE") coordinated by NTIA and published in the CISA National
+      Interoperability Field Operations Guide (NIFOG) 2.02.
+
+      TRANSMIT IS LIMITED TO FEDERAL AGENCIES AND THOSE OPERATING UNDER A FEDERAL AGENCY'S
+      AUTHORIZATION. There is no license class available to amateur or GMRS operators that confers
+      transmit privileges here. Treat every channel in this plan as receive-only.
+
+      Repeater channels use a 167.9 Hz mobile transmit CTCSS tone; receive is carrier squelch by
+      default. Tones are recorded per channel in the notes field because channel plans carry no
+      tone/rf_chain data in SSRF-Lite.
+
+      SCOPE: this plan records only the ANALOG FM federal interoperability channels. The federal law
+      enforcement channels that are P25-only (LE 2 through LE 9 on VHF, and LE 11 through LE 15 plus
+      LE 17 and LE 18 on UHF, all using NAC $68F) are deliberately omitted, because they are not
+      receivable on the analog/DMR radios this dataset feeds. Add them as a separate P25 pass if a
+      P25-capable receiver is introduced.
+
+      Several IR channels intentionally share a frequency with the repeater output of a lower-numbered
+      channel (IR 5-9 with NC 1/IR 1-4, IR 15-18 with NC 2/IR 10-12, LE 16 with LE 10). These are
+      distinct channel designators on the same frequency, not duplicates in error.
+
+channel_plans:
+  - id: chplan_us_nifog_federal
+    name: "US NIFOG Federal Interoperability (analog)"
+    service: "federal_interop_ntia"
+    channels:
+      - name: "NC 1"
+        freq_mhz: 169.5375
+        rx_freq_mhz: 164.7125
+        bandwidth_khz: 12.5
+        notes: "National calling, repeater. Mobile TX CTCSS 167.9 Hz; carrier squelch RX."
+      - name: "IR 1"
+        freq_mhz: 170.0125
+        rx_freq_mhz: 165.2500
+        bandwidth_khz: 12.5
+        notes: "Incident response repeater. Mobile TX CTCSS 167.9 Hz."
+      - name: "IR 2"
+        freq_mhz: 170.4125
+        rx_freq_mhz: 165.9625
+        bandwidth_khz: 12.5
+        notes: "Incident response repeater. Mobile TX CTCSS 167.9 Hz."
+      - name: "IR 3"
+        freq_mhz: 170.6875
+        rx_freq_mhz: 166.5750
+        bandwidth_khz: 12.5
+        notes: "Incident response repeater. Mobile TX CTCSS 167.9 Hz."
+      - name: "IR 4"
+        freq_mhz: 173.0375
+        rx_freq_mhz: 167.3250
+        bandwidth_khz: 12.5
+        notes: "Incident response repeater. Mobile TX CTCSS 167.9 Hz."
+      - name: "IR 5"
+        freq_mhz: 169.5375
+        bandwidth_khz: 12.5
+        notes: "Simplex; same frequency as the NC 1 repeater output."
+      - name: "IR 6"
+        freq_mhz: 170.0125
+        bandwidth_khz: 12.5
+        notes: "Simplex; same frequency as the IR 1 repeater output."
+      - name: "IR 7"
+        freq_mhz: 170.4125
+        bandwidth_khz: 12.5
+        notes: "Simplex; same frequency as the IR 2 repeater output."
+      - name: "IR 8"
+        freq_mhz: 170.6875
+        bandwidth_khz: 12.5
+        notes: "Simplex; same frequency as the IR 3 repeater output."
+      - name: "IR 9"
+        freq_mhz: 173.0375
+        bandwidth_khz: 12.5
+        notes: "Simplex; same frequency as the IR 4 repeater output."
+      - name: "LE A"
+        freq_mhz: 167.0875
+        bandwidth_khz: 12.5
+        notes: "Federal law enforcement, analog FM simplex."
+      - name: "LE 1"
+        freq_mhz: 167.0875
+        rx_freq_mhz: 162.0875
+        bandwidth_khz: 12.5
+        notes: "Federal law enforcement, analog FM repeater."
+      - name: "NC 2"
+        freq_mhz: 410.2375
+        rx_freq_mhz: 419.2375
+        bandwidth_khz: 12.5
+        notes: "National calling, repeater. Mobile TX CTCSS 167.9 Hz; carrier squelch RX."
+      - name: "IR 10"
+        freq_mhz: 410.4375
+        rx_freq_mhz: 419.4375
+        bandwidth_khz: 12.5
+        notes: "Incident response repeater. Mobile TX CTCSS 167.9 Hz."
+      - name: "IR 11"
+        freq_mhz: 410.6375
+        rx_freq_mhz: 419.6375
+        bandwidth_khz: 12.5
+        notes: "Incident response repeater. Mobile TX CTCSS 167.9 Hz."
+      - name: "IR 12"
+        freq_mhz: 410.8375
+        rx_freq_mhz: 419.8375
+        bandwidth_khz: 12.5
+        notes: "Incident response repeater. Mobile TX CTCSS 167.9 Hz."
+      - name: "IR 13"
+        freq_mhz: 413.1875
+        bandwidth_khz: 12.5
+        notes: "Incident response simplex."
+      - name: "IR 14"
+        freq_mhz: 413.2125
+        bandwidth_khz: 12.5
+        notes: "Incident response simplex."
+      - name: "IR 15"
+        freq_mhz: 410.2375
+        bandwidth_khz: 12.5
+        notes: "Simplex; same frequency as the NC 2 repeater output."
+      - name: "IR 16"
+        freq_mhz: 410.4375
+        bandwidth_khz: 12.5
+        notes: "Simplex; same frequency as the IR 10 repeater output."
+      - name: "IR 17"
+        freq_mhz: 410.6375
+        bandwidth_khz: 12.5
+        notes: "Simplex; same frequency as the IR 11 repeater output."
+      - name: "IR 18"
+        freq_mhz: 410.8375
+        bandwidth_khz: 12.5
+        notes: "Simplex; same frequency as the IR 12 repeater output."
+      - name: "LE B"
+        freq_mhz: 414.0375
+        bandwidth_khz: 12.5
+        notes: "Federal law enforcement, analog FM simplex."
+      - name: "LE 10"
+        freq_mhz: 409.9875
+        rx_freq_mhz: 418.9875
+        bandwidth_khz: 12.5
+        notes: "Federal law enforcement, analog FM repeater."
+      - name: "LE 16"
+        freq_mhz: 409.9875
+        bandwidth_khz: 12.5
+        notes: "Simplex; same frequency as the LE 10 repeater output."
+
+assignments:
+  - id: asgn_nifog_fed_nc_1
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "NC 1"
+    usage: "repeater"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_ir_1
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "IR 1"
+    usage: "repeater"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_ir_2
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "IR 2"
+    usage: "repeater"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_ir_3
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "IR 3"
+    usage: "repeater"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_ir_4
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "IR 4"
+    usage: "repeater"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_ir_5
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "IR 5"
+    usage: "simplex"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_ir_6
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "IR 6"
+    usage: "simplex"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_ir_7
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "IR 7"
+    usage: "simplex"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_ir_8
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "IR 8"
+    usage: "simplex"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_ir_9
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "IR 9"
+    usage: "simplex"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_le_a
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "LE A"
+    usage: "simplex"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_le_1
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "LE 1"
+    usage: "repeater"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_nc_2
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "NC 2"
+    usage: "repeater"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_ir_10
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "IR 10"
+    usage: "repeater"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_ir_11
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "IR 11"
+    usage: "repeater"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_ir_12
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "IR 12"
+    usage: "repeater"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_ir_13
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "IR 13"
+    usage: "simplex"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_ir_14
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "IR 14"
+    usage: "simplex"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_ir_15
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "IR 15"
+    usage: "simplex"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_ir_16
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "IR 16"
+    usage: "simplex"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_ir_17
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "IR 17"
+    usage: "simplex"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_ir_18
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "IR 18"
+    usage: "simplex"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_le_b
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "LE B"
+    usage: "simplex"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_le_10
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "LE 10"
+    usage: "repeater"
+    authorization_id: auth_ntia_nifog_federal
+  - id: asgn_nifog_fed_le_16
+    channel_plan_id: chplan_us_nifog_federal
+    channel_name: "LE 16"
+    usage: "simplex"
+    authorization_id: auth_ntia_nifog_federal

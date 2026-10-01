@@ -168,3 +168,19 @@ services:
       Channel 9 is reserved for emergency and traveler assistance; channel 19 is the
       customary highway calling channel. Skip propagation makes distant stations common.
 
+  - id: federal_interop_ntia
+    label: Federal Interoperability (NTIA)
+    regulatory_body: NTIA
+    rule_part: "NTIA Manual of Regulations and Procedures for Federal Radio Frequency Management"
+    subpart: null
+    rx_only_by_regulation: true
+    typical_bands: ["VHF 162-174 MHz", "UHF 406-420 MHz"]
+    geography: ["US"]
+    description: >
+      Nationwide federal interoperability channels coordinated by NTIA and published in the CISA
+      National Interoperability Field Operations Guide (NIFOG): Incident Response (IR), National
+      Calling (NC), and federal Law Enforcement (LE) channels.
+    usage_notes: >
+      RX-only for any non-federal operator; no amateur or GMRS license confers transmit privileges.
+      Repeater channels use a 167.9 Hz mobile TX CTCSS tone, carrier squelch on receive. Many LE
+      channels are P25 with NAC $68F and are not receivable on analog/DMR-only radios.
