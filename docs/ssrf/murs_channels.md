@@ -32,13 +32,13 @@
 
 ### US MURS (`chplan_us_murs`)
 
-| Channel | Frequency | Emission |
-|---------|-----------|----------|
-| MURS 1 | 151.8200 MHz | 11K2F3E |
-| MURS 2 | 151.8800 MHz | 11K2F3E |
-| MURS 3 | 151.9400 MHz | 11K2F3E |
-| MURS 4 (Blue Dot) | 154.5700 MHz | 20K0F3E |
-| MURS 5 (Green Dot) | 154.6000 MHz | 20K0F3E |
+| Channel | Frequency | Emission | Mode |
+|---------|-----------|----------|------|
+| MURS 1 | 151.8200 MHz | 11K2F3E |  |
+| MURS 2 | 151.8800 MHz | 11K2F3E |  |
+| MURS 3 | 151.9400 MHz | 11K2F3E |  |
+| MURS 4 (Blue Dot) | 154.5700 MHz | 20K0F3E |  |
+| MURS 5 (Green Dot) | 154.6000 MHz | 20K0F3E |  |
 
 ## Assignments
 

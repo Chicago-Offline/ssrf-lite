@@ -2,8 +2,8 @@
 
 *A pragmatic spectrum data model for codeplug generation*  
 
-Version: **0.9.0**  
-Last updated: 2026-09-29  
+Version: **0.10.0**  
+Last updated: 2026-10-01  
 
 ---
 
@@ -38,9 +38,9 @@ Every SSRF-Lite YAML document carries two schema-association headers so that
 editors and CI can validate it **without importing the Python models**:
 
 ```yaml
-# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.9.0.schema.json
-$schema: "../../../_schema/ssrf-lite-0.9.0.schema.json"
-ssrf_lite_version: "0.9.0"
+# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
 ```
 
 - The `# yaml-language-server:` modeline enables live validation in editors such
@@ -49,10 +49,10 @@ ssrf_lite_version: "0.9.0"
 - The top-level `$schema` key lets CI tools (e.g. `check-jsonschema`) discover the
   schema. Its value is a path relative to the file.
 - `ssrf_lite_version` pins the spec revision the file targets and must match the
-  shipped schema (`0.9.0`).
+  shipped schema (`0.10.0`).
 
 The versioned JSON Schema lives beside this document at
-[`ssrf-lite-0.9.0.schema.json`](./ssrf-lite-0.9.0.schema.json) and is generated
+[`ssrf-lite-0.10.0.schema.json`](./ssrf-lite-0.10.0.schema.json) and is generated
 from the Pydantic models via `generate_ssrf_schema.py`. Optional, non-normative
 metadata keys (`ssrf_lite.sources`, `comments`) and the normative `overrides`
 block are permitted alongside the reference entities.
@@ -103,12 +103,13 @@ Roots without a declaration fall back to their positional index (0, 1, 2, …).
 Two roots declaring the same `precedence` is an error. An override may only
 target entities from roots that load *before* it.
 
-## 1.3 Legacy field handling
+## 1.3 Unknown keys
 
-When loading, the reference layer silently drops the deprecated policy-era
-assignment keys `codeplug`, `zones`, and `scan`, and maps a legacy `comment`
-key to `notes` when `notes` is absent. Any other unknown key on any entity is
-an error (`additionalProperties: false`).
+Every entity forbids unknown keys (`additionalProperties: false`); the loader
+neither drops nor remaps anything. The policy-era assignment keys `codeplug`,
+`zones`, `scan`, and `comment` that 0.5.0 deprecated are rejected as of 0.10.0.
+The one exception is a channel-plan `tx_freq_mhz` key, which raises a message
+explaining the 0.9.0 rename rather than a generic unknown-key error.
 
 ---
 
@@ -304,6 +305,10 @@ Reusable collections (NOAA, Marine, GMRS interstitials). Channel plans remain pu
 
 Where a service permits several incompatible modulations on one frequency, list them under `emissions` (most typical first) instead of the single `emission` key. A plan-level `emissions` block applies to every channel that does not declare its own. Setting both `emission` and `emissions` on one channel is an error.
 
+Where a tone or digital parameter is part of the channel's **definition** — a regulator-specified CTCSS (NIFOG VCALL10 is 156.7 Hz nationwide), a national convention (GMRS travel tone 141.3 Hz), or a shared DMR simplex colour code — give the channel a `mode` block. It is the same `Mode` object an `rf_chain` carries (§2.5) and is written from the same station perspective: `ctcss_tx_hz` is what the channel's transmitting station sends, `ctcss_rx_hz` what it requires to be keyed. A plan-level `mode` applies to every channel that does not declare its own. A `mode` describes one modulation, so it may not sit beside a multi-entry `emissions` list, and its `type` must agree with the channel's emission (`16K0F3E` implies `FM`; `J3E` is left open between `USB` and `LSB`).
+
+**Precedence.** A plan `mode` is the regulatory or conventional default. A system's `rf_chain` on the same frequency describes an actual deployment and is authoritative for that deployment — `il_statewide_interop.yml` wins over the NIFOG plan for how Illinois runs VTAC11. Consumers render whichever entity an assignment references; nothing merges the two.
+
 ```yaml
 channel_plans:
   - id: chplan_marine
@@ -318,6 +323,26 @@ channel_plans:
       - name: "Ch 20"
         freq_mhz: 161.600     # coast station transmit
         rx_freq_mhz: 157.000  # coast station receive
+
+  - id: chplan_nifog_nonfederal
+    name: "NIFOG non-federal VHF/UHF"
+    service: "public_safety_part90"
+    mode:                     # 156.7 Hz throughout unless a channel says otherwise
+      type: "FM"
+      ctcss_tx_hz: 156.7
+      ctcss_rx_hz: 156.7
+    channels:
+      - name: "VCALL10"
+        freq_mhz: 155.7525
+        emission: "11K0F3E"
+      - name: "VTAC36"
+        freq_mhz: 151.1375    # repeater output
+        rx_freq_mhz: 159.4725 # repeater input
+        emission: "11K0F3E"
+        mode:
+          type: "FM"
+          ctcss_tx_hz: 156.7  # repeater sends
+          ctcss_rx_hz: 136.5  # mobile must send
 
   - id: chplan_us_cb
     name: "US CB (Citizens Band)"
@@ -341,6 +366,7 @@ Fields:
 - `id`, `name`  
 - `service` (optional; see §2.0)  
 - `emissions[]` (optional; default for every channel in the plan)  
+- `mode` (optional; default `Mode` for every channel in the plan)  
 - `channels[]`:  
   - `name` (string)  
   - `short_name` (optional)  
@@ -349,6 +375,7 @@ Fields:
   - `emission` (optional ITU designator)  
   - `bandwidth_khz` (optional, > 0)  
   - `emissions[]` (optional; mutually exclusive with `emission`)  
+  - `mode` (optional `Mode`, §2.5; not with a multi-entry `emissions[]`)  
   - `notes` (optional)  
 
 Each `emissions[]` entry carries `emission` (required ITU designator), plus optional `mode`, `bandwidth_khz`, `power_w`, and `notes`. Set `mode` where the designator is ambiguous — `J3E` covers both `USB` and `LSB`.  
@@ -597,6 +624,16 @@ This spec now demonstrates:
 
 ## 7. Migration Notes
 
+- **Channel-plan `mode` (v0.10.0)**: new optional `Mode` block on channel
+  plans and their channels (§2.6), so regulator-defined tones and shared
+  digital parameters are machine-readable instead of living in `notes`.
+  Additive. Plan-level `mode` is a default for channels without their own; a
+  system's `rf_chain` remains authoritative for an actual deployment.
+- **Legacy keys rejected (v0.10.0)**: **breaking** for pre-0.5.0 documents.
+  The loader no longer drops `codeplug`, `zones`, `scan`, or remaps `comment`
+  to `notes` on assignments, and no longer whitelists channel-plan channel
+  keys. Every unknown key is an error (§1.3). Rename `comment` to `notes` and
+  move the rest to a policy document.
 - **Station perspective (v0.9.0)**: **breaking.** RF chains and channel plans
   are now written from the perspective of the station being described, matching
   SSRF (§3.1). A repeater's `tx` is its **output** and its `rx` is its

@@ -1,9 +1,9 @@
-# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.9.0.schema.json
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
 # SSRF-Lite: Evanston, IL — Public Safety / Public Works conventional channels
 
 
-$schema: "../../../../../../_schema/ssrf-lite-0.9.0.schema.json"
-ssrf_lite_version: "0.9.0"
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
 ssrf_lite:
   sources:
     - name: "RadioReference — Evanston, IL (user-supplied channel list)"
