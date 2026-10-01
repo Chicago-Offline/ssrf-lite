@@ -17,7 +17,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | File | Services | Assignments | Modes | Geographic Scope |
 |------|----------|-------------|-------|------------------|
 | [pmr446_analog](pmr446_analog.md) | pmr446 | 16 | FM | EU |
-| [ham_dmr_simplex](ham_dmr_simplex.md) | amateur | 14 | DMR | US |
+| [ham_dmr_simplex](ham_dmr_simplex.md) |  | 14 | FM | US |
 | [ham_uhf_simplex](ham_uhf_simplex.md) |  | 20 | FM | US |
 | [ham_vhf_simplex](ham_vhf_simplex.md) |  | 20 | FM | US |
 | [airband_itinerant](airband_itinerant.md) | aviation | 17 | FM | US |
@@ -122,7 +122,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 | Service | Total Assignments | Files |
 |---------|------------------|-------|
-| amateur | 136 | 24 |
+| amateur | 122 | 23 |
 | aviation | 164 | 2 |
 | business_itinerant_part90 | 391 | 11 |
 | cb | 40 | 1 |
