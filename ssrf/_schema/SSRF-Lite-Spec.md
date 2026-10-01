@@ -654,6 +654,27 @@ This spec now demonstrates:
 - **`verified` (v0.7.0)**: new optional block on `assignments[]`. Purely additive — existing documents remain valid in content, but the `ssrf_lite_version` const and `$schema` path both move to `0.7.0`, so headers must be restamped (`make stamp-headers`). Validators pinned to the 0.6.0 schema will reject documents carrying `verified`, since assignments are `additionalProperties: false`.
 - **`verified` on `rf_chains[]` (v0.8.0)**: the same block is now accepted on RF chains, so radio parameters can be confirmed independently of the operational use that references them. Additive; headers move to `0.8.0` and must be restamped. The `monitor` method was also widened to cover **attended** receive-only observation, not just unattended captures — no data change, but the old wording excluded "I heard it on my scanner", which is the most common way a receive-only channel gets confirmed.
 
-- **Legacy fields**: `assignments.zones`, `assignments.codeplug.*`, and `assignments.codeplug.preferred_contacts` are deprecated as of v0.5.0. The loader drops them (and `scan`) on read and maps `comment` → `notes`; see §1.3. New data should omit them.  
+- **Legacy fields**: `assignments.zones`, `assignments.codeplug.*`, and `assignments.codeplug.preferred_contacts` were deprecated in v0.5.0 and are rejected as unknown keys since v0.10.0 (§1.3).  
 - **Profiles** should continue to use path-based include/exclude semantics while adding the ability to pull in explicit assignment IDs as needed.  
 - **Policies** may be expressed in YAML/TOML/JSON (format-agnostic) so long as they reference assignments by ID and avoid redefining RF facts.  
+
+---
+
+## 8. Versioning and Stability
+
+The spec version is the `ssrf_lite_version` every document carries. It is
+semantic in the following sense:
+
+- **Patch** (`x.y.Z`): documentation, taxonomy entries, or validation
+  messages. No schema change; headers need not be restamped.
+- **Minor** (`x.Y.0`): additive schema changes — new optional keys or
+  collections. Every valid `x.(Y-1)` document is a valid `x.Y` document in
+  content; only its headers must be restamped (`make stamp-headers`).
+- **Major** (`X.0.0`): anything that changes the meaning or validity of an
+  existing document. Ships with a migration script, as 0.9.0 did.
+
+Before 1.0 the minor version carried breaking changes (0.6.0, 0.9.0, 0.10.0).
+From **1.0.0** the rules above are a commitment: no breaking change lands
+without a major bump and a migrator. Releases are tagged `vX.Y.Z`; consumers
+should pin to a tag, not `main`. The full history is in
+[`CHANGELOG.md`](../../CHANGELOG.md).  
