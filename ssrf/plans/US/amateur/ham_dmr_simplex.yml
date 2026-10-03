@@ -23,7 +23,9 @@ channel_plans:
     emissions:
       - emission: "7K60FXE"
         mode: "DMR"
-    mode: { type: "DMR", color_code: 1 }
+    # Simplex has no repeater to sync against, so either slot works; TS1 is
+    # the convention (TG 99 / TS1) and the contact's default_timeslot selects it.
+    mode: { type: "DMR", color_code: 1, timeslots: [1, 2] }
     channels:
       - name: "DMR 446.500"
         short_name: "DMR500"
