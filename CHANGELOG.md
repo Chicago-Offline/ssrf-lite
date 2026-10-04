@@ -13,6 +13,16 @@ documents; everything else is additive and only requires restamping headers
 
 ## [Unreleased]
 
+## [0.10.1] - 2026-10-03
+
+Package-only release; the specification stays at 0.10.0 and data files keep
+their `ssrf_lite_version: "0.10.0"` headers.
+
+### Fixed
+- `plans/US/amateur/ham_dmr_simplex.yml`: the plan-level `mode` now declares
+  `timeslots: [1, 2]` as its header already claimed, so DMR simplex channels
+  can be built by consumers that refuse to invent a slot. (#50)
+
 ## [0.10.0] - 2026-10-01
 
 ### Added
@@ -105,7 +115,8 @@ documents; everything else is additive and only requires restamping headers
   reference model and moved to downstream policy documents; `comment`
   renamed `notes`. Deprecated keys were dropped on read until 0.10.0.
 
-[Unreleased]: https://github.com/Chicago-Offline/ssrf-lite/compare/v0.10.0...HEAD
+[Unreleased]: https://github.com/Chicago-Offline/ssrf-lite/compare/v0.10.1...HEAD
+[0.10.1]: https://github.com/Chicago-Offline/ssrf-lite/compare/v0.10.0...v0.10.1
 [0.10.0]: https://github.com/Chicago-Offline/ssrf-lite/compare/85d3a07...v0.10.0
 [0.9.0]: https://github.com/Chicago-Offline/ssrf-lite/compare/88360f8...85d3a07
 [0.8.0]: https://github.com/Chicago-Offline/ssrf-lite/compare/a814212...88360f8
