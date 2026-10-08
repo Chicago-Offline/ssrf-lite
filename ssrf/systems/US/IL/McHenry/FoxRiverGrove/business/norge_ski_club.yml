@@ -59,7 +59,7 @@ rf_chains:
       freq_mhz: 462.4625
       emission: "11K0F3E"
       power_w: 5.0
-      bandwidth_khz: 11.0
+      bandwidth_khz: 12.5
     mode:
       type: "FM"
       notes: >
@@ -73,7 +73,7 @@ rf_chains:
       freq_mhz: 467.4625
       emission: "11K0F3E"
       power_w: 5.0
-      bandwidth_khz: 11.0
+      bandwidth_khz: 12.5
     mode:
       type: "FM"
       notes: >
@@ -86,7 +86,7 @@ rf_chains:
       freq_mhz: 451.5375
       emission: "11K0F3E"
       power_w: 5.0
-      bandwidth_khz: 11.0
+      bandwidth_khz: 12.5
     mode:
       type: "FM"
       notes: >
@@ -99,7 +99,7 @@ rf_chains:
       freq_mhz: 456.5375
       emission: "11K0F3E"
       power_w: 5.0
-      bandwidth_khz: 11.0
+      bandwidth_khz: 12.5
     mode:
       type: "FM"
       notes: >
@@ -112,7 +112,7 @@ rf_chains:
       freq_mhz: 452.1125
       emission: "11K0F3E"
       power_w: 5.0
-      bandwidth_khz: 11.0
+      bandwidth_khz: 12.5
     mode:
       type: "FM"
       notes: >
@@ -126,7 +126,7 @@ rf_chains:
       freq_mhz: 464.5125
       emission: "11K0F3E"
       power_w: 5.0
-      bandwidth_khz: 11.0
+      bandwidth_khz: 12.5
     mode:
       type: "FM"
       notes: >
