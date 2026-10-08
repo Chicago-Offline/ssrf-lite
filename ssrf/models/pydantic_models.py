@@ -1,6 +1,6 @@
 """Pydantic models for the SSRF-Lite reference schema.
 
-These models intentionally reflect the v0.9.0 specification located in
+These models intentionally reflect the v0.10.0 specification located in
 ``ssrf/_schema/SSRF-Lite-Spec.md``. They do not include legacy or policy-layer
 fields that appeared in historical data files. Use the helper functions at the
 bottom of this file to validate YAML documents against the schema.
@@ -485,6 +485,16 @@ class ChannelPlanChannel(BaseModel):
         description=(
             "Every emission this channel permits, most typical first. Use "
             "instead of `emission` when more than one is allowed."
+        ),
+    )
+    mode: Optional[Mode] = Field(
+        default=None,
+        description=(
+            "Squelch and digital parameters the channel's convention "
+            "specifies -- CTCSS/DCS tones, DMR color code and timeslots, P25 "
+            "NAC. These are the agreed defaults for participating on the "
+            "channel, not the settings of any one station: a deployed "
+            "`rf_chains[].mode` overrides this for that station alone."
         ),
     )
 

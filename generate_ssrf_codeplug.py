@@ -194,16 +194,23 @@ def _record_from_plan_channel(
 ) -> Dict[str, Any]:
     name = name_override or ch.name
     designator = emission.emission if emission else ch.emission
+    # Squelch and digital parameters the channel's convention specifies. A
+    # deployed rf_chain overrides these for its own station (see spec 2.6),
+    # but a plan channel is often the only record that carries them -- the
+    # CTCSS a NIFOG interop channel expects, or an agreed DMR simplex color
+    # code. These were hardcoded None, which silently dropped every one.
+    mode = getattr(ch, "mode", None)
+    dcs, dcs_polarity = _encode_dcs(mode) if mode else (None, None)
     return {
         "callsign": None,
         # Mirrored: the radio hears what the channel's station sends.
         "rx_mhz": ch.freq_mhz,
         "tx_mhz": ch.rx_freq_mhz or ch.freq_mhz,
-        "ctcss": None,
-        "dcs": None,
-        "dcs_polarity": None,
-        "color_code": None,
-        "timeslots": None,
+        "ctcss": _encode_tone(mode.ctcss_tx_hz, mode.ctcss_rx_hz) if mode else None,
+        "dcs": dcs,
+        "dcs_polarity": dcs_polarity,
+        "color_code": mode.color_code if mode else None,
+        "timeslots": list(mode.timeslots) if mode and mode.timeslots else None,
         "lat": None,
         "lon": None,
         "service": a.service or plan.service,
@@ -212,7 +219,10 @@ def _record_from_plan_channel(
         # filters (which match on mode: FM) can pick up simplex/calling
         # channels. Was hardcoded None, which silently dropped every plan
         # channel from mode-filtered zones.
+        # Per-emission mode wins for its own entry; a channel-level mode.type
+        # states the channel's primary modulation; else infer from designator.
         "mode": (emission.mode if emission and emission.mode else None)
+        or (mode.type if mode else None)
         or _mode_from_emission(designator),
         "bandwidth_khz": (emission.bandwidth_khz if emission else ch.bandwidth_khz)
         or _emission_bandwidth_khz(designator),

@@ -2,7 +2,7 @@
 
 *A pragmatic spectrum data model for codeplug generation*  
 
-Version: **0.9.0**  
+Version: **0.10.0**  
 Last updated: 2026-09-29  
 
 ---
@@ -38,9 +38,9 @@ Every SSRF-Lite YAML document carries two schema-association headers so that
 editors and CI can validate it **without importing the Python models**:
 
 ```yaml
-# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.9.0.schema.json
-$schema: "../../../_schema/ssrf-lite-0.9.0.schema.json"
-ssrf_lite_version: "0.9.0"
+# yaml-language-server: $schema=../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
 ```
 
 - The `# yaml-language-server:` modeline enables live validation in editors such
@@ -49,10 +49,10 @@ ssrf_lite_version: "0.9.0"
 - The top-level `$schema` key lets CI tools (e.g. `check-jsonschema`) discover the
   schema. Its value is a path relative to the file.
 - `ssrf_lite_version` pins the spec revision the file targets and must match the
-  shipped schema (`0.9.0`).
+  shipped schema (`0.10.0`).
 
 The versioned JSON Schema lives beside this document at
-[`ssrf-lite-0.9.0.schema.json`](./ssrf-lite-0.9.0.schema.json) and is generated
+[`ssrf-lite-0.10.0.schema.json`](./ssrf-lite-0.10.0.schema.json) and is generated
 from the Pydantic models via `generate_ssrf_schema.py`. Optional, non-normative
 metadata keys (`ssrf_lite.sources`, `comments`) and the normative `overrides`
 block are permitted alongside the reference entities.
@@ -349,9 +349,46 @@ Fields:
   - `emission` (optional ITU designator)  
   - `bandwidth_khz` (optional, > 0)  
   - `emissions[]` (optional; mutually exclusive with `emission`)  
+  - `mode` (optional; squelch and digital parameters the convention specifies)  
   - `notes` (optional)  
 
 Each `emissions[]` entry carries `emission` (required ITU designator), plus optional `mode`, `bandwidth_khz`, `power_w`, and `notes`. Set `mode` where the designator is ambiguous — `J3E` covers both `USB` and `LSB`.  
+
+#### Channel plans vs. deployed chains
+
+A channel plan records a **convention**: the agreed definition of a channel,
+whether that agreement comes from a regulator (NOAA, marine, GMRS) or from
+community practice (amateur simplex calling frequencies, NIFOG interop
+channels). An `rf_chain` records what one **specific station actually does**.
+
+The same frequency routinely appears in both. They answer different questions,
+and neither replaces the other:
+
+- The plan entry is the **convention baseline** — what a radio should use to
+  participate, absent any local knowledge.
+- The `rf_chain` is **authoritative for that station**. Where the two differ,
+  the chain wins *for that station only*.
+
+A consumer resolving a channel for a given station takes the chain's value for
+every field the chain sets, and falls back to the plan for fields it does not.
+That fallback covers `emission`, `bandwidth_khz`, and `mode`.
+
+**A plan that disagrees with a local deployment is not a data error, and the
+plan must not be edited to match one site.** NIFOG defines VTAC11 nationally;
+an individual licensee may be authorized with different parameters. Both
+records are correct at their own scope, and flattening one into the other
+destroys the distinction.
+
+A channel's `mode` carries the squelch and digital parameters the convention
+specifies — CTCSS/DCS tones, DMR color code and timeslots, P25 NAC — using the
+same `Mode` shape as `rf_chains[].mode` (§2.5). Use it for values that are part
+of the agreed channel definition: the CTCSS a NIFOG interop channel expects, or
+the color code and timeslot an agreed DMR simplex channel runs. Do **not** use
+it for one station's local choices; those belong on that station's chain.
+
+Where a channel declares both `mode` and multiple `emissions[]`, `mode.type`
+states the channel's primary modulation; per-emission `mode` strings refine
+individual entries and win for those entries.
 
 ---
 
@@ -597,6 +634,15 @@ This spec now demonstrates:
 
 ## 7. Migration Notes
 
+- **Channel plan modes (v0.10.0)**: new optional `mode` on channel plan
+  channels, carrying the same `Mode` block as `rf_chains[].mode` — CTCSS/DCS
+  tones, DMR color code and timeslots, P25 NAC. Purely additive, but the
+  `ssrf_lite_version` const and `$schema` path move to `0.10.0`, so headers must
+  be restamped (`make stamp-headers`). Validators pinned to the 0.9.0 schema
+  will reject documents carrying it, since channel plan channels are
+  `additionalProperties: false`. Lets conventions that are defined by their
+  tones or color codes be recorded as plans instead of synthetic systems; see
+  §2.6 for precedence against a deployed chain.
 - **Station perspective (v0.9.0)**: **breaking.** RF chains and channel plans
   are now written from the perspective of the station being described, matching
   SSRF (§3.1). A repeater's `tx` is its **output** and its `rx` is its
