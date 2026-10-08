@@ -1,0 +1,535 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+# SSRF-Lite: Cook County, IL - First Student school bus / mass transit operations
+
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "RadioReference - Bus Companies / First Student (subcat 21814)"
+      url: "https://www.radioreference.com/db/subcat/21814"
+      accessed: "2026-10-08"
+      notes: >
+        Anonymous access — single undirected Tone column; input frequencies not
+        published at this access level. All RM entries have tx.freq_mhz: null.
+        Coverage center: 41.87774 / -87.76428, range 31.05 mi (Defined Coverage).
+        Page note: 463.850 repeater also used by Posen yard in the past; 461.825
+        repeater used for shuttles during 2024 Northwestern football season.
+
+# ─── Organizations ─────────────────────────────────────────────────────────────
+
+organizations:
+  - id: org_first_student
+    name: "First Student, Inc."
+
+# ─── Locations ─────────────────────────────────────────────────────────────────
+# Coordinates are approximate yard positions; none were explicitly published by
+# the source. Derived from known municipality positions. Marked (approx).
+
+locations:
+  - id: loc_skokie
+    name: "Skokie Yard, Niles Twp D219 (approx)"
+    lat: 42.0330
+    lon: -87.7330
+
+  - id: loc_schaumburg
+    name: "Schaumburg Yard (approx)"
+    lat: 42.0334
+    lon: -88.0834
+
+  - id: loc_hodgkins
+    name: "Hodgkins Yard (approx)"
+    lat: 41.7714
+    lon: -87.8614
+
+  - id: loc_franklin_park
+    name: "Franklin Park Yard (approx)"
+    lat: 41.9336
+    lon: -87.8728
+
+  - id: loc_northbrook
+    name: "Northbrook Yard (approx)"
+    lat: 42.1253
+    lon: -87.8289
+
+  - id: loc_highland_park_northbrook
+    name: "Highland Park / Northbrook Yards, D28+D225 (approx)"
+    lat: 42.1820
+    lon: -87.8006
+
+  - id: loc_elk_grove_village
+    name: "Elk Grove Village Yard?, E Maine SD63+D225 (approx)"
+    lat: 42.0000
+    lon: -87.9970
+
+  - id: loc_calumet
+    name: "Calumet Yard, south suburban (approx)"
+    lat: 41.6167
+    lon: -87.5667
+
+  - id: loc_chicago
+    name: "Chicago (approx)"
+    lat: 41.8500
+    lon: -87.7500
+
+# ─── Stations ──────────────────────────────────────────────────────────────────
+# service: business_itinerant_part90 (frequency range intentionally unchecked by CI)
+# tx/rx convention: radio-centric (tx = radio transmits = repeater input;
+#                                  rx = radio receives = repeater output)
+
+stations:
+  - id: stn_skokie
+    call_sign: "WPUI788"
+    organization_id: org_first_student
+    location_id: loc_skokie
+    service: "business_itinerant_part90"
+
+  - id: stn_skokie_nolicense
+    call_sign: null
+    organization_id: org_first_student
+    location_id: loc_skokie
+    service: "business_itinerant_part90"
+
+  - id: stn_schaumburg_wppb963
+    call_sign: "WPPB963"
+    organization_id: org_first_student
+    location_id: loc_schaumburg
+    service: "business_itinerant_part90"
+
+  - id: stn_schaumburg_kxz278
+    call_sign: "KXZ278"
+    organization_id: org_first_student
+    location_id: loc_schaumburg
+    service: "business_itinerant_part90"
+
+  - id: stn_schaumburg_wpua366
+    call_sign: "WPUA366"
+    organization_id: org_first_student
+    location_id: loc_schaumburg
+    service: "business_itinerant_part90"
+
+  - id: stn_hodgkins
+    call_sign: "WPPB802"
+    organization_id: org_first_student
+    location_id: loc_hodgkins
+    service: "business_itinerant_part90"
+
+  - id: stn_franklin_park
+    call_sign: "WPYY371"
+    organization_id: org_first_student
+    location_id: loc_franklin_park
+    service: "business_itinerant_part90"
+
+  - id: stn_northbrook
+    call_sign: "WPUF561"
+    organization_id: org_first_student
+    location_id: loc_northbrook
+    service: "business_itinerant_part90"
+
+  - id: stn_elk_grove_village
+    call_sign: null
+    organization_id: org_first_student
+    location_id: loc_elk_grove_village
+    service: "business_itinerant_part90"
+
+  - id: stn_calumet
+    call_sign: "WPWI814"
+    organization_id: org_first_student
+    location_id: loc_calumet
+    service: "business_itinerant_part90"
+
+  - id: stn_chicago
+    call_sign: "WIK908"
+    organization_id: org_first_student
+    location_id: loc_chicago
+    service: "business_itinerant_part90"
+
+# ─── Antennas ──────────────────────────────────────────────────────────────────
+
+antennas:
+  - id: ant_skokie
+    station_id: stn_skokie
+  - id: ant_skokie_nolicense
+    station_id: stn_skokie_nolicense
+  - id: ant_schaumburg_wppb963
+    station_id: stn_schaumburg_wppb963
+  - id: ant_schaumburg_kxz278
+    station_id: stn_schaumburg_kxz278
+  - id: ant_schaumburg_wpua366
+    station_id: stn_schaumburg_wpua366
+  - id: ant_hodgkins
+    station_id: stn_hodgkins
+  - id: ant_franklin_park
+    station_id: stn_franklin_park
+  - id: ant_northbrook
+    station_id: stn_northbrook
+  - id: ant_elk_grove_village
+    station_id: stn_elk_grove_village
+  - id: ant_calumet
+    station_id: stn_calumet
+  - id: ant_chicago
+    station_id: stn_chicago
+
+# ─── Authorizations ────────────────────────────────────────────────────────────
+
+authorizations:
+  - id: auth_fcc_part90
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: null
+    notes: >
+      Active FCC Part 90 licences. Call signs per chain: WPUI788 (Skokie 461.450),
+      WPPB963 (Schaumb 151.550), KXZ278 (Schaumb 155.205), WPUA366 (Schaumb 452.975),
+      WPPB802 (Hodgkins 451.825), WPYY371 (Franklin Park 461.775 — expired 10/2013),
+      WPUF561 (Northbrook 463.825), WPWI814 (Calumet 463.850), WIK908 (Chicago 472.7375).
+      TX restricted to the licensee. RX-only for general public.
+
+  - id: auth_nolicense
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    identifier: null
+    notes: >
+      No FCC license listed in RadioReference for these repeaters (461.825 Skokie,
+      463.975 EGV/HP/NB). May operate under a blanket or site licence not reflected
+      in subcat data. Survey target; do not transmit without verifying authorization.
+
+# ─── RF Chains ─────────────────────────────────────────────────────────────────
+# Convention: radio-centric
+#   tx.freq_mhz = what the radio transmits (repeater input)
+#   rx.freq_mhz = what the radio receives  (repeater output) — what you hear
+# RM rows: tx.freq_mhz null — input not published at anonymous access level.
+# BM (simplex) rows: tx only, no rx.freq_mhz.
+# FMN (RadioReference) → 11K2F3E.  DMR → 7K60FXE.
+# Tone column is undirected; recorded as access/TX tone only (ctcss_tx_hz /
+# dcs_tx_code). No ctcss_rx_hz set.
+
+rf_chains:
+
+  # ── Skokie Yard (WPUI788): 461.450 DMR — RM repeater ────────────────────────
+  - id: chain_fs_skokie_461450
+    station_id: stn_skokie
+    antenna_id: ant_skokie
+    tx:
+      freq_mhz: null
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 461.4500
+    mode:
+      type: "DMR"
+      color_code: 6
+      timeslots: [1, 2]
+
+  # ── Skokie Yard (no license): 461.825 DMR — RM repeater ─────────────────────
+  # No FCC license. Same CC6/TG pattern as 461.450 (WPUI788) — same operator,
+  # separate repeater. NOTE: 461.825 DMR CC6 also appears in transit_transport.yml
+  # as ch_cta_ops2 (attributed to CTA) — attribution unresolved, NOT duplicated
+  # here. RR: used for Northwestern football shuttle service in 2024.
+  - id: chain_fs_skokie_461825
+    station_id: stn_skokie_nolicense
+    antenna_id: ant_skokie_nolicense
+    tx:
+      freq_mhz: null
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 461.8250
+    mode:
+      type: "DMR"
+      color_code: 6
+      timeslots: [1, 2]
+
+  # ── Schaumburg Yard (WPPB963): 151.550 BM simplex ───────────────────────────
+  - id: chain_fs_schaumb_151550
+    station_id: stn_schaumburg_wppb963
+    antenna_id: ant_schaumburg_wppb963
+    tx:
+      freq_mhz: 151.5500
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      dcs_tx_code: "072"
+      dcs_tx_polarity: "N"
+
+  # ── Schaumburg Yard (KXZ278): 155.205 BM simplex ────────────────────────────
+  - id: chain_fs_schaumb_155205
+    station_id: stn_schaumburg_kxz278
+    antenna_id: ant_schaumburg_kxz278
+    tx:
+      freq_mhz: 155.2050
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 107.2
+
+  # ── Schaumburg Yard (WPUA366): 452.975 BM simplex ───────────────────────────
+  - id: chain_fs_schaumb_452975
+    station_id: stn_schaumburg_wpua366
+    antenna_id: ant_schaumburg_wpua366
+    tx:
+      freq_mhz: 452.9750
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 218.1
+
+  # ── Hodgkins Yard (WPPB802): 451.825 RM repeater ────────────────────────────
+  - id: chain_fs_hodgkins_451825
+    station_id: stn_hodgkins
+    antenna_id: ant_hodgkins
+    tx:
+      freq_mhz: null
+      emission: "11K2F3E"
+    rx:
+      freq_mhz: 451.8250
+    mode:
+      type: "FM"
+      dcs_tx_code: "306"
+      dcs_tx_polarity: "N"
+
+  # ── Franklin Park (WPYY371): 461.775 RM repeater — LICENSE EXPIRED ───────────
+  - id: chain_fs_franklin_park_461775
+    station_id: stn_franklin_park
+    antenna_id: ant_franklin_park
+    tx:
+      freq_mhz: null
+      emission: "11K2F3E"
+    rx:
+      freq_mhz: 461.7750
+    mode:
+      type: "FM"
+      dcs_tx_code: "051"
+      dcs_tx_polarity: "N"
+
+  # ── Northbrook Yard (WPUF561): 463.825 BM simplex ───────────────────────────
+  # BM class (simplex/mobile), DMR. TG 16777215 = all-call.
+  - id: chain_fs_northbrook_463825
+    station_id: stn_northbrook
+    antenna_id: ant_northbrook
+    tx:
+      freq_mhz: 463.8250
+      emission: "7K60FXE"
+    mode:
+      type: "DMR"
+      color_code: 6
+      timeslots: [2]
+
+  # ── Calumet Yard (WPWI814): 463.850 RM repeater ─────────────────────────────
+  # RR note: also associated with Posen yard historically.
+  - id: chain_fs_calumet_463850
+    station_id: stn_calumet
+    antenna_id: ant_calumet
+    tx:
+      freq_mhz: null
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 463.8500
+    mode:
+      type: "DMR"
+      color_code: 12
+      timeslots: [1, 2]
+
+  # ── EGV / Highland Park / Northbrook: 463.975 RM — no license ───────────────
+  # SL1 attributed to EGV Yard; SL2 to HP/Northbrook Yards.
+  # One physical transmitter → one chain; assignments distinguish operational use.
+  - id: chain_fs_463975
+    station_id: stn_elk_grove_village
+    antenna_id: ant_elk_grove_village
+    tx:
+      freq_mhz: null
+      emission: "7K60FXE"
+    rx:
+      freq_mhz: 463.9750
+    mode:
+      type: "DMR"
+      color_code: 9
+      timeslots: [1, 2]
+
+  # ── Chicago (WIK908): 472.7375 RM repeater ──────────────────────────────────
+  - id: chain_fs_chicago_472737
+    station_id: stn_chicago
+    antenna_id: ant_chicago
+    tx:
+      freq_mhz: null
+      emission: "11K2F3E"
+    rx:
+      freq_mhz: 472.7375
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 173.8
+
+# ─── Contacts ──────────────────────────────────────────────────────────────────
+
+contacts:
+  - id: tg_fs_skokie_461450_ts1
+    name: "Skokie Yard 461.450 Secondary"
+    kind: "Group"
+    number: 5
+    default_timeslot: 1
+    notes: "461.450 TS1 TG 5 — Skokie Yard secondary"
+
+  - id: tg_fs_skokie_461450_ts2
+    name: "Skokie Yard 461.450 Buses"
+    kind: "Group"
+    number: 5002
+    default_timeslot: 2
+    notes: "461.450 TS2 TG 5002 — Skokie Yard buses"
+
+  - id: tg_fs_skokie_461825_ts1
+    name: "Skokie Yard 461.825 Primary D219"
+    kind: "Group"
+    number: 5
+    default_timeslot: 1
+    notes: "461.825 TS1 TG 5 — Skokie Yard primary, Niles Township D219. No FCC license."
+
+  - id: tg_fs_skokie_461825_ts2
+    name: "Skokie Yard 461.825 Buses"
+    kind: "Group"
+    number: 5002
+    default_timeslot: 2
+    notes: "461.825 TS2 TG 5002 — Skokie Yard buses. No FCC license."
+
+  - id: tg_fs_calumet_463850_ts1
+    name: "Calumet Yard Buses A"
+    kind: "Group"
+    number: 1
+    default_timeslot: 1
+    notes: "463.850 TS1 TG 1"
+
+  - id: tg_fs_calumet_463850_ts2
+    name: "Calumet Yard Buses B"
+    kind: "Group"
+    number: 2
+    default_timeslot: 2
+    notes: "463.850 TS2 TG 2"
+
+  - id: tg_fs_egv_463975_ts1
+    name: "EGV Yard 463.975"
+    kind: "Group"
+    number: 9
+    default_timeslot: 1
+    notes: "463.975 TS1 TG 9 — Elk Grove Village Yard, E Maine SD63 / Glenbrook D225. No license."
+
+  - id: tg_fs_hpnb_463975_ts2
+    name: "HP/NB Yards 463.975"
+    kind: "Group"
+    number: 7
+    default_timeslot: 2
+    notes: "463.975 TS2 TG 7 — Highland Park + Northbrook Yards, Northbrook D28 / Glenbrook D225. No license."
+
+  - id: tg_fs_northbrook_463825_ts2
+    name: "Northbrook Yard 463.825"
+    kind: "AllCall"
+    number: 16777215
+    default_timeslot: 2
+    notes: "463.825 TS2 TG 16777215 — all-call; Northbrook Yard conventional buses"
+
+# ─── Assignments ───────────────────────────────────────────────────────────────
+
+assignments:
+
+  # 461.450 SL1 — Skokie Yard secondary (WPUI788)
+  - id: asgn_fs_skokie_461450_sl1
+    rf_chain_id: chain_fs_skokie_461450
+    authorization_id: auth_fcc_part90
+    usage: "repeater"
+    notes: "Skokie Yard: Secondary — TS1 TG 5"
+
+  # 461.450 SL2 — Skokie Yard buses (WPUI788)
+  - id: asgn_fs_skokie_461450_sl2
+    rf_chain_id: chain_fs_skokie_461450
+    authorization_id: auth_fcc_part90
+    usage: "repeater"
+    notes: "Skokie Yard: Buses — TS2 TG 5002"
+
+  # 461.825 SL1 — Skokie Yard primary D219 (no license)
+  - id: asgn_fs_skokie_461825_sl1
+    rf_chain_id: chain_fs_skokie_461825
+    authorization_id: auth_nolicense
+    usage: "repeater"
+    notes: >
+      Skokie Yard: Primary for Niles Township D219 — TS1 TG 5. No FCC license.
+      461.825 DMR CC6 also in transit_transport.yml as ch_cta_ops2 (CTA attribution
+      unresolved) — do NOT duplicate that entry without resolving ownership first.
+
+  # 461.825 SL2 — Skokie Yard buses (no license)
+  - id: asgn_fs_skokie_461825_sl2
+    rf_chain_id: chain_fs_skokie_461825
+    authorization_id: auth_nolicense
+    usage: "repeater"
+    notes: "Skokie Yard: Buses — TS2 TG 5002. No FCC license."
+
+  # 151.550 — Schaumburg Yard DuPage routes (WPPB963)
+  - id: asgn_fs_schaumb_151550
+    rf_chain_id: chain_fs_schaumb_151550
+    authorization_id: auth_fcc_part90
+    usage: "simplex"
+    notes: "Schaumburg Yard: DuPage County Routes"
+
+  # 155.205 — Schaumburg Yard D54 / HSD214 (KXZ278)
+  - id: asgn_fs_schaumb_155205
+    rf_chain_id: chain_fs_schaumb_155205
+    authorization_id: auth_fcc_part90
+    usage: "simplex"
+    notes: "Schaumburg Yard: District 54 and High School District 214"
+
+  # 452.975 — Schaumburg Yard D54 / HSD214 UHF (WPUA366)
+  - id: asgn_fs_schaumb_452975
+    rf_chain_id: chain_fs_schaumb_452975
+    authorization_id: auth_fcc_part90
+    usage: "simplex"
+    notes: "Schaumburg Yard: District 54 and High School District 214 (UHF companion to 155.205)"
+
+  # 451.825 — Hodgkins Yard (WPPB802)
+  - id: asgn_fs_hodgkins_451825
+    rf_chain_id: chain_fs_hodgkins_451825
+    authorization_id: auth_fcc_part90
+    usage: "repeater"
+    notes: "Hodgkins Yard — input not published at anonymous access level"
+
+  # 461.775 — Franklin Park (WPYY371, expired)
+  - id: asgn_fs_franklin_park_461775
+    rf_chain_id: chain_fs_franklin_park_461775
+    authorization_id: auth_fcc_part90
+    usage: "repeater"
+    notes: "Franklin Park buses — license expired 10/2013; survey target to confirm if repeater is still active"
+
+  # 463.825 — Northbrook Yard conventional buses (WPUF561)
+  - id: asgn_fs_northbrook_463825
+    rf_chain_id: chain_fs_northbrook_463825
+    authorization_id: auth_fcc_part90
+    usage: "simplex"
+    notes: "Northbrook Yard: Conventional Buses — North Shore District 112 and others. DMR all-call TG on SL2."
+
+  # 463.850 SL1 — Calumet Yard (WPWI814)
+  - id: asgn_fs_calumet_463850_sl1
+    rf_chain_id: chain_fs_calumet_463850
+    authorization_id: auth_fcc_part90
+    usage: "repeater"
+    notes: "Calumet Yard buses — TS1 TG 1"
+
+  # 463.850 SL2 — Calumet Yard (WPWI814)
+  - id: asgn_fs_calumet_463850_sl2
+    rf_chain_id: chain_fs_calumet_463850
+    authorization_id: auth_fcc_part90
+    usage: "repeater"
+    notes: "Calumet Yard buses — TS2 TG 2"
+
+  # 463.975 SL1 — EGV Yard (no license)
+  - id: asgn_fs_egv_463975_sl1
+    rf_chain_id: chain_fs_463975
+    authorization_id: auth_nolicense
+    usage: "repeater"
+    notes: "Elk Grove Village Yard (?): East Maine SD 63, Glenbrook HS District 225 — TS1 TG 9. No license."
+
+  # 463.975 SL2 — HP/Northbrook Yards (no license)
+  - id: asgn_fs_hpnb_463975_sl2
+    rf_chain_id: chain_fs_463975
+    authorization_id: auth_nolicense
+    usage: "repeater"
+    notes: "Highland Park + Northbrook Yards: Northbrook D28, Glenbrook HS D225 — TS2 TG 7. No license."
+
+  # 472.7375 — Chicago buses (WIK908)
+  - id: asgn_fs_chicago_472737
+    rf_chain_id: chain_fs_chicago_472737
+    authorization_id: auth_fcc_part90
+    usage: "repeater"
+    notes: "Chicago area buses — input not published at anonymous access level"

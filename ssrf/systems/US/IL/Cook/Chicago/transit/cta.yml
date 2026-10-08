@@ -409,9 +409,12 @@ comments:
       The bus repeaters use a +5.000 MHz split (453.x -> 458.x). Three of them run carrier
       squelch rather than a tone.
 
-      NOT DUPLICATED HERE: the existing transit_transport.yml already carries CTA 461.575,
-      461.825 (DMR), and 462.100; chicago_fire_ems_northside.yml already carries CTA Fire on
+      NOT DUPLICATED HERE: the existing transit_transport.yml already carries CTA 461.575
+      and 462.100; chicago_fire_ems_northside.yml already carries CTA Fire on
       460.0625 (203.5 PL). No frequency in this file overlaps either.
+      NOTE: 461.825 DMR CC6 was previously attributed to CTA in transit_transport.yml
+      (ch_cta_ops2) but is confirmed First Student Skokie Yard per RR aid/10887 —
+      removed from that file and now in first_student.yml.
 
       44.540 MHz is low-band third-rail/switch heater control telemetry, not voice.
 
