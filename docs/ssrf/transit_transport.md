@@ -7,24 +7,24 @@
 
 ## Overview
 
-- **Assignments:** 7
+- **Assignments:** 6
 - **Services:** public_safety_part90
 - **Organizations:** 1
 - **Locations:** 1
-- **RF Chains:** 7
+- **RF Chains:** 6
 - **Channel Plans:** 0
 - **Contacts:** 0
 
 ### Modes
 - **FM:** 4
-- **DMR:** 3
+- **DMR:** 2
 
 ### Usage Types
-- **Simplex:** 6
+- **Simplex:** 5
 - **Repeater:** 1
 
 ### Frequency Bands
-- **UHF (400-480 MHz):** 7
+- **UHF (400-480 MHz):** 6
 
 ## Organizations
 
@@ -37,10 +37,9 @@
 
 ## Assignments
 
-### Unknown (7 assignments)
+### Unknown (6 assignments)
 
 - **asg_cta1** - simplex
-- **asg_cta2** - simplex
 - **asg_cta_yard** - simplex
 - **asg_ord_ops** - simplex
 - **asg_midway_ops** - simplex

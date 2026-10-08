@@ -4,8 +4,8 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ## Quick Statistics
 
-- **Total SSRF Files:** 74
-- **Total Assignments:** 1,349
+- **Total SSRF Files:** 75
+- **Total Assignments:** 1,355
 - **Services Covered:** 12
 - **Modes:** AM, APRS, C4FM, CW, D-STAR, DMR, FM, NFM, NXDN, P25, PACKET
 - **Frequency Bands:** 5
@@ -37,7 +37,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |------|----------|-------------|-------|------------------|
 | [mmdvm_duplex_hotspot](mmdvm_duplex_hotspot.md) | amateur | 2 | DMR | custom / mmdvm_duplex_hotspot.yml |
 
-### Geographic System (59 files)
+### Geographic System (60 files)
 
 | File | Services | Assignments | Modes | Geographic Scope |
 |------|----------|-------------|-------|------------------|
@@ -78,6 +78,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [mabas_div3_red_center](mabas_div3_red_center.md) | public_safety_part90 | 12 | P25, FM | US / IL / Cook / _Countywide |
 | [w9dup_darc_repeaters](w9dup_darc_repeaters.md) | amateur | 3 | FM | US / IL / DuPage / DownersGrove |
 | [zion_gmrs_repeaters](zion_gmrs_repeaters.md) | gmrs | 1 | FM | US / IL / Lake / Benton |
+| [norge_ski_club](norge_ski_club.md) | business_itinerant_part90 | 6 | FM | US / IL / McHenry / FoxRiverGrove |
 | [tri_state_dmr](tri_state_dmr.md) | amateur | 16 | DMR | US / IL / _Statewide / amateur |
 | [il_statewide_interop](il_statewide_interop.md) | public_safety_part90 | 14 | FM | US / IL / _Statewide / public_safety |
 | [metra_commuter_rail](metra_commuter_rail.md) | public_safety_part90, railroad... | 15 | FM, NXDN | US / IL / _Statewide / railroad_aar |
@@ -108,7 +109,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ### US
 - **FL:** 3 files
-- **IL:** 38 files
+- **IL:** 39 files
 - **IN:** 4 files
 - **MI:** 3 files
 - **National/Regional:** 13 files
@@ -126,7 +127,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |---------|------------------|-------|
 | amateur | 122 | 23 |
 | aviation | 164 | 2 |
-| business_itinerant_part90 | 406 | 12 |
+| business_itinerant_part90 | 412 | 13 |
 | cb | 40 | 1 |
 | federal_interop_ntia | 25 | 1 |
 | gmrs | 91 | 11 |

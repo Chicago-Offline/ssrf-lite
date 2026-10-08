@@ -1,0 +1,168 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+# SSRF-Lite: Norge Ski Club (WSLU426) - licensed business land mobile, Fox River Grove IL
+#
+# Mobile-only licence: all 12 ULS frequency records are station class MO or MOI.
+# There is no FB/FB2 record, so no repeater is authorised under this call sign even
+# though two of the pairs are conventional UHF mobile-relay splits.
+# Itinerant 464.5125 MHz is authorised statewide in CO, UT, NY, MN, WI, MI and IL;
+# only the licence's McHenry County centerpoint is modelled as a location here.
+
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "FCC ULS License Search - WSLU426 (Norge Ski Club), licKey 5259563"
+      url: "https://wireless2.fcc.gov/UlsApp/UlsSearch/license.jsp?licKey=5259563"
+      accessed: "2026-10-08"
+
+organizations:
+  - id: org_norge_ski_club
+    name: "Norge Ski Club (100 Ski Hill Rd, Fox River Grove, IL 60021)"
+
+locations:
+  - id: loc_norge_fox_river_grove
+    name: "Norge Ski Club, Fox River Grove, IL (ULS mobile centerpoint, 80 km radius of operation)"
+    lat: 42.2035
+    lon: -88.2057
+
+stations:
+  - id: stn_wslu426
+    call_sign: "WSLU426"
+    organization_id: org_norge_ski_club
+    location_id: loc_norge_fox_river_grove
+    service: "business_itinerant_part90"
+
+antennas:
+  - id: ant_wslu426
+    station_id: stn_wslu426
+    name: "Norge Ski Club mobiles and portables (no fixed site licensed)"
+
+authorizations:
+  - id: auth_wslu426
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: "WSLU426"
+    notes: >
+      Active FCC licence, granted 2026-02-24, expires 2036-02-24. FRN 0037708963.
+      Eligibility rule 90.35A2: ski-jump training organisation, used for work
+      coordination and safety at the main venue and at temporary locations during
+      travel to competitive events. 75 units, 5.000 W output / 5.000 W ERP on every
+      record. TX restricted to the licensee; RX-only for everyone else.
+
+rf_chains:
+  # --- Norge Ski Club (WSLU426) - venue frequencies, Loc 1 (Fox River Grove) ---
+  - id: chain_wslu426_462p4625
+    station_id: stn_wslu426
+    antenna_id: ant_wslu426
+    tx:
+      freq_mhz: 462.4625
+      emission: "11K0F3E"
+      power_w: 5.0
+      bandwidth_khz: 11.0
+    mode:
+      type: "FM"
+      notes: >
+        ULS freq ID 1, class MO. Also authorised 7K60FXD / 7K60F1E (DMR); on-air mode
+        not observed. Conventional 5.0 MHz pair with 467.4625 MHz, but only mobile
+        class is licensed - no repeater authorised.
+  - id: chain_wslu426_467p4625
+    station_id: stn_wslu426
+    antenna_id: ant_wslu426
+    tx:
+      freq_mhz: 467.4625
+      emission: "11K0F3E"
+      power_w: 5.0
+      bandwidth_khz: 11.0
+    mode:
+      type: "FM"
+      notes: >
+        ULS freq ID 2, class MO. Also authorised 7K60FXD / 7K60F1E (DMR); on-air mode
+        not observed. High half of the 462.4625 / 467.4625 pair.
+  - id: chain_wslu426_451p5375
+    station_id: stn_wslu426
+    antenna_id: ant_wslu426
+    tx:
+      freq_mhz: 451.5375
+      emission: "11K0F3E"
+      power_w: 5.0
+      bandwidth_khz: 11.0
+    mode:
+      type: "FM"
+      notes: >
+        ULS freq ID 3, class MO. Also authorised 7K60FXD / 7K60F1E (DMR); on-air mode
+        not observed. Conventional 5.0 MHz pair with 456.5375 MHz, mobile class only.
+  - id: chain_wslu426_456p5375
+    station_id: stn_wslu426
+    antenna_id: ant_wslu426
+    tx:
+      freq_mhz: 456.5375
+      emission: "11K0F3E"
+      power_w: 5.0
+      bandwidth_khz: 11.0
+    mode:
+      type: "FM"
+      notes: >
+        ULS freq ID 4, class MO. Also authorised 7K60FXD / 7K60F1E (DMR); on-air mode
+        not observed. High half of the 451.5375 / 456.5375 pair.
+  - id: chain_wslu426_452p1125
+    station_id: stn_wslu426
+    antenna_id: ant_wslu426
+    tx:
+      freq_mhz: 452.1125
+      emission: "11K0F3E"
+      power_w: 5.0
+      bandwidth_khz: 11.0
+    mode:
+      type: "FM"
+      notes: >
+        ULS freq ID 5, class MO. Also authorised 7K60FXD / 7K60F1E (DMR); on-air mode
+        not observed. Unpaired in this licence.
+  # --- Itinerant, Locs 2-8 (statewide CO, UT, NY, MN, WI, MI, IL) ---
+  - id: chain_wslu426_464p5125
+    station_id: stn_wslu426
+    antenna_id: ant_wslu426
+    tx:
+      freq_mhz: 464.5125
+      emission: "11K0F3E"
+      power_w: 5.0
+      bandwidth_khz: 11.0
+    mode:
+      type: "FM"
+      notes: >
+        ULS freq IDs 6-12, class MOI (mobile itinerant), one record per state:
+        CO, UT, NY, MN, WI, MI and IL. Standard shared UHF itinerant channel used
+        while travelling to competitions; expect other licensees on it. Also
+        authorised 7K60FXD / 7K60F1E (DMR); on-air mode not observed.
+
+assignments:
+  - id: asgn_wslu426_462p4625
+    channel_name: "WSLU426 462.4625"
+    rf_chain_id: chain_wslu426_462p4625
+    usage: "simplex"
+    authorization_id: auth_wslu426
+  - id: asgn_wslu426_467p4625
+    channel_name: "WSLU426 467.4625"
+    rf_chain_id: chain_wslu426_467p4625
+    usage: "simplex"
+    authorization_id: auth_wslu426
+  - id: asgn_wslu426_451p5375
+    channel_name: "WSLU426 451.5375"
+    rf_chain_id: chain_wslu426_451p5375
+    usage: "simplex"
+    authorization_id: auth_wslu426
+  - id: asgn_wslu426_456p5375
+    channel_name: "WSLU426 456.5375"
+    rf_chain_id: chain_wslu426_456p5375
+    usage: "simplex"
+    authorization_id: auth_wslu426
+  - id: asgn_wslu426_452p1125
+    channel_name: "WSLU426 452.1125"
+    rf_chain_id: chain_wslu426_452p1125
+    usage: "simplex"
+    authorization_id: auth_wslu426
+  - id: asgn_wslu426_464p5125
+    channel_name: "WSLU426 464.5125 itin"
+    rf_chain_id: chain_wslu426_464p5125
+    usage: "simplex"
+    authorization_id: auth_wslu426
