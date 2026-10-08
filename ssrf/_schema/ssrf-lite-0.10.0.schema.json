@@ -630,6 +630,18 @@
           "default": null,
           "description": "Emissions permitted on every channel in the plan, most typical first. Saves repeating a service-wide rule -- US CB allows AM, SSB, and FM on all 40 -- on each channel. A channel that declares its own `emission` or `emissions` overrides this.",
           "title": "Emissions"
+        },
+        "mode": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Mode"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Mode applied to every channel that does not declare its own. Saves repeating a plan-wide tone (NIFOG non-federal channels are 156.7 Hz throughout) on each channel."
         }
       },
       "required": [
@@ -747,7 +759,7 @@
             }
           ],
           "default": null,
-          "description": "Squelch and digital parameters the channel's convention specifies -- CTCSS/DCS tones, DMR color code and timeslots, P25 NAC. These are the agreed defaults for participating on the channel, not the settings of any one station: a deployed `rf_chains[].mode` overrides this for that station alone."
+          "description": "Squelch and digital parameters that are part of the channel's definition -- a regulator- or convention-specified CTCSS/DCS tone (NIFOG 156.7 Hz, GMRS travel tone 141.3 Hz) or a shared DMR simplex colour code. Written from the channel's transmitting station like an rf_chain mode: `ctcss_tx_hz` is what it sends, `ctcss_rx_hz` what keys it. A system's rf_chain on the same frequency describes an actual deployment and takes precedence."
         }
       },
       "required": [

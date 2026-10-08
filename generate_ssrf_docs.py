@@ -19,6 +19,7 @@ import yaml
 
 # Import from the existing generator
 from ssrf import load_ssrf_document, SSRFReference
+from ssrf.modes import mode_summary
 
 BASE = pathlib.Path(__file__).parent
 SSRF_ROOT = BASE / "ssrf"
@@ -305,12 +306,16 @@ def generate_file_documentation(file_info: Dict[str, Any]) -> str:
         for plan in reference.channel_plans:
             md.append(f"### {plan.name} (`{plan.id}`)")
             md.append("")
-            md.append("| Channel | Frequency | Emission |")
-            md.append("|---------|-----------|----------|")
+            md.append("| Channel | Frequency | Emission | Mode |")
+            md.append("|---------|-----------|----------|------|")
             for channel in plan.channels:
                 freq = f"{channel.freq_mhz:.4f} MHz" if channel.freq_mhz else "N/A"
-                emission = channel.emission or "N/A"
-                md.append(f"| {channel.name} | {freq} | {emission} |")
+                emission = ", ".join(e.emission for e in channel.permitted_emissions()) or "N/A"
+                mode = ""
+                if channel.mode:
+                    summary = mode_summary(channel.mode)
+                    mode = " ".join(filter(None, (summary["type"], summary["detail"])))
+                md.append(f"| {channel.name} | {freq} | {emission} | {mode} |")
             md.append("")
 
     # Assignments Summary

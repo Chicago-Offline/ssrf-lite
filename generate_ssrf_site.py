@@ -19,6 +19,7 @@ import yaml
 
 from ssrf import resolve_ssrf_roots
 from ssrf.emissions import mode_from_emission as _mode_from_emission
+from ssrf.modes import mode_summary as _mode_summary
 
 BASE = pathlib.Path(__file__).parent
 SSRF_ROOT = BASE / "ssrf"
@@ -307,6 +308,13 @@ def build_payload(ssrf_roots: Optional[List[pathlib.Path]] = None) -> Dict[str, 
                         for spec in permitted
                     ]
                     modes = [m for m in modes if m]
+                    if ch.mode:
+                        plan_mode = _mode_summary(ch.mode)
+                        mode_type = plan_mode["type"]
+                        mode_detail = plan_mode["detail"]
+                    else:
+                        mode_type = modes[0] if modes else None
+                        mode_detail = " / ".join(modes) if len(modes) > 1 else ""
                     ch_row = dict(row)
                     ch_row.update(
                         {
@@ -314,8 +322,8 @@ def build_payload(ssrf_roots: Optional[List[pathlib.Path]] = None) -> Dict[str, 
                             "name_derived": False,
                             "freq_mhz": ch.freq_mhz,
                             "input_mhz": ch.rx_freq_mhz,
-                            "mode": modes[0] if modes else None,
-                            "mode_detail": " / ".join(modes) if len(modes) > 1 else "",
+                            "mode": mode_type,
+                            "mode_detail": mode_detail,
                             "notes": ch.notes or row["notes"],
                         }
                     )

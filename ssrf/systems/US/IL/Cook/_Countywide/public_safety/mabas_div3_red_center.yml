@@ -1,0 +1,296 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+# SSRF-Lite: MABAS Division 3 / RED Center (Cook County, IL — countywide)
+# Source: RadioReference Wiki — RED Center
+# Notes: RED Center (Regional Emergency Dispatch) is MABAS Division 3, based in Northbrook, IL.
+#        Dispatch channels are P25 LSM simulcast (16 sites); use SDS100/SDS200/Unication G5 for
+#        reliable copy — conventional scanners will experience simulcast distortion.
+#        RED North dispatches: Northbrook, Prospect Hts, Wilmette, Winnetka, Deerfield-Bannockburn,
+#        Lincolnshire-Riverwoods, Long Grove, Northfield.
+#        RED South dispatches: North Maine FPD, Niles, Morton Grove, Park Ridge, Des Plaines.
+#        Glenview, Skokie, and Evanston have their own dispatch centers (see respective files).
+
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "RadioReference Wiki — RED Center / MABAS Division 3"
+      url: "https://wiki.radioreference.com/index.php/RED_Center"
+      accessed: "2026-10-08"
+    - name: "mabas3.org — Regional Emergency Dispatch"
+      url: "https://mabas3.org/about/regional-emergency-dispatch/"
+      accessed: "2026-10-08"
+
+organizations:
+  - id: org_red_center
+    name: "RED Center (Regional Emergency Dispatch)"
+  - id: org_mabas3
+    name: "MABAS Division 3"
+
+locations:
+  - id: loc_northbrook
+    name: "Northbrook, IL (RED Center HQ, approx)"
+    lat: 42.1253
+    lon: -87.8326
+  - id: loc_cook_countywide
+    name: "Cook County, IL (countywide)"
+    lat: 41.8781
+    lon: -87.6298
+
+stations:
+  - id: stn_red_center
+    call_sign:
+    organization_id: org_red_center
+    location_id: loc_northbrook
+    service: "public_safety_part90"
+  - id: stn_mabas3
+    call_sign:
+    organization_id: org_mabas3
+    location_id: loc_cook_countywide
+    service: "public_safety_part90"
+
+antennas:
+  - id: ant_red_center
+    station_id: stn_red_center
+    name: "RED Center antenna (Northbrook, approx)"
+  - id: ant_mabas3
+    station_id: stn_mabas3
+    name: "MABAS Div 3 antenna (countywide)"
+
+rf_chains:
+  # tx = radio transmit (repeater input), rx = radio receive (repeater output)
+
+  # RED Center Dispatch — P25 LSM simulcast, 16 sites
+  # ⚠ Requires SDS100/SDS200/Unication G5; conventional scanners get simulcast distortion
+  - id: chain_red_north_dispatch
+    station_id: stn_red_center
+    antenna_id: ant_red_center
+    tx:
+      freq_mhz: 159.660
+      emission: "8K10F1E"
+    rx:
+      freq_mhz: 153.9875
+    mode:
+      type: "P25"
+      nac: 2341
+      notes: "NAC $925. RED North Dispatch. P25 LSM simulcast 16 sites. SDS100/SDS200/G5 required."
+
+  - id: chain_red_south_dispatch
+    station_id: stn_red_center
+    antenna_id: ant_red_center
+    tx:
+      freq_mhz: 156.135
+      emission: "8K10F1E"
+    rx:
+      freq_mhz: 153.7475
+    mode:
+      type: "P25"
+      nac: 1147
+      notes: "NAC $47B. RED South Dispatch. P25 LSM simulcast 16 sites. SDS100/SDS200/G5 required."
+
+  # MABAS Division 3 — shared fireground and mutual aid (FM conventional)
+  - id: chain_mabas3_ifern
+    station_id: stn_mabas3
+    antenna_id: ant_mabas3
+    tx:
+      freq_mhz: 154.265
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 210.7
+      notes: "IFERN — MABAS mutual aid interoperability channel."
+
+  - id: chain_mabas3_ifern2
+    station_id: stn_mabas3
+    antenna_id: ant_mabas3
+    tx:
+      freq_mhz: 154.3025
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 67.0
+      notes: "IFERN 2 — secondary MABAS mutual aid channel."
+
+  - id: chain_mabas3_merci280
+    station_id: stn_mabas3
+    antenna_id: ant_mabas3
+    tx:
+      freq_mhz: 155.280
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      notes: "MERCI 280 — hospital coordination channel (CSQ, no tone)."
+
+  - id: chain_mabas3_iema_link
+    station_id: stn_mabas3
+    antenna_id: ant_mabas3
+    tx:
+      freq_mhz: 45.440
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      notes: "IEMA Link — low-band VHF Illinois Emergency Management Agency link channel."
+
+  # MABAS Division 3 — fireground tactical channels
+  - id: chain_mabas3_fg_red
+    station_id: stn_mabas3
+    antenna_id: ant_mabas3
+    tx:
+      freq_mhz: 153.830
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 69.3
+      notes: "Red Fireground."
+
+  - id: chain_mabas3_fg_blue
+    station_id: stn_mabas3
+    antenna_id: ant_mabas3
+    tx:
+      freq_mhz: 154.295
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 85.4
+      notes: "Blue Fireground."
+
+  - id: chain_mabas3_fg_white
+    station_id: stn_mabas3
+    antenna_id: ant_mabas3
+    tx:
+      freq_mhz: 154.280
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 74.4
+      notes: "White Fireground."
+
+  - id: chain_mabas3_fg_gold
+    station_id: stn_mabas3
+    antenna_id: ant_mabas3
+    tx:
+      freq_mhz: 153.8375
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 91.5
+      notes: "Gold Fireground."
+
+  - id: chain_mabas3_fg_black
+    station_id: stn_mabas3
+    antenna_id: ant_mabas3
+    tx:
+      freq_mhz: 154.2725
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 94.8
+      notes: "Black Fireground."
+
+  - id: chain_mabas3_fg_gray
+    station_id: stn_mabas3
+    antenna_id: ant_mabas3
+    tx:
+      freq_mhz: 154.2875
+      emission: "11K2F3E"
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 136.5
+      notes: "Gray Fireground."
+
+authorizations:
+  - id: auth_red_center
+    authority: "FCC"
+    service: "public_safety_part90"
+    notes: "RED Center (Regional Emergency Dispatch), Northbrook IL. Call sign(s) not published on source page; FCC ULS lookup pending."
+  - id: auth_mabas3
+    authority: "FCC"
+    service: "public_safety_part90"
+    notes: "MABAS Division 3 shared channels. Source: CARMA frequency list via RadioReference wiki."
+
+assignments:
+  - id: asgn_red_north_dispatch
+    channel_name: "RED North Dsp"
+    rf_chain_id: chain_red_north_dispatch
+    authorization_id: auth_red_center
+    usage: "repeater"
+
+  - id: asgn_red_south_dispatch
+    channel_name: "RED South Dsp"
+    rf_chain_id: chain_red_south_dispatch
+    authorization_id: auth_red_center
+    usage: "repeater"
+
+  - id: asgn_mabas3_ifern
+    channel_name: "IFERN"
+    rf_chain_id: chain_mabas3_ifern
+    authorization_id: auth_mabas3
+    usage: "simplex"
+
+  - id: asgn_mabas3_ifern2
+    channel_name: "IFERN 2"
+    rf_chain_id: chain_mabas3_ifern2
+    authorization_id: auth_mabas3
+    usage: "simplex"
+
+  - id: asgn_mabas3_merci280
+    channel_name: "MERCI 280"
+    rf_chain_id: chain_mabas3_merci280
+    authorization_id: auth_mabas3
+    usage: "simplex"
+
+  - id: asgn_mabas3_iema_link
+    channel_name: "IEMA Link"
+    rf_chain_id: chain_mabas3_iema_link
+    authorization_id: auth_mabas3
+    usage: "simplex"
+
+  - id: asgn_mabas3_fg_red
+    channel_name: "FG Red"
+    rf_chain_id: chain_mabas3_fg_red
+    authorization_id: auth_mabas3
+    usage: "simplex"
+
+  - id: asgn_mabas3_fg_blue
+    channel_name: "FG Blue"
+    rf_chain_id: chain_mabas3_fg_blue
+    authorization_id: auth_mabas3
+    usage: "simplex"
+
+  - id: asgn_mabas3_fg_white
+    channel_name: "FG White"
+    rf_chain_id: chain_mabas3_fg_white
+    authorization_id: auth_mabas3
+    usage: "simplex"
+
+  - id: asgn_mabas3_fg_gold
+    channel_name: "FG Gold"
+    rf_chain_id: chain_mabas3_fg_gold
+    authorization_id: auth_mabas3
+    usage: "simplex"
+
+  - id: asgn_mabas3_fg_black
+    channel_name: "FG Black"
+    rf_chain_id: chain_mabas3_fg_black
+    authorization_id: auth_mabas3
+    usage: "simplex"
+
+  - id: asgn_mabas3_fg_gray
+    channel_name: "FG Gray"
+    rf_chain_id: chain_mabas3_fg_gray
+    authorization_id: auth_mabas3
+    usage: "simplex"
+
+comments:
+  - text: >
+      RED Center (Regional Emergency Dispatch) is MABAS Division 3, currently headquartered in Northbrook, IL.
+      Dispatch channels use P25 LSM (Linear Simulcast Modulation) across 16 sites — a Uniden SDS100/SDS200
+      or Unication G5 is required for reliable decode; conventional scanners experience simulcast distortion.
+      RED North and RED South are the primary dispatch repeaters; inputs (159.660 / 156.135) are the
+      radio TX legs; outputs (153.9875 / 153.7475) are what a receiver hears. The 6 named fireground
+      channels (Red/Blue/White/Gold/Black/Gray) are division-wide MABAS tactical simplex channels.
+      IFERN and IFERN 2 are Illinois interoperability mutual aid channels used by MABAS.
+      MERCI 280 (155.280) is the hospital coordination channel, CSQ.
+      45.440 MHz is the low-band IEMA link channel.
+      Source: CARMA frequency list via RadioReference wiki, accessed 2026-10-08.
+      Call signs for RED Center transmitters not published on source page; FCC ULS lookup pending.

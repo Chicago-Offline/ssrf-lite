@@ -194,12 +194,7 @@ def _record_from_plan_channel(
 ) -> Dict[str, Any]:
     name = name_override or ch.name
     designator = emission.emission if emission else ch.emission
-    # Squelch and digital parameters the channel's convention specifies. A
-    # deployed rf_chain overrides these for its own station (see spec 2.6),
-    # but a plan channel is often the only record that carries them -- the
-    # CTCSS a NIFOG interop channel expects, or an agreed DMR simplex color
-    # code. These were hardcoded None, which silently dropped every one.
-    mode = getattr(ch, "mode", None)
+    mode = ch.mode
     dcs, dcs_polarity = _encode_dcs(mode) if mode else (None, None)
     return {
         "callsign": None,
@@ -214,13 +209,9 @@ def _record_from_plan_channel(
         "lat": None,
         "lon": None,
         "service": a.service or plan.service,
-        # Plan channels carry an ITU emission designator instead of a full Mode
-        # object; infer analog-voice mode from it so downstream radio zone
-        # filters (which match on mode: FM) can pick up simplex/calling
-        # channels. Was hardcoded None, which silently dropped every plan
-        # channel from mode-filtered zones.
-        # Per-emission mode wins for its own entry; a channel-level mode.type
-        # states the channel's primary modulation; else infer from designator.
+        # A plan channel may carry a full Mode (regulatory tone, shared DMR
+        # colour code); otherwise infer analog-voice mode from the ITU
+        # designator so mode-filtered zones still pick up plan channels.
         "mode": (emission.mode if emission and emission.mode else None)
         or (mode.type if mode else None)
         or _mode_from_emission(designator),

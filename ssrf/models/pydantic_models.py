@@ -15,6 +15,8 @@ import yaml
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 from typing import Literal
 
+from ssrf.emissions import mode_from_emission
+
 
 BASE_DIR = Path(__file__).resolve().parent
 _SERVICES_PATH = BASE_DIR.parent / "_taxonomies" / "services.yaml"
@@ -490,11 +492,13 @@ class ChannelPlanChannel(BaseModel):
     mode: Optional[Mode] = Field(
         default=None,
         description=(
-            "Squelch and digital parameters the channel's convention "
-            "specifies -- CTCSS/DCS tones, DMR color code and timeslots, P25 "
-            "NAC. These are the agreed defaults for participating on the "
-            "channel, not the settings of any one station: a deployed "
-            "`rf_chains[].mode` overrides this for that station alone."
+            "Squelch and digital parameters that are part of the channel's "
+            "definition -- a regulator- or convention-specified CTCSS/DCS tone "
+            "(NIFOG 156.7 Hz, GMRS travel tone 141.3 Hz) or a shared DMR "
+            "simplex colour code. Written from the channel's transmitting "
+            "station like an rf_chain mode: `ctcss_tx_hz` is what it sends, "
+            "`ctcss_rx_hz` what keys it. A system's rf_chain on the same "
+            "frequency describes an actual deployment and takes precedence."
         ),
     )
 
@@ -512,7 +516,31 @@ class ChannelPlanChannel(BaseModel):
                     f"channel '{self.name}' has an empty `emissions` list. Omit "
                     "the key, or list at least one emission."
                 )
+        self.check_mode_agrees_with_emissions()
         return self
+
+    def check_mode_agrees_with_emissions(self) -> None:
+        """A `mode` block describes one modulation; it cannot span several."""
+
+        if self.mode is None:
+            return
+        permitted = self.permitted_emissions()
+        if len(permitted) > 1:
+            raise ValueError(
+                f"channel '{self.name}' sets `mode` alongside {len(permitted)} "
+                "`emissions`. Tones and colour codes belong to one modulation; "
+                "split the channel per emission or drop `mode`."
+            )
+        if permitted:
+            spec = permitted[0]
+            implied = spec.mode or mode_from_emission(spec.emission)
+            # J3E alone cannot tell USB from LSB; only an explicit spec.mode can.
+            ambiguous = spec.mode is None and implied in ("USB", "LSB")
+            if implied and not ambiguous and implied != self.mode.type:
+                raise ValueError(
+                    f"channel '{self.name}' has mode.type {self.mode.type!r} but "
+                    f"its emission {spec.emission!r} implies {implied!r}."
+                )
 
     def permitted_emissions(self) -> List[Emission]:
         """Emissions this channel allows, whichever style declared them."""
@@ -542,6 +570,14 @@ class ChannelPlan(BaseModel):
             "declares its own `emission` or `emissions` overrides this."
         ),
     )
+    mode: Optional[Mode] = Field(
+        default=None,
+        description=(
+            "Mode applied to every channel that does not declare its own. "
+            "Saves repeating a plan-wide tone (NIFOG non-federal channels "
+            "are 156.7 Hz throughout) on each channel."
+        ),
+    )
 
     @field_validator("service", mode="before")
     @classmethod
@@ -549,11 +585,15 @@ class ChannelPlan(BaseModel):
         return _normalize_service_optional(value)
 
     @model_validator(mode="after")
-    def _apply_plan_emissions(self) -> "ChannelPlan":
-        if self.emissions:
-            for channel in self.channels:
-                if channel.emission is None and channel.emissions is None:
-                    channel.emissions = list(self.emissions)
+    def _apply_plan_defaults(self) -> "ChannelPlan":
+        for channel in self.channels:
+            if self.emissions and channel.emission is None and channel.emissions is None:
+                channel.emissions = list(self.emissions)
+            if self.mode is not None and channel.mode is None:
+                channel.mode = self.mode.model_copy(deep=True)
+            # Re-check: a plan default may have landed next to the channel's
+            # own emissions after the channel validated itself.
+            channel.check_mode_agrees_with_emissions()
         return self
 
 
@@ -673,63 +713,21 @@ def _extract_reference_payload(data: Any) -> Dict[str, Any]:
         key: value for key, value in data.items() if key in allowed_keys
     }
 
-    assignments_block = filtered.get("assignments")
-    if isinstance(assignments_block, list):
-        cleaned_assignments: List[Dict[str, Any]] = []
-        for entry in assignments_block:
-            if not isinstance(entry, dict):
-                continue
-            cleaned = dict(entry)
-            cleaned.pop("codeplug", None)
-            cleaned.pop("zones", None)
-            cleaned.pop("scan", None)
-            if "comment" in cleaned and "notes" not in cleaned:
-                cleaned["notes"] = cleaned.pop("comment")
-            cleaned_assignments.append(cleaned)
-        filtered["assignments"] = cleaned_assignments
-
-    channel_plans_block = filtered.get("channel_plans")
-    if isinstance(channel_plans_block, list):
-        cleaned_plans: List[Dict[str, Any]] = []
-        for plan in channel_plans_block:
-            if not isinstance(plan, dict):
-                continue
-            plan_copy = dict(plan)
-            channels = plan_copy.get("channels")
-            if isinstance(channels, list):
-                new_channels: List[Dict[str, Any]] = []
-                for ch in channels:
-                    if not isinstance(ch, dict):
-                        continue
-                    # The surrounding whitelist would drop this silently, and a
-                    # silently halved duplex pair is worse than a load failure.
-                    if "tx_freq_mhz" in ch:
-                        raise ValueError(
-                            f"channel {ch.get('name', '?')!r} uses `tx_freq_mhz`, "
-                            "removed in SSRF-Lite 0.9.0. Channel plans now describe "
-                            "the transmitting station: `freq_mhz` is what it "
-                            "radiates and `rx_freq_mhz` is what it receives. The "
-                            "old `tx_freq_mhz` value is the station's receive "
-                            "frequency, so rename the key and keep the value."
-                        )
-                    channel_copy = {
-                        key: ch[key]
-                        for key in (
-                            "name",
-                            "short_name",
-                            "freq_mhz",
-                            "rx_freq_mhz",
-                            "notes",
-                            "emission",
-                            "bandwidth_khz",
-                            "emissions",
-                        )
-                        if key in ch
-                    }
-                    new_channels.append(channel_copy)
-                plan_copy["channels"] = new_channels
-            cleaned_plans.append(plan_copy)
-        filtered["channel_plans"] = cleaned_plans
+    # Pydantic's extra="forbid" would reject this too, but with a message that
+    # cannot explain the 0.9.0 rename or that the value is kept as-is.
+    for plan in filtered.get("channel_plans") or []:
+        if not isinstance(plan, dict):
+            continue
+        for ch in plan.get("channels") or []:
+            if isinstance(ch, dict) and "tx_freq_mhz" in ch:
+                raise ValueError(
+                    f"channel {ch.get('name', '?')!r} uses `tx_freq_mhz`, "
+                    "removed in SSRF-Lite 0.9.0. Channel plans now describe "
+                    "the transmitting station: `freq_mhz` is what it "
+                    "radiates and `rx_freq_mhz` is what it receives. The "
+                    "old `tx_freq_mhz` value is the station's receive "
+                    "frequency, so rename the key and keep the value."
+                )
 
     return filtered
 

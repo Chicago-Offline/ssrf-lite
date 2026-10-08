@@ -1,6 +1,9 @@
 # yaml-language-server: $schema=../../../_schema/ssrf-lite-0.10.0.schema.json
-# SSRF-Lite: US Ham DMR Simplex
-# Two commonly used UHF DMR simplex presets. Include a basic TG99 contact for TX use.
+# SSRF-Lite: US Ham DMR Simplex & Hotspot
+# Common DMR simplex presets plus WWARA hotspot simplex and duplex channels.
+# These are conventions, not deployments, so they live in a channel plan; the
+# colour code and timeslots are part of the convention and ride on the plan's
+# `mode`. Include a basic TG99 contact for TX use.
 
 $schema: "../../../_schema/ssrf-lite-0.10.0.schema.json"
 ssrf_lite_version: "0.10.0"
@@ -13,241 +16,93 @@ contacts:
       default_timeslot: 1,
     }
 
-organizations:
-  - id: org_ham_dmr_smpx
-    name: "US Ham DMR Simplex"
-
-locations:
-  - id: loc_chi
-    name: "Chicago (approx)"
-    lat: 41.8781
-    lon: -87.6298
-
-stations:
-  - id: stn_ham_dmr
-    call_sign: null
-    organization_id: org_ham_dmr_smpx
-    location_id: loc_chi
+channel_plans:
+  - id: chplan_us_ham_dmr_simplex
+    name: "US Ham DMR Simplex & Hotspot"
     service: "amateur"
-
-antennas:
-  - id: ant_portable
-    station_id: stn_ham_dmr
-    name: "Portable"
-
-rf_chains:
-  - {
-      id: chain_dmr_smpx_446500,
-      station_id: stn_ham_dmr,
-      antenna_id: ant_portable,
-      rx: { freq_mhz: 446.500 },
-      tx: { freq_mhz: 446.500, emission: "7K60FXE"  },
-      mode: { type: "DMR", color_code: 1 },
-    }
-  - {
-      id: chain_dmr_smpx_446075,
-      station_id: stn_ham_dmr,
-      antenna_id: ant_portable,
-      rx: { freq_mhz: 446.075 },
-      tx: { freq_mhz: 446.075, emission: "7K60FXE"  },
-      mode: { type: "DMR", color_code: 1 },
-    }
-  - {
-      id: chain_dmr_hs_4304125,
-      station_id: stn_ham_dmr,
-      antenna_id: ant_portable,
-      rx: { freq_mhz: 430.4125 },
-      tx: { freq_mhz: 430.4125, emission: "7K60FXE"  },
-      mode: { type: "DMR", color_code: 1 },
-    }
-  - {
-      id: chain_dmr_hs_4304250,
-      station_id: stn_ham_dmr,
-      antenna_id: ant_portable,
-      rx: { freq_mhz: 430.4250 },
-      tx: { freq_mhz: 430.4250, emission: "7K60FXE"  },
-      mode: { type: "DMR", color_code: 1 },
-    }
-  - {
-      id: chain_dmr_hs_4394125,
-      station_id: stn_ham_dmr,
-      antenna_id: ant_portable,
-      rx: { freq_mhz: 439.4125 },
-      tx: { freq_mhz: 439.4125, emission: "7K60FXE"  },
-      mode: { type: "DMR", color_code: 1 },
-    }
-  - {
-      id: chain_dmr_hs_4394250,
-      station_id: stn_ham_dmr,
-      antenna_id: ant_portable,
-      rx: { freq_mhz: 439.4250 },
-      tx: { freq_mhz: 439.4250, emission: "7K60FXE"  },
-      mode: { type: "DMR", color_code: 1 },
-    }
-  - {
-      id: chain_dmr_hs_duplex_4394375,
-      station_id: stn_ham_dmr,
-      antenna_id: ant_portable,
-      rx: { freq_mhz: 430.4375 },
-      tx: { freq_mhz: 439.4375, emission: "7K60FXE"  },
-      mode: { type: "DMR", color_code: 1, timeslots: [1, 2] },
-    }
-  - {
-      id: chain_dmr_hs_duplex_4394500,
-      station_id: stn_ham_dmr,
-      antenna_id: ant_portable,
-      rx: { freq_mhz: 430.4500 },
-      tx: { freq_mhz: 439.4500, emission: "7K60FXE"  },
-      mode: { type: "DMR", color_code: 1, timeslots: [1, 2] },
-    }
-  - {
-      id: chain_dmr_hs_duplex_4394625,
-      station_id: stn_ham_dmr,
-      antenna_id: ant_portable,
-      rx: { freq_mhz: 430.4625 },
-      tx: { freq_mhz: 439.4625, emission: "7K60FXE"  },
-      mode: { type: "DMR", color_code: 1, timeslots: [1, 2] },
-    }
-  - {
-      id: chain_dmr_hs_duplex_4394750,
-      station_id: stn_ham_dmr,
-      antenna_id: ant_portable,
-      rx: { freq_mhz: 430.4750 },
-      tx: { freq_mhz: 439.4750, emission: "7K60FXE"  },
-      mode: { type: "DMR", color_code: 1, timeslots: [1, 2] },
-    }
-  - {
-      id: chain_dmr_hs_duplex_4304375,
-      station_id: stn_ham_dmr,
-      antenna_id: ant_portable,
-      rx: { freq_mhz: 439.4375 },
-      tx: { freq_mhz: 430.4375, emission: "7K60FXE"  },
-      mode: { type: "DMR", color_code: 1, timeslots: [1, 2] },
-    }
-  - {
-      id: chain_dmr_hs_duplex_4304500,
-      station_id: stn_ham_dmr,
-      antenna_id: ant_portable,
-      rx: { freq_mhz: 439.4500 },
-      tx: { freq_mhz: 430.4500, emission: "7K60FXE"  },
-      mode: { type: "DMR", color_code: 1, timeslots: [1, 2] },
-    }
-  - {
-      id: chain_dmr_hs_duplex_4304625,
-      station_id: stn_ham_dmr,
-      antenna_id: ant_portable,
-      rx: { freq_mhz: 439.4625 },
-      tx: { freq_mhz: 430.4625, emission: "7K60FXE"  },
-      mode: { type: "DMR", color_code: 1, timeslots: [1, 2] },
-    }
-  - {
-      id: chain_dmr_hs_duplex_4304750,
-      station_id: stn_ham_dmr,
-      antenna_id: ant_portable,
-      rx: { freq_mhz: 439.4750 },
-      tx: { freq_mhz: 430.4750, emission: "7K60FXE"  },
-      mode: { type: "DMR", color_code: 1, timeslots: [1, 2] },
-    }
+    emissions:
+      - emission: "7K60FXE"
+        mode: "DMR"
+    # Simplex has no repeater to sync against, so either slot works; TS1 is
+    # the convention (TG 99 / TS1) and the contact's default_timeslot selects it.
+    mode: { type: "DMR", color_code: 1, timeslots: [1, 2] }
+    channels:
+      - name: "DMR 446.500"
+        short_name: "DMR500"
+        freq_mhz: 446.500
+      - name: "DMR 446.075"
+        short_name: "DMR075"
+        freq_mhz: 446.075
+      - name: "HS 430.4125"
+        short_name: "H30412"
+        freq_mhz: 430.4125
+      - name: "HS 430.4250"
+        short_name: "H30425"
+        freq_mhz: 430.4250
+      - name: "HS 439.4125"
+        short_name: "H39412"
+        freq_mhz: 439.4125
+      - name: "HS 439.4250"
+        short_name: "H39425"
+        freq_mhz: 439.4250
+      # Duplex hotspot pairs: freq_mhz is what the hotspot transmits,
+      # rx_freq_mhz what it listens on. Each pair is listed both ways round.
+      - name: "HS Dup 439.4375"
+        short_name: "D39437"
+        freq_mhz: 439.4375
+        rx_freq_mhz: 430.4375
+        mode: { type: "DMR", color_code: 1, timeslots: [1, 2] }
+      - name: "HS Dup 439.4500"
+        short_name: "D39450"
+        freq_mhz: 439.4500
+        rx_freq_mhz: 430.4500
+        mode: { type: "DMR", color_code: 1, timeslots: [1, 2] }
+      - name: "HS Dup 439.4625"
+        short_name: "D39462"
+        freq_mhz: 439.4625
+        rx_freq_mhz: 430.4625
+        mode: { type: "DMR", color_code: 1, timeslots: [1, 2] }
+      - name: "HS Dup 439.4750"
+        short_name: "D39475"
+        freq_mhz: 439.4750
+        rx_freq_mhz: 430.4750
+        mode: { type: "DMR", color_code: 1, timeslots: [1, 2] }
+      - name: "HS Dup 430.4375"
+        short_name: "D30437"
+        freq_mhz: 430.4375
+        rx_freq_mhz: 439.4375
+        mode: { type: "DMR", color_code: 1, timeslots: [1, 2] }
+      - name: "HS Dup 430.4500"
+        short_name: "D30450"
+        freq_mhz: 430.4500
+        rx_freq_mhz: 439.4500
+        mode: { type: "DMR", color_code: 1, timeslots: [1, 2] }
+      - name: "HS Dup 430.4625"
+        short_name: "D30462"
+        freq_mhz: 430.4625
+        rx_freq_mhz: 439.4625
+        mode: { type: "DMR", color_code: 1, timeslots: [1, 2] }
+      - name: "HS Dup 430.4750"
+        short_name: "D30475"
+        freq_mhz: 430.4750
+        rx_freq_mhz: 439.4750
+        mode: { type: "DMR", color_code: 1, timeslots: [1, 2] }
 
 assignments:
-  - {
-      id: asg_dmr_smpx_446500,
-      short_name: "DMR500",
-      channel_name: "DMR 446.500",
-      rf_chain_id: chain_dmr_smpx_446500,
-      usage: "simplex",
-    }
-  - {
-      id: asg_dmr_smpx_446075,
-      short_name: "DMR075",
-      channel_name: "DMR 446.075",
-      rf_chain_id: chain_dmr_smpx_446075,
-      usage: "simplex",
-    }
-  - {
-      id: asg_dmr_hs_4304125,
-      short_name: "H30412",
-      channel_name: "HS 430.4125",
-      rf_chain_id: chain_dmr_hs_4304125,
-      usage: "simplex",
-    }
-  - {
-      id: asg_dmr_hs_4304250,
-      short_name: "H30425",
-      channel_name: "HS 430.4250",
-      rf_chain_id: chain_dmr_hs_4304250,
-      usage: "simplex",
-    }
-  - {
-      id: asg_dmr_hs_4394125,
-      short_name: "H39412",
-      channel_name: "HS 439.4125",
-      rf_chain_id: chain_dmr_hs_4394125,
-      usage: "simplex",
-    }
-  - {
-      id: asg_dmr_hs_4394250,
-      short_name: "H39425",
-      channel_name: "HS 439.4250",
-      rf_chain_id: chain_dmr_hs_4394250,
-      usage: "simplex",
-    }
-  - {
-      id: asg_dmr_hs_duplex_4394375,
-      short_name: "D39437",
-      channel_name: "HS Dup 439.4375",
-      rf_chain_id: chain_dmr_hs_duplex_4394375,
-      usage: "repeater",
-    }
-  - {
-      id: asg_dmr_hs_duplex_4394500,
-      short_name: "D39450",
-      channel_name: "HS Dup 439.4500",
-      rf_chain_id: chain_dmr_hs_duplex_4394500,
-      usage: "repeater",
-    }
-  - {
-      id: asg_dmr_hs_duplex_4394625,
-      short_name: "D39462",
-      channel_name: "HS Dup 439.4625",
-      rf_chain_id: chain_dmr_hs_duplex_4394625,
-      usage: "repeater",
-    }
-  - {
-      id: asg_dmr_hs_duplex_4394750,
-      short_name: "D39475",
-      channel_name: "HS Dup 439.4750",
-      rf_chain_id: chain_dmr_hs_duplex_4394750,
-      usage: "repeater",
-    }
-  - {
-      id: asg_dmr_hs_duplex_4304375,
-      short_name: "D30437",
-      channel_name: "HS Dup 430.4375",
-      rf_chain_id: chain_dmr_hs_duplex_4304375,
-      usage: "repeater",
-    }
-  - {
-      id: asg_dmr_hs_duplex_4304500,
-      short_name: "D30450",
-      channel_name: "HS Dup 430.4500",
-      rf_chain_id: chain_dmr_hs_duplex_4304500,
-      usage: "repeater",
-    }
-  - {
-      id: asg_dmr_hs_duplex_4304625,
-      short_name: "D30462",
-      channel_name: "HS Dup 430.4625",
-      rf_chain_id: chain_dmr_hs_duplex_4304625,
-      usage: "repeater",
-    }
-  - {
-      id: asg_dmr_hs_duplex_4304750,
-      short_name: "D30475",
-      channel_name: "HS Dup 430.4750",
-      rf_chain_id: chain_dmr_hs_duplex_4304750,
-      usage: "repeater",
-    }
+  - { id: asg_dmr_smpx_446500, channel_plan_id: chplan_us_ham_dmr_simplex, channel_name: "DMR 446.500", usage: "simplex" }
+  - { id: asg_dmr_smpx_446075, channel_plan_id: chplan_us_ham_dmr_simplex, channel_name: "DMR 446.075", usage: "simplex" }
+  - { id: asg_dmr_hs_4304125, channel_plan_id: chplan_us_ham_dmr_simplex, channel_name: "HS 430.4125", usage: "simplex" }
+  - { id: asg_dmr_hs_4304250, channel_plan_id: chplan_us_ham_dmr_simplex, channel_name: "HS 430.4250", usage: "simplex" }
+  - { id: asg_dmr_hs_4394125, channel_plan_id: chplan_us_ham_dmr_simplex, channel_name: "HS 439.4125", usage: "simplex" }
+  - { id: asg_dmr_hs_4394250, channel_plan_id: chplan_us_ham_dmr_simplex, channel_name: "HS 439.4250", usage: "simplex" }
+  - { id: asg_dmr_hs_duplex_4394375, channel_plan_id: chplan_us_ham_dmr_simplex, channel_name: "HS Dup 439.4375", usage: "repeater" }
+  - { id: asg_dmr_hs_duplex_4394500, channel_plan_id: chplan_us_ham_dmr_simplex, channel_name: "HS Dup 439.4500", usage: "repeater" }
+  - { id: asg_dmr_hs_duplex_4394625, channel_plan_id: chplan_us_ham_dmr_simplex, channel_name: "HS Dup 439.4625", usage: "repeater" }
+  - { id: asg_dmr_hs_duplex_4394750, channel_plan_id: chplan_us_ham_dmr_simplex, channel_name: "HS Dup 439.4750", usage: "repeater" }
+  - { id: asg_dmr_hs_duplex_4304375, channel_plan_id: chplan_us_ham_dmr_simplex, channel_name: "HS Dup 430.4375", usage: "repeater" }
+  - { id: asg_dmr_hs_duplex_4304500, channel_plan_id: chplan_us_ham_dmr_simplex, channel_name: "HS Dup 430.4500", usage: "repeater" }
+  - { id: asg_dmr_hs_duplex_4304625, channel_plan_id: chplan_us_ham_dmr_simplex, channel_name: "HS Dup 430.4625", usage: "repeater" }
+  - { id: asg_dmr_hs_duplex_4304750, channel_plan_id: chplan_us_ham_dmr_simplex, channel_name: "HS Dup 430.4750", usage: "repeater" }
 
 comments:
   - text: |
