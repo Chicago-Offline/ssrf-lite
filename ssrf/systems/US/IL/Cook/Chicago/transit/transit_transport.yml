@@ -35,8 +35,13 @@ rf_chains:
       tx: { freq_mhz: 461.575, emission: "11K2F3E" },
       mode: { type: "FM" },
     }
-  # 461.825 DMR CC6 removed: confirmed First Student Skokie Yard per RR aid/10887
-  # (School Bus/Mass Transit Cook County) — now in first_student.yml.
+  - {
+      id: ch_cta_ops2,
+      station_id: stn_transit,
+      antenna_id: ant_t,
+      tx: { freq_mhz: 461.825, emission: "7K60FXE" },
+      mode: { type: "DMR", color_code: 6, timeslots: [1] },
+    }
   - {
       id: ch_cta_yard,
       station_id: stn_transit,
@@ -82,7 +87,10 @@ assignments:
     channel_name: "CTA 1"
     rf_chain_id: ch_cta_ops1
     usage: "simplex"
-  # asg_cta2 removed with ch_cta_ops2 — see above.
+  - id: asg_cta2
+    channel_name: "CTA 2"
+    rf_chain_id: ch_cta_ops2
+    usage: "simplex"
   - id: asg_cta_yard
     channel_name: "CTA Yard"
     rf_chain_id: ch_cta_yard
