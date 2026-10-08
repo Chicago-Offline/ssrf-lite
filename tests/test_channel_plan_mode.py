@@ -1,4 +1,10 @@
-"""Channel plans that carry a Mode: regulatory tones and shared digital params."""
+"""Channel plans that carry the convention's squelch and digital parameters.
+
+A channel plan records an agreed channel definition. Where that agreement
+includes a CTCSS tone (NIFOG interop) or a DMR color code and timeslot (an
+agreed simplex channel), the plan is often the only record carrying it --
+there may be no deployed station to hang an rf_chain off. See spec 2.6.
+"""
 
 from __future__ import annotations
 

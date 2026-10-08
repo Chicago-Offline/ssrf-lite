@@ -380,6 +380,42 @@ Fields:
 
 Each `emissions[]` entry carries `emission` (required ITU designator), plus optional `mode`, `bandwidth_khz`, `power_w`, and `notes`. Set `mode` where the designator is ambiguous — `J3E` covers both `USB` and `LSB`.  
 
+#### Channel plans vs. deployed chains
+
+A channel plan records a **convention**: the agreed definition of a channel,
+whether that agreement comes from a regulator (NOAA, marine, GMRS) or from
+community practice (amateur simplex calling frequencies, NIFOG interop
+channels). An `rf_chain` records what one **specific station actually does**.
+
+The same frequency routinely appears in both. They answer different questions,
+and neither replaces the other:
+
+- The plan entry is the **convention baseline** — what a radio should use to
+  participate, absent any local knowledge.
+- The `rf_chain` is **authoritative for that station**. Where the two differ,
+  the chain wins *for that station only*.
+
+A consumer resolving a channel for a given station takes the chain's value for
+every field the chain sets, and falls back to the plan for fields it does not.
+That fallback covers `emission`, `bandwidth_khz`, and `mode`.
+
+**A plan that disagrees with a local deployment is not a data error, and the
+plan must not be edited to match one site.** NIFOG defines VTAC11 nationally;
+an individual licensee may be authorized with different parameters. Both
+records are correct at their own scope, and flattening one into the other
+destroys the distinction.
+
+A channel's `mode` carries the squelch and digital parameters the convention
+specifies — CTCSS/DCS tones, DMR color code and timeslots, P25 NAC — using the
+same `Mode` shape as `rf_chains[].mode` (§2.5). Use it for values that are part
+of the agreed channel definition: the CTCSS a NIFOG interop channel expects, or
+the color code and timeslot an agreed DMR simplex channel runs. Do **not** use
+it for one station's local choices; those belong on that station's chain.
+
+Where a channel declares both `mode` and multiple `emissions[]`, `mode.type`
+states the channel's primary modulation; per-emission `mode` strings refine
+individual entries and win for those entries.
+
 ---
 
 ### 2.7 Authorization

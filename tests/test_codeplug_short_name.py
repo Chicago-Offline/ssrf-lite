@@ -183,7 +183,7 @@ def test_rf_chain_record_keeps_the_frequency_that_names_the_repeater() -> None:
 
 PLAN_DOC = textwrap.dedent(
     """\
-    ssrf_lite_version: "0.9.0"
+    ssrf_lite_version: "0.10.0"
     channel_plans:
       - id: test_marine_plan
         name: "Test Marine VHF"
@@ -205,7 +205,7 @@ PLAN_DOC = textwrap.dedent(
 
 OVERRIDE_DOC = textwrap.dedent(
     """\
-    ssrf_lite_version: "0.9.0"
+    ssrf_lite_version: "0.10.0"
     channel_plans:
       - id: test_plan
         name: "Test Plan"
@@ -233,7 +233,7 @@ OVERRIDE_DOC = textwrap.dedent(
 
 FANOUT_DOC = textwrap.dedent(
     """\
-    ssrf_lite_version: "0.9.0"
+    ssrf_lite_version: "0.10.0"
     channel_plans:
       - id: test_fanout
         name: "Test Fanout"
