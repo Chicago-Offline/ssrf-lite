@@ -4,8 +4,8 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ## Quick Statistics
 
-- **Total SSRF Files:** 72
-- **Total Assignments:** 1,323
+- **Total SSRF Files:** 73
+- **Total Assignments:** 1,338
 - **Services Covered:** 12
 - **Modes:** AM, APRS, C4FM, CW, D-STAR, DMR, FM, NFM, NXDN, P25, PACKET
 - **Frequency Bands:** 5
@@ -37,7 +37,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |------|----------|-------------|-------|------------------|
 | [mmdvm_duplex_hotspot](mmdvm_duplex_hotspot.md) | amateur | 2 | DMR | custom / mmdvm_duplex_hotspot.yml |
 
-### Geographic System (57 files)
+### Geographic System (58 files)
 
 | File | Services | Assignments | Modes | Geographic Scope |
 |------|----------|-------------|-------|------------------|
@@ -71,6 +71,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [skokie_businesses](skokie_businesses.md) | business_itinerant_part90 | 68 | DMR, FM | US / IL / Cook / Skokie |
 | [skokie_public_safety](skokie_public_safety.md) | public_safety_part90 | 5 | FM | US / IL / Cook / Skokie |
 | [paaros_repeaters](paaros_repeaters.md) | amateur | 4 | FM, C4FM, D-STAR | US / IL / Cook / _Countywide |
+| [first_student](first_student.md) | business_itinerant_part90 | 15 | DMR, FM | US / IL / Cook / _Countywide |
 | [nsea_gmrs_repeaters](nsea_gmrs_repeaters.md) | gmrs | 4 | FM | US / IL / Cook / _Countywide |
 | [cook_county_interop](cook_county_interop.md) | public_safety_part90 | 9 | FM | US / IL / Cook / _Countywide |
 | [cook_county_sheriff](cook_county_sheriff.md) | public_safety_part90 | 15 | P25, FM | US / IL / Cook / _Countywide |
@@ -106,7 +107,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ### US
 - **FL:** 3 files
-- **IL:** 36 files
+- **IL:** 37 files
 - **IN:** 4 files
 - **MI:** 3 files
 - **National/Regional:** 13 files
@@ -124,7 +125,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |---------|------------------|-------|
 | amateur | 122 | 23 |
 | aviation | 164 | 2 |
-| business_itinerant_part90 | 391 | 11 |
+| business_itinerant_part90 | 406 | 12 |
 | cb | 40 | 1 |
 | federal_interop_ntia | 25 | 1 |
 | gmrs | 91 | 11 |
