@@ -4,8 +4,8 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ## Quick Statistics
 
-- **Total SSRF Files:** 75
-- **Total Assignments:** 1,355
+- **Total SSRF Files:** 76
+- **Total Assignments:** 1,366
 - **Services Covered:** 12
 - **Modes:** AM, APRS, C4FM, CW, D-STAR, DMR, FM, NFM, NXDN, P25, PACKET
 - **Frequency Bands:** 5
@@ -37,7 +37,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |------|----------|-------------|-------|------------------|
 | [mmdvm_duplex_hotspot](mmdvm_duplex_hotspot.md) | amateur | 2 | DMR | custom / mmdvm_duplex_hotspot.yml |
 
-### Geographic System (60 files)
+### Geographic System (61 files)
 
 | File | Services | Assignments | Modes | Geographic Scope |
 |------|----------|-------------|-------|------------------|
@@ -96,6 +96,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [w2lv_repeaters](w2lv_repeaters.md) | amateur | 5 | FM | US / NJ / Sussex / Newton |
 | [w2ver_repeaters](w2ver_repeaters.md) | amateur | 5 | FM | US / NJ / Sussex / Vernon |
 | [sussex_county_public_safety](sussex_county_public_safety.md) | public_safety_part90 | 134 | P25, NFM, FM, DMR | US / NJ / Sussex / _Countywide |
+| [orda_lake_placid_ski_jump](orda_lake_placid_ski_jump.md) | public_safety_part90 | 11 | NFM, DMR | US / NY / Essex / LakePlacid |
 | [ecker_hill_gmrs](ecker_hill_gmrs.md) | gmrs | 1 | FM | US / UT / Summit / ParkCity |
 | [gmrs_two_way_radio](gmrs_two_way_radio.md) | gmrs | 1 | FM | US / WI / Monroe / Sparta |
 | [kr9rk_lakeshore_repeaters](kr9rk_lakeshore_repeaters.md) | amateur | 3 | FM, DMR | US / WI / Racine / _Countywide |
@@ -114,6 +115,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 - **MI:** 3 files
 - **National/Regional:** 13 files
 - **NJ:** 6 files
+- **NY:** 1 files
 - **UT:** 1 files
 - **WI:** 3 files
 - **_Regional:** 1 files
@@ -135,7 +137,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | murs | 5 | 1 |
 | noaa_weather_radio | 7 | 1 |
 | pmr446 | 16 | 1 |
-| public_safety_part90 | 379 | 18 |
+| public_safety_part90 | 390 | 19 |
 | railroad_aar | 42 | 3 |
 
 ## Using SSRF Files

@@ -1,0 +1,349 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+# SSRF-Lite: ORDA — Lake Placid Olympic Jumping Complex (MacKenzie-Intervale Ski Jumping)
+# Operator: Olympic Regional Development Authority (NY State public authority)
+# FRN 0008807992 (WNLY874, WPPZ811, WQQE872) / FRN 0003456498 (KDS683)
+# Source: FCC ULS — https://wireless2.fcc.gov/UlsApp/UlsSearch/license.jsp?licKey=1225629 (WNLY874)
+#                    https://wireless2.fcc.gov/UlsApp/UlsSearch/license.jsp?licKey=1822651 (WPPZ811)
+#                    https://wireless2.fcc.gov/UlsApp/UlsSearch/license.jsp?licKey=3424329 (WQQE872)
+# Accessed: 2026-10-08
+#
+# Three active licenses cover the jump complex and surrounding Lake Placid Olympic venues:
+#   WNLY874 (PW — Public Safety Pool) — primary wide-area ops, 200 W ERP off jump tower, exp 06/24/2033
+#   WPPZ811 (IG — Industrial/Business Pool) — secondary VHF base channels, exp 04/07/2035
+#   WQQE872 (IG — Industrial/Business Pool) — UHF repeater pairs + VHF portables, exp 11/21/2032
+#
+# Station class notes:
+#   WNLY874 155.775: FB (base/fixed) at jump complex tower — no authorized input freq published.
+#     ULS Loc 1 address: NY RT 73 & Riverside Dr, North Elba, Essex Co. Mobile area (Loc 2) 56 km radius.
+#   WNLY874 158.745: FB at Olympic Center, 2634 Main St, Lake Placid.
+#   WPPZ811 151.535 / 157.515: FB2 (secondary base) — no input freq in ULS, modelled as fixed base only.
+#   WQQE872 462.300 / 464.6625: FB2 at 52 Ski Jump Lane with authorised +5 MHz inputs (467.300 / 469.6625).
+#     Multi-mode: 7K60FXE (DMR), 7K60FXD, 11K2F3E (NFM), 11K2F1E, 11K2F1D. DMR CC unknown — not on-air verified.
+#
+# All VHF emissions: 11K2F3E (narrowband FM, 12.5 kHz). No CTCSS/DCS published in ULS.
+# tx/rx orientation: radio-centric throughout (tx = radio transmit = repeater input; rx = radio receive = repeater output).
+
+
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+organizations:
+  - id: org_orda
+    name: "Olympic Regional Development Authority"
+
+locations:
+  - id: loc_jump_complex
+    name: "Lake Placid Olympic Jumping Complex, NY RT 73 & Riverside Dr, North Elba"
+    lat: 44.2612
+    lon: -73.9663
+
+  - id: loc_olympic_center
+    name: "Olympic Center, 2634 Main St, Lake Placid"
+    lat: 44.3026
+    lon: -73.9250
+
+  - id: loc_ski_jump_lane
+    name: "52 Ski Jump Lane, Lake Placid"
+    lat: 44.2562
+    lon: -73.9700
+
+stations:
+  - id: stn_wnly874
+    call_sign: WNLY874
+    organization_id: org_orda
+    location_id: loc_jump_complex
+    service: public_safety_part90
+
+  - id: stn_wppz811
+    call_sign: WPPZ811
+    organization_id: org_orda
+    location_id: loc_jump_complex
+    service: public_safety_part90
+
+  - id: stn_wqqe872
+    call_sign: WQQE872
+    organization_id: org_orda
+    location_id: loc_ski_jump_lane
+    service: public_safety_part90
+
+antennas:
+  - id: ant_wnly874
+    station_id: stn_wnly874
+
+  - id: ant_wppz811
+    station_id: stn_wppz811
+
+  - id: ant_wqqe872
+    station_id: stn_wqqe872
+
+authorizations:
+  - id: auth_wnly874
+    authority: "FCC"
+    service: "public_safety_part90"
+    identifier: "WNLY874"
+    notes: "FRN 0003456498; PW Public Safety Pool Conventional; Active, exp 06/24/2033; licKey 1225629"
+
+  - id: auth_wppz811
+    authority: "FCC"
+    service: "public_safety_part90"
+    identifier: "WPPZ811"
+    notes: "FRN 0008807992; IG Industrial/Business Pool Conventional; Active, exp 04/07/2035; licKey 1822651"
+
+  - id: auth_wqqe872
+    authority: "FCC"
+    service: "public_safety_part90"
+    identifier: "WQQE872"
+    notes: "FRN 0008807992; IG Industrial/Business Pool Conventional; Active, exp 11/21/2032; licKey 3424329"
+
+rf_chains:
+  # ── WNLY874 ── Public Safety Pool VHF ──────────────────────────────────────
+  # Radio-centric: tx = radio TX (repeater input if duplex); rx = radio RX (repeater output / listen freq)
+
+  # 155.775 MHz — FB at jump tower, 100 W / 200 W ERP; mobile area 56 km radius
+  # No ULS input freq → no authorized repeater; modelled as receive-only base (FB, no paired input)
+  - id: chain_wnly874_155775
+    station_id: stn_wnly874
+    antenna_id: ant_wnly874
+    tx:
+      freq_mhz: 155.775
+      emission: "11K2F3E"
+      power_w: 100.0
+      bandwidth_khz: 12.5
+    mode:
+      type: NFM
+      notes: "FB station class; no input frequency in ULS — authorized as fixed base only, not a repeater pair. 200 W ERP."
+
+  # 158.745 MHz — FB at Olympic Center (2634 Main St), 45 W / 95 W ERP
+  - id: chain_wnly874_158745
+    station_id: stn_wnly874
+    antenna_id: ant_wnly874
+    tx:
+      freq_mhz: 158.745
+      emission: "11K2F3E"
+      power_w: 45.0
+      bandwidth_khz: 12.5
+    mode:
+      type: NFM
+      notes: "FB at Olympic Center (Loc 3, 2634 Main St, Lake Placid). 95 W ERP. No input freq in ULS."
+
+  # 154.2725 MHz — MO portable (Loc 5, 16 km radius around Olympic Center), 3 W
+  - id: chain_wnly874_154272
+    station_id: stn_wnly874
+    antenna_id: ant_wnly874
+    tx:
+      freq_mhz: 154.2725
+      emission: "11K2F3E"
+      power_w: 3.0
+      bandwidth_khz: 12.5
+    mode:
+      type: NFM
+
+  # 155.0625 MHz — MO portable (Loc 5, 16 km radius around Olympic Center), 5 W
+  - id: chain_wnly874_155062
+    station_id: stn_wnly874
+    antenna_id: ant_wnly874
+    tx:
+      freq_mhz: 155.0625
+      emission: "11K2F3E"
+      power_w: 5.0
+      bandwidth_khz: 12.5
+    mode:
+      type: NFM
+
+  # ── WPPZ811 ── Industrial/Business Pool VHF (secondary base channels) ──────
+
+  # 151.535 MHz — FB2, 10 W / 25 W ERP; no ULS input freq
+  - id: chain_wppz811_151535
+    station_id: stn_wppz811
+    antenna_id: ant_wppz811
+    tx:
+      freq_mhz: 151.535
+      emission: "11K2F3E"
+      power_w: 10.0
+      bandwidth_khz: 12.5
+    mode:
+      type: NFM
+      notes: "FB2 station class; no input frequency in ULS — fixed base only. 25 W ERP."
+
+  # 157.515 MHz — FB2, 25 W / 85 W ERP; no ULS input freq
+  - id: chain_wppz811_157515
+    station_id: stn_wppz811
+    antenna_id: ant_wppz811
+    tx:
+      freq_mhz: 157.515
+      emission: "11K2F3E"
+      power_w: 25.0
+      bandwidth_khz: 12.5
+    mode:
+      type: NFM
+      notes: "FB2 station class; 85 W ERP. FX1 control point also authorized. No input freq in ULS."
+
+  # ── WQQE872 ── UHF repeater pairs at 52 Ski Jump Lane ───────────────────────
+
+  # 462.300 / 467.300 — FB2 repeater output / input (+5 MHz), 50 W / 85.9 W ERP
+  # Multi-mode: DMR (7K60FXE, 7K60FXD) + NFM (11K2F3E, 11K2F1E, 11K2F1D). CC unknown.
+  - id: chain_wqqe872_462300
+    station_id: stn_wqqe872
+    antenna_id: ant_wqqe872
+    tx:
+      freq_mhz: 467.300
+      emission: "7K60FXE"
+      power_w: 4.0
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 462.300
+    mode:
+      type: DMR
+      notes: "FB2 repeater at 52 Ski Jump Lane, 50 W / 85.9 W ERP. Multi-mode authorized: 7K60FXE (DMR), 7K60FXD, 11K2F3E (NFM), 11K2F1E, 11K2F1D. DMR color code not on-air verified."
+
+  # 464.6625 / 469.6625 — FB2 repeater output / input (+5 MHz), 50 W / 85.9 W ERP
+  - id: chain_wqqe872_464662
+    station_id: stn_wqqe872
+    antenna_id: ant_wqqe872
+    tx:
+      freq_mhz: 469.6625
+      emission: "7K60FXE"
+      power_w: 4.0
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 464.6625
+    mode:
+      type: DMR
+      notes: "FB2 repeater at 52 Ski Jump Lane, 50 W / 85.9 W ERP. Same multi-mode authorization as 462.300 pair. DMR color code not on-air verified."
+
+  # 152.975 / 158.3475 / 160.1775 — VHF MO portables (8 km radius around Olympic Center), 3 W
+  - id: chain_wqqe872_152975
+    station_id: stn_wqqe872
+    antenna_id: ant_wqqe872
+    tx:
+      freq_mhz: 152.975
+      emission: "11K2F3E"
+      power_w: 3.0
+      bandwidth_khz: 12.5
+    mode:
+      type: NFM
+
+  - id: chain_wqqe872_158347
+    station_id: stn_wqqe872
+    antenna_id: ant_wqqe872
+    tx:
+      freq_mhz: 158.3475
+      emission: "11K2F3E"
+      power_w: 3.0
+      bandwidth_khz: 12.5
+    mode:
+      type: NFM
+
+  - id: chain_wqqe872_160177
+    station_id: stn_wqqe872
+    antenna_id: ant_wqqe872
+    tx:
+      freq_mhz: 160.1775
+      emission: "11K2F3E"
+      power_w: 3.0
+      bandwidth_khz: 12.5
+    mode:
+      type: NFM
+
+assignments:
+  # ── WNLY874 assignments ──
+  - id: asgn_wnly874_155775
+    rf_chain_id: chain_wnly874_155775
+    authorization_id: auth_wnly874
+    usage: event_ops
+    display_name: "ORDA LP Ski Jump Main"
+    short_name: "ORD-J1"
+    notes: "Primary wide-area ops channel. FB 200 W ERP off jump tower. Mobile area 56 km. No published CTCSS/DCS."
+
+  - id: asgn_wnly874_158745
+    rf_chain_id: chain_wnly874_158745
+    authorization_id: auth_wnly874
+    usage: event_ops
+    display_name: "ORDA LP Olympic Center"
+    short_name: "ORD-OC"
+    notes: "FB at Olympic Center, 2634 Main St, Lake Placid. 95 W ERP. No published CTCSS/DCS."
+
+  - id: asgn_wnly874_154272
+    rf_chain_id: chain_wnly874_154272
+    authorization_id: auth_wnly874
+    usage: event_ops
+    display_name: "ORDA LP Portable Ch1"
+    short_name: "ORD-P1"
+    notes: "MO 3 W portable, 16 km radius around Olympic Center."
+
+  - id: asgn_wnly874_155062
+    rf_chain_id: chain_wnly874_155062
+    authorization_id: auth_wnly874
+    usage: event_ops
+    display_name: "ORDA LP Portable Ch2"
+    short_name: "ORD-P2"
+    notes: "MO 5 W portable, 16 km radius around Olympic Center."
+
+  # ── WPPZ811 assignments ──
+  - id: asgn_wppz811_151535
+    rf_chain_id: chain_wppz811_151535
+    authorization_id: auth_wppz811
+    usage: event_ops
+    display_name: "ORDA LP Base Ch1 (WPPZ811)"
+    short_name: "ORD-B1"
+    notes: "FB2 secondary base, 25 W ERP. No CTCSS/DCS published."
+
+  - id: asgn_wppz811_157515
+    rf_chain_id: chain_wppz811_157515
+    authorization_id: auth_wppz811
+    usage: event_ops
+    display_name: "ORDA LP Base Ch2 (WPPZ811)"
+    short_name: "ORD-B2"
+    notes: "FB2 secondary base, 85 W ERP. FX1 control authorized. No CTCSS/DCS published."
+
+  # ── WQQE872 assignments ──
+  - id: asgn_wqqe872_462300
+    rf_chain_id: chain_wqqe872_462300
+    authorization_id: auth_wqqe872
+    usage: event_ops
+    display_name: "ORDA LP UHF Rptr 1 (WQQE872)"
+    short_name: "ORD-U1"
+    notes: "FB2 repeater at 52 Ski Jump Lane. Output 462.300 / input 467.300 (+5 MHz). Multi-mode DMR+NFM. DMR CC unknown."
+
+  - id: asgn_wqqe872_464662
+    rf_chain_id: chain_wqqe872_464662
+    authorization_id: auth_wqqe872
+    usage: event_ops
+    display_name: "ORDA LP UHF Rptr 2 (WQQE872)"
+    short_name: "ORD-U2"
+    notes: "FB2 repeater at 52 Ski Jump Lane. Output 464.6625 / input 469.6625 (+5 MHz). Multi-mode DMR+NFM. DMR CC unknown."
+
+  - id: asgn_wqqe872_152975
+    rf_chain_id: chain_wqqe872_152975
+    authorization_id: auth_wqqe872
+    usage: event_ops
+    display_name: "ORDA LP VHF Portable A"
+    short_name: "ORD-VA"
+    notes: "MO 3 W portable, 8 km radius around Olympic Center."
+
+  - id: asgn_wqqe872_158347
+    rf_chain_id: chain_wqqe872_158347
+    authorization_id: auth_wqqe872
+    usage: event_ops
+    display_name: "ORDA LP VHF Portable B"
+    short_name: "ORD-VB"
+    notes: "MO 3 W portable, 8 km radius around Olympic Center."
+
+  - id: asgn_wqqe872_160177
+    rf_chain_id: chain_wqqe872_160177
+    authorization_id: auth_wqqe872
+    usage: event_ops
+    display_name: "ORDA LP VHF Portable C"
+    short_name: "ORD-VC"
+    notes: "MO 3 W portable, 8 km radius around Olympic Center."
+
+ssrf_lite:
+  sources:
+    - name: "FCC ULS WNLY874 (PW Public Safety Pool, licKey 1225629)"
+      url: "https://wireless2.fcc.gov/UlsApp/UlsSearch/license.jsp?licKey=1225629"
+      accessed: "2026-10-08"
+    - name: "FCC ULS WPPZ811 (IG Industrial/Business Pool, licKey 1822651)"
+      url: "https://wireless2.fcc.gov/UlsApp/UlsSearch/license.jsp?licKey=1822651"
+      accessed: "2026-10-08"
+    - name: "FCC ULS WQQE872 (IG Industrial/Business Pool, licKey 3424329)"
+      url: "https://wireless2.fcc.gov/UlsApp/UlsSearch/license.jsp?licKey=3424329"
+      accessed: "2026-10-08"
