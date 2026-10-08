@@ -4,8 +4,8 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ## Quick Statistics
 
-- **Total SSRF Files:** 73
-- **Total Assignments:** 1,338
+- **Total SSRF Files:** 74
+- **Total Assignments:** 1,349
 - **Services Covered:** 12
 - **Modes:** AM, APRS, C4FM, CW, D-STAR, DMR, FM, NFM, NXDN, P25, PACKET
 - **Frequency Bands:** 5
@@ -37,7 +37,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |------|----------|-------------|-------|------------------|
 | [mmdvm_duplex_hotspot](mmdvm_duplex_hotspot.md) | amateur | 2 | DMR | custom / mmdvm_duplex_hotspot.yml |
 
-### Geographic System (58 files)
+### Geographic System (59 files)
 
 | File | Services | Assignments | Modes | Geographic Scope |
 |------|----------|-------------|-------|------------------|
@@ -61,7 +61,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [chicago_police_department](chicago_police_department.md) | public_safety_part90 | 8 | FM | US / IL / Cook / Chicago |
 | [public_works_parks](public_works_parks.md) | public_safety_part90 | 17 | FM, DMR | US / IL / Cook / Chicago |
 | [cta](cta.md) | public_safety_part90 | 14 | FM | US / IL / Cook / Chicago |
-| [transit_transport](transit_transport.md) | public_safety_part90 | 7 | FM, DMR | US / IL / Cook / Chicago |
+| [transit_transport](transit_transport.md) | public_safety_part90 | 6 | FM, DMR | US / IL / Cook / Chicago |
 | [evanston_businesses](evanston_businesses.md) | business_itinerant_part90 | 6 | DMR | US / IL / Cook / Evanston |
 | [evanston_public_safety](evanston_public_safety.md) | business_itinerant_part90, pub... | 8 | FM | US / IL / Cook / Evanston |
 | [chicago_botanic_garden](chicago_botanic_garden.md) | business_itinerant_part90 | 14 | FM | US / IL / Cook / Glencoe |
@@ -75,6 +75,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [nsea_gmrs_repeaters](nsea_gmrs_repeaters.md) | gmrs | 4 | FM | US / IL / Cook / _Countywide |
 | [cook_county_interop](cook_county_interop.md) | public_safety_part90 | 9 | FM | US / IL / Cook / _Countywide |
 | [cook_county_sheriff](cook_county_sheriff.md) | public_safety_part90 | 15 | P25, FM | US / IL / Cook / _Countywide |
+| [mabas_div3_red_center](mabas_div3_red_center.md) | public_safety_part90 | 12 | P25, FM | US / IL / Cook / _Countywide |
 | [w9dup_darc_repeaters](w9dup_darc_repeaters.md) | amateur | 3 | FM | US / IL / DuPage / DownersGrove |
 | [zion_gmrs_repeaters](zion_gmrs_repeaters.md) | gmrs | 1 | FM | US / IL / Lake / Benton |
 | [tri_state_dmr](tri_state_dmr.md) | amateur | 16 | DMR | US / IL / _Statewide / amateur |
@@ -107,7 +108,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ### US
 - **FL:** 3 files
-- **IL:** 37 files
+- **IL:** 38 files
 - **IN:** 4 files
 - **MI:** 3 files
 - **National/Regional:** 13 files
@@ -133,7 +134,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | murs | 5 | 1 |
 | noaa_weather_radio | 7 | 1 |
 | pmr446 | 16 | 1 |
-| public_safety_part90 | 368 | 17 |
+| public_safety_part90 | 379 | 18 |
 | railroad_aar | 42 | 3 |
 
 ## Using SSRF Files
