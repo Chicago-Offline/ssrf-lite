@@ -162,37 +162,37 @@ channel_plans:
         bandwidth_khz: 12.5
         notes: "Law enforcement mutual aid."
       - name: "UCALL40"
-        freq_mhz: 453.2125
-        rx_freq_mhz: 458.2125
+        freq_mhz: 458.2125
+        rx_freq_mhz: 453.2125
         emission: "11K0F3E"
-        notes: "Nationwide UHF calling, repeater."
+        notes: "Nationwide UHF calling, repeater. Mobile TX 458.2125 (repeater input) / mobile RX 453.2125 (repeater output)."
       - name: "UCALL40D"
         freq_mhz: 453.2125
         emission: "11K0F3E"
         notes: "Nationwide UHF calling, direct/simplex."
       - name: "UTAC41"
-        freq_mhz: 453.4625
-        rx_freq_mhz: 458.4625
+        freq_mhz: 458.4625
+        rx_freq_mhz: 453.4625
         emission: "11K0F3E"
-        notes: "Repeater."
+        notes: "Repeater. Mobile TX 458.4625 (input) / mobile RX 453.4625 (output)."
       - name: "UTAC41D"
         freq_mhz: 453.4625
         emission: "11K0F3E"
         notes: "Direct/simplex."
       - name: "UTAC42"
-        freq_mhz: 453.7125
-        rx_freq_mhz: 458.7125
+        freq_mhz: 458.7125
+        rx_freq_mhz: 453.7125
         emission: "11K0F3E"
-        notes: "Repeater."
+        notes: "Repeater. Mobile TX 458.7125 (input) / mobile RX 453.7125 (output)."
       - name: "UTAC42D"
         freq_mhz: 453.7125
         emission: "11K0F3E"
         notes: "Direct/simplex."
       - name: "UTAC43"
-        freq_mhz: 453.8625
-        rx_freq_mhz: 458.8625
+        freq_mhz: 458.8625
+        rx_freq_mhz: 453.8625
         emission: "11K0F3E"
-        notes: "Repeater."
+        notes: "Repeater. Mobile TX 458.8625 (input) / mobile RX 453.8625 (output)."
       - name: "UTAC43D"
         freq_mhz: 453.8625
         emission: "11K0F3E"
