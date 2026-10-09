@@ -5,7 +5,10 @@ ssrf_lite:
   sources:
     - name: "La Porte County ARC - Repeaters"
       url: "https://lpcarc.org/repeaters.html"
-      accessed: "2025-10-04"
+      accessed: "2026-10-09"
+    - name: "La Porte County ARC - Home / club news"
+      url: "https://lpcarc.org/"
+      accessed: "2026-10-09"
     - name: "Radio Reference"
       url: https://www.radioreference.com/db/browse/ctid/738/ham
       accessed: "2025-10-10"
@@ -19,6 +22,10 @@ locations:
     name: "La Porte - Schultz Road Tower (US 35)"
     lat: 41.6765
     lon: -86.7563
+  - id: loc_laporte_johnson_rd_summit_farm
+    name: "La Porte County - Johnson Rd / Summit Farm 300 ft Tower (approx, site unverified)"
+    lat: 41.6106
+    lon: -86.7225
   - id: loc_laporte_nw_health
     name: "La Porte - Northwest Health Hospital"
     lat: 41.6106
@@ -36,7 +43,7 @@ stations:
   - id: stn_k9jsi_vhf
     call_sign: "K9JSI"
     organization_id: org_lpcarc
-    location_id: loc_laporte_schultz_tower
+    location_id: loc_laporte_johnson_rd_summit_farm
     service: "amateur"
   - id: stn_w9ly_vhf
     call_sign: "W9LY"
@@ -59,8 +66,8 @@ antennas:
     station_id: stn_k9jsi_vhf
     name: "K9JSI VHF Antenna"
     gain_dbi:
-    height_agl_m: 61.0 # ~200 ft tower; shared site per club info
-    height_amsl_m: 335.3 # 1100 ft ASL cited for Schultz Rd site
+    height_agl_m: 91.4 # 300 ft tower per club announcement of the Johnson Rd / Summit Farm move
+    height_amsl_m: # unknown for the new site; prior 335.3 applied to Schultz Rd and no longer valid
   - id: ant_w9ly_vhf
     station_id: stn_w9ly_vhf
     name: "W9LY VHF Antenna"
@@ -94,7 +101,11 @@ rf_chains:
       type: "FM"
       ctcss_rx_hz: 131.8
       ctcss_tx_hz: 131.8
-      notes: "Kenwood TKR-750 + Pacific Research RI-300 controller"
+      notes: |
+        Kenwood TKR-750 + Pacific Research RI-300 controller.
+        RELOCATED: now at the top of the 300 ft tower near Summit Farm on Johnson Rd,
+        no longer the Schultz Rd site. Club reports significantly improved coverage.
+        Coordinates for the new site are NOT verified - see location note.
 
   - id: chain_w9ly_vhf_fm
     station_id: stn_w9ly_vhf
@@ -110,6 +121,8 @@ rf_chains:
       type: "FM"
       ctcss_rx_hz: 131.8
       ctcss_tx_hz: 131.8
+      notes: |
+        AllStar linked; EchoLink node 193001 restored and operational as of 2026-10-09.
   - id: chain_w9ly_vhf_c4fm
     station_id: stn_w9ly_vhf
     antenna_id: ant_w9ly_vhf
@@ -122,7 +135,12 @@ rf_chains:
       freq_mhz: 146.370
     mode:
       type: "C4FM"
-      notes: "Yaesu DR-1X System Fusion (dual-mode)"
+      notes: |
+        Yaesu DR-1X System Fusion (dual-mode).
+        CONFLICTING SOURCES as of 2026-10-09: repeaters.html lists both W9LY machines as
+        "FM Analog and C4FM Digital", but the club home page states the 146.970 "is and will
+        remain strictly analog for amateurs". Retained pending clarification; do not rely on
+        C4FM access to 146.970 without confirming on air.
 
   - id: chain_w9ly_uhf_fm
     station_id: stn_w9ly_uhf
@@ -182,16 +200,21 @@ assignments:
     authorization_id: auth_fcc_amateur
     notes: |
       Primary La Porte County analog repeater; 146.610 -0.600 MHz, CTCSS 131.8 Hz.
-      Supports SKYWARN weather nets and monthly siren checks; Wednesday club net at 1900 CDT.
-      Located on Schultz Road tower site shared with W9LY UHF system.
+      Supports the monthly siren check net (first Saturday, net opens 1030, sirens 1100).
+      CORRECTED 2026-10-09: the Wednesday 1900 club net runs on W9LY 146.970, not here.
+      La Porte County SKYWARN nets have moved to N9IAA 146.685 under Indiana District 1
+      (La Porte is served by NWS North Webster; the rest of District 1 by NWS Chicago).
+      RELOCATED off the Schultz Road site to the Johnson Rd / Summit Farm 300 ft tower.
   - id: asgn_w9ly_vhf_fm
     short_name: "LPC697"
     rf_chain_id: chain_w9ly_vhf_fm
     usage: "repeater"
     authorization_id: auth_fcc_amateur
     notes: |
-      Yaesu DR-1X dual-mode repeater on 146.970 -0.600 MHz, 131.8 Hz PL for analog access.
+      Yaesu DR-1X repeater on 146.970 -0.600 MHz, 131.8 Hz PL for analog access.
       Located atop Northwest Health (La Porte Hospital); ~50 W into Telewave TPRD-1454 duplexer.
+      Carries the Wednesday 1900 club net. AllStar linked, with EchoLink node 193001
+      restored and operational as of 2026-10-09.
   - id: asgn_w9ly_vhf_c4fm
     short_name: "LPC69C"
     rf_chain_id: chain_w9ly_vhf_c4fm
@@ -220,5 +243,8 @@ assignments:
     usage: "repeater"
     authorization_id: auth_fcc_amateur
     notes: |
-      444.950 +5.000 MHz, PL 131.8 Hz. Operated by Valparaiso Technical Institute engineers in La Porte.
-      Serves countywide coverage and links into regional nets as needed.
+      444.950 +5.000 MHz, PL 131.8 Hz. Serves countywide coverage.
+      ATTRIBUTION UNVERIFIED 2026-10-09: this record credits "Valparaiso Technical Institute
+      engineers", but VTI closed in 1991 and the LPCARC site states the club hosts exactly
+      three repeaters (K9JSI 146.610 plus the two W9LY machines). W9SAL is not mentioned on
+      the club site. Sponsor linkage to LPCARC and the site location both need confirmation.
