@@ -1,0 +1,97 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Black River Amateur Radio Club - About / Repeaters"
+      url: "https://www.blackriverarc.org/more-about-us/"
+      accessed: "2026-10-09"
+    - name: "MIARC Coordinated Repeater Directory - Van Buren County"
+      url: "http://www.miarc.com/repeaterDir.php?parm1=County&parm2=Van+Buren"
+      accessed: "2026-10-09"
+
+organizations:
+  - id: org_black_river_arc
+    name: "Black River Amateur Radio Club"
+
+locations:
+  - id: loc_bangor_k8brc
+    name: "Bangor, MI - K8BRC Site (approx)"
+    lat: 42.3125
+    lon: -86.1131
+
+stations:
+  - id: stn_k8brc_vhf
+    call_sign: "K8BRC"
+    organization_id: org_black_river_arc
+    location_id: loc_bangor_k8brc
+    service: "amateur"
+  - id: stn_k8brc_uhf
+    call_sign: "K8BRC"
+    organization_id: org_black_river_arc
+    location_id: loc_bangor_k8brc
+    service: "amateur"
+
+antennas:
+  - id: ant_k8brc_vhf
+    station_id: stn_k8brc_vhf
+    name: "K8BRC 2m Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_k8brc_uhf
+    station_id: stn_k8brc_uhf
+    name: "K8BRC 70cm Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+
+rf_chains:
+  - id: chain_k8brc_vhf_fm
+    station_id: stn_k8brc_vhf
+    antenna_id: ant_k8brc_vhf
+    tx:
+      freq_mhz: 147.360
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.960
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 94.8
+      ctcss_tx_hz: 94.8
+      notes: "Standard +0.600 MHz offset. ARES affiliated, weather net use. MIARC coordination current (last TDS 2025-02-08)."
+  - id: chain_k8brc_uhf_fm
+    station_id: stn_k8brc_uhf
+    antenna_id: ant_k8brc_uhf
+    tx:
+      freq_mhz: 444.300
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 449.300
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 94.8
+      ctcss_tx_hz: 94.8
+      notes: "Standard +5.000 MHz offset. Analog FM; MIARC also lists System Fusion (C4FM) capability. ARES affiliated, weather net use. Coordination current (last TDS 2025-02-08)."
+
+authorizations:
+  - id: auth_fcc_amateur
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "Transmit requires US amateur license."
+
+assignments:
+  - id: asgn_k8brc_vhf_fm
+    short_name: "BRC2M"
+    rf_chain_id: chain_k8brc_vhf_fm
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur
+  - id: asgn_k8brc_uhf_fm
+    short_name: "BRC70"
+    rf_chain_id: chain_k8brc_uhf_fm
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur

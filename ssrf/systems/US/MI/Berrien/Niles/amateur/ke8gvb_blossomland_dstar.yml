@@ -1,0 +1,94 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "MIARC Coordinated Repeater Directory - Berrien County"
+      url: "http://www.miarc.com/repeaterDir.php?parm1=County&parm2=Berrien"
+      accessed: "2026-10-09"
+
+organizations:
+  - id: org_blossomland_dstar
+    name: "Blossomland D-STAR Association"
+
+locations:
+  - id: loc_niles_ke8gvb
+    name: "Niles, MI - KE8GVB Site (approx)"
+    lat: 41.8298
+    lon: -86.2542
+
+stations:
+  - id: stn_ke8gvb_vhf
+    call_sign: "KE8GVB"
+    organization_id: org_blossomland_dstar
+    location_id: loc_niles_ke8gvb
+    service: "amateur"
+  - id: stn_ke8gvb_uhf
+    call_sign: "KE8GVB"
+    organization_id: org_blossomland_dstar
+    location_id: loc_niles_ke8gvb
+    service: "amateur"
+
+antennas:
+  - id: ant_ke8gvb_vhf
+    station_id: stn_ke8gvb_vhf
+    name: "KE8GVB 2m Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_ke8gvb_uhf
+    station_id: stn_ke8gvb_uhf
+    name: "KE8GVB 70cm Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+
+rf_chains:
+  - id: chain_ke8gvb_145140_dstar
+    station_id: stn_ke8gvb_vhf
+    antenna_id: ant_ke8gvb_vhf
+    tx:
+      freq_mhz: 145.140
+      emission: "6K00F7W"
+      bandwidth_khz: 6.25
+    rx:
+      freq_mhz: 144.540
+    mode:
+      type: "D-STAR"
+      ctcss_rx_hz: null
+      ctcss_tx_hz: null
+      notes: "Standard -0.600 MHz offset. D-STAR digital voice; no CTCSS. ARES/AUXCOMM affiliated, weather net use. Coordination current (last TDS 2025-03-28)."
+  - id: chain_ke8gvb_442825_dstar
+    station_id: stn_ke8gvb_uhf
+    antenna_id: ant_ke8gvb_uhf
+    tx:
+      freq_mhz: 442.825
+      emission: "6K00F7W"
+      bandwidth_khz: 6.25
+    rx:
+      freq_mhz: 447.825
+    mode:
+      type: "D-STAR"
+      ctcss_rx_hz: null
+      ctcss_tx_hz: null
+      notes: "Standard +5.000 MHz offset. D-STAR digital voice; no CTCSS. ARES/AUXCOMM affiliated, weather net use. Coordination current (last TDS 2025-03-28)."
+
+authorizations:
+  - id: auth_fcc_amateur
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "Transmit requires US amateur license."
+
+assignments:
+  - id: asgn_ke8gvb_145140_dstar
+    short_name: "BDS2M"
+    rf_chain_id: chain_ke8gvb_145140_dstar
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur
+  - id: asgn_ke8gvb_442825_dstar
+    short_name: "BDS70"
+    rf_chain_id: chain_ke8gvb_442825_dstar
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur
