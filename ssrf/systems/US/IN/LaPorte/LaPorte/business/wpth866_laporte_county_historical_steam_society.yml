@@ -1,0 +1,265 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+# SSRF-Lite: La Porte County Historical Steam Society (WPTH866) - Hesston Steam Museum,
+# La Porte County, IN
+#
+# Unlike the mobile-only business licences nearby, this licence DOES authorise a
+# repeater: ULS Location 1 is a fixed site with station class FB2 on 462.42500, and a
+# matching FX1 control station at Location 3 sits on the +5.0 MHz input 467.42500.
+# Modelled as one repeater pair plus the low-power mobile-only simplex channels.
+#
+# Nearest fixed DMR-capable site to the Saugany Lake area (~8.1 km / 5.0 mi).
+# 462.425 is a Part 90 Industrial/Business channel, NOT a GMRS channel - do not
+# confuse it with the unrelated Chicago-area 462.425 users already in this catalog.
+
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "FCC ULS License Search - WPTH866 (La Porte County Historical Steam Society Inc), licKey 2355133"
+      url: "https://wireless2.fcc.gov/UlsApp/UlsSearch/license.jsp?licKey=2355133"
+      accessed: "2026-10-10"
+    - name: "FCC ULS weekly bulk dump l_LMpriv (FR/EM/LO/HD/EN tables), week of 2026-10-04"
+      url: "https://data.fcc.gov/download/pub/uls/complete/l_LMpriv.zip"
+      accessed: "2026-10-10"
+
+organizations:
+  - id: org_laporte_county_historical_steam_society
+    name: "La Porte County Historical Steam Society Inc (Hesston Steam Museum, 1201 E 1000 N, La Porte, IN 46350)"
+
+locations:
+  - id: loc_hesston_steam_museum
+    name: "Hesston Steam Museum, 1201 E 1000 N, La Porte County, IN (ULS Location 1, fixed site)"
+    lat: 41.755389
+    lon: -86.678528
+
+stations:
+  - id: stn_wpth866
+    call_sign: "WPTH866"
+    organization_id: org_laporte_county_historical_steam_society
+    location_id: loc_hesston_steam_museum
+    service: "business_itinerant_part90"
+
+antennas:
+  - id: ant_wpth866_fixed
+    station_id: stn_wpth866
+    name: "Hesston Steam Museum fixed repeater site (ULS Location 1)"
+  - id: ant_wpth866_mobile
+    station_id: stn_wpth866
+    name: "Hesston Steam Museum mobiles and portables (ULS Location 2, 16.0 km radius)"
+
+authorizations:
+  - id: auth_wpth866
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: "WPTH866"
+    notes: >
+      Active FCC licence, IG - Industrial/Business Pool, Conventional. First
+      licensed 2001-10-05, granted and effective 2021-11-02, expires 2031-10-05.
+      FRN 0005276340; filings handled by Lone Peak Licensing LLC (agent, not the
+      licensee). Eligibility rule 90.35(A), stated purpose "business entity engaged
+      in the commercial operation of a steam museum". Four ULS locations:
+      1 fixed site (coordinates above), 2 mobile 16.0 km radius about Location 1,
+      3 control station (6.1 m) within La Porte County, 4 temporary fixed 16.0 km
+      radius about Location 1. TX restricted to the licensee; receive-only for
+      everyone else.
+
+rf_chains:
+  - id: chain_wpth866_462p425
+    station_id: stn_wpth866
+    antenna_id: ant_wpth866_fixed
+    tx:
+      freq_mhz: 462.425
+      emission: "11K2F3E"
+      power_w: 50.0
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 467.425
+    mode:
+      type: "FM"
+      notes: >
+        Repeater output 462.42500 (ULS Location 1 freq ID 1, station class FB2,
+        50.000 W output / 75.000 W ERP); input 467.42500, a conventional +5.0 MHz
+        split carried as Location 2 MO (50.000 W) and Location 3 FX1 control
+        station (25.000 W output / 75.000 W ERP). Location 4 repeats 462.42500 as
+        FBT (25 W) and FB2T (50 W) for temporary fixed operation. Also authorised 11K2F2D, 11K2F1D, 8K30F1E, 8K30F1D,
+        7K60FXE / 7K60FXD (DMR) and 4K00F1E / 4K00F1D. On-air mode not observed -
+        ULS records no CTCSS/DCS tone, DMR colour code, time slot or talkgroup, so
+        receive-only users must search. TX restricted to the licensee.
+  - id: chain_wpth866_462p4375
+    station_id: stn_wpth866
+    antenna_id: ant_wpth866_mobile
+    tx:
+      freq_mhz: 462.4375
+      emission: "11K2F3E"
+      power_w: 2.0
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 2 freq ID 8, station class MO, 2.000 W. Low half of the
+        462.4375 / 467.4375 low-power pair; mobile class only at this call sign, so
+        modelled as simplex rather than asserting a repeater the licence does not
+        authorise. Also authorised 11K2F2D, 11K2F1D, 8K30F1E, 8K30F1D,
+        7K60FXE / 7K60FXD (DMR) and 4K00F1E / 4K00F1D. On-air mode not observed -
+        ULS records no CTCSS/DCS tone, DMR colour code, time slot or talkgroup, so
+        receive-only users must search. TX restricted to the licensee.
+  - id: chain_wpth866_467p4375
+    station_id: stn_wpth866
+    antenna_id: ant_wpth866_mobile
+    tx:
+      freq_mhz: 467.4375
+      emission: "11K2F3E"
+      power_w: 2.0
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 2 freq ID 9, station class MO, 2.000 W. High half of the
+        462.4375 / 467.4375 low-power pair. Also authorised 11K2F2D, 11K2F1D, 8K30F1E, 8K30F1D,
+        7K60FXE / 7K60FXD (DMR) and 4K00F1E / 4K00F1D. On-air mode not observed -
+        ULS records no CTCSS/DCS tone, DMR colour code, time slot or talkgroup, so
+        receive-only users must search. TX restricted to the licensee.
+  - id: chain_wpth866_467p775
+    station_id: stn_wpth866
+    antenna_id: ant_wpth866_mobile
+    tx:
+      freq_mhz: 467.775
+      emission: "11K2F3E"
+      power_w: 2.0
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 2 freq ID 3, station class MO, 2.000 W. Part 90 itinerant
+        "dot" simplex channel, shared nationwide and not exclusive to this
+        licensee. Also authorised 11K2F2D, 11K2F1D, 8K30F1E, 8K30F1D,
+        7K60FXE / 7K60FXD (DMR) and 4K00F1E / 4K00F1D. On-air mode not observed -
+        ULS records no CTCSS/DCS tone, DMR colour code, time slot or talkgroup, so
+        receive-only users must search. TX restricted to the licensee.
+  - id: chain_wpth866_467p800
+    station_id: stn_wpth866
+    antenna_id: ant_wpth866_mobile
+    tx:
+      freq_mhz: 467.800
+      emission: "11K2F3E"
+      power_w: 2.0
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 2 freq ID 4, station class MO, 2.000 W. Part 90 itinerant
+        "dot" simplex channel, shared nationwide and not exclusive to this
+        licensee. Also authorised 11K2F2D, 11K2F1D, 8K30F1E, 8K30F1D,
+        7K60FXE / 7K60FXD (DMR) and 4K00F1E / 4K00F1D. On-air mode not observed -
+        ULS records no CTCSS/DCS tone, DMR colour code, time slot or talkgroup, so
+        receive-only users must search. TX restricted to the licensee.
+  - id: chain_wpth866_467p825
+    station_id: stn_wpth866
+    antenna_id: ant_wpth866_mobile
+    tx:
+      freq_mhz: 467.825
+      emission: "11K2F3E"
+      power_w: 2.0
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 2 freq ID 5, station class MO, 2.000 W. Part 90 itinerant
+        "dot" simplex channel, shared nationwide and not exclusive to this
+        licensee. Also authorised 11K2F2D, 11K2F1D, 8K30F1E, 8K30F1D,
+        7K60FXE / 7K60FXD (DMR) and 4K00F1E / 4K00F1D. On-air mode not observed -
+        ULS records no CTCSS/DCS tone, DMR colour code, time slot or talkgroup, so
+        receive-only users must search. TX restricted to the licensee.
+  - id: chain_wpth866_467p850
+    station_id: stn_wpth866
+    antenna_id: ant_wpth866_mobile
+    tx:
+      freq_mhz: 467.850
+      emission: "11K2F3E"
+      power_w: 2.0
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 2 freq ID 6, station class MO, 2.000 W. Part 90 itinerant
+        "dot" simplex channel, shared nationwide and not exclusive to this
+        licensee. Also authorised 11K2F2D, 11K2F1D, 8K30F1E, 8K30F1D,
+        7K60FXE / 7K60FXD (DMR) and 4K00F1E / 4K00F1D. On-air mode not observed -
+        ULS records no CTCSS/DCS tone, DMR colour code, time slot or talkgroup, so
+        receive-only users must search. TX restricted to the licensee.
+  - id: chain_wpth866_467p875
+    station_id: stn_wpth866
+    antenna_id: ant_wpth866_mobile
+    tx:
+      freq_mhz: 467.875
+      emission: "11K2F3E"
+      power_w: 2.0
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 2 freq ID 7, station class MO, 2.000 W. Part 90 itinerant
+        "dot" simplex channel, shared nationwide and not exclusive to this
+        licensee. Also authorised 11K2F2D, 11K2F1D, 8K30F1E, 8K30F1D,
+        7K60FXE / 7K60FXD (DMR) and 4K00F1E / 4K00F1D. On-air mode not observed -
+        ULS records no CTCSS/DCS tone, DMR colour code, time slot or talkgroup, so
+        receive-only users must search. TX restricted to the licensee.
+
+assignments:
+  - id: asgn_wpth866_repeater
+    short_name: "HESSTN"
+    channel_name: "WPTH866 Hesston Steam Museum"
+    rf_chain_id: chain_wpth866_462p425
+    usage: "repeater"
+    authorization_id: auth_wpth866
+    notes: "Output 462.4250 (+5.000 input 467.4250). Part 90 Industrial/Business, licensee TX only - receive-only for everyone else. Tone/colour code unknown; needs an RF survey."
+  - id: asgn_wpth866_462p4375
+    short_name: "HES-LO"
+    channel_name: "WPTH866 462.4375"
+    rf_chain_id: chain_wpth866_462p4375
+    usage: "simplex"
+    authorization_id: auth_wpth866
+    notes: "Low-power (2 W) mobile-only channel. Receive-only for non-licensees."
+  - id: asgn_wpth866_467p4375
+    short_name: "HES-HI"
+    channel_name: "WPTH866 467.4375"
+    rf_chain_id: chain_wpth866_467p4375
+    usage: "simplex"
+    authorization_id: auth_wpth866
+    notes: "Low-power (2 W) mobile-only channel. Receive-only for non-licensees."
+  - id: asgn_wpth866_467p775
+    short_name: "DOT775"
+    channel_name: "WPTH866 467.775"
+    rf_chain_id: chain_wpth866_467p775
+    usage: "simplex"
+    authorization_id: auth_wpth866
+    notes: "Part 90 itinerant 2 W simplex channel, shared nationwide. Receive-only for non-licensees."
+  - id: asgn_wpth866_467p800
+    short_name: "DOT800"
+    channel_name: "WPTH866 467.800"
+    rf_chain_id: chain_wpth866_467p800
+    usage: "simplex"
+    authorization_id: auth_wpth866
+    notes: "Part 90 itinerant 2 W simplex channel, shared nationwide. Receive-only for non-licensees."
+  - id: asgn_wpth866_467p825
+    short_name: "DOT825"
+    channel_name: "WPTH866 467.825"
+    rf_chain_id: chain_wpth866_467p825
+    usage: "simplex"
+    authorization_id: auth_wpth866
+    notes: "Part 90 itinerant 2 W simplex channel, shared nationwide. Receive-only for non-licensees."
+  - id: asgn_wpth866_467p850
+    short_name: "DOT850"
+    channel_name: "WPTH866 467.850"
+    rf_chain_id: chain_wpth866_467p850
+    usage: "simplex"
+    authorization_id: auth_wpth866
+    notes: "Part 90 itinerant 2 W simplex channel, shared nationwide. Receive-only for non-licensees."
+  - id: asgn_wpth866_467p875
+    short_name: "DOT875"
+    channel_name: "WPTH866 467.875"
+    rf_chain_id: chain_wpth866_467p875
+    usage: "simplex"
+    authorization_id: auth_wpth866
+    notes: "Part 90 itinerant 2 W simplex channel, shared nationwide. Receive-only for non-licensees."
