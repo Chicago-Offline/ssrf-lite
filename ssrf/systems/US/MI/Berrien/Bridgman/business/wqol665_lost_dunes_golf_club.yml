@@ -1,0 +1,212 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+# SSRF-Lite: Lost Dunes Golf Club (WQOL665) - licensed business land mobile, Bridgman MI
+#
+# Mobile-only licence: all 8 ULS frequency records are station class MO. There is no
+# FB/FB2 record, so no repeater is authorised under this call sign even though the
+# eight frequencies form four conventional UHF mobile-relay splits. Modelled as eight
+# simplex channels rather than four repeater pairs, to avoid asserting a repeater the
+# licence does not authorise.
+#
+# The licence has no fixed site - Location 1 is a 5.0 km mobile radius. The coordinates
+# below are the ULS radius centerpoint, i.e. an area of operation, not a tower.
+
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "FCC ULS License Search - WQOL665 (Lost Dunes Golf Club LLC), licKey 3330243"
+      url: "https://wireless2.fcc.gov/UlsApp/UlsSearch/license.jsp?licKey=3330243"
+      accessed: "2026-10-10"
+
+organizations:
+  - id: org_lost_dunes_golf_club
+    name: "Lost Dunes Golf Club LLC (8910 Red Arrow Hwy, Bridgman, MI 49106)"
+
+locations:
+  - id: loc_lost_dunes_bridgman
+    name: "Lost Dunes Golf Club, Bridgman, MI (ULS mobile centerpoint, 5.0 km radius of operation)"
+    lat: 41.9570
+    lon: -86.5528
+
+stations:
+  - id: stn_wqol665
+    call_sign: "WQOL665"
+    organization_id: org_lost_dunes_golf_club
+    location_id: loc_lost_dunes_bridgman
+    service: "business_itinerant_part90"
+
+antennas:
+  - id: ant_wqol665
+    station_id: stn_wqol665
+    name: "Lost Dunes Golf Club mobiles and portables (no fixed site licensed)"
+
+authorizations:
+  - id: auth_wqol665
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: "WQOL665"
+    notes: >
+      Active FCC licence, IG - Industrial/Business Pool, Conventional. Granted
+      2021-08-24, effective 2025-07-03, expires 2031-11-08. FRN 0021166392.
+      Eligibility rule 90.35(A), stated purpose "we are a golf course and we will
+      use radios to better coordinate our activities". 20 units, 2.000 W output /
+      4.000 W ERP on every record. TX restricted to the licensee; RX-only for
+      everyone else. A prior licence WPLL650 (FRN 0007406531) under the non-LLC
+      name "Lost Dunes Golf Club" expired 2013-05-08 and is not modelled here.
+
+rf_chains:
+  - id: chain_wqol665_461p5375
+    station_id: stn_wqol665
+    antenna_id: ant_wqol665
+    tx:
+      freq_mhz: 461.5375
+      emission: "11K2F3E"
+      power_w: 2.0
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS freq ID 1, station class MO. Also authorised 11K2F1D (narrowband data)
+        and 7K60FXD / 7K60FXE (DMR); on-air mode not observed. Low half of the 461.5375 / 466.5375 conventional 5.0 MHz pair.
+        Mobile class only - no repeater authorised under this call sign.
+  - id: chain_wqol665_466p5375
+    station_id: stn_wqol665
+    antenna_id: ant_wqol665
+    tx:
+      freq_mhz: 466.5375
+      emission: "11K2F3E"
+      power_w: 2.0
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS freq ID 2, station class MO. Also authorised 11K2F1D (narrowband data)
+        and 7K60FXD / 7K60FXE (DMR); on-air mode not observed. High half of the 461.5375 / 466.5375 pair.
+        Mobile class only - no repeater authorised under this call sign.
+  - id: chain_wqol665_461p5625
+    station_id: stn_wqol665
+    antenna_id: ant_wqol665
+    tx:
+      freq_mhz: 461.5625
+      emission: "11K2F3E"
+      power_w: 2.0
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS freq ID 3, station class MO. Also authorised 11K2F1D (narrowband data)
+        and 7K60FXD / 7K60FXE (DMR); on-air mode not observed. Low half of the 461.5625 / 466.5625 conventional 5.0 MHz pair.
+        Mobile class only - no repeater authorised under this call sign.
+  - id: chain_wqol665_466p5625
+    station_id: stn_wqol665
+    antenna_id: ant_wqol665
+    tx:
+      freq_mhz: 466.5625
+      emission: "11K2F3E"
+      power_w: 2.0
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS freq ID 4, station class MO. Also authorised 11K2F1D (narrowband data)
+        and 7K60FXD / 7K60FXE (DMR); on-air mode not observed. High half of the 461.5625 / 466.5625 pair.
+        Mobile class only - no repeater authorised under this call sign.
+  - id: chain_wqol665_464p7625
+    station_id: stn_wqol665
+    antenna_id: ant_wqol665
+    tx:
+      freq_mhz: 464.7625
+      emission: "11K2F3E"
+      power_w: 2.0
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS freq ID 5, station class MO. Also authorised 11K2F1D (narrowband data)
+        and 7K60FXD / 7K60FXE (DMR); on-air mode not observed. Low half of the 464.7625 / 469.7625 conventional 5.0 MHz pair.
+        Mobile class only - no repeater authorised under this call sign.
+  - id: chain_wqol665_469p7625
+    station_id: stn_wqol665
+    antenna_id: ant_wqol665
+    tx:
+      freq_mhz: 469.7625
+      emission: "11K2F3E"
+      power_w: 2.0
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS freq ID 6, station class MO. Also authorised 11K2F1D (narrowband data)
+        and 7K60FXD / 7K60FXE (DMR); on-air mode not observed. High half of the 464.7625 / 469.7625 pair.
+        Mobile class only - no repeater authorised under this call sign.
+  - id: chain_wqol665_462p2625
+    station_id: stn_wqol665
+    antenna_id: ant_wqol665
+    tx:
+      freq_mhz: 462.2625
+      emission: "11K2F3E"
+      power_w: 2.0
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS freq ID 7, station class MO. Also authorised 11K2F1D (narrowband data)
+        and 7K60FXD / 7K60FXE (DMR); on-air mode not observed. Low half of the 462.2625 / 467.2625 conventional 5.0 MHz pair.
+        Mobile class only - no repeater authorised under this call sign.
+  - id: chain_wqol665_467p2625
+    station_id: stn_wqol665
+    antenna_id: ant_wqol665
+    tx:
+      freq_mhz: 467.2625
+      emission: "11K2F3E"
+      power_w: 2.0
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS freq ID 8, station class MO. Also authorised 11K2F1D (narrowband data)
+        and 7K60FXD / 7K60FXE (DMR); on-air mode not observed. High half of the 462.2625 / 467.2625 pair.
+        Mobile class only - no repeater authorised under this call sign.
+
+assignments:
+  - id: asgn_wqol665_461p5375
+    channel_name: "WQOL665 461.5375"
+    rf_chain_id: chain_wqol665_461p5375
+    usage: "simplex"
+    authorization_id: auth_wqol665
+  - id: asgn_wqol665_466p5375
+    channel_name: "WQOL665 466.5375"
+    rf_chain_id: chain_wqol665_466p5375
+    usage: "simplex"
+    authorization_id: auth_wqol665
+  - id: asgn_wqol665_461p5625
+    channel_name: "WQOL665 461.5625"
+    rf_chain_id: chain_wqol665_461p5625
+    usage: "simplex"
+    authorization_id: auth_wqol665
+  - id: asgn_wqol665_466p5625
+    channel_name: "WQOL665 466.5625"
+    rf_chain_id: chain_wqol665_466p5625
+    usage: "simplex"
+    authorization_id: auth_wqol665
+  - id: asgn_wqol665_464p7625
+    channel_name: "WQOL665 464.7625"
+    rf_chain_id: chain_wqol665_464p7625
+    usage: "simplex"
+    authorization_id: auth_wqol665
+  - id: asgn_wqol665_469p7625
+    channel_name: "WQOL665 469.7625"
+    rf_chain_id: chain_wqol665_469p7625
+    usage: "simplex"
+    authorization_id: auth_wqol665
+  - id: asgn_wqol665_462p2625
+    channel_name: "WQOL665 462.2625"
+    rf_chain_id: chain_wqol665_462p2625
+    usage: "simplex"
+    authorization_id: auth_wqol665
+  - id: asgn_wqol665_467p2625
+    channel_name: "WQOL665 467.2625"
+    rf_chain_id: chain_wqol665_467p2625
+    usage: "simplex"
+    authorization_id: auth_wqol665
