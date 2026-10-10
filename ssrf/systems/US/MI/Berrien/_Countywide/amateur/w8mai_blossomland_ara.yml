@@ -1,0 +1,195 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "MIARC Coordinated Repeater Directory - Berrien County"
+      url: "http://www.miarc.com/repeaterDir.php?parm1=County&parm2=Berrien"
+      accessed: "2026-10-09"
+    - name: "Blossomland Amateur Radio Association"
+      url: "https://www.blossomlandara.org/"
+      accessed: "2026-10-09"
+
+organizations:
+  - id: org_blossomland_ara
+    name: "Blossomland Amateur Radio Association"
+
+locations:
+  - id: loc_bridgman_w8mai
+    name: "Bridgman, MI - W8MAI Site (approx)"
+    lat: 41.9431
+    lon: -86.5570
+  - id: loc_stjoseph_w8mai
+    name: "St. Joseph, MI - W8MAI Site (approx)"
+    lat: 42.1096
+    lon: -86.4800
+  - id: loc_sisterlakes_w8mai
+    name: "Sister Lakes, MI - W8MAI Site (approx)"
+    lat: 42.0723
+    lon: -86.1997
+
+stations:
+  - id: stn_w8mai_bridgman_uhf
+    call_sign: "W8MAI"
+    organization_id: org_blossomland_ara
+    location_id: loc_bridgman_w8mai
+    service: "amateur"
+  - id: stn_w8mai_sisterlakes_vhf
+    call_sign: "W8MAI"
+    organization_id: org_blossomland_ara
+    location_id: loc_sisterlakes_w8mai
+    service: "amateur"
+  - id: stn_w8mai_sisterlakes_uhf
+    call_sign: "W8MAI"
+    organization_id: org_blossomland_ara
+    location_id: loc_sisterlakes_w8mai
+    service: "amateur"
+  - id: stn_w8mai_stjoseph_uhf
+    call_sign: "W8MAI"
+    organization_id: org_blossomland_ara
+    location_id: loc_stjoseph_w8mai
+    service: "amateur"
+  - id: stn_w8mai_stjoseph_vhf
+    call_sign: "W8MAI"
+    organization_id: org_blossomland_ara
+    location_id: loc_stjoseph_w8mai
+    service: "amateur"
+
+antennas:
+  - id: ant_w8mai_bridgman_uhf
+    station_id: stn_w8mai_bridgman_uhf
+    name: "W8MAI Bridgman 70cm Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_w8mai_sisterlakes_vhf
+    station_id: stn_w8mai_sisterlakes_vhf
+    name: "W8MAI Sister Lakes 2m Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_w8mai_sisterlakes_uhf
+    station_id: stn_w8mai_sisterlakes_uhf
+    name: "W8MAI Sister Lakes 70cm Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_w8mai_stjoseph_uhf
+    station_id: stn_w8mai_stjoseph_uhf
+    name: "W8MAI St. Joseph 70cm Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+  - id: ant_w8mai_stjoseph_vhf
+    station_id: stn_w8mai_stjoseph_vhf
+    name: "W8MAI St. Joseph 2m Antenna"
+    gain_dbi: null
+    height_agl_m: null
+    height_amsl_m: null
+
+rf_chains:
+  - id: chain_w8mai_bridgman_442775
+    station_id: stn_w8mai_bridgman_uhf
+    antenna_id: ant_w8mai_bridgman_uhf
+    tx:
+      freq_mhz: 442.775
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 447.775
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 88.5
+      ctcss_tx_hz: null
+      notes: "Standard +5.000 MHz offset. MIARC lists input tone 88.5 only; no output tone published. Weather net use. Coordination current (last TDS 2025-02-27)."
+  - id: chain_w8mai_sisterlakes_146820
+    station_id: stn_w8mai_sisterlakes_vhf
+    antenna_id: ant_w8mai_sisterlakes_vhf
+    tx:
+      freq_mhz: 146.820
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.220
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 88.5
+      ctcss_tx_hz: 88.5
+      notes: "Standard -0.600 MHz offset. ARES affiliated, weather net use. Coordination current (last TDS 2025-02-27)."
+  - id: chain_w8mai_sisterlakes_444700
+    station_id: stn_w8mai_sisterlakes_uhf
+    antenna_id: ant_w8mai_sisterlakes_uhf
+    tx:
+      freq_mhz: 444.700
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 449.700
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 97.4
+      ctcss_tx_hz: null
+      notes: "Standard +5.000 MHz offset. MIARC lists input tone 97.4 only; no output tone published. Coordination current (last TDS 2025-02-27)."
+  - id: chain_w8mai_stjoseph_442275
+    station_id: stn_w8mai_stjoseph_uhf
+    antenna_id: ant_w8mai_stjoseph_uhf
+    tx:
+      freq_mhz: 442.275
+      emission: "6K00F7W"
+      bandwidth_khz: 6.25
+    rx:
+      freq_mhz: 447.275
+    mode:
+      type: "D-STAR"
+      ctcss_rx_hz: null
+      ctcss_tx_hz: null
+      notes: "Standard +5.000 MHz offset. D-STAR digital voice; no CTCSS. ARES/AUXCOMM affiliated. Coordination current (last TDS 2026-01-12)."
+  - id: chain_w8mai_stjoseph_146610
+    station_id: stn_w8mai_stjoseph_vhf
+    antenna_id: ant_w8mai_stjoseph_vhf
+    tx:
+      freq_mhz: 146.610
+      emission: "6K00F7W"
+      bandwidth_khz: 6.25
+    rx:
+      freq_mhz: 146.010
+    mode:
+      type: "D-STAR"
+      ctcss_rx_hz: null
+      ctcss_tx_hz: null
+      notes: "Standard -0.600 MHz offset. D-STAR digital voice; no CTCSS. WARNING: MIARC flags this coordination as DELINQUENT (last TDS 2022-05-30); on-air status unverified as of 2026-10-09. Do not assume active. Note 146.610 is also used by K9JSI (analog FM, PL 131.8) in La Porte, IN - co-channel neighbor, not a duplicate."
+
+authorizations:
+  - id: auth_fcc_amateur
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "Transmit requires US amateur license."
+
+assignments:
+  - id: asgn_w8mai_bridgman_442775
+    short_name: "BL442B"
+    rf_chain_id: chain_w8mai_bridgman_442775
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur
+  - id: asgn_w8mai_sisterlakes_146820
+    short_name: "BL146S"
+    rf_chain_id: chain_w8mai_sisterlakes_146820
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur
+  - id: asgn_w8mai_sisterlakes_444700
+    short_name: "BL444S"
+    rf_chain_id: chain_w8mai_sisterlakes_444700
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur
+  - id: asgn_w8mai_stjoseph_442275
+    short_name: "BLSJ70"
+    rf_chain_id: chain_w8mai_stjoseph_442275
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur
+  - id: asgn_w8mai_stjoseph_146610
+    short_name: "BLSJ2M"
+    rf_chain_id: chain_w8mai_stjoseph_146610
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur

@@ -4,8 +4,8 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ## Quick Statistics
 
-- **Total SSRF Files:** 76
-- **Total Assignments:** 1,366
+- **Total SSRF Files:** 79
+- **Total Assignments:** 1,375
 - **Services Covered:** 12
 - **Modes:** AM, APRS, C4FM, CW, D-STAR, DMR, FM, NFM, NXDN, P25, PACKET
 - **Frequency Bands:** 5
@@ -37,7 +37,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |------|----------|-------------|-------|------------------|
 | [mmdvm_duplex_hotspot](mmdvm_duplex_hotspot.md) | amateur | 2 | DMR | custom / mmdvm_duplex_hotspot.yml |
 
-### Geographic System (61 files)
+### Geographic System (64 files)
 
 | File | Services | Assignments | Modes | Geographic Scope |
 |------|----------|-------------|-------|------------------|
@@ -88,8 +88,11 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [n9iaa_aresc_network](n9iaa_aresc_network.md) | amateur | 4 | FM, DMR | US / IN / Northwest / Regional |
 | [osceola_gmrs_repeaters](osceola_gmrs_repeaters.md) | gmrs | 1 | FM | US / IN / StJoseph / Osceola |
 | [kc8brs_four_flags](kc8brs_four_flags.md) | amateur | 1 | FM | US / MI / Berrien / Niles |
+| [ke8gvb_blossomland_dstar](ke8gvb_blossomland_dstar.md) | amateur | 2 | D-STAR | US / MI / Berrien / Niles |
 | [berrien_county_amateur](berrien_county_amateur.md) | amateur | 5 | FM, D-STAR | US / MI / Berrien / _Countywide |
+| [w8mai_blossomland_ara](w8mai_blossomland_ara.md) | amateur | 5 | FM, D-STAR | US / MI / Berrien / _Countywide |
 | [berrien_county_public_safety](berrien_county_public_safety.md) | public_safety_part90 | 13 | FM | US / MI / Berrien / _Countywide |
+| [k8brc_black_river_arc](k8brc_black_river_arc.md) | amateur | 2 | FM | US / MI / VanBuren / Bangor |
 | [n2ozo_repeaters](n2ozo_repeaters.md) | amateur | 3 | FM, P25 | US / NJ / Sussex / Hopatcong |
 | [n2qjn_repeater](n2qjn_repeater.md) | amateur | 1 | FM | US / NJ / Sussex / Hopatcong |
 | [wr2m_repeater](wr2m_repeater.md) | amateur | 1 | FM | US / NJ / Sussex / Hopatcong |
@@ -112,7 +115,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 - **FL:** 3 files
 - **IL:** 39 files
 - **IN:** 4 files
-- **MI:** 3 files
+- **MI:** 6 files
 - **National/Regional:** 13 files
 - **NJ:** 6 files
 - **NY:** 1 files
@@ -127,7 +130,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 | Service | Total Assignments | Files |
 |---------|------------------|-------|
-| amateur | 122 | 23 |
+| amateur | 131 | 26 |
 | aviation | 164 | 2 |
 | business_itinerant_part90 | 412 | 13 |
 | cb | 40 | 1 |
