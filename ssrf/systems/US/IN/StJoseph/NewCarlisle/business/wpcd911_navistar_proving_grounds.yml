@@ -1,0 +1,107 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+# SSRF-Lite: Navistar Proving Grounds (WPCD911) - New Carlisle, St. Joseph County, IN
+#
+# Part 90 land mobile licence carrying DMR-capable emission designators, within receive
+#   range of the Saugany Lake area (~11.3 km from the lake). Authored from FCC ULS; TX is
+#   restricted to the licensee, so these are receive-only entries for everyone else.
+#
+# No CTCSS/DCS tone, DMR colour code, time slot or talkgroup is recorded in ULS and
+# none has been observed on air, so none is asserted here.
+
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "FCC ULS License Search - WPCD911 (Navistar Proving Grounds)"
+      url: "https://wireless2.fcc.gov/UlsApp/UlsSearch/searchLicense.jsp?searchType=call&callSign=WPCD911"
+      accessed: "2026-10-10"
+    - name: "FCC ULS weekly bulk dump (HD/EN/LO/FR/EM tables), week of 2026-10-04"
+      url: "https://data.fcc.gov/download/pub/uls/complete/l_LMpriv.zip"
+      accessed: "2026-10-10"
+
+organizations:
+  - id: org_navistar_proving_grounds
+    name: "Navistar Proving Grounds (New Carlisle, IN)"
+
+locations:
+  - id: loc_navistar_proving_grounds_1
+    name: "32104 Sr 2, New Carlisle, IN (ULS Location 1)"
+    lat: 41.658389
+    lon: -86.486139
+
+stations:
+  - id: stn_wpcd911
+    call_sign: "WPCD911"
+    organization_id: org_navistar_proving_grounds
+    location_id: loc_navistar_proving_grounds_1
+    service: "business_itinerant_part90"
+
+antennas:
+  - id: ant_wpcd911_1
+    station_id: stn_wpcd911
+    name: "WPCD911 fixed site, ULS Location 1"
+
+authorizations:
+  - id: auth_wpcd911
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: "WPCD911"
+    notes: >
+      Active FCC licence, IG - Industrial/Business Pool, Conventional. Granted 02/04/2023,
+      expires 04/28/2033, current authorisation effective 02/04/2023. FRN 0028825628. ULS
+      lists 2 location(s). Mobile operation is authorised within 16.0 km of the fixed site.
+      TX is restricted to the licensee; receive-only for everyone else.
+
+rf_chains:
+  - id: chain_wpcd911_461p925_1
+    station_id: stn_wpcd911
+    antenna_id: ant_wpcd911_1
+    tx:
+      freq_mhz: 461.925
+      emission: "7K60FXW"
+      power_w: 25
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 466.925
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 25 W output / 79 W ERP. Input 466.925 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 7K60FXW. Includes 7K60FXW, so DMR is authorised here, but the on-air mode
+        has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wpcd911_462p45_1
+    station_id: stn_wpcd911
+    antenna_id: ant_wpcd911_1
+    tx:
+      freq_mhz: 462.45
+      emission: "11K2F3E"
+      power_w: 25
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 467.45
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 25 W output / 79 W ERP. Input 467.45 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is authorised
+        here, but the on-air mode has not been observed - treat FM as the default and search
+        for DMR.
+
+assignments:
+  - id: asgn_wpcd911_461p925_1
+    short_name: "NAVI1"
+    channel_name: "WPCD911 461.925"
+    rf_chain_id: chain_wpcd911_461p925_1
+    usage: "repeater"
+    authorization_id: auth_wpcd911
+    notes: "Output 461.925 / input 466.925. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wpcd911_462p45_1
+    short_name: "NAVI2"
+    channel_name: "WPCD911 462.45"
+    rf_chain_id: chain_wpcd911_462p45_1
+    usage: "repeater"
+    authorization_id: auth_wpcd911
+    notes: "Output 462.45 / input 467.45. Receive-only for non-licensees; tone/colour code unknown."

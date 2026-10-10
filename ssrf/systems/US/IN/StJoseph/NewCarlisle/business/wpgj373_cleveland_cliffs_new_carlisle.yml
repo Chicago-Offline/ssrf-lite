@@ -1,0 +1,383 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+# SSRF-Lite: Cleveland-Cliffs New Carlisle LLC (WPGJ373) - New Carlisle, St. Joseph County, IN
+#
+# Part 90 land mobile licence carrying DMR-capable emission designators, within receive
+#   range of the Saugany Lake area (~8.2 km from the lake). Authored from FCC ULS; TX is
+#   restricted to the licensee, so these are receive-only entries for everyone else.
+#
+# No CTCSS/DCS tone, DMR colour code, time slot or talkgroup is recorded in ULS and
+# none has been observed on air, so none is asserted here.
+
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "FCC ULS License Search - WPGJ373 (Cleveland-Cliffs New Carlisle LLC)"
+      url: "https://wireless2.fcc.gov/UlsApp/UlsSearch/searchLicense.jsp?searchType=call&callSign=WPGJ373"
+      accessed: "2026-10-10"
+    - name: "FCC ULS weekly bulk dump (HD/EN/LO/FR/EM tables), week of 2026-10-04"
+      url: "https://data.fcc.gov/download/pub/uls/complete/l_LMpriv.zip"
+      accessed: "2026-10-10"
+
+organizations:
+  - id: org_cleveland_cliffs_new_carlisle
+    name: "Cleveland-Cliffs New Carlisle LLC (Cleveland, IN)"
+
+locations:
+  - id: loc_cleveland_cliffs_new_carlisle_1
+    name: "30755 Edison Rd, New Carlisle, IN (ULS Location 1)"
+    lat: 41.689500
+    lon: -86.503361
+
+stations:
+  - id: stn_wpgj373
+    call_sign: "WPGJ373"
+    organization_id: org_cleveland_cliffs_new_carlisle
+    location_id: loc_cleveland_cliffs_new_carlisle_1
+    service: "business_itinerant_part90"
+
+antennas:
+  - id: ant_wpgj373_1
+    station_id: stn_wpgj373
+    name: "WPGJ373 fixed site, ULS Location 1"
+
+authorizations:
+  - id: auth_wpgj373
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: "WPGJ373"
+    notes: >
+      Active FCC licence, YG - Industrial/Business Pool, Trunked. Granted 02/19/2025,
+      expires 02/28/2035, current authorisation effective 02/19/2025. FRN 0036169951. ULS
+      lists 9 location(s). Mobile operation is authorised within 8.0 km of the fixed site.
+      TX is restricted to the licensee; receive-only for everyone else.
+
+rf_chains:
+  - id: chain_wpgj373_451p575_1
+    station_id: stn_wpgj373
+    antenna_id: ant_wpgj373_1
+    tx:
+      freq_mhz: 451.575
+      emission: "11K2F3E"
+      power_w: 20
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 456.575
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 20 W output / 15 W ERP. Input 456.575 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is authorised
+        here, but the on-air mode has not been observed - treat FM as the default and search
+        for DMR.
+  - id: chain_wpgj373_461p575_1
+    station_id: stn_wpgj373
+    antenna_id: ant_wpgj373_1
+    tx:
+      freq_mhz: 461.575
+      emission: "11K2F3E"
+      power_w: 70
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 466.575
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 70 W output / 40 W ERP. Input 466.575 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is authorised
+        here, but the on-air mode has not been observed - treat FM as the default and search
+        for DMR.
+  - id: chain_wpgj373_462p025_1
+    station_id: stn_wpgj373
+    antenna_id: ant_wpgj373_1
+    tx:
+      freq_mhz: 462.025
+      emission: "11K2F3E"
+      power_w: 70
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 467.025
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 70 W output / 40 W ERP. Input 467.025 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is authorised
+        here, but the on-air mode has not been observed - treat FM as the default and search
+        for DMR.
+  - id: chain_wpgj373_462p225_1
+    station_id: stn_wpgj373
+    antenna_id: ant_wpgj373_1
+    tx:
+      freq_mhz: 462.225
+      emission: "11K2F3E"
+      power_w: 70
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 467.225
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 70 W output / 40 W ERP. Input 467.225 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is authorised
+        here, but the on-air mode has not been observed - treat FM as the default and search
+        for DMR.
+  - id: chain_wpgj373_462p325_1
+    station_id: stn_wpgj373
+    antenna_id: ant_wpgj373_1
+    tx:
+      freq_mhz: 462.325
+      emission: "11K2F3E"
+      power_w: 70
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 467.325
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 70 W output / 40 W ERP. Input 467.325 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is authorised
+        here, but the on-air mode has not been observed - treat FM as the default and search
+        for DMR.
+  - id: chain_wpgj373_462p375_1
+    station_id: stn_wpgj373
+    antenna_id: ant_wpgj373_1
+    tx:
+      freq_mhz: 462.375
+      emission: "11K2F3E"
+      power_w: 70
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 467.375
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 70 W output / 40 W ERP. Input 467.375 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is authorised
+        here, but the on-air mode has not been observed - treat FM as the default and search
+        for DMR.
+  - id: chain_wpgj373_462p5_1
+    station_id: stn_wpgj373
+    antenna_id: ant_wpgj373_1
+    tx:
+      freq_mhz: 462.5
+      emission: "11K2F3E"
+      power_w: 70
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 467.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 70 W output / 40 W ERP. Input 467.5 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is authorised
+        here, but the on-air mode has not been observed - treat FM as the default and search
+        for DMR.
+  - id: chain_wpgj373_463p575_1
+    station_id: stn_wpgj373
+    antenna_id: ant_wpgj373_1
+    tx:
+      freq_mhz: 463.575
+      emission: "11K2F3E"
+      power_w: 70
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 468.575
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 70 W output / 40 W ERP. Input 468.575 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is authorised
+        here, but the on-air mode has not been observed - treat FM as the default and search
+        for DMR.
+  - id: chain_wpgj373_464p25_1
+    station_id: stn_wpgj373
+    antenna_id: ant_wpgj373_1
+    tx:
+      freq_mhz: 464.25
+      emission: "11K2F3E"
+      power_w: 70
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 469.25
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 70 W output / 40 W ERP. Input 469.25 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is authorised
+        here, but the on-air mode has not been observed - treat FM as the default and search
+        for DMR.
+  - id: chain_wpgj373_464p575_1
+    station_id: stn_wpgj373
+    antenna_id: ant_wpgj373_1
+    tx:
+      freq_mhz: 464.575
+      emission: "11K2F3E"
+      power_w: 100
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 469.575
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 100 W output / 100 W ERP. Input 469.575 (+5.0000
+        MHz split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is authorised
+        here, but the on-air mode has not been observed - treat FM as the default and search
+        for DMR.
+  - id: chain_wpgj373_464p75_1
+    station_id: stn_wpgj373
+    antenna_id: ant_wpgj373_1
+    tx:
+      freq_mhz: 464.75
+      emission: "11K2F3E"
+      power_w: 70
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 469.75
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 70 W output / 40 W ERP. Input 469.75 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is authorised
+        here, but the on-air mode has not been observed - treat FM as the default and search
+        for DMR.
+  - id: chain_wpgj373_464p9375_1
+    station_id: stn_wpgj373
+    antenna_id: ant_wpgj373_1
+    tx:
+      freq_mhz: 464.938
+      emission: "11K2F3E"
+      power_w: 25
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 469.938
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB8, 25 W output / 40 W ERP. Input 469.938 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is authorised
+        here, but the on-air mode has not been observed - treat FM as the default and search
+        for DMR.
+  - id: chain_wpgj373_464p9625_1
+    station_id: stn_wpgj373
+    antenna_id: ant_wpgj373_1
+    tx:
+      freq_mhz: 464.962
+      emission: "11K2F3E"
+      power_w: 25
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 469.962
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB8, 25 W output / 100 W ERP. Input 469.962 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is authorised
+        here, but the on-air mode has not been observed - treat FM as the default and search
+        for DMR.
+
+assignments:
+  - id: asgn_wpgj373_451p575_1
+    short_name: "CCLF01"
+    channel_name: "WPGJ373 451.575"
+    rf_chain_id: chain_wpgj373_451p575_1
+    usage: "repeater"
+    authorization_id: auth_wpgj373
+    notes: "Output 451.575 / input 456.575. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wpgj373_461p575_1
+    short_name: "CCLF02"
+    channel_name: "WPGJ373 461.575"
+    rf_chain_id: chain_wpgj373_461p575_1
+    usage: "repeater"
+    authorization_id: auth_wpgj373
+    notes: "Output 461.575 / input 466.575. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wpgj373_462p025_1
+    short_name: "CCLF03"
+    channel_name: "WPGJ373 462.025"
+    rf_chain_id: chain_wpgj373_462p025_1
+    usage: "repeater"
+    authorization_id: auth_wpgj373
+    notes: "Output 462.025 / input 467.025. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wpgj373_462p225_1
+    short_name: "CCLF04"
+    channel_name: "WPGJ373 462.225"
+    rf_chain_id: chain_wpgj373_462p225_1
+    usage: "repeater"
+    authorization_id: auth_wpgj373
+    notes: "Output 462.225 / input 467.225. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wpgj373_462p325_1
+    short_name: "CCLF05"
+    channel_name: "WPGJ373 462.325"
+    rf_chain_id: chain_wpgj373_462p325_1
+    usage: "repeater"
+    authorization_id: auth_wpgj373
+    notes: "Output 462.325 / input 467.325. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wpgj373_462p375_1
+    short_name: "CCLF06"
+    channel_name: "WPGJ373 462.375"
+    rf_chain_id: chain_wpgj373_462p375_1
+    usage: "repeater"
+    authorization_id: auth_wpgj373
+    notes: "Output 462.375 / input 467.375. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wpgj373_462p5_1
+    short_name: "CCLF07"
+    channel_name: "WPGJ373 462.5"
+    rf_chain_id: chain_wpgj373_462p5_1
+    usage: "repeater"
+    authorization_id: auth_wpgj373
+    notes: "Output 462.5 / input 467.5. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wpgj373_463p575_1
+    short_name: "CCLF08"
+    channel_name: "WPGJ373 463.575"
+    rf_chain_id: chain_wpgj373_463p575_1
+    usage: "repeater"
+    authorization_id: auth_wpgj373
+    notes: "Output 463.575 / input 468.575. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wpgj373_464p25_1
+    short_name: "CCLF09"
+    channel_name: "WPGJ373 464.25"
+    rf_chain_id: chain_wpgj373_464p25_1
+    usage: "repeater"
+    authorization_id: auth_wpgj373
+    notes: "Output 464.25 / input 469.25. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wpgj373_464p575_1
+    short_name: "CCLF10"
+    channel_name: "WPGJ373 464.575"
+    rf_chain_id: chain_wpgj373_464p575_1
+    usage: "repeater"
+    authorization_id: auth_wpgj373
+    notes: "Output 464.575 / input 469.575. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wpgj373_464p75_1
+    short_name: "CCLF11"
+    channel_name: "WPGJ373 464.75"
+    rf_chain_id: chain_wpgj373_464p75_1
+    usage: "repeater"
+    authorization_id: auth_wpgj373
+    notes: "Output 464.75 / input 469.75. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wpgj373_464p9375_1
+    short_name: "CCLF12"
+    channel_name: "WPGJ373 464.938"
+    rf_chain_id: chain_wpgj373_464p9375_1
+    usage: "repeater"
+    authorization_id: auth_wpgj373
+    notes: "Output 464.938 / input 469.938. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wpgj373_464p9625_1
+    short_name: "CCLF13"
+    channel_name: "WPGJ373 464.962"
+    rf_chain_id: chain_wpgj373_464p9625_1
+    usage: "repeater"
+    authorization_id: auth_wpgj373
+    notes: "Output 464.962 / input 469.962. Receive-only for non-licensees; tone/colour code unknown."

@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+# SSRF-Lite: RED HEN TURF FARMS INC (KNHS623) - New Carlisle, St. Joseph County, IN
+#
+# Part 90 land mobile licence carrying DMR-capable emission designators, within receive
+#   range of the Saugany Lake area (~12.8 km from the lake). Authored from FCC ULS; TX is
+#   restricted to the licensee, so these are receive-only entries for everyone else.
+#
+# No CTCSS/DCS tone, DMR colour code, time slot or talkgroup is recorded in ULS and
+# none has been observed on air, so none is asserted here.
+
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "FCC ULS License Search - KNHS623 (RED HEN TURF FARMS INC)"
+      url: "https://wireless2.fcc.gov/UlsApp/UlsSearch/searchLicense.jsp?searchType=call&callSign=KNHS623"
+      accessed: "2026-10-10"
+    - name: "FCC ULS weekly bulk dump (HD/EN/LO/FR/EM tables), week of 2026-10-04"
+      url: "https://data.fcc.gov/download/pub/uls/complete/l_LMpriv.zip"
+      accessed: "2026-10-10"
+
+organizations:
+  - id: org_red_hen_turf_farms
+    name: "RED HEN TURF FARMS INC (New Carlisle, IN)"
+
+locations:
+  - id: loc_red_hen_turf_farms_2
+    name: "29435 W Darden Rd, New Carlisle, IN (ULS Location 2)"
+    lat: 41.729222
+    lon: -86.437528
+
+stations:
+  - id: stn_knhs623
+    call_sign: "KNHS623"
+    organization_id: org_red_hen_turf_farms
+    location_id: loc_red_hen_turf_farms_2
+    service: "business_itinerant_part90"
+
+antennas:
+  - id: ant_knhs623_2
+    station_id: stn_knhs623
+    name: "KNHS623 fixed site, ULS Location 2"
+
+authorizations:
+  - id: auth_knhs623
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: "KNHS623"
+    notes: >
+      Active FCC licence, IG - Industrial/Business Pool, Conventional. Granted 09/23/2023,
+      expires 01/31/2033, current authorisation effective 09/23/2023. FRN 0002888568. ULS
+      lists 3 location(s). Mobile operation is authorised within 32.0 km of the fixed site.
+      TX is restricted to the licensee; receive-only for everyone else.
+
+rf_chains:
+  - id: chain_knhs623_158p385_2
+    station_id: stn_knhs623
+    antenna_id: ant_knhs623_2
+    tx:
+      freq_mhz: 158.385
+      emission: "11K2F3E"
+      power_w: 20
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 2, station class FB, 20 W output / 20 W ERP. Authorised emissions:
+        11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+
+assignments:
+  - id: asgn_knhs623_158p385_2
+    short_name: "RHTF1"
+    channel_name: "KNHS623 158.385"
+    rf_chain_id: chain_knhs623_158p385_2
+    usage: "simplex"
+    authorization_id: auth_knhs623
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."

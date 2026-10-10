@@ -1,0 +1,575 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+# SSRF-Lite: Northern Indiana Public Service Company (WNVR290) - La Porte, La Porte County, IN
+#
+# Part 90 land mobile licence carrying DMR-capable emission designators, within receive
+#   range of the Saugany Lake area (~13.5 km from the lake). Authored from FCC ULS; TX is
+#   restricted to the licensee, so these are receive-only entries for everyone else.
+#
+# No CTCSS/DCS tone, DMR colour code, time slot or talkgroup is recorded in ULS and
+# none has been observed on air, so none is asserted here.
+
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "FCC ULS License Search - WNVR290 (Northern Indiana Public Service Company)"
+      url: "https://wireless2.fcc.gov/UlsApp/UlsSearch/searchLicense.jsp?searchType=call&callSign=WNVR290"
+      accessed: "2026-10-10"
+    - name: "FCC ULS weekly bulk dump (HD/EN/LO/FR/EM tables), week of 2026-10-04"
+      url: "https://data.fcc.gov/download/pub/uls/complete/l_LMpriv.zip"
+      accessed: "2026-10-10"
+
+organizations:
+  - id: org_nipsco_smr
+    name: "Northern Indiana Public Service Company (Gary, IN)"
+
+locations:
+  - id: loc_nipsco_smr_1
+    name: "Int Babcock Rd & Cr 700N, Valparaiso, IN (ULS Location 1)"
+    lat: 41.535278
+    lon: -87.102500
+  - id: loc_nipsco_smr_2
+    name: "610 Ft N 284 Ft E Int Severs Rd & Cr 50W, La Porte, IN (ULS Location 2)"
+    lat: 41.637222
+    lon: -86.708056
+  - id: loc_nipsco_smr_3
+    name: "1039 E Pennsylvania Ave, South Bend, IN (ULS Location 3)"
+    lat: 41.661667
+    lon: -86.236111
+
+stations:
+  - id: stn_wnvr290
+    call_sign: "WNVR290"
+    organization_id: org_nipsco_smr
+    location_id: loc_nipsco_smr_2
+    service: "business_itinerant_part90"
+
+antennas:
+  - id: ant_wnvr290_1
+    station_id: stn_wnvr290
+    name: "WNVR290 fixed site, ULS Location 1"
+  - id: ant_wnvr290_2
+    station_id: stn_wnvr290
+    name: "WNVR290 fixed site, ULS Location 2"
+  - id: ant_wnvr290_3
+    station_id: stn_wnvr290
+    name: "WNVR290 fixed site, ULS Location 3"
+
+authorizations:
+  - id: auth_wnvr290
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: "WNVR290"
+    notes: >
+      Active FCC licence, YI - Industrial/Business Pool, Trunked (SMR). Granted 05/27/2021,
+      expires 06/12/2031, current authorisation effective 11/08/2023. FRN 0004837563. ULS
+      lists 3 location(s). TX is restricted to the licensee; receive-only for everyone else.
+
+rf_chains:
+  - id: chain_wnvr290_935p3875_1
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_1
+    tx:
+      freq_mhz: 935.388
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 150 W output / 410 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_935p4_1
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_1
+    tx:
+      freq_mhz: 935.4
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 150 W output / 410 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_935p4125_1
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_1
+    tx:
+      freq_mhz: 935.413
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 150 W output / 410 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_935p425_1
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_1
+    tx:
+      freq_mhz: 935.425
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 150 W output / 410 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_935p4375_1
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_1
+    tx:
+      freq_mhz: 935.438
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 150 W output / 410 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_936p3625_1
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_1
+    tx:
+      freq_mhz: 936.362
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 150 W output / 500 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_935p5_2
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_2
+    tx:
+      freq_mhz: 935.5
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 2, station class FB2, 150 W output / 1000 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_935p925_2
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_2
+    tx:
+      freq_mhz: 935.925
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 2, station class FB2, 150 W output / 1000 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_936p1375_2
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_2
+    tx:
+      freq_mhz: 936.138
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 2, station class FB2, 150 W output / 1000 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_936p3875_2
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_2
+    tx:
+      freq_mhz: 936.388
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 2, station class FB2, 150 W output / 1000 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_939p6_2
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_2
+    tx:
+      freq_mhz: 939.6
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 2, station class FB2, 150 W output / 1000 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_939p9375_2
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_2
+    tx:
+      freq_mhz: 939.938
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 2, station class FB2, 150 W output / 1000 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_935p1375_3
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_3
+    tx:
+      freq_mhz: 935.138
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 3, station class FB2, 150 W output / 1000 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_935p3375_3
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_3
+    tx:
+      freq_mhz: 935.337
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 3, station class FB2, 150 W output / 1000 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_935p5375_3
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_3
+    tx:
+      freq_mhz: 935.538
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 3, station class FB2, 150 W output / 1000 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_935p7375_3
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_3
+    tx:
+      freq_mhz: 935.737
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 3, station class FB2, 150 W output / 1000 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_935p95_3
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_3
+    tx:
+      freq_mhz: 935.95
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 3, station class FB2, 150 W output / 1000 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_936p0_3
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_3
+    tx:
+      freq_mhz: 936
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 3, station class FB2, 150 W output / 1000 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_936p2_3
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_3
+    tx:
+      freq_mhz: 936.2
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 3, station class FB2, 150 W output / 1000 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_936p425_3
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_3
+    tx:
+      freq_mhz: 936.425
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 3, station class FB2, 150 W output / 1000 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_939p525_3
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_3
+    tx:
+      freq_mhz: 939.525
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 3, station class FB2, 150 W output / 1000 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_939p725_3
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_3
+    tx:
+      freq_mhz: 939.725
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 3, station class FB2, 150 W output / 1000 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_939p9125_3
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_3
+    tx:
+      freq_mhz: 939.913
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 3, station class FB2, 150 W output / 1000 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wnvr290_939p9625_3
+    station_id: stn_wnvr290
+    antenna_id: ant_wnvr290_3
+    tx:
+      freq_mhz: 939.962
+      emission: "13K6F3E"
+      power_w: 150
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 3, station class FB2, 150 W output / 1000 W ERP. Authorised emissions:
+        13K6F3E, 7K60FXD, 7K60FXW. Includes 7K60FXD/7K60FXW, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+
+assignments:
+  - id: asgn_wnvr290_935p3875_1
+    short_name: "NIPS01"
+    channel_name: "WNVR290 935.388"
+    rf_chain_id: chain_wnvr290_935p3875_1
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_935p4_1
+    short_name: "NIPS02"
+    channel_name: "WNVR290 935.4"
+    rf_chain_id: chain_wnvr290_935p4_1
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_935p4125_1
+    short_name: "NIPS03"
+    channel_name: "WNVR290 935.413"
+    rf_chain_id: chain_wnvr290_935p4125_1
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_935p425_1
+    short_name: "NIPS04"
+    channel_name: "WNVR290 935.425"
+    rf_chain_id: chain_wnvr290_935p425_1
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_935p4375_1
+    short_name: "NIPS05"
+    channel_name: "WNVR290 935.438"
+    rf_chain_id: chain_wnvr290_935p4375_1
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_936p3625_1
+    short_name: "NIPS06"
+    channel_name: "WNVR290 936.362"
+    rf_chain_id: chain_wnvr290_936p3625_1
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_935p5_2
+    short_name: "NIPS07"
+    channel_name: "WNVR290 935.5"
+    rf_chain_id: chain_wnvr290_935p5_2
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_935p925_2
+    short_name: "NIPS08"
+    channel_name: "WNVR290 935.925"
+    rf_chain_id: chain_wnvr290_935p925_2
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_936p1375_2
+    short_name: "NIPS09"
+    channel_name: "WNVR290 936.138"
+    rf_chain_id: chain_wnvr290_936p1375_2
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_936p3875_2
+    short_name: "NIPS10"
+    channel_name: "WNVR290 936.388"
+    rf_chain_id: chain_wnvr290_936p3875_2
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_939p6_2
+    short_name: "NIPS11"
+    channel_name: "WNVR290 939.6"
+    rf_chain_id: chain_wnvr290_939p6_2
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_939p9375_2
+    short_name: "NIPS12"
+    channel_name: "WNVR290 939.938"
+    rf_chain_id: chain_wnvr290_939p9375_2
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_935p1375_3
+    short_name: "NIPS13"
+    channel_name: "WNVR290 935.138"
+    rf_chain_id: chain_wnvr290_935p1375_3
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_935p3375_3
+    short_name: "NIPS14"
+    channel_name: "WNVR290 935.337"
+    rf_chain_id: chain_wnvr290_935p3375_3
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_935p5375_3
+    short_name: "NIPS15"
+    channel_name: "WNVR290 935.538"
+    rf_chain_id: chain_wnvr290_935p5375_3
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_935p7375_3
+    short_name: "NIPS16"
+    channel_name: "WNVR290 935.737"
+    rf_chain_id: chain_wnvr290_935p7375_3
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_935p95_3
+    short_name: "NIPS17"
+    channel_name: "WNVR290 935.95"
+    rf_chain_id: chain_wnvr290_935p95_3
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_936p0_3
+    short_name: "NIPS18"
+    channel_name: "WNVR290 936"
+    rf_chain_id: chain_wnvr290_936p0_3
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_936p2_3
+    short_name: "NIPS19"
+    channel_name: "WNVR290 936.2"
+    rf_chain_id: chain_wnvr290_936p2_3
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_936p425_3
+    short_name: "NIPS20"
+    channel_name: "WNVR290 936.425"
+    rf_chain_id: chain_wnvr290_936p425_3
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_939p525_3
+    short_name: "NIPS21"
+    channel_name: "WNVR290 939.525"
+    rf_chain_id: chain_wnvr290_939p525_3
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_939p725_3
+    short_name: "NIPS22"
+    channel_name: "WNVR290 939.725"
+    rf_chain_id: chain_wnvr290_939p725_3
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_939p9125_3
+    short_name: "NIPS23"
+    channel_name: "WNVR290 939.913"
+    rf_chain_id: chain_wnvr290_939p9125_3
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wnvr290_939p9625_3
+    short_name: "NIPS24"
+    channel_name: "WNVR290 939.962"
+    rf_chain_id: chain_wnvr290_939p9625_3
+    usage: "simplex"
+    authorization_id: auth_wnvr290
+    notes: "Base/fixed transmit frequency, no paired input on this licence. Receive-only for non-licensees; tone/colour code unknown."

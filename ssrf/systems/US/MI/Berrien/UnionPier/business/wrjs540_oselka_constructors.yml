@@ -1,0 +1,82 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+# SSRF-Lite: OSELKA CONSTRUCTORS CO LLC (WRJS540) - Union Pier, Berrien County, MI
+#
+# Part 90 land mobile licence carrying DMR-capable emission designators, within receive
+#   range of the Saugany Lake area (~13.9 km from the lake). Authored from FCC ULS; TX is
+#   restricted to the licensee, so these are receive-only entries for everyone else.
+#
+# No CTCSS/DCS tone, DMR colour code, time slot or talkgroup is recorded in ULS and
+# none has been observed on air, so none is asserted here.
+
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "FCC ULS License Search - WRJS540 (OSELKA CONSTRUCTORS CO LLC)"
+      url: "https://wireless2.fcc.gov/UlsApp/UlsSearch/searchLicense.jsp?searchType=call&callSign=WRJS540"
+      accessed: "2026-10-10"
+    - name: "FCC ULS weekly bulk dump (HD/EN/LO/FR/EM tables), week of 2026-10-04"
+      url: "https://data.fcc.gov/download/pub/uls/complete/l_LMpriv.zip"
+      accessed: "2026-10-10"
+
+organizations:
+  - id: org_oselka_constructors
+    name: "OSELKA CONSTRUCTORS CO LLC (Union Pier, MI)"
+
+locations:
+  - id: loc_oselka_constructors_1
+    name: "10900 Kruger Road, Union Pier, MI (ULS Location 1)"
+    lat: 41.806972
+    lon: -86.715694
+
+stations:
+  - id: stn_wrjs540
+    call_sign: "WRJS540"
+    organization_id: org_oselka_constructors
+    location_id: loc_oselka_constructors_1
+    service: "business_itinerant_part90"
+
+antennas:
+  - id: ant_wrjs540_1
+    station_id: stn_wrjs540
+    name: "WRJS540 fixed site, ULS Location 1"
+
+authorizations:
+  - id: auth_wrjs540
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: "WRJS540"
+    notes: >
+      Active FCC licence, IG - Industrial/Business Pool, Conventional. Granted 10/20/2020,
+      expires 10/20/2030, current authorisation effective 10/20/2020. FRN 0029996287. ULS
+      lists 3 location(s). Mobile operation is authorised within 32.0 km of the fixed site.
+      TX is restricted to the licensee; receive-only for everyone else.
+
+rf_chains:
+  - id: chain_wrjs540_463p975_1
+    station_id: stn_wrjs540
+    antenna_id: ant_wrjs540_1
+    tx:
+      freq_mhz: 463.975
+      emission: "7K60FXW"
+      power_w: 45
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 468.975
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 45 W output / 70 W ERP. Input 468.975 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 7K60FXW. Includes 7K60FXW, so DMR is authorised here, but the on-air mode
+        has not been observed - treat FM as the default and search for DMR.
+
+assignments:
+  - id: asgn_wrjs540_463p975_1
+    short_name: "OSEL1"
+    channel_name: "WRJS540 463.975"
+    rf_chain_id: chain_wrjs540_463p975_1
+    usage: "repeater"
+    authorization_id: auth_wrjs540
+    notes: "Output 463.975 / input 468.975. Receive-only for non-licensees; tone/colour code unknown."

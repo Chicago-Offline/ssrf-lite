@@ -1,0 +1,110 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+# SSRF-Lite: SACHS ELECTRIC DBA ARCHKEY SOLUTIONS (WRVC893) - New Carlisle, St. Joseph County, IN
+#
+# Part 90 land mobile licence carrying DMR-capable emission designators, within receive
+#   range of the Saugany Lake area (~11.6 km from the lake). Authored from FCC ULS; TX is
+#   restricted to the licensee, so these are receive-only entries for everyone else.
+#
+# Construction/contractor licence tied to the New Carlisle build-out - expect this system to go quiet when the project finishes.
+#
+# No CTCSS/DCS tone, DMR colour code, time slot or talkgroup is recorded in ULS and
+# none has been observed on air, so none is asserted here.
+
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "FCC ULS License Search - WRVC893 (SACHS ELECTRIC DBA ARCHKEY SOLUTIONS)"
+      url: "https://wireless2.fcc.gov/UlsApp/UlsSearch/searchLicense.jsp?searchType=call&callSign=WRVC893"
+      accessed: "2026-10-10"
+    - name: "FCC ULS weekly bulk dump (HD/EN/LO/FR/EM tables), week of 2026-10-04"
+      url: "https://data.fcc.gov/download/pub/uls/complete/l_LMpriv.zip"
+      accessed: "2026-10-10"
+
+organizations:
+  - id: org_sachs_electric_archkey
+    name: "SACHS ELECTRIC DBA ARCHKEY SOLUTIONS (Fenton, MO)"
+
+locations:
+  - id: loc_sachs_electric_archkey_2
+    name: "31100 Sr-2 W, New Carlisle, IN (ULS Location 2)"
+    lat: 41.671444
+    lon: -86.469111
+
+stations:
+  - id: stn_wrvc893
+    call_sign: "WRVC893"
+    organization_id: org_sachs_electric_archkey
+    location_id: loc_sachs_electric_archkey_2
+    service: "business_itinerant_part90"
+
+antennas:
+  - id: ant_wrvc893_2
+    station_id: stn_wrvc893
+    name: "WRVC893 fixed site, ULS Location 2"
+
+authorizations:
+  - id: auth_wrvc893
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: "WRVC893"
+    notes: >
+      Active FCC licence, IG - Industrial/Business Pool, Conventional. Granted 11/03/2022,
+      expires 11/03/2032, current authorisation effective 06/30/2025. FRN 0032851271. ULS
+      lists 3 location(s). Mobile operation is authorised within 8.0 km of the fixed site.
+      TX is restricted to the licensee; receive-only for everyone else.
+      Construction/contractor licence tied to the New Carlisle build-out - expect this
+      system to go quiet when the project finishes.
+
+rf_chains:
+  - id: chain_wrvc893_461p7375_2
+    station_id: stn_wrvc893
+    antenna_id: ant_wrvc893_2
+    tx:
+      freq_mhz: 461.738
+      emission: "7K60FXD"
+      power_w: 25
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 466.738
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 2, station class FB2, 25 W output / 25 W ERP. Input 466.738 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wrvc893_464p1125_2
+    station_id: stn_wrvc893
+    antenna_id: ant_wrvc893_2
+    tx:
+      freq_mhz: 464.113
+      emission: "7K60FXD"
+      power_w: 25
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 469.113
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 2, station class FB2, 25 W output / 25 W ERP. Input 469.113 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is authorised here, but
+        the on-air mode has not been observed - treat FM as the default and search for DMR.
+
+assignments:
+  - id: asgn_wrvc893_461p7375_2
+    short_name: "SACH1"
+    channel_name: "WRVC893 461.738"
+    rf_chain_id: chain_wrvc893_461p7375_2
+    usage: "repeater"
+    authorization_id: auth_wrvc893
+    notes: "Output 461.738 / input 466.738. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wrvc893_464p1125_2
+    short_name: "SACH2"
+    channel_name: "WRVC893 464.113"
+    rf_chain_id: chain_wrvc893_464p1125_2
+    usage: "repeater"
+    authorization_id: auth_wrvc893
+    notes: "Output 464.113 / input 469.113. Receive-only for non-licensees; tone/colour code unknown."
