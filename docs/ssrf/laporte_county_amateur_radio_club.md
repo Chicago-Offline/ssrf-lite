@@ -10,7 +10,7 @@
 - **Assignments:** 6
 - **Services:** amateur
 - **Organizations:** 1
-- **Locations:** 4
+- **Locations:** 5
 - **RF Chains:** 6
 - **Channel Plans:** 0
 - **Contacts:** 0
@@ -35,6 +35,9 @@
 ### La Porte - Schultz Road Tower (US 35)
 **Coordinates:** 41.6765, -86.7563
 
+### La Porte County - Johnson Rd / Summit Farm 300 ft Tower (approx, site unverified)
+**Coordinates:** 41.6106, -86.7225
+
 ### La Porte - Northwest Health Hospital
 **Coordinates:** 41.6106, -86.7265
 
@@ -50,12 +53,17 @@
 
 - **asgn_k9jsi_vhf_fm** - repeater
   - *Primary La Porte County analog repeater; 146.610 -0.600 MHz, CTCSS 131.8 Hz.
-Supports SKYWARN weather nets and monthly siren checks; Wednesday club net at 1900 CDT.
-Located on Schultz Road tower site shared with W9LY UHF system.
+Supports the monthly siren check net (first Saturday, net opens 1030, sirens 1100).
+CORRECTED 2026-10-09: the Wednesday 1900 club net runs on W9LY 146.970, not here.
+La Porte County SKYWARN nets have moved to N9IAA 146.685 under Indiana District 1
+(La Porte is served by NWS North Webster; the rest of District 1 by NWS Chicago).
+RELOCATED off the Schultz Road site to the Johnson Rd / Summit Farm 300 ft tower.
 *
 - **asgn_w9ly_vhf_fm** - repeater
-  - *Yaesu DR-1X dual-mode repeater on 146.970 -0.600 MHz, 131.8 Hz PL for analog access.
+  - *Yaesu DR-1X repeater on 146.970 -0.600 MHz, 131.8 Hz PL for analog access.
 Located atop Northwest Health (La Porte Hospital); ~50 W into Telewave TPRD-1454 duplexer.
+Carries the Wednesday 1900 club net. AllStar linked, with EchoLink node 193001
+restored and operational as of 2026-10-09.
 *
 - **asgn_w9ly_vhf_c4fm** - repeater
   - *System Fusion (C4FM) access on 146.970 MHz; same DR-1X platform as FM.*
@@ -68,8 +76,11 @@ Telewave duplexer and ~40 W ERP. Collocated at Schultz Road tower (US 35).
 Same Schultz Road site and antenna as FM chain.
 *
 - **asgn_w9sal_uhf_fm** - repeater
-  - *444.950 +5.000 MHz, PL 131.8 Hz. Operated by Valparaiso Technical Institute engineers in La Porte.
-Serves countywide coverage and links into regional nets as needed.
+  - *444.950 +5.000 MHz, PL 131.8 Hz. Serves countywide coverage.
+ATTRIBUTION UNVERIFIED 2026-10-09: this record credits "Valparaiso Technical Institute
+engineers", but VTI closed in 1991 and the LPCARC site states the club hosts exactly
+three repeaters (K9JSI 146.610 plus the two W9LY machines). W9SAL is not mentioned on
+the club site. Sponsor linkage to LPCARC and the site location both need confirmation.
 *
 
 ## Authorization Requirements
