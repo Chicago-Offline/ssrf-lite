@@ -4,8 +4,8 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 
 ## Quick Statistics
 
-- **Total SSRF Files:** 79
-- **Total Assignments:** 1,375
+- **Total SSRF Files:** 80
+- **Total Assignments:** 1,383
 - **Services Covered:** 12
 - **Modes:** AM, APRS, C4FM, CW, D-STAR, DMR, FM, NFM, NXDN, P25, PACKET
 - **Frequency Bands:** 5
@@ -37,7 +37,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |------|----------|-------------|-------|------------------|
 | [mmdvm_duplex_hotspot](mmdvm_duplex_hotspot.md) | amateur | 2 | DMR | custom / mmdvm_duplex_hotspot.yml |
 
-### Geographic System (64 files)
+### Geographic System (65 files)
 
 | File | Services | Assignments | Modes | Geographic Scope |
 |------|----------|-------------|-------|------------------|
@@ -87,6 +87,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 | [laporte_county_public_safety](laporte_county_public_safety.md) | public_safety_part90 | 15 | FM | US / IN / LaPorte / LaPorte |
 | [n9iaa_aresc_network](n9iaa_aresc_network.md) | amateur | 4 | FM, DMR | US / IN / Northwest / Regional |
 | [osceola_gmrs_repeaters](osceola_gmrs_repeaters.md) | gmrs | 1 | FM | US / IN / StJoseph / Osceola |
+| [wqol665_lost_dunes_golf_club](wqol665_lost_dunes_golf_club.md) | business_itinerant_part90 | 8 | FM | US / MI / Berrien / Bridgman |
 | [kc8brs_four_flags](kc8brs_four_flags.md) | amateur | 1 | FM | US / MI / Berrien / Niles |
 | [ke8gvb_blossomland_dstar](ke8gvb_blossomland_dstar.md) | amateur | 2 | D-STAR | US / MI / Berrien / Niles |
 | [berrien_county_amateur](berrien_county_amateur.md) | amateur | 5 | FM, D-STAR | US / MI / Berrien / _Countywide |
@@ -115,7 +116,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 - **FL:** 3 files
 - **IL:** 39 files
 - **IN:** 4 files
-- **MI:** 6 files
+- **MI:** 7 files
 - **National/Regional:** 13 files
 - **NJ:** 6 files
 - **NY:** 1 files
@@ -132,7 +133,7 @@ This directory contains automatically generated documentation for all SSRF-Lite 
 |---------|------------------|-------|
 | amateur | 131 | 26 |
 | aviation | 164 | 2 |
-| business_itinerant_part90 | 412 | 13 |
+| business_itinerant_part90 | 420 | 14 |
 | cb | 40 | 1 |
 | federal_interop_ntia | 25 | 1 |
 | gmrs | 91 | 11 |
