@@ -1,0 +1,147 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+# SSRF-Lite: ST. JOSEPH COUNTY PARKS (WQQI710) - New Carlisle, St. Joseph County, IN
+#
+# Part 90 land mobile licence carrying DMR-capable emission designators, within receive
+#   range of the Saugany Lake area (~6.8 km from the lake). Authored from FCC ULS; TX is
+#   restricted to the licensee, so these are receive-only entries for everyone else.
+#
+# No CTCSS/DCS tone, DMR colour code, time slot or talkgroup is recorded in ULS and
+# none has been observed on air, so none is asserted here.
+
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "FCC ULS License Search - WQQI710 (ST. JOSEPH COUNTY PARKS)"
+      url: "https://wireless2.fcc.gov/UlsApp/UlsSearch/searchLicense.jsp?searchType=call&callSign=WQQI710"
+      accessed: "2026-10-10"
+    - name: "FCC ULS weekly bulk dump (HD/EN/LO/FR/EM tables), week of 2026-10-04"
+      url: "https://data.fcc.gov/download/pub/uls/complete/l_LMpriv.zip"
+      accessed: "2026-10-10"
+
+organizations:
+  - id: org_st_joseph_county_parks
+    name: "ST. JOSEPH COUNTY PARKS (South Bend, IN)"
+
+locations:
+  - id: loc_st_joseph_county_parks_1
+    name: "50651 Lauren Rd, South Bend, IN (ULS Location 1)"
+    lat: 41.759972
+    lon: -86.264472
+  - id: loc_st_joseph_county_parks_2
+    name: "50840 County Line Road, New Carlisle, IN (ULS Location 2)"
+    lat: 41.755028
+    lon: -86.522556
+  - id: loc_st_joseph_county_parks_3
+    name: "57057 Ash Rd, Osceola, IN (ULS Location 3)"
+    lat: 41.665333
+    lon: -86.063194
+
+stations:
+  - id: stn_wqqi710
+    call_sign: "WQQI710"
+    organization_id: org_st_joseph_county_parks
+    location_id: loc_st_joseph_county_parks_2
+    service: "public_safety_part90"
+
+antennas:
+  - id: ant_wqqi710_1
+    station_id: stn_wqqi710
+    name: "WQQI710 fixed site, ULS Location 1"
+  - id: ant_wqqi710_2
+    station_id: stn_wqqi710
+    name: "WQQI710 fixed site, ULS Location 2"
+  - id: ant_wqqi710_3
+    station_id: stn_wqqi710
+    name: "WQQI710 fixed site, ULS Location 3"
+
+authorizations:
+  - id: auth_wqqi710
+    authority: "FCC"
+    service: "public_safety_part90"
+    class: "Part 90 Public Safety"
+    identifier: "WQQI710"
+    notes: >
+      Active FCC licence, PW - Public Safety Pool, Conventional. Granted 10/04/2022, expires
+      12/29/2032, current authorisation effective 10/04/2022. FRN 0006212013. ULS lists 6
+      location(s). Mobile operation is authorised within 32.0 km of the fixed site. TX is
+      restricted to the licensee; receive-only for everyone else.
+
+rf_chains:
+  - id: chain_wqqi710_460p35_1
+    station_id: stn_wqqi710
+    antenna_id: ant_wqqi710_1
+    tx:
+      freq_mhz: 460.35
+      emission: "11K2F3E"
+      power_w: 40
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 465.35
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 40 W output / 40 W ERP. Input 465.35 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is authorised
+        here, but the on-air mode has not been observed - treat FM as the default and search
+        for DMR.
+  - id: chain_wqqi710_460p3875_2
+    station_id: stn_wqqi710
+    antenna_id: ant_wqqi710_2
+    tx:
+      freq_mhz: 460.387
+      emission: "11K2F3E"
+      power_w: 40
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 465.387
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 2, station class FB2, 40 W output / 40 W ERP. Input 465.387 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is authorised
+        here, but the on-air mode has not been observed - treat FM as the default and search
+        for DMR.
+  - id: chain_wqqi710_460p0625_3
+    station_id: stn_wqqi710
+    antenna_id: ant_wqqi710_3
+    tx:
+      freq_mhz: 460.062
+      emission: "11K2F3E"
+      power_w: 40
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 465.062
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 3, station class FB2, 40 W output / 40 W ERP. Input 465.062 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is authorised
+        here, but the on-air mode has not been observed - treat FM as the default and search
+        for DMR.
+
+assignments:
+  - id: asgn_wqqi710_460p35_1
+    short_name: "SJPK1"
+    channel_name: "WQQI710 460.35"
+    rf_chain_id: chain_wqqi710_460p35_1
+    usage: "repeater"
+    authorization_id: auth_wqqi710
+    notes: "Output 460.35 / input 465.35. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wqqi710_460p3875_2
+    short_name: "SJPK2"
+    channel_name: "WQQI710 460.387"
+    rf_chain_id: chain_wqqi710_460p3875_2
+    usage: "repeater"
+    authorization_id: auth_wqqi710
+    notes: "Output 460.387 / input 465.387. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wqqi710_460p0625_3
+    short_name: "SJPK3"
+    channel_name: "WQQI710 460.062"
+    rf_chain_id: chain_wqqi710_460p0625_3
+    usage: "repeater"
+    authorization_id: auth_wqqi710
+    notes: "Output 460.062 / input 465.062. Receive-only for non-licensees; tone/colour code unknown."

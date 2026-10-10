@@ -1,0 +1,82 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+# SSRF-Lite: HARPER COLLINS PUBLISHERS (WRNL856) - Laporte, La Porte County, IN
+#
+# Part 90 land mobile licence carrying DMR-capable emission designators, within receive
+#   range of the Saugany Lake area (~12.5 km from the lake). Authored from FCC ULS; TX is
+#   restricted to the licensee, so these are receive-only entries for everyone else.
+#
+# No CTCSS/DCS tone, DMR colour code, time slot or talkgroup is recorded in ULS and
+# none has been observed on air, so none is asserted here.
+
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "FCC ULS License Search - WRNL856 (HARPER COLLINS PUBLISHERS)"
+      url: "https://wireless2.fcc.gov/UlsApp/UlsSearch/searchLicense.jsp?searchType=call&callSign=WRNL856"
+      accessed: "2026-10-10"
+    - name: "FCC ULS weekly bulk dump (HD/EN/LO/FR/EM tables), week of 2026-10-04"
+      url: "https://data.fcc.gov/download/pub/uls/complete/l_LMpriv.zip"
+      accessed: "2026-10-10"
+
+organizations:
+  - id: org_harpercollins_publishers
+    name: "HARPER COLLINS PUBLISHERS (Laporte, IN)"
+
+locations:
+  - id: loc_harpercollins_publishers_1
+    name: "352 Fail Road, Laporte, IN (ULS Location 1)"
+    lat: 41.631750
+    lon: -86.680667
+
+stations:
+  - id: stn_wrnl856
+    call_sign: "WRNL856"
+    organization_id: org_harpercollins_publishers
+    location_id: loc_harpercollins_publishers_1
+    service: "business_itinerant_part90"
+
+antennas:
+  - id: ant_wrnl856_1
+    station_id: stn_wrnl856
+    name: "WRNL856 fixed site, ULS Location 1"
+
+authorizations:
+  - id: auth_wrnl856
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: "WRNL856"
+    notes: >
+      Active FCC licence, IG - Industrial/Business Pool, Conventional. Granted 07/24/2021,
+      expires 07/24/2031, current authorisation effective 07/24/2021. FRN 0031073257. ULS
+      lists 3 location(s). Mobile operation is authorised within 32.0 km of the fixed site.
+      TX is restricted to the licensee; receive-only for everyone else.
+
+rf_chains:
+  - id: chain_wrnl856_463p275_1
+    station_id: stn_wrnl856
+    antenna_id: ant_wrnl856_1
+    tx:
+      freq_mhz: 463.275
+      emission: "7K60FXW"
+      power_w: 25
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 468.275
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 25 W output / 50 W ERP. Input 468.275 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 7K60FXW. Includes 7K60FXW, so DMR is authorised here, but the on-air mode
+        has not been observed - treat FM as the default and search for DMR.
+
+assignments:
+  - id: asgn_wrnl856_463p275_1
+    short_name: "HRPC1"
+    channel_name: "WRNL856 463.275"
+    rf_chain_id: chain_wrnl856_463p275_1
+    usage: "repeater"
+    authorization_id: auth_wrnl856
+    notes: "Output 463.275 / input 468.275. Receive-only for non-licensees; tone/colour code unknown."

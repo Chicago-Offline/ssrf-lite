@@ -1,0 +1,86 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+# SSRF-Lite: Barton Malow Company (WRZJ345) - New Castle, St. Joseph County, IN
+#
+# Part 90 land mobile licence carrying DMR-capable emission designators, within receive
+#   range of the Saugany Lake area (~10.6 km from the lake). Authored from FCC ULS; TX is
+#   restricted to the licensee, so these are receive-only entries for everyone else.
+#
+# Construction/contractor licence tied to the New Carlisle build-out - expect this system to go quiet when the project finishes.
+#
+# No CTCSS/DCS tone, DMR colour code, time slot or talkgroup is recorded in ULS and
+# none has been observed on air, so none is asserted here.
+
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "FCC ULS License Search - WRZJ345 (Barton Malow Company)"
+      url: "https://wireless2.fcc.gov/UlsApp/UlsSearch/searchLicense.jsp?searchType=call&callSign=WRZJ345"
+      accessed: "2026-10-10"
+    - name: "FCC ULS weekly bulk dump (HD/EN/LO/FR/EM tables), week of 2026-10-04"
+      url: "https://data.fcc.gov/download/pub/uls/complete/l_LMpriv.zip"
+      accessed: "2026-10-10"
+
+organizations:
+  - id: org_barton_malow
+    name: "Barton Malow Company (Oak Park, MI)"
+
+locations:
+  - id: loc_barton_malow_1
+    name: "31540 Fillmore Rd, New Castle, IN (ULS Location 1)"
+    lat: 41.678667
+    lon: -86.477806
+
+stations:
+  - id: stn_wrzj345
+    call_sign: "WRZJ345"
+    organization_id: org_barton_malow
+    location_id: loc_barton_malow_1
+    service: "business_itinerant_part90"
+
+antennas:
+  - id: ant_wrzj345_1
+    station_id: stn_wrzj345
+    name: "WRZJ345 fixed site, ULS Location 1"
+
+authorizations:
+  - id: auth_wrzj345
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: "WRZJ345"
+    notes: >
+      Active FCC licence, IG - Industrial/Business Pool, Conventional. Granted 11/07/2023,
+      expires 11/07/2033, current authorisation effective 11/07/2023. FRN 0034392951. ULS
+      lists 3 location(s). Mobile operation is authorised within 8.0 km of the fixed site.
+      TX is restricted to the licensee; receive-only for everyone else.
+      Construction/contractor licence tied to the New Carlisle build-out - expect this
+      system to go quiet when the project finishes.
+
+rf_chains:
+  - id: chain_wrzj345_464p175_1
+    station_id: stn_wrzj345
+    antenna_id: ant_wrzj345_1
+    tx:
+      freq_mhz: 464.175
+      emission: "7K60FXE"
+      power_w: 25
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 469.175
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 25 W output / 18 W ERP. Input 469.175 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 7K60FXE. Includes 7K60FXE, so DMR is authorised here, but the on-air mode
+        has not been observed - treat FM as the default and search for DMR.
+
+assignments:
+  - id: asgn_wrzj345_464p175_1
+    short_name: "BMAL1"
+    channel_name: "WRZJ345 464.175"
+    rf_chain_id: chain_wrzj345_464p175_1
+    usage: "repeater"
+    authorization_id: auth_wrzj345
+    notes: "Output 464.175 / input 469.175. Receive-only for non-licensees; tone/colour code unknown."

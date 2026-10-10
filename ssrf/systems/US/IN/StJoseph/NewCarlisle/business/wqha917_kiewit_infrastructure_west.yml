@@ -1,0 +1,182 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+# SSRF-Lite: Kiewit Infrastructure West Co (WQHA917) - New Carlisle, St. Joseph County, IN
+#
+# Part 90 land mobile licence carrying DMR-capable emission designators, within receive
+#   range of the Saugany Lake area (~9.9 km from the lake). Authored from FCC ULS; TX is
+#   restricted to the licensee, so these are receive-only entries for everyone else.
+#
+# Construction/contractor licence tied to the New Carlisle build-out - expect this system to go quiet when the project finishes.
+#
+# No CTCSS/DCS tone, DMR colour code, time slot or talkgroup is recorded in ULS and
+# none has been observed on air, so none is asserted here.
+
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "FCC ULS License Search - WQHA917 (Kiewit Infrastructure West Co)"
+      url: "https://wireless2.fcc.gov/UlsApp/UlsSearch/searchLicense.jsp?searchType=call&callSign=WQHA917"
+      accessed: "2026-10-10"
+    - name: "FCC ULS weekly bulk dump (HD/EN/LO/FR/EM tables), week of 2026-10-04"
+      url: "https://data.fcc.gov/download/pub/uls/complete/l_LMpriv.zip"
+      accessed: "2026-10-10"
+
+organizations:
+  - id: org_kiewit_infrastructure_west
+    name: "Kiewit Infrastructure West Co (Grapevine, TX)"
+
+locations:
+  - id: loc_kiewit_infrastructure_west_4
+    name: "54745 Walnut Rd, New Carlisle, IN (ULS Location 4)"
+    lat: 41.697639
+    lon: -86.476889
+
+stations:
+  - id: stn_wqha917
+    call_sign: "WQHA917"
+    organization_id: org_kiewit_infrastructure_west
+    location_id: loc_kiewit_infrastructure_west_4
+    service: "business_itinerant_part90"
+
+antennas:
+  - id: ant_wqha917_4
+    station_id: stn_wqha917
+    name: "WQHA917 fixed site, ULS Location 4"
+
+authorizations:
+  - id: auth_wqha917
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: "WQHA917"
+    notes: >
+      Active FCC licence, IG - Industrial/Business Pool, Conventional. Granted 06/10/2017,
+      expires 06/14/2027, current authorisation effective 06/10/2017. FRN 0016502940. ULS
+      lists 5 location(s). Mobile operation is authorised within 4.0 km of the fixed site.
+      TX is restricted to the licensee; receive-only for everyone else.
+      Construction/contractor licence tied to the New Carlisle build-out - expect this
+      system to go quiet when the project finishes.
+
+rf_chains:
+  - id: chain_wqha917_451p325_4
+    station_id: stn_wqha917
+    antenna_id: ant_wqha917_4
+    tx:
+      freq_mhz: 451.325
+      emission: "11K2F3E"
+      power_w: 35
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 456.325
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 4, station class FB2, 35 W output / 40 W ERP. Input 456.325 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXE. Includes 7K60FXE, so DMR is authorised here, but the
+        on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wqha917_452p1_4
+    station_id: stn_wqha917
+    antenna_id: ant_wqha917_4
+    tx:
+      freq_mhz: 452.1
+      emission: "11K2F3E"
+      power_w: 35
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 457.1
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 4, station class FB2, 35 W output / 40 W ERP. Input 457.1 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXE. Includes 7K60FXE, so DMR is authorised here, but the
+        on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wqha917_461p025_4
+    station_id: stn_wqha917
+    antenna_id: ant_wqha917_4
+    tx:
+      freq_mhz: 461.025
+      emission: "11K2F3E"
+      power_w: 35
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 466.025
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 4, station class FB2, 35 W output / 40 W ERP. Input 466.025 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXE. Includes 7K60FXE, so DMR is authorised here, but the
+        on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wqha917_464p425_4
+    station_id: stn_wqha917
+    antenna_id: ant_wqha917_4
+    tx:
+      freq_mhz: 464.425
+      emission: "11K2F3E"
+      power_w: 35
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 469.425
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 4, station class FB2, 35 W output / 40 W ERP. Input 469.425 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXE. Includes 7K60FXE, so DMR is authorised here, but the
+        on-air mode has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wqha917_464p875_4
+    station_id: stn_wqha917
+    antenna_id: ant_wqha917_4
+    tx:
+      freq_mhz: 464.875
+      emission: "11K2F3E"
+      power_w: 35
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 469.875
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 4, station class FB2, 35 W output / 40 W ERP. Input 469.875 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXE. Includes 7K60FXE, so DMR is authorised here, but the
+        on-air mode has not been observed - treat FM as the default and search for DMR.
+
+assignments:
+  - id: asgn_wqha917_451p325_4
+    short_name: "KIEW1"
+    channel_name: "WQHA917 451.325"
+    rf_chain_id: chain_wqha917_451p325_4
+    usage: "repeater"
+    authorization_id: auth_wqha917
+    notes: "Output 451.325 / input 456.325. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wqha917_452p1_4
+    short_name: "KIEW2"
+    channel_name: "WQHA917 452.1"
+    rf_chain_id: chain_wqha917_452p1_4
+    usage: "repeater"
+    authorization_id: auth_wqha917
+    notes: "Output 452.1 / input 457.1. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wqha917_461p025_4
+    short_name: "KIEW3"
+    channel_name: "WQHA917 461.025"
+    rf_chain_id: chain_wqha917_461p025_4
+    usage: "repeater"
+    authorization_id: auth_wqha917
+    notes: "Output 461.025 / input 466.025. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wqha917_464p425_4
+    short_name: "KIEW4"
+    channel_name: "WQHA917 464.425"
+    rf_chain_id: chain_wqha917_464p425_4
+    usage: "repeater"
+    authorization_id: auth_wqha917
+    notes: "Output 464.425 / input 469.425. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wqha917_464p875_4
+    short_name: "KIEW5"
+    channel_name: "WQHA917 464.875"
+    rf_chain_id: chain_wqha917_464p875_4
+    usage: "repeater"
+    authorization_id: auth_wqha917
+    notes: "Output 464.875 / input 469.875. Receive-only for non-licensees; tone/colour code unknown."

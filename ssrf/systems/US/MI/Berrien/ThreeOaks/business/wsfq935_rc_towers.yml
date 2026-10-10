@@ -1,0 +1,208 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+# SSRF-Lite: RC TOWERS INC (WSFQ935) - Three Oaks, Berrien County, MI
+#
+# Part 90 land mobile licence carrying DMR-capable emission designators, within receive
+#   range of the Saugany Lake area (~8.9 km from the lake). Authored from FCC ULS; TX is
+#   restricted to the licensee, so these are receive-only entries for everyone else.
+#
+# No CTCSS/DCS tone, DMR colour code, time slot or talkgroup is recorded in ULS and
+# none has been observed on air, so none is asserted here.
+
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "FCC ULS License Search - WSFQ935 (RC TOWERS INC)"
+      url: "https://wireless2.fcc.gov/UlsApp/UlsSearch/searchLicense.jsp?searchType=call&callSign=WSFQ935"
+      accessed: "2026-10-10"
+    - name: "FCC ULS weekly bulk dump (HD/EN/LO/FR/EM tables), week of 2026-10-04"
+      url: "https://data.fcc.gov/download/pub/uls/complete/l_LMpriv.zip"
+      accessed: "2026-10-10"
+
+organizations:
+  - id: org_rc_towers
+    name: "RC TOWERS INC (Saint Clair Shores, MI)"
+
+locations:
+  - id: loc_rc_towers_1
+    name: "Central Ave Water Tank, Three Oaks, MI (ULS Location 1)"
+    lat: 41.801111
+    lon: -86.614639
+
+stations:
+  - id: stn_wsfq935
+    call_sign: "WSFQ935"
+    organization_id: org_rc_towers
+    location_id: loc_rc_towers_1
+    service: "business_itinerant_part90"
+
+antennas:
+  - id: ant_wsfq935_1
+    station_id: stn_wsfq935
+    name: "WSFQ935 fixed site, ULS Location 1"
+
+authorizations:
+  - id: auth_wsfq935
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: "WSFQ935"
+    notes: >
+      Active FCC licence, YG - Industrial/Business Pool, Trunked. Granted 11/04/2024,
+      expires 11/04/2034, current authorisation effective 11/04/2024. FRN 0032609349. ULS
+      lists 3 location(s). Mobile operation is authorised within 32.0 km of the fixed site.
+      TX is restricted to the licensee; receive-only for everyone else.
+
+rf_chains:
+  - id: chain_wsfq935_451p1125_1
+    station_id: stn_wsfq935
+    antenna_id: ant_wsfq935_1
+    tx:
+      freq_mhz: 451.113
+      emission: "11K2F3E"
+      power_w: 100
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 456.113
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB8, 100 W output / 300 W ERP. Input 456.113 (+5.0000
+        MHz split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F1D, 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is
+        authorised here, but the on-air mode has not been observed - treat FM as the default
+        and search for DMR.
+  - id: chain_wsfq935_461p2_1
+    station_id: stn_wsfq935
+    antenna_id: ant_wsfq935_1
+    tx:
+      freq_mhz: 461.2
+      emission: "11K2F3E"
+      power_w: 100
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 466.2
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB6, 100 W output / 500 W ERP. Input 466.2 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F1D, 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is
+        authorised here, but the on-air mode has not been observed - treat FM as the default
+        and search for DMR.
+  - id: chain_wsfq935_461p35_1
+    station_id: stn_wsfq935
+    antenna_id: ant_wsfq935_1
+    tx:
+      freq_mhz: 461.35
+      emission: "11K2F3E"
+      power_w: 100
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 466.35
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB6, 100 W output / 500 W ERP. Input 466.35 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F1D, 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is
+        authorised here, but the on-air mode has not been observed - treat FM as the default
+        and search for DMR.
+  - id: chain_wsfq935_461p6125_1
+    station_id: stn_wsfq935
+    antenna_id: ant_wsfq935_1
+    tx:
+      freq_mhz: 461.613
+      emission: "11K2F3E"
+      power_w: 100
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 466.613
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB6, 100 W output / 500 W ERP. Input 466.613 (+5.0000
+        MHz split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F1D, 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is
+        authorised here, but the on-air mode has not been observed - treat FM as the default
+        and search for DMR.
+  - id: chain_wsfq935_463p425_1
+    station_id: stn_wsfq935
+    antenna_id: ant_wsfq935_1
+    tx:
+      freq_mhz: 463.425
+      emission: "11K2F3E"
+      power_w: 100
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 468.425
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB6, 100 W output / 500 W ERP. Input 468.425 (+5.0000
+        MHz split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F1D, 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is
+        authorised here, but the on-air mode has not been observed - treat FM as the default
+        and search for DMR.
+  - id: chain_wsfq935_463p8125_1
+    station_id: stn_wsfq935
+    antenna_id: ant_wsfq935_1
+    tx:
+      freq_mhz: 463.812
+      emission: "11K2F3E"
+      power_w: 100
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 468.812
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB6, 100 W output / 500 W ERP. Input 468.812 (+5.0000
+        MHz split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F1D, 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is
+        authorised here, but the on-air mode has not been observed - treat FM as the default
+        and search for DMR.
+
+assignments:
+  - id: asgn_wsfq935_451p1125_1
+    short_name: "RCTW1"
+    channel_name: "WSFQ935 451.113"
+    rf_chain_id: chain_wsfq935_451p1125_1
+    usage: "repeater"
+    authorization_id: auth_wsfq935
+    notes: "Output 451.113 / input 456.113. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wsfq935_461p2_1
+    short_name: "RCTW2"
+    channel_name: "WSFQ935 461.2"
+    rf_chain_id: chain_wsfq935_461p2_1
+    usage: "repeater"
+    authorization_id: auth_wsfq935
+    notes: "Output 461.2 / input 466.2. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wsfq935_461p35_1
+    short_name: "RCTW3"
+    channel_name: "WSFQ935 461.35"
+    rf_chain_id: chain_wsfq935_461p35_1
+    usage: "repeater"
+    authorization_id: auth_wsfq935
+    notes: "Output 461.35 / input 466.35. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wsfq935_461p6125_1
+    short_name: "RCTW4"
+    channel_name: "WSFQ935 461.613"
+    rf_chain_id: chain_wsfq935_461p6125_1
+    usage: "repeater"
+    authorization_id: auth_wsfq935
+    notes: "Output 461.613 / input 466.613. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wsfq935_463p425_1
+    short_name: "RCTW5"
+    channel_name: "WSFQ935 463.425"
+    rf_chain_id: chain_wsfq935_463p425_1
+    usage: "repeater"
+    authorization_id: auth_wsfq935
+    notes: "Output 463.425 / input 468.425. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wsfq935_463p8125_1
+    short_name: "RCTW6"
+    channel_name: "WSFQ935 463.812"
+    rf_chain_id: chain_wsfq935_463p8125_1
+    usage: "repeater"
+    authorization_id: auth_wsfq935
+    notes: "Output 463.812 / input 468.812. Receive-only for non-licensees; tone/colour code unknown."

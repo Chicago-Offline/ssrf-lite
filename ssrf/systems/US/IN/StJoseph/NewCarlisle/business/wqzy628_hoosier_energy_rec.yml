@@ -1,0 +1,83 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+# SSRF-Lite: Hoosier Energy Rural Electric Cooperative, Inc. (WQZY628) - New Carlisle, St. Joseph County, IN
+#
+# Part 90 land mobile licence carrying DMR-capable emission designators, within receive
+#   range of the Saugany Lake area (~9.4 km from the lake). Authored from FCC ULS; TX is
+#   restricted to the licensee, so these are receive-only entries for everyone else.
+#
+# No CTCSS/DCS tone, DMR colour code, time slot or talkgroup is recorded in ULS and
+# none has been observed on air, so none is asserted here.
+
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "FCC ULS License Search - WQZY628 (Hoosier Energy Rural Electric Cooperative, Inc.)"
+      url: "https://wireless2.fcc.gov/UlsApp/UlsSearch/searchLicense.jsp?searchType=call&callSign=WQZY628"
+      accessed: "2026-10-10"
+    - name: "FCC ULS weekly bulk dump (HD/EN/LO/FR/EM tables), week of 2026-10-04"
+      url: "https://data.fcc.gov/download/pub/uls/complete/l_LMpriv.zip"
+      accessed: "2026-10-10"
+
+organizations:
+  - id: org_hoosier_energy_rec
+    name: "Hoosier Energy Rural Electric Cooperative, Inc. (Bloomington, IN)"
+
+locations:
+  - id: loc_hoosier_energy_rec_1
+    name: "54745 Walnut Road, New Carlisle, IN (ULS Location 1)"
+    lat: 41.699472
+    lon: -86.482139
+
+stations:
+  - id: stn_wqzy628
+    call_sign: "WQZY628"
+    organization_id: org_hoosier_energy_rec
+    location_id: loc_hoosier_energy_rec_1
+    service: "business_itinerant_part90"
+
+antennas:
+  - id: ant_wqzy628_1
+    station_id: stn_wqzy628
+    name: "WQZY628 fixed site, ULS Location 1"
+
+authorizations:
+  - id: auth_wqzy628
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: "WQZY628"
+    notes: >
+      Active FCC licence, IG - Industrial/Business Pool, Conventional. Granted 09/08/2017,
+      expires 09/08/2027, current authorisation effective 02/26/2025. FRN 0002904530. ULS
+      lists 3 location(s). Mobile operation is authorised within 16.0 km of the fixed site.
+      TX is restricted to the licensee; receive-only for everyone else.
+
+rf_chains:
+  - id: chain_wqzy628_452p275_1
+    station_id: stn_wqzy628
+    antenna_id: ant_wqzy628_1
+    tx:
+      freq_mhz: 452.275
+      emission: "11K2F3E"
+      power_w: 50
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 457.275
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 50 W output / 50 W ERP. Input 457.275 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 11K2F3E, 7K60FXD, 7K60FXE. Includes 7K60FXD/7K60FXE, so DMR is authorised
+        here, but the on-air mode has not been observed - treat FM as the default and search
+        for DMR.
+
+assignments:
+  - id: asgn_wqzy628_452p275_1
+    short_name: "HOOS1"
+    channel_name: "WQZY628 452.275"
+    rf_chain_id: chain_wqzy628_452p275_1
+    usage: "repeater"
+    authorization_id: auth_wqzy628
+    notes: "Output 452.275 / input 457.275. Receive-only for non-licensees; tone/colour code unknown."

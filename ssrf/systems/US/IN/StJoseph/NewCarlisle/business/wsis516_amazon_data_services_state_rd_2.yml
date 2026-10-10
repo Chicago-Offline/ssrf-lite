@@ -1,0 +1,106 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+# SSRF-Lite: Amazon Data Services, Inc. (WSIS516) - New Carlisle, St. Joseph County, IN
+#
+# Part 90 land mobile licence carrying DMR-capable emission designators, within receive
+#   range of the Saugany Lake area (~11.4 km from the lake). Authored from FCC ULS; TX is
+#   restricted to the licensee, so these are receive-only entries for everyone else.
+#
+# No CTCSS/DCS tone, DMR colour code, time slot or talkgroup is recorded in ULS and
+# none has been observed on air, so none is asserted here.
+
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "FCC ULS License Search - WSIS516 (Amazon Data Services, Inc.)"
+      url: "https://wireless2.fcc.gov/UlsApp/UlsSearch/searchLicense.jsp?searchType=call&callSign=WSIS516"
+      accessed: "2026-10-10"
+    - name: "FCC ULS weekly bulk dump (HD/EN/LO/FR/EM tables), week of 2026-10-04"
+      url: "https://data.fcc.gov/download/pub/uls/complete/l_LMpriv.zip"
+      accessed: "2026-10-10"
+
+organizations:
+  - id: org_amazon_data_services_state_rd_2
+    name: "Amazon Data Services, Inc. (Seattle, WA)"
+
+locations:
+  - id: loc_amazon_data_services_state_rd_2_1
+    name: "31100 State Rd 2, New Carlisle, IN (ULS Location 1)"
+    lat: 41.670722
+    lon: -86.473111
+
+stations:
+  - id: stn_wsis516
+    call_sign: "WSIS516"
+    organization_id: org_amazon_data_services_state_rd_2
+    location_id: loc_amazon_data_services_state_rd_2_1
+    service: "business_itinerant_part90"
+
+antennas:
+  - id: ant_wsis516_1
+    station_id: stn_wsis516
+    name: "WSIS516 fixed site, ULS Location 1"
+
+authorizations:
+  - id: auth_wsis516
+    authority: "FCC"
+    service: "business_itinerant_part90"
+    class: "Part 90 Business/Industrial"
+    identifier: "WSIS516"
+    notes: >
+      Active FCC licence, YG - Industrial/Business Pool, Trunked. Granted 06/14/2025,
+      expires 06/14/2035, current authorisation effective 06/14/2025. FRN 0032960056. ULS
+      lists 3 location(s). Mobile operation is authorised within 32.0 km of the fixed site.
+      TX is restricted to the licensee; receive-only for everyone else.
+
+rf_chains:
+  - id: chain_wsis516_463p725_1
+    station_id: stn_wsis516
+    antenna_id: ant_wsis516_1
+    tx:
+      freq_mhz: 463.725
+      emission: "7K60FXE"
+      power_w: 50
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 468.725
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 50 W output / 40 W ERP. Input 468.725 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 7K60FXE. Includes 7K60FXE, so DMR is authorised here, but the on-air mode
+        has not been observed - treat FM as the default and search for DMR.
+  - id: chain_wsis516_464p0125_1
+    station_id: stn_wsis516
+    antenna_id: ant_wsis516_1
+    tx:
+      freq_mhz: 464.012
+      emission: "7K60FXE"
+      power_w: 50
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 469.012
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 50 W output / 40 W ERP. Input 469.012 (+5.0000 MHz
+        split), carried on the licence as a mobile/control-station frequency. Authorised
+        emissions: 7K60FXE. Includes 7K60FXE, so DMR is authorised here, but the on-air mode
+        has not been observed - treat FM as the default and search for DMR.
+
+assignments:
+  - id: asgn_wsis516_463p725_1
+    short_name: "AMZB1"
+    channel_name: "WSIS516 463.725"
+    rf_chain_id: chain_wsis516_463p725_1
+    usage: "repeater"
+    authorization_id: auth_wsis516
+    notes: "Output 463.725 / input 468.725. Receive-only for non-licensees; tone/colour code unknown."
+  - id: asgn_wsis516_464p0125_1
+    short_name: "AMZB2"
+    channel_name: "WSIS516 464.012"
+    rf_chain_id: chain_wsis516_464p0125_1
+    usage: "repeater"
+    authorization_id: auth_wsis516
+    notes: "Output 464.012 / input 469.012. Receive-only for non-licensees; tone/colour code unknown."
