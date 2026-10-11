@@ -1,0 +1,350 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+# SSRF-Lite: City of Michigan City (IN) Public Safety - La Porte County, IN
+#
+# Six active Part 90 Public Safety licences held by the City of Michigan City,
+# authored entirely from FCC ULS. Michigan City sits ~23-27 km NW of the Saugany
+# Lake area and is the largest municipal system in La Porte County.
+#
+# Station class is taken from the licence: FB2 = repeater, FB = base/simplex.
+# A repeater input is asserted ONLY where the licence carries a matching mobile
+# frequency; where the mobile set is ambiguous the input is left unstated rather
+# than guessed.
+#
+# No CTCSS/DCS tone is recorded in ULS and none has been observed on air, so none
+# is asserted here. TX is restricted to the licensee - receive-only for everyone
+# else.
+#
+# NOTE: 155.7150, listed by RadioReference community reporting as Michigan City
+# Police, is NOT included. The only La Porte County licence on that frequency is
+# WNFR297, which is held by the CITY OF LA PORTE (not Michigan City) and EXPIRED
+# on 2022-08-22. See the comments block at the end.
+
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "FCC ULS weekly bulk dump (HD/EN/LO/FR/EM tables), week of 2026-10-04 - call signs WQNH596, KAR334, KWS467, WSMU278, WPYU546, WRE645"
+      url: "https://data.fcc.gov/download/pub/uls/complete/l_LMpriv.zip"
+      accessed: "2026-10-10"
+    - name: "RadioReference wiki - La Porte County (IN), used only to cross-check which frequencies are in active dispatch use"
+      url: "https://wiki.radioreference.com/index.php/La_Porte_County_(IN)"
+      accessed: "2026-10-10"
+
+organizations:
+  - id: org_michigan_city
+    name: "City of Michigan City, Indiana"
+
+locations:
+  - id: loc_mc_carroll_broadway_tower
+    name: "Water tower, Carroll Ave & Broadway, Michigan City, IN (WQNH596 ULS Location 1)"
+    lat: 41.709170
+    lon: -86.869720
+  - id: loc_mc_rt35
+    name: "North east of Route 35, Michigan City, IN (WPYU546 ULS Location 1)"
+    lat: 41.708940
+    lon: -86.869190
+  - id: loc_mc_1201_e_michigan
+    name: "1201 E Michigan Blvd, Michigan City, IN (WSMU278 ULS Location 1)"
+    lat: 41.711390
+    lon: -86.883970
+  - id: loc_mc_102_w_2nd
+    name: "102 W 2nd Street, Michigan City, IN (KWS467 ULS Location 2)"
+    lat: 41.720890
+    lon: -86.903330
+  - id: loc_mc_1801_kentucky
+    name: "1801 Kentucky St, Michigan City, IN (WRE645 ULS Location 1)"
+    lat: 41.702530
+    lon: -86.911690
+  - id: loc_mc_117_w_4th
+    name: "117 W 4th St, Michigan City, IN (KAR334 ULS Location 2)"
+    lat: 41.735860
+    lon: -86.884190
+
+stations:
+  - id: stn_wqnh596
+    call_sign: "WQNH596"
+    organization_id: org_michigan_city
+    location_id: loc_mc_carroll_broadway_tower
+    service: "public_safety_part90"
+  - id: stn_wpyu546
+    call_sign: "WPYU546"
+    organization_id: org_michigan_city
+    location_id: loc_mc_rt35
+    service: "public_safety_part90"
+  - id: stn_wsmu278
+    call_sign: "WSMU278"
+    organization_id: org_michigan_city
+    location_id: loc_mc_1201_e_michigan
+    service: "public_safety_part90"
+  - id: stn_kws467
+    call_sign: "KWS467"
+    organization_id: org_michigan_city
+    location_id: loc_mc_102_w_2nd
+    service: "public_safety_part90"
+  - id: stn_wre645
+    call_sign: "WRE645"
+    organization_id: org_michigan_city
+    location_id: loc_mc_1801_kentucky
+    service: "public_safety_part90"
+  - id: stn_kar334
+    call_sign: "KAR334"
+    organization_id: org_michigan_city
+    location_id: loc_mc_117_w_4th
+    service: "public_safety_part90"
+
+antennas:
+  - id: ant_wqnh596
+    station_id: stn_wqnh596
+    name: "WQNH596 Carroll & Broadway water tower"
+  - id: ant_wpyu546
+    station_id: stn_wpyu546
+    name: "WPYU546 Route 35 site"
+  - id: ant_wsmu278
+    station_id: stn_wsmu278
+    name: "WSMU278 1201 E Michigan Blvd"
+  - id: ant_kws467
+    station_id: stn_kws467
+    name: "KWS467 102 W 2nd Street"
+  - id: ant_wre645
+    station_id: stn_wre645
+    name: "WRE645 1801 Kentucky St"
+  - id: ant_kar334
+    station_id: stn_kar334
+    name: "KAR334 117 W 4th St (one of six co-channel base sites)"
+
+authorizations:
+  - id: auth_wqnh596
+    authority: "FCC"
+    service: "public_safety_part90"
+    class: "Part 90 Public Safety"
+    identifier: "WQNH596"
+    notes: "Active. City of Michigan City. Single fixed site, station class FB2 (repeater)."
+  - id: auth_wpyu546
+    authority: "FCC"
+    service: "public_safety_part90"
+    class: "Part 90 Public Safety"
+    identifier: "WPYU546"
+    notes: >
+      Active, expires 2033-10-30. City of Michigan City. Station class FB2
+      (repeater). RadioReference community reporting describes this frequency as
+      Michigan City fire dispatch; that role is not stated by the FCC and has not
+      been verified on air.
+  - id: auth_wsmu278
+    authority: "FCC"
+    service: "public_safety_part90"
+    class: "Part 90 Public Safety"
+    identifier: "WSMU278"
+    notes: "Active. City of Michigan City. Station class FB2 (repeater)."
+  - id: auth_kws467
+    authority: "FCC"
+    service: "public_safety_part90"
+    class: "Part 90 Public Safety"
+    identifier: "KWS467"
+    notes: >
+      Active. City of Michigan City. Station class FB (base), so simplex rather
+      than a repeater. Emission list includes 7K60FXD/7K60FXE, so DMR is
+      authorised on this channel.
+  - id: auth_wre645
+    authority: "FCC"
+    service: "public_safety_part90"
+    class: "Part 90 Public Safety"
+    identifier: "WRE645"
+    notes: >
+      Active. City of Michigan City. Station class FB2 (repeater), UHF. Emission
+      list includes 7K60FXD/7K60FXE, so DMR is authorised on this channel.
+  - id: auth_kar334
+    authority: "FCC"
+    service: "public_safety_part90"
+    class: "Part 90 Public Safety"
+    identifier: "KAR334"
+    notes: >
+      Active. City of Michigan City. Station class FB (base) on 154.2800 and
+      154.4300 across six fixed sites: 2504 E Michigan Blvd, 117 W 4th St,
+      US Hwy 212, 200 SE US Highway 12, 1012 Ohio Street and 5000 Cleveland Road.
+      Modelled once per frequency at 117 W 4th St; the remaining sites are
+      co-channel on the same pair.
+
+rf_chains:
+  - id: chain_wqnh596_154p115
+    station_id: stn_wqnh596
+    antenna_id: ant_wqnh596
+    tx:
+      freq_mhz: 154.115
+      emission: "11K2F3E"
+      power_w: 60
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 159.255
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 60 W. Input 159.2550 (+5.1400 MHz
+        split) - the licence carries exactly one mobile frequency other than the
+        output, so the pairing is unambiguous. Authorised emission 11K2F3E only;
+        no DMR designator on this channel.
+  - id: chain_wpyu546_155p6775
+    station_id: stn_wpyu546
+    antenna_id: ant_wpyu546
+    tx:
+      freq_mhz: 155.6775
+      emission: "11K2F3E"
+      power_w: 40
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 156.1275
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 40 W. Input 156.1275 (+0.4500 MHz
+        split), the only other mobile frequency on the licence. Authorised
+        emission 11K2F3E only; no DMR designator on this channel.
+  - id: chain_wsmu278_155p610
+    station_id: stn_wsmu278
+    antenna_id: ant_wsmu278
+    tx:
+      freq_mhz: 155.610
+      emission: "11K2F3E"
+      power_w: 60
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 60 W - so this IS a repeater, but the
+        input is deliberately not asserted. The licence carries five mobile
+        frequencies (153.7475, 153.9650, 154.0775, 154.8300, 155.6100) and none
+        of them is an unambiguous paired input, so guessing one would be wrong.
+        Needs an RF survey to settle. Authorised emissions 11K2F3E, 4K00F1D,
+        4K00F1E.
+  - id: chain_kws467_155p025
+    station_id: stn_kws467
+    antenna_id: ant_kws467
+    tx:
+      freq_mhz: 155.025
+      emission: "11K2F3E"
+      power_w: 45
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 2, station class FB (base, not a repeater), 45 W. The only
+        mobile frequency on the licence is 155.0250 itself, so this is simplex.
+        Broad emission list including 7K60FXD/7K60FXE, so DMR is authorised here,
+        but the on-air mode has not been observed - treat FM as the default and
+        search for DMR.
+  - id: chain_wre645_453p300
+    station_id: stn_wre645
+    antenna_id: ant_wre645
+    tx:
+      freq_mhz: 453.300
+      emission: "11K2F3E"
+      power_w: 100
+      bandwidth_khz: 12.5
+    rx:
+      freq_mhz: 458.300
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 1, station class FB2, 100 W. Input 458.3000 (+5.0000 MHz,
+        the standard UHF Part 90 split) and the licence carries exactly that
+        mobile frequency. Emissions include 7K60FXD/7K60FXE, so DMR is authorised
+        here; on-air mode not observed. Highest-power Michigan City site and the
+        most likely to be readable from the lake.
+  - id: chain_kar334_154p280
+    station_id: stn_kar334
+    antenna_id: ant_kar334
+    tx:
+      freq_mhz: 154.280
+      emission: "11K2F3E"
+      power_w: 110
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 2, station class FB (base), 110 W. 154.2800 is the national
+        fire mutual-aid simplex channel (VFIRE21) - it is not a repeater output
+        and must not be modelled as one. Also authorised 16K0F3E (wideband) and
+        4K00F1E.
+  - id: chain_kar334_154p430
+    station_id: stn_kar334
+    antenna_id: ant_kar334
+    tx:
+      freq_mhz: 154.430
+      emission: "11K2F3E"
+      power_w: 110
+      bandwidth_khz: 12.5
+    mode:
+      type: "FM"
+      notes: >
+        ULS Location 2, station class FB (base), 110 W, simplex. Also authorised
+        16K0F3E (wideband) and 4K00F1E.
+
+assignments:
+  - id: asgn_mc_154p115
+    short_name: "MC4115"
+    channel_name: "Michigan City 154.115"
+    rf_chain_id: chain_wqnh596_154p115
+    usage: "repeater"
+    authorization_id: auth_wqnh596
+    notes: "Output 154.1150 / input 159.2550. Receive-only for non-licensees; tone unknown."
+  - id: asgn_mc_155p6775
+    short_name: "MC5677"
+    channel_name: "Michigan City 155.6775"
+    rf_chain_id: chain_wpyu546_155p6775
+    usage: "repeater"
+    authorization_id: auth_wpyu546
+    notes: "Output 155.6775 / input 156.1275. Reported as city fire dispatch, unverified. Receive-only for non-licensees."
+  - id: asgn_mc_155p610
+    short_name: "MC5610"
+    channel_name: "Michigan City 155.610"
+    rf_chain_id: chain_wsmu278_155p610
+    usage: "repeater"
+    authorization_id: auth_wsmu278
+    notes: "FB2 repeater output; input not determined from the licence. Receive-only for non-licensees."
+  - id: asgn_mc_155p025
+    short_name: "MC5025"
+    channel_name: "Michigan City 155.025"
+    rf_chain_id: chain_kws467_155p025
+    usage: "simplex"
+    authorization_id: auth_kws467
+    notes: "FB base, simplex. DMR authorised but unobserved. Receive-only for non-licensees."
+  - id: asgn_mc_453p300
+    short_name: "MC4533"
+    channel_name: "Michigan City 453.300"
+    rf_chain_id: chain_wre645_453p300
+    usage: "repeater"
+    authorization_id: auth_wre645
+    notes: "Output 453.3000 / input 458.3000. DMR authorised but unobserved. Receive-only for non-licensees."
+  - id: asgn_mc_154p280
+    short_name: "MC4280"
+    channel_name: "Michigan City 154.280 VFIRE21"
+    rf_chain_id: chain_kar334_154p280
+    usage: "simplex"
+    authorization_id: auth_kar334
+    notes: "National fire mutual-aid simplex (VFIRE21), FB base. Receive-only for non-licensees."
+  - id: asgn_mc_154p430
+    short_name: "MC4430"
+    channel_name: "Michigan City 154.430"
+    rf_chain_id: chain_kar334_154p430
+    usage: "simplex"
+    authorization_id: auth_kar334
+    notes: "FB base, simplex. Receive-only for non-licensees."
+
+comments:
+  - text: |
+      Excluded on purpose: 155.7150.
+
+      RadioReference community reporting lists 155.7150 with DCS 071 as Michigan
+      City Police. FCC ULS does not support that. The only licence with a La Porte
+      County location on 155.7150 is WNFR297, station class FB2 at 60 W, and it is
+      held by the CITY OF LA PORTE - not Michigan City - with licence status E
+      (expired) since 2022-08-22.
+
+      Either the RR entry is stale, the attribution is wrong, or the system now
+      runs under a call sign that does not file a La Porte County location. Until
+      that is resolved, or the frequency is actually heard on air, it stays out of
+      the catalog.
+  - text: |
+      All six systems here are receive-only for anyone who is not the City of
+      Michigan City. Two channels (KWS467 155.0250 and WRE645 453.3000) carry DMR
+      emission designators and are worth a DMR dwell during any survey; the rest
+      are analog-only on the licence.
