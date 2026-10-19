@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "myGMRS.com repeater directory - Butler, NJ"
+      url: "https://mygmrs.com/browse"
+      accessed: "2026-10-19"
+
+organizations:
+  - id: org_wrze330
+    name: "WRZE330 (Butler)"
+
+locations:
+  - id: loc_butler_nj
+    name: "Butler, NJ (approx)"
+    lat: 40.9987
+    lon: -74.3471
+
+stations:
+  - id: stn_wrze330_butler
+    call_sign: "WRZE330"
+    organization_id: org_wrze330
+    location_id: loc_butler_nj
+    service: gmrs
+
+rf_chains:
+  # Repeater perspective: tx = output you listen to, rx = input you key up on.
+  - id: chain_wrze330_575
+    station_id: stn_wrze330_butler
+    tx:
+      freq_mhz: 462.575
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 467.575
+    mode:
+      type: "FM"
+
+authorizations:
+  - id: auth_fcc_gmrs
+    authority: "FCC"
+    service: gmrs
+    class: "GMRS license"
+    notes: "Operation under 47 CFR Part 95 Subpart E. Repeater use requires an individual GMRS licence."
+
+assignments:
+  - id: asgn_wrze330_575
+    short_name: "BUTLR"
+    channel_name: "Butler 575"
+    rf_chain_id: chain_wrze330_575
+    usage: repeater
+    authorization_id: auth_fcc_gmrs
+    notes: >-
+      Open repeater on the GMRS 575 pair (462.5750 output / 467.5750 input,
+      +5.000). No access tone is published in the directory, so none is
+      recorded here rather than assuming carrier squelch. Listed on air at the
+      accessed date.
+    verified:
+      date: "2026-10-19"
+      method: "published"
+      by: "WRXC682"
+      note: "myGMRS.com directory listing only. Tones unpublished; not monitored on air."

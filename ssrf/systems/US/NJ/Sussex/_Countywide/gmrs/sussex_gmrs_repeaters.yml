@@ -1,0 +1,140 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "myGMRS.com repeater directory - Sussex County, NJ"
+      url: "https://mygmrs.com/browse"
+      accessed: "2026-10-19"
+
+organizations:
+  - id: org_wrja253
+    name: "WRJA253 (Mountain Creek)"
+  - id: org_wrth776
+    name: "WRTH776 (Vernon NWAC)"
+  - id: org_wrvi352
+    name: "WRVI352 (High Point)"
+
+locations:
+  - id: loc_vernon_mountain_creek
+    name: "Mountain Creek Ski Area, Vernon Twp, NJ (approx)"
+    lat: 41.1838
+    lon: -74.5097
+  - id: loc_vernon_nwac
+    name: "NWAC, Vernon Twp, NJ"
+  - id: loc_wantage_high_point
+    name: "High Point, Wantage Twp, NJ (approx)"
+    lat: 41.3214
+    lon: -74.6647
+
+stations:
+  - id: stn_wrja253_mountain_creek
+    call_sign: "WRJA253"
+    organization_id: org_wrja253
+    location_id: loc_vernon_mountain_creek
+    service: gmrs
+  - id: stn_wrth776_nwac
+    call_sign: "WRTH776"
+    organization_id: org_wrth776
+    location_id: loc_vernon_nwac
+    service: gmrs
+  - id: stn_wrvi352_high_point
+    call_sign: "WRVI352"
+    organization_id: org_wrvi352
+    location_id: loc_wantage_high_point
+    service: gmrs
+
+rf_chains:
+  # Repeater perspective: tx = output you listen to, rx = input you key up on.
+  - id: chain_wrja253_550
+    station_id: stn_wrja253_mountain_creek
+    tx:
+      freq_mhz: 462.550
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 467.550
+    mode:
+      type: "FM"
+      dcs_tx_code: "131"
+      dcs_rx_code: "131"
+  - id: chain_wrth776_700
+    station_id: stn_wrth776_nwac
+    tx:
+      freq_mhz: 462.700
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 467.700
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 136.5
+      ctcss_rx_hz: 136.5
+  - id: chain_wrvi352_700
+    station_id: stn_wrvi352_high_point
+    tx:
+      freq_mhz: 462.700
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 467.700
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 97.4
+      ctcss_rx_hz: 97.4
+
+authorizations:
+  - id: auth_fcc_gmrs
+    authority: "FCC"
+    service: gmrs
+    class: "GMRS license"
+    notes: "Operation under 47 CFR Part 95 Subpart E. Repeater use requires an individual GMRS licence."
+
+assignments:
+  - id: asgn_wrja253_550
+    short_name: "MTCRK"
+    channel_name: "Mountain Creek 550"
+    rf_chain_id: chain_wrja253_550
+    usage: repeater
+    authorization_id: auth_fcc_gmrs
+    notes: >-
+      Open repeater on the GMRS 550 pair (462.5500 output / 467.5500 input,
+      +5.000). DCS 131 both directions. Listed OFF-AIR in the directory at the
+      accessed date - entry retained for reference, on-air status unconfirmed.
+    verified:
+      date: "2026-10-19"
+      method: "published"
+      by: "WRXC682"
+      note: "myGMRS.com directory listing only. Not monitored on air."
+  - id: asgn_wrth776_700
+    short_name: "NWAC"
+    channel_name: "Vernon NWAC 700"
+    rf_chain_id: chain_wrth776_700
+    usage: repeater
+    authorization_id: auth_fcc_gmrs
+    notes: >-
+      Open repeater on the GMRS 700 pair (462.7000 output / 467.7000 input,
+      +5.000). CTCSS 136.5 Hz both directions. Listed OFF-AIR in the directory
+      at the accessed date. Site abbreviation "NWAC" is as published; exact
+      coordinates unknown, so no lat/lon is recorded.
+    verified:
+      date: "2026-10-19"
+      method: "published"
+      by: "WRXC682"
+      note: "myGMRS.com directory listing only. Not monitored on air."
+  - id: asgn_wrvi352_700
+    short_name: "HIPT"
+    channel_name: "High Point 700"
+    rf_chain_id: chain_wrvi352_700
+    usage: repeater
+    authorization_id: auth_fcc_gmrs
+    notes: >-
+      Open repeater on the GMRS 700 pair (462.7000 output / 467.7000 input,
+      +5.000). CTCSS 97.4 Hz both directions. Co-channel with WRTH776 (Vernon
+      NWAC) to the south-east, separated only by tone. Listed OFF-AIR in the
+      directory at the accessed date.
+    verified:
+      date: "2026-10-19"
+      method: "published"
+      by: "WRXC682"
+      note: "myGMRS.com directory listing only. Not monitored on air."
