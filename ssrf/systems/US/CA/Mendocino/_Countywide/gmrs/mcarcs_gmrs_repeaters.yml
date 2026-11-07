@@ -1,0 +1,218 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "McARCS - Repeaters"
+      url: "https://mcarcs.org/doku.php?id=repeaters"
+      accessed: "2026-11-06"
+
+# Mendocino County, CA GMRS repeaters, as published by the local amateur club
+# (McARCS) alongside its amateur list - an unusually complete public GMRS source
+# with licensee call signs and tones. All on standard GMRS 550-725 pairs, +5.000.
+# Two machines publish a private tone; CTCSS is omitted for those rather than guessed.
+# Lake County entries from the same page are off-route and omitted.
+
+organizations:
+  - id: org_mcarcs
+    name: "MCARCS"
+
+locations:
+  - id: loc_gmrs_laytonville
+    name: "Laytonville, Mendocino County, CA (approx)"
+  - id: loc_gmrs_longvale
+    name: "Longvale, Mendocino County, CA (approx)"
+  - id: loc_gmrs_laughlin
+    name: "Laughlin Ridge, Mendocino County, CA (approx)"
+  - id: loc_gmrs_mcnab
+    name: "McNab Ranch, Mendocino County, CA (approx)"
+  - id: loc_gmrs_ptarena_575
+    name: "Point Arena, Mendocino County, CA (approx)"
+  - id: loc_gmrs_ptarena_650
+    name: "Point Arena, Mendocino County, CA (approx)"
+
+stations:
+  - id: stn_gmrs_laytonville
+    call_sign: "WRFV637"
+    organization_id: org_mcarcs
+    location_id: loc_gmrs_laytonville
+    service: "gmrs"
+  - id: stn_gmrs_longvale
+    call_sign: "WSGE959"
+    organization_id: org_mcarcs
+    location_id: loc_gmrs_longvale
+    service: "gmrs"
+  - id: stn_gmrs_laughlin
+    call_sign: "WSCM351"
+    organization_id: org_mcarcs
+    location_id: loc_gmrs_laughlin
+    service: "gmrs"
+  - id: stn_gmrs_mcnab
+    call_sign: null
+    organization_id: org_mcarcs
+    location_id: loc_gmrs_mcnab
+    service: "gmrs"
+  - id: stn_gmrs_ptarena_575
+    call_sign: "WRUM246"
+    organization_id: org_mcarcs
+    location_id: loc_gmrs_ptarena_575
+    service: "gmrs"
+  - id: stn_gmrs_ptarena_650
+    call_sign: "WRUM246"
+    organization_id: org_mcarcs
+    location_id: loc_gmrs_ptarena_650
+    service: "gmrs"
+
+rf_chains:
+  - id: chain_gmrs_laytonville
+    station_id: stn_gmrs_laytonville
+    tx:
+      freq_mhz: 462.5500
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 467.5500
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 136.5
+      ctcss_rx_hz: 136.5
+  - id: chain_gmrs_longvale
+    station_id: stn_gmrs_longvale
+    tx:
+      freq_mhz: 462.6000
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 467.6000
+    mode:
+      type: "FM"
+  - id: chain_gmrs_laughlin
+    station_id: stn_gmrs_laughlin
+    tx:
+      freq_mhz: 462.7250
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 467.7250
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+  - id: chain_gmrs_mcnab
+    station_id: stn_gmrs_mcnab
+    tx:
+      freq_mhz: 462.6250
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 467.6250
+    mode:
+      type: "FM"
+  - id: chain_gmrs_ptarena_575
+    station_id: stn_gmrs_ptarena_575
+    tx:
+      freq_mhz: 462.5750
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 467.5750
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 173.8
+      ctcss_rx_hz: 173.8
+  - id: chain_gmrs_ptarena_650
+    station_id: stn_gmrs_ptarena_650
+    tx:
+      freq_mhz: 462.6500
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 467.6500
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+
+authorizations:
+  - id: auth_fcc_gmrs
+    authority: "FCC"
+    service: gmrs
+    class: "GMRS license"
+    notes: "Operation under 47 CFR Part 95 Subpart E. Repeater use requires an individual GMRS licence."
+
+assignments:
+  - id: asgn_gmrs_laytonville
+    short_name: "LAY550"
+    channel_name: "WRFV637 462.550"
+    rf_chain_id: chain_gmrs_laytonville
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: >-
+      West side of the valley.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_gmrs_longvale
+    short_name: "LNG600"
+    channel_name: "WSGE959 462.600"
+    rf_chain_id: chain_gmrs_longvale
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: >-
+      Cherry Creek community north of the US-101 / SR-162 intersection. Tone
+      published as private.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_gmrs_laughlin
+    short_name: "LAU725"
+    channel_name: "WSCM351 462.725"
+    rf_chain_id: chain_gmrs_laughlin
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: >-
+      Good coverage into Redwood Valley, Ukiah and Lake County.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_gmrs_mcnab
+    short_name: "MCN625"
+    channel_name: "Mendocino 462.625"
+    rf_chain_id: chain_gmrs_mcnab
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: >-
+      West of US-101. Licensee unknown and tone published as private.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_gmrs_ptarena_575
+    short_name: "PTA575"
+    channel_name: "WRUM246 462.575"
+    rf_chain_id: chain_gmrs_ptarena_575
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_gmrs_ptarena_650
+    short_name: "PTA650"
+    channel_name: "WRUM246 462.650"
+    rf_chain_id: chain_gmrs_ptarena_650
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
