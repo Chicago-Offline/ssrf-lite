@@ -1,0 +1,124 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Oregon Relay Radio Council (ORRC) - Published Coordinations"
+      url: "https://orrc.org/Coordinations/Published"
+      accessed: "2026-11-07"
+
+# Glide, Douglas County, OR - AB7BS linked group (same callsign as the Portland
+# and Coos Bay systems). All three pairs and access codes published by ORRC.
+
+organizations:
+  - id: org_ab7bs_glide
+    name: "AB7BS"
+
+locations:
+  - id: loc_bsg210
+    name: "Glide, Douglas County, OR"
+  - id: loc_bsg700
+    name: "Glide, Douglas County, OR"
+  - id: loc_bsg441
+    name: "Glide, Douglas County, OR"
+
+stations:
+  - id: stn_bsg210
+    call_sign: "AB7BS"
+    organization_id: org_ab7bs_glide
+    location_id: loc_bsg210
+    service: "amateur"
+  - id: stn_bsg700
+    call_sign: "AB7BS"
+    organization_id: org_ab7bs_glide
+    location_id: loc_bsg700
+    service: "amateur"
+  - id: stn_bsg441
+    call_sign: "AB7BS"
+    organization_id: org_ab7bs_glide
+    location_id: loc_bsg441
+    service: "amateur"
+
+rf_chains:
+  - id: chain_bsg210
+    station_id: stn_bsg210
+    tx:
+      freq_mhz: 145.2100
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 144.6100
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 136.5
+  - id: chain_bsg700
+    station_id: stn_bsg700
+    tx:
+      freq_mhz: 146.7000
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.1000
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 136.5
+  - id: chain_bsg441
+    station_id: stn_bsg441
+    tx:
+      freq_mhz: 441.8500
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 446.8500
+    mode:
+      type: "FM"
+      dcs_rx_code: "125"
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_bsg210
+    short_name: "GLD210"
+    channel_name: "AB7BS Glide 145.210"
+    rf_chain_id: chain_bsg210
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Linked system.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."
+  - id: asgn_bsg700
+    short_name: "GLD700"
+    channel_name: "AB7BS Glide 146.700"
+    rf_chain_id: chain_bsg700
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Linked system.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."
+  - id: asgn_bsg441
+    short_name: "GLD441"
+    channel_name: "AB7BS Glide 441.850"
+    rf_chain_id: chain_bsg441
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Linked system. DCS access.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."

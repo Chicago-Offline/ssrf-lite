@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Oregon Relay Radio Council (ORRC) - Published Coordinations"
+      url: "https://orrc.org/Coordinations/Published"
+      accessed: "2026-11-07"
+
+# Roseburg, Douglas County, OR - WA7JAW. ORRC-coordinated pair and tone.
+
+organizations:
+  - id: org_wa7jaw_doug
+    name: "WA7JAW"
+
+locations:
+  - id: loc_jaw440
+    name: "Roseburg, Douglas County, OR"
+
+stations:
+  - id: stn_jaw440
+    call_sign: "WA7JAW"
+    organization_id: org_wa7jaw_doug
+    location_id: loc_jaw440
+    service: "amateur"
+
+rf_chains:
+  - id: chain_jaw440
+    station_id: stn_jaw440
+    tx:
+      freq_mhz: 440.6250
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 445.6250
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 114.8
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_jaw440
+    short_name: "RBG440"
+    channel_name: "WA7JAW Roseburg 440.625"
+    rf_chain_id: chain_jaw440
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."

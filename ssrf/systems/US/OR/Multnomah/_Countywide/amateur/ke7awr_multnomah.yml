@@ -1,0 +1,90 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Oregon Relay Radio Council (ORRC) - Published Coordinations"
+      url: "https://orrc.org/Coordinations/Published"
+      accessed: "2026-11-07"
+
+# Multnomah County, OR - KE7AWR. Portland and Gresham machines, both pairs and
+# both tones published by ORRC. Note the two sites use DIFFERENT tones (100.0 Hz
+# at Portland, 146.2 Hz at Gresham).
+
+organizations:
+  - id: org_ke7awr_mult
+    name: "KE7AWR"
+
+locations:
+  - id: loc_awr700
+    name: "Portland, Multnomah County, OR"
+  - id: loc_awr441
+    name: "Gresham, Multnomah County, OR"
+
+stations:
+  - id: stn_awr700
+    call_sign: "KE7AWR"
+    organization_id: org_ke7awr_mult
+    location_id: loc_awr700
+    service: "amateur"
+  - id: stn_awr441
+    call_sign: "KE7AWR"
+    organization_id: org_ke7awr_mult
+    location_id: loc_awr441
+    service: "amateur"
+
+rf_chains:
+  - id: chain_awr700
+    station_id: stn_awr700
+    tx:
+      freq_mhz: 146.7000
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.1000
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 100.0
+  - id: chain_awr441
+    station_id: stn_awr441
+    tx:
+      freq_mhz: 441.6250
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 446.6250
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 146.2
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_awr700
+    short_name: "AWR700"
+    channel_name: "KE7AWR Portland 146.700"
+    rf_chain_id: chain_awr700
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."
+  - id: asgn_awr441
+    short_name: "GRS441"
+    channel_name: "KE7AWR Gresham 441.625"
+    rf_chain_id: chain_awr441
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."

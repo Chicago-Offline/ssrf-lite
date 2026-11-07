@@ -1,0 +1,99 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Oregon Relay Radio Council (ORRC) - Published Coordinations"
+      url: "https://orrc.org/Coordinations/Published"
+      accessed: "2026-11-07"
+
+# Tillamook County, OR - W7LI. Both pairs and both tones are published ORRC
+# coordinations; nothing is derived.
+# COVERAGE GAP, stated plainly: there is NO coordinated amateur repeater published
+# for Manzanita, Nehalem, Wheeler, Rockaway Beach, Garibaldi, Bay City, Netarts,
+# Oceanside, Pacific City or Cape Meares. The Tillamook club's old site (w7em.net)
+# is dead - the domain does not resolve and the Wayback Machine holds no snapshot -
+# so that whole stretch of US-101 is covered here only by the Tillamook and Hebo
+# machines. Treat the north Tillamook coast as unsurveyed, not as empty.
+
+organizations:
+  - id: org_w7li
+    name: "W7LI"
+
+locations:
+  - id: loc_til220
+    name: "Tillamook, Tillamook County, OR"
+  - id: loc_heb441
+    name: "Hebo, Tillamook County, OR"
+
+stations:
+  - id: stn_til220
+    call_sign: "W7LI"
+    organization_id: org_w7li
+    location_id: loc_til220
+    service: "amateur"
+  - id: stn_heb441
+    call_sign: "W7LI"
+    organization_id: org_w7li
+    location_id: loc_heb441
+    service: "amateur"
+
+rf_chains:
+  - id: chain_til220
+    station_id: stn_til220
+    tx:
+      freq_mhz: 147.2200
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.8200
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 100.0
+  - id: chain_heb441
+    station_id: stn_heb441
+    tx:
+      freq_mhz: 441.2500
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 446.2500
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 118.8
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_til220
+    short_name: "TIL220"
+    channel_name: "W7LI Tillamook 147.220"
+    rf_chain_id: chain_til220
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Open, emergency power flagged by ORRC.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."
+  - id: asgn_heb441
+    short_name: "HEB441"
+    channel_name: "W7LI Hebo 441.250"
+    rf_chain_id: chain_heb441
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Hebo site, south Tillamook County near the OR-22 junction.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."

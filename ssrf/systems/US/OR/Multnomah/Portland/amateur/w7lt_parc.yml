@@ -1,0 +1,129 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Portland Amateur Radio Club (W7LT) - Repeaters"
+      url: "https://w7lt.org/repeaters/"
+      accessed: "2026-11-07"
+    - name: "Oregon Relay Radio Council (ORRC) - Published Coordinations"
+      url: "https://orrc.org/Coordinations/Published"
+      accessed: "2026-11-07"
+
+# Portland, Multnomah County, OR - Portland Amateur Radio Club (W7LT).
+# 147.180 tone (103.5 Hz) and the AllStar node number come from the club's own
+# repeater page. 146.840 and 146.940 are ORRC-coordinated to W7LT but NEITHER the
+# club page nor ORRC publishes a tone for them, and ORRC does not set its "t"
+# (tone required) flag on either, so they are recorded with no tone rather than
+# guessed. The club's Tuesday net runs on 146.840.
+
+organizations:
+  - id: org_parc
+    name: "Portland Amateur Radio Club (PARC)"
+
+locations:
+  - id: loc_lt180
+    name: "Portland, Multnomah County, OR"
+  - id: loc_lt840
+    name: "Portland, Multnomah County, OR"
+  - id: loc_lt940
+    name: "Portland, Multnomah County, OR"
+
+stations:
+  - id: stn_lt180
+    call_sign: "W7LT"
+    organization_id: org_parc
+    location_id: loc_lt180
+    service: "amateur"
+  - id: stn_lt840
+    call_sign: "W7LT"
+    organization_id: org_parc
+    location_id: loc_lt840
+    service: "amateur"
+  - id: stn_lt940
+    call_sign: "W7LT"
+    organization_id: org_parc
+    location_id: loc_lt940
+    service: "amateur"
+
+rf_chains:
+  - id: chain_lt180
+    station_id: stn_lt180
+    tx:
+      freq_mhz: 147.1800
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.7800
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 103.5
+  - id: chain_lt840
+    station_id: stn_lt840
+    tx:
+      freq_mhz: 146.8400
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.2400
+    mode:
+      type: "FM"
+  - id: chain_lt940
+    station_id: stn_lt940
+    tx:
+      freq_mhz: 146.9400
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.3400
+    mode:
+      type: "FM"
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_lt180
+    short_name: "PAR180"
+    channel_name: "W7LT Portland 147.180"
+    rf_chain_id: chain_lt180
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      AllStar node 671333.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."
+  - id: asgn_lt840
+    short_name: "PAR840"
+    channel_name: "W7LT Portland 146.840"
+    rf_chain_id: chain_lt840
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Club net Tuesdays. No CTCSS published by club or coordinator; ORRC does not flag a tone requirement.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."
+  - id: asgn_lt940
+    short_name: "PAR940"
+    channel_name: "W7LT Portland 146.940"
+    rf_chain_id: chain_lt940
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      No CTCSS published by club or coordinator; ORRC does not flag a tone requirement.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."

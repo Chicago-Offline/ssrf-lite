@@ -1,0 +1,93 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Oregon Relay Radio Council (ORRC) - Published Coordinations"
+      url: "https://orrc.org/Coordinations/Published"
+      accessed: "2026-11-07"
+
+# Portland, Multnomah County, OR - K7LJ. 145.390 tone published by ORRC.
+# 145.230 is coordinated with a closed-autopatch flag and NO tone value, and ORRC
+# does not flag a tone requirement, so it is recorded carrier-access.
+
+organizations:
+  - id: org_k7lj
+    name: "K7LJ"
+
+locations:
+  - id: loc_lj390
+    name: "Portland, Multnomah County, OR"
+  - id: loc_lj230
+    name: "Portland, Multnomah County, OR"
+
+stations:
+  - id: stn_lj390
+    call_sign: "K7LJ"
+    organization_id: org_k7lj
+    location_id: loc_lj390
+    service: "amateur"
+  - id: stn_lj230
+    call_sign: "K7LJ"
+    organization_id: org_k7lj
+    location_id: loc_lj230
+    service: "amateur"
+
+rf_chains:
+  - id: chain_lj390
+    station_id: stn_lj390
+    tx:
+      freq_mhz: 145.3900
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 144.7900
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 100.0
+  - id: chain_lj230
+    station_id: stn_lj230
+    tx:
+      freq_mhz: 145.2300
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 144.6300
+    mode:
+      type: "FM"
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_lj390
+    short_name: "LJ390"
+    channel_name: "K7LJ Portland 145.390"
+    rf_chain_id: chain_lj390
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Linked; closed autopatch per ORRC flags.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."
+  - id: asgn_lj230
+    short_name: "LJ230"
+    channel_name: "K7LJ Portland 145.230"
+    rf_chain_id: chain_lj230
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Closed autopatch per ORRC flags. No tone published.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."
