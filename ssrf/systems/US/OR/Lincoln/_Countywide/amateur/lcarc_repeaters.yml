@@ -1,0 +1,245 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Lincoln County Amateur Radio Club (N7OY) - Repeaters"
+      url: "https://n7oy.org/repeaters/"
+      accessed: "2026-11-06"
+
+# Lincoln County, OR amateur repeaters - Depoe Bay, Newport and Yachats on US-101.
+# Transcribed from the Lincoln County Amateur Radio Club's own repeater page.
+# DATA GAP: the club page publishes frequencies but NOT offsets or CTCSS tones
+# for the VHF machines. Offsets here are derived from the ARRL 2m band plan
+# (145.x = -600 kHz, 147.0-147.4 = +600 kHz) and are NOT club-published.
+# CTCSS is omitted rather than guessed - several of these are carrier access,
+# but that is unconfirmed. Verify on air or obtain the county frequency PDF
+# before trusting these for emergency traffic. 443.750 tone IS club-published.
+
+organizations:
+  - id: org_lcarc
+    name: "LCARC"
+
+locations:
+  - id: loc_lcarc_145370
+    name: "Otter Crest, Lincoln County, OR (approx)"
+  - id: loc_lcarc_147300
+    name: "Otter Crest, Lincoln County, OR (approx)"
+  - id: loc_lcarc_147040
+    name: "Lincoln City, Lincoln County, OR (approx)"
+  - id: loc_lcarc_147060
+    name: "Cape Perpetua, Lincoln County, OR (approx)"
+  - id: loc_lcarc_145470
+    name: "Lincoln County Courthouse, Lincoln County, OR (approx)"
+  - id: loc_lcarc_147150
+    name: "Otter Crest, Lincoln County, OR (approx)"
+  - id: loc_lcarc_443750
+    name: "Lincoln County, Lincoln County, OR (approx)"
+
+stations:
+  - id: stn_lcarc_145370
+    call_sign: "N7OY"
+    organization_id: org_lcarc
+    location_id: loc_lcarc_145370
+    service: "amateur"
+  - id: stn_lcarc_147300
+    call_sign: "N7OY"
+    organization_id: org_lcarc
+    location_id: loc_lcarc_147300
+    service: "amateur"
+  - id: stn_lcarc_147040
+    call_sign: "N7OY"
+    organization_id: org_lcarc
+    location_id: loc_lcarc_147040
+    service: "amateur"
+  - id: stn_lcarc_147060
+    call_sign: "N7OY"
+    organization_id: org_lcarc
+    location_id: loc_lcarc_147060
+    service: "amateur"
+  - id: stn_lcarc_145470
+    call_sign: "N7OY"
+    organization_id: org_lcarc
+    location_id: loc_lcarc_145470
+    service: "amateur"
+  - id: stn_lcarc_147150
+    call_sign: "N7OY"
+    organization_id: org_lcarc
+    location_id: loc_lcarc_147150
+    service: "amateur"
+  - id: stn_lcarc_443750
+    call_sign: "N7OY"
+    organization_id: org_lcarc
+    location_id: loc_lcarc_443750
+    service: "amateur"
+
+rf_chains:
+  - id: chain_lcarc_145370
+    station_id: stn_lcarc_145370
+    tx:
+      freq_mhz: 145.3700
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 144.7700
+    mode:
+      type: "FM"
+  - id: chain_lcarc_147300
+    station_id: stn_lcarc_147300
+    tx:
+      freq_mhz: 147.3000
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.9000
+    mode:
+      type: "FM"
+  - id: chain_lcarc_147040
+    station_id: stn_lcarc_147040
+    tx:
+      freq_mhz: 147.0400
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.6400
+    mode:
+      type: "FM"
+  - id: chain_lcarc_147060
+    station_id: stn_lcarc_147060
+    tx:
+      freq_mhz: 147.0600
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.6600
+    mode:
+      type: "FM"
+  - id: chain_lcarc_145470
+    station_id: stn_lcarc_145470
+    tx:
+      freq_mhz: 145.4700
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 144.8700
+    mode:
+      type: "FM"
+  - id: chain_lcarc_147150
+    station_id: stn_lcarc_147150
+    tx:
+      freq_mhz: 147.1500
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.7500
+    mode:
+      type: "DMR"
+  - id: chain_lcarc_443750
+    station_id: stn_lcarc_443750
+    tx:
+      freq_mhz: 443.7500
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 448.7500
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 91.5
+      ctcss_rx_hz: 91.5
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_lcarc_145370
+    short_name: "OTT370"
+    channel_name: "N7OY 145.370"
+    rf_chain_id: chain_lcarc_145370
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Primary Lincoln County ACS emergency communications repeater.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_lcarc_147300
+    short_name: "OTT300"
+    channel_name: "N7OY 147.300"
+    rf_chain_id: chain_lcarc_147300
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Club repeater. Yaesu DR-1X, AMS (System Fusion capable).
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_lcarc_147040
+    short_name: "LNC040"
+    channel_name: "N7OY 147.040"
+    rf_chain_id: chain_lcarc_147040
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_lcarc_147060
+    short_name: "CPP060"
+    channel_name: "N7OY 147.060"
+    rf_chain_id: chain_lcarc_147060
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Yaesu DR-2X, AMS (System Fusion capable).
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_lcarc_145470
+    short_name: "CTH470"
+    channel_name: "N7OY 145.470"
+    rf_chain_id: chain_lcarc_145470
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_lcarc_147150
+    short_name: "OTT150"
+    channel_name: "N7OY 147.150"
+    rf_chain_id: chain_lcarc_147150
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      D-STAR VHF.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_lcarc_443750
+    short_name: "LNC443"
+    channel_name: "N7OY 443.750"
+    rf_chain_id: chain_lcarc_443750
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Analog FM and System Fusion. WIRES-X room 65893.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."

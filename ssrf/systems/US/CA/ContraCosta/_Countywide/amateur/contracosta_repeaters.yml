@@ -1,0 +1,224 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Marin Amateur Radio Society - Frequency List"
+      url: "https://w6sg.net/site/public-service/frequency-list/"
+      accessed: "2026-11-06"
+
+# Contra Costa County, CA amateur repeaters - the Danville end of the drive.
+# Transcribed from the Marin Amateur Radio Society frequency list, which
+# publishes the CCRA and 4Cs systems.
+
+organizations:
+  - id: org_4cs
+    name: "4CS"
+  - id: org_ccra
+    name: "CCRA"
+
+locations:
+  - id: loc_ccra_kregor
+    name: "Kregor Peak (Clayton), Contra Costa County, CA (approx)"
+  - id: loc_ccra_baldpeak
+    name: "Bald Peak (Orinda), Contra Costa County, CA (approx)"
+  - id: loc_ccra_highland
+    name: "Highland Peak (San Ramon), Contra Costa County, CA (approx)"
+  - id: loc_fourcs_145110
+    name: "Sobrante Ridge (El Sobrante), Contra Costa County, CA (approx)"
+  - id: loc_fourcs_224300
+    name: "Sobrante Ridge (El Sobrante), Contra Costa County, CA (approx)"
+  - id: loc_fourcs_444275
+    name: "El Sobrante, Contra Costa County, CA (approx)"
+
+stations:
+  - id: stn_ccra_kregor
+    call_sign: "WA6HAM"
+    organization_id: org_ccra
+    location_id: loc_ccra_kregor
+    service: "amateur"
+  - id: stn_ccra_baldpeak
+    call_sign: "WA6HAM"
+    organization_id: org_ccra
+    location_id: loc_ccra_baldpeak
+    service: "amateur"
+  - id: stn_ccra_highland
+    call_sign: "WA6HAM"
+    organization_id: org_ccra
+    location_id: loc_ccra_highland
+    service: "amateur"
+  - id: stn_fourcs_145110
+    call_sign: "WA6KQB"
+    organization_id: org_4cs
+    location_id: loc_fourcs_145110
+    service: "amateur"
+  - id: stn_fourcs_224300
+    call_sign: "WA6KQB"
+    organization_id: org_4cs
+    location_id: loc_fourcs_224300
+    service: "amateur"
+  - id: stn_fourcs_444275
+    call_sign: "WA6KQB"
+    organization_id: org_4cs
+    location_id: loc_fourcs_444275
+    service: "amateur"
+
+rf_chains:
+  - id: chain_ccra_kregor
+    station_id: stn_ccra_kregor
+    tx:
+      freq_mhz: 147.7350
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.1350
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 107.2
+      ctcss_rx_hz: 107.2
+  - id: chain_ccra_baldpeak
+    station_id: stn_ccra_baldpeak
+    tx:
+      freq_mhz: 145.4900
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 144.8900
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 107.2
+      ctcss_rx_hz: 107.2
+  - id: chain_ccra_highland
+    station_id: stn_ccra_highland
+    tx:
+      freq_mhz: 145.4100
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 144.8100
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 107.2
+      ctcss_rx_hz: 107.2
+  - id: chain_fourcs_145110
+    station_id: stn_fourcs_145110
+    tx:
+      freq_mhz: 145.1100
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 144.5100
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 82.5
+      ctcss_rx_hz: 82.5
+  - id: chain_fourcs_224300
+    station_id: stn_fourcs_224300
+    tx:
+      freq_mhz: 224.3000
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 222.7000
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 82.5
+      ctcss_rx_hz: 82.5
+  - id: chain_fourcs_444275
+    station_id: stn_fourcs_444275
+    tx:
+      freq_mhz: 444.2750
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 449.2750
+    mode:
+      type: "FM"
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_ccra_kregor
+    short_name: "KRG735"
+    channel_name: "WA6HAM 147.735"
+    rf_chain_id: chain_ccra_kregor
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Contra Costa Repeater Association, linked.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_ccra_baldpeak
+    short_name: "BLD490"
+    channel_name: "WA6HAM 145.490"
+    rf_chain_id: chain_ccra_baldpeak
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      CCRA linked.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_ccra_highland
+    short_name: "HGH410"
+    channel_name: "WA6HAM 145.410"
+    rf_chain_id: chain_ccra_highland
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      CCRA linked. Closest machine to the Danville destination.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_fourcs_145110
+    short_name: "SOB110"
+    channel_name: "WA6KQB 145.110"
+    rf_chain_id: chain_fourcs_145110
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Contra Costa Communications Club (4Cs).
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_fourcs_224300
+    short_name: "SOB224"
+    channel_name: "WA6KQB 224.300"
+    rf_chain_id: chain_fourcs_224300
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      4Cs 1.25m machine, -1.6 MHz split.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_fourcs_444275
+    short_name: "SOB275"
+    channel_name: "WA6KQB 444.275"
+    rf_chain_id: chain_fourcs_444275
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      4Cs 70cm. CTCSS tone was truncated on the source page and is not recorded.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."

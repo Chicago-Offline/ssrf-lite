@@ -1,0 +1,224 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Del Norte Amateur Radio Club - Repeater List"
+      url: "https://www.w6hy.org/content.aspx?page_id=22&club_id=151220&module_id=375194"
+      accessed: "2026-11-06"
+
+# Del Norte County, CA amateur repeaters - Crescent City area, US-101 Redwood Coast leg.
+# Transcribed from the Del Norte Amateur Radio Club's own published frequency list.
+# Entire county system runs 136.5 Hz CTCSS.
+
+organizations:
+  - id: org_dnarc
+    name: "DNARC"
+
+locations:
+  - id: loc_dnarc_cc
+    name: "Crescent City, Del Norte County, CA (approx)"
+  - id: loc_dnarc_campsix
+    name: "Camp Six (Gasquet), Del Norte County, CA (approx)"
+  - id: loc_dnarc_klamath
+    name: "Klamath, Del Norte County, CA (approx)"
+  - id: loc_dnarc_hiouchi
+    name: "Hiouchi, Del Norte County, CA (approx)"
+  - id: loc_dnarc_irlp
+    name: "Crescent City, Del Norte County, CA (approx)"
+  - id: loc_dnarc_smithriver
+    name: "Smith River, Del Norte County, CA (approx)"
+
+stations:
+  - id: stn_dnarc_cc
+    call_sign: "W6HY"
+    organization_id: org_dnarc
+    location_id: loc_dnarc_cc
+    service: "amateur"
+  - id: stn_dnarc_campsix
+    call_sign: "W6HY"
+    organization_id: org_dnarc
+    location_id: loc_dnarc_campsix
+    service: "amateur"
+  - id: stn_dnarc_klamath
+    call_sign: "W6HY"
+    organization_id: org_dnarc
+    location_id: loc_dnarc_klamath
+    service: "amateur"
+  - id: stn_dnarc_hiouchi
+    call_sign: "W6HY"
+    organization_id: org_dnarc
+    location_id: loc_dnarc_hiouchi
+    service: "amateur"
+  - id: stn_dnarc_irlp
+    call_sign: "W6HY"
+    organization_id: org_dnarc
+    location_id: loc_dnarc_irlp
+    service: "amateur"
+  - id: stn_dnarc_smithriver
+    call_sign: "W6HY"
+    organization_id: org_dnarc
+    location_id: loc_dnarc_smithriver
+    service: "amateur"
+
+rf_chains:
+  - id: chain_dnarc_cc
+    station_id: stn_dnarc_cc
+    tx:
+      freq_mhz: 146.8800
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.2800
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 136.5
+      ctcss_rx_hz: 136.5
+  - id: chain_dnarc_campsix
+    station_id: stn_dnarc_campsix
+    tx:
+      freq_mhz: 147.1800
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.7800
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 136.5
+      ctcss_rx_hz: 136.5
+  - id: chain_dnarc_klamath
+    station_id: stn_dnarc_klamath
+    tx:
+      freq_mhz: 147.3900
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.9900
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 136.5
+      ctcss_rx_hz: 136.5
+  - id: chain_dnarc_hiouchi
+    station_id: stn_dnarc_hiouchi
+    tx:
+      freq_mhz: 145.3500
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 144.7500
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 136.5
+      ctcss_rx_hz: 136.5
+  - id: chain_dnarc_irlp
+    station_id: stn_dnarc_irlp
+    tx:
+      freq_mhz: 147.5400
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.5400 # simplex
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 136.5
+      ctcss_rx_hz: 136.5
+  - id: chain_dnarc_smithriver
+    station_id: stn_dnarc_smithriver
+    tx:
+      freq_mhz: 443.1000
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 448.1000
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 100.0
+      ctcss_rx_hz: 100.0
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_dnarc_cc
+    short_name: "CRC880"
+    channel_name: "W6HY 146.880"
+    rf_chain_id: chain_dnarc_cc
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      DNARC club repeater.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_dnarc_campsix
+    short_name: "CMP180"
+    channel_name: "W6HY 147.180"
+    rf_chain_id: chain_dnarc_campsix
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Reaches the Cave Junction and Grants Pass areas.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_dnarc_klamath
+    short_name: "KLM390"
+    channel_name: "W6HY 147.390"
+    rf_chain_id: chain_dnarc_klamath
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      DNARC.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_dnarc_hiouchi
+    short_name: "HIO350"
+    channel_name: "W6HY 145.350"
+    rf_chain_id: chain_dnarc_hiouchi
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      DNARC.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_dnarc_irlp
+    short_name: "CRC540"
+    channel_name: "W6HY 147.540"
+    rf_chain_id: chain_dnarc_irlp
+    usage: "simplex"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Simplex node, IRLP 8260.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_dnarc_smithriver
+    short_name: "SMR443"
+    channel_name: "W6HY 443.100"
+    rf_chain_id: chain_dnarc_smithriver
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Smith River linked node on the WIN System.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."

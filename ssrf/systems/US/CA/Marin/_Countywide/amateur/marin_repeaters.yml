@@ -1,0 +1,387 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Marin Amateur Radio Society - Frequency List"
+      url: "https://w6sg.net/site/public-service/frequency-list/"
+      accessed: "2026-11-06"
+
+# Marin County, CA amateur repeaters - the Hwy 1 / Muir Woods approach to the
+# Golden Gate. Transcribed from the Marin Amateur Radio Society frequency list.
+# The four 146.700 entries are one linked simulcast system differentiated only
+# by CTCSS tone per site; program all four if you are moving through the county.
+
+organizations:
+  - id: org_marinaecu
+    name: "MARINAECU"
+  - id: org_mars
+    name: "MARS"
+
+locations:
+  - id: loc_mars_bahia
+    name: "Bahia Ridge (Novato), Marin County, CA (approx)"
+  - id: loc_mars_tam_mid
+    name: "Mount Tamalpais (Middle Peak), Marin County, CA (approx)"
+  - id: loc_mars_barnabe
+    name: "Mount Barnabe (Lagunitas), Marin County, CA (approx)"
+  - id: loc_mars_tam_west_in
+    name: "Mount Tamalpais (West Peak), Marin County, CA (approx)"
+  - id: loc_mars_tam_west_147330
+    name: "Mount Tamalpais (West Peak), Marin County, CA (approx)"
+  - id: loc_mars_tam_mid_443250
+    name: "Mount Tamalpais (Middle Peak), Marin County, CA (approx)"
+  - id: loc_aecu_novato
+    name: "Novato, Marin County, CA (approx)"
+  - id: loc_aecu_sanrafael
+    name: "San Rafael, Marin County, CA (approx)"
+  - id: loc_aecu_barnabe
+    name: "Mount Barnabe, Marin County, CA (approx)"
+  - id: loc_aecu_muirbeach
+    name: "Muir Beach, Marin County, CA (approx)"
+  - id: loc_aecu_strawberry
+    name: "Strawberry, Marin County, CA (approx)"
+
+stations:
+  - id: stn_mars_bahia
+    call_sign: "K6GWE"
+    organization_id: org_mars
+    location_id: loc_mars_bahia
+    service: "amateur"
+  - id: stn_mars_tam_mid
+    call_sign: "K6GWE"
+    organization_id: org_mars
+    location_id: loc_mars_tam_mid
+    service: "amateur"
+  - id: stn_mars_barnabe
+    call_sign: "K6GWE"
+    organization_id: org_mars
+    location_id: loc_mars_barnabe
+    service: "amateur"
+  - id: stn_mars_tam_west_in
+    call_sign: "K6GWE"
+    organization_id: org_mars
+    location_id: loc_mars_tam_west_in
+    service: "amateur"
+  - id: stn_mars_tam_west_147330
+    call_sign: "K6GWE"
+    organization_id: org_mars
+    location_id: loc_mars_tam_west_147330
+    service: "amateur"
+  - id: stn_mars_tam_mid_443250
+    call_sign: "K6GWE"
+    organization_id: org_mars
+    location_id: loc_mars_tam_mid_443250
+    service: "amateur"
+  - id: stn_aecu_novato
+    call_sign: "W6ECU"
+    organization_id: org_marinaecu
+    location_id: loc_aecu_novato
+    service: "amateur"
+  - id: stn_aecu_sanrafael
+    call_sign: "W6ECU"
+    organization_id: org_marinaecu
+    location_id: loc_aecu_sanrafael
+    service: "amateur"
+  - id: stn_aecu_barnabe
+    call_sign: "W6ECU"
+    organization_id: org_marinaecu
+    location_id: loc_aecu_barnabe
+    service: "amateur"
+  - id: stn_aecu_muirbeach
+    call_sign: "W6ECU"
+    organization_id: org_marinaecu
+    location_id: loc_aecu_muirbeach
+    service: "amateur"
+  - id: stn_aecu_strawberry
+    call_sign: "W6ECU"
+    organization_id: org_marinaecu
+    location_id: loc_aecu_strawberry
+    service: "amateur"
+
+rf_chains:
+  - id: chain_mars_bahia
+    station_id: stn_mars_bahia
+    tx:
+      freq_mhz: 146.7000
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.1000
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 203.5
+      ctcss_rx_hz: 203.5
+  - id: chain_mars_tam_mid
+    station_id: stn_mars_tam_mid
+    tx:
+      freq_mhz: 146.7000
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.1000
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 179.9
+      ctcss_rx_hz: 179.9
+  - id: chain_mars_barnabe
+    station_id: stn_mars_barnabe
+    tx:
+      freq_mhz: 146.7000
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.1000
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 167.9
+      ctcss_rx_hz: 167.9
+  - id: chain_mars_tam_west_in
+    station_id: stn_mars_tam_west_in
+    tx:
+      freq_mhz: 146.7000
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.1000
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 192.8
+      ctcss_rx_hz: 192.8
+  - id: chain_mars_tam_west_147330
+    station_id: stn_mars_tam_west_147330
+    tx:
+      freq_mhz: 147.3300
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.9300
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 192.8
+      ctcss_rx_hz: 192.8
+  - id: chain_mars_tam_mid_443250
+    station_id: stn_mars_tam_mid_443250
+    tx:
+      freq_mhz: 443.2500
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 448.2500
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 179.9
+      ctcss_rx_hz: 179.9
+  - id: chain_aecu_novato
+    station_id: stn_aecu_novato
+    tx:
+      freq_mhz: 447.1750
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 442.1750
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 156.7
+      ctcss_rx_hz: 156.7
+  - id: chain_aecu_sanrafael
+    station_id: stn_aecu_sanrafael
+    tx:
+      freq_mhz: 440.9250
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 445.9250
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 162.2
+      ctcss_rx_hz: 162.2
+  - id: chain_aecu_barnabe
+    station_id: stn_aecu_barnabe
+    tx:
+      freq_mhz: 444.1250
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 449.1250
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 151.4
+      ctcss_rx_hz: 151.4
+  - id: chain_aecu_muirbeach
+    station_id: stn_aecu_muirbeach
+    tx:
+      freq_mhz: 442.2250
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 447.2250
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 141.3
+      ctcss_rx_hz: 141.3
+  - id: chain_aecu_strawberry
+    station_id: stn_aecu_strawberry
+    tx:
+      freq_mhz: 442.1250
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 447.1250
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 146.2
+      ctcss_rx_hz: 146.2
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_mars_bahia
+    short_name: "BAH700"
+    channel_name: "K6GWE 146.700"
+    rf_chain_id: chain_mars_bahia
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      MARS linked simulcast system.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_mars_tam_mid
+    short_name: "TAM700"
+    channel_name: "K6GWE 146.700"
+    rf_chain_id: chain_mars_tam_mid
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      MARS linked simulcast system.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_mars_barnabe
+    short_name: "BRN700"
+    channel_name: "K6GWE 146.700"
+    rf_chain_id: chain_mars_barnabe
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      MARS linked simulcast system.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_mars_tam_west_in
+    short_name: "TAMW70"
+    channel_name: "K6GWE 146.700"
+    rf_chain_id: chain_mars_tam_west_in
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      MARS linked input to the simulcast system.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_mars_tam_west_147330
+    short_name: "TAM330"
+    channel_name: "K6GWE 147.330"
+    rf_chain_id: chain_mars_tam_west_147330
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Stand-alone repeater.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_mars_tam_mid_443250
+    short_name: "TAM443"
+    channel_name: "K6GWE 443.250"
+    rf_chain_id: chain_mars_tam_mid_443250
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Stand-alone repeater.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_aecu_novato
+    short_name: "NOV175"
+    channel_name: "W6ECU 447.175"
+    rf_chain_id: chain_aecu_novato
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Marin Amateur Emergency Communications Unit.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_aecu_sanrafael
+    short_name: "SRF925"
+    channel_name: "W6ECU 440.925"
+    rf_chain_id: chain_aecu_sanrafael
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Marin AECU.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_aecu_barnabe
+    short_name: "BRN125"
+    channel_name: "W6ECU 444.125"
+    rf_chain_id: chain_aecu_barnabe
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Marin AECU.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_aecu_muirbeach
+    short_name: "MUI225"
+    channel_name: "W6ECU 442.225"
+    rf_chain_id: chain_aecu_muirbeach
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Marin AECU. Nearest machine to the Muir Woods stop.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_aecu_strawberry
+    short_name: "STW125"
+    channel_name: "W6ECU 442.125"
+    rf_chain_id: chain_aecu_strawberry
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Marin AECU.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."

@@ -1,0 +1,227 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Pelican Bay Amateur Radio Club + Del Norte ARC published Curry County list"
+      url: "https://w7bkg.org/wiki/Home_Page"
+      accessed: "2026-11-06"
+
+# Curry County, OR amateur repeaters - Brookings, Gold Beach and Port Orford, US-101.
+# Pelican Bay ARC data from the club's own wiki; the wider Curry County list is
+# cross-published by the Del Norte ARC just across the state line.
+
+organizations:
+  - id: org_pbarc
+    name: "PBARC"
+  - id: org_portorfordhams
+    name: "PORTORFORDHAMS"
+
+locations:
+  - id: loc_pbarc_brookings
+    name: "Brookings, Curry County, OR (approx)"
+  - id: loc_pbarc_crownterrace
+    name: "Crown Terrace, Brookings, Curry County, OR (approx)"
+  - id: loc_pbarc_bosley
+    name: "Bosley Butte, Curry County, OR (approx)"
+  - id: loc_curry_grizzly
+    name: "Grizzly Mountain, Gold Beach, Curry County, OR (approx)"
+  - id: loc_pofh_200
+    name: "Port Orford, Curry County, OR (approx)"
+  - id: loc_pofh_440
+    name: "Port Orford, Curry County, OR (approx)"
+
+stations:
+  - id: stn_pbarc_brookings
+    call_sign: "W7BKG"
+    organization_id: org_pbarc
+    location_id: loc_pbarc_brookings
+    service: "amateur"
+  - id: stn_pbarc_crownterrace
+    call_sign: "W7BKG"
+    organization_id: org_pbarc
+    location_id: loc_pbarc_crownterrace
+    service: "amateur"
+  - id: stn_pbarc_bosley
+    call_sign: "W7BKG"
+    organization_id: org_pbarc
+    location_id: loc_pbarc_bosley
+    service: "amateur"
+  - id: stn_curry_grizzly
+    call_sign: null
+    organization_id: org_pbarc
+    location_id: loc_curry_grizzly
+    service: "amateur"
+  - id: stn_pofh_200
+    call_sign: null
+    organization_id: org_portorfordhams
+    location_id: loc_pofh_200
+    service: "amateur"
+  - id: stn_pofh_440
+    call_sign: null
+    organization_id: org_portorfordhams
+    location_id: loc_pofh_440
+    service: "amateur"
+
+rf_chains:
+  - id: chain_pbarc_brookings
+    station_id: stn_pbarc_brookings
+    tx:
+      freq_mhz: 146.9600
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.3600
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 88.5
+      ctcss_rx_hz: 88.5
+  - id: chain_pbarc_crownterrace
+    station_id: stn_pbarc_crownterrace
+    tx:
+      freq_mhz: 146.8400
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.2400
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 88.5
+      ctcss_rx_hz: 88.5
+  - id: chain_pbarc_bosley
+    station_id: stn_pbarc_bosley
+    tx:
+      freq_mhz: 147.2500
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.8500
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 88.5
+      ctcss_rx_hz: 88.5
+  - id: chain_curry_grizzly
+    station_id: stn_curry_grizzly
+    tx:
+      freq_mhz: 146.7400
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.1400
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 88.5
+      ctcss_rx_hz: 88.5
+  - id: chain_pofh_200
+    station_id: stn_pofh_200
+    tx:
+      freq_mhz: 147.2000
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.8000
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 118.8
+      ctcss_rx_hz: 118.8
+  - id: chain_pofh_440
+    station_id: stn_pofh_440
+    tx:
+      freq_mhz: 440.7250
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 445.7250
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 114.8
+      ctcss_rx_hz: 114.8
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_pbarc_brookings
+    short_name: "BRK960"
+    channel_name: "W7BKG 146.960"
+    rf_chain_id: chain_pbarc_brookings
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Pelican Bay ARC.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_pbarc_crownterrace
+    short_name: "CRN840"
+    channel_name: "W7BKG 146.840"
+    rf_chain_id: chain_pbarc_crownterrace
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      PBARC main machine. Health & Welfare net daily 1200; Public Service net
+      Tue 1845.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_pbarc_bosley
+    short_name: "BOS250"
+    channel_name: "W7BKG 147.250"
+    rf_chain_id: chain_pbarc_bosley
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      About 15 miles north of Brookings.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_curry_grizzly
+    short_name: "GRZ740"
+    channel_name: "Curry 146.740"
+    rf_chain_id: chain_curry_grizzly
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Serves the Gold Beach stop.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_pofh_200
+    short_name: "POR200"
+    channel_name: "Curry 147.200"
+    rf_chain_id: chain_pofh_200
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Port Orford Hams.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_pofh_440
+    short_name: "POR440"
+    channel_name: "Curry 440.725"
+    rf_chain_id: chain_pofh_440
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Port Orford Hams 70cm.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
