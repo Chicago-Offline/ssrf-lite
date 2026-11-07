@@ -1,0 +1,495 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Humboldt Amateur Radio Club - Repeaters"
+      url: "http://www.humboldt-arc.org/repeaters/"
+      accessed: "2026-11-06"
+
+# Humboldt County, CA amateur repeaters along the US-101 Redwood Coast leg.
+# Transcribed from the Humboldt Amateur Radio Club's own published repeater page.
+# Offsets and CTCSS tones are as published by the club.
+# Off-route Trinity County and Del Norte entries from the same page are filed
+# under their own counties or omitted.
+
+organizations:
+  - id: org_ae6r
+    name: "AE6R"
+  - id: org_fwra
+    name: "FWRA"
+  - id: org_harc
+    name: "HARC"
+  - id: org_rarc
+    name: "RARC"
+  - id: org_sharc
+    name: "SHARC"
+  - id: org_smrs
+    name: "SMRS"
+  - id: org_wb6hii
+    name: "WB6HII"
+
+locations:
+  - id: loc_ae6r_horsemtn
+    name: "Horse Mountain, Humboldt County, CA (approx)"
+  - id: loc_fwra_horsemtn
+    name: "Horse Mountain, Humboldt County, CA (approx)"
+  - id: loc_fwra_humboldthill
+    name: "Humboldt Hill, Humboldt County, CA (approx)"
+  - id: loc_fwra_mtpierce
+    name: "Mount Pierce (Scotia), Humboldt County, CA (approx)"
+  - id: loc_fwra_pratt
+    name: "Pratt Mountain (Garberville), Humboldt County, CA (approx)"
+  - id: loc_harc_eureka
+    name: "Eureka, Humboldt County, CA (approx)"
+  - id: loc_harc_ke6sls
+    name: "Eureka, Humboldt County, CA (approx)"
+  - id: loc_harc_rainbow
+    name: "Rainbow Ridge, Humboldt County, CA (approx)"
+  - id: loc_rarc_fortuna
+    name: "Fortuna, Humboldt County, CA (approx)"
+  - id: loc_sharc_garberville
+    name: "Garberville, Humboldt County, CA (approx)"
+  - id: loc_sharc_grasshopper
+    name: "Grasshopper Peak (Weott), Humboldt County, CA (approx)"
+  - id: loc_sharc_sheltercove
+    name: "Shelter Cove, Humboldt County, CA (approx)"
+  - id: loc_smrs_garberville
+    name: "Garberville, Humboldt County, CA (approx)"
+  - id: loc_wb6hii_ferndale
+    name: "Ferndale / Bunker Hill, Humboldt County, CA (approx)"
+
+stations:
+  - id: stn_harc_eureka
+    call_sign: "W6ZZK"
+    organization_id: org_harc
+    location_id: loc_harc_eureka
+    service: "amateur"
+  - id: stn_harc_rainbow
+    call_sign: "W6ZZK"
+    organization_id: org_harc
+    location_id: loc_harc_rainbow
+    service: "amateur"
+  - id: stn_fwra_humboldthill
+    call_sign: "K6FWR"
+    organization_id: org_fwra
+    location_id: loc_fwra_humboldthill
+    service: "amateur"
+  - id: stn_fwra_horsemtn
+    call_sign: "K6FWR"
+    organization_id: org_fwra
+    location_id: loc_fwra_horsemtn
+    service: "amateur"
+  - id: stn_fwra_mtpierce
+    call_sign: "K6FWR"
+    organization_id: org_fwra
+    location_id: loc_fwra_mtpierce
+    service: "amateur"
+  - id: stn_fwra_pratt
+    call_sign: "K6FWR"
+    organization_id: org_fwra
+    location_id: loc_fwra_pratt
+    service: "amateur"
+  - id: stn_rarc_fortuna
+    call_sign: "KF6SYK"
+    organization_id: org_rarc
+    location_id: loc_rarc_fortuna
+    service: "amateur"
+  - id: stn_ae6r_horsemtn
+    call_sign: "AE6R"
+    organization_id: org_ae6r
+    location_id: loc_ae6r_horsemtn
+    service: "amateur"
+  - id: stn_wb6hii_ferndale
+    call_sign: "WB6HII"
+    organization_id: org_wb6hii
+    location_id: loc_wb6hii_ferndale
+    service: "amateur"
+  - id: stn_harc_ke6sls
+    call_sign: "KE6SLS"
+    organization_id: org_harc
+    location_id: loc_harc_ke6sls
+    service: "amateur"
+  - id: stn_sharc_garberville
+    call_sign: "KE6WC"
+    organization_id: org_sharc
+    location_id: loc_sharc_garberville
+    service: "amateur"
+  - id: stn_sharc_sheltercove
+    call_sign: "KM6TE"
+    organization_id: org_sharc
+    location_id: loc_sharc_sheltercove
+    service: "amateur"
+  - id: stn_sharc_grasshopper
+    call_sign: "KM6TE"
+    organization_id: org_sharc
+    location_id: loc_sharc_grasshopper
+    service: "amateur"
+  - id: stn_smrs_garberville
+    call_sign: "KA6ROM"
+    organization_id: org_smrs
+    location_id: loc_smrs_garberville
+    service: "amateur"
+
+rf_chains:
+  - id: chain_harc_eureka
+    station_id: stn_harc_eureka
+    tx:
+      freq_mhz: 145.4700
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 144.8700
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+  - id: chain_harc_rainbow
+    station_id: stn_harc_rainbow
+    tx:
+      freq_mhz: 146.9100
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.3100
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+  - id: chain_fwra_humboldthill
+    station_id: stn_fwra_humboldthill
+    tx:
+      freq_mhz: 146.7000
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.1000
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+  - id: chain_fwra_horsemtn
+    station_id: stn_fwra_horsemtn
+    tx:
+      freq_mhz: 147.0000
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.6000
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+  - id: chain_fwra_mtpierce
+    station_id: stn_fwra_mtpierce
+    tx:
+      freq_mhz: 146.7600
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.1600
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+  - id: chain_fwra_pratt
+    station_id: stn_fwra_pratt
+    tx:
+      freq_mhz: 146.6100
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.0100
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+  - id: chain_rarc_fortuna
+    station_id: stn_rarc_fortuna
+    tx:
+      freq_mhz: 147.0900
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.6900
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+  - id: chain_ae6r_horsemtn
+    station_id: stn_ae6r_horsemtn
+    tx:
+      freq_mhz: 442.0000
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 447.0000
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 100.0
+      ctcss_rx_hz: 100.0
+  - id: chain_wb6hii_ferndale
+    station_id: stn_wb6hii_ferndale
+    tx:
+      freq_mhz: 147.4450
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.8450
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+  - id: chain_harc_ke6sls
+    station_id: stn_harc_ke6sls
+    tx:
+      freq_mhz: 444.4000
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 449.4000
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+  - id: chain_sharc_garberville
+    station_id: stn_sharc_garberville
+    tx:
+      freq_mhz: 146.7900
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.1900
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+  - id: chain_sharc_sheltercove
+    station_id: stn_sharc_sheltercove
+    tx:
+      freq_mhz: 146.9400
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.3400
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+  - id: chain_sharc_grasshopper
+    station_id: stn_sharc_grasshopper
+    tx:
+      freq_mhz: 147.3300
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.9300
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+  - id: chain_smrs_garberville
+    station_id: stn_smrs_garberville
+    tx:
+      freq_mhz: 147.1500
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.7500
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_harc_eureka
+    short_name: "HAR470"
+    channel_name: "W6ZZK 145.470"
+    rf_chain_id: chain_harc_eureka
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      HARC/Muni club repeater
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_harc_rainbow
+    short_name: "RNB910"
+    channel_name: "W6ZZK 146.910"
+    rf_chain_id: chain_harc_rainbow
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Club lists this machine as working poorly; replacement planned.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_fwra_humboldthill
+    short_name: "HBH700"
+    channel_name: "K6FWR 146.700"
+    rf_chain_id: chain_fwra_humboldthill
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      FWRA. Covers Eureka to Trinidad.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_fwra_horsemtn
+    short_name: "HRS000"
+    channel_name: "K6FWR 147.000"
+    rf_chain_id: chain_fwra_horsemtn
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      FWRA. Covers HW299 Eureka-Weaverville.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_fwra_mtpierce
+    short_name: "PRC760"
+    channel_name: "K6FWR 146.760"
+    rf_chain_id: chain_fwra_mtpierce
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      FWRA. Covers Loleta, Fortuna, Rio Dell and US-101 south.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_fwra_pratt
+    short_name: "PRT610"
+    channel_name: "K6FWR 146.610"
+    rf_chain_id: chain_fwra_pratt
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      FWRA. Covers Garberville and south.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_rarc_fortuna
+    short_name: "FTN090"
+    channel_name: "KF6SYK 147.090"
+    rf_chain_id: chain_rarc_fortuna
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Redwood ARC.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_ae6r_horsemtn
+    short_name: "HRS442"
+    channel_name: "AE6R 442.000"
+    rf_chain_id: chain_ae6r_horsemtn
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Individually trusteed 70cm machine.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_wb6hii_ferndale
+    short_name: "FRN445"
+    channel_name: "WB6HII 147.445"
+    rf_chain_id: chain_wb6hii_ferndale
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      IRLP node 7757. Published with a 1 MHz negative split, not the usual 600
+      kHz.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_harc_ke6sls
+    short_name: "EUR444"
+    channel_name: "KE6SLS 444.400"
+    rf_chain_id: chain_harc_ke6sls
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      HARC 70cm.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_sharc_garberville
+    short_name: "GRB790"
+    channel_name: "KE6WC 146.790"
+    rf_chain_id: chain_sharc_garberville
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Southern Humboldt ARC.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_sharc_sheltercove
+    short_name: "SHC940"
+    channel_name: "KM6TE 146.940"
+    rf_chain_id: chain_sharc_sheltercove
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Southern Humboldt ARC.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_sharc_grasshopper
+    short_name: "GRS330"
+    channel_name: "KM6TE 147.330"
+    rf_chain_id: chain_sharc_grasshopper
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Southern Humboldt ARC. Primary coverage for the Avenue of the Giants.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_smrs_garberville
+    short_name: "GRB150"
+    channel_name: "KA6ROM 147.150"
+    rf_chain_id: chain_smrs_garberville
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Southern Mendocino/Humboldt. SMRS.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."

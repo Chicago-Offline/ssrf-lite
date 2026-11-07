@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Marin Amateur Radio Society - Frequency List"
+      url: "https://w6sg.net/site/public-service/frequency-list/"
+      accessed: "2026-11-06"
+
+# Alameda County, CA - Oakland machine covering the OAK airport stop.
+# Transcribed from the Marin Amateur Radio Society frequency list.
+
+organizations:
+  - id: org_cathayarc
+    name: "CATHAYARC"
+
+locations:
+  - id: loc_cathay_oakland
+    name: "Oakland, Alameda County, CA (approx)"
+
+stations:
+  - id: stn_cathay_oakland
+    call_sign: "W6BUR"
+    organization_id: org_cathayarc
+    location_id: loc_cathay_oakland
+    service: "amateur"
+
+rf_chains:
+  - id: chain_cathay_oakland
+    station_id: stn_cathay_oakland
+    tx:
+      freq_mhz: 146.6700
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.0700
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 85.4
+      ctcss_rx_hz: 85.4
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_cathay_oakland
+    short_name: "OAK670"
+    channel_name: "W6BUR 146.670"
+    rf_chain_id: chain_cathay_oakland
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Cathay Amateur Radio Club, trustee George Chong. Nearest machine to OAK.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."

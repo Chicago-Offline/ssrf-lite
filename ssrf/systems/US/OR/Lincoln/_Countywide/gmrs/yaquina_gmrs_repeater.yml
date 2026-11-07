@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Lincoln County Amateur Radio Club (N7OY) - Repeaters"
+      url: "https://n7oy.org/repeaters/"
+      accessed: "2026-11-06"
+
+# Lincoln County, OR GMRS - the one GMRS repeater the local amateur club
+# publishes alongside its own machines. Standard GMRS 575 pair, +5.000 MHz.
+
+organizations:
+  - id: org_lcarc
+    name: "LCARC"
+
+locations:
+  - id: loc_yaquina_575
+    name: "Yaquina, Lincoln County, OR (approx)"
+
+stations:
+  - id: stn_yaquina_575
+    call_sign: null
+    organization_id: org_lcarc
+    location_id: loc_yaquina_575
+    service: "gmrs"
+
+rf_chains:
+  - id: chain_yaquina_575
+    station_id: stn_yaquina_575
+    tx:
+      freq_mhz: 462.5750
+      emission: "20K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 467.5750
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 136.5
+      ctcss_rx_hz: 136.5
+
+authorizations:
+  - id: auth_fcc_gmrs
+    authority: "FCC"
+    service: gmrs
+    class: "GMRS license"
+    notes: "Operation under 47 CFR Part 95 Subpart E. Repeater use requires an individual GMRS licence."
+
+assignments:
+  - id: asgn_yaquina_575
+    short_name: "YAQ575"
+    channel_name: "Lincoln 462.575"
+    rf_chain_id: chain_yaquina_575
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: >-
+      Published by the Lincoln County ARC as "Yaquina 575". Licensee call sign
+      is not published by the club, so no call is recorded.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."

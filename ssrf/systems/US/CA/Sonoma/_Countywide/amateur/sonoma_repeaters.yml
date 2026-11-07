@@ -1,0 +1,228 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Marin Amateur Radio Society - Frequency List"
+      url: "https://w6sg.net/site/public-service/frequency-list/"
+      accessed: "2026-11-06"
+
+# Sonoma County, CA amateur repeaters on the Hwy 1 / US-101 run south toward
+# the Bay. Transcribed from the Marin Amateur Radio Society frequency list,
+# which publishes the neighbouring SMRS and SCRA systems.
+
+organizations:
+  - id: org_scra
+    name: "SCRA"
+  - id: org_smrs
+    name: "SMRS"
+
+locations:
+  - id: loc_smrs_sonomamtn
+    name: "Sonoma Mountain, Sonoma County, CA (approx)"
+  - id: loc_smrs_dillonbeach
+    name: "Dillon Beach, Sonoma County, CA (approx)"
+  - id: loc_smrs_ptreyes_145170
+    name: "Point Reyes, Sonoma County, CA (approx)"
+  - id: loc_smrs_ptreyes_145470
+    name: "Point Reyes, Sonoma County, CA (approx)"
+  - id: loc_scra_englishhill
+    name: "English Hill (Sebastopol), Sonoma County, CA (approx)"
+  - id: loc_scra_cathedralhill
+    name: "Cathedral Hill, Sonoma County, CA (approx)"
+
+stations:
+  - id: stn_smrs_sonomamtn
+    call_sign: "WB6TMS"
+    organization_id: org_smrs
+    location_id: loc_smrs_sonomamtn
+    service: "amateur"
+  - id: stn_smrs_dillonbeach
+    call_sign: "KI6SUD"
+    organization_id: org_smrs
+    location_id: loc_smrs_dillonbeach
+    service: "amateur"
+  - id: stn_smrs_ptreyes_145170
+    call_sign: "WB6TMS"
+    organization_id: org_smrs
+    location_id: loc_smrs_ptreyes_145170
+    service: "amateur"
+  - id: stn_smrs_ptreyes_145470
+    call_sign: "WB6TMS"
+    organization_id: org_smrs
+    location_id: loc_smrs_ptreyes_145470
+    service: "amateur"
+  - id: stn_scra_englishhill
+    call_sign: "W6SON"
+    organization_id: org_scra
+    location_id: loc_scra_englishhill
+    service: "amateur"
+  - id: stn_scra_cathedralhill
+    call_sign: "W6SON"
+    organization_id: org_scra
+    location_id: loc_scra_cathedralhill
+    service: "amateur"
+
+rf_chains:
+  - id: chain_smrs_sonomamtn
+    station_id: stn_smrs_sonomamtn
+    tx:
+      freq_mhz: 146.9100
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.3100
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 88.5
+      ctcss_rx_hz: 88.5
+  - id: chain_smrs_dillonbeach
+    station_id: stn_smrs_dillonbeach
+    tx:
+      freq_mhz: 146.8650
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.2650
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 88.5
+      ctcss_rx_hz: 88.5
+  - id: chain_smrs_ptreyes_145170
+    station_id: stn_smrs_ptreyes_145170
+    tx:
+      freq_mhz: 145.1700
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 144.5700
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 88.5
+      ctcss_rx_hz: 88.5
+  - id: chain_smrs_ptreyes_145470
+    station_id: stn_smrs_ptreyes_145470
+    tx:
+      freq_mhz: 145.4700
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 144.8700
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 88.5
+      ctcss_rx_hz: 88.5
+  - id: chain_scra_englishhill
+    station_id: stn_scra_englishhill
+    tx:
+      freq_mhz: 147.3150
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.9150
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 88.5
+      ctcss_rx_hz: 88.5
+  - id: chain_scra_cathedralhill
+    station_id: stn_scra_cathedralhill
+    tx:
+      freq_mhz: 147.3150
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.9150
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 88.5
+      ctcss_rx_hz: 88.5
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_smrs_sonomamtn
+    short_name: "SNM910"
+    channel_name: "WB6TMS 146.910"
+    rf_chain_id: chain_smrs_sonomamtn
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Sonoma Mountain Repeater Society, linked.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_smrs_dillonbeach
+    short_name: "DIL865"
+    channel_name: "KI6SUD 146.865"
+    rf_chain_id: chain_smrs_dillonbeach
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      SMRS linked.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_smrs_ptreyes_145170
+    short_name: "PTR170"
+    channel_name: "WB6TMS 145.170"
+    rf_chain_id: chain_smrs_ptreyes_145170
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      SMRS linked. Site is physically in Marin County; filed with its parent
+      system.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_smrs_ptreyes_145470
+    short_name: "PTR470"
+    channel_name: "WB6TMS 145.470"
+    rf_chain_id: chain_smrs_ptreyes_145470
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      SMRS linked. Site is physically in Marin County; filed with its parent
+      system.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_scra_englishhill
+    short_name: "ENG315"
+    channel_name: "W6SON 147.315"
+    rf_chain_id: chain_scra_englishhill
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Sonoma County Radio Amateurs. Simulcast, voted.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_scra_cathedralhill
+    short_name: "CAT315"
+    channel_name: "W6SON 147.315"
+    rf_chain_id: chain_scra_cathedralhill
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      SCRA. Simulcast, voted - same pair and tone as English Hill.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."

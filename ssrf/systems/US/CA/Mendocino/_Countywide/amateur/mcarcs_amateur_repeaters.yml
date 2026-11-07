@@ -1,0 +1,574 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "McARCS - Repeaters"
+      url: "https://mcarcs.org/doku.php?id=repeaters"
+      accessed: "2026-11-06"
+
+# Mendocino County, CA amateur repeaters - Fort Bragg and the Hwy 1 / US-101 legs.
+# Transcribed from the Mendocino County Amateur Radio Communications Service
+# (McARCS) published repeater list. Lake County entries from the same page are
+# off-route and omitted. Unless noted, all listed machines transmit a tone.
+
+organizations:
+  - id: org_mcarcs
+    name: "MCARCS"
+
+locations:
+  - id: loc_mcarcs_cahto
+    name: "Cahto Peak, Mendocino County, CA (approx)"
+  - id: loc_mcarcs_laughlin_147390
+    name: "Laughlin Ridge, Mendocino County, CA (approx)"
+  - id: loc_mcarcs_laughlin_440850
+    name: "Laughlin Ridge, Mendocino County, CA (approx)"
+  - id: loc_mcarcs_sanel
+    name: "Sanel Mountain, Mendocino County, CA (approx)"
+  - id: loc_mcarcs_fishrock
+    name: "Fish Rock, Mendocino County, CA (approx)"
+  - id: loc_mcarcs_fortbragg
+    name: "Fort Bragg, Mendocino County, CA (approx)"
+  - id: loc_mcarcs_mathison
+    name: "Mathison Peak (Little River), Mendocino County, CA (approx)"
+  - id: loc_mcarcs_ptarena_146610
+    name: "Point Arena, Mendocino County, CA (approx)"
+  - id: loc_mcarcs_gualala
+    name: "Gualala, Mendocino County, CA (approx)"
+  - id: loc_mcarcs_laughlin_147120
+    name: "Laughlin Ridge, Mendocino County, CA (approx)"
+  - id: loc_mcarcs_ptarena_443075
+    name: "Point Arena, Mendocino County, CA (approx)"
+  - id: loc_mcarcs_anthony
+    name: "Anthony Peak, Mendocino County, CA (approx)"
+  - id: loc_mcarcs_sanhedrin
+    name: "Sanhedrin Mountain, Mendocino County, CA (approx)"
+  - id: loc_mcarcs_laughlin_145130
+    name: "Laughlin Ridge, Mendocino County, CA (approx)"
+  - id: loc_mcarcs_laughlin_442100
+    name: "Laughlin Ridge, Mendocino County, CA (approx)"
+  - id: loc_mcarcs_laughlin_443175
+    name: "Laughlin Ridge, Mendocino County, CA (approx)"
+  - id: loc_mcarcs_laughlin_444925
+    name: "Laughlin Ridge, Mendocino County, CA (approx)"
+
+stations:
+  - id: stn_mcarcs_cahto
+    call_sign: "WA6RQX"
+    organization_id: org_mcarcs
+    location_id: loc_mcarcs_cahto
+    service: "amateur"
+  - id: stn_mcarcs_laughlin_147390
+    call_sign: "WA6RQX"
+    organization_id: org_mcarcs
+    location_id: loc_mcarcs_laughlin_147390
+    service: "amateur"
+  - id: stn_mcarcs_laughlin_440850
+    call_sign: "WA6RQX"
+    organization_id: org_mcarcs
+    location_id: loc_mcarcs_laughlin_440850
+    service: "amateur"
+  - id: stn_mcarcs_sanel
+    call_sign: "WA6RQX"
+    organization_id: org_mcarcs
+    location_id: loc_mcarcs_sanel
+    service: "amateur"
+  - id: stn_mcarcs_fishrock
+    call_sign: "WA6RQX"
+    organization_id: org_mcarcs
+    location_id: loc_mcarcs_fishrock
+    service: "amateur"
+  - id: stn_mcarcs_fortbragg
+    call_sign: "KN6SMD"
+    organization_id: org_mcarcs
+    location_id: loc_mcarcs_fortbragg
+    service: "amateur"
+  - id: stn_mcarcs_mathison
+    call_sign: "KN6SMD"
+    organization_id: org_mcarcs
+    location_id: loc_mcarcs_mathison
+    service: "amateur"
+  - id: stn_mcarcs_ptarena_146610
+    call_sign: "W6ABR"
+    organization_id: org_mcarcs
+    location_id: loc_mcarcs_ptarena_146610
+    service: "amateur"
+  - id: stn_mcarcs_gualala
+    call_sign: "W6ABR"
+    organization_id: org_mcarcs
+    location_id: loc_mcarcs_gualala
+    service: "amateur"
+  - id: stn_mcarcs_laughlin_147120
+    call_sign: "KI6RIT"
+    organization_id: org_mcarcs
+    location_id: loc_mcarcs_laughlin_147120
+    service: "amateur"
+  - id: stn_mcarcs_ptarena_443075
+    call_sign: null
+    organization_id: org_mcarcs
+    location_id: loc_mcarcs_ptarena_443075
+    service: "amateur"
+  - id: stn_mcarcs_anthony
+    call_sign: "KK6PRF"
+    organization_id: org_mcarcs
+    location_id: loc_mcarcs_anthony
+    service: "amateur"
+  - id: stn_mcarcs_sanhedrin
+    call_sign: "WA6RQX"
+    organization_id: org_mcarcs
+    location_id: loc_mcarcs_sanhedrin
+    service: "amateur"
+  - id: stn_mcarcs_laughlin_145130
+    call_sign: "W6MMM"
+    organization_id: org_mcarcs
+    location_id: loc_mcarcs_laughlin_145130
+    service: "amateur"
+  - id: stn_mcarcs_laughlin_442100
+    call_sign: "WI6H"
+    organization_id: org_mcarcs
+    location_id: loc_mcarcs_laughlin_442100
+    service: "amateur"
+  - id: stn_mcarcs_laughlin_443175
+    call_sign: "WA6RQX"
+    organization_id: org_mcarcs
+    location_id: loc_mcarcs_laughlin_443175
+    service: "amateur"
+  - id: stn_mcarcs_laughlin_444925
+    call_sign: "WA6RQX"
+    organization_id: org_mcarcs
+    location_id: loc_mcarcs_laughlin_444925
+    service: "amateur"
+
+rf_chains:
+  - id: chain_mcarcs_cahto
+    station_id: stn_mcarcs_cahto
+    tx:
+      freq_mhz: 145.4300
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 144.8300
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+  - id: chain_mcarcs_laughlin_147390
+    station_id: stn_mcarcs_laughlin_147390
+    tx:
+      freq_mhz: 147.3900
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.9900
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+  - id: chain_mcarcs_laughlin_440850
+    station_id: stn_mcarcs_laughlin_440850
+    tx:
+      freq_mhz: 440.8500
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 445.8500
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 141.3
+      ctcss_rx_hz: 141.3
+  - id: chain_mcarcs_sanel
+    station_id: stn_mcarcs_sanel
+    tx:
+      freq_mhz: 145.4700
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 144.8700
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+  - id: chain_mcarcs_fishrock
+    station_id: stn_mcarcs_fishrock
+    tx:
+      freq_mhz: 147.2700
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.8700
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 114.8
+      ctcss_rx_hz: 114.8
+  - id: chain_mcarcs_fortbragg
+    station_id: stn_mcarcs_fortbragg
+    tx:
+      freq_mhz: 147.0300
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.6300
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+  - id: chain_mcarcs_mathison
+    station_id: stn_mcarcs_mathison
+    tx:
+      freq_mhz: 146.8200
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.2200
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+  - id: chain_mcarcs_ptarena_146610
+    station_id: stn_mcarcs_ptarena_146610
+    tx:
+      freq_mhz: 146.6100
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.0100
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 88.5
+      ctcss_rx_hz: 88.5
+  - id: chain_mcarcs_gualala
+    station_id: stn_mcarcs_gualala
+    tx:
+      freq_mhz: 147.8250
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.2250
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+  - id: chain_mcarcs_laughlin_147120
+    station_id: stn_mcarcs_laughlin_147120
+    tx:
+      freq_mhz: 147.1200
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.7200
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+  - id: chain_mcarcs_ptarena_443075
+    station_id: stn_mcarcs_ptarena_443075
+    tx:
+      freq_mhz: 443.0750
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 448.0750
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 100.0
+      ctcss_rx_hz: 100.0
+  - id: chain_mcarcs_anthony
+    station_id: stn_mcarcs_anthony
+    tx:
+      freq_mhz: 147.2100
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.8100
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+  - id: chain_mcarcs_sanhedrin
+    station_id: stn_mcarcs_sanhedrin
+    tx:
+      freq_mhz: 444.7500
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 449.7500
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 141.3
+      ctcss_rx_hz: 141.3
+  - id: chain_mcarcs_laughlin_145130
+    station_id: stn_mcarcs_laughlin_145130
+    tx:
+      freq_mhz: 145.1300
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 144.5300
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 103.5
+      ctcss_rx_hz: 103.5
+  - id: chain_mcarcs_laughlin_442100
+    station_id: stn_mcarcs_laughlin_442100
+    tx:
+      freq_mhz: 442.1000
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 447.1000
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 141.3
+      ctcss_rx_hz: 141.3
+  - id: chain_mcarcs_laughlin_443175
+    station_id: stn_mcarcs_laughlin_443175
+    tx:
+      freq_mhz: 443.1750
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 448.1750
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 123.0
+      ctcss_rx_hz: 123.0
+  - id: chain_mcarcs_laughlin_444925
+    station_id: stn_mcarcs_laughlin_444925
+    tx:
+      freq_mhz: 444.9250
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 449.9250
+    mode:
+      type: "FM"
+      ctcss_tx_hz: 100.0
+      ctcss_rx_hz: 100.0
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_mcarcs_cahto
+    short_name: "CHT430"
+    channel_name: "WA6RQX 145.430"
+    rf_chain_id: chain_mcarcs_cahto
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Countywide linked system. Covers northern inland and coastal Mendocino
+      County.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_mcarcs_laughlin_147390
+    short_name: "LAU390"
+    channel_name: "WA6RQX 147.390"
+    rf_chain_id: chain_mcarcs_laughlin_147390
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Countywide linked. Willits, Redwood Valley, Ukiah, Potter Valley, west to
+      the coast.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_mcarcs_laughlin_440850
+    short_name: "LAU850"
+    channel_name: "WA6RQX 440.850"
+    rf_chain_id: chain_mcarcs_laughlin_440850
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      UHF alternate via the repeater link frequency.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_mcarcs_sanel
+    short_name: "SAN470"
+    channel_name: "WA6RQX 145.470"
+    rf_chain_id: chain_mcarcs_sanel
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Countywide linked. Southern inland county along US-101 and SR-128.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_mcarcs_fishrock
+    short_name: "FSH270"
+    channel_name: "WA6RQX 147.270"
+    rf_chain_id: chain_mcarcs_fishrock
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Countywide linked. Southern Mendocino and northern Sonoma County.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_mcarcs_fortbragg
+    short_name: "FTB030"
+    channel_name: "KN6SMD 147.030"
+    rf_chain_id: chain_mcarcs_fortbragg
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Covers Fort Bragg and surrounding areas (Cleone, Caspar).
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_mcarcs_mathison
+    short_name: "MTH820"
+    channel_name: "KN6SMD 146.820"
+    rf_chain_id: chain_mcarcs_mathison
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Covers Mendocino, Little River and Albion coastal areas.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_mcarcs_ptarena_146610
+    short_name: "PTA610"
+    channel_name: "W6ABR 146.610"
+    rf_chain_id: chain_mcarcs_ptarena_146610
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_mcarcs_gualala
+    short_name: "GUA825"
+    channel_name: "W6ABR 147.825"
+    rf_chain_id: chain_mcarcs_gualala
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Published with a negative offset on an unusual output frequency; recorded
+      as listed.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_mcarcs_laughlin_147120
+    short_name: "LAU120"
+    channel_name: "KI6RIT 147.120"
+    rf_chain_id: chain_mcarcs_laughlin_147120
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Linked to the WIN System via AllStarLink.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_mcarcs_ptarena_443075
+    short_name: "PTA443"
+    channel_name: "Mendocino 443.075"
+    rf_chain_id: chain_mcarcs_ptarena_443075
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Local coverage only.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_mcarcs_anthony
+    short_name: "ANT210"
+    channel_name: "KK6PRF 147.210"
+    rf_chain_id: chain_mcarcs_anthony
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Solar powered, at the highest point in Mendocino County.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_mcarcs_sanhedrin
+    short_name: "SHD750"
+    channel_name: "WA6RQX 444.750"
+    rf_chain_id: chain_mcarcs_sanhedrin
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Near the second-highest point in the county.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_mcarcs_laughlin_145130
+    short_name: "LAU130"
+    channel_name: "W6MMM 145.130"
+    rf_chain_id: chain_mcarcs_laughlin_145130
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Yaesu dual-mode analog FM and System Fusion.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_mcarcs_laughlin_442100
+    short_name: "LAU100"
+    channel_name: "WI6H 442.100"
+    rf_chain_id: chain_mcarcs_laughlin_442100
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Motorola dual-mode analog FM and P25.
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_mcarcs_laughlin_443175
+    short_name: "LAU175"
+    channel_name: "WA6RQX 443.175"
+    rf_chain_id: chain_mcarcs_laughlin_443175
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
+  - id: asgn_mcarcs_laughlin_444925
+    short_name: "LAU925"
+    channel_name: "WA6RQX 444.925"
+    rf_chain_id: chain_mcarcs_laughlin_444925
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    verified:
+      date: "2026-11-06"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club-published listing only. Not monitored on air."
