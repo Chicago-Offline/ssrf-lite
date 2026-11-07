@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Oregon Relay Radio Council (ORRC) - Published Coordinations"
+      url: "https://orrc.org/Coordinations/Published"
+      accessed: "2026-11-07"
+
+# Portland, Multnomah County, OR - WB2QHS. ORRC-coordinated pair and tone.
+# WB2QHS also holds a 426.250/910.250 ATV coordination which is not included here.
+
+organizations:
+  - id: org_wb2qhs
+    name: "WB2QHS"
+
+locations:
+  - id: loc_qhs440
+    name: "Portland, Multnomah County, OR"
+
+stations:
+  - id: stn_qhs440
+    call_sign: "WB2QHS"
+    organization_id: org_wb2qhs
+    location_id: loc_qhs440
+    service: "amateur"
+
+rf_chains:
+  - id: chain_qhs440
+    station_id: stn_qhs440
+    tx:
+      freq_mhz: 440.6750
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 445.6750
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 136.5
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_qhs440
+    short_name: "QHS440"
+    channel_name: "WB2QHS Portland 440.675"
+    rf_chain_id: chain_qhs440
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."

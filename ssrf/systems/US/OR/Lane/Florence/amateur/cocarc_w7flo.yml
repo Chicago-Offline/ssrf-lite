@@ -1,0 +1,138 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Central Oregon Coast Amateur Radio Club (COCARC, W7FLO) - About Us"
+      url: "https://w7flo.com/about%20us.html"
+      accessed: "2026-11-07"
+    - name: "Oregon Relay Radio Council (ORRC) - Published Coordinations"
+      url: "https://orrc.org/Coordinations/Published"
+      accessed: "2026-11-07"
+
+# Florence, Lane County, OR - Central Oregon Coast Amateur Radio Club
+# (COCARC, W7FLO), corporate name "Oregon Coast Emergency Repeater, Inc".
+# Sites: Herman Peak (11 mi NNW of Florence, 2000 ft) and Glenada Hill (737 ft).
+# 146.800 (PL 100.0, EchoLink) and 441.100 (+5 MHz, DCS 125) are fully published
+# by the club; the 146.200 input is confirmed by ORRC.
+# BAND-PLAN-DERIVED: the 442.575 INPUT (447.575) is NOT published. The club page
+# gives the output and DCS 125 but no offset, and ORRC has no coordination for it.
+# +5 MHz is taken from the ARRL 70cm band plan (442-445 = +5 MHz). Verify on air.
+# The club page's last update stamp is 2022-06-13, so treat all of it as aging.
+# The club also runs a packet node on 144.950; it is omitted here because no
+# emission designator or operating detail is published for it.
+# Both UHF machines are Yaesu DR-2X in auto-mode-select, so they pass analog FM
+# and System Fusion; they are recorded as FM with the published DCS access.
+
+organizations:
+  - id: org_cocarc
+    name: "Central Oregon Coast Amateur Radio Club (COCARC)"
+
+locations:
+  - id: loc_flo800
+    name: "Herman Peak, Lane County, OR"
+  - id: loc_flo441
+    name: "Glenada Hill, Lane County, OR"
+  - id: loc_flo442
+    name: "Herman Peak, Lane County, OR"
+
+stations:
+  - id: stn_flo800
+    call_sign: "W7FLO"
+    organization_id: org_cocarc
+    location_id: loc_flo800
+    service: "amateur"
+  - id: stn_flo441
+    call_sign: "W7FLO"
+    organization_id: org_cocarc
+    location_id: loc_flo441
+    service: "amateur"
+  - id: stn_flo442
+    call_sign: "W7FLO"
+    organization_id: org_cocarc
+    location_id: loc_flo442
+    service: "amateur"
+
+rf_chains:
+  - id: chain_flo800
+    station_id: stn_flo800
+    tx:
+      freq_mhz: 146.8000
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.2000
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 100.0
+  - id: chain_flo441
+    station_id: stn_flo441
+    tx:
+      freq_mhz: 441.1000
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 446.1000
+    mode:
+      type: "FM"
+      dcs_rx_code: "125"
+  - id: chain_flo442
+    station_id: stn_flo442
+    tx:
+      freq_mhz: 442.5750
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 447.5750
+    mode:
+      type: "FM"
+      dcs_rx_code: "125"
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_flo800
+    short_name: "FLO800"
+    channel_name: "W7FLO Florence 146.800"
+    rf_chain_id: chain_flo800
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Kenwood TKR-750 on Herman Peak. EchoLink node on this machine. Club net Wednesdays 19:00 local. Open to all amateurs.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."
+  - id: asgn_flo441
+    short_name: "FLO441"
+    channel_name: "W7FLO Florence 441.100"
+    rf_chain_id: chain_flo441
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Yaesu DR-2X, auto mode select (FM + System Fusion). Offset +5 MHz published by the club. Serves Mapleton and Dunes City.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."
+  - id: asgn_flo442
+    short_name: "FLO442"
+    channel_name: "W7FLO Florence 442.575"
+    rf_chain_id: chain_flo442
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Yaesu DR-2X, auto mode select (FM + System Fusion). INPUT IS BAND-PLAN-DERIVED (+5 MHz, ARRL 70cm plan) - the club publishes no offset and there is no ORRC coordination. Verify before relying on it.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."

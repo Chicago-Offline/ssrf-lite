@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Sunset Empire Amateur Radio Club (W7BU) - Clatsop County UHF/VHF Band Plan"
+      url: "https://w7buhams.club/clatsop-county-uhf-vhf-band-plan/"
+      accessed: "2026-11-07"
+    - name: "Oregon Relay Radio Council (ORRC) - Published Coordinations"
+      url: "https://orrc.org/Coordinations/Published"
+      accessed: "2026-11-07"
+
+# Astoria, Clatsop County, OR - K7RPT (Amateur Radio Relay Group, ARRG).
+# Carried in the Clatsop County AuxComm band plan as the "Hood 2 Coast" machine,
+# part of the Hood to Coast linked system. Note the access tone here is 114.8 Hz,
+# NOT the 118.8 Hz used across the rest of the Clatsop/SEARC system.
+# ORRC confirms the 146.720/146.120 coordination to K7RPT at Astoria but does not
+# publish the tone value; the 114.8 Hz comes from the county band plan.
+
+organizations:
+  - id: org_arrg
+    name: "Amateur Radio Relay Group (ARRG)"
+
+locations:
+  - id: loc_h2c720
+    name: "Astoria, Clatsop County, OR"
+
+stations:
+  - id: stn_h2c720
+    call_sign: "K7RPT"
+    organization_id: org_arrg
+    location_id: loc_h2c720
+    service: "amateur"
+
+rf_chains:
+  - id: chain_h2c720
+    station_id: stn_h2c720
+    tx:
+      freq_mhz: 146.7200
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.1200
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 114.8
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_h2c720
+    short_name: "H2C720"
+    channel_name: "K7RPT Astoria 146.720"
+    rf_chain_id: chain_h2c720
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Hood to Coast linked system.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."

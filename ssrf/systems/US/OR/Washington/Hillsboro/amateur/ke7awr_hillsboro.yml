@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Oregon Relay Radio Council (ORRC) - Published Coordinations"
+      url: "https://orrc.org/Coordinations/Published"
+      accessed: "2026-11-07"
+
+# Hillsboro, Washington County, OR - KE7AWR. ORRC-coordinated pair and tone.
+
+organizations:
+  - id: org_ke7awr_wash
+    name: "KE7AWR"
+
+locations:
+  - id: loc_awr441h
+    name: "Hillsboro, Washington County, OR"
+
+stations:
+  - id: stn_awr441h
+    call_sign: "KE7AWR"
+    organization_id: org_ke7awr_wash
+    location_id: loc_awr441h
+    service: "amateur"
+
+rf_chains:
+  - id: chain_awr441h
+    station_id: stn_awr441h
+    tx:
+      freq_mhz: 441.2250
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 446.2250
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 100.0
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_awr441h
+    short_name: "HIL441"
+    channel_name: "KE7AWR Hillsboro 441.225"
+    rf_chain_id: chain_awr441h
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."

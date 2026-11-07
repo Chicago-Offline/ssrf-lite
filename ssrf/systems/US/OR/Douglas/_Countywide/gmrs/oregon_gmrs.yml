@@ -1,0 +1,96 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Oregon GMRS - repeater system pages"
+      url: "https://oregongmrs.org/"
+      accessed: "2026-11-07"
+
+# Douglas County, OR - Oregon GMRS open repeater system, from the operator's own
+# site. Both are inland (I-5 corridor), not on the US-101 coast route.
+# The +5 MHz input offset on GMRS is fixed by FCC rule (462 MHz output pairs with
+# the 467 MHz input), so it is NOT a band-plan guess.
+# RB-575 uses DPL 606 normal polarity; SW550 uses CTCSS 127.3 Hz.
+# These are the ONLY GMRS repeaters this harvest could source from an operator or
+# licensee page for any of the target counties - see the PR body.
+
+organizations:
+  - id: org_oregon_gmrs
+    name: "Oregon GMRS"
+
+locations:
+  - id: loc_sw550
+    name: "Sutherlin area, Douglas County, OR"
+  - id: loc_rb575
+    name: "Roseburg area, Douglas County, OR"
+
+stations:
+  - id: stn_sw550
+    organization_id: org_oregon_gmrs
+    location_id: loc_sw550
+    service: "gmrs"
+  - id: stn_rb575
+    organization_id: org_oregon_gmrs
+    location_id: loc_rb575
+    service: "gmrs"
+
+rf_chains:
+  - id: chain_sw550
+    station_id: stn_sw550
+    tx:
+      freq_mhz: 462.5500
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 467.5500
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 127.3
+  - id: chain_rb575
+    station_id: stn_rb575
+    tx:
+      freq_mhz: 462.5750
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 467.5750
+    mode:
+      type: "FM"
+      dcs_rx_code: "606"
+
+authorizations:
+  - id: auth_fcc_gmrs
+    authority: "FCC"
+    service: "gmrs"
+    class: "GMRS"
+    identifier: null
+    notes: "TX requires an FCC GMRS license (part 95E)."
+
+assignments:
+  - id: asgn_sw550
+    short_name: "SW550"
+    channel_name: "Oregon GMRS SW550"
+    rf_chain_id: chain_sw550
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: >-
+      Oregon GMRS SW550. Operator lists roughly 30 W at a low-level site. Open system.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."
+  - id: asgn_rb575
+    short_name: "RB575"
+    channel_name: "Oregon GMRS RB-575"
+    rf_chain_id: chain_rb575
+    usage: "repeater"
+    authorization_id: auth_fcc_gmrs
+    notes: >-
+      Oregon GMRS RB-575. Operator lists roughly 25 W at about 900 ft. DPL 606 normal polarity. Open system.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."

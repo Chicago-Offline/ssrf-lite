@@ -1,0 +1,95 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Oregon Relay Radio Council (ORRC) - Published Coordinations"
+      url: "https://orrc.org/Coordinations/Published"
+      accessed: "2026-11-07"
+
+# Douglas County, OR - W7OC / SWORA linked system on the lower Umpqua.
+# Reedsport is the US-101 machine; Scottsburg sits inland on OR-38 along the
+# Umpqua River. Both pairs and the shared 146.2 Hz tone are published ORRC
+# coordinations.
+
+organizations:
+  - id: org_swora_doug
+    name: "South-Western Oregon Repeater Association (SWORA)"
+
+locations:
+  - id: loc_oc180
+    name: "Reedsport, Douglas County, OR"
+  - id: loc_oc380
+    name: "Scottsburg, Douglas County, OR"
+
+stations:
+  - id: stn_oc180
+    call_sign: "W7OC"
+    organization_id: org_swora_doug
+    location_id: loc_oc180
+    service: "amateur"
+  - id: stn_oc380
+    call_sign: "W7OC"
+    organization_id: org_swora_doug
+    location_id: loc_oc380
+    service: "amateur"
+
+rf_chains:
+  - id: chain_oc180
+    station_id: stn_oc180
+    tx:
+      freq_mhz: 147.1800
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.7800
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 146.2
+  - id: chain_oc380
+    station_id: stn_oc380
+    tx:
+      freq_mhz: 147.3800
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 147.9800
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 146.2
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_oc180
+    short_name: "RDS180"
+    channel_name: "W7OC Reedsport 147.180"
+    rf_chain_id: chain_oc180
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      SWORA linked coastal system. US-101 at the Umpqua River.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."
+  - id: asgn_oc380
+    short_name: "SCT380"
+    channel_name: "W7OC Scottsburg 147.380"
+    rf_chain_id: chain_oc380
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      SWORA linked system. OR-38 Umpqua River corridor inland from Reedsport.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."

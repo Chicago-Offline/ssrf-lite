@@ -1,0 +1,328 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Sunset Empire Amateur Radio Club (W7BU) - Clatsop County UHF/VHF Band Plan"
+      url: "https://w7buhams.club/clatsop-county-uhf-vhf-band-plan/"
+      accessed: "2026-11-07"
+    - name: "Sunset Empire Amateur Radio Club (W7BU) - SEARC Radio Network"
+      url: "https://w7buhams.club/searc-radio-network/"
+      accessed: "2026-11-07"
+    - name: "Oregon Relay Radio Council (ORRC) - Published Coordinations"
+      url: "https://orrc.org/Coordinations/Published"
+      accessed: "2026-11-07"
+
+# Clatsop County, OR - Sunset Empire Amateur Radio Club (SEARC, W7BU) network.
+# US-101 north coast: Arch Cape, Cannon Beach, Gearhart, Astoria (Nicolai / Wickiup).
+# Frequencies, offsets AND CTCSS all come from SEARC's own published Clatsop County
+# UHF/VHF band plan (a shared AuxComm channel list), cross-checked against ORRC
+# published coordinations where a coordination exists. NOTHING here is derived -
+# every offset is published by the club. Access tone is 118.8 Hz system-wide.
+# The band plan is written radio-centric ("as if programmed in a portable"); its
+# "TX Tone" column is the tone the user transmits, i.e. the tone the repeater
+# demands on its input, so it is recorded here as ctcss_rx_hz per the 0.9.0+
+# station-centric convention.
+# NOT INCLUDED: the SEARC Megler Mountain hub (145.450) and Megler UHF Fusion
+# (440.925). ORRC coordinates both to "Astoria" but SEARC's own band plan places
+# the site at Megler, which is across the Columbia in Pacific County, WASHINGTON.
+# Out of scope for an Oregon county file rather than filed to the wrong state.
+
+organizations:
+  - id: org_searc
+    name: "Sunset Empire Amateur Radio Club (SEARC)"
+
+locations:
+  - id: loc_arch740
+    name: "Arch Cape, Clatsop County, OR"
+  - id: loc_cbh443
+    name: "Cannon Beach, Clatsop County, OR"
+  - id: loc_gear800
+    name: "Gearhart, Clatsop County, OR"
+  - id: loc_nic760
+    name: "Nicolai Mountain, Clatsop County, OR"
+  - id: loc_wik660
+    name: "Wickiup, Clatsop County, OR"
+  - id: loc_wik442
+    name: "Wickiup, Clatsop County, OR"
+  - id: loc_wik444
+    name: "Wickiup, Clatsop County, OR"
+  - id: loc_yrv444
+    name: "Youngs River, Clatsop County, OR"
+  - id: loc_els410
+    name: "Elsie, Clatsop County, OR"
+
+stations:
+  - id: stn_arch740
+    call_sign: "W7BU"
+    organization_id: org_searc
+    location_id: loc_arch740
+    service: "amateur"
+  - id: stn_cbh443
+    call_sign: "W7BU"
+    organization_id: org_searc
+    location_id: loc_cbh443
+    service: "amateur"
+  - id: stn_gear800
+    call_sign: "W7BU"
+    organization_id: org_searc
+    location_id: loc_gear800
+    service: "amateur"
+  - id: stn_nic760
+    call_sign: "W7BU"
+    organization_id: org_searc
+    location_id: loc_nic760
+    service: "amateur"
+  - id: stn_wik660
+    call_sign: "W7BU"
+    organization_id: org_searc
+    location_id: loc_wik660
+    service: "amateur"
+  - id: stn_wik442
+    call_sign: "W7BU"
+    organization_id: org_searc
+    location_id: loc_wik442
+    service: "amateur"
+  - id: stn_wik444
+    call_sign: "W7BU"
+    organization_id: org_searc
+    location_id: loc_wik444
+    service: "amateur"
+  - id: stn_yrv444
+    call_sign: "W7BU"
+    organization_id: org_searc
+    location_id: loc_yrv444
+    service: "amateur"
+  - id: stn_els410
+    call_sign: "W7BU"
+    organization_id: org_searc
+    location_id: loc_els410
+    service: "amateur"
+
+rf_chains:
+  - id: chain_arch740
+    station_id: stn_arch740
+    tx:
+      freq_mhz: 146.7400
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.1400
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 118.8
+  - id: chain_cbh443
+    station_id: stn_cbh443
+    tx:
+      freq_mhz: 443.2500
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 448.2500
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 118.8
+  - id: chain_gear800
+    station_id: stn_gear800
+    tx:
+      freq_mhz: 146.8000
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.2000
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 118.8
+  - id: chain_nic760
+    station_id: stn_nic760
+    tx:
+      freq_mhz: 146.7600
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.1600
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 118.8
+  - id: chain_wik660
+    station_id: stn_wik660
+    tx:
+      freq_mhz: 146.6600
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 146.0600
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 118.8
+  - id: chain_wik442
+    station_id: stn_wik442
+    tx:
+      freq_mhz: 442.5000
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 447.5000
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 118.8
+  - id: chain_wik444
+    station_id: stn_wik444
+    tx:
+      freq_mhz: 444.7750
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 449.7750
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 118.8
+  - id: chain_yrv444
+    station_id: stn_yrv444
+    tx:
+      freq_mhz: 444.8500
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 449.8500
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 118.8
+  - id: chain_els410
+    station_id: stn_els410
+    tx:
+      freq_mhz: 145.4100
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 144.8100
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 118.8
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_arch740
+    short_name: "ARC740"
+    channel_name: "W7BU Arch Cape 146.740"
+    rf_chain_id: chain_arch740
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      SEARC linked system. Arch Cape site on US-101 south of Cannon Beach.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."
+  - id: asgn_cbh443
+    short_name: "CBH443"
+    channel_name: "W7BU Cannon Beach 443.250"
+    rf_chain_id: chain_cbh443
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      SEARC linked system. Cannon Beach UHF site.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."
+  - id: asgn_gear800
+    short_name: "GEA800"
+    channel_name: "W7BU Gearhart 146.800"
+    rf_chain_id: chain_gear800
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      SEARC linked system.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."
+  - id: asgn_nic760
+    short_name: "NIC760"
+    channel_name: "W7BU Nicolai 146.760"
+    rf_chain_id: chain_nic760
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      SEARC linked system. ORRC coordinates this pair to Astoria.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."
+  - id: asgn_wik660
+    short_name: "WIK660"
+    channel_name: "W7BU Wickiup 146.660"
+    rf_chain_id: chain_wik660
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      SEARC Wickiup VHF. Band plan marks it NOT linked to the SEARC system.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."
+  - id: asgn_wik442
+    short_name: "WIK442"
+    channel_name: "W7BU Wickiup 442.500"
+    rf_chain_id: chain_wik442
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      SEARC Wickiup UHF repeater 1. Linked.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."
+  - id: asgn_wik444
+    short_name: "WIK444"
+    channel_name: "W7BU Wickiup 444.775"
+    rf_chain_id: chain_wik444
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      SEARC Wickiup UHF repeater 2. Band plan marks it NOT linked.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."
+  - id: asgn_yrv444
+    short_name: "YRV444"
+    channel_name: "W7BU Youngs River 444.850"
+    rf_chain_id: chain_yrv444
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      TEMPORARILY OFFLINE as of the 2026 SEARC band plan. Do not rely on it.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."
+  - id: asgn_els410
+    short_name: "ELS410"
+    channel_name: "W7BU Elsie 145.410"
+    rf_chain_id: chain_els410
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      ORRC-coordinated W7BU machine at Elsie (US-26 inland from Seaside). Linked, solar/emergency power flagged.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."

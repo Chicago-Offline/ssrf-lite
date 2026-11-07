@@ -1,0 +1,92 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Oregon Relay Radio Council (ORRC) - Published Coordinations"
+      url: "https://orrc.org/Coordinations/Published"
+      accessed: "2026-11-07"
+
+# Scholls, Washington County, OR - KB7PSM (442.150 sponsored by IRRA).
+# ORRC publishes both pairs as open but lists no tone and sets no tone-required
+# flag on either, so both are recorded carrier-access.
+
+organizations:
+  - id: org_kb7psm
+    name: "KB7PSM"
+
+locations:
+  - id: loc_psm442
+    name: "Scholls, Washington County, OR"
+  - id: loc_psm110
+    name: "Scholls, Washington County, OR"
+
+stations:
+  - id: stn_psm442
+    call_sign: "KB7PSM"
+    organization_id: org_kb7psm
+    location_id: loc_psm442
+    service: "amateur"
+  - id: stn_psm110
+    call_sign: "KB7PSM"
+    organization_id: org_kb7psm
+    location_id: loc_psm110
+    service: "amateur"
+
+rf_chains:
+  - id: chain_psm442
+    station_id: stn_psm442
+    tx:
+      freq_mhz: 442.1500
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 447.1500
+    mode:
+      type: "FM"
+  - id: chain_psm110
+    station_id: stn_psm110
+    tx:
+      freq_mhz: 145.1100
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 144.5100
+    mode:
+      type: "FM"
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_psm442
+    short_name: "SCH442"
+    channel_name: "KB7PSM Scholls 442.150"
+    rf_chain_id: chain_psm442
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      Sponsored by IRRA per ORRC. No CTCSS published.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."
+  - id: asgn_psm110
+    short_name: "SCH110"
+    channel_name: "KB7PSM Scholls 145.110"
+    rf_chain_id: chain_psm110
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      No CTCSS published.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."

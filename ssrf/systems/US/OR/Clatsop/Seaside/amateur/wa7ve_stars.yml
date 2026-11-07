@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../../../../../../_schema/ssrf-lite-0.10.0.schema.json
+$schema: "../../../../../../_schema/ssrf-lite-0.10.0.schema.json"
+ssrf_lite_version: "0.10.0"
+ssrf_lite:
+  sources:
+    - name: "Oregon Relay Radio Council (ORRC) - Published Coordinations"
+      url: "https://orrc.org/Coordinations/Published"
+      accessed: "2026-11-07"
+    - name: "Sunset Empire Amateur Radio Club (W7BU) - Clatsop County UHF/VHF Band Plan"
+      url: "https://w7buhams.club/clatsop-county-uhf-vhf-band-plan/"
+      accessed: "2026-11-07"
+
+# Seaside, Clatsop County, OR - WA7VE. Listed as the "STARS" repeater in the
+# SEARC/Clatsop County AuxComm band plan, which marks it NOT linked to the SEARC
+# system. Frequency pair and tone both published by ORRC and the band plan.
+
+organizations:
+  - id: org_wa7ve
+    name: "WA7VE"
+
+locations:
+  - id: loc_stars490
+    name: "Seaside, Clatsop County, OR"
+
+stations:
+  - id: stn_stars490
+    call_sign: "WA7VE"
+    organization_id: org_wa7ve
+    location_id: loc_stars490
+    service: "amateur"
+
+rf_chains:
+  - id: chain_stars490
+    station_id: stn_stars490
+    tx:
+      freq_mhz: 145.4900
+      emission: "16K0F3E"
+      bandwidth_khz: 25
+    rx:
+      freq_mhz: 144.8900
+    mode:
+      type: "FM"
+      ctcss_rx_hz: 118.8
+
+authorizations:
+  - id: auth_fcc_amateur_t
+    authority: "FCC"
+    service: "amateur"
+    class: "Technician or higher"
+    identifier: null
+    notes: "TX requires a US amateur license."
+
+assignments:
+  - id: asgn_stars490
+    short_name: "STR490"
+    channel_name: "WA7VE Seaside 145.490"
+    rf_chain_id: chain_stars490
+    usage: "repeater"
+    authorization_id: auth_fcc_amateur_t
+    notes: >-
+      STARS repeater. Not linked to the SEARC network.
+    verified:
+      date: "2026-11-07"
+      method: "published"
+      by: "KC9MHE"
+      note: "Club/coordinator published listing only. Not monitored on air."
